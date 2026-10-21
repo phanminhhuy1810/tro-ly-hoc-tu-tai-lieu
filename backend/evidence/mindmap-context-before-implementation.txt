@@ -1,0 +1,82 @@
+/Users/phanminhhuy/Documents/learning resources/Hk4/TDTT/AI-STUDY-HANDOFF/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+test_exam_blocks_new_open_read_and_actions_then_restores_saved_thread (test_mindmap_context.MindmapContextTests.test_exam_blocks_new_open_read_and_actions_then_restores_saved_thread) ... ERROR
+test_invalid_index_foreign_owner_stale_and_out_of_unit_ref_do_not_create_or_charge (test_mindmap_context.MindmapContextTests.test_invalid_index_foreign_owner_stale_and_out_of_unit_ref_do_not_create_or_charge) ... FAIL
+test_node_context_contains_only_its_text_refs_and_no_global_chat_or_other_node (test_mindmap_context.MindmapContextTests.test_node_context_contains_only_its_text_refs_and_no_global_chat_or_other_node) ... ERROR
+test_nodes_and_reading_sections_keep_separate_threads_drafts_and_cached_replies (test_mindmap_context.MindmapContextTests.test_nodes_and_reading_sections_keep_separate_threads_drafts_and_cached_replies) ... ERROR
+test_note_uses_scoped_server_reply_and_keeps_original_course (test_mindmap_context.MindmapContextTests.test_note_uses_scoped_server_reply_and_keeps_original_course) ... ERROR
+test_old_thread_keeps_node_snapshot_after_edit_and_new_open_rejects_stale_revision (test_mindmap_context.MindmapContextTests.test_old_thread_keeps_node_snapshot_after_edit_and_new_open_rejects_stale_revision) ... ERROR
+
+======================================================================
+ERROR: test_exam_blocks_new_open_read_and_actions_then_restores_saved_thread (test_mindmap_context.MindmapContextTests.test_exam_blocks_new_open_read_and_actions_then_restores_saved_thread)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/phanminhhuy/Documents/learning resources/Hk4/TDTT/AI-STUDY-HANDOFF/backend/tests/test_mindmap_context.py", line 80, in test_exam_blocks_new_open_read_and_actions_then_restores_saved_thread
+    opened=self.open();opened.raise_for_status();tid=opened.json()['thread_id'];before=self.client.get('/api/help/threads/'+tid).json()
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/phanminhhuy/Documents/learning resources/Hk4/TDTT/AI-STUDY-HANDOFF/.venv/lib/python3.12/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '405 Method Not Allowed' for url 'http://127.0.0.1/api/courses/1b52e69f8f274405a301c8d5eb02b2b9/units/unit-1/mindmap/0/help'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/405
+
+======================================================================
+ERROR: test_node_context_contains_only_its_text_refs_and_no_global_chat_or_other_node (test_mindmap_context.MindmapContextTests.test_node_context_contains_only_its_text_refs_and_no_global_chat_or_other_node)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/phanminhhuy/Documents/learning resources/Hk4/TDTT/AI-STUDY-HANDOFF/backend/tests/test_mindmap_context.py", line 29, in test_node_context_contains_only_its_text_refs_and_no_global_chat_or_other_node
+    calls=self.provider.calls;opened=self.open();opened.raise_for_status();tid=opened.json()['thread_id']
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/phanminhhuy/Documents/learning resources/Hk4/TDTT/AI-STUDY-HANDOFF/.venv/lib/python3.12/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '405 Method Not Allowed' for url 'http://127.0.0.1/api/courses/389f33e77cdc433d8b0cbb5aaaa80fff/units/unit-1/mindmap/0/help'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/405
+
+======================================================================
+ERROR: test_nodes_and_reading_sections_keep_separate_threads_drafts_and_cached_replies (test_mindmap_context.MindmapContextTests.test_nodes_and_reading_sections_keep_separate_threads_drafts_and_cached_replies)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/phanminhhuy/Documents/learning resources/Hk4/TDTT/AI-STUDY-HANDOFF/backend/tests/test_mindmap_context.py", line 40, in test_nodes_and_reading_sections_keep_separate_threads_drafts_and_cached_replies
+    first=self.open();first.raise_for_status();a=first.json()['thread_id'];b=self.open(1).json()['thread_id']
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/phanminhhuy/Documents/learning resources/Hk4/TDTT/AI-STUDY-HANDOFF/.venv/lib/python3.12/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '405 Method Not Allowed' for url 'http://127.0.0.1/api/courses/f64eb1fa7b6f426eaaad37767fae2a81/units/unit-1/mindmap/0/help'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/405
+
+======================================================================
+ERROR: test_note_uses_scoped_server_reply_and_keeps_original_course (test_mindmap_context.MindmapContextTests.test_note_uses_scoped_server_reply_and_keeps_original_course)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/phanminhhuy/Documents/learning resources/Hk4/TDTT/AI-STUDY-HANDOFF/backend/tests/test_mindmap_context.py", line 90, in test_note_uses_scoped_server_reply_and_keeps_original_course
+    opened=self.open();opened.raise_for_status();tid=opened.json()['thread_id'];before=copy.deepcopy(self.value)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/phanminhhuy/Documents/learning resources/Hk4/TDTT/AI-STUDY-HANDOFF/.venv/lib/python3.12/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '405 Method Not Allowed' for url 'http://127.0.0.1/api/courses/08052094dfba4604bff0e9155fd56b17/units/unit-1/mindmap/0/help'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/405
+
+======================================================================
+ERROR: test_old_thread_keeps_node_snapshot_after_edit_and_new_open_rejects_stale_revision (test_mindmap_context.MindmapContextTests.test_old_thread_keeps_node_snapshot_after_edit_and_new_open_rejects_stale_revision)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/phanminhhuy/Documents/learning resources/Hk4/TDTT/AI-STUDY-HANDOFF/backend/tests/test_mindmap_context.py", line 53, in test_old_thread_keeps_node_snapshot_after_edit_and_new_open_rejects_stale_revision
+    opened=self.open();opened.raise_for_status();old=opened.json()['thread_id']
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/phanminhhuy/Documents/learning resources/Hk4/TDTT/AI-STUDY-HANDOFF/.venv/lib/python3.12/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '405 Method Not Allowed' for url 'http://127.0.0.1/api/courses/9942b0934e4143b6b8a87d64eb3623cf/units/unit-1/mindmap/0/help'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/405
+
+======================================================================
+FAIL: test_invalid_index_foreign_owner_stale_and_out_of_unit_ref_do_not_create_or_charge (test_mindmap_context.MindmapContextTests.test_invalid_index_foreign_owner_stale_and_out_of_unit_ref_do_not_create_or_charge)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/phanminhhuy/Documents/learning resources/Hk4/TDTT/AI-STUDY-HANDOFF/backend/tests/test_mindmap_context.py", line 67, in test_invalid_index_foreign_owner_stale_and_out_of_unit_ref_do_not_create_or_charge
+    for index in (-1,2,999):self.assertEqual(self.open(index).status_code,404)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 405 != 404
+
+----------------------------------------------------------------------
+Ran 6 tests in 3.065s
+
+FAILED (failures=1, errors=5)

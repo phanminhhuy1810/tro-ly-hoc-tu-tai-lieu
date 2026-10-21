@@ -1,0 +1,554 @@
+{
+  "purpose": "Per-unit source/extraction binding over real HTTP and Gemini; self-authored development documents, not a quality benchmark or human trial",
+  "started_at": "2026-10-16T19:03:10.558310+00:00",
+  "checks": {
+    "source_edited_after_preview_blocks_stale_apply": true,
+    "preview_keeps_live_course_and_learned_data": true
+  },
+  "jobs": [
+    {
+      "id": "c32be38cd77b479fb894a8121abdf59e",
+      "status": "succeeded",
+      "provider": {
+        "provider": "gemini_api",
+        "model": "gemini-2.5-flash",
+        "model_choice_id": "gemini:gemini-2.5-flash",
+        "selection_revision": 1,
+        "prompt_version": "20261015-confirmed-preferences-v2",
+        "schema_version": 12
+      },
+      "error": null,
+      "elapsed_seconds": 2.552,
+      "partial": null
+    },
+    {
+      "id": "d6a12ea5781a4772ab6de55dc23da0c4",
+      "status": "succeeded",
+      "provider": {
+        "provider": "gemini_api",
+        "model": "gemini-2.5-flash",
+        "model_choice_id": "gemini:gemini-2.5-flash",
+        "selection_revision": 1,
+        "prompt_version": "20261015-unit-objective-ordering-v5",
+        "schema_version": 12
+      },
+      "error": null,
+      "elapsed_seconds": 8.157,
+      "partial": null
+    },
+    {
+      "id": "42e511b057294f929799d755ca42e068",
+      "status": "failed",
+      "provider": {
+        "provider": "gemini_api",
+        "model": "gemini-2.5-flash",
+        "model_choice_id": "gemini:gemini-2.5-flash",
+        "selection_revision": 1,
+        "prompt_version": "20261015-unit-objective-ordering-v5",
+        "schema_version": 12
+      },
+      "error": {
+        "message": "AI trả cấu trúc chưa hợp lệ ở question.difficulty_basis; chưa áp dụng đầu ra, nguồn và phần đã lưu vẫn còn.",
+        "code": "INVALID_OUTPUT",
+        "retryable": false,
+        "provider": {
+          "provider": "gemini_api",
+          "model": "gemini-2.5-flash",
+          "model_choice_id": "gemini:gemini-2.5-flash",
+          "selection_revision": 1,
+          "prompt_version": "20261015-unit-objective-ordering-v5",
+          "schema_version": 12
+        }
+      },
+      "elapsed_seconds": 7.649,
+      "partial": {
+        "reading": {
+          "title": "Địa chỉ IPv6",
+          "sections": [
+            {
+              "title": "Độ dài địa chỉ IPv6",
+              "text": "IPv6 sử dụng địa chỉ dài 128 bit. Điều này cho phép một không gian địa chỉ lớn hơn nhiều so với IPv4.",
+              "source_refs": [
+                "d49e13708e1846abbcd8ac0a9c113d70:3:0"
+              ]
+            },
+            {
+              "title": "Cấu trúc biểu diễn IPv6",
+              "text": "Dạng đầy đủ của địa chỉ IPv6 bao gồm tám nhóm số hexa, được ngăn cách với nhau bằng dấu hai chấm. Mỗi nhóm hexa đại diện cho 16 bit của địa chỉ.",
+              "source_refs": [
+                "d49e13708e1846abbcd8ac0a9c113d70:3:1"
+              ]
+            },
+            {
+              "title": "Ví dụ về địa chỉ IPv6 đầy đủ",
+              "text": "Một ví dụ về địa chỉ IPv6 ở dạng đầy đủ là 2001:0db8:0000:0000:0000:0000:0000:0001. Địa chỉ này thể hiện cấu trúc tám nhóm hexa được ngăn cách bởi dấu hai chấm.",
+              "source_refs": [
+                "d49e13708e1846abbcd8ac0a9c113d70:3:2"
+              ]
+            }
+          ],
+          "cards": [
+            {
+              "front": "Địa chỉ IPv6 dài bao nhiêu bit?",
+              "back": "Địa chỉ IPv6 dài 128 bit.",
+              "source_refs": [
+                "d49e13708e1846abbcd8ac0a9c113d70:3:0"
+              ]
+            }
+          ],
+          "mindmap": [
+            {
+              "title": "Địa chỉ IPv6",
+              "text": "IPv6 sử dụng địa chỉ dài 128 bit, cung cấp một không gian địa chỉ rất lớn.",
+              "source_refs": [
+                "d49e13708e1846abbcd8ac0a9c113d70:3:0"
+              ]
+            },
+            {
+              "title": "Cấu trúc biểu diễn",
+              "text": "Địa chỉ IPv6 được biểu diễn dưới dạng tám nhóm số hexa, ngăn cách bởi dấu hai chấm.",
+              "source_refs": [
+                "d49e13708e1846abbcd8ac0a9c113d70:3:1"
+              ]
+            },
+            {
+              "title": "Ví dụ",
+              "text": "Một ví dụ về địa chỉ IPv6 đầy đủ là 2001:0db8:0000:0000:0000:0000:0000:0001.",
+              "source_refs": [
+                "d49e13708e1846abbcd8ac0a9c113d70:3:2"
+              ]
+            }
+          ]
+        },
+        "questions": {},
+        "stage_providers": {
+          "reading": {
+            "provider": "gemini_api",
+            "model": "gemini-2.5-flash",
+            "model_choice_id": "gemini:gemini-2.5-flash",
+            "selection_revision": 1,
+            "prompt_version": "20261015-unit-objective-ordering-v5",
+            "schema_version": 12
+          }
+        }
+      }
+    }
+  ],
+  "coin_confirmed": 2,
+  "course_id": "550b93e99f0c4d1b884f72345e60c01c",
+  "first_question": {
+    "kind": "mcq",
+    "prompt": "Đặc điểm nào sau đây mô tả đúng địa chỉ IPv4?",
+    "options": [
+      "Địa chỉ IPv4 dài 64 bit và có bốn octet.",
+      "Địa chỉ IPv4 dài 32 bit và có bốn octet.",
+      "Địa chỉ IPv4 dài 32 bit và có sáu octet."
+    ],
+    "left": [],
+    "answer": "Địa chỉ IPv4 dài 32 bit và có bốn octet.",
+    "explanation": "Địa chỉ IPv4 sử dụng địa chỉ dài 32 bit và được chia thành bốn octet, mỗi octet dài 8 bit. Ví dụ về cách biểu diễn là 192.168.1.70.",
+    "source_refs": [
+      "155c026611864de2ba468ffd07844189:2:0",
+      "155c026611864de2ba468ffd07844189:2:1",
+      "155c026611864de2ba468ffd07844189:2:2"
+    ],
+    "rubric": [
+      "Kiểm tra kiến thức về độ dài bit của địa chỉ IPv4.",
+      "Kiểm tra kiến thức về số lượng octet trong địa chỉ IPv4.",
+      "Kiểm tra khả năng nhận biết các đặc điểm cơ bản của địa chỉ IPv4."
+    ],
+    "difficulty": null,
+    "difficulty_basis": null
+  },
+  "session_id": "384acc61965a45538deed3c9fc1b0808",
+  "source_bindings_preview": {
+    "before": [
+      {
+        "unit_id": "unit-1",
+        "title": "Địa chỉ IPv4",
+        "generated": true,
+        "plan_id": "a72e08b02d7545378364942bb72fdde5",
+        "source_id": "155c026611864de2ba468ffd07844189",
+        "source_name": "QA-source-A-IPv4.txt.txt",
+        "extraction_revision": 2,
+        "source_refs": [
+          "155c026611864de2ba468ffd07844189:2:0",
+          "155c026611864de2ba468ffd07844189:2:1",
+          "155c026611864de2ba468ffd07844189:2:2"
+        ],
+        "preferences": {
+          "source_id": "155c026611864de2ba468ffd07844189",
+          "subject": "Mạng máy tính",
+          "goal": "Học cách biểu diễn địa chỉ IP, mỗi bài dùng đúng nguồn đã duyệt.",
+          "instructions": "",
+          "language": "vi",
+          "fragment_ids": [
+            "155c026611864de2ba468ffd07844189:2:0",
+            "155c026611864de2ba468ffd07844189:2:1",
+            "155c026611864de2ba468ffd07844189:2:2"
+          ],
+          "unlock_policy": "open",
+          "initial_mode": "learn",
+          "expected_extraction_revision": 2,
+          "excluded_fragment_ids": [],
+          "chapter_priorities": [],
+          "difficulty": null,
+          "question_types": [
+            "mcq"
+          ],
+          "question_count": 1,
+          "card_count": 1,
+          "target_language": "",
+          "terms_to_keep": [],
+          "teacher_notes": "",
+          "user_notes": "",
+          "extraction_revision": 2
+        }
+      },
+      {
+        "unit_id": "unit-2",
+        "title": "Phần tiếp chưa tạo",
+        "generated": false,
+        "plan_id": "a72e08b02d7545378364942bb72fdde5",
+        "source_id": "155c026611864de2ba468ffd07844189",
+        "source_name": "QA-source-A-IPv4.txt.txt",
+        "extraction_revision": 2,
+        "source_refs": [
+          "155c026611864de2ba468ffd07844189:2:0",
+          "155c026611864de2ba468ffd07844189:2:1",
+          "155c026611864de2ba468ffd07844189:2:2"
+        ],
+        "preferences": {
+          "source_id": "155c026611864de2ba468ffd07844189",
+          "subject": "Mạng máy tính",
+          "goal": "Học cách biểu diễn địa chỉ IP, mỗi bài dùng đúng nguồn đã duyệt.",
+          "instructions": "",
+          "language": "vi",
+          "fragment_ids": [
+            "155c026611864de2ba468ffd07844189:2:0",
+            "155c026611864de2ba468ffd07844189:2:1",
+            "155c026611864de2ba468ffd07844189:2:2"
+          ],
+          "unlock_policy": "open",
+          "initial_mode": "learn",
+          "expected_extraction_revision": 2,
+          "excluded_fragment_ids": [],
+          "chapter_priorities": [],
+          "difficulty": null,
+          "question_types": [
+            "mcq"
+          ],
+          "question_count": 1,
+          "card_count": 1,
+          "target_language": "",
+          "terms_to_keep": [],
+          "teacher_notes": "",
+          "user_notes": "",
+          "extraction_revision": 2
+        }
+      }
+    ],
+    "after": [
+      {
+        "unit_id": "unit-1",
+        "title": "Địa chỉ IPv4",
+        "generated": true,
+        "plan_id": "a72e08b02d7545378364942bb72fdde5",
+        "source_id": "155c026611864de2ba468ffd07844189",
+        "source_name": "QA-source-A-IPv4.txt.txt",
+        "extraction_revision": 2,
+        "source_refs": [
+          "155c026611864de2ba468ffd07844189:2:0",
+          "155c026611864de2ba468ffd07844189:2:1",
+          "155c026611864de2ba468ffd07844189:2:2"
+        ],
+        "preferences": {
+          "source_id": "155c026611864de2ba468ffd07844189",
+          "subject": "Mạng máy tính",
+          "goal": "Học cách biểu diễn địa chỉ IP, mỗi bài dùng đúng nguồn đã duyệt.",
+          "instructions": "",
+          "language": "vi",
+          "fragment_ids": [
+            "155c026611864de2ba468ffd07844189:2:0",
+            "155c026611864de2ba468ffd07844189:2:1",
+            "155c026611864de2ba468ffd07844189:2:2"
+          ],
+          "unlock_policy": "open",
+          "initial_mode": "learn",
+          "expected_extraction_revision": 2,
+          "excluded_fragment_ids": [],
+          "chapter_priorities": [],
+          "difficulty": null,
+          "question_types": [
+            "mcq"
+          ],
+          "question_count": 1,
+          "card_count": 1,
+          "target_language": "",
+          "terms_to_keep": [],
+          "teacher_notes": "",
+          "user_notes": "",
+          "extraction_revision": 2
+        }
+      },
+      {
+        "unit_id": "unit-2",
+        "title": "Địa chỉ IPv6",
+        "generated": false,
+        "plan_id": "4a1266b55f03425ba4c6c0d368495154",
+        "source_id": "d49e13708e1846abbcd8ac0a9c113d70",
+        "source_name": "QA-source-B-IPv6.txt.txt",
+        "extraction_revision": 3,
+        "source_refs": [
+          "d49e13708e1846abbcd8ac0a9c113d70:3:0",
+          "d49e13708e1846abbcd8ac0a9c113d70:3:1",
+          "d49e13708e1846abbcd8ac0a9c113d70:3:2"
+        ],
+        "preferences": {
+          "source_id": "d49e13708e1846abbcd8ac0a9c113d70",
+          "subject": "Mạng máy tính",
+          "goal": "Học cách biểu diễn địa chỉ IP, mỗi bài dùng đúng nguồn đã duyệt.",
+          "instructions": "",
+          "language": "vi",
+          "fragment_ids": [
+            "d49e13708e1846abbcd8ac0a9c113d70:3:0",
+            "d49e13708e1846abbcd8ac0a9c113d70:3:1",
+            "d49e13708e1846abbcd8ac0a9c113d70:3:2"
+          ],
+          "unlock_policy": "open",
+          "initial_mode": "learn",
+          "expected_extraction_revision": 3,
+          "excluded_fragment_ids": [],
+          "chapter_priorities": [],
+          "difficulty": null,
+          "question_types": [
+            "mcq"
+          ],
+          "question_count": 1,
+          "card_count": 1,
+          "target_language": "",
+          "terms_to_keep": [],
+          "teacher_notes": "",
+          "user_notes": "",
+          "extraction_revision": 3
+        }
+      }
+    ]
+  },
+  "quotes": [
+    {
+      "code": "COIN_CONFIRMATION_REQUIRED",
+      "amount": 2,
+      "model": "gemini-2.5-flash",
+      "provider": null
+    }
+  ],
+  "passed": false,
+  "error_type": "RuntimeError",
+  "error": "AI job ended failed; saved stage/error retained, no automatic retry.",
+  "finished_at": "2026-10-16T19:03:29.673955+00:00",
+  "recoveries": [
+    {
+      "started_at": "2026-10-16T19:08:27.134076+00:00",
+      "jobs": [
+        {
+          "id": "f2eedf9b08344417932b39140d670f1f",
+          "status": "succeeded",
+          "provider": {
+            "provider": "gemini_api",
+            "model": "gemini-2.5-flash",
+            "model_choice_id": "gemini:gemini-2.5-flash",
+            "selection_revision": 1,
+            "prompt_version": "20261017-unit-source-server-metadata-v6",
+            "schema_version": 13
+          },
+          "error": null,
+          "elapsed_seconds": 2.559
+        },
+        {
+          "id": "1c900acded9346ca81771d8a29f6169c",
+          "status": "succeeded",
+          "provider": {
+            "provider": "gemini_api",
+            "model": "gemini-2.5-flash",
+            "model_choice_id": "gemini:gemini-2.5-flash",
+            "selection_revision": 1,
+            "prompt_version": "20261017-pinned-source-context-v2",
+            "schema_version": 13
+          },
+          "error": null,
+          "elapsed_seconds": 2.555
+        }
+      ],
+      "checks": {
+        "failed_job_has_no_outstanding_coin_hold": true,
+        "reading_reused_exactly": true,
+        "new_question_refs_old_lesson_and_result_preserved": true,
+        "old_attempt_chat_keeps_original_refs_and_revision": true,
+        "peer_reads_ready_excerpts_but_new_original_not_auto_shared": true,
+        "trial_course_returned_to_private": true
+      },
+      "confirmed_coin": 2,
+      "stage_providers": {
+        "reading": {
+          "provider": "gemini_api",
+          "model": "gemini-2.5-flash",
+          "model_choice_id": "gemini:gemini-2.5-flash",
+          "selection_revision": 1,
+          "prompt_version": "20261015-unit-objective-ordering-v5",
+          "schema_version": 12
+        },
+        "mcq": {
+          "provider": "gemini_api",
+          "model": "gemini-2.5-flash",
+          "model_choice_id": "gemini:gemini-2.5-flash",
+          "selection_revision": 1,
+          "prompt_version": "20261017-unit-source-server-metadata-v6",
+          "schema_version": 13
+        }
+      },
+      "passed": true,
+      "finished_at": "2026-10-16T19:08:32.384369+00:00",
+      "wallet_after": {
+        "balance": 22,
+        "held": 0,
+        "available": 22,
+        "policy_version": "dev-proposal-20261015-v2",
+        "policy_proposed": true,
+        "cash_payments": false,
+        "enforcement_enabled": true
+      }
+    }
+  ],
+  "bindings": [
+    {
+      "unit_id": "unit-1",
+      "title": "Địa chỉ IPv4",
+      "generated": true,
+      "plan_id": "a72e08b02d7545378364942bb72fdde5",
+      "source_id": "155c026611864de2ba468ffd07844189",
+      "source_name": "QA-source-A-IPv4.txt.txt",
+      "extraction_revision": 2,
+      "source_refs": [
+        "155c026611864de2ba468ffd07844189:2:0",
+        "155c026611864de2ba468ffd07844189:2:1",
+        "155c026611864de2ba468ffd07844189:2:2"
+      ],
+      "preferences": {
+        "source_id": "155c026611864de2ba468ffd07844189",
+        "subject": "Mạng máy tính",
+        "goal": "Học cách biểu diễn địa chỉ IP, mỗi bài dùng đúng nguồn đã duyệt.",
+        "instructions": "",
+        "language": "vi",
+        "fragment_ids": [
+          "155c026611864de2ba468ffd07844189:2:0",
+          "155c026611864de2ba468ffd07844189:2:1",
+          "155c026611864de2ba468ffd07844189:2:2"
+        ],
+        "unlock_policy": "open",
+        "initial_mode": "learn",
+        "expected_extraction_revision": 2,
+        "excluded_fragment_ids": [],
+        "chapter_priorities": [],
+        "difficulty": null,
+        "question_types": [
+          "mcq"
+        ],
+        "question_count": 1,
+        "card_count": 1,
+        "target_language": "",
+        "terms_to_keep": [],
+        "teacher_notes": "",
+        "user_notes": "",
+        "extraction_revision": 2
+      },
+      "latest_extraction_revision": 2,
+      "latest_reviewed": true,
+      "can_change_source": false
+    },
+    {
+      "unit_id": "unit-2",
+      "title": "Địa chỉ IPv6",
+      "generated": true,
+      "plan_id": "4a1266b55f03425ba4c6c0d368495154",
+      "source_id": "d49e13708e1846abbcd8ac0a9c113d70",
+      "source_name": "QA-source-B-IPv6.txt.txt",
+      "extraction_revision": 3,
+      "source_refs": [
+        "d49e13708e1846abbcd8ac0a9c113d70:3:0",
+        "d49e13708e1846abbcd8ac0a9c113d70:3:1",
+        "d49e13708e1846abbcd8ac0a9c113d70:3:2"
+      ],
+      "preferences": {
+        "source_id": "d49e13708e1846abbcd8ac0a9c113d70",
+        "subject": "Mạng máy tính",
+        "goal": "Học cách biểu diễn địa chỉ IP, mỗi bài dùng đúng nguồn đã duyệt.",
+        "instructions": "",
+        "language": "vi",
+        "fragment_ids": [
+          "d49e13708e1846abbcd8ac0a9c113d70:3:0",
+          "d49e13708e1846abbcd8ac0a9c113d70:3:1",
+          "d49e13708e1846abbcd8ac0a9c113d70:3:2"
+        ],
+        "unlock_policy": "open",
+        "initial_mode": "learn",
+        "expected_extraction_revision": 3,
+        "excluded_fragment_ids": [],
+        "chapter_priorities": [],
+        "difficulty": null,
+        "question_types": [
+          "mcq"
+        ],
+        "question_count": 1,
+        "card_count": 1,
+        "target_language": "",
+        "terms_to_keep": [],
+        "teacher_notes": "",
+        "user_notes": "",
+        "extraction_revision": 3
+      },
+      "latest_extraction_revision": 3,
+      "latest_reviewed": true,
+      "can_change_source": false
+    }
+  ],
+  "second_question": {
+    "kind": "mcq",
+    "prompt": "Địa chỉ IPv6 được biểu diễn như thế nào?",
+    "options": [
+      "Địa chỉ IPv6 dùng địa chỉ dài 128 bit và có tám nhóm số hexa, ngăn bằng dấu hai chấm.",
+      "Địa chỉ IPv6 dùng địa chỉ dài 32 bit và có bốn nhóm số thập phân, ngăn bằng dấu chấm.",
+      "Địa chỉ IPv6 dùng địa chỉ dài 64 bit và có tám nhóm số thập phân, ngăn bằng dấu hai chấm.",
+      "Địa chỉ IPv6 dùng địa chỉ dài 128 bit và có bốn nhóm số hexa, ngăn bằng dấu chấm."
+    ],
+    "left": [],
+    "answer": "Địa chỉ IPv6 dùng địa chỉ dài 128 bit và có tám nhóm số hexa, ngăn bằng dấu hai chấm.",
+    "explanation": "IPv6 sử dụng địa chỉ dài 128 bit và được biểu diễn dưới dạng tám nhóm số hexa, ngăn cách bởi dấu hai chấm. Ví dụ: 2001:0db8:0000:0000:0000:0000:0000:0001.",
+    "source_refs": [
+      "d49e13708e1846abbcd8ac0a9c113d70:3:0",
+      "d49e13708e1846abbcd8ac0a9c113d70:3:1",
+      "d49e13708e1846abbcd8ac0a9c113d70:3:2"
+    ],
+    "rubric": [],
+    "difficulty": null,
+    "difficulty_basis": null
+  },
+  "final_revision": 4,
+  "original_a_sha256": "7c16a722aa578d8915e1e99ab5636ef2ec4697d3a3d279cc20d7446618f2d7d4",
+  "old_attempt_chat": {
+    "id": "ee58357d29ea4ecea1268a83796da42f",
+    "role": "assistant",
+    "text": "Địa chỉ IPv4 có độ dài 32 bit và được chia thành bốn octet. Mỗi octet này dài 8 bit. Một ví dụ về cách biểu diễn địa chỉ IPv4 là 192.168.1.70.",
+    "source_refs": [
+      "155c026611864de2ba468ffd07844189:2:0",
+      "155c026611864de2ba468ffd07844189:2:1",
+      "155c026611864de2ba468ffd07844189:2:2"
+    ],
+    "revision": 2
+  },
+  "passed_after_explicit_recovery": true,
+  "failed_job_reservation": {
+    "amount": 2,
+    "status": "released"
+  }
+}

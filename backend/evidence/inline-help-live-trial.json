@@ -1,0 +1,222 @@
+{
+  "verified_at": "2026-10-15T10:32:41.417660+00:00",
+  "scope": "Real local HTTP and Qwen; script-controlled development profile, not a quality benchmark or independent human trial",
+  "source_id": "89035cb15fb34bc1b6c5b4e7cae3f82e",
+  "original_sha256": "b6cbd90b10646a62b136fe7f3d0423bfb2692307e7d37142c6f92e112264c1ed",
+  "checks": {
+    "saved_explanation_before_answer_free_and_no_fake_submission": true,
+    "quote_before_new_message_or_ai_job": true,
+    "next_question_draft_and_messages_stay_separate": true,
+    "global_chat_unchanged": true,
+    "unsubmitted_selection_kept": true,
+    "job_replay_no_second_charge": true,
+    "reply_saved_to_original_question": true,
+    "successful_draft_cleared": true
+  },
+  "course_id": "0b3c505ebc194963b04cc66a8c2644b6",
+  "revision": 8,
+  "session_id": "45533c22f5f140c09967305bd35ce7a2",
+  "quote": {
+    "amount": 1,
+    "model": "qwen3.5:9b"
+  },
+  "job_id": "40fb846cb9fa4b65b8a8959d8084b233",
+  "job": {
+    "id": "40fb846cb9fa4b65b8a8959d8084b233",
+    "status": "succeeded",
+    "attempts": 1,
+    "provider": {
+      "provider": "ollama_local",
+      "model": "qwen3.5:9b",
+      "prompt_version": "20261015-pinned-inline-help-v1",
+      "schema_version": 11
+    },
+    "result": {
+      "text": "The reference answer states that IPv4 uses 32 bits and a /26 prefix allocates 26 bits for the network. This is because the prefix notation '/26' explicitly indicates that the first 26 bits of the 32-bit IPv4 address are reserved for the network portion.",
+      "source_refs": [
+        "89035cb15fb34bc1b6c5b4e7cae3f82e:2:0",
+        "89035cb15fb34bc1b6c5b4e7cae3f82e:2:1"
+      ],
+      "needs_more_source": false,
+      "thread_id": "d0fe691d953a40889f921e8bf8136fd3",
+      "message_id": "1e17ae3623c34afa843e9c1660644d2e"
+    },
+    "partial": {},
+    "feedback_deferred": false,
+    "error": null
+  },
+  "wallet_before": {
+    "balance": 26,
+    "held": 0,
+    "available": 26,
+    "policy_version": "dev-proposal-20261015-v2",
+    "policy_proposed": true,
+    "cash_payments": false,
+    "enforcement_enabled": true
+  },
+  "wallet_after": {
+    "balance": 25,
+    "held": 0,
+    "available": 25,
+    "policy_version": "dev-proposal-20261015-v2",
+    "policy_proposed": true,
+    "cash_payments": false,
+    "enforcement_enabled": true
+  },
+  "question_context": {
+    "kind": "question",
+    "unit_id": "unit-1",
+    "unit_title": "Cấu trúc cơ bản của IPv4 và Subnet mask",
+    "question": {
+      "difficulty": null,
+      "difficulty_basis": null,
+      "id": "unit-1:q0",
+      "kind": "mcq",
+      "left": [],
+      "options": [
+        "IPv4 có 32 bit; prefix /26 dành 26 bit cho network.",
+        "IPv4 có 24 bit; prefix /26 dành 26 bit cho network.",
+        "IPv4 có 32 bit; prefix /26 dành 8 bit cho network.",
+        "IPv4 có 32 bit; prefix /26 dành 10 bit cho network."
+      ],
+      "prompt": "Theo nội dung nguồn, tổng số bit của địa chỉ IPv4 là bao nhiêu và prefix /26 dành bao nhiêu bit cho network?",
+      "question_revision_id": "0b3c505ebc194963b04cc66a8c2644b6:unit-1:ce791b4849168be5ad192a82",
+      "source_refs": [
+        "89035cb15fb34bc1b6c5b4e7cae3f82e:2:0",
+        "89035cb15fb34bc1b6c5b4e7cae3f82e:2:1"
+      ],
+      "unit_id": "unit-1",
+      "payload": {
+        "options": [
+          {
+            "id": "option-0",
+            "text": "IPv4 có 32 bit; prefix /26 dành 26 bit cho network."
+          },
+          {
+            "id": "option-1",
+            "text": "IPv4 có 24 bit; prefix /26 dành 26 bit cho network."
+          },
+          {
+            "id": "option-2",
+            "text": "IPv4 có 32 bit; prefix /26 dành 8 bit cho network."
+          },
+          {
+            "id": "option-3",
+            "text": "IPv4 có 32 bit; prefix /26 dành 10 bit cho network."
+          }
+        ],
+        "left": []
+      }
+    },
+    "session_id": "45533c22f5f140c09967305bd35ce7a2"
+  },
+  "student": {
+    "session_status": "open",
+    "submitted": false,
+    "answer": null,
+    "draft": "option-1",
+    "feedback": null
+  },
+  "messages": [
+    {
+      "id": "76d66f2b13e14915be51268127923256",
+      "role": "assistant",
+      "action": "explain",
+      "content": {
+        "action": "explain",
+        "ai_generated": false,
+        "reference": "IPv4 có 32 bit; prefix /26 dành 26 bit cho network.",
+        "reference_warning": null,
+        "rubric": [
+          "Kiểm tra kiến thức về tổng số bit của IPv4.",
+          "Kiểm tra hiểu biết về ý nghĩa của prefix /26 trong việc phân chia network."
+        ],
+        "source_refs": [
+          "89035cb15fb34bc1b6c5b4e7cae3f82e:2:0",
+          "89035cb15fb34bc1b6c5b4e7cae3f82e:2:1"
+        ],
+        "step": 0,
+        "text": "Nguồn xác nhận IPv4 sử dụng 32 bit và prefix /26 cụ thể được dùng để chỉ định 26 bit cho phần network."
+      },
+      "created_at": "2026-10-15T10:32:41.479570+00:00"
+    },
+    {
+      "id": "3f1758d80d124868b36f36f65eb21c5b",
+      "role": "user",
+      "action": "ask",
+      "content": {
+        "student": {
+          "answer": null,
+          "draft": "option-1",
+          "feedback": null,
+          "session_status": "open",
+          "submitted": false
+        },
+        "text": "Giải thích vì sao lựa chọn mình đang chọn khác đáp án tham khảo của câu này. Dựa vào nguồn và nói ngắn gọn."
+      },
+      "created_at": "2026-10-15T10:32:41.510067+00:00"
+    },
+    {
+      "id": "1e17ae3623c34afa843e9c1660644d2e",
+      "role": "assistant",
+      "action": "ask",
+      "content": {
+        "ai_generated": true,
+        "needs_more_source": false,
+        "source_refs": [
+          "89035cb15fb34bc1b6c5b4e7cae3f82e:2:0",
+          "89035cb15fb34bc1b6c5b4e7cae3f82e:2:1"
+        ],
+        "text": "The reference answer states that IPv4 uses 32 bits and a /26 prefix allocates 26 bits for the network. This is because the prefix notation '/26' explicitly indicates that the first 26 bits of the 32-bit IPv4 address are reserved for the network portion."
+      },
+      "created_at": "2026-10-15T10:32:50.748741+00:00"
+    }
+  ],
+  "source_excerpts": [
+    {
+      "id": "89035cb15fb34bc1b6c5b4e7cae3f82e:2:0",
+      "locator": {
+        "bounds": [
+          0.04166666633736558,
+          0.8521739124014983,
+          0.4083333333333333,
+          0.06086956659952791
+        ],
+        "bounds_coordinate_system": "normalized_bottom_left",
+        "frame": 1,
+        "image_height": 720,
+        "image_orientation": "exif_normalized",
+        "image_width": 1500,
+        "ocr_engine": "macOS_Vision",
+        "ocr_revision": 3,
+        "type": "ocr_image"
+      },
+      "text": "Mạng máy tính: IPv4 và subnet mask"
+    },
+    {
+      "id": "89035cb15fb34bc1b6c5b4e7cae3f82e:2:1",
+      "locator": {
+        "bounds": [
+          0.04208931658279354,
+          0.7458686522676001,
+          0.5568201497395833,
+          0.05465826458401146
+        ],
+        "bounds_coordinate_system": "normalized_bottom_left",
+        "frame": 1,
+        "image_height": 720,
+        "image_orientation": "exif_normalized",
+        "image_width": 1500,
+        "ocr_engine": "macOS_Vision",
+        "ocr_revision": 3,
+        "type": "ocr_image"
+      },
+      "text": "IPv4 có 32 bit. Prefix /26 dành 26 bit cho network."
+    }
+  ],
+  "passed": true,
+  "quality_observations": [
+    "First prompt returned a valid English reply under English preferences, but did not explicitly name the selected wrong option. Functional checks are not quality scores.",
+    "The later browser trial uses resolved draft_display and an explicit comparison instruction; that one dev answer identifies .127 as broadcast and .64 as network. Not a general benchmark."
+  ]
+}

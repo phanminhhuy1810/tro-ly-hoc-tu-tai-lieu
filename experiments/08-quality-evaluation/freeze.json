@@ -1,0 +1,15 @@
+{
+  "version": "three-subject-notes-v1",
+  "frozen_at": "2026-10-20T11:13:09.066251+00:00",
+  "split_hashes": {
+    "dev.json": "e995b36a9de2802328b7ffd8d93e27aef3c6f4dfb0c7ca68f0291dc6bdb04b21",
+    "final.json": "b9217a5a2ec433b3f449ad470ff473a13a092aede141562105234b0d81997d98"
+  },
+  "dev_cases": 6,
+  "final_cases": 6,
+  "requested_questions_per_case": 8,
+  "human_reviewed": false,
+  "source_scope": "Original agent notes and new examples; referenced general facts checked, no copied book passage or instructor material.",
+  "heldout_definition": "Final sources/labels fixed before dev outputs. No final output used for prompt/code selection. Not unseen by model training or dataset author.",
+  "review_requirement": "Agent/rule checks do not replace independent team review or 3-5 real users."
+}

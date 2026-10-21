@@ -1,0 +1,14 @@
+test_split_hashes_balance_and_no_cross_split_ids (test_protocol.FrozenDatasetTests.test_split_hashes_balance_and_no_cross_split_ids) ... ok
+test_tampered_source_cannot_be_run_as_frozen (test_protocol.FrozenDatasetTests.test_tampered_source_cannot_be_run_as_frozen) ... ok
+test_concept_labels_never_receive_a_computed_pass (test_protocol.OracleTests.test_concept_labels_never_receive_a_computed_pass) ... ok
+test_integral_uses_both_bounds_and_retains_fraction (test_protocol.OracleTests.test_integral_uses_both_bounds_and_retains_fraction) ... ok
+test_ordinary_subnet_formula_not_applied_to_31 (test_protocol.OracleTests.test_ordinary_subnet_formula_not_applied_to_31) ... ok
+test_wrong_fixture_gold_is_rejected (test_protocol.OracleTests.test_wrong_fixture_gold_is_rejected) ... ok
+test_observation_reuses_existing_session_after_harness_interruption (test_protocol.RoundtripTests.test_observation_reuses_existing_session_after_harness_interruption) ... ok
+test_session_ids_are_not_assumed_to_exist_on_domain_questions (test_protocol.RoundtripTests.test_session_ids_are_not_assumed_to_exist_on_domain_questions) ... ok
+test_successful_chapter_checkpoint_is_not_counted_as_a_published_lesson_or_practice (test_protocol.RoundtripTests.test_successful_chapter_checkpoint_is_not_counted_as_a_published_lesson_or_practice) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.003s
+
+OK

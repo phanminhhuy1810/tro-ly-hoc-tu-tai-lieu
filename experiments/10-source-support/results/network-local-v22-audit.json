@@ -1,0 +1,238 @@
+{
+  "purpose": "QA-only original-principle citation, numeric answer, fixed grading and scoped repair audit. Not independent academic acceptance.",
+  "at": "2026-10-20T23:45:06.919531+00:00",
+  "course_id": "c8825160ed2e4cc2b057b8e6710b20df",
+  "unit_id": "unit-5",
+  "inference_calls": 0,
+  "independent_human_reviewed": false,
+  "raw_trial_sha256": "352344c62e5e854f87e4361c19021ff9b7548cd23ce22e2286f9a1206af92ef6",
+  "checks": {
+    "approved_text_coverage_33_of_33": true,
+    "questions_started_after_complete_chapter": true,
+    "no_new_reading_of_chapter_on_resume": true,
+    "mcq_key_matches_program": true,
+    "cloze_value_matches_program": true,
+    "new_short_case_reference_values_correct": true,
+    "all_mindmap_nodes_have_source_refs": true,
+    "all_questions_cite_original_theory_not_only_exercise": true,
+    "all_sources_resolve_in_same_revision": true,
+    "cited_originals_contain_network_broadcast_and_host_rule": true,
+    "new_case_not_extracted_from_slide": true,
+    "program_derived_fixed_answers_grade_2_of_2": true,
+    "short_reference_self_review_not_ai_score": true,
+    "repair_preview_does_not_change_content": false,
+    "repair_preserves_key_choices_and_citations": true,
+    "repair_changes_only_mcq_explanation": true,
+    "old_attempt_snapshot_retained": true,
+    "source_unchanged_by_question_repair": true,
+    "manual_repair_no_coin_change": true,
+    "inline_help_pins_exact_theory_citations": true,
+    "raw_model_report_not_overwritten": true
+  },
+  "oracle": {
+    "given": "172.100.112.4/19",
+    "network": "172.100.96.0",
+    "broadcast": "172.100.127.255",
+    "host_bits": 13,
+    "usable_hosts": 8190,
+    "full_prefix_octets": 2,
+    "prefix_bits_in_next_octet": 3,
+    "new_case": "10.10.10.5/24",
+    "new_network": "10.10.10.0",
+    "new_broadcast": "10.10.10.255",
+    "new_usable_hosts": 254
+  },
+  "model_quality_pass": false,
+  "defects": [
+    {
+      "kind": "mcq_explanation",
+      "observed": "19 bits bao phủ 2 octet đầu và 1 bit của octet thứ 3",
+      "correct": "19 = 16 + 3; two full octets and three bits in the third octet.",
+      "not_caught_by_narrow_automatic_subnet_guard": true
+    },
+    {
+      "kind": "citation_precision",
+      "observed": "The new /24 example also cites exercise page33; theory pages14/15 support its derivation, but page33 is an unnecessary citation."
+    }
+  ],
+  "review_limits": [
+    "Theory support and numeric statements were checked by Codex plus program arithmetic, not an independent human.",
+    "One selected support page9 is not relevant to these questions and was not cited by them; lexical relevance is not entailment.",
+    "The original text transcript still omits the page24 image table."
+  ],
+  "source_scope": {
+    "version": "20261021-approved-chapter-support-v1",
+    "context_id": "b81d2c13738adc79fd97152f809aeb1aaa1be45499ca8a77e2e6fcc49fa45e1a",
+    "focus_source_refs": [
+      "e517e6ec87a64ed19f751e8de8df6aff:2:32"
+    ],
+    "support_source_refs": [
+      "e517e6ec87a64ed19f751e8de8df6aff:2:8",
+      "e517e6ec87a64ed19f751e8de8df6aff:2:13",
+      "e517e6ec87a64ed19f751e8de8df6aff:2:14",
+      "e517e6ec87a64ed19f751e8de8df6aff:2:26"
+    ],
+    "input_source_refs": [
+      "e517e6ec87a64ed19f751e8de8df6aff:2:8",
+      "e517e6ec87a64ed19f751e8de8df6aff:2:13",
+      "e517e6ec87a64ed19f751e8de8df6aff:2:14",
+      "e517e6ec87a64ed19f751e8de8df6aff:2:26",
+      "e517e6ec87a64ed19f751e8de8df6aff:2:32"
+    ],
+    "input_sha256": "86b5778e41e23445a57bc93580296ecb1c033f024156ea47fa305d8b57f558f4",
+    "query_sha256": "1720e889930647081c143408b92030d7c408f2d920ccefe5ac8ff167ee4163b4",
+    "added_support_refs": [
+      "e517e6ec87a64ed19f751e8de8df6aff:2:14",
+      "e517e6ec87a64ed19f751e8de8df6aff:2:26",
+      "e517e6ec87a64ed19f751e8de8df6aff:2:13",
+      "e517e6ec87a64ed19f751e8de8df6aff:2:8"
+    ],
+    "omitted": [],
+    "relevance_is_not_entailment": true,
+    "ai_calls": 0,
+    "sha256": "cedb2acb0cb2b026d847b084db43a009db783277a3568eee4cd9b1155bb0be9f"
+  },
+  "cited_fragments": [
+    {
+      "id": "e517e6ec87a64ed19f751e8de8df6aff:2:8",
+      "text": "[Trang 9] ĐịachỉIPv4 qCấppháttĩnh §Cấuhìnhbằngtay §SửdụngchoServer hoặcmạngnhỏ qCấpphátđộng §Thôngqua cácgiaothức §Sửdung khisốlượngmáytínhtrongmạngnhiều Khoa Công nghệ thông tin -Đại học Khoa học tự nhiên TP Hồ Chí Minh 9",
+      "locator": {
+        "type": "line",
+        "line": 9,
+        "character_start": 0
+      }
+    },
+    {
+      "id": "e517e6ec87a64ed19f751e8de8df6aff:2:13",
+      "text": "[Trang 14] ĐịachỉIP Classfull qĐịachỉđườngmạng(Net Addr) §Cácbit thuộcNetID: giữnguyên §Cácbit thuộcHost ID: xoávề0 qĐịachỉbroadcast §Cácbit thuộcNetID: giữnguyên §Cácbit thuộcHost ID: bậtlên1 14Khoa Công nghệ thông tin -Đại học Khoa học tự nhiên TP Hồ Chí Minh",
+      "locator": {
+        "type": "line",
+        "line": 14,
+        "character_start": 0
+      }
+    },
+    {
+      "id": "e517e6ec87a64ed19f751e8de8df6aff:2:14",
+      "text": "[Trang 15] ĐịachỉIP Classfull qHai host cócùngđịachỉđườngmạngthìthuộc cùng1 đườngmạng qSốđịachỉhost hợplệtrong1 đườngmạng §2m-2  •m làsốbit trongphầnHostID 192.168.1.2 và192.168.1.200 ècùng1 đườngmạng 192.168.1.2 và192.168.2.1 èkhácđườngmạng 15Khoa Công nghệ thông tin -Đại học Khoa học tự nhiên TP Hồ Chí Minh",
+      "locator": {
+        "type": "line",
+        "line": 15,
+        "character_start": 0
+      }
+    },
+    {
+      "id": "e517e6ec87a64ed19f751e8de8df6aff:2:26",
+      "text": "[Trang 27] Chia subnet qQui tắc: §Mượncácbit đầutrongHostIDlàmNetID §Sốsubnet = 2n(n: sốbit vaymượnphầnHostID) qLênkếhoạch: §Sốsubnet cầnchia §Sốnode trongmỗisubnet 27Khoa Công nghệ thông tin -Đại học Khoa học tự nhiên TP Hồ Chí Minh",
+      "locator": {
+        "type": "line",
+        "line": 27,
+        "character_start": 0
+      }
+    },
+    {
+      "id": "e517e6ec87a64ed19f751e8de8df6aff:2:32",
+      "text": "[Trang 33] Bài tập Cho 172.100.112.4/19. Hãychobiết: 1.Địachỉtrênthuộcvềđườngmạngnào? 2.SốIP hợplệcóthểdùngtrongđườngmạngđó. Vàhãychobiết gồmnhữngđịachỉnào? 3.Địachỉbroadcast củađườngmạngđó 4.Vớiđịachỉđườngmạngtrên, hãychiathành5 subnet nhưsau: 2  subnet có1000 host, 2 subnet có500 host, 1 subnet có100 host 5.Vớiđịachỉđườngmạngtrên, hãychiathành17 subnet nhưsau:  4 subnet có1000 host, 6 subnet có500 host, 7 subnet có100  host 33Khoa Công nghệ thông tin -Đại học Khoa học tự nhiên TP Hồ Chí Minh",
+      "locator": {
+        "type": "line",
+        "line": 33,
+        "character_start": 0
+      }
+    }
+  ],
+  "practice_session_id": "a6dddbd61f7548d5bc0af742627f1cf7",
+  "grades": [
+    {
+      "kind": "mcq",
+      "result": {
+        "correct": true,
+        "reference": "Net Addr: 172.100.96.0; Số host hợp lệ: 8190",
+        "explanation": "Với prefix /19, 19 bit đầu là Network ID. Ranh giới subnet nằm ở octet thứ 3 (vì 19 bits bao phủ 2 octet đầu và 1 bit của octet thứ 3). Net Addr là 172.100.96.0. Số host hợp lệ được tính bằng công thức 2^m - 2 (với m là số bit HostID), tại đây m=13, nên có 8190 host.",
+        "rubric": [],
+        "source_refs": [
+          "e517e6ec87a64ed19f751e8de8df6aff:2:13",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:14",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:32"
+        ],
+        "grading": "fixed"
+      }
+    },
+    {
+      "kind": "cloze",
+      "result": {
+        "correct": true,
+        "reference": "8190",
+        "explanation": "Với prefix /19, phần HostID có 13 bits (32 - 19 = 13). Tổng số địa chỉ trong mạng là 2^13 = 8192. Theo quy tắc, Net Addr và Broadcast không được dùng cho host, nên số host hợp lệ là 8192 - 2 = 8190.",
+        "rubric": [],
+        "source_refs": [
+          "e517e6ec87a64ed19f751e8de8df6aff:2:13",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:14",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:32"
+        ],
+        "grading": "fixed"
+      }
+    },
+    {
+      "kind": "short_answer",
+      "result": {
+        "correct": null,
+        "reference": "Net Addr: 10.10.10.0; Broadcast: 10.10.10.255; Số host hợp lệ: 254.",
+        "explanation": "Với prefix /24, 24 bit đầu là Network ID và 8 bit cuối là Host ID. Net Addr được xác định bằng cách giữ nguyên NetID và đưa các bit HostID về 0 (10.10.10.0). Broadcast được xác định bằng cách giữ nguyên NetID và bật tất cả các bit HostID lên 1 (10.10.10.255). Số host hợp lệ được tính bằng công thức 2^m - 2 (với m=8), tức là 256 - 2 = 254.",
+        "rubric": [
+          "Xác định đúng Net Addr là 10.10.10.0",
+          "Xác định đúng Broadcast là 10.10.10.255",
+          "Tính toán chính xác 254 host hợp lệ"
+        ],
+        "source_refs": [
+          "e517e6ec87a64ed19f751e8de8df6aff:2:13",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:14",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:32"
+        ],
+        "grading": "self_review"
+      }
+    }
+  ],
+  "practice_result": {
+    "score": 2,
+    "fixed_total": 2,
+    "self_review_count": 1,
+    "course_revision": 2,
+    "session_id": "a6dddbd61f7548d5bc0af742627f1cf7",
+    "assisted_count": 0,
+    "assessment": "self_study_not_proctored",
+    "rewards": [
+      {
+        "amount": 1,
+        "requested": 1,
+        "capped": false,
+        "replayed": false,
+        "event_key": "practice:2026-10-20:c8825160ed2e4cc2b057b8e6710b20df:7ecab2f70e4b28fcc88d606de78b1cc5ea42c96d17788a8f8306c72de6e79751",
+        "policy_version": "dev-proposal-20261015-v2"
+      },
+      {
+        "amount": 1,
+        "requested": 1,
+        "capped": false,
+        "replayed": false,
+        "event_key": "mission:practice:2026-10-20",
+        "policy_version": "dev-proposal-20261015-v2"
+      },
+      {
+        "amount": 2,
+        "requested": 2,
+        "capped": false,
+        "replayed": false,
+        "event_key": "achievement:first_session",
+        "policy_version": "dev-proposal-20261015-v2"
+      }
+    ]
+  },
+  "flag": {
+    "question_revision_id": "c8825160ed2e4cc2b057b8e6710b20df:unit-5:05b4d4561507006e60d725f9",
+    "state": "needs_review",
+    "old_attempts_preserved": true
+  },
+  "repair_proposal_id": "b8bc058770c846c2a04dee36509844d8",
+  "repaired_revision": 3,
+  "inline_help_thread_id": "fd96169740de4f7c8c789d691f1c3482",
+  "all_workflow_checks_passed": false
+}

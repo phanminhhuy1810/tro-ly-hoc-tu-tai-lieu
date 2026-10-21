@@ -1,0 +1,78 @@
+{
+  "purpose": "Source-proved display-label correction on isolated Qwen QA course, not a second AI generation or Huy user trial",
+  "passed": true,
+  "ai_calls": 0,
+  "errors": [],
+  "course_id": "b32afa527a904b83b6bce60744368a69",
+  "base_revision": 2,
+  "original_question": {
+    "kind": "ordering",
+    "prompt": "Sắp xếp các bước tính subnet /26 theo đúng thứ tự quy trình từ nguồn:",
+    "options": [
+      "5. Loại hai biên để lấy dải host dùng được.",
+      "1. Đọc prefix và tính số bit host.",
+      "3. Xác định block chứa octet cuối.",
+      "4. Lấy đầu block làm network và cuối block làm broadcast.",
+      "2. Tính kích thước block."
+    ],
+    "left": [],
+    "answer": [
+      1,
+      4,
+      2,
+      3,
+      0
+    ],
+    "explanation": "Quy trình gồm 5 bước: đọc prefix, tính kích thước block, xác định block chứa octet cuối, lấy đầu/cuối block làm network/broadcast, và loại biên để tìm dải host.",
+    "source_refs": [
+      "769a593394dd41e5825f5ba9546446c3:2:1",
+      "769a593394dd41e5825f5ba9546446c3:2:2",
+      "769a593394dd41e5825f5ba9546446c3:2:3",
+      "769a593394dd41e5825f5ba9546446c3:2:4",
+      "769a593394dd41e5825f5ba9546446c3:2:5"
+    ],
+    "rubric": [],
+    "difficulty": null,
+    "difficulty_basis": null
+  },
+  "replacement_question": {
+    "kind": "ordering",
+    "prompt": "Sắp xếp các bước tính subnet /26 theo đúng thứ tự quy trình từ nguồn:",
+    "options": [
+      "Loại hai biên để lấy dải host dùng được.",
+      "Đọc prefix và tính số bit host.",
+      "Xác định block chứa octet cuối.",
+      "Lấy đầu block làm network và cuối block làm broadcast.",
+      "Tính kích thước block."
+    ],
+    "left": [],
+    "answer": [
+      1,
+      4,
+      2,
+      3,
+      0
+    ],
+    "explanation": "Quy trình gồm 5 bước: đọc prefix, tính kích thước block, xác định block chứa octet cuối, lấy đầu/cuối block làm network/broadcast, và loại biên để tìm dải host.",
+    "source_refs": [
+      "769a593394dd41e5825f5ba9546446c3:2:1",
+      "769a593394dd41e5825f5ba9546446c3:2:2",
+      "769a593394dd41e5825f5ba9546446c3:2:3",
+      "769a593394dd41e5825f5ba9546446c3:2:4",
+      "769a593394dd41e5825f5ba9546446c3:2:5"
+    ],
+    "rubric": [],
+    "difficulty": null,
+    "difficulty_basis": null
+  },
+  "step_labels_removed": 5,
+  "old_attempt_id": "86d6a643e27249f5aa82ba9056e4aded",
+  "proposal_id": "be0ffa7ed92146469ea13b400b852f62",
+  "applied_revision": 3,
+  "unrelated_content_unchanged": true,
+  "old_attempt_snapshot_unchanged": true,
+  "old_attempt_score": 4,
+  "repeat_apply_status": 409,
+  "ai_usage_added": 0,
+  "wallet_unchanged": true
+}

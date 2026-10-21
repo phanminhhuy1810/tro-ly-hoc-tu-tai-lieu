@@ -1,0 +1,2661 @@
+{
+  "purpose": "Single local source-vision trial of the actual PDF page24 raster after native OCR missed zero cells. Not a general OCR accuracy score.",
+  "started_at": "2026-10-20T23:26:14.238333+00:00",
+  "raster_sha256": "75df86f4a75917211f8291f2d1f5e8e05628fb2c33c687152a882f44b42477ea",
+  "native_text": "Địa chỉ IP Classless\ncdio™\nOIGia trị các subnetmask:\n128 64\n32\n16\n2\n1\n1\n1\n=\n=\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n128\n192\n224\n240\n248\n252\n254\n255\nKhoa Công nghệ thông tin - Đại học Khoa học tự nhiên TP Hồ Chí Minh\n24\nI₽.HO CHIMINH",
+  "native_engine": "macOS_Vision",
+  "model": "local:gemma4:12b-mlx",
+  "max_inference_calls": 1,
+  "max_seconds": 210,
+  "external_inference": 0,
+  "payments": 0,
+  "applied": false,
+  "human_reviewed": false,
+  "qa_owner_id": "8a161d156f324e4c9b40861959316129",
+  "source_before": {
+    "id": "477ead25779840dfb093f6009bf4ffdb",
+    "metadata": {
+      "name": "QA PDF page24.png",
+      "sha256": "75df86f4a75917211f8291f2d1f5e8e05628fb2c33c687152a882f44b42477ea",
+      "bytes": 258734,
+      "warnings": [
+        "OCR nhận dạng chữ, chưa chứng minh công thức/bảng/sơ đồ đúng. Đối chiếu ảnh và sửa bản trích trước khi tạo."
+      ],
+      "subject_suggestion": ""
+    },
+    "status": "needs_review",
+    "revision": 1,
+    "reviewed": false,
+    "fragments": [
+      {
+        "text": "Địa chỉ IP Classless",
+        "locator": {
+          "type": "ocr_image",
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "frame": 1,
+          "bounds": [
+            0.03298043360349204,
+            0.863093198547563,
+            0.4877882554796007,
+            0.07654197410300922
+          ],
+          "image_height": 1350,
+          "image_width": 1800,
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "recognizer_score": 1,
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:0",
+        "original_text": "Địa chỉ IP Classless"
+      },
+      {
+        "text": "cdio™",
+        "locator": {
+          "frame": 1,
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "image_width": 1800,
+          "type": "ocr_image",
+          "image_height": 1350,
+          "bounds": [
+            0.8822674420367259,
+            0.8817829454549957,
+            0.10029069688585068,
+            0.04651162889268656
+          ],
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "recognizer_score": 1,
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:1",
+        "original_text": "cdio™"
+      },
+      {
+        "recognizer_score": 0.5,
+        "locator": {
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "image_width": 1800,
+          "image_height": 1350,
+          "bounds": [
+            0.03749999949074079,
+            0.7333333334182099,
+            0.4416666666666667,
+            0.061111111111111116
+          ],
+          "frame": 1,
+          "type": "ocr_image",
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "text": "OIGia trị các subnetmask:",
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:2",
+        "original_text": "OIGia trị các subnetmask:"
+      },
+      {
+        "recognizer_score": 0.5,
+        "locator": {
+          "type": "ocr_image",
+          "image_height": 1350,
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "bounds": [
+            0.1771946057125303,
+            0.677491019251174,
+            0.08456427680121528,
+            0.026800908689145753
+          ],
+          "frame": 1,
+          "image_width": 1800,
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "text": "128 64",
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:3",
+        "original_text": "128 64"
+      },
+      {
+        "recognizer_score": 1,
+        "text": "32",
+        "locator": {
+          "frame": 1,
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "image_width": 1800,
+          "bounds": [
+            0.2921511630876644,
+            0.6782945739902462,
+            0.027616278330485078,
+            0.02519379792390042
+          ],
+          "type": "ocr_image",
+          "image_height": 1350,
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:4",
+        "original_text": "32"
+      },
+      {
+        "locator": {
+          "image_width": 1800,
+          "type": "ocr_image",
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "bounds": [
+            0.3488372096038345,
+            0.6782945739849975,
+            0.027616278330485022,
+            0.025193797923900307
+          ],
+          "image_height": 1350,
+          "frame": 1,
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "recognizer_score": 1,
+        "text": "16",
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:5",
+        "original_text": "16"
+      },
+      {
+        "recognizer_score": 1,
+        "text": "2",
+        "locator": {
+          "bounds": [
+            0.5305232560000279,
+            0.6802325583034277,
+            0.013081394831339521,
+            0.021317829555935308
+          ],
+          "frame": 1,
+          "image_height": 1350,
+          "type": "ocr_image",
+          "image_width": 1800,
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:6",
+        "original_text": "2"
+      },
+      {
+        "text": "1",
+        "recognizer_score": 1,
+        "locator": {
+          "type": "ocr_image",
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "image_width": 1800,
+          "image_height": 1350,
+          "bounds": [
+            0.19040697691814804,
+            0.5213178295857275,
+            0.013081394831339521,
+            0.021317829555935308
+          ],
+          "frame": 1,
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:7",
+        "original_text": "1"
+      },
+      {
+        "locator": {
+          "image_width": 1800,
+          "type": "ocr_image",
+          "bounds": [
+            0.1904069765482979,
+            0.4670542636942545,
+            0.011627907223171668,
+            0.021317829555935308
+          ],
+          "image_height": 1350,
+          "frame": 1,
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "text": "1",
+        "recognizer_score": 1,
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:8",
+        "original_text": "1"
+      },
+      {
+        "locator": {
+          "image_height": 1350,
+          "type": "ocr_image",
+          "image_width": 1800,
+          "bounds": [
+            0.19040697656283279,
+            0.41085271387085065,
+            0.01162790722317164,
+            0.023255813033492556
+          ],
+          "frame": 1,
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "recognizer_score": 1,
+        "text": "1",
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:9",
+        "original_text": "1"
+      },
+      {
+        "text": "=",
+        "recognizer_score": 1,
+        "locator": {
+          "bounds": [
+            0.6468023256092312,
+            0.5213178297436483,
+            0.014534883499145446,
+            0.019379844665527335
+          ],
+          "type": "ocr_image",
+          "image_height": 1350,
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "frame": 1,
+          "image_width": 1800,
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:10",
+        "original_text": "="
+      },
+      {
+        "locator": {
+          "type": "ocr_image",
+          "frame": 1,
+          "image_height": 1350,
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "bounds": [
+            0.646802325471757,
+            0.4670542638214138,
+            0.01598837216695148,
+            0.019379844665527335
+          ],
+          "image_width": 1800,
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "recognizer_score": 0.30000001192092896,
+        "text": "=",
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:11",
+        "original_text": "="
+      },
+      {
+        "recognizer_score": 1,
+        "locator": {
+          "type": "ocr_image",
+          "image_height": 1350,
+          "frame": 1,
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "bounds": [
+            0.19040697707811696,
+            0.30232558214604444,
+            0.011627906163533541,
+            0.023255813033492556
+          ],
+          "image_width": 1800,
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "text": "1",
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:12",
+        "original_text": "1"
+      },
+      {
+        "locator": {
+          "bounds": [
+            0.19040697656283279,
+            0.2480620161964321,
+            0.01162790722317164,
+            0.023255813033492556
+          ],
+          "image_height": 1350,
+          "type": "ocr_image",
+          "frame": 1,
+          "image_width": 1800,
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "recognizer_score": 1,
+        "text": "1",
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:13",
+        "original_text": "1"
+      },
+      {
+        "recognizer_score": 1,
+        "text": "1",
+        "locator": {
+          "bounds": [
+            0.1904069765482979,
+            0.19186046577007543,
+            0.011627907223171668,
+            0.023255813033492556
+          ],
+          "image_width": 1800,
+          "frame": 1,
+          "image_height": 1350,
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "type": "ocr_image",
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:14",
+        "original_text": "1"
+      },
+      {
+        "recognizer_score": 1,
+        "locator": {
+          "image_height": 1350,
+          "image_width": 1800,
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "bounds": [
+            0.19040697655867994,
+            0.13759689985091694,
+            0.011627907223171668,
+            0.023255813033492445
+          ],
+          "type": "ocr_image",
+          "frame": 1,
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "text": "1",
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:15",
+        "original_text": "1"
+      },
+      {
+        "text": "1",
+        "locator": {
+          "bounds": [
+            0.2427325583256093,
+            0.4670542637297843,
+            0.013081394831339521,
+            0.021317829555935308
+          ],
+          "type": "ocr_image",
+          "frame": 1,
+          "image_height": 1350,
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "image_width": 1800,
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "recognizer_score": 1,
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:16",
+        "original_text": "1"
+      },
+      {
+        "recognizer_score": 1,
+        "locator": {
+          "bounds": [
+            0.2427325583256093,
+            0.41085271387085065,
+            0.013081394831339521,
+            0.023255813033492556
+          ],
+          "image_width": 1800,
+          "frame": 1,
+          "image_height": 1350,
+          "type": "ocr_image",
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "text": "1",
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:17",
+        "original_text": "1"
+      },
+      {
+        "locator": {
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "bounds": [
+            0.2427325583256093,
+            0.3565891479793779,
+            0.013081394831339521,
+            0.023255813033492445
+          ],
+          "image_width": 1800,
+          "type": "ocr_image",
+          "image_height": 1350,
+          "frame": 1,
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "text": "1",
+        "recognizer_score": 1,
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:18",
+        "original_text": "1"
+      },
+      {
+        "locator": {
+          "bounds": [
+            0.2427325579540288,
+            0.30232558149833355,
+            0.011627907223171668,
+            0.02131782955593542
+          ],
+          "type": "ocr_image",
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "image_width": 1800,
+          "frame": 1,
+          "image_height": 1350,
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "recognizer_score": 1,
+        "text": "1",
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:19",
+        "original_text": "1"
+      },
+      {
+        "recognizer_score": 1,
+        "text": "1",
+        "locator": {
+          "image_width": 1800,
+          "frame": 1,
+          "bounds": [
+            0.24273255850980302,
+            0.24806201625457158,
+            0.011627906163533541,
+            0.023255813033492445
+          ],
+          "type": "ocr_image",
+          "image_height": 1350,
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:20",
+        "original_text": "1"
+      },
+      {
+        "locator": {
+          "image_height": 1350,
+          "frame": 1,
+          "type": "ocr_image",
+          "image_width": 1800,
+          "bounds": [
+            0.2427325583256093,
+            0.1918604657423899,
+            0.013081394831339521,
+            0.023255813033492556
+          ],
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "text": "1",
+        "recognizer_score": 1,
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:21",
+        "original_text": "1"
+      },
+      {
+        "recognizer_score": 1,
+        "text": "1",
+        "locator": {
+          "image_height": 1350,
+          "image_width": 1800,
+          "bounds": [
+            0.2427325583256093,
+            0.13759689985091694,
+            0.013081394831339521,
+            0.023255813033492445
+          ],
+          "frame": 1,
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "type": "ocr_image",
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:22",
+        "original_text": "1"
+      },
+      {
+        "recognizer_score": 1,
+        "text": "1",
+        "locator": {
+          "frame": 1,
+          "image_height": 1350,
+          "bounds": [
+            0.2979651163415125,
+            0.410852713832091,
+            0.014534883499145557,
+            0.023255813033492445
+          ],
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "image_width": 1800,
+          "type": "ocr_image",
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:23",
+        "original_text": "1"
+      },
+      {
+        "recognizer_score": 1,
+        "text": "1",
+        "locator": {
+          "frame": 1,
+          "image_width": 1800,
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "image_height": 1350,
+          "type": "ocr_image",
+          "bounds": [
+            0.3008720928273677,
+            0.35658914794061813,
+            0.01162790722317164,
+            0.023255813033492445
+          ],
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:24",
+        "original_text": "1"
+      },
+      {
+        "recognizer_score": 1,
+        "text": "1",
+        "locator": {
+          "type": "ocr_image",
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "image_height": 1350,
+          "bounds": [
+            0.2979651163415125,
+            0.30232558204914517,
+            0.014534883499145557,
+            0.023255813033492445
+          ],
+          "image_width": 1800,
+          "frame": 1,
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:25",
+        "original_text": "1"
+      },
+      {
+        "locator": {
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "bounds": [
+            0.2994186048493496,
+            0.24806201615767232,
+            0.013081394831339521,
+            0.023255813033492445
+          ],
+          "image_width": 1800,
+          "image_height": 1350,
+          "frame": 1,
+          "type": "ocr_image",
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "text": "1",
+        "recognizer_score": 1,
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:26",
+        "original_text": "1"
+      },
+      {
+        "recognizer_score": 1,
+        "locator": {
+          "image_height": 1350,
+          "frame": 1,
+          "type": "ocr_image",
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "bounds": [
+            0.2994186048493496,
+            0.19186046577007543,
+            0.013081394831339521,
+            0.023255813033492556
+          ],
+          "image_width": 1800,
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "text": "1",
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:27",
+        "original_text": "1"
+      },
+      {
+        "text": "1",
+        "recognizer_score": 1,
+        "locator": {
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "bounds": [
+            0.3008720928273677,
+            0.13759689987860246,
+            0.01162790722317164,
+            0.023255813033492556
+          ],
+          "image_height": 1350,
+          "image_width": 1800,
+          "type": "ocr_image",
+          "frame": 1,
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:28",
+        "original_text": "1"
+      },
+      {
+        "recognizer_score": 1,
+        "locator": {
+          "image_width": 1800,
+          "type": "ocr_image",
+          "frame": 1,
+          "bounds": [
+            0.3590116276965537,
+            0.3565891479793779,
+            0.01162790722317164,
+            0.023255813033492445
+          ],
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "image_height": 1350,
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "text": "1",
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:29",
+        "original_text": "1"
+      },
+      {
+        "text": "1",
+        "recognizer_score": 1,
+        "locator": {
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "frame": 1,
+          "image_width": 1800,
+          "image_height": 1350,
+          "type": "ocr_image",
+          "bounds": [
+            0.3575581397209582,
+            0.30038759741401866,
+            0.013081394831339521,
+            0.02519379792390053
+          ],
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:30",
+        "original_text": "1"
+      },
+      {
+        "locator": {
+          "type": "ocr_image",
+          "frame": 1,
+          "bounds": [
+            0.3575581397209582,
+            0.2461240315225458,
+            0.013081394831339521,
+            0.02519379792390053
+          ],
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "image_height": 1350,
+          "image_width": 1800,
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "recognizer_score": 1,
+        "text": "1",
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:31",
+        "original_text": "1"
+      },
+      {
+        "recognizer_score": 1,
+        "text": "1",
+        "locator": {
+          "bounds": [
+            0.3575581397209582,
+            0.1918604657423899,
+            0.013081394831339521,
+            0.023255813033492556
+          ],
+          "image_height": 1350,
+          "frame": 1,
+          "type": "ocr_image",
+          "image_width": 1800,
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:32",
+        "original_text": "1"
+      },
+      {
+        "text": "1",
+        "locator": {
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "image_width": 1800,
+          "image_height": 1350,
+          "bounds": [
+            0.3590116277110885,
+            0.13759689987860246,
+            0.011627907223171696,
+            0.023255813033492556
+          ],
+          "frame": 1,
+          "type": "ocr_image",
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "recognizer_score": 1,
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:33",
+        "original_text": "1"
+      },
+      {
+        "recognizer_score": 1,
+        "text": "1",
+        "locator": {
+          "type": "ocr_image",
+          "image_height": 1350,
+          "bounds": [
+            0.4156976742372514,
+            0.30038759741401866,
+            0.01162790722317164,
+            0.02519379792390053
+          ],
+          "frame": 1,
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "image_width": 1800,
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:34",
+        "original_text": "1"
+      },
+      {
+        "recognizer_score": 1,
+        "text": "1",
+        "locator": {
+          "type": "ocr_image",
+          "bounds": [
+            0.4156976742372514,
+            0.2480620161964321,
+            0.01162790722317164,
+            0.023255813033492556
+          ],
+          "frame": 1,
+          "image_height": 1350,
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "image_width": 1800,
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:35",
+        "original_text": "1"
+      },
+      {
+        "text": "1",
+        "recognizer_score": 1,
+        "locator": {
+          "image_height": 1350,
+          "image_width": 1800,
+          "frame": 1,
+          "bounds": [
+            0.41569767422271653,
+            0.19186046577007543,
+            0.01162790722317164,
+            0.023255813033492556
+          ],
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "type": "ocr_image",
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:36",
+        "original_text": "1"
+      },
+      {
+        "recognizer_score": 1,
+        "text": "1",
+        "locator": {
+          "frame": 1,
+          "type": "ocr_image",
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "image_width": 1800,
+          "bounds": [
+            0.41569767422271653,
+            0.13759689987860246,
+            0.01162790722317164,
+            0.023255813033492556
+          ],
+          "image_height": 1350,
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:37",
+        "original_text": "1"
+      },
+      {
+        "text": "1",
+        "locator": {
+          "bounds": [
+            0.4738372091209723,
+            0.2480620161964321,
+            0.011627907223171696,
+            0.023255813033492556
+          ],
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "image_width": 1800,
+          "frame": 1,
+          "type": "ocr_image",
+          "image_height": 1350,
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "recognizer_score": 1,
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:38",
+        "original_text": "1"
+      },
+      {
+        "locator": {
+          "type": "ocr_image",
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "frame": 1,
+          "image_width": 1800,
+          "bounds": [
+            0.47383720910643734,
+            0.19186046577007543,
+            0.011627907223171696,
+            0.023255813033492556
+          ],
+          "image_height": 1350,
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "recognizer_score": 1,
+        "text": "1",
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:39",
+        "original_text": "1"
+      },
+      {
+        "recognizer_score": 1,
+        "text": "1",
+        "locator": {
+          "type": "ocr_image",
+          "image_height": 1350,
+          "image_width": 1800,
+          "frame": 1,
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "bounds": [
+            0.47383720910643734,
+            0.13759689987860246,
+            0.011627907223171696,
+            0.023255813033492556
+          ],
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:40",
+        "original_text": "1"
+      },
+      {
+        "locator": {
+          "frame": 1,
+          "type": "ocr_image",
+          "image_height": 1350,
+          "bounds": [
+            0.5319767441501272,
+            0.19186046577007543,
+            0.010174418555365716,
+            0.023255813033492556
+          ],
+          "image_width": 1800,
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "recognizer_score": 1,
+        "text": "1",
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:41",
+        "original_text": "1"
+      },
+      {
+        "recognizer_score": 1,
+        "text": "1",
+        "locator": {
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "image_height": 1350,
+          "bounds": [
+            0.5319767441501272,
+            0.13759689987860246,
+            0.010174418555365716,
+            0.023255813033492556
+          ],
+          "frame": 1,
+          "image_width": 1800,
+          "type": "ocr_image",
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:42",
+        "original_text": "1"
+      },
+      {
+        "text": "1",
+        "recognizer_score": 1,
+        "locator": {
+          "type": "ocr_image",
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "image_width": 1800,
+          "image_height": 1350,
+          "frame": 1,
+          "bounds": [
+            0.5901162790338481,
+            0.13759689987860246,
+            0.010174418555365605,
+            0.023255813033492556
+          ],
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:43",
+        "original_text": "1"
+      },
+      {
+        "text": "128",
+        "locator": {
+          "frame": 1,
+          "type": "ocr_image",
+          "image_height": 1350,
+          "image_width": 1800,
+          "bounds": [
+            0.6889534882531613,
+            0.5232558140757269,
+            0.04215116288926868,
+            0.027131782814308503
+          ],
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "recognizer_score": 1,
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:44",
+        "original_text": "128"
+      },
+      {
+        "recognizer_score": 1,
+        "text": "192",
+        "locator": {
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "image_width": 1800,
+          "type": "ocr_image",
+          "bounds": [
+            0.6904069766101136,
+            0.4651162793615796,
+            0.04215116288926868,
+            0.02713178281430839
+          ],
+          "frame": 1,
+          "image_height": 1350,
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:45",
+        "original_text": "192"
+      },
+      {
+        "locator": {
+          "image_width": 1800,
+          "frame": 1,
+          "image_height": 1350,
+          "type": "ocr_image",
+          "bounds": [
+            0.690406976622226,
+            0.4108527134915382,
+            0.04215116288926868,
+            0.02519379792390042
+          ],
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "recognizer_score": 1,
+        "text": "224",
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:46",
+        "original_text": "224"
+      },
+      {
+        "locator": {
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "type": "ocr_image",
+          "image_height": 1350,
+          "frame": 1,
+          "image_width": 1800,
+          "bounds": [
+            0.6904069767700827,
+            0.3546511631020033,
+            0.04069767422146264,
+            0.02519379792390042
+          ],
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "recognizer_score": 1,
+        "text": "240",
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:47",
+        "original_text": "240"
+      },
+      {
+        "recognizer_score": 1,
+        "text": "248",
+        "locator": {
+          "image_height": 1350,
+          "frame": 1,
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "type": "ocr_image",
+          "image_width": 1800,
+          "bounds": [
+            0.690406976622226,
+            0.2984496125277969,
+            0.04215116288926868,
+            0.027131782814308503
+          ],
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:48",
+        "original_text": "248"
+      },
+      {
+        "text": "252",
+        "locator": {
+          "type": "ocr_image",
+          "bounds": [
+            0.6904069766252543,
+            0.24612403112999048,
+            0.04215116288926868,
+            0.027131782814308503
+          ],
+          "frame": 1,
+          "image_height": 1350,
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "image_width": 1800,
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "recognizer_score": 1,
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:49",
+        "original_text": "252"
+      },
+      {
+        "text": "254",
+        "locator": {
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "image_width": 1800,
+          "bounds": [
+            0.6904069768838541,
+            0.18798449646106274,
+            0.04215116288926868,
+            0.027131782814308503
+          ],
+          "image_height": 1350,
+          "frame": 1,
+          "type": "ocr_image",
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "recognizer_score": 1,
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:50",
+        "original_text": "254"
+      },
+      {
+        "recognizer_score": 0.30000001192092896,
+        "text": "255",
+        "locator": {
+          "image_height": 1350,
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "bounds": [
+            0.690406976622226,
+            0.1337209305458018,
+            0.04215116288926868,
+            0.02519379792390042
+          ],
+          "image_width": 1800,
+          "type": "ocr_image",
+          "frame": 1,
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:51",
+        "original_text": "255"
+      },
+      {
+        "text": "Khoa Công nghệ thông tin - Đại học Khoa học tự nhiên TP Hồ Chí Minh",
+        "locator": {
+          "image_width": 1800,
+          "frame": 1,
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "type": "ocr_image",
+          "image_height": 1350,
+          "bounds": [
+            0.22383721081466193,
+            0.028888888892788955,
+            0.5261627875434028,
+            0.02537467673972804
+          ],
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "recognizer_score": 1,
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:52",
+        "original_text": "Khoa Công nghệ thông tin - Đại học Khoa học tự nhiên TP Hồ Chí Minh"
+      },
+      {
+        "locator": {
+          "type": "ocr_image",
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "image_height": 1350,
+          "image_width": 1800,
+          "bounds": [
+            0.9593023258829042,
+            0.03294573677569501,
+            0.027616278330485078,
+            0.02519379792390053
+          ],
+          "frame": 1,
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "recognizer_score": 1,
+        "text": "24",
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:53",
+        "original_text": "24"
+      },
+      {
+        "locator": {
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "bounds": [
+            0.02449605252165563,
+            0.006706558619097969,
+            0.05996328989664715,
+            0.01288264521846072
+          ],
+          "image_height": 1350,
+          "frame": 1,
+          "image_width": 1800,
+          "type": "ocr_image",
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "recognizer_score": 0.30000001192092896,
+        "text": "I₽.HO CHIMINH",
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:54",
+        "original_text": "I₽.HO CHIMINH"
+      }
+    ]
+  },
+  "wallet_before": {
+    "balance": 20,
+    "held": 0,
+    "available": 20,
+    "policy_version": "dev-proposal-20261015-v2",
+    "policy_proposed": true,
+    "cash_payments": false,
+    "enforcement_enabled": true
+  },
+  "quote_amount": 2,
+  "job_id": "19f5f20ad888423ea77166f7d8b8b45d",
+  "job": {
+    "id": "19f5f20ad888423ea77166f7d8b8b45d",
+    "task": "source_vision",
+    "context": {
+      "expected_revision": 1,
+      "source_id": "477ead25779840dfb093f6009bf4ffdb"
+    },
+    "status": "succeeded",
+    "attempts": 1,
+    "provider": {
+      "provider": "ollama_local",
+      "model": "gemma4:12b-mlx",
+      "reference_codec": "scoped-reference-aliases-v1",
+      "model_choice_id": "local:gemma4:12b-mlx",
+      "selection_revision": 1,
+      "prompt_version": "20261015-vision-transcription-v1",
+      "schema_version": 13
+    },
+    "result": {
+      "source_proposal_id": "b11b1f5f9c574b5b9972354fe4d5530c"
+    },
+    "partial": {},
+    "feedback_deferred": false,
+    "error": null,
+    "progress": {
+      "phase": "succeeded",
+      "requests": [
+        {
+          "index": 1,
+          "schema": "VisionText",
+          "phase": "received",
+          "streaming": false,
+          "started_at": "2026-10-20T23:26:18.247821+00:00",
+          "first_chunk_ms": null,
+          "first_text_ms": null,
+          "elapsed_ms": 18816.225,
+          "chunks": 0,
+          "characters": 0,
+          "usage": {}
+        }
+      ],
+      "preview": null,
+      "planned_stages": null,
+      "saved_stages": 0,
+      "reused_stages": 0,
+      "started_at": "2026-10-20T23:26:18.194666+00:00",
+      "completed_at": "2026-10-20T23:26:37.070744+00:00",
+      "elapsed_ms": 18876.082,
+      "version": 5,
+      "updated_at": "2026-10-20T23:26:37.070916+00:00"
+    }
+  },
+  "elapsed_seconds": 19.638,
+  "proposal": {
+    "id": "b11b1f5f9c574b5b9972354fe4d5530c",
+    "owner_id": "8a161d156f324e4c9b40861959316129",
+    "source_id": "477ead25779840dfb093f6009bf4ffdb",
+    "base_revision": 1,
+    "page": 1,
+    "page_kind": "frame",
+    "status": "preview",
+    "created_at": "2026-10-20T23:26:37.068802+00:00",
+    "text": "Địa chỉ IP Classless\n\ncdio\n\nGiá trị các subnetmask:\n\n| 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 |\n| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |\n| 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | = | 0 |\n| 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | = | 128 |\n| 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | = | 192 |\n| 1 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | = | 224 |\n| 1 | 1 | 1 | 1 | 0 | 0 | 0 | 0 | = | 240 |\n| 1 | 1 | 1 | 1 | 1 | 0 | 0 | 0 | = | 248 |\n| 1 | 1 | 1 | 1 | 1 | 1 | 0 | 0 | = | 252 |\n| 1 | 1 | 1 | 1 | 1 | 1 | 1 | 0 | = | 254 |\n| 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | = | 255 |\n\nICND20GR_133\n\nTRƯỜNG ĐẠI HỌC KHOA HỌC TỰ NHIÊN\nTP. HỒ CHÍ MINH\n\nKhoa Công nghệ thông tin - Đại học Khoa học tự nhiên TP. Hồ Chí Minh\n\n24",
+    "uncertain_spans": [],
+    "model": "gemma4:12b-mlx",
+    "dimensions": {
+      "width": 1800,
+      "height": 1350
+    },
+    "transcription_prompt_version": "20261017-layout-transcription-v2",
+    "before": [
+      {
+        "text": "Địa chỉ IP Classless",
+        "locator": {
+          "type": "ocr_image",
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "frame": 1,
+          "bounds": [
+            0.03298043360349204,
+            0.863093198547563,
+            0.4877882554796007,
+            0.07654197410300922
+          ],
+          "image_height": 1350,
+          "image_width": 1800,
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "recognizer_score": 1,
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:0",
+        "original_text": "Địa chỉ IP Classless"
+      },
+      {
+        "text": "cdio™",
+        "locator": {
+          "frame": 1,
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "image_width": 1800,
+          "type": "ocr_image",
+          "image_height": 1350,
+          "bounds": [
+            0.8822674420367259,
+            0.8817829454549957,
+            0.10029069688585068,
+            0.04651162889268656
+          ],
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "recognizer_score": 1,
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:1",
+        "original_text": "cdio™"
+      },
+      {
+        "recognizer_score": 0.5,
+        "locator": {
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "image_width": 1800,
+          "image_height": 1350,
+          "bounds": [
+            0.03749999949074079,
+            0.7333333334182099,
+            0.4416666666666667,
+            0.061111111111111116
+          ],
+          "frame": 1,
+          "type": "ocr_image",
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "text": "OIGia trị các subnetmask:",
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:2",
+        "original_text": "OIGia trị các subnetmask:"
+      },
+      {
+        "recognizer_score": 0.5,
+        "locator": {
+          "type": "ocr_image",
+          "image_height": 1350,
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "bounds": [
+            0.1771946057125303,
+            0.677491019251174,
+            0.08456427680121528,
+            0.026800908689145753
+          ],
+          "frame": 1,
+          "image_width": 1800,
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "text": "128 64",
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:3",
+        "original_text": "128 64"
+      },
+      {
+        "recognizer_score": 1,
+        "text": "32",
+        "locator": {
+          "frame": 1,
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "image_width": 1800,
+          "bounds": [
+            0.2921511630876644,
+            0.6782945739902462,
+            0.027616278330485078,
+            0.02519379792390042
+          ],
+          "type": "ocr_image",
+          "image_height": 1350,
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:4",
+        "original_text": "32"
+      },
+      {
+        "locator": {
+          "image_width": 1800,
+          "type": "ocr_image",
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "bounds": [
+            0.3488372096038345,
+            0.6782945739849975,
+            0.027616278330485022,
+            0.025193797923900307
+          ],
+          "image_height": 1350,
+          "frame": 1,
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "recognizer_score": 1,
+        "text": "16",
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:5",
+        "original_text": "16"
+      },
+      {
+        "recognizer_score": 1,
+        "text": "2",
+        "locator": {
+          "bounds": [
+            0.5305232560000279,
+            0.6802325583034277,
+            0.013081394831339521,
+            0.021317829555935308
+          ],
+          "frame": 1,
+          "image_height": 1350,
+          "type": "ocr_image",
+          "image_width": 1800,
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:6",
+        "original_text": "2"
+      },
+      {
+        "text": "1",
+        "recognizer_score": 1,
+        "locator": {
+          "type": "ocr_image",
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "image_width": 1800,
+          "image_height": 1350,
+          "bounds": [
+            0.19040697691814804,
+            0.5213178295857275,
+            0.013081394831339521,
+            0.021317829555935308
+          ],
+          "frame": 1,
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:7",
+        "original_text": "1"
+      },
+      {
+        "locator": {
+          "image_width": 1800,
+          "type": "ocr_image",
+          "bounds": [
+            0.1904069765482979,
+            0.4670542636942545,
+            0.011627907223171668,
+            0.021317829555935308
+          ],
+          "image_height": 1350,
+          "frame": 1,
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "text": "1",
+        "recognizer_score": 1,
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:8",
+        "original_text": "1"
+      },
+      {
+        "locator": {
+          "image_height": 1350,
+          "type": "ocr_image",
+          "image_width": 1800,
+          "bounds": [
+            0.19040697656283279,
+            0.41085271387085065,
+            0.01162790722317164,
+            0.023255813033492556
+          ],
+          "frame": 1,
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "recognizer_score": 1,
+        "text": "1",
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:9",
+        "original_text": "1"
+      },
+      {
+        "text": "=",
+        "recognizer_score": 1,
+        "locator": {
+          "bounds": [
+            0.6468023256092312,
+            0.5213178297436483,
+            0.014534883499145446,
+            0.019379844665527335
+          ],
+          "type": "ocr_image",
+          "image_height": 1350,
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "frame": 1,
+          "image_width": 1800,
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:10",
+        "original_text": "="
+      },
+      {
+        "locator": {
+          "type": "ocr_image",
+          "frame": 1,
+          "image_height": 1350,
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "bounds": [
+            0.646802325471757,
+            0.4670542638214138,
+            0.01598837216695148,
+            0.019379844665527335
+          ],
+          "image_width": 1800,
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "recognizer_score": 0.30000001192092896,
+        "text": "=",
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:11",
+        "original_text": "="
+      },
+      {
+        "recognizer_score": 1,
+        "locator": {
+          "type": "ocr_image",
+          "image_height": 1350,
+          "frame": 1,
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "bounds": [
+            0.19040697707811696,
+            0.30232558214604444,
+            0.011627906163533541,
+            0.023255813033492556
+          ],
+          "image_width": 1800,
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "text": "1",
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:12",
+        "original_text": "1"
+      },
+      {
+        "locator": {
+          "bounds": [
+            0.19040697656283279,
+            0.2480620161964321,
+            0.01162790722317164,
+            0.023255813033492556
+          ],
+          "image_height": 1350,
+          "type": "ocr_image",
+          "frame": 1,
+          "image_width": 1800,
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "recognizer_score": 1,
+        "text": "1",
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:13",
+        "original_text": "1"
+      },
+      {
+        "recognizer_score": 1,
+        "text": "1",
+        "locator": {
+          "bounds": [
+            0.1904069765482979,
+            0.19186046577007543,
+            0.011627907223171668,
+            0.023255813033492556
+          ],
+          "image_width": 1800,
+          "frame": 1,
+          "image_height": 1350,
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "type": "ocr_image",
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:14",
+        "original_text": "1"
+      },
+      {
+        "recognizer_score": 1,
+        "locator": {
+          "image_height": 1350,
+          "image_width": 1800,
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "bounds": [
+            0.19040697655867994,
+            0.13759689985091694,
+            0.011627907223171668,
+            0.023255813033492445
+          ],
+          "type": "ocr_image",
+          "frame": 1,
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "text": "1",
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:15",
+        "original_text": "1"
+      },
+      {
+        "text": "1",
+        "locator": {
+          "bounds": [
+            0.2427325583256093,
+            0.4670542637297843,
+            0.013081394831339521,
+            0.021317829555935308
+          ],
+          "type": "ocr_image",
+          "frame": 1,
+          "image_height": 1350,
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "image_width": 1800,
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "recognizer_score": 1,
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:16",
+        "original_text": "1"
+      },
+      {
+        "recognizer_score": 1,
+        "locator": {
+          "bounds": [
+            0.2427325583256093,
+            0.41085271387085065,
+            0.013081394831339521,
+            0.023255813033492556
+          ],
+          "image_width": 1800,
+          "frame": 1,
+          "image_height": 1350,
+          "type": "ocr_image",
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "text": "1",
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:17",
+        "original_text": "1"
+      },
+      {
+        "locator": {
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "bounds": [
+            0.2427325583256093,
+            0.3565891479793779,
+            0.013081394831339521,
+            0.023255813033492445
+          ],
+          "image_width": 1800,
+          "type": "ocr_image",
+          "image_height": 1350,
+          "frame": 1,
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "text": "1",
+        "recognizer_score": 1,
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:18",
+        "original_text": "1"
+      },
+      {
+        "locator": {
+          "bounds": [
+            0.2427325579540288,
+            0.30232558149833355,
+            0.011627907223171668,
+            0.02131782955593542
+          ],
+          "type": "ocr_image",
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "image_width": 1800,
+          "frame": 1,
+          "image_height": 1350,
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "recognizer_score": 1,
+        "text": "1",
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:19",
+        "original_text": "1"
+      },
+      {
+        "recognizer_score": 1,
+        "text": "1",
+        "locator": {
+          "image_width": 1800,
+          "frame": 1,
+          "bounds": [
+            0.24273255850980302,
+            0.24806201625457158,
+            0.011627906163533541,
+            0.023255813033492445
+          ],
+          "type": "ocr_image",
+          "image_height": 1350,
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:20",
+        "original_text": "1"
+      },
+      {
+        "locator": {
+          "image_height": 1350,
+          "frame": 1,
+          "type": "ocr_image",
+          "image_width": 1800,
+          "bounds": [
+            0.2427325583256093,
+            0.1918604657423899,
+            0.013081394831339521,
+            0.023255813033492556
+          ],
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "text": "1",
+        "recognizer_score": 1,
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:21",
+        "original_text": "1"
+      },
+      {
+        "recognizer_score": 1,
+        "text": "1",
+        "locator": {
+          "image_height": 1350,
+          "image_width": 1800,
+          "bounds": [
+            0.2427325583256093,
+            0.13759689985091694,
+            0.013081394831339521,
+            0.023255813033492445
+          ],
+          "frame": 1,
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "type": "ocr_image",
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:22",
+        "original_text": "1"
+      },
+      {
+        "recognizer_score": 1,
+        "text": "1",
+        "locator": {
+          "frame": 1,
+          "image_height": 1350,
+          "bounds": [
+            0.2979651163415125,
+            0.410852713832091,
+            0.014534883499145557,
+            0.023255813033492445
+          ],
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "image_width": 1800,
+          "type": "ocr_image",
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:23",
+        "original_text": "1"
+      },
+      {
+        "recognizer_score": 1,
+        "text": "1",
+        "locator": {
+          "frame": 1,
+          "image_width": 1800,
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "image_height": 1350,
+          "type": "ocr_image",
+          "bounds": [
+            0.3008720928273677,
+            0.35658914794061813,
+            0.01162790722317164,
+            0.023255813033492445
+          ],
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:24",
+        "original_text": "1"
+      },
+      {
+        "recognizer_score": 1,
+        "text": "1",
+        "locator": {
+          "type": "ocr_image",
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "image_height": 1350,
+          "bounds": [
+            0.2979651163415125,
+            0.30232558204914517,
+            0.014534883499145557,
+            0.023255813033492445
+          ],
+          "image_width": 1800,
+          "frame": 1,
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:25",
+        "original_text": "1"
+      },
+      {
+        "locator": {
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "bounds": [
+            0.2994186048493496,
+            0.24806201615767232,
+            0.013081394831339521,
+            0.023255813033492445
+          ],
+          "image_width": 1800,
+          "image_height": 1350,
+          "frame": 1,
+          "type": "ocr_image",
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "text": "1",
+        "recognizer_score": 1,
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:26",
+        "original_text": "1"
+      },
+      {
+        "recognizer_score": 1,
+        "locator": {
+          "image_height": 1350,
+          "frame": 1,
+          "type": "ocr_image",
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "bounds": [
+            0.2994186048493496,
+            0.19186046577007543,
+            0.013081394831339521,
+            0.023255813033492556
+          ],
+          "image_width": 1800,
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "text": "1",
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:27",
+        "original_text": "1"
+      },
+      {
+        "text": "1",
+        "recognizer_score": 1,
+        "locator": {
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "bounds": [
+            0.3008720928273677,
+            0.13759689987860246,
+            0.01162790722317164,
+            0.023255813033492556
+          ],
+          "image_height": 1350,
+          "image_width": 1800,
+          "type": "ocr_image",
+          "frame": 1,
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:28",
+        "original_text": "1"
+      },
+      {
+        "recognizer_score": 1,
+        "locator": {
+          "image_width": 1800,
+          "type": "ocr_image",
+          "frame": 1,
+          "bounds": [
+            0.3590116276965537,
+            0.3565891479793779,
+            0.01162790722317164,
+            0.023255813033492445
+          ],
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "image_height": 1350,
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "text": "1",
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:29",
+        "original_text": "1"
+      },
+      {
+        "text": "1",
+        "recognizer_score": 1,
+        "locator": {
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "frame": 1,
+          "image_width": 1800,
+          "image_height": 1350,
+          "type": "ocr_image",
+          "bounds": [
+            0.3575581397209582,
+            0.30038759741401866,
+            0.013081394831339521,
+            0.02519379792390053
+          ],
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:30",
+        "original_text": "1"
+      },
+      {
+        "locator": {
+          "type": "ocr_image",
+          "frame": 1,
+          "bounds": [
+            0.3575581397209582,
+            0.2461240315225458,
+            0.013081394831339521,
+            0.02519379792390053
+          ],
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "image_height": 1350,
+          "image_width": 1800,
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "recognizer_score": 1,
+        "text": "1",
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:31",
+        "original_text": "1"
+      },
+      {
+        "recognizer_score": 1,
+        "text": "1",
+        "locator": {
+          "bounds": [
+            0.3575581397209582,
+            0.1918604657423899,
+            0.013081394831339521,
+            0.023255813033492556
+          ],
+          "image_height": 1350,
+          "frame": 1,
+          "type": "ocr_image",
+          "image_width": 1800,
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:32",
+        "original_text": "1"
+      },
+      {
+        "text": "1",
+        "locator": {
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "image_width": 1800,
+          "image_height": 1350,
+          "bounds": [
+            0.3590116277110885,
+            0.13759689987860246,
+            0.011627907223171696,
+            0.023255813033492556
+          ],
+          "frame": 1,
+          "type": "ocr_image",
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "recognizer_score": 1,
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:33",
+        "original_text": "1"
+      },
+      {
+        "recognizer_score": 1,
+        "text": "1",
+        "locator": {
+          "type": "ocr_image",
+          "image_height": 1350,
+          "bounds": [
+            0.4156976742372514,
+            0.30038759741401866,
+            0.01162790722317164,
+            0.02519379792390053
+          ],
+          "frame": 1,
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "image_width": 1800,
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:34",
+        "original_text": "1"
+      },
+      {
+        "recognizer_score": 1,
+        "text": "1",
+        "locator": {
+          "type": "ocr_image",
+          "bounds": [
+            0.4156976742372514,
+            0.2480620161964321,
+            0.01162790722317164,
+            0.023255813033492556
+          ],
+          "frame": 1,
+          "image_height": 1350,
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "image_width": 1800,
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:35",
+        "original_text": "1"
+      },
+      {
+        "text": "1",
+        "recognizer_score": 1,
+        "locator": {
+          "image_height": 1350,
+          "image_width": 1800,
+          "frame": 1,
+          "bounds": [
+            0.41569767422271653,
+            0.19186046577007543,
+            0.01162790722317164,
+            0.023255813033492556
+          ],
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "type": "ocr_image",
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:36",
+        "original_text": "1"
+      },
+      {
+        "recognizer_score": 1,
+        "text": "1",
+        "locator": {
+          "frame": 1,
+          "type": "ocr_image",
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "image_width": 1800,
+          "bounds": [
+            0.41569767422271653,
+            0.13759689987860246,
+            0.01162790722317164,
+            0.023255813033492556
+          ],
+          "image_height": 1350,
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:37",
+        "original_text": "1"
+      },
+      {
+        "text": "1",
+        "locator": {
+          "bounds": [
+            0.4738372091209723,
+            0.2480620161964321,
+            0.011627907223171696,
+            0.023255813033492556
+          ],
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "image_width": 1800,
+          "frame": 1,
+          "type": "ocr_image",
+          "image_height": 1350,
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "recognizer_score": 1,
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:38",
+        "original_text": "1"
+      },
+      {
+        "locator": {
+          "type": "ocr_image",
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "frame": 1,
+          "image_width": 1800,
+          "bounds": [
+            0.47383720910643734,
+            0.19186046577007543,
+            0.011627907223171696,
+            0.023255813033492556
+          ],
+          "image_height": 1350,
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "recognizer_score": 1,
+        "text": "1",
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:39",
+        "original_text": "1"
+      },
+      {
+        "recognizer_score": 1,
+        "text": "1",
+        "locator": {
+          "type": "ocr_image",
+          "image_height": 1350,
+          "image_width": 1800,
+          "frame": 1,
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "bounds": [
+            0.47383720910643734,
+            0.13759689987860246,
+            0.011627907223171696,
+            0.023255813033492556
+          ],
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:40",
+        "original_text": "1"
+      },
+      {
+        "locator": {
+          "frame": 1,
+          "type": "ocr_image",
+          "image_height": 1350,
+          "bounds": [
+            0.5319767441501272,
+            0.19186046577007543,
+            0.010174418555365716,
+            0.023255813033492556
+          ],
+          "image_width": 1800,
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "recognizer_score": 1,
+        "text": "1",
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:41",
+        "original_text": "1"
+      },
+      {
+        "recognizer_score": 1,
+        "text": "1",
+        "locator": {
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "image_height": 1350,
+          "bounds": [
+            0.5319767441501272,
+            0.13759689987860246,
+            0.010174418555365716,
+            0.023255813033492556
+          ],
+          "frame": 1,
+          "image_width": 1800,
+          "type": "ocr_image",
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:42",
+        "original_text": "1"
+      },
+      {
+        "text": "1",
+        "recognizer_score": 1,
+        "locator": {
+          "type": "ocr_image",
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "image_width": 1800,
+          "image_height": 1350,
+          "frame": 1,
+          "bounds": [
+            0.5901162790338481,
+            0.13759689987860246,
+            0.010174418555365605,
+            0.023255813033492556
+          ],
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:43",
+        "original_text": "1"
+      },
+      {
+        "text": "128",
+        "locator": {
+          "frame": 1,
+          "type": "ocr_image",
+          "image_height": 1350,
+          "image_width": 1800,
+          "bounds": [
+            0.6889534882531613,
+            0.5232558140757269,
+            0.04215116288926868,
+            0.027131782814308503
+          ],
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "recognizer_score": 1,
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:44",
+        "original_text": "128"
+      },
+      {
+        "recognizer_score": 1,
+        "text": "192",
+        "locator": {
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "image_width": 1800,
+          "type": "ocr_image",
+          "bounds": [
+            0.6904069766101136,
+            0.4651162793615796,
+            0.04215116288926868,
+            0.02713178281430839
+          ],
+          "frame": 1,
+          "image_height": 1350,
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:45",
+        "original_text": "192"
+      },
+      {
+        "locator": {
+          "image_width": 1800,
+          "frame": 1,
+          "image_height": 1350,
+          "type": "ocr_image",
+          "bounds": [
+            0.690406976622226,
+            0.4108527134915382,
+            0.04215116288926868,
+            0.02519379792390042
+          ],
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "recognizer_score": 1,
+        "text": "224",
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:46",
+        "original_text": "224"
+      },
+      {
+        "locator": {
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "type": "ocr_image",
+          "image_height": 1350,
+          "frame": 1,
+          "image_width": 1800,
+          "bounds": [
+            0.6904069767700827,
+            0.3546511631020033,
+            0.04069767422146264,
+            0.02519379792390042
+          ],
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "recognizer_score": 1,
+        "text": "240",
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:47",
+        "original_text": "240"
+      },
+      {
+        "recognizer_score": 1,
+        "text": "248",
+        "locator": {
+          "image_height": 1350,
+          "frame": 1,
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "type": "ocr_image",
+          "image_width": 1800,
+          "bounds": [
+            0.690406976622226,
+            0.2984496125277969,
+            0.04215116288926868,
+            0.027131782814308503
+          ],
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:48",
+        "original_text": "248"
+      },
+      {
+        "text": "252",
+        "locator": {
+          "type": "ocr_image",
+          "bounds": [
+            0.6904069766252543,
+            0.24612403112999048,
+            0.04215116288926868,
+            0.027131782814308503
+          ],
+          "frame": 1,
+          "image_height": 1350,
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "image_width": 1800,
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "recognizer_score": 1,
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:49",
+        "original_text": "252"
+      },
+      {
+        "text": "254",
+        "locator": {
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "image_width": 1800,
+          "bounds": [
+            0.6904069768838541,
+            0.18798449646106274,
+            0.04215116288926868,
+            0.027131782814308503
+          ],
+          "image_height": 1350,
+          "frame": 1,
+          "type": "ocr_image",
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "recognizer_score": 1,
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:50",
+        "original_text": "254"
+      },
+      {
+        "recognizer_score": 0.30000001192092896,
+        "text": "255",
+        "locator": {
+          "image_height": 1350,
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "bounds": [
+            0.690406976622226,
+            0.1337209305458018,
+            0.04215116288926868,
+            0.02519379792390042
+          ],
+          "image_width": 1800,
+          "type": "ocr_image",
+          "frame": 1,
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:51",
+        "original_text": "255"
+      },
+      {
+        "text": "Khoa Công nghệ thông tin - Đại học Khoa học tự nhiên TP Hồ Chí Minh",
+        "locator": {
+          "image_width": 1800,
+          "frame": 1,
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "type": "ocr_image",
+          "image_height": 1350,
+          "bounds": [
+            0.22383721081466193,
+            0.028888888892788955,
+            0.5261627875434028,
+            0.02537467673972804
+          ],
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "recognizer_score": 1,
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:52",
+        "original_text": "Khoa Công nghệ thông tin - Đại học Khoa học tự nhiên TP Hồ Chí Minh"
+      },
+      {
+        "locator": {
+          "type": "ocr_image",
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "image_height": 1350,
+          "image_width": 1800,
+          "bounds": [
+            0.9593023258829042,
+            0.03294573677569501,
+            0.027616278330485078,
+            0.02519379792390053
+          ],
+          "frame": 1,
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "recognizer_score": 1,
+        "text": "24",
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:53",
+        "original_text": "24"
+      },
+      {
+        "locator": {
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "bounds": [
+            0.02449605252165563,
+            0.006706558619097969,
+            0.05996328989664715,
+            0.01288264521846072
+          ],
+          "image_height": 1350,
+          "frame": 1,
+          "image_width": 1800,
+          "type": "ocr_image",
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized"
+        },
+        "recognizer_score": 0.30000001192092896,
+        "text": "I₽.HO CHIMINH",
+        "needs_review": true,
+        "id": "477ead25779840dfb093f6009bf4ffdb:1:54",
+        "original_text": "I₽.HO CHIMINH"
+      }
+    ],
+    "visual_review": {},
+    "layout_warnings": [],
+    "requires_review": true,
+    "warning": "AI có thể chép sai cả khi không báo phần chưa chắc. Chỉ dùng bản đã đối chiếu và xác nhận để tạo bài. "
+  },
+  "source_revision_after": 1,
+  "wallet_after": {
+    "balance": 18,
+    "held": 0,
+    "available": 18,
+    "policy_version": "dev-proposal-20261015-v2",
+    "policy_proposed": true,
+    "cash_payments": false,
+    "enforcement_enabled": true
+  },
+  "status": "succeeded"
+}

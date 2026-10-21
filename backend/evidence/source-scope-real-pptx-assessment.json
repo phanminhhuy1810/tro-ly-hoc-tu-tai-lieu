@@ -1,0 +1,140 @@
+{
+  "purpose": "Read-only source-scope assessment and proposed regrouping of a real previously extracted PPTX; not a model-quality benchmark",
+  "source_id": "440461bff89c443aa68372ef182c7821",
+  "revision": 2,
+  "source_fragments": 1227,
+  "advisory": {
+    "version": "20261019-front-matter-review-v1",
+    "source_id": "440461bff89c443aa68372ef182c7821",
+    "revision": 2,
+    "reviewed": true,
+    "total_fragments": 1227,
+    "candidate_ids": [
+      "440461bff89c443aa68372ef182c7821:2:0",
+      "440461bff89c443aa68372ef182c7821:2:1",
+      "440461bff89c443aa68372ef182c7821:2:2",
+      "440461bff89c443aa68372ef182c7821:2:3",
+      "440461bff89c443aa68372ef182c7821:2:4",
+      "440461bff89c443aa68372ef182c7821:2:5",
+      "440461bff89c443aa68372ef182c7821:2:6",
+      "440461bff89c443aa68372ef182c7821:2:7",
+      "440461bff89c443aa68372ef182c7821:2:8",
+      "440461bff89c443aa68372ef182c7821:2:9",
+      "440461bff89c443aa68372ef182c7821:2:10",
+      "440461bff89c443aa68372ef182c7821:2:11",
+      "440461bff89c443aa68372ef182c7821:2:12"
+    ],
+    "groups": [
+      {
+        "reason": "cover_context",
+        "title_vi": "Cùng trang bìa hoặc thông tin sách",
+        "title_en": "Cover or publication context",
+        "component_source_id": "440461bff89c443aa68372ef182c7821",
+        "component_name": "Chapter_6_v8.0- Link Layer and LANs.pptx",
+        "location_kind": "slide",
+        "position": 1,
+        "fragment_ids": [
+          "440461bff89c443aa68372ef182c7821:2:0",
+          "440461bff89c443aa68372ef182c7821:2:1",
+          "440461bff89c443aa68372ef182c7821:2:4"
+        ]
+      },
+      {
+        "reason": "copyright_notice",
+        "title_vi": "Ghi chú bản quyền/cách sử dụng",
+        "title_en": "Copyright or usage notice",
+        "component_source_id": "440461bff89c443aa68372ef182c7821",
+        "component_name": "Chapter_6_v8.0- Link Layer and LANs.pptx",
+        "location_kind": "slide",
+        "position": 1,
+        "fragment_ids": [
+          "440461bff89c443aa68372ef182c7821:2:2",
+          "440461bff89c443aa68372ef182c7821:2:3"
+        ]
+      },
+      {
+        "reason": "learning_goals",
+        "title_vi": "Mục tiêu học tập ở đầu tài liệu",
+        "title_en": "Opening learning goals",
+        "component_source_id": "440461bff89c443aa68372ef182c7821",
+        "component_name": "Chapter_6_v8.0- Link Layer and LANs.pptx",
+        "location_kind": "slide",
+        "position": 2,
+        "fragment_ids": [
+          "440461bff89c443aa68372ef182c7821:2:5",
+          "440461bff89c443aa68372ef182c7821:2:6",
+          "440461bff89c443aa68372ef182c7821:2:7",
+          "440461bff89c443aa68372ef182c7821:2:8"
+        ]
+      },
+      {
+        "reason": "contents",
+        "title_vi": "Mục lục hoặc chương trình đầu tài liệu",
+        "title_en": "Opening contents or agenda",
+        "component_source_id": "440461bff89c443aa68372ef182c7821",
+        "component_name": "Chapter_6_v8.0- Link Layer and LANs.pptx",
+        "location_kind": "slide",
+        "position": 3,
+        "fragment_ids": [
+          "440461bff89c443aa68372ef182c7821:2:9",
+          "440461bff89c443aa68372ef182c7821:2:10",
+          "440461bff89c443aa68372ef182c7821:2:11",
+          "440461bff89c443aa68372ef182c7821:2:12"
+        ]
+      }
+    ],
+    "advisory_only": true,
+    "automatic_changes": false,
+    "ai_called": false,
+    "accuracy_not_verified": true
+  },
+  "remaining_count": 1214,
+  "preview_units": 174,
+  "first_unit_source_refs": [
+    "440461bff89c443aa68372ef182c7821:2:13",
+    "440461bff89c443aa68372ef182c7821:2:14",
+    "440461bff89c443aa68372ef182c7821:2:15",
+    "440461bff89c443aa68372ef182c7821:2:16",
+    "440461bff89c443aa68372ef182c7821:2:17",
+    "440461bff89c443aa68372ef182c7821:2:18",
+    "440461bff89c443aa68372ef182c7821:2:19",
+    "440461bff89c443aa68372ef182c7821:2:20",
+    "440461bff89c443aa68372ef182c7821:2:21"
+  ],
+  "first_unit_locations": [
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4
+  ],
+  "first_unit_previews": [
+    "Link layer: introduction",
+    "terminology:\nhosts and routers: nodes\ncommunication channels that connect adjacent nodes along communication path: links\nwired \nwireless \nLANs\nlayer-2 packet: f",
+    "mobile network",
+    "enterprise\n          network",
+    "national or global ISP",
+    "datacenter \nnetwork",
+    "~10",
+    "link layer has responsibility of \ntransferring datagram from one node \nto physically adjacent node over a link",
+    "Link Layer: 6-4"
+  ],
+  "all_remaining_assigned_in_order": true,
+  "source_database_mutated": false,
+  "ai_calls": 0,
+  "scope_changes_applied": false,
+  "earlier_probe": {
+    "candidate_count": 9,
+    "first_unit_positions": [
+      3,
+      3,
+      3,
+      3
+    ],
+    "issue": "The first candidate set left the slide3 roadmap as the first unit. Added a narrow opening-roadmap cue; kept a non-front-matter definition exception."
+  }
+}

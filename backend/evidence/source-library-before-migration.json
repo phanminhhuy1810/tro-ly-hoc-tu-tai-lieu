@@ -1,0 +1,25 @@
+{
+  "backup": "backend/runtime/study-before-source-library-20261018T152118Z.sqlite3",
+  "schema_before": 15,
+  "protected": {
+    "sources": {
+      "count": 36,
+      "sha256": "e54ef117fbdb9463b75afb947e81b2547ab2eeadc08850328c350011850435d4"
+    },
+    "extractions": {
+      "count": 68,
+      "sha256": "34ebe12cb1a8af5d0c6b65b0afd4546b271a0dd1c729f85504f9638421945725"
+    },
+    "course_revisions": {
+      "count": 36,
+      "sha256": "06476d209bbd7a461e0ecb314813803c2654d891edc0c6f7f9c2ada8f9b4a3fc"
+    }
+  },
+  "active_jobs": 0,
+  "room_phases": [
+    [
+      "finished",
+      1
+    ]
+  ]
+}

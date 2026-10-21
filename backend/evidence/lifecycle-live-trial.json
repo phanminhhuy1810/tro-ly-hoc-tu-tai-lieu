@@ -1,0 +1,318 @@
+{
+  "purpose": "Actual loopback HTTP deletion/restoration on a new, explicitly labelled QA profile.\n\nNo human data deletion. One bounded real local lesson over a self-authored\nnetworking fixture supports the sharing/history checks; not a quality benchmark.\n",
+  "fixture": "experiments/05-office-inputs/fixtures/network-notes.txt",
+  "checks": {
+    "learner_initially_has_original": true,
+    "active_course_protects_source": true,
+    "course_unavailable_to_both": true,
+    "original_sharing_revoked": true,
+    "community_unavailable": true,
+    "creator_original_unavailable_in_trash": true,
+    "two_private_trash_items": true,
+    "old_session_retained_in_trash": true,
+    "restore_requires_source_first": true,
+    "exact_original_restored": true,
+    "course_snapshot_unchanged": true,
+    "old_session_retained_after_restore": true,
+    "restored_course_stays_private": true,
+    "trash_empty_after_restore": true,
+    "wallet_unchanged": true
+  },
+  "baseline_failure_file": "backend/evidence/lifecycle-lesson-failure-before.json",
+  "second_failure_file": "backend/evidence/lifecycle-lesson-failure-after-prompt.json",
+  "initial_probe_failure": {
+    "status": 409,
+    "step": "publication-preview before any lesson existed",
+    "message": "Tạo và xem lại ít nhất một phần trước khi chia sẻ.",
+    "classification": "Expected business guard; original harness lacked a ready lesson."
+  },
+  "generation_job": {
+    "id": "885a8af5af5d459c9489da2eb7f00f86",
+    "task": "lesson",
+    "context": {
+      "course_id": "a012bc25502649498a180a773fc1efa9",
+      "unit_id": "unit-1",
+      "expected_revision": 2
+    },
+    "status": "succeeded",
+    "attempts": 1,
+    "provider": {
+      "provider": "ollama_local",
+      "model": "gemma4:12b-mlx",
+      "reference_codec": "scoped-reference-aliases-v1",
+      "model_choice_id": "local:gemma4:12b-mlx",
+      "selection_revision": 1,
+      "prompt_version": "20261020-scoped-reference-wire-v16",
+      "schema_version": 17,
+      "processor_version": "20261019-source-cloze-isolation-v5"
+    },
+    "result": {
+      "course_id": "a012bc25502649498a180a773fc1efa9",
+      "revision": 3
+    },
+    "partial": {
+      "reading": {
+        "title": "QA IPv4 và subnet /26",
+        "sections": [
+          {
+            "title": "Cấu trúc IPv4 và Prefix /26",
+            "text": "Địa chỉ IPv4 có tổng cộng 32 bits. Khi sử dụng prefix /26, mạng sẽ còn lại 6 host bits để định danh thiết bị trong mạng.",
+            "source_refs": [
+              "9e4fd21e3d03413c98be56a868494c36:2:0",
+              "9e4fd21e3d03413c98be56a868494c36:2:1"
+            ]
+          },
+          {
+            "title": "Phạm vi của khối /26",
+            "text": "Một khối /26 chứa tổng cộng 64 addresses. Ví dụ: IP 192.168.1.70/26 thuộc về network 192.168.1.64.",
+            "source_refs": [
+              "9e4fd21e3d03413c98be56a868494c36:2:2",
+              "9e4fd21e3d03413c98be56a868494c36:2:3"
+            ]
+          },
+          {
+            "title": "Broadcast và Usable Hosts",
+            "text": "Trong ví dụ trên, broadcast là 192.168.1.127. Các usable hosts nằm trong khoảng từ 192.168.1.65 đến 192.168.1.126, tổng cộng 62 addresses.",
+            "source_refs": [
+              "9e4fd21e3d03413c98be56a868494c36:2:4",
+              "9e4fd21e3d03413c98be56a868494c36:2:5"
+            ]
+          }
+        ],
+        "cards": [
+          {
+            "front": "Xác định network và broadcast cho 192.168.1.70/26?",
+            "back": "Network: 192.168.1.64. Broadcast: 192.168.1.127. Usable hosts: 192.168.1.65 - 192.168.1.126.",
+            "source_refs": [
+              "9e4fd21e3d03413c98be56a868494c36:2:3",
+              "9e4fd21e3d03413c98be56a868494c36:2:4",
+              "9e4fd21e3d03413c98be56a868494c36:2:5"
+            ]
+          }
+        ],
+        "mindmap": [
+          {
+            "title": "IPv4 Structure",
+            "text": "32 bits tổng thể",
+            "source_refs": [
+              "9e4fd21e3d03413c98be56a868494c36:2:0"
+            ]
+          },
+          {
+            "title": "Subnet /26",
+            "text": "6 host bits, 64 addresses",
+            "source_refs": [
+              "9e4fd21e3d03413c98be56a868494c36:2:1",
+              "9e4fd21e3d03413c98be56a868494c36:2:2"
+            ]
+          },
+          {
+            "title": "Network Range",
+            "text": "Network 192.168.1.64, Broadcast 192.168.1.127",
+            "source_refs": [
+              "9e4fd21e3d03413c98be56a868494c36:2:3",
+              "9e4fd21e3d03413c98be56a868494c36:2:4"
+            ]
+          }
+        ]
+      },
+      "questions": {
+        "mcq": {
+          "reason": "",
+          "question": {
+            "kind": "mcq",
+            "prompt": "Trong cấu hình mạng sử dụng prefix /26, số lượng bit dành cho host là bao nhiêu?",
+            "options": [
+              "26 bits",
+              "6 host bits",
+              "32 bits"
+            ],
+            "left": [],
+            "answer": "6 host bits",
+            "explanation": "Theo nguồn R2, prefix /26 để lại 6 host bits.",
+            "source_refs": [
+              "9e4fd21e3d03413c98be56a868494c36:2:1"
+            ],
+            "rubric": []
+          }
+        }
+      },
+      "stage_providers": {
+        "reading": {
+          "provider": "ollama_local",
+          "model": "gemma4:12b-mlx",
+          "reference_codec": "scoped-reference-aliases-v1",
+          "model_choice_id": "local:gemma4:12b-mlx",
+          "selection_revision": 1,
+          "prompt_version": "20261020-scoped-reference-wire-v16",
+          "schema_version": 17,
+          "processor_version": "20261019-source-cloze-isolation-v5"
+        },
+        "mcq": {
+          "provider": "ollama_local",
+          "model": "gemma4:12b-mlx",
+          "reference_codec": "scoped-reference-aliases-v1",
+          "model_choice_id": "local:gemma4:12b-mlx",
+          "selection_revision": 1,
+          "prompt_version": "20261020-scoped-reference-wire-v16",
+          "schema_version": 17,
+          "processor_version": "20261019-source-cloze-isolation-v5"
+        }
+      },
+      "question_rejections": {}
+    },
+    "feedback_deferred": false,
+    "error": null,
+    "progress": {
+      "phase": "succeeded",
+      "requests": [
+        {
+          "index": 1,
+          "schema": "LessonReading",
+          "phase": "received",
+          "streaming": true,
+          "started_at": "2026-10-20T10:37:32.495191+00:00",
+          "first_chunk_ms": 7490.129,
+          "first_text_ms": null,
+          "elapsed_ms": 26288.377,
+          "chunks": 664,
+          "characters": 1555,
+          "usage": {
+            "input_tokens": 1419,
+            "cached_input_tokens": 0,
+            "output_tokens": 664,
+            "load_duration_ns": 9823541,
+            "prompt_eval_duration_ns": 3506287458,
+            "eval_duration_ns": 18903817125,
+            "total_duration_ns": 22428291208,
+            "reference_alias_count": 6,
+            "reference_alias_map_sha256": "728ecfc0478d05c884a9547656799c4eb95a7af634fe139c3d076b6eb29609a8"
+          },
+          "protocol_fallbacks": 1
+        },
+        {
+          "index": 2,
+          "schema": "McqDraft",
+          "phase": "received",
+          "streaming": true,
+          "started_at": "2026-10-20T10:37:58.789925+00:00",
+          "first_chunk_ms": 3056.753,
+          "first_text_ms": null,
+          "elapsed_ms": 7368.258,
+          "chunks": 138,
+          "characters": 381,
+          "usage": {
+            "input_tokens": 1391,
+            "cached_input_tokens": 0,
+            "output_tokens": 138,
+            "load_duration_ns": 5336125,
+            "prompt_eval_duration_ns": 2843638208,
+            "eval_duration_ns": 4479306916,
+            "total_duration_ns": 7332060166,
+            "reference_alias_count": 6,
+            "reference_alias_map_sha256": "728ecfc0478d05c884a9547656799c4eb95a7af634fe139c3d076b6eb29609a8"
+          },
+          "protocol_fallbacks": 1
+        }
+      ],
+      "preview": null,
+      "planned_stages": 2,
+      "saved_stages": 2,
+      "reused_stages": 0,
+      "started_at": "2026-10-20T10:37:32.493965+00:00",
+      "completed_at": "2026-10-20T10:38:06.176460+00:00",
+      "elapsed_ms": 33682.501,
+      "version": 124,
+      "updated_at": "2026-10-20T10:38:06.176514+00:00"
+    }
+  },
+  "owner_id": "f6cd565f68c943ccbbdac2b93cf8bf30",
+  "learner_id": "e55706e0917045a2aa134f4700f12547",
+  "source_id": "9e4fd21e3d03413c98be56a868494c36",
+  "source_sha256": "93c3ced491a0cc259a5d50a5e2132b391a1c29693d01f79ae32d951cf474ef7b",
+  "course_id": "a012bc25502649498a180a773fc1efa9",
+  "source_deleted_version": 1,
+  "source_restored_version": 2,
+  "course_deleted_version": 1,
+  "course_restored_version": 2,
+  "remaining_qa_course_state": "private, restored; one real Gemma lesson and a completed QA attempt",
+  "wallet": {
+    "balance": 24,
+    "held": 0,
+    "available": 24,
+    "policy_version": "dev-proposal-20261015-v2",
+    "policy_proposed": true,
+    "cash_payments": false,
+    "enforcement_enabled": true
+  },
+  "all_passed": true,
+  "preexisting_rows_unchanged": {
+    "courses": true,
+    "course_revisions": true,
+    "sources": true,
+    "extraction_revisions": true,
+    "ai_preferences": true,
+    "jobs": true,
+    "study_sessions": true,
+    "answers": true,
+    "wallets": true,
+    "coin_ledger": true
+  },
+  "qa_only_ai_usage_jobs": 3,
+  "qa_only_ai_usage_statuses": [
+    [
+      "committed",
+      1
+    ],
+    [
+      "released",
+      2
+    ]
+  ],
+  "generated_question": {
+    "kind": "mcq",
+    "prompt": "Trong cấu hình mạng sử dụng prefix /26, số lượng bit dành cho host là bao nhiêu?",
+    "options": [
+      "26 bits",
+      "6 host bits",
+      "32 bits"
+    ],
+    "left": [],
+    "answer": "6 host bits",
+    "explanation": "Theo nguồn R2, prefix /26 để lại 6 host bits.",
+    "source_refs": [
+      "9e4fd21e3d03413c98be56a868494c36:2:1"
+    ],
+    "rubric": [],
+    "difficulty": null,
+    "difficulty_basis": null
+  },
+  "case_factual_review": {
+    "method": "Manual source cross-check and Python ipaddress for this single development case; not independent/human evaluation",
+    "mcq_host_bits": 6,
+    "mcq_answer_matches_6_host_bits": true,
+    "ipv4_example": "192.168.1.70/26",
+    "network": "192.168.1.64",
+    "broadcast": "192.168.1.127",
+    "usable_hosts": 62,
+    "presentation_issue_retained": "MCQ explanation still says nguồn R2, a request label. Stored source_refs are real IDs and clickable source citations remain correct; do not count prose as perfect.",
+    "programmatic_oracle": {
+      "library": "Python stdlib ipaddress",
+      "input": "192.168.1.70/26",
+      "computed": {
+        "host_bits": 6,
+        "address_count": 64,
+        "network": "192.168.1.64",
+        "broadcast": "192.168.1.127",
+        "first_host": "192.168.1.65",
+        "last_host": "192.168.1.126",
+        "usable_hosts": 62
+      },
+      "reading_contains_network": true,
+      "reading_contains_broadcast": true,
+      "reading_contains_usable_range": true,
+      "mcq_answer_matches": true,
+      "limit": "Literal result checks plus agent source review for this one dev case; not a semantic grader or independent evaluation."
+    }
+  }
+}

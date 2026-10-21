@@ -1,0 +1,18 @@
+/Users/phanminhhuy/Documents/learning resources/Hk4/TDTT/AI-STUDY-HANDOFF/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+test_brief_item_bounds_are_in_schema_and_preserve_existing_accepted_contract (test_question_focus.FocusPlanTests.test_brief_item_bounds_are_in_schema_and_preserve_existing_accepted_contract) ... ok
+test_cross_kind_prompts_are_labelled_and_same_kind_is_the_only_diversity_restriction (test_question_focus.FocusPlanTests.test_cross_kind_prompts_are_labelled_and_same_kind_is_the_only_diversity_restriction) ... ok
+test_long_previous_questions_are_bounded_labelled_excerpts_not_silently_full_sources (test_question_focus.FocusPlanTests.test_long_previous_questions_are_bounded_labelled_excerpts_not_silently_full_sources) ... ok
+test_repeated_kinds_use_different_chapter_targets_and_exclude_unrelated_target (test_question_focus.FocusPlanTests.test_repeated_kinds_use_different_chapter_targets_and_exclude_unrelated_target) ... ok
+test_saved_targets_fail_closed_when_reading_scope_or_analysis_changes (test_question_focus.FocusPlanTests.test_saved_targets_fail_closed_when_reading_scope_or_analysis_changes) ... ok
+test_cancel_during_a_question_keeps_pinned_targets_and_never_commits_reading (test_question_focus.FocusWorkflowTests.test_cancel_during_a_question_keeps_pinned_targets_and_never_commits_reading) ... ok
+test_completion_only_adds_focus_provenance_in_preview_history_and_preserves_old_version (test_question_focus.FocusWorkflowTests.test_completion_only_adds_focus_provenance_in_preview_history_and_preserves_old_version) ... ok
+test_legacy_saved_questions_are_not_relabelled_as_having_used_new_targets (test_question_focus.FocusWorkflowTests.test_legacy_saved_questions_are_not_relabelled_as_having_used_new_targets) ... ok
+test_restart_resume_keeps_targets_reading_saved_questions_and_old_job (test_question_focus.FocusWorkflowTests.test_restart_resume_keeps_targets_reading_saved_questions_and_old_job) ... ok
+test_tampered_focus_checkpoint_is_rejected_before_new_job_coin_or_inference (test_question_focus.FocusWorkflowTests.test_tampered_focus_checkpoint_is_rejected_before_new_job_coin_or_inference) ... ok
+test_targets_are_pinned_before_inference_and_no_extra_planning_call_is_made (test_question_focus.FocusWorkflowTests.test_targets_are_pinned_before_inference_and_no_extra_planning_call_is_made) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.922s
+
+OK

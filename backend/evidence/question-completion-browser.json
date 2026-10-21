@@ -1,0 +1,131 @@
+{
+  "purpose": "UI test in pre-existing localhost QA profile, human 127.0.0.1 profile unchanged",
+  "owner_id": "7b02a974cdb44396ae4525dbd4cd9c8b",
+  "course_id": "f9293375eec84155a5a3ce55e880b98b",
+  "source_id": "2e2ea2ec89994a10aa0da5b4f321f20d",
+  "fixture_copied_from_course": "98ff5b545574402f811f17de49c199cb",
+  "fixture_revision": 2,
+  "initial_question_count": 4,
+  "fixture_generated_this_turn": false,
+  "ui_generation_status": "succeeded",
+  "job_id": "a745f7862fd84b0184398fdf4f27b959",
+  "provider": {
+    "provider": "ollama_local",
+    "model": "gemma4:12b-mlx",
+    "model_choice_id": "local:gemma4:12b-mlx",
+    "selection_revision": 1,
+    "prompt_version": "20261019-missing-question-preview-v1",
+    "schema_version": 17,
+    "processor_version": "20261019-source-cloze-isolation-v5"
+  },
+  "proposal_id": "e26f6731b9b640beb89ccbd8d6604f34",
+  "proposal_status": "applied",
+  "base_revision": 2,
+  "applied_revision": 3,
+  "original_questions_unchanged": true,
+  "non_question_content_unchanged": true,
+  "coverage": {
+    "requested_count": 5,
+    "generated_count": 5,
+    "requested_types": [
+      "mcq",
+      "cloze",
+      "matching",
+      "ordering",
+      "short_answer"
+    ],
+    "generated_types": [
+      "mcq",
+      "cloze",
+      "matching",
+      "short_answer",
+      "ordering"
+    ],
+    "complete": true,
+    "uncreated": []
+  },
+  "coin_status": "committed",
+  "ui_quote_amount": 2,
+  "ui_quote_model": "gemma4:12b-mlx",
+  "preview_survived_reload": true,
+  "applied_revision_survived_reload": true,
+  "generate_disabled_when_complete": true,
+  "original_question_count": 4,
+  "final_question_count": 5,
+  "new_question": {
+    "kind": "ordering",
+    "prompt": "Sắp xếp các bước trong quy trình tính subnet cho prefix /26 theo đúng trình tự từ nguồn:",
+    "options": [
+      "Loại hai biên để lấy dải host dùng được (Remove two boundaries to get usable host range)",
+      "Xác định block chứa octet cuối (Identify the block containing the last octet)",
+      "Đọc prefix và tính số bit host (Read the prefix and calculate the number of host bits)",
+      "Lấy đầu block làm network và cuối block làm broadcast (Take the start of the block as network and the end as broadcast)",
+      "Tính kích thước block (Calculate the block size)"
+    ],
+    "left": [],
+    "answer": [
+      2,
+      4,
+      1,
+      3,
+      0
+    ],
+    "explanation": "Quy trình gồm 5 bước: 1. Đọc prefix và tính số bit host; 2. Tính kích thước block; 3. Xác định block chứa octet cuối; 4. Lấy đầu block làm network và cuối block làm broadcast; 5. Loại hai biên để lấy dải host dùng được.",
+    "source_refs": [
+      "2e2ea2ec89994a10aa0da5b4f321f20d:2:1",
+      "2e2ea2ec89994a10aa0da5b4f321f20d:2:2",
+      "2e2ea2ec89994a10aa0da5b4f321f20d:2:3",
+      "2e2ea2ec89994a10aa0da5b4f321f20d:2:4",
+      "2e2ea2ec89994a10aa0da5b4f321f20d:2:5"
+    ],
+    "rubric": [],
+    "difficulty": null,
+    "difficulty_basis": null
+  },
+  "screenshots": [
+    "preview/screenshots/question-completion-preview-desktop.png",
+    "preview/screenshots/question-completion-complete-desktop.png"
+  ],
+  "ui_defects_fixed": [
+    "Busy-loaded dialog button stayed disabled",
+    "Completion wrapper was not rendered by generic single-item preview"
+  ],
+  "progress": {
+    "phase": "succeeded",
+    "requests": [
+      {
+        "index": 1,
+        "schema": "OrderingDraft",
+        "phase": "received",
+        "streaming": true,
+        "started_at": "2026-10-19T17:12:02.019347+00:00",
+        "first_chunk_ms": 9782.692,
+        "first_text_ms": null,
+        "elapsed_ms": 24923.949,
+        "chunks": 491,
+        "characters": 1424,
+        "usage": {
+          "input_tokens": 2008,
+          "cached_input_tokens": 0,
+          "output_tokens": 491,
+          "load_duration_ns": 9966166,
+          "prompt_eval_duration_ns": 4395995625,
+          "eval_duration_ns": 15235461833,
+          "total_duration_ns": 19646615291,
+          "ordering_answer_derived": 1,
+          "ordering_step_labels_removed": 0,
+          "ordering_model_options_sha256": "1eb7cc6788780c3438f4cef27603c71bd8cf237cce7179c1767d932b3fbb6ed0",
+          "ordering_answer_method": "explicit_source_step_positions_v1"
+        },
+        "protocol_fallbacks": 1
+      }
+    ],
+    "preview": null,
+    "planned_stages": 1,
+    "saved_stages": 1,
+    "reused_stages": 0,
+    "started_at": "2026-10-19T17:12:02.016017+00:00",
+    "completed_at": "2026-10-19T17:12:26.952407+00:00",
+    "elapsed_ms": 24936.394
+  }
+}

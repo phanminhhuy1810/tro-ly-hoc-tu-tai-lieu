@@ -1,0 +1,262 @@
+{
+  "version": "three-subject-notes-v1",
+  "split": "dev",
+  "cases": [
+    {
+      "id": "net-dev-prefix",
+      "split": "dev",
+      "subject": "Mạng máy tính",
+      "title": "IPv4 và subnet /25",
+      "goal": "Phân biệt prefix, số địa chỉ, network, broadcast và host dùng được trong ví dụ /25.",
+      "text": "IPv4 dài 32 bit. Với prefix /25, phần mạng có 25 bit và phần host có 7 bit. Một subnet /25 có 128 địa chỉ; trong subnet thông thường này có 126 địa chỉ host dùng được khi bỏ hai biên.\nVí dụ 10.12.7.201/25: network là 10.12.7.128, broadcast là 10.12.7.255. Dải host dùng được là 10.12.7.129 đến 10.12.7.254. Subnet mask là 255.255.255.128.\nQuy trình tìm hai biên từ một IPv4/prefix:\n1. Đọc prefix để xác định số bit host.\n2. Tính kích thước khối địa chỉ từ số bit host.\n3. Tìm khối chứa địa chỉ đã cho.\n4. Lấy đầu khối làm network và cuối khối làm broadcast.\n5. Bỏ hai biên để lấy dải host dùng được.",
+      "expected_facts": {
+        "oracle": "ipv4",
+        "input": "10.12.7.201/25"
+      },
+      "references": [
+        "https://www.rfc-editor.org/rfc/rfc4632.html#section-3.1"
+      ],
+      "expected_source_ordering": true,
+      "question_types": [
+        "mcq",
+        "cloze",
+        "matching",
+        "ordering",
+        "short_answer"
+      ],
+      "question_count": 8,
+      "card_count": 2,
+      "language": "vi",
+      "difficulty": "applied",
+      "terms_to_keep": [],
+      "source_kind": "original_agent_authored_evaluation_notes_not_book_excerpt",
+      "label_status": "computational_or_source_crosschecked_agent_labels_need_independent_review"
+    },
+    {
+      "id": "calc-dev-ftc",
+      "split": "dev",
+      "subject": "Vi tích phân",
+      "title": "Tích phân xác định và hai cận",
+      "goal": "Dùng nguyên hàm và hai cận để tính tích phân; phân biệt giá trị tại cận với hiệu hai giá trị.",
+      "text": "Nếu f liên tục trên [a,b] và F là một nguyên hàm của f thì tích phân từ a đến b của f(x) dx bằng F(b)-F(a). Không lấy F(a)-F(b).\nVới f(x)=x^2, chọn F(x)=x^3/3. Trên [0,2], F(2)=8/3 và F(0)=0, nên tích phân bằng 8/3. Đổi cận từ 2 về 0 cho kết quả -8/3. Với g(x)=2x+1 trên [0,1], nguyên hàm G(x)=x^2+x và tích phân bằng 2.\nQuy trình tính tích phân xác định bằng nguyên hàm:\n1. Tìm một nguyên hàm của hàm dưới dấu tích phân.\n2. Tính giá trị nguyên hàm tại cận trên.\n3. Tính giá trị nguyên hàm tại cận dưới.\n4. Lấy giá trị tại cận trên trừ giá trị tại cận dưới.",
+      "expected_facts": {
+        "oracle": "polynomial_integral",
+        "coefficients": [
+          0,
+          0,
+          1
+        ],
+        "bounds": [
+          0,
+          2
+        ],
+        "result": "8/3",
+        "reversed": "-8/3",
+        "second_coefficients": [
+          1,
+          2
+        ],
+        "second_bounds": [
+          0,
+          1
+        ],
+        "second_result": "2"
+      },
+      "references": [
+        "https://openstax.org/books/calculus-volume-1/pages/5-3-the-fundamental-theorem-of-calculus"
+      ],
+      "expected_source_ordering": true,
+      "question_types": [
+        "mcq",
+        "cloze",
+        "matching",
+        "ordering",
+        "short_answer"
+      ],
+      "question_count": 8,
+      "card_count": 2,
+      "language": "vi",
+      "difficulty": "applied",
+      "terms_to_keep": [],
+      "source_kind": "original_agent_authored_evaluation_notes_not_book_excerpt",
+      "label_status": "computational_or_source_crosschecked_agent_labels_need_independent_review"
+    },
+    {
+      "id": "psy-dev-operant",
+      "split": "dev",
+      "subject": "Tâm lý đại cương",
+      "title": "Củng cố và trừng phạt",
+      "goal": "Phân biệt thêm/bớt kích thích với tăng/giảm hành vi, đặc biệt negative reinforcement không phải punishment.",
+      "text": "Trong operant conditioning, reinforcement chỉ hậu quả làm tăng khả năng hành vi được lặp lại; punishment chỉ hậu quả làm giảm khả năng đó. Positive nghĩa là thêm một kích thích, negative nghĩa là loại bỏ một kích thích; chúng không có nghĩa là tốt và xấu.\nPositive reinforcement là thêm kích thích để tăng hành vi. Negative reinforcement là loại bỏ kích thích để tăng hành vi. Positive punishment là thêm kích thích để giảm hành vi. Negative punishment là loại bỏ kích thích để giảm hành vi.\nTrong ví dụ giả định, tiếng còi khó chịu ngừng khi người lái cài dây an toàn và việc cài dây trở nên thường xuyên hơn: đó là negative reinforcement. Tặng điểm sau khi học khiến việc học tăng lên là positive reinforcement. Thu hồi quyền chơi sau vi phạm khiến vi phạm giảm là negative punishment.\nQuy trình phân loại một ví dụ đã có dữ kiện:\n1. Xác định hành vi mục tiêu cần xét.\n2. Xác định dữ kiện nói hành vi tăng hay giảm.\n3. Xác định hậu quả thêm hay loại bỏ kích thích.\n4. Kết hợp hai chiều để gọi tên loại hậu quả.",
+      "expected_facts": {
+        "oracle": "concept_table",
+        "relations": {
+          "positive reinforcement": [
+            "add",
+            "increase"
+          ],
+          "negative reinforcement": [
+            "remove",
+            "increase"
+          ],
+          "positive punishment": [
+            "add",
+            "decrease"
+          ],
+          "negative punishment": [
+            "remove",
+            "decrease"
+          ]
+        },
+        "seatbelt": "negative reinforcement",
+        "loss_of_play": "negative punishment"
+      },
+      "references": [
+        "https://openstax.org/books/psychology-2e/pages/6-3-operant-conditioning"
+      ],
+      "expected_source_ordering": true,
+      "question_types": [
+        "mcq",
+        "cloze",
+        "matching",
+        "ordering",
+        "short_answer"
+      ],
+      "question_count": 8,
+      "card_count": 2,
+      "language": "vi",
+      "difficulty": "applied",
+      "terms_to_keep": [
+        "reinforcement",
+        "punishment",
+        "positive",
+        "negative"
+      ],
+      "source_kind": "original_agent_authored_evaluation_notes_not_book_excerpt",
+      "label_status": "computational_or_source_crosschecked_agent_labels_need_independent_review"
+    },
+    {
+      "id": "net-dev-ipv6",
+      "split": "dev",
+      "subject": "Mạng máy tính",
+      "title": "Biểu diễn địa chỉ IPv6",
+      "goal": "Đọc độ dài, các nhóm hextet, địa chỉ loopback/unspecified và cách rút gọn một địa chỉ IPv6.",
+      "text": "IPv6 dùng địa chỉ 128 bit. Cách viết đầy đủ có tám nhóm hexadecimal 16 bit, mỗi nhóm thường gọi là hextet. Có thể bỏ các số 0 ở đầu một nhóm. Ký hiệu :: thay cho một dãy nhóm 0 và chỉ xuất hiện nhiều nhất một lần trong một địa chỉ để tránh mơ hồ.\nĐịa chỉ ::1 là loopback. Địa chỉ :: là unspecified. IPv6 không có broadcast; multicast phục vụ các nhóm thiết bị. Với ví dụ 2001:db8:0000:0000:0000:0000:0000:0001, dạng rút gọn là 2001:db8::1.\nQuy trình rút gọn ví dụ trên:\n1. Chia địa chỉ đầy đủ thành tám nhóm hexadecimal.\n2. Bỏ các số 0 ở đầu mỗi nhóm nhưng giữ nhóm 0 là 0.\n3. Thay dãy nhóm 0 liên tiếp dài nhất bằng một dấu ::.\n4. Kiểm tra dạng rút gọn vẫn biểu diễn đúng 128 bit ban đầu.",
+      "expected_facts": {
+        "oracle": "ipv6",
+        "input": "2001:db8:0000:0000:0000:0000:0000:0001",
+        "loopback": "::1",
+        "unspecified": "::",
+        "bits": 128,
+        "groups": 8
+      },
+      "references": [
+        "https://www.rfc-editor.org/rfc/rfc4291.html#section-2.2",
+        "https://www.rfc-editor.org/rfc/rfc4291.html#section-2.5"
+      ],
+      "expected_source_ordering": true,
+      "question_types": [
+        "mcq",
+        "cloze",
+        "matching",
+        "ordering",
+        "short_answer"
+      ],
+      "question_count": 8,
+      "card_count": 2,
+      "language": "vi",
+      "difficulty": "applied",
+      "terms_to_keep": [
+        "IPv6",
+        "hextet",
+        "loopback",
+        "unspecified",
+        "multicast"
+      ],
+      "source_kind": "original_agent_authored_evaluation_notes_not_book_excerpt",
+      "label_status": "computational_or_source_crosschecked_agent_labels_need_independent_review"
+    },
+    {
+      "id": "calc-dev-chain",
+      "split": "dev",
+      "subject": "Vi tích phân",
+      "title": "Đạo hàm hàm hợp",
+      "goal": "Áp dụng chain rule, giữ nhân đạo hàm hàm trong; tính đạo hàm và giá trị tại điểm trong ví dụ.",
+      "text": "Nếu h(x)=f(g(x)) và các hàm khả vi tại những điểm cần xét, chain rule cho h'(x)=f'(g(x))*g'(x). Đạo hàm hàm ngoài phải được tính tại g(x), không phải tại g'(x).\nVí dụ h(x)=(3x+1)^4: hàm trong g(x)=3x+1 có g'(x)=3; hàm ngoài f(u)=u^4 có f'(u)=4u^3. Do đó h'(x)=12(3x+1)^3 và h'(0)=12. Biểu thức 4(3x+1)^3 bỏ mất hệ số 3 nên sai.\nQuy trình dùng chain rule:\n1. Xác định hàm trong và hàm ngoài.\n2. Lấy đạo hàm hàm ngoài rồi thế hàm trong vào.\n3. Tính đạo hàm hàm trong.\n4. Nhân hai kết quả để được đạo hàm hàm hợp.",
+      "expected_facts": {
+        "oracle": "chain_power",
+        "inner_slope": 3,
+        "inner_intercept": 1,
+        "power": 4,
+        "at": 0,
+        "coefficient": 12,
+        "value_at": 12,
+        "expression": "12*(3*x+1)^3"
+      },
+      "references": [
+        "https://openstax.org/books/calculus-volume-1/pages/3-6-the-chain-rule"
+      ],
+      "expected_source_ordering": true,
+      "question_types": [
+        "mcq",
+        "cloze",
+        "matching",
+        "ordering",
+        "short_answer"
+      ],
+      "question_count": 8,
+      "card_count": 2,
+      "language": "vi",
+      "difficulty": "applied",
+      "terms_to_keep": [
+        "chain rule"
+      ],
+      "source_kind": "original_agent_authored_evaluation_notes_not_book_excerpt",
+      "label_status": "computational_or_source_crosschecked_agent_labels_need_independent_review"
+    },
+    {
+      "id": "psy-dev-memory",
+      "split": "dev",
+      "subject": "Tâm lý đại cương",
+      "title": "Ba chức năng của trí nhớ",
+      "goal": "Phân biệt encoding, storage, retrieval và các kiểu mã hóa; không coi ví dụ nhớ lại là mã hóa.",
+      "text": "Encoding là quá trình đưa thông tin vào hệ thống trí nhớ. Storage là lưu giữ thông tin đã được mã hóa. Retrieval là đưa thông tin đã lưu trở lại nhận thức. Ba thuật ngữ mô tả các chức năng khác nhau; đây không phải bản hướng dẫn thao tác từng bước.\nSemantic encoding xử lý ý nghĩa; visual encoding xử lý hình ảnh; acoustic encoding xử lý âm thanh. Nhận ra ý nghĩa của một từ là ví dụ semantic encoding. Hình dung hình dáng một vật là ví dụ visual encoding. Chú ý âm của một từ là ví dụ acoustic encoding.\nTrong ví dụ giả định, lần đầu gắn nghĩa một thuật ngữ với kiến thức cũ thuộc encoding. Giữ thông tin qua thời gian thuộc storage. Khi được hỏi và nhớ lại định nghĩa đã học, đó là retrieval. Việc không nhớ ra ngay không tự chứng minh thông tin chưa từng được mã hóa.",
+      "expected_facts": {
+        "oracle": "concept_table",
+        "relations": {
+          "encoding": "input",
+          "storage": "retention",
+          "retrieval": "return_to_awareness",
+          "semantic encoding": "meaning",
+          "visual encoding": "images",
+          "acoustic encoding": "sounds"
+        }
+      },
+      "references": [
+        "https://openstax.org/books/psychology-2e/pages/8-1-how-memory-functions"
+      ],
+      "expected_source_ordering": false,
+      "question_types": [
+        "mcq",
+        "cloze",
+        "matching",
+        "ordering",
+        "short_answer"
+      ],
+      "question_count": 8,
+      "card_count": 2,
+      "language": "vi",
+      "difficulty": "applied",
+      "terms_to_keep": [
+        "encoding",
+        "storage",
+        "retrieval",
+        "semantic encoding",
+        "visual encoding",
+        "acoustic encoding"
+      ],
+      "source_kind": "original_agent_authored_evaluation_notes_not_book_excerpt",
+      "label_status": "computational_or_source_crosschecked_agent_labels_need_independent_review"
+    }
+  ]
+}

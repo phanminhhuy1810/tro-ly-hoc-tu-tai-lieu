@@ -1,0 +1,76 @@
+{
+  "checked_at": "2026-10-16T12:38:21.637296+00:00",
+  "kind": "one_connection_smoke_test_not_benchmark",
+  "provider": {
+    "provider": "ollama_kaggle",
+    "model": "qwen3.8:27b",
+    "deployment": "30d9e57bb7bcc7da"
+  },
+  "source": {
+    "filename": "CTT105-2-IP&subnetting_2.0.pdf",
+    "sha256": "9037fecd5131c299809b7aa4776b782c2939b2c47c792d7ee09a5cfa6c795404",
+    "page_count": 33,
+    "selected_pages": [
+      8,
+      15,
+      23,
+      26,
+      27,
+      33
+    ],
+    "extraction": "pypdf extract_text, uncorrected original text; full source audit separate"
+  },
+  "duration_seconds": 29.628,
+  "reply": {
+    "text": "Subnet mask dùng để phân định phần NetID và HostID trong địa chỉ IPv4 (pdf-p23). Với IP 172.29.217.10/19: Netmask là 255.255.224.0. Phần NetID gồm 19 bit đầu, HostID gồm 13 bit cuối. Network address: 172.29.192.0. Broadcast address: 172.29.223.255. Host đầu: 172.29.192.1. Host cuối: 172.29.223.254. Số host dùng được: 2^13 - 2 = 8190. Block range: từ 172.29.192.0 đến 172.29.223.255 (pdf-p26, pdf-p15).",
+    "source_refs": [
+      "pdf-p23",
+      "pdf-p26",
+      "pdf-p15"
+    ],
+    "needs_more_source": false
+  },
+  "fixed_answer_checks": {
+    "netmask": true,
+    "network": true,
+    "broadcast": true,
+    "first_host": true,
+    "last_host": true,
+    "usable_hosts": true
+  },
+  "programmatic_oracle": {
+    "netmask": "255.255.224.0",
+    "network": "172.29.192.0",
+    "broadcast": "172.29.223.255",
+    "first_host": "172.29.192.1",
+    "last_host": "172.29.223.254",
+    "usable_hosts": 8190
+  },
+  "web_chat_trial": {
+    "job_id": "1e4ed9b6342b4353b1fe1dd6e5e91062",
+    "course_id": "1b22ac289c664c3f84b3adb43508a7cf",
+    "status": "succeeded",
+    "provider": {
+      "provider": "ollama_kaggle",
+      "model": "qwen3.8:27b",
+      "deployment": "30d9e57bb7bcc7da",
+      "prompt_version": "20261015-context-v1",
+      "schema_version": 11
+    },
+    "created_at": "2026-10-16T12:38:56.183495+00:00",
+    "finished_at": "2026-10-16T12:39:13.703247+00:00",
+    "elapsed_job_seconds": 17.52,
+    "request": "Thử kết nối 27B: vì sao IP 192.168.1.70/26 thuộc network 192.168.1.64 và broadcast 192.168.1.127? Giải thích ngắn theo nguồn.",
+    "reply": {
+      "text": "Theo nguồn, prefix /26 dành 6 bit cho host, tạo thành các block có 2^6 = 64 địa chỉ. Với IP 192.168.1.70, octet cuối là 70. Vì 70 nằm trong khoảng từ 64 đến 127, nên nó thuộc block bắt đầu bằng 64. Do đó, địa chỉ network là 192.168.1.64 và địa chỉ broadcast là 192.168.1.127.",
+      "source_refs": [
+        "c44feeece5c441089388b6ef88cd4b1d:2:2",
+        "c44feeece5c441089388b6ef88cd4b1d:2:3"
+      ],
+      "needs_more_source": false
+    },
+    "source_type": "existing self-authored development fixture; separate from PDF smoke test",
+    "ui_observed": "quote model qwen3.8:27b, confirmed one proposed Coin, succeeded in small/fullscreen chat; unsubmitted matching selections retained",
+    "screenshot": "preview/screenshots/kaggle-27b-chat.jpg"
+  }
+}

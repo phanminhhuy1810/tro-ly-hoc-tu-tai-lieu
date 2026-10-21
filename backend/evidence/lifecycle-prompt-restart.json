@@ -1,0 +1,23 @@
+{
+  "backup": "study-before-scope-prompt-20261020T102911Z.sqlite3",
+  "active_jobs_before": 0,
+  "active_rooms_before": 0,
+  "purpose": "Deploy scoped content prompt and typed reference failure; no source or course retry in this operation",
+  "courses": "0409eda7bfb85dd1c016d0580d7dd54381a0eed6950926796ffc16190d722b5f",
+  "course_revisions": "84add6aab03c11e6367c452c51024388499313c3d0aa08c9c86de6aaecce05c0",
+  "sources": "a4704d78041d368a16fcfe762a6c7650b8e0137bd83e47a11bb1bf08097bdde3",
+  "extraction_revisions": "7a124ae37b8474fec13740feabd2fc3cf1f88db740def6206539504f4be9bd85",
+  "jobs": "9f7cac5919103d2077744c5b581433578e1f0eb566f25a52e0f375daa1922eea",
+  "ai_preferences": "9fc95f14b95a737373e554becfa201ff4059618a91e6154b0b2fd2f5177ccaaa",
+  "wallets": "26e548a94654d0bdd5b91a935ba819b6dde8e0ed06a56d0fbed7a7656e31b07e",
+  "unchanged_tables": {
+    "courses": true,
+    "course_revisions": true,
+    "sources": true,
+    "extraction_revisions": true,
+    "jobs": true,
+    "ai_preferences": true,
+    "wallets": true
+  },
+  "all_passed": true
+}

@@ -1,0 +1,88 @@
+{
+  "purpose": "Agent review of baseline frozen dev outputs; not independent human evaluation.",
+  "run": "dev-v1",
+  "requested_questions": 48,
+  "completed_jobs": 1,
+  "failed_jobs": 5,
+  "published_questions": 7,
+  "validated_partial_questions": 19,
+  "cases": [
+    {
+      "id": "net-dev-prefix",
+      "status": "failed",
+      "published_questions": 0,
+      "validated_partial_questions": 3,
+      "elapsed_ms": 72790.116,
+      "error": {
+        "message": "Nguồn trích chưa có quy trình đánh số để kiểm chứng thứ tự."
+      },
+      "agent_observations": "Three saved candidates match the /25 arithmetic/source. Entire lesson not delivered because ordering validation failed. Captured separate reproduction proves the scoped-heading validator defect; raw original request unavailable."
+    },
+    {
+      "id": "calc-dev-ftc",
+      "status": "failed",
+      "published_questions": 0,
+      "validated_partial_questions": 3,
+      "elapsed_ms": 70084.608,
+      "error": {
+        "message": "Nguồn trích chưa có quy trình đánh số để kiểm chứng thứ tự."
+      },
+      "agent_observations": "Saved MCQ/cloze cite correct FTC order/sign. Matching asks for step numbers and says đúng thứ tự, weak task design. Whole lesson failed at ordering; no assumption that its unrecorded raw equals networking reproduction."
+    },
+    {
+      "id": "psy-dev-operant",
+      "status": "failed",
+      "published_questions": 0,
+      "validated_partial_questions": 0,
+      "elapsed_ms": 38089.51,
+      "error": {
+        "message": "AI trả cấu trúc chưa hợp lệ ở question: Value error, MCQ must have distinct options and an answer from those options. Nguồn và phần đã lưu vẫn còn; chưa áp dụng đầu ra này. Có thể thử lại hoặc thu hẹp mục tiêu."
+      },
+      "agent_observations": "MCQ domain validation failed after reading. A later one-shot reproduction succeeded; raw original failure unavailable, so the cause is not proven beyond answer/option contract rejection."
+    },
+    {
+      "id": "net-dev-ipv6",
+      "status": "failed",
+      "published_questions": 0,
+      "validated_partial_questions": 3,
+      "elapsed_ms": 61670.366,
+      "error": {
+        "message": "Nguồn trích chưa có quy trình đánh số để kiểm chứng thứ tự."
+      },
+      "agent_observations": "Saved hextet/unspecified/loopback questions match the source and standard definitions. Whole lesson failed at ordering; actual arithmetic example was not assessed in saved candidates."
+    },
+    {
+      "id": "calc-dev-chain",
+      "status": "failed",
+      "published_questions": 0,
+      "validated_partial_questions": 3,
+      "elapsed_ms": 61215.593,
+      "error": {
+        "message": "Nguồn trích chưa có quy trình đánh số để kiểm chứng thứ tự."
+      },
+      "agent_observations": "Saved items correctly distinguish g(x) from g'(x); no numeric application. Explanation leaks R1/R5 transport labels. Whole lesson failed at ordering."
+    },
+    {
+      "id": "psy-dev-memory",
+      "status": "succeeded",
+      "published_questions": 7,
+      "validated_partial_questions": 7,
+      "elapsed_ms": 73375.214,
+      "error": null,
+      "agent_observations": "Seven published questions and one justified source-gated ordering. MCQ and MCQ:2 ask the same encoding definition with superficial wording changes; weakness retained, not counted as diverse assessment."
+    }
+  ],
+  "human_reviewed": false,
+  "factual_acceptance": false,
+  "review_limit": "Computed labels and agent reading/source cross-check are provisional. Generated-key roundtrip is not semantic correctness.",
+  "changes_selected_on_dev": [
+    {
+      "issue": "False ordering rejection when cited steps omit procedure heading",
+      "change": "Keep procedure qualification in pinned scope and prove each option in cited step IDs; no broader refs or text rewriting."
+    },
+    {
+      "issue": "Repeated same-kind question tests the same definition",
+      "change": "Prompt asks for a different supported aspect within the same kind; decline if unavailable. Not a deterministic semantic uniqueness guarantee."
+    }
+  ]
+}

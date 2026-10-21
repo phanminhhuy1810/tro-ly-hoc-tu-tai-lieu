@@ -1,0 +1,26 @@
+{
+  "checked_at": "2026-10-18T16:04:26.437556+00:00",
+  "backup_before_restart": "backend/runtime/study-before-cloze-v13-20261018T160237Z.sqlite3",
+  "checks": {
+    "sources_old_rows_kept": true,
+    "extraction_revisions_old_rows_kept": true,
+    "plans_old_rows_kept": true,
+    "course_revisions_old_rows_kept": true,
+    "study_sessions_old_rows_kept": true,
+    "answers_old_rows_kept": true,
+    "jobs_old_rows_kept": true,
+    "check_in_kept": true,
+    "native_ocr_qa_r4_93_kept": true,
+    "network_original_sha256_kept": true,
+    "academic_original_kept": true,
+    "health_ok": true,
+    "check_in_read_after_restart": true,
+    "source_library_after_restart": true
+  },
+  "schema": 16,
+  "active_jobs": 0,
+  "all_passed": true,
+  "probe_model_requests": 0,
+  "last_real_failed_unit_probe": "valid_schema_but_declined_insufficient_intro_source",
+  "full_course_quality_confirmed": false
+}

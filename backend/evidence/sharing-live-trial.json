@@ -1,0 +1,14 @@
+{
+  "purpose": "real HTTP four local profiles on self-authored development course; not independent human trial",
+  "checks": {
+    "creator_private_preferences_and_original_not_granted": true,
+    "history_and_completion_separate_between_profiles": true,
+    "notebook_private_on_shared_course": true,
+    "peer_quality_event_once_after_unlike_relike": true,
+    "revoke_access_keeps_personal_history_and_notes": true
+  },
+  "coin_for_publishing": 0,
+  "course_id": "0b3c505ebc194963b04cc66a8c2644b6",
+  "course_revision": 8,
+  "passed": true
+}

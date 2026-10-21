@@ -1,0 +1,138 @@
+{
+  "purpose": "QA-only Codex-assisted review flags, not independent human judgments or proof all keys are wrong.",
+  "at": "2026-10-21T05:16:31.980940+00:00",
+  "raw_run_sha256": "763de34447c8d07cdc74334143af6767716d5a560d30f1cd68d952a5f2669b2e",
+  "inference_calls": 0,
+  "independent_human_reviews": 0,
+  "flags": [
+    {
+      "case_id": "net-dev-prefix",
+      "question_index": 1,
+      "reason": "The broadcast key and numeric example are supported, but explanation exposes transport labels R7/R2 to the learner.",
+      "flag": {
+        "question_revision_id": "5fc53654786649d28a1e9f8cb18c57f9:unit-1:7d7235eb63092bb16d13fdcb",
+        "state": "needs_review",
+        "old_attempts_preserved": true
+      }
+    },
+    {
+      "case_id": "net-dev-prefix",
+      "question_index": 2,
+      "reason": "Stem omits the IP10.12.7.201: /25 alone does not identify these numeric network/broadcast addresses. The explanation depends on a lesson example absent from the standalone prompt.",
+      "flag": {
+        "question_revision_id": "5fc53654786649d28a1e9f8cb18c57f9:unit-1:d9ecca91702f2a78a560ff63",
+        "state": "needs_review",
+        "old_attempts_preserved": true
+      }
+    },
+    {
+      "case_id": "calc-dev-ftc",
+      "question_index": 1,
+      "reason": "Blank asks what to compute and key is the expression F(2)-F(0), while equivalent numeric 8/3 also fits and the fixed text grader rejects it. Specify an expression format or ask only the numeric result.",
+      "flag": {
+        "question_revision_id": "8466949ae2e6452a94ed5c2f292d7f3e:unit-1:8f8f9747635d3811876ada98",
+        "state": "needs_review",
+        "old_attempts_preserved": true
+      }
+    },
+    {
+      "case_id": "calc-dev-ftc",
+      "question_index": 4,
+      "reason": "Second MCQ repeats the first MCQ objective and same G(1)-G(0) answer with near-identical stem. It also includes G(1)+G(0), numerically2 for these bounds: ask explicitly for the theorem operation or use nonzero lower antiderivative value.",
+      "flag": {
+        "question_revision_id": "8466949ae2e6452a94ed5c2f292d7f3e:unit-1:f7c5c57ba430942481cded58",
+        "state": "needs_review",
+        "old_attempts_preserved": true
+      }
+    },
+    {
+      "case_id": "calc-dev-ftc",
+      "question_index": 5,
+      "reason": "Negative8/3 after reversing the subtraction is arithmetically supported, but explanation exposes R1/R2 transport labels.",
+      "flag": {
+        "question_revision_id": "8466949ae2e6452a94ed5c2f292d7f3e:unit-1:b7c79203c3fb8f6e84c7f35c",
+        "state": "needs_review",
+        "old_attempts_preserved": true
+      }
+    },
+    {
+      "case_id": "psy-dev-operant",
+      "question_index": 4,
+      "reason": "Stem says the student KEEPS computer access after sitting quietly; answer/explanation invent WITHDRAWAL of access and call it negative punishment. The target noisy behavior decreasing does not establish removal in this stem.",
+      "flag": {
+        "question_revision_id": "9a849bac6ffa42c4a54981900123de09:unit-1:b1fc90fdd27e6be7dc1143c9",
+        "state": "needs_review",
+        "old_attempts_preserved": true
+      }
+    },
+    {
+      "case_id": "psy-dev-operant",
+      "question_index": 5,
+      "reason": "Contingent withdrawal of break-room access and reduced lateness support negative punishment under the source definitions. The supplied refs cite only procedure steps, not the actual definitions needed to justify that label.",
+      "flag": {
+        "question_revision_id": "9a849bac6ffa42c4a54981900123de09:unit-1:d4b521dd2bc8bf86c14e113f",
+        "state": "needs_review",
+        "old_attempts_preserved": true
+      }
+    },
+    {
+      "case_id": "net-dev-ipv6",
+      "question_index": 2,
+      "reason": "The mappings match the cited procedure, but the question asks which slide step number has which wording. That tests memorizing numbered positions rather than understanding an operation; use concepts or a concrete compression situation for matching.",
+      "flag": {
+        "question_revision_id": "597198e27f6e4f269acde0a6f7c6e820:unit-1:4b331828f87c73f6d90625c3",
+        "state": "needs_review",
+        "old_attempts_preserved": true
+      }
+    },
+    {
+      "case_id": "psy-dev-memory",
+      "question_index": 1,
+      "reason": "Visual-encoding answer is supported by the image-shape scenario, but explanation exposes the R2 transport label.",
+      "flag": {
+        "question_revision_id": "ccdba0a469a64afaa2f47d538209eeef:unit-1:7b0aed232b459507cd9f15ee",
+        "state": "needs_review",
+        "old_attempts_preserved": true
+      }
+    },
+    {
+      "case_id": "psy-dev-memory",
+      "question_index": 4,
+      "reason": "Acoustic-encoding key is supported and distinct from first MCQ objective, but explanation exposes the R2 transport label.",
+      "flag": {
+        "question_revision_id": "ccdba0a469a64afaa2f47d538209eeef:unit-1:db01e3e1db98a056e69b26ef",
+        "state": "needs_review",
+        "old_attempts_preserved": true
+      }
+    }
+  ],
+  "checks": {
+    "net-dev-prefix": {
+      "course_content_unchanged": true,
+      "old_session_snapshot_unchanged": true,
+      "coin_unchanged": true
+    },
+    "calc-dev-ftc": {
+      "course_content_unchanged": true,
+      "old_session_snapshot_unchanged": true,
+      "coin_unchanged": true
+    },
+    "psy-dev-operant": {
+      "course_content_unchanged": true,
+      "old_session_snapshot_unchanged": true,
+      "coin_unchanged": true
+    },
+    "net-dev-ipv6": {
+      "course_content_unchanged": true,
+      "old_session_snapshot_unchanged": true,
+      "coin_unchanged": true
+    },
+    "psy-dev-memory": {
+      "course_content_unchanged": true,
+      "old_session_snapshot_unchanged": true,
+      "coin_unchanged": true
+    }
+  },
+  "original_measurement_unchanged": true,
+  "flag_count": 10
+}

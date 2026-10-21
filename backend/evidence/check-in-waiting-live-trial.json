@@ -1,0 +1,20 @@
+{
+  "purpose": "Explicit local daily check-in HTTP smoke; no model or Coin award",
+  "checked_today": true,
+  "timezone": "Asia/Ho_Chi_Minh",
+  "first_new": true,
+  "repeat_new": false,
+  "wallet_unchanged": true,
+  "coin_awarded": 0,
+  "counts_as_study": false,
+  "server_study_streak": 0,
+  "browser_qa_check_in_survived_reload": true,
+  "screenshots": [
+    "preview/screenshots/daily-check-in-desktop.png",
+    "preview/screenshots/upload-waiting-motion-desktop.png"
+  ],
+  "all_passed": true,
+  "waiting_browser_upload_files": 20,
+  "waiting_upload_completed_and_entered_review": true,
+  "browser_error_logs": []
+}

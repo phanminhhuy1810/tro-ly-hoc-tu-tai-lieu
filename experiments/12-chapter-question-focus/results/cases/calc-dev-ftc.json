@@ -1,0 +1,109 @@
+{
+  "purpose": "Codex-assisted source/oracle review; not independent human or instructor labels.",
+  "reviewed_at": "2026-10-21T04:59:40.382144+00:00",
+  "case_id": "calc-dev-ftc",
+  "run_id": "dev-v5-chapter-focus",
+  "production_sha256": "4445b6ad08bbb79c0faaf00ba77f1f525e623b7860a156fcdc5ccdc12869e04c",
+  "source_sha256": "7d7f383d0ebe5029dad17b42a5ff28974010781354878a98ed232bde19b87e04",
+  "oracle": {
+    "verification": "computed",
+    "integral": "8/3",
+    "reversed": "-8/3",
+    "second_integral": "2"
+  },
+  "reading_review": "Reading/cards/mindmap keep the continuity/antiderivative condition, F(b)-F(a), exact four-step procedure and 8/3 example. Polynomial calculations match Fraction oracle. Minor reversed-bound wording is awkward; no claim of independent instructor review.",
+  "independent_human_reviews": 0,
+  "factual_accuracy_score": null,
+  "questions": [
+    {
+      "question_index": 0,
+      "kind": "mcq",
+      "question_sha256": "063bc6571025edfa836d0a089e2fa3c7a80e43926891ef4cc8aafc23d8c39997",
+      "status": "supported_in_checked_scope",
+      "note": "The chosen operation uses antiderivative upper-minus-lower, supported by the theorem/procedure. Numerical distractors can coincide at these particular bounds; clarify that this asks the theorem operation, not merely the resulting number.",
+      "source_refs": [
+        "0f99dc07d30d4fe981691a98f8780abd:2:0",
+        "0f99dc07d30d4fe981691a98f8780abd:2:1",
+        "0f99dc07d30d4fe981691a98f8780abd:2:6"
+      ]
+    },
+    {
+      "question_index": 1,
+      "kind": "cloze",
+      "question_sha256": "8f8f9747635d3811876ada98741b228fc5e357758c6df04528ea00eba40d9e15",
+      "status": "needs_review",
+      "note": "Blank asks what to compute and key is the expression F(2)-F(0), while equivalent numeric 8/3 also fits and the fixed text grader rejects it. Specify an expression format or ask only the numeric result.",
+      "source_refs": [
+        "0f99dc07d30d4fe981691a98f8780abd:2:0",
+        "0f99dc07d30d4fe981691a98f8780abd:2:1",
+        "0f99dc07d30d4fe981691a98f8780abd:2:6"
+      ]
+    },
+    {
+      "question_index": 2,
+      "kind": "matching",
+      "question_sha256": "d5fb0d338004ca0570ba759b188fb1d5f2632f44c91208eb9e5ae9eae08277c0",
+      "status": "supported_in_checked_scope",
+      "note": "a/b and lower/upper labels map uniquely to the two source steps. Strong wording cues make this easy, but the mappings are supported.",
+      "source_refs": [
+        "0f99dc07d30d4fe981691a98f8780abd:2:0",
+        "0f99dc07d30d4fe981691a98f8780abd:2:4",
+        "0f99dc07d30d4fe981691a98f8780abd:2:5",
+        "0f99dc07d30d4fe981691a98f8780abd:2:6"
+      ]
+    },
+    {
+      "question_index": 3,
+      "kind": "short_answer",
+      "question_sha256": "8be466275a6f754b000eda1cea699a3b2c2706f732ea1255c745dae62a493f74",
+      "status": "supported_in_checked_scope",
+      "note": "G(1)=2, G(0)=0 and integral2 agree with independent polynomial integration; rubric is self-review. Last rubric says F instead of G but describes the general boundary rule.",
+      "source_refs": [
+        "0f99dc07d30d4fe981691a98f8780abd:2:0",
+        "0f99dc07d30d4fe981691a98f8780abd:2:1",
+        "0f99dc07d30d4fe981691a98f8780abd:2:2",
+        "0f99dc07d30d4fe981691a98f8780abd:2:3",
+        "0f99dc07d30d4fe981691a98f8780abd:2:4",
+        "0f99dc07d30d4fe981691a98f8780abd:2:5",
+        "0f99dc07d30d4fe981691a98f8780abd:2:6"
+      ]
+    },
+    {
+      "question_index": 4,
+      "kind": "mcq",
+      "question_sha256": "f7c5c57ba430942481cded58d3f308c75a0ab41b92e121a361ca4ff90cc5aa7f",
+      "status": "needs_review",
+      "note": "Second MCQ repeats the first MCQ objective and same G(1)-G(0) answer with near-identical stem. It also includes G(1)+G(0), numerically2 for these bounds: ask explicitly for the theorem operation or use nonzero lower antiderivative value.",
+      "source_refs": [
+        "0f99dc07d30d4fe981691a98f8780abd:2:0",
+        "0f99dc07d30d4fe981691a98f8780abd:2:1",
+        "0f99dc07d30d4fe981691a98f8780abd:2:6"
+      ]
+    },
+    {
+      "question_index": 5,
+      "kind": "cloze",
+      "question_sha256": "b7c79203c3fb8f6e84c7f35ce29bccbb82b5ad5ac2579a70e10b8538d0c62a46",
+      "status": "needs_review",
+      "note": "Negative8/3 after reversing the subtraction is arithmetically supported, but explanation exposes R1/R2 transport labels.",
+      "source_refs": [
+        "0f99dc07d30d4fe981691a98f8780abd:2:0",
+        "0f99dc07d30d4fe981691a98f8780abd:2:1"
+      ]
+    }
+  ],
+  "uncreated": [
+    {
+      "stage": "ordering",
+      "kind": "ordering",
+      "reason": "The source material (R4, R5, R6, R7) provides a clear 4-step numbered procedure for calculating a definite integral, which is required to generate the ordering question. However, the specific instruction to 'distinguish between the value of the function and the value of the antiderivative at the boundaries' (from the prompt's priority) cannot be mapped to a sequential ordering of steps in the source. The source describes a calculation process, not a conceptual distinction process. Therefore, a valid ordering question cannot be constructed that satisfies the specific priority of distinguishing function values vs. antiderivative values.",
+      "origin": "model_declined"
+    },
+    {
+      "stage": "matching:2",
+      "kind": "matching",
+      "reason": "Đã có câu hỏi dạng matching yêu cầu nối các thành phần của quy trình tính toán (R3, R4, R5, R6, R7). Mục tiêu riêng của bài là phân biệt giá trị của hàm số và giá trị của nguyên hàm tại các cận, nhưng trong nguồn (R1, R2, R3, R4, R5, R6, R7) không có dữ kiện hoặc ví dụ cụ thể nào cho phép tạo thêm một câu hỏi matching khác ngoài việc liệt kê quy trình hoặc tính toán giá trị cụ thể đã được khai thác ở các câu hỏi khác.",
+      "origin": "model_declined"
+    }
+  ]
+}

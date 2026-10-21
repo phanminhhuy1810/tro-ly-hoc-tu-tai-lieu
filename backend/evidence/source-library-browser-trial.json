@@ -1,0 +1,64 @@
+{
+  "purpose": "Desktop functional check using browser UI and self-authored QA fixtures; not a human-user or model-quality evaluation",
+  "source_id": "dee9bc663e9545b88ce963133cacacd8",
+  "source_revision": 2,
+  "excerpts": 180,
+  "uploaded_files": 21,
+  "browser_library_sources_before_last_upload": 22,
+  "browser_library_page2_after_reload": true,
+  "browser_filename_search_exact": "nav-source-07.txt",
+  "initial_keyword_matches": 45,
+  "unchecked_source_positions": [
+    1,
+    81
+  ],
+  "added_source_position": 2,
+  "selected_after_uncheck_reload": 43,
+  "final_selected": 44,
+  "scope_search_enter_kept_preferences_stage": true,
+  "scope_search_location_filter": {
+    "kind": "line",
+    "position": 2,
+    "matches": 1
+  },
+  "draft_fields_kept_across_page_search_reload": true,
+  "plan_id": "fd8944e32d724525b2955b3f3352ec5e",
+  "plan_units": 6,
+  "plan_status": "preview",
+  "checks": {
+    "scope_exact44": true,
+    "assignment_exact44": true,
+    "language_en": true,
+    "unlock_open": true,
+    "goal_retained": true,
+    "instructions_retained": true,
+    "preview_not_approved": true,
+    "no_ai_job_or_coin_write": true
+  },
+  "all_passed": true,
+  "counters_after": {
+    "jobs": 94,
+    "ai_usage": 67,
+    "coin_ledger": 67
+  },
+  "screenshots": [
+    "preview/screenshots/source-library-page2-desktop.png",
+    "preview/screenshots/source-scope-selection-desktop.png",
+    "preview/screenshots/source-scope-outline-desktop.png"
+  ],
+  "mobile_retested": false,
+  "qa_owner_id": "7b02a974cdb44396ae4525dbd4cd9c8b",
+  "counters_before_qa_owner": {
+    "jobs": 2,
+    "ai_usage": 0,
+    "coin_ledger": 0
+  },
+  "counters_after_qa_owner": {
+    "jobs": 2,
+    "ai_usage": 0,
+    "coin_ledger": 0
+  },
+  "global_counts_changed_by_other_profile": true,
+  "global_observation_note": "Another profile ran lesson jobs during browser checks; those jobs are not part of this feature test and were not cancelled. The no-AI assertion is scoped to the authenticated QA owner.",
+  "final_browser_error_logs": []
+}

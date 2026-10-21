@@ -1,0 +1,184 @@
+{
+  "checked_at": "2026-10-16T23:04:45.207416+00:00",
+  "active_jobs": 0,
+  "browser_model": {
+    "model_id": "gemini:gemini-2.5-flash",
+    "revision": 3
+  },
+  "recent_browser_jobs": [
+    {
+      "id": "b78517db2a9f42f8b44fff5e3b696017",
+      "task": "inline_help",
+      "status": "succeeded",
+      "provider": {
+        "provider": "gemini_api",
+        "model": "gemini-2.5-flash",
+        "model_choice_id": "gemini:gemini-2.5-flash",
+        "selection_revision": 3,
+        "prompt_version": "20261015-pinned-inline-help-v2",
+        "schema_version": 13
+      },
+      "error": null,
+      "progress": {
+        "phase": "succeeded",
+        "requests": [
+          {
+            "index": 1,
+            "schema": "ChatReply",
+            "phase": "received",
+            "streaming": true,
+            "started_at": "2026-10-16T23:03:05.357148+00:00",
+            "first_chunk_ms": 1172.269,
+            "first_text_ms": 1172.316,
+            "elapsed_ms": 2312.387,
+            "chunks": 7,
+            "characters": 752,
+            "usage": {
+              "input_tokens": 2403,
+              "output_tokens": 269,
+              "total_tokens": 2672
+            }
+          }
+        ],
+        "preview": null,
+        "planned_stages": null,
+        "saved_stages": 0,
+        "reused_stages": 0,
+        "started_at": "2026-10-16T23:03:05.356732+00:00",
+        "completed_at": "2026-10-16T23:03:07.673732+00:00",
+        "elapsed_ms": 2317.005
+      },
+      "result_characters": 648
+    },
+    {
+      "id": "fa4466a0b4eb4960837d5dd3750f9676",
+      "task": "inline_help",
+      "status": "succeeded",
+      "provider": {
+        "provider": "gemini_api",
+        "model": "gemini-2.5-flash",
+        "model_choice_id": "gemini:gemini-2.5-flash",
+        "selection_revision": 3,
+        "prompt_version": "20261015-pinned-inline-help-v2",
+        "schema_version": 13
+      },
+      "error": null,
+      "progress": {
+        "phase": "succeeded",
+        "requests": [
+          {
+            "index": 1,
+            "schema": "ChatReply",
+            "phase": "received",
+            "streaming": true,
+            "started_at": "2026-10-16T23:02:20.624166+00:00",
+            "first_chunk_ms": 1241.684,
+            "first_text_ms": 1241.717,
+            "elapsed_ms": 3238.305,
+            "chunks": 10,
+            "characters": 1311,
+            "usage": {
+              "input_tokens": 1844,
+              "output_tokens": 432,
+              "total_tokens": 2276
+            }
+          }
+        ],
+        "preview": null,
+        "planned_stages": null,
+        "saved_stages": 0,
+        "reused_stages": 0,
+        "started_at": "2026-10-16T23:02:20.623580+00:00",
+        "completed_at": "2026-10-16T23:02:23.867385+00:00",
+        "elapsed_ms": 3243.808
+      },
+      "result_characters": 1203
+    },
+    {
+      "id": "3cc1e652f67c43408132b50dbf33683f",
+      "task": "chat",
+      "status": "cancelled",
+      "provider": {
+        "provider": "ollama_local",
+        "model": "qwen3.5:9b",
+        "model_choice_id": "local:qwen3.5:9b",
+        "selection_revision": 2,
+        "prompt_version": "20261017-pinned-source-context-v2",
+        "schema_version": 13
+      },
+      "error": null,
+      "progress": {
+        "phase": "cancelled",
+        "requests": [
+          {
+            "index": 1,
+            "schema": "ChatReply",
+            "phase": "cancelled",
+            "streaming": true,
+            "started_at": "2026-10-16T22:54:51.388093+00:00",
+            "first_chunk_ms": 2734.777,
+            "first_text_ms": 2856.909,
+            "elapsed_ms": null,
+            "chunks": 16,
+            "characters": 44,
+            "usage": {},
+            "protocol_fallbacks": 1
+          }
+        ],
+        "preview": null,
+        "planned_stages": null,
+        "saved_stages": 0,
+        "reused_stages": 0,
+        "started_at": "2026-10-16T22:54:51.387677+00:00",
+        "completed_at": "2026-10-16T22:54:54.696801+00:00",
+        "elapsed_ms": 3309.127
+      },
+      "result_characters": 0
+    },
+    {
+      "id": "908e4b40c5724da0882d722ca7f18411",
+      "task": "chat",
+      "status": "succeeded",
+      "provider": {
+        "provider": "gemini_api",
+        "model": "gemini-2.5-flash",
+        "model_choice_id": "gemini:gemini-2.5-flash",
+        "selection_revision": 1,
+        "prompt_version": "20261017-pinned-source-context-v2",
+        "schema_version": 13
+      },
+      "error": null,
+      "progress": {
+        "phase": "succeeded",
+        "requests": [
+          {
+            "index": 1,
+            "schema": "ChatReply",
+            "phase": "received",
+            "streaming": true,
+            "started_at": "2026-10-16T22:52:53.666383+00:00",
+            "first_chunk_ms": 1149.9,
+            "first_text_ms": 1149.941,
+            "elapsed_ms": 2942.265,
+            "chunks": 10,
+            "characters": 969,
+            "usage": {
+              "input_tokens": 1380,
+              "output_tokens": 416,
+              "total_tokens": 1796
+            }
+          }
+        ],
+        "preview": null,
+        "planned_stages": null,
+        "saved_stages": 0,
+        "reused_stages": 0,
+        "started_at": "2026-10-16T22:52:53.665938+00:00",
+        "completed_at": "2026-10-16T22:52:56.614035+00:00",
+        "elapsed_ms": 2948.102
+      },
+      "result_characters": 792
+    }
+  ],
+  "quiz_rooms_running": 0
+}

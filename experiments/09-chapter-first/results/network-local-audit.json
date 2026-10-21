@@ -1,0 +1,50 @@
+{
+  "purpose": "Offline same-output factual check and review flags for the original QA-only v19 result, preserving raw model output.",
+  "course_id": "b56b76cf116e49328ad025842c1a0006",
+  "unit_id": "unit-5",
+  "network": "172.100.96.0",
+  "broadcast": "172.100.127.255",
+  "usable_hosts": 8190,
+  "inference_calls": 0,
+  "mutations": "question review flags only",
+  "questions": [
+    {
+      "index": 0,
+      "kind": "mcq",
+      "guard": "SUBNET_DERIVATION_MISMATCH",
+      "reason": "Câu có phép tính subnet sai: 172.100.112.4/19 cho network = 172.100.96.0, nhưng AI ghi 172.100.112.0. Chưa dùng câu này; không tự sửa đáp án AI.",
+      "flag": {
+        "question_revision_id": "b56b76cf116e49328ad025842c1a0006:unit-5:94a3f677eff56d56bc288e2b",
+        "state": "needs_review",
+        "old_attempts_preserved": true
+      },
+      "raw_output_unchanged": true
+    },
+    {
+      "index": 1,
+      "kind": "cloze",
+      "guard": "SUBNET_DERIVATION_MISMATCH",
+      "reason": "Câu có phép tính subnet sai: 172.100.112.4/19 cho network = 172.100.96.0, nhưng AI ghi 172.100.112.0. Chưa dùng câu này; không tự sửa đáp án AI.",
+      "flag": {
+        "question_revision_id": "b56b76cf116e49328ad025842c1a0006:unit-5:c63483fd6e2f78d82eb68fad",
+        "state": "needs_review",
+        "old_attempts_preserved": true
+      },
+      "raw_output_unchanged": true
+    },
+    {
+      "index": 2,
+      "kind": "short_answer",
+      "guard": "SUBNET_DERIVATION_MISMATCH",
+      "reason": "Câu có phép tính subnet sai: 172.100.112.4/19 cho network = 172.100.96.0, nhưng AI ghi 172.100.112.0. Chưa dùng câu này; không tự sửa đáp án AI.",
+      "flag": {
+        "question_revision_id": "b56b76cf116e49328ad025842c1a0006:unit-5:7053ded6c742b99cf54da290",
+        "state": "needs_review",
+        "old_attempts_preserved": true
+      },
+      "raw_output_unchanged": true
+    }
+  ],
+  "course_revision_unchanged": true,
+  "lesson_data_unchanged": true
+}

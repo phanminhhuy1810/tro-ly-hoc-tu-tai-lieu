@@ -1,0 +1,17 @@
+/Users/phanminhhuy/Documents/learning resources/Hk4/TDTT/AI-STUDY-HANDOFF/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+======================================================================
+FAIL: test_repeated_questions_do_not_fill_requested_count_with_duplicates (test_setup.SetupTests.test_repeated_questions_do_not_fill_requested_count_with_duplicates)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/phanminhhuy/Documents/learning resources/Hk4/TDTT/AI-STUDY-HANDOFF/backend/tests/test_setup.py", line 127, in test_repeated_questions_do_not_fill_requested_count_with_duplicates
+    self.assertEqual(job['status'],'failed')
+AssertionError: 'succeeded' != 'failed'
+- succeeded
++ failed
+
+
+----------------------------------------------------------------------
+Ran 325 tests in 36.515s
+
+FAILED (failures=1)

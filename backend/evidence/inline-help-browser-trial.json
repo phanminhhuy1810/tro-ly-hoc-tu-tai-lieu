@@ -1,0 +1,122 @@
+{
+  "verified_at": "2026-10-15T10:55:27.277832+00:00",
+  "scope": "Browser and read-only DB on self-authored dev source with real local Qwen; not independent human or general quality evaluation",
+  "source_sha256": "bb9046e1f07ff872b3a1eebbce6670c5270f8e3d4281166fb7559b62870390c0",
+  "job_id": "f3e0197db308494b9f86e582c69f15a2",
+  "provider": {
+    "provider": "ollama_local",
+    "model": "qwen3.5:9b",
+    "prompt_version": "20261015-pinned-inline-help-v2",
+    "schema_version": 11
+  },
+  "course_revision": 5,
+  "question": "Với địa chỉ IP 192.168.1.70/26, mạng con (network address) là gì?",
+  "student_snapshot": {
+    "session_status": "open",
+    "submitted": false,
+    "answer": null,
+    "answer_display": null,
+    "draft": "option-1",
+    "draft_display": "192.168.1.127",
+    "feedback": null
+  },
+  "reply": {
+    "text": "Địa chỉ bạn chọn là broadcast (192.168.1.127) vì trong block mạng con có kích thước 64 địa chỉ (từ 192.168.1.64 đến 192.168.1.127), số cuối cùng luôn là địa chỉ broadcast, còn số đầu tiên mới là network address.",
+    "source_refs": [
+      "c44feeece5c441089388b6ef88cd4b1d:2:2",
+      "c44feeece5c441089388b6ef88cd4b1d:2:3"
+    ],
+    "needs_more_source": false,
+    "thread_id": "49bbafbd07de474ca3d42872a4868161",
+    "message_id": "366ec415b2f1427dad498f46063b01be"
+  },
+  "seconds": 6.971,
+  "browser_observations": {
+    "selected_option_survives_help_open_and_reload": true,
+    "cached_explanation_available_before_submitting": true,
+    "coin_cancel_keeps_draft": true,
+    "confirmed_new_ai_reply_shown_inline": true,
+    "successful_help_draft_cleared": true,
+    "save_note_and_card_confirmed_in_ui": true
+  },
+  "saved_note": {
+    "id": "60f8819edf9a4b7d90e9c836fc89af93",
+    "label": "ai",
+    "source_refs": [
+      "c44feeece5c441089388b6ef88cd4b1d:2:2",
+      "c44feeece5c441089388b6ef88cd4b1d:2:3"
+    ]
+  },
+  "saved_card": {
+    "id": "personal-016bf787457c4979871469c9777e8a8b",
+    "version": 1
+  },
+  "question_answer_count": 0,
+  "reservation": {
+    "amount": 1,
+    "status": "committed"
+  },
+  "debits": [
+    {
+      "amount": -1,
+      "created_at": "2026-10-15T10:35:34.201058+00:00"
+    }
+  ],
+  "messages": [
+    {
+      "role": "assistant",
+      "action": "explain",
+      "created_at": "2026-10-15T10:31:34.794802+00:00",
+      "content": {
+        "action": "explain",
+        "ai_generated": false,
+        "reference": "192.168.1.64",
+        "reference_warning": null,
+        "rubric": [
+          "Xác định đúng kích thước block dựa trên prefix /26.",
+          "Tìm số nguyên lớn nhất nhỏ hơn hoặc bằng octet cuối của IP trong cùng một block."
+        ],
+        "source_refs": [
+          "c44feeece5c441089388b6ef88cd4b1d:2:2",
+          "c44feeece5c441089388b6ef88cd4b1d:2:3"
+        ],
+        "step": 0,
+        "text": "Prefix /26 chia 26 bit cho network và 6 bit cho host, tạo ra các block có kích thước 64 địa chỉ (2^6). Octet cuối của IP là 70, nằm trong khoảng từ 64 đến 127. Do đó, địa chỉ mạng con là số đầu tiên của block này, tức là 192.168.1.64."
+      }
+    },
+    {
+      "role": "user",
+      "action": "ask",
+      "created_at": "2026-10-15T10:35:27.229939+00:00",
+      "content": {
+        "student": {
+          "answer": null,
+          "answer_display": null,
+          "draft": "option-1",
+          "draft_display": "192.168.1.127",
+          "feedback": null,
+          "session_status": "open",
+          "submitted": false
+        },
+        "text": "Vì sao địa chỉ mình chọn là broadcast chứ không phải network?"
+      }
+    },
+    {
+      "role": "assistant",
+      "action": "ask",
+      "created_at": "2026-10-15T10:35:34.200860+00:00",
+      "content": {
+        "ai_generated": true,
+        "needs_more_source": false,
+        "source_refs": [
+          "c44feeece5c441089388b6ef88cd4b1d:2:2",
+          "c44feeece5c441089388b6ef88cd4b1d:2:3"
+        ],
+        "text": "Địa chỉ bạn chọn là broadcast (192.168.1.127) vì trong block mạng con có kích thước 64 địa chỉ (từ 192.168.1.64 đến 192.168.1.127), số cuối cùng luôn là địa chỉ broadcast, còn số đầu tiên mới là network address."
+      }
+    }
+  ],
+  "screenshot": "preview/screenshots/local-inline-help.png",
+  "cash_payment": false,
+  "passed": true
+}

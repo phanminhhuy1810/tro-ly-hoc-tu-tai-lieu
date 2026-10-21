@@ -1,0 +1,65 @@
+{
+  "purpose": "One self-authored development cloze probe, not a full lesson or held-out quality benchmark",
+  "started_at": "2026-10-18T15:47:16.686733+00:00",
+  "model": "qwen3.5:9b",
+  "processor_version": "20261018-source-keys-cloze-v3",
+  "source": [
+    {
+      "id": "qa-cloze",
+      "text": "Địa chỉ IPv4 có 32 bit. Subnet mask chia địa chỉ thành phần network và phần host."
+    }
+  ],
+  "new_AI_tasks": 1,
+  "course_mutated": false,
+  "result": {
+    "reason": "",
+    "question": {
+      "kind": "cloze",
+      "prompt": "Địa chỉ IPv4 có ____ bit.",
+      "options": [],
+      "left": [],
+      "answer": "32",
+      "explanation": "Câu này xác định số lượng bit của địa chỉ IPv4 là 32 bit.",
+      "source_refs": [
+        "qa-cloze"
+      ],
+      "rubric": []
+    }
+  },
+  "valid": true,
+  "correct_fixed_answer": true,
+  "total_seconds": 6.313,
+  "first_content_seconds": 4.023,
+  "protocol_fallbacks": 1,
+  "audit": {
+    "input_tokens": 570,
+    "cached_input_tokens": 0,
+    "output_tokens": 95,
+    "load_duration_ns": 9696625,
+    "prompt_eval_duration_ns": 748652541,
+    "eval_duration_ns": 2354297292,
+    "total_duration_ns": 3118765125,
+    "cloze_source_mask_derived": 1,
+    "cloze_statement_sha256": "f35f4750d035a1f26393257ff4822600ac2529ce826ef1122cf76dab49556633"
+  },
+  "raw_output": "{\n  \"reason\": \"\",\n  \"question\": {\n    \"kind\": \"cloze\",\n    \"prompt\": \"Địa chỉ IPv4 có 32 bit.\",\n    \"answer\": \"32\",\n    \"explanation\": \"Câu này xác định số lượng bit của địa chỉ IPv4 là 32 bit.\",\n    \"source_refs\": [\n      \"qa-cloze\"\n    ]\n  }\n}",
+  "postprocessor_quote_recheck": {
+    "mode": "Offline reprocessing of the saved real model output; no second inference",
+    "result": {
+      "reason": "",
+      "question": {
+        "kind": "cloze",
+        "prompt": "“Địa chỉ IPv4 có ____ bit.”",
+        "options": [],
+        "left": [],
+        "answer": "32",
+        "explanation": "Câu này xác định số lượng bit của địa chỉ IPv4 là 32 bit.",
+        "source_refs": [
+          "qa-cloze"
+        ],
+        "rubric": []
+      }
+    },
+    "source_and_answer_unchanged": true
+  }
+}

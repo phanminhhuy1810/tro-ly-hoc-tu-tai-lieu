@@ -1,0 +1,7 @@
+Mạng máy tính: IPv4 và subnet mask
+IPv4 có 32 bit. Prefix /26 dành 26 bit cho network.
+Phần host còn 6 bit: 2^6 = 64 địa chỉ.
+Subnet của 192.168.1.70/26 nằm trong block 64 - 127.
+Network: 192.168.1.64. Broadcast: 192.168.1.127.
+Host dùng được: 192.168.1.65 đến 192.168.1.126.
+Số host dùng được: 64 - 2 = 62.

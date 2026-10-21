@@ -1,0 +1,40 @@
+{
+  "purpose": "One local cloze probe; real failed-unit source when explicitly selected, otherwise self-authored; not a full lesson or held-out benchmark",
+  "started_at": "2026-10-18T15:59:52.992947+00:00",
+  "model": "qwen3.5:9b",
+  "processor_version": "20261018-source-keys-cloze-v4",
+  "new_AI_tasks": 1,
+  "course_mutated": false,
+  "result": {
+    "reason": "Không có câu văn hoàn chỉnh trong nguồn để tạo câu điền khuyết; các đoạn văn bản chủ yếu là tiêu đề, danh sách mục hoặc ghi chú về bản quyền.",
+    "question": null
+  },
+  "valid": false,
+  "correct_fixed_answer": false,
+  "total_seconds": 8.156,
+  "first_content_seconds": 6.273,
+  "protocol_fallbacks": 1,
+  "audit": {
+    "input_tokens": 2145,
+    "cached_input_tokens": 0,
+    "output_tokens": 49,
+    "load_duration_ns": 9409000,
+    "prompt_eval_duration_ns": 3134426250,
+    "eval_duration_ns": 1943067000,
+    "total_duration_ns": 5090751500
+  },
+  "raw_output": "{\n  \"reason\": \"Không có câu văn hoàn chỉnh trong nguồn để tạo câu điền khuyết; các đoạn văn bản chủ yếu là tiêu đề, danh sách mục hoặc ghi chú về bản quyền.\",\n  \"question\": null\n}",
+  "source_context": {
+    "source_id": "440461bff89c443aa68372ef182c7821",
+    "extraction_revision": 2,
+    "fragment_count": 8,
+    "source_sha256": "c5813b0d28a1369efa895a4ed0b210736a4ff08f9d4abdd6bfa8062686763403",
+    "course_id": "0e2ef32fe9294efba05fbd5b77860ef6",
+    "course_revision": 1
+  },
+  "response_schema_valid": true,
+  "question_generated": false,
+  "source_declined": true,
+  "source_review_note": "Pinned unit covers the opening two slides: textbook/chapter titles, copyright/use notices and learning goals. This is a valid insufficiency response, not a generated-question success or a format exception.",
+  "old_course_mutated": false
+}

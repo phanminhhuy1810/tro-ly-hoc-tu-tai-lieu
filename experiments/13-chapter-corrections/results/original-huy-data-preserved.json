@@ -1,0 +1,24 @@
+{
+  "purpose": "Read-only original Huy data comparison against pre-correction deployment backup; not final acceptance.",
+  "at": "2026-10-21T06:12:54.795675+00:00",
+  "original_groups_unchanged": {
+    "courses": true,
+    "course_revisions": true,
+    "sources": true,
+    "extraction_revisions": true,
+    "wallets": true,
+    "ai_preferences": true,
+    "coin_ledger": true,
+    "study_sessions": true,
+    "answers": true
+  },
+  "original_pdf_sha256": "9037fecd5131c299809b7aa4776b782c2939b2c47c792d7ee09a5cfa6c795404",
+  "active_jobs": 0,
+  "parsing_sources": 0,
+  "health": {
+    "backend": true,
+    "provider_health_checked": false
+  },
+  "database_writes": 0,
+  "inference_calls": 0
+}

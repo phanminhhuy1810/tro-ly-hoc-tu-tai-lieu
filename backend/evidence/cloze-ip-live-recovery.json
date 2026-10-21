@@ -1,0 +1,137 @@
+{
+  "kind": "One explicit UI recovery of the currently reported failed lesson",
+  "job_id": "3c6d40c172a841fd9d26cab50ab27def",
+  "original_job_id": "3773b30bc8e949f6b8f6489ed0b8d840",
+  "status": "succeeded",
+  "provider": {
+    "provider": "ollama_local",
+    "model": "gemma4:12b-mlx",
+    "model_choice_id": "local:gemma4:12b-mlx",
+    "selection_revision": 4,
+    "prompt_version": "20261019-cloze-isolation-v14",
+    "schema_version": 17,
+    "processor_version": "20261019-source-cloze-isolation-v5"
+  },
+  "old_failed_status": "failed",
+  "reused_reading": true,
+  "reused_mcq": true,
+  "elapsed_seconds": 32.716996,
+  "new_model_stages": [
+    "ClozeDraft",
+    "MatchingDraft",
+    "ShortAnswerDraft"
+  ],
+  "coverage": {
+    "requested_count": 5,
+    "generated_count": 4,
+    "complete": false,
+    "requested_types": [
+      "mcq",
+      "cloze",
+      "matching",
+      "ordering",
+      "short_answer"
+    ],
+    "generated_types": [
+      "mcq",
+      "cloze",
+      "matching",
+      "short_answer"
+    ],
+    "uncreated": [
+      {
+        "stage": "ordering",
+        "kind": "ordering",
+        "reason": "Nguồn của bài chưa có các bước đánh số theo trình tự rõ. Không biến danh sách khái niệm thành câu sắp xếp.",
+        "origin": "backend_source_gate"
+      }
+    ]
+  },
+  "practice_attempt_submitted_by_agent": false,
+  "screenshot": "preview/screenshots/ip-lesson-recovered-desktop.png",
+  "progress": {
+    "phase": "succeeded",
+    "requests": [
+      {
+        "index": 1,
+        "schema": "ClozeDraft",
+        "phase": "received",
+        "streaming": true,
+        "started_at": "2026-10-19T03:44:46.939623+00:00",
+        "first_chunk_ms": 7880.243,
+        "first_text_ms": null,
+        "elapsed_ms": 11799.322,
+        "chunks": 127,
+        "characters": 315,
+        "usage": {
+          "input_tokens": 2184,
+          "cached_input_tokens": 0,
+          "output_tokens": 127,
+          "load_duration_ns": 7038750,
+          "prompt_eval_duration_ns": 4410418375,
+          "eval_duration_ns": 4002494958,
+          "total_duration_ns": 8434119125,
+          "cloze_source_mask_derived": 1,
+          "cloze_statement_sha256": "a3b182bff73dbce78ed75740506957f36a3209561c334c4e841bc0d2fd0dd4bf"
+        },
+        "protocol_fallbacks": 1
+      },
+      {
+        "index": 2,
+        "schema": "MatchingDraft",
+        "phase": "received",
+        "streaming": true,
+        "started_at": "2026-10-19T03:44:58.745751+00:00",
+        "first_chunk_ms": 4689.815,
+        "first_text_ms": null,
+        "elapsed_ms": 10734.393,
+        "chunks": 212,
+        "characters": 558,
+        "usage": {
+          "input_tokens": 2148,
+          "cached_input_tokens": 0,
+          "output_tokens": 212,
+          "load_duration_ns": 4827042,
+          "prompt_eval_duration_ns": 4560942083,
+          "eval_duration_ns": 6129901750,
+          "total_duration_ns": 10699225458
+        },
+        "protocol_fallbacks": 1
+      },
+      {
+        "index": 3,
+        "schema": "ShortAnswerDraft",
+        "phase": "received",
+        "streaming": true,
+        "started_at": "2026-10-19T03:45:09.491593+00:00",
+        "first_chunk_ms": 2435.46,
+        "first_text_ms": null,
+        "elapsed_ms": 10149.413,
+        "chunks": 246,
+        "characters": 718,
+        "usage": {
+          "input_tokens": 2093,
+          "cached_input_tokens": 1071,
+          "output_tokens": 246,
+          "load_duration_ns": 4772583,
+          "prompt_eval_duration_ns": 2234283166,
+          "eval_duration_ns": 7872941375,
+          "total_duration_ns": 10114969958
+        },
+        "protocol_fallbacks": 1
+      }
+    ],
+    "preview": null,
+    "planned_stages": 6,
+    "saved_stages": 6,
+    "reused_stages": 2,
+    "started_at": "2026-10-19T03:44:46.935544+00:00",
+    "completed_at": "2026-10-19T03:45:19.652536+00:00",
+    "elapsed_ms": 32716.996
+  },
+  "coin_usage": {
+    "quota_group": "lesson",
+    "amount": 0,
+    "status": "committed"
+  }
+}

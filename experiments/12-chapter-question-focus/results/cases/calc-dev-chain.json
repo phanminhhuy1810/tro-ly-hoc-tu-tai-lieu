@@ -1,0 +1,67 @@
+{
+  "purpose": "Codex-assisted source/oracle review; not independent human or instructor labels.",
+  "reviewed_at": "2026-10-21T05:05:58.113528+00:00",
+  "case_id": "calc-dev-chain",
+  "run_id": "dev-v5-chapter-focus",
+  "production_sha256": "4445b6ad08bbb79c0faaf00ba77f1f525e623b7860a156fcdc5ccdc12869e04c",
+  "source_sha256": "e3ca3832513038de4f00704288cb424462bc14c70e3600262c3e201200c3815b",
+  "oracle": {
+    "verification": "computed",
+    "coefficient": 12,
+    "value_at": 12
+  },
+  "reading_review": "The saved reading/cards/mindmap preserve derivative12(3x+1)^3 and value12, plus the four-step chain-rule procedure. The differentiability condition in the source is not stated explicitly in the first reading section; these are unpublished saved stages, not a complete course.",
+  "scope": "saved_partial_only_not_published",
+  "independent_human_reviews": 0,
+  "factual_accuracy_score": null,
+  "questions": [
+    {
+      "question_index": 0,
+      "kind": "mcq",
+      "question_sha256": "7e76978d078d8cb6187fc80ea82a2e0e02b31b80b480aaaf55a4b816913f2dd3",
+      "status": "needs_review",
+      "note": "The first and third choices BOTH compose to (3x+1)^4: f(u)=u^4,g(x)=3x+1; and f(u)=(u+1)^4,g(x)=3x. Prompt does not fix one decomposition, so key is not unique. No release/repair of this saved candidate.",
+      "source_refs": [
+        "0d5328df43c044658a814526ae502b88:2:1",
+        "0d5328df43c044658a814526ae502b88:2:3"
+      ]
+    },
+    {
+      "question_index": 1,
+      "kind": "cloze",
+      "question_sha256": "d956b7f62a1e2262886b4ab3b39c2ad6a36d72cd953831f81130cde1cccc0b80",
+      "status": "supported_in_checked_scope",
+      "note": "The final multiplication step is explicit in the cited source and the blank has a clear operator answer.",
+      "source_refs": [
+        "0d5328df43c044658a814526ae502b88:2:6"
+      ]
+    },
+    {
+      "question_index": 2,
+      "kind": "matching",
+      "question_sha256": "a3b175a57331a6ffc8eb7123b4f483a580459affd7cea20445aebc6ef213b1e8",
+      "status": "supported_in_checked_scope",
+      "note": "The derivative formula and its evaluation at0 match the source and independent chain-power arithmetic; both roles are given in the stem.",
+      "source_refs": [
+        "0d5328df43c044658a814526ae502b88:2:1"
+      ]
+    },
+    {
+      "question_index": 3,
+      "kind": "ordering",
+      "question_sha256": "9822b191f5ffe8f2640d50e18634a2ff4bd022627f84cac340d40a97f765c15e",
+      "status": "supported_in_checked_scope",
+      "note": "The four source steps yield the program-derived [2,0,3,1] permutation. The earlier function-argument parser bug is absent in this run.",
+      "source_refs": [
+        "0d5328df43c044658a814526ae502b88:2:3",
+        "0d5328df43c044658a814526ae502b88:2:4",
+        "0d5328df43c044658a814526ae502b88:2:5",
+        "0d5328df43c044658a814526ae502b88:2:6"
+      ]
+    }
+  ],
+  "uncreated": [],
+  "job_error": {
+    "message": "AI trả cấu trúc chưa hợp lệ ở JSON: Invalid JSON: invalid escape at line 5 column 184. Nguồn và phần đã lưu vẫn còn; chưa áp dụng đầu ra này. Có thể thử lại hoặc thu hẹp mục tiêu."
+  }
+}

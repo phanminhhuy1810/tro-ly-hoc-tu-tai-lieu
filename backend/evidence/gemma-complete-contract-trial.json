@@ -1,0 +1,385 @@
+{
+  "purpose": "One fresh Gemma development pipeline after per-kind output and numbered-action source gate fixes; earlier four-question result remains unchanged. Not a held-out speed/quality benchmark.",
+  "model": "local:gemma4:12b-mlx",
+  "passed": false,
+  "confirmed_proposed_app_coin": 0,
+  "monetary_payments": 0,
+  "runs": [
+    {
+      "path": "/courses/98ff5b545574402f811f17de49c199cb/generate",
+      "job_id": "52d48efe568a44dbae9dd2a0cc2b24dd",
+      "events": [
+        {
+          "elapsed_seconds": 0.01,
+          "status": "running",
+          "phase": "connecting",
+          "saved_stages": 0,
+          "preview_chars": 0
+        },
+        {
+          "elapsed_seconds": 52.87,
+          "status": "running",
+          "phase": "connecting",
+          "saved_stages": 1,
+          "preview_chars": 0
+        },
+        {
+          "elapsed_seconds": 64.309,
+          "status": "running",
+          "phase": "connecting",
+          "saved_stages": 2,
+          "preview_chars": 0
+        },
+        {
+          "elapsed_seconds": 72.112,
+          "status": "running",
+          "phase": "connecting",
+          "saved_stages": 3,
+          "preview_chars": 0
+        },
+        {
+          "elapsed_seconds": 85.029,
+          "status": "running",
+          "phase": "connecting",
+          "saved_stages": 4,
+          "preview_chars": 0
+        },
+        {
+          "elapsed_seconds": 101.949,
+          "status": "failed",
+          "phase": "failed",
+          "saved_stages": 4,
+          "preview_chars": 0
+        }
+      ],
+      "status": "failed",
+      "completed_seconds": 101.949,
+      "provider": {
+        "provider": "ollama_local",
+        "model": "gemma4:12b-mlx",
+        "model_choice_id": "local:gemma4:12b-mlx",
+        "selection_revision": 1,
+        "prompt_version": "20261018-minimal-output-source-sequence-v9",
+        "schema_version": 13
+      },
+      "progress": {
+        "phase": "failed",
+        "requests": [
+          {
+            "index": 1,
+            "schema": "LessonReading",
+            "phase": "received",
+            "streaming": true,
+            "started_at": "2026-10-18T10:12:28.215480+00:00",
+            "first_chunk_ms": 8146.933,
+            "first_text_ms": null,
+            "elapsed_ms": 52718.707,
+            "chunks": 1516,
+            "characters": 3119,
+            "usage": {
+              "input_tokens": 2027,
+              "cached_input_tokens": 0,
+              "output_tokens": 1516,
+              "load_duration_ns": 11103250,
+              "prompt_eval_duration_ns": 4468061917,
+              "eval_duration_ns": 44672885708,
+              "total_duration_ns": 49165858500
+            },
+            "protocol_fallbacks": 1
+          },
+          {
+            "index": 2,
+            "schema": "McqDraft",
+            "phase": "received",
+            "streaming": true,
+            "started_at": "2026-10-18T10:13:20.942720+00:00",
+            "first_chunk_ms": 4754.184,
+            "first_text_ms": null,
+            "elapsed_ms": 11335.759,
+            "chunks": 185,
+            "characters": 452,
+            "usage": {
+              "input_tokens": 2021,
+              "cached_input_tokens": 0,
+              "output_tokens": 185,
+              "load_duration_ns": 4541000,
+              "prompt_eval_duration_ns": 4414934958,
+              "eval_duration_ns": 6871682500,
+              "total_duration_ns": 11293424917
+            },
+            "protocol_fallbacks": 1
+          },
+          {
+            "index": 3,
+            "schema": "ClozeDraft",
+            "phase": "received",
+            "streaming": true,
+            "started_at": "2026-10-18T10:13:32.287996+00:00",
+            "first_chunk_ms": 2879.819,
+            "first_text_ms": null,
+            "elapsed_ms": 7854.424,
+            "chunks": 146,
+            "characters": 381,
+            "usage": {
+              "input_tokens": 1999,
+              "cached_input_tokens": 818,
+              "output_tokens": 146,
+              "load_duration_ns": 5920708,
+              "prompt_eval_duration_ns": 2654554792,
+              "eval_duration_ns": 5103660958,
+              "total_duration_ns": 7766969000
+            },
+            "protocol_fallbacks": 1
+          },
+          {
+            "index": 4,
+            "schema": "MatchingDraft",
+            "phase": "received",
+            "streaming": true,
+            "started_at": "2026-10-18T10:13:40.156547+00:00",
+            "first_chunk_ms": 4150.996,
+            "first_text_ms": null,
+            "elapsed_ms": 12920.646,
+            "chunks": 264,
+            "characters": 684,
+            "usage": {
+              "input_tokens": 2108,
+              "cached_input_tokens": 823,
+              "output_tokens": 264,
+              "load_duration_ns": 4845750,
+              "prompt_eval_duration_ns": 3795520208,
+              "eval_duration_ns": 9082818625,
+              "total_duration_ns": 12885758667
+            },
+            "protocol_fallbacks": 1
+          },
+          {
+            "index": 5,
+            "schema": "OrderingDraft",
+            "phase": "received",
+            "streaming": true,
+            "started_at": "2026-10-18T10:13:53.085297+00:00",
+            "first_chunk_ms": 3289.772,
+            "first_text_ms": null,
+            "elapsed_ms": 16999.431,
+            "chunks": 466,
+            "characters": 1213,
+            "usage": {
+              "input_tokens": 2166,
+              "cached_input_tokens": 823,
+              "output_tokens": 466,
+              "load_duration_ns": 4421000,
+              "prompt_eval_duration_ns": 3092497417,
+              "eval_duration_ns": 13856531000,
+              "total_duration_ns": 16962395792
+            },
+            "protocol_fallbacks": 1
+          }
+        ],
+        "preview": null,
+        "planned_stages": 6,
+        "saved_stages": 4,
+        "reused_stages": 0,
+        "started_at": "2026-10-18T10:12:28.214106+00:00",
+        "completed_at": "2026-10-18T10:14:10.091545+00:00",
+        "elapsed_ms": 101877.448,
+        "version": 423,
+        "updated_at": "2026-10-18T10:14:10.091625+00:00"
+      },
+      "error": {
+        "message": "Đáp án sắp xếp đảo thứ tự bước được ghi rõ trong nguồn; chưa dùng câu này."
+      },
+      "partial": {
+        "reading": {
+          "title": "IPv4 và subnet /26",
+          "sections": [
+            {
+              "title": "Cấu trúc IPv4 và Prefix /26",
+              "text": "IPv4 có 32 bit, chia thành bốn octet (mỗi octet 8 bit). Prefix /26 nghĩa là 26 bit được dành cho network và còn lại 6 bit cho host. Một block /26 có tổng cộng 2^6 = 64 địa chỉ. Trong đó, có 62 địa chỉ host thực sự dùng được sau khi loại bỏ network và broadcast.",
+              "source_refs": [
+                "1010d673ef094945bdb109951ae57c70:2:0"
+              ]
+            },
+            {
+              "title": "Ví dụ thực hành với 192.168.1.70/26",
+              "text": "Với địa chỉ 192.168.1.70/26, block chứa nó là 64–127. Cụ thể: Network là 192.168.1.64; Broadcast là 192.168.1.127; dải host dùng được là từ 192.168.1.65 đến 192.168.1.126.",
+              "source_refs": [
+                "1010d673ef094945bdb109951ae57c70:2:0"
+              ]
+            },
+            {
+              "title": "Quy trình 5 bước xác định Subnet",
+              "text": "Để xác định subnet, thực hiện các bước: 1. Đọc prefix và tính số bit host. 2. Tính kích thước block. 3. Xác định block chứa octet cuối. 4. Lấy đầu block làm network và cuối block làm broadcast. 5. Loại hai biên để lấy dải host dùng được.",
+              "source_refs": [
+                "1010d673ef094945bdb109951ae57c70:2:1",
+                "1010d673ef094945bdb109951ae57c70:2:2",
+                "1010d673ef094945bdb109951ae57c70:2:3",
+                "1010d673ef094945bdb109951ae57c70:2:4",
+                "1010d673ef094945bdb109951ae57c70:2:5"
+              ]
+            }
+          ],
+          "cards": [
+            {
+              "front": "Một block /26 có bao nhiêu địa chỉ và bao nhiêu địa chỉ host dùng được?",
+              "back": "Một block /26 có 2^6 = 64 địa chỉ, trong đó có 62 địa chỉ host dùng được (sau khi bỏ network và broadcast).",
+              "source_refs": [
+                "1010d673ef094945bdb109951ae57c70:2:0"
+              ]
+            },
+            {
+              "front": "Nêu quy trình 5 bước để xác định subnet từ một địa chỉ IP.",
+              "back": "1. Đọc prefix và tính số bit host. 2. Tính kích thước block. 3. Xác định block chứa octet cuối. 4. Lấy đầu block làm network và cuối block làm broadcast. 5. Loại hai biên để lấy dải host dùng được.",
+              "source_refs": [
+                "1010d673ef094945bdb109951ae57c70:2:1",
+                "1010d673ef094945bdb109951ae57c70:2:2",
+                "1010d673ef094945bdb109951ae57c70:2:3",
+                "1010d673ef094945bdb109951ae57c70:2:4",
+                "1010d673ef094945bdb109951ae57c70:2:5"
+              ]
+            }
+          ],
+          "mindmap": [
+            {
+              "title": "Cấu trúc IPv4 /26",
+              "text": "32 bit, 4 octets, 26 bit network, 6 bit host.",
+              "source_refs": [
+                "1010d673ef094945bdb109951ae57c70:2:0"
+              ]
+            },
+            {
+              "title": "Tính toán Block",
+              "text": "64 địa chỉ tổng cộng, 62 địa chỉ host.",
+              "source_refs": [
+                "1010d673ef094945bdb109951ae57c70:2:0"
+              ]
+            },
+            {
+              "title": "Quy trình Subnet",
+              "text": "Đọc prefix -> Tính block -> Xác định block chứa -> Lấy Network/Broadcast -> Lấy dải host.",
+              "source_refs": [
+                "1010d673ef094945bdb109951ae57c70:2:1",
+                "1010d673ef094945bdb109951ae57c70:2:2",
+                "1010d673ef094945bdb109951ae57c70:2:3",
+                "1010d673ef094945bdb109951ae57c70:2:4",
+                "1010d673ef094945bdb109951ae57c70:2:5"
+              ]
+            }
+          ]
+        },
+        "questions": {
+          "mcq": {
+            "reason": "",
+            "question": {
+              "kind": "mcq",
+              "prompt": "Trong cấu trúc địa chỉ IPv4 với prefix /26, số bit dành cho host là bao nhiêu?",
+              "options": [
+                "26 bit",
+                "6 bit",
+                "32 bit"
+              ],
+              "left": [],
+              "answer": "6 bit",
+              "explanation": "IPv4 có tổng cộng 32 bit. Với prefix /26, có 26 bit dành cho network, còn lại 6 bit dành cho host.",
+              "source_refs": [
+                "1010d673ef094945bdb109951ae57c70:2:0"
+              ],
+              "rubric": []
+            }
+          },
+          "cloze": {
+            "reason": "",
+            "question": {
+              "kind": "cloze",
+              "prompt": "Trong quy trình tính subnet, bước thứ 3 là xác định block chứa ____.",
+              "options": [],
+              "left": [],
+              "answer": "octet cuối",
+              "explanation": "Theo quy trình 5 bước, bước 3 yêu cầu xác định block chứa octet cuối để xác định phạm vi của dải IP.",
+              "source_refs": [
+                "1010d673ef094945bdb109951ae57c70:2:3"
+              ],
+              "rubric": []
+            }
+          },
+          "matching": {
+            "reason": "Câu hỏi được tạo dựa trên quy trình 5 bước tính subnet được cung cấp trong nguồn.",
+            "question": {
+              "kind": "matching",
+              "prompt": "Ghép các bước trong quy trình tính subnet cho prefix /26 từ nguồn:",
+              "options": [
+                "Tính kích thước block",
+                "Loại hai biên để lấy dải host dùng được"
+              ],
+              "left": [
+                "Bước 2",
+                "Bước 5"
+              ],
+              "answer": [
+                0,
+                1
+              ],
+              "explanation": "Theo quy trình 5 bước: Bước 2 là Tính kích thước block và Bước 5 là Loại hai biên để lấy dải host dùng được.",
+              "source_refs": [
+                "1010d673ef094945bdb109951ae57c70:2:2",
+                "1010d673ef094945bdb109951ae57c70:2:5"
+              ],
+              "rubric": []
+            }
+          }
+        },
+        "stage_providers": {
+          "reading": {
+            "provider": "ollama_local",
+            "model": "gemma4:12b-mlx",
+            "model_choice_id": "local:gemma4:12b-mlx",
+            "selection_revision": 1,
+            "prompt_version": "20261018-minimal-output-source-sequence-v9",
+            "schema_version": 13
+          },
+          "mcq": {
+            "provider": "ollama_local",
+            "model": "gemma4:12b-mlx",
+            "model_choice_id": "local:gemma4:12b-mlx",
+            "selection_revision": 1,
+            "prompt_version": "20261018-minimal-output-source-sequence-v9",
+            "schema_version": 13
+          },
+          "cloze": {
+            "provider": "ollama_local",
+            "model": "gemma4:12b-mlx",
+            "model_choice_id": "local:gemma4:12b-mlx",
+            "selection_revision": 1,
+            "prompt_version": "20261018-minimal-output-source-sequence-v9",
+            "schema_version": 13
+          },
+          "matching": {
+            "provider": "ollama_local",
+            "model": "gemma4:12b-mlx",
+            "model_choice_id": "local:gemma4:12b-mlx",
+            "selection_revision": 1,
+            "prompt_version": "20261018-minimal-output-source-sequence-v9",
+            "schema_version": 13
+          }
+        }
+      }
+    }
+  ],
+  "errors": [
+    {
+      "type": "RuntimeError",
+      "message": "Generation failed; partial stages retained, no automatic semantic retry."
+    }
+  ],
+  "global_default_before": "kaggle:qwen3.8:27b",
+  "selection": {
+    "model_id": "local:gemma4:12b-mlx",
+    "revision": 1,
+    "provider": "ollama_local",
+    "model": "gemma4:12b-mlx",
+    "external": false
+  },
+  "source_id": "1010d673ef094945bdb109951ae57c70",
+  "source_revision": 2,
+  "course_id": "98ff5b545574402f811f17de49c199cb"
+}

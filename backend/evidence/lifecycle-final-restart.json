@@ -1,0 +1,54 @@
+{
+  "backup": "study-before-native-recovery-20261020T104734Z.sqlite3",
+  "active_jobs_before": 0,
+  "active_rooms_before": 0,
+  "parsing_sources_before": 0,
+  "table_hashes": {
+    "courses": "3585b0c0e3061efaf96f668d73d8499cffd52a4264e31e7b46a36b1ed5a9597e",
+    "course_revisions": "2d518fd187ef9cb183cbe163965bf662175b8b47d3d17a3169cbc9349551662a",
+    "sources": "a4704d78041d368a16fcfe762a6c7650b8e0137bd83e47a11bb1bf08097bdde3",
+    "extraction_revisions": "7a124ae37b8474fec13740feabd2fc3cf1f88db740def6206539504f4be9bd85",
+    "jobs": "89bd9f70634c208e10e92a070f4550f3c47e6e28a0627c86a30f0c8d7a62fbe6",
+    "ai_preferences": "9fc95f14b95a737373e554becfa201ff4059618a91e6154b0b2fd2f5177ccaaa",
+    "wallets": "f0e8b130c80a16b34b9238421e03f7eb0b2583dc456f749d11d6ae8b6c9951d8",
+    "study_sessions": "2750816704ada52c7f60061c2a63c17a0389c2733ad84e17b1b3897f37025efe",
+    "answers": "cacd57d95418ba5267476a538a3071ed9f8e2b1df79d7822542d9e61f68015ca"
+  },
+  "unchanged_tables": {
+    "courses": true,
+    "course_revisions": true,
+    "sources": true,
+    "extraction_revisions": true,
+    "jobs": true,
+    "ai_preferences": true,
+    "wallets": true,
+    "study_sessions": true,
+    "answers": true
+  },
+  "active_jobs_after": 0,
+  "parsing_sources_after": 0,
+  "http_health": {
+    "backend": true,
+    "provider_health_checked": false
+  },
+  "sql_version": 17,
+  "all_passed": true,
+  "schema_version_source": "schema_versions",
+  "room_phase_counts_after": {
+    "finished": 1
+  },
+  "active_rooms_after": 0,
+  "preserved_user_ip_course": {
+    "course_id": "d6ee061103f047518016b5e26a7b95b7",
+    "revision": 2,
+    "unit_id": "unit-1",
+    "question_count": 4,
+    "types": [
+      "mcq",
+      "cloze",
+      "matching",
+      "short_answer"
+    ],
+    "limit": "Read-only DB verification; no new model call, answer submission or user data edit."
+  }
+}

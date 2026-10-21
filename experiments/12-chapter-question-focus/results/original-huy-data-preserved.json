@@ -1,0 +1,48 @@
+{
+  "purpose": "Readonly original Huy source/course/profile comparison after separate QA runs. Not a model-quality judgment.",
+  "checks": {
+    "courses": {
+      "unchanged": true,
+      "before_rows": 1,
+      "after_rows": 1
+    },
+    "course_revisions": {
+      "unchanged": true,
+      "before_rows": 2,
+      "after_rows": 2
+    },
+    "sources": {
+      "unchanged": true,
+      "before_rows": 1,
+      "after_rows": 1
+    },
+    "extraction_revisions": {
+      "unchanged": true,
+      "before_rows": 3,
+      "after_rows": 3
+    },
+    "wallets": {
+      "unchanged": true,
+      "before_rows": 1,
+      "after_rows": 1
+    },
+    "ai_preferences": {
+      "unchanged": true,
+      "before_rows": 1,
+      "after_rows": 1
+    },
+    "coin_ledger": {
+      "unchanged": true,
+      "before_rows": 32,
+      "after_rows": 32
+    },
+    "study_sessions": {
+      "unchanged": true,
+      "before_rows": 1,
+      "after_rows": 1
+    }
+  },
+  "original_pdf_sha256": "9037fecd5131c299809b7aa4776b782c2939b2c47c792d7ee09a5cfa6c795404",
+  "database_writes": 0,
+  "inference_calls": 0
+}

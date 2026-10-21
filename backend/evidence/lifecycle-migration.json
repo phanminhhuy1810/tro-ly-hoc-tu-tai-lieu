@@ -1,0 +1,34 @@
+{
+  "schema_before": 16,
+  "backup": "study-before-lifecycle-20261020T101801Z.sqlite3",
+  "table_hashes_before": {
+    "courses": "0757a296f7aca846caed69ae700662483e14b2f1854d03c778b76d5cbc2334f9",
+    "course_revisions": "a7046d31b659c3ba9605d42b8a97e972cbf72694d728f9e591703481d192fb16",
+    "sources": "e8dab76c4b2b163bb33fcf6c99bfc5b0b6d156d4d91e00fd6647c16546d2f360",
+    "extraction_revisions": "58c6bf9efeaad2f1d3922c434d80c3cfc07e02ed96f27061d30bcdf839ef5d8f",
+    "ai_preferences": "1ab8eb2f4a3d3b5fd1ff615e732a12bbcf5df6a3174d35728e29b1ab09d16e5b",
+    "jobs": "91806fb07f806a7b1ab19406cf5f0d2876d6ec946729136eda7eb9623b468fa5",
+    "study_sessions": "1377ddc89d55fe65bf4680963a429bd854233589d67998c0e940862c9abb2991",
+    "answers": "98b0503ba082ba86f346aac72aba65b6fde2968d48ba48a216a11cbabb40a9ef",
+    "wallets": "16e5407d40c8e5536d55ea8ffa8d3061aef72be6b4357669ba3c7283832804a1",
+    "coin_ledger": "d2c82f8394d7988c86459538a8a9f108e4ec50c105ab17cbc440bdffd5b6c140"
+  },
+  "active_jobs_before": 0,
+  "active_rooms_before": 0,
+  "schema_after": 17,
+  "unchanged_tables": {
+    "courses": true,
+    "course_revisions": true,
+    "sources": true,
+    "extraction_revisions": true,
+    "ai_preferences": true,
+    "jobs": true,
+    "study_sessions": true,
+    "answers": true,
+    "wallets": true,
+    "coin_ledger": true
+  },
+  "new_lifecycle_rows_before_qa": 0,
+  "health_status": 200,
+  "all_passed": true
+}

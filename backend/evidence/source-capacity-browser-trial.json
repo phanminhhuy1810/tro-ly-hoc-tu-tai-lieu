@@ -1,0 +1,31 @@
+{
+  "purpose": "Desktop browser functional check on self-authored QA inputs; not user learning history or AI-quality benchmark",
+  "browser_viewport": {
+    "width": 1441,
+    "height": 854
+  },
+  "uploaded_files": 2,
+  "large_word_bytes": 14525921,
+  "large_word_padding_for_capacity_test": true,
+  "source_id": "ab5c36519a78418eb15114f6e455f1f1",
+  "source_excerpt_count": 83,
+  "source_review_pages": 5,
+  "roadmap_plan_id": "ea54a8a97d2249fc80cd3487359807ff",
+  "roadmap_units": 11,
+  "planning_method": "source_sections_not_ai",
+  "planning_ai_calls": 0,
+  "selected_excerpts": 83,
+  "all_selected_excerpts_assigned": true,
+  "native_ocr_observed_error": "2^6 = 64 was read as 216 = 64",
+  "manual_extraction_draft_corrected": true,
+  "extraction_draft_retained_across_pagination_and_reload": true,
+  "first_unit_title_draft_retained_after_reload": true,
+  "first_unit_assignment_draft_count_after_reload": 4,
+  "assignment_change_is_browser_draft_not_server_approval": true,
+  "plan_status": "preview",
+  "screenshot": "preview/screenshots/source-capacity-desktop.png",
+  "existing_courses_and_attempts_not_resubmitted": true,
+  "mobile_not_retested": true,
+  "restored_after_backend_restart": true,
+  "final_browser_error_logs": []
+}

@@ -1,0 +1,48 @@
+{
+  "purpose": "Same saved MCQ checked with an exact bounded polynomial guard, not a regenerated or repaired model answer.",
+  "at": "2026-10-21T05:16:31.882254+00:00",
+  "question": {
+    "kind": "mcq",
+    "prompt": "Xét hàm hợp $h(x) = (3x+1)^4$. Khi áp dụng quy trình tính đạo hàm bằng chain rule, việc xác định hàm trong và hàm ngoài nào sau đây là chính xác?",
+    "options": [
+      "Hàm trong là $g(x)=3x+1$, hàm ngoài là $f(u)=u^4$",
+      "Hàm trong là $g(x)=x^4$, hàm ngoài là $f(u)=3u+1$",
+      "Hàm trong là $g(x)=3x$, hàm ngoài là $f(u)=(u+1)^4$"
+    ],
+    "left": [],
+    "answer": "Hàm trong là $g(x)=3x+1$, hàm ngoài là $f(u)=u^4$",
+    "explanation": "Theo quy trình xác định hàm trong và hàm ngoài cho hàm hợp $h(x)=(3x+1)^4$, ta xác định hàm trong là $g(x)=3x+1$ và hàm ngoài là $f(u)=u^4$. Việc xác định đúng này là bước đầu tiên trong quy trình tính đạo hàm.",
+    "source_refs": [
+      "0d5328df43c044658a814526ae502b88:2:1",
+      "0d5328df43c044658a814526ae502b88:2:3"
+    ],
+    "rubric": [],
+    "difficulty": "applied",
+    "difficulty_basis": "creator_request_not_measured"
+  },
+  "question_sha256": "7e76978d078d8cb6187fc80ea82a2e0e02b31b80b480aaaf55a4b816913f2dd3",
+  "before": {
+    "state": "validated_checkpoint_not_published",
+    "processor_version": "20261021-math-argument-step-boundary-v12"
+  },
+  "after": {
+    "processor_version": "20261021-polynomial-composition-proof-v13",
+    "rejection": {
+      "code": "MCQ_COMPOSITION_NOT_UNIQUE",
+      "reason": "Phép hợp đa thức cho thấy câu này không có đúng một lựa chọn đúng. Giữ ứng viên để đối chiếu; không tự đổi key hoặc gọi lại.",
+      "proof": {
+        "method": "bounded_exact_polynomial_composition_v1",
+        "valid_option_indices": [
+          0,
+          2
+        ],
+        "target_degree": 4
+      }
+    }
+  },
+  "original_unchanged": true,
+  "inference_calls": 0,
+  "database_writes": 0,
+  "manual_positive_comparison": "A separately labelled altered distractor gives one valid composition; it never replaces the saved model output.",
+  "limit": "Only the explicit bounded polynomial grammar; unknown domains/functions/wording remain unproved and need review."
+}

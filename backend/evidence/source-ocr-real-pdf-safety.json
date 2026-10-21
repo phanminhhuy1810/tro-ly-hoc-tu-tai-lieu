@@ -1,0 +1,11 @@
+{
+  "purpose": "Read-only safety probe, original networking dev PDF; not another OCR or model run",
+  "source_id": "d18f8b89f9834272a362dea33d7075d5",
+  "revision": 2,
+  "reviewed": false,
+  "page24_state": "protected",
+  "original_sha256": "9037fecd5131c299809b7aa4776b782c2939b2c47c792d7ee09a5cfa6c795404",
+  "page32_diagram_quality": "unresolved; this turn does not repair or regenerate it",
+  "mutations": 0,
+  "ai_calls": 0
+}

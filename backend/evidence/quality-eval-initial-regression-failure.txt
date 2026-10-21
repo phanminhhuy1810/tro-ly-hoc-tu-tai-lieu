@@ -1,0 +1,17 @@
+/Users/phanminhhuy/Documents/learning resources/Hk4/TDTT/AI-STUDY-HANDOFF/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+======================================================================
+FAIL: test_internal_validation_audit_survives_real_progress_storage_and_filters_untrusted_values (test_streaming.JobStreamingTests.test_internal_validation_audit_survives_real_progress_storage_and_filters_untrusted_values)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/phanminhhuy/Documents/learning resources/Hk4/TDTT/AI-STUDY-HANDOFF/backend/tests/test_streaming.py", line 180, in test_internal_validation_audit_survives_real_progress_storage_and_filters_untrusted_values
+    self.assertEqual(stored['ordering_answer_method'],'explicit_source_step_positions_v1')
+AssertionError: 'explicit_scoped_source_steps_v2' != 'explicit_source_step_positions_v1'
+- explicit_scoped_source_steps_v2
++ explicit_source_step_positions_v1
+
+
+----------------------------------------------------------------------
+Ran 318 tests in 34.939s
+
+FAILED (failures=1)

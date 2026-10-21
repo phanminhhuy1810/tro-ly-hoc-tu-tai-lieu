@@ -1,0 +1,7 @@
+Tài liệu kiểm thử tự soạn — IPv4 và subnet
+IPv4 có 32 bit. Subnet mask phân chia địa chỉ thành phần network và phần host; cần biết cả IP và mask để xác định subnet.
+Prefix /26 dành 26 bit cho network và 6 bit cho host. Một block gồm 2^6 = 64 địa chỉ.
+Với 192.168.1.70/26, octet cuối 70 nằm trong block 64–127. Network là 192.168.1.64, broadcast là 192.168.1.127.
+Hai biên network và broadcast không dùng làm địa chỉ host. Host dùng được từ 192.168.1.65 đến 192.168.1.126; tổng 64 − 2 = 62 host.
+Quy trình tự kiểm tra có thứ tự: (1) đọc prefix; (2) tính số bit host; (3) tìm block chứa IP; (4) xác định network và broadcast; (5) đếm host dùng được.
+Đây là nguồn phát triển để thử pipeline. Không phải tài liệu giảng viên, không dùng làm dữ liệu benchmark cuối.

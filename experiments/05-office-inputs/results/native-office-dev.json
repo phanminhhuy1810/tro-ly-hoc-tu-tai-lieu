@@ -1,0 +1,1083 @@
+{
+  "purpose": "Self-authored development parser probe, not a model-quality benchmark",
+  "cases": [
+    {
+      "filename": "office-dev.docx",
+      "elapsed_seconds": 27.206,
+      "baseline_native_paragraph_text": "Office parser development fixture\nSelf-authored QA. Not a lecture, student work or held-out benchmark.\nNetworking\nNative text before the embedded image: Networking\n\nNative text after the embedded image: Networking\nCalculus\nNative text before the embedded image: Calculus\n\nNative text after the embedded image: Calculus\nPsychology\nNative text before the embedded image: Psychology\n\nNative text after the embedded image: Psychology\nNative Office Math\nExact native formula:  end of native formula.",
+      "native_blocks": [
+        {
+          "text": "Office parser development fixture\n",
+          "locator": {
+            "type": "paragraph",
+            "paragraph": 1,
+            "heading": "",
+            "office_order": 1,
+            "part": "word/document.xml"
+          }
+        },
+        {
+          "text": "Self-authored QA. Not a lecture, student work or held-out benchmark.\n",
+          "locator": {
+            "type": "paragraph",
+            "paragraph": 2,
+            "heading": "",
+            "office_order": 2,
+            "part": "word/document.xml"
+          }
+        },
+        {
+          "text": "Networking\n",
+          "locator": {
+            "type": "paragraph",
+            "paragraph": 3,
+            "heading": "Networking",
+            "office_order": 3,
+            "part": "word/document.xml"
+          }
+        },
+        {
+          "text": "Native text before the embedded image: Networking\n",
+          "locator": {
+            "type": "paragraph",
+            "paragraph": 4,
+            "heading": "Networking",
+            "office_order": 4,
+            "part": "word/document.xml"
+          }
+        },
+        {
+          "text": "Native text after the embedded image: Networking\n",
+          "locator": {
+            "type": "paragraph",
+            "paragraph": 6,
+            "heading": "Networking",
+            "office_order": 6,
+            "part": "word/document.xml"
+          }
+        },
+        {
+          "text": "Calculus\n",
+          "locator": {
+            "type": "paragraph",
+            "paragraph": 7,
+            "heading": "Calculus",
+            "office_order": 7,
+            "part": "word/document.xml"
+          }
+        },
+        {
+          "text": "Native text before the embedded image: Calculus\n",
+          "locator": {
+            "type": "paragraph",
+            "paragraph": 8,
+            "heading": "Calculus",
+            "office_order": 8,
+            "part": "word/document.xml"
+          }
+        },
+        {
+          "text": "Native text after the embedded image: Calculus\n",
+          "locator": {
+            "type": "paragraph",
+            "paragraph": 10,
+            "heading": "Calculus",
+            "office_order": 10,
+            "part": "word/document.xml"
+          }
+        },
+        {
+          "text": "Psychology\n",
+          "locator": {
+            "type": "paragraph",
+            "paragraph": 11,
+            "heading": "Psychology",
+            "office_order": 11,
+            "part": "word/document.xml"
+          }
+        },
+        {
+          "text": "Native text before the embedded image: Psychology\n",
+          "locator": {
+            "type": "paragraph",
+            "paragraph": 12,
+            "heading": "Psychology",
+            "office_order": 12,
+            "part": "word/document.xml"
+          }
+        },
+        {
+          "text": "Native text after the embedded image: Psychology\n",
+          "locator": {
+            "type": "paragraph",
+            "paragraph": 14,
+            "heading": "Psychology",
+            "office_order": 14,
+            "part": "word/document.xml"
+          }
+        },
+        {
+          "text": "Native Office Math\n",
+          "locator": {
+            "type": "paragraph",
+            "paragraph": 15,
+            "heading": "Native Office Math",
+            "office_order": 15,
+            "part": "word/document.xml"
+          }
+        },
+        {
+          "text": "Exact native formula: \\(\\int_{0}^{1} {x}^{2}dx=\\frac{1}{3}\\) end of native formula.\n",
+          "locator": {
+            "type": "paragraph",
+            "paragraph": 16,
+            "heading": "Native Office Math",
+            "office_order": 16,
+            "part": "word/document.xml",
+            "office_math": [
+              {
+                "index": 1,
+                "xml_sha256": "5424bb6f3b52acaa834620deea8ecd393944cb785cfcfd60702ca5af69213574",
+                "reader": "omml-common-v1",
+                "accuracy_verified": false,
+                "supported": true,
+                "latex": "\\int_{0}^{1} {x}^{2}dx=\\frac{1}{3}"
+              }
+            ]
+          },
+          "needs_review": true
+        }
+      ],
+      "image_occurrences": [
+        {
+          "id": "86979ed993f64e83cca6e42517068ff7",
+          "locator": {
+            "type": "office_image",
+            "paragraph": 5,
+            "heading": "Networking",
+            "office_order": 5,
+            "part": "word/document.xml",
+            "image_occurrence": 1,
+            "asset_id": "86979ed993f64e83cca6e42517068ff7"
+          },
+          "bytes": 64806,
+          "sha256": "b6cbd90b10646a62b136fe7f3d0423bfb2692307e7d37142c6f92e112264c1ed",
+          "embedded": true,
+          "raster_review_supported": true,
+          "crop": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "rotation": 0.0,
+          "flip_h": false,
+          "flip_v": false,
+          "warning": ""
+        },
+        {
+          "id": "15182f843431d8ce418db5b23307ca41",
+          "locator": {
+            "type": "office_image",
+            "paragraph": 9,
+            "heading": "Calculus",
+            "office_order": 9,
+            "part": "word/document.xml",
+            "image_occurrence": 2,
+            "asset_id": "15182f843431d8ce418db5b23307ca41"
+          },
+          "bytes": 33409,
+          "sha256": "31c045724a9df9eac37b6f919abd17b1cf62b5432598243dd43ade9712e07caf",
+          "embedded": true,
+          "raster_review_supported": true,
+          "crop": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "rotation": 0.0,
+          "flip_h": false,
+          "flip_v": false,
+          "warning": ""
+        },
+        {
+          "id": "3d61b36c76b783d9c1d2a3f1523d0ef9",
+          "locator": {
+            "type": "office_image",
+            "paragraph": 13,
+            "heading": "Psychology",
+            "office_order": 13,
+            "part": "word/document.xml",
+            "image_occurrence": 3,
+            "asset_id": "3d61b36c76b783d9c1d2a3f1523d0ef9"
+          },
+          "bytes": 39460,
+          "sha256": "816678f95bff66c89c65373c649f6f8087f29e181ec1ed29343e9563d13b4efa",
+          "embedded": true,
+          "raster_review_supported": true,
+          "crop": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "rotation": 0.0,
+          "flip_h": false,
+          "flip_v": false,
+          "warning": ""
+        }
+      ],
+      "fragments_with_ocr": [
+        {
+          "text": "Office parser development fixture",
+          "locator": {
+            "type": "paragraph",
+            "paragraph": 1,
+            "heading": "",
+            "office_order": 1,
+            "part": "word/document.xml",
+            "character_start": 0
+          }
+        },
+        {
+          "text": "Self-authored QA. Not a lecture, student work or held-out benchmark.",
+          "locator": {
+            "type": "paragraph",
+            "paragraph": 2,
+            "heading": "",
+            "office_order": 2,
+            "part": "word/document.xml",
+            "character_start": 0
+          }
+        },
+        {
+          "text": "Networking",
+          "locator": {
+            "type": "paragraph",
+            "paragraph": 3,
+            "heading": "Networking",
+            "office_order": 3,
+            "part": "word/document.xml",
+            "character_start": 0
+          }
+        },
+        {
+          "text": "Native text before the embedded image: Networking",
+          "locator": {
+            "type": "paragraph",
+            "paragraph": 4,
+            "heading": "Networking",
+            "office_order": 4,
+            "part": "word/document.xml",
+            "character_start": 0
+          }
+        },
+        {
+          "text": "Mạng máy tính: IPv4 và subnet mask\nIPv4 có 32 bit. Prefix/26 dành 26 bit cho network.\nPhần host còn 6 bit: 216 = 64 địa chỉ.\nSubnet của 192.168.1.70/26 nằm trong block 64 - 127.\nNetwork: 192.168.1.64. Broadcast: 192.168.1.127.\nHost dùng được: 192.168.1.65 đến 192.168.1.126.\nSố host dùng được: 64 - 2 = 62.",
+          "locator": {
+            "type": "office_image",
+            "paragraph": 5,
+            "heading": "Networking",
+            "office_order": 5,
+            "part": "word/document.xml",
+            "image_occurrence": 1,
+            "asset_id": "86979ed993f64e83cca6e42517068ff7",
+            "ocr_observations": [
+              {
+                "text": "Mạng máy tính: IPv4 và subnet mask",
+                "bounds": [
+                  0.04166666633736558,
+                  0.8521739124014983,
+                  0.4083333333333333,
+                  0.06086956659952791
+                ],
+                "recognizer_score": 1
+              },
+              {
+                "text": "IPv4 có 32 bit. Prefix/26 dành 26 bit cho network.",
+                "bounds": [
+                  0.04208931658279354,
+                  0.7458686522676001,
+                  0.5568201497395833,
+                  0.05465826458401146
+                ],
+                "recognizer_score": 1
+              },
+              {
+                "text": "Phần host còn 6 bit: 216 = 64 địa chỉ.",
+                "bounds": [
+                  0.044982454007185806,
+                  0.6358324873654093,
+                  0.41150557454427084,
+                  0.05541444884406199
+                ],
+                "recognizer_score": 1
+              },
+              {
+                "text": "Subnet của 192.168.1.70/26 nằm trong block 64 - 127.",
+                "bounds": [
+                  0.04360465672019093,
+                  0.5236111099226508,
+                  0.6191860351562499,
+                  0.05555555555555558
+                ],
+                "recognizer_score": 1
+              },
+              {
+                "text": "Network: 192.168.1.64. Broadcast: 192.168.1.127.",
+                "bounds": [
+                  0.045058130944916834,
+                  0.4121212128504178,
+                  0.571220947265625,
+                  0.05176767508188884
+                ],
+                "recognizer_score": 1
+              },
+              {
+                "text": "Host dùng được: 192.168.1.65 đến 192.168.1.126.",
+                "bounds": [
+                  0.04499336150843446,
+                  0.29863857192060805,
+                  0.5727855631510417,
+                  0.06069104406568737
+                ],
+                "recognizer_score": 1
+              },
+              {
+                "text": "Số host dùng được: 64 - 2 = 62.",
+                "bounds": [
+                  0.04343357477770534,
+                  0.186496723838113,
+                  0.35359244791666666,
+                  0.06254534721374505
+                ],
+                "recognizer_score": 1
+              }
+            ],
+            "layout_unverified": true,
+            "extraction_method": "ocr_supplement",
+            "character_start": 0
+          },
+          "needs_review": true,
+          "provenance": {
+            "kind": "office_image_ocr",
+            "asset_id": "86979ed993f64e83cca6e42517068ff7",
+            "image_sha256": "b6cbd90b10646a62b136fe7f3d0423bfb2692307e7d37142c6f92e112264c1ed"
+          }
+        },
+        {
+          "text": "Native text after the embedded image: Networking",
+          "locator": {
+            "type": "paragraph",
+            "paragraph": 6,
+            "heading": "Networking",
+            "office_order": 6,
+            "part": "word/document.xml",
+            "character_start": 0
+          }
+        },
+        {
+          "text": "Calculus",
+          "locator": {
+            "type": "paragraph",
+            "paragraph": 7,
+            "heading": "Calculus",
+            "office_order": 7,
+            "part": "word/document.xml",
+            "character_start": 0
+          }
+        },
+        {
+          "text": "Native text before the embedded image: Calculus",
+          "locator": {
+            "type": "paragraph",
+            "paragraph": 8,
+            "heading": "Calculus",
+            "office_order": 8,
+            "part": "word/document.xml",
+            "character_start": 0
+          }
+        },
+        {
+          "text": "Vi tích phân: đạo hàm và tích phân\nf(х)=хг+Зх\nf'(x) =2x+zś\n/х< dx=х3/3 +С\nGiá trị tích phân xác định cần xét hai cận.",
+          "locator": {
+            "type": "office_image",
+            "paragraph": 9,
+            "heading": "Calculus",
+            "office_order": 9,
+            "part": "word/document.xml",
+            "image_occurrence": 2,
+            "asset_id": "15182f843431d8ce418db5b23307ca41",
+            "ocr_observations": [
+              {
+                "text": "Vi tích phân: đạo hàm và tích phân",
+                "bounds": [
+                  0.04360465107675084,
+                  0.8569444432559842,
+                  0.375,
+                  0.05555555555555558
+                ],
+                "recognizer_score": 1
+              },
+              {
+                "text": "f(х)=хг+Зх",
+                "bounds": [
+                  0.04053900108439128,
+                  0.7202417887415362,
+                  0.19508902994791666,
+                  0.06893469492594395
+                ],
+                "recognizer_score": 0.30000001192092896
+              },
+              {
+                "text": "f'(x) =2x+zś",
+                "bounds": [
+                  0.04031363848146301,
+                  0.6014088572287795,
+                  0.19544114176432292,
+                  0.08455278078715012
+                ],
+                "recognizer_score": 0.30000001192092896
+              },
+              {
+                "text": "/х< dx=х3/3 +С",
+                "bounds": [
+                  0.043604651119640264,
+                  0.49696969766506927,
+                  0.2485465087890625,
+                  0.07272727224561892
+                ],
+                "recognizer_score": 0.30000001192092896
+              },
+              {
+                "text": "Giá trị tích phân xác định cần xét hai cận.",
+                "bounds": [
+                  0.04505813377889914,
+                  0.41212121165462623,
+                  0.44331396484374996,
+                  0.054545455508761886
+                ],
+                "recognizer_score": 1
+              }
+            ],
+            "layout_unverified": true,
+            "extraction_method": "ocr_supplement",
+            "character_start": 0
+          },
+          "needs_review": true,
+          "provenance": {
+            "kind": "office_image_ocr",
+            "asset_id": "15182f843431d8ce418db5b23307ca41",
+            "image_sha256": "31c045724a9df9eac37b6f919abd17b1cf62b5432598243dd43ade9712e07caf"
+          }
+        },
+        {
+          "text": "Native text after the embedded image: Calculus",
+          "locator": {
+            "type": "paragraph",
+            "paragraph": 10,
+            "heading": "Calculus",
+            "office_order": 10,
+            "part": "word/document.xml",
+            "character_start": 0
+          }
+        },
+        {
+          "text": "Psychology",
+          "locator": {
+            "type": "paragraph",
+            "paragraph": 11,
+            "heading": "Psychology",
+            "office_order": 11,
+            "part": "word/document.xml",
+            "character_start": 0
+          }
+        },
+        {
+          "text": "Native text before the embedded image: Psychology",
+          "locator": {
+            "type": "paragraph",
+            "paragraph": 12,
+            "heading": "Psychology",
+            "office_order": 12,
+            "part": "word/document.xml",
+            "character_start": 0
+          }
+        },
+        {
+          "text": "Tâm lý học đại cương: trí nhớ\nTrí nhớ gồm mã hóa, lưu trữ và truy hồi thông tin.\nMã hóa là biến đổi thông tin để có thể lưu trữ.\nTruy hồi là lấy lại thông tin đã được lưu.\nVí dụ: tự nhắc lại kiến thức sau khi đọc.",
+          "locator": {
+            "type": "office_image",
+            "paragraph": 13,
+            "heading": "Psychology",
+            "office_order": 13,
+            "part": "word/document.xml",
+            "image_occurrence": 3,
+            "asset_id": "3d61b36c76b783d9c1d2a3f1523d0ef9",
+            "ocr_observations": [
+              {
+                "text": "Tâm lý học đại cương: trí nhớ",
+                "bounds": [
+                  0.04215116721644036,
+                  0.8541666666808478,
+                  0.3183139444986979,
+                  0.05833333333333335
+                ],
+                "recognizer_score": 1
+              },
+              {
+                "text": "Trí nhớ gồm mã hóa, lưu trữ và truy hồi thông tin.",
+                "bounds": [
+                  0.04215116507899468,
+                  0.7454545464312425,
+                  0.5392441813151042,
+                  0.057575755649142746
+                ],
+                "recognizer_score": 1
+              },
+              {
+                "text": "Mã hóa là biến đổi thông tin để có thể lưu trữ.",
+                "bounds": [
+                  0.04505813947476561,
+                  0.6333333343117129,
+                  0.5,
+                  0.05757575564914286
+                ],
+                "recognizer_score": 1
+              },
+              {
+                "text": "Truy hồi là lấy lại thông tin đã được lưu.",
+                "bounds": [
+                  0.04215116265426176,
+                  0.5208333333604918,
+                  0.4375,
+                  0.05833333333333335
+                ],
+                "recognizer_score": 1
+              },
+              {
+                "text": "Ví dụ: tự nhắc lại kiến thức sau khi đọc.",
+                "bounds": [
+                  0.043471200608393816,
+                  0.4049446335129858,
+                  0.42177620442708336,
+                  0.0650531715816921
+                ],
+                "recognizer_score": 1
+              }
+            ],
+            "layout_unverified": true,
+            "extraction_method": "ocr_supplement",
+            "character_start": 0
+          },
+          "needs_review": true,
+          "provenance": {
+            "kind": "office_image_ocr",
+            "asset_id": "3d61b36c76b783d9c1d2a3f1523d0ef9",
+            "image_sha256": "816678f95bff66c89c65373c649f6f8087f29e181ec1ed29343e9563d13b4efa"
+          }
+        },
+        {
+          "text": "Native text after the embedded image: Psychology",
+          "locator": {
+            "type": "paragraph",
+            "paragraph": 14,
+            "heading": "Psychology",
+            "office_order": 14,
+            "part": "word/document.xml",
+            "character_start": 0
+          }
+        },
+        {
+          "text": "Native Office Math",
+          "locator": {
+            "type": "paragraph",
+            "paragraph": 15,
+            "heading": "Native Office Math",
+            "office_order": 15,
+            "part": "word/document.xml",
+            "character_start": 0
+          }
+        },
+        {
+          "text": "Exact native formula: \\(\\int_{0}^{1} {x}^{2}dx=\\frac{1}{3}\\) end of native formula.",
+          "locator": {
+            "type": "paragraph",
+            "paragraph": 16,
+            "heading": "Native Office Math",
+            "office_order": 16,
+            "part": "word/document.xml",
+            "office_math": [
+              {
+                "index": 1,
+                "xml_sha256": "5424bb6f3b52acaa834620deea8ecd393944cb785cfcfd60702ca5af69213574",
+                "reader": "omml-common-v1",
+                "accuracy_verified": false,
+                "supported": true,
+                "latex": "\\int_{0}^{1} {x}^{2}dx=\\frac{1}{3}"
+              }
+            ],
+            "character_start": 0
+          },
+          "needs_review": true
+        }
+      ],
+      "warnings": [
+        "Office Math đã chép theo cấu trúc XML hỗ trợ; cần đối chiếu. Công thức chưa hỗ trợ được đánh dấu, không tự đoán.",
+        "Hình nhúng có vị trí riêng; bản OCR/AI cần đối chiếu. Hình trong nhóm được xem riêng, không phải ảnh render toàn trang/slide.",
+        "Office Math được chép theo cấu trúc hỗ trợ, cần đối chiếu; dạng chưa hỗ trợ không được tự đoán.",
+        "OCR nhận dạng chữ, chưa chứng minh công thức/bảng/sơ đồ đúng. Đối chiếu ảnh và sửa bản trích trước khi tạo."
+      ]
+    },
+    {
+      "filename": "office-dev.pptx",
+      "elapsed_seconds": 0.463,
+      "baseline_native_paragraph_text": "Networking - self-authored parser QA\nCalculus - self-authored parser QA\nPsychology - self-authored parser QA",
+      "native_blocks": [
+        {
+          "text": "Networking - self-authored parser QA\n",
+          "locator": {
+            "slide": 1,
+            "shape": 1,
+            "shape_path": [
+              1
+            ],
+            "shape_id": 2,
+            "part": "ppt/slides/slide1.xml",
+            "type": "slide",
+            "office_order": 1
+          }
+        },
+        {
+          "text": "Calculus - self-authored parser QA\n",
+          "locator": {
+            "slide": 2,
+            "shape": 1,
+            "shape_path": [
+              1
+            ],
+            "shape_id": 2,
+            "part": "ppt/slides/slide2.xml",
+            "type": "slide",
+            "office_order": 3
+          }
+        },
+        {
+          "text": "Psychology - self-authored parser QA\n",
+          "locator": {
+            "slide": 3,
+            "shape": 1,
+            "shape_path": [
+              1
+            ],
+            "shape_id": 2,
+            "part": "ppt/slides/slide3.xml",
+            "type": "slide",
+            "office_order": 5
+          }
+        }
+      ],
+      "image_occurrences": [
+        {
+          "id": "cdb423bcc51916794e56c1c6fac101c1",
+          "locator": {
+            "slide": 1,
+            "shape": 2,
+            "shape_path": [
+              2,
+              1
+            ],
+            "shape_id": 4,
+            "part": "ppt/slides/slide1.xml",
+            "office_order": 2,
+            "type": "office_image",
+            "image_occurrence": 1,
+            "asset_id": "cdb423bcc51916794e56c1c6fac101c1"
+          },
+          "bytes": 64806,
+          "sha256": "b6cbd90b10646a62b136fe7f3d0423bfb2692307e7d37142c6f92e112264c1ed",
+          "embedded": true,
+          "raster_review_supported": true,
+          "crop": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "rotation": 0.0,
+          "flip_h": false,
+          "flip_v": false,
+          "warning": ""
+        },
+        {
+          "id": "7c07d58781decdeabe88f702b1cd23f0",
+          "locator": {
+            "slide": 2,
+            "shape": 2,
+            "shape_path": [
+              2,
+              1
+            ],
+            "shape_id": 4,
+            "part": "ppt/slides/slide2.xml",
+            "office_order": 4,
+            "type": "office_image",
+            "image_occurrence": 2,
+            "asset_id": "7c07d58781decdeabe88f702b1cd23f0"
+          },
+          "bytes": 33409,
+          "sha256": "31c045724a9df9eac37b6f919abd17b1cf62b5432598243dd43ade9712e07caf",
+          "embedded": true,
+          "raster_review_supported": true,
+          "crop": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "rotation": 0.0,
+          "flip_h": false,
+          "flip_v": false,
+          "warning": ""
+        },
+        {
+          "id": "b90a811395a1883616d50035de96d680",
+          "locator": {
+            "slide": 3,
+            "shape": 2,
+            "shape_path": [
+              2,
+              1
+            ],
+            "shape_id": 4,
+            "part": "ppt/slides/slide3.xml",
+            "office_order": 6,
+            "type": "office_image",
+            "image_occurrence": 3,
+            "asset_id": "b90a811395a1883616d50035de96d680"
+          },
+          "bytes": 39460,
+          "sha256": "816678f95bff66c89c65373c649f6f8087f29e181ec1ed29343e9563d13b4efa",
+          "embedded": true,
+          "raster_review_supported": true,
+          "crop": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "rotation": 0.0,
+          "flip_h": false,
+          "flip_v": false,
+          "warning": ""
+        }
+      ],
+      "fragments_with_ocr": [
+        {
+          "text": "Networking - self-authored parser QA",
+          "locator": {
+            "slide": 1,
+            "shape": 1,
+            "shape_path": [
+              1
+            ],
+            "shape_id": 2,
+            "part": "ppt/slides/slide1.xml",
+            "type": "slide",
+            "office_order": 1,
+            "character_start": 0
+          }
+        },
+        {
+          "text": "Mạng máy tính: IPv4 và subnet mask\nIPv4 có 32 bit. Prefix/26 dành 26 bit cho network.\nPhần host còn 6 bit: 216 = 64 địa chỉ.\nSubnet của 192.168.1.70/26 nằm trong block 64 - 127.\nNetwork: 192.168.1.64. Broadcast: 192.168.1.127.\nHost dùng được: 192.168.1.65 đến 192.168.1.126.\nSố host dùng được: 64 - 2 = 62.",
+          "locator": {
+            "slide": 1,
+            "shape": 2,
+            "shape_path": [
+              2,
+              1
+            ],
+            "shape_id": 4,
+            "part": "ppt/slides/slide1.xml",
+            "office_order": 2,
+            "type": "office_image",
+            "image_occurrence": 1,
+            "asset_id": "cdb423bcc51916794e56c1c6fac101c1",
+            "ocr_observations": [
+              {
+                "text": "Mạng máy tính: IPv4 và subnet mask",
+                "bounds": [
+                  0.04166666633736558,
+                  0.8521739124014983,
+                  0.4083333333333333,
+                  0.06086956659952791
+                ],
+                "recognizer_score": 1
+              },
+              {
+                "text": "IPv4 có 32 bit. Prefix/26 dành 26 bit cho network.",
+                "bounds": [
+                  0.04208931658279354,
+                  0.7458686522676001,
+                  0.5568201497395833,
+                  0.05465826458401146
+                ],
+                "recognizer_score": 1
+              },
+              {
+                "text": "Phần host còn 6 bit: 216 = 64 địa chỉ.",
+                "bounds": [
+                  0.044982454007185806,
+                  0.6358324873654093,
+                  0.41150557454427084,
+                  0.05541444884406199
+                ],
+                "recognizer_score": 1
+              },
+              {
+                "text": "Subnet của 192.168.1.70/26 nằm trong block 64 - 127.",
+                "bounds": [
+                  0.04360465672019093,
+                  0.5236111099226508,
+                  0.6191860351562499,
+                  0.05555555555555558
+                ],
+                "recognizer_score": 1
+              },
+              {
+                "text": "Network: 192.168.1.64. Broadcast: 192.168.1.127.",
+                "bounds": [
+                  0.045058130944916834,
+                  0.4121212128504178,
+                  0.571220947265625,
+                  0.05176767508188884
+                ],
+                "recognizer_score": 1
+              },
+              {
+                "text": "Host dùng được: 192.168.1.65 đến 192.168.1.126.",
+                "bounds": [
+                  0.04499336150843446,
+                  0.29863857192060805,
+                  0.5727855631510417,
+                  0.06069104406568737
+                ],
+                "recognizer_score": 1
+              },
+              {
+                "text": "Số host dùng được: 64 - 2 = 62.",
+                "bounds": [
+                  0.04343357477770534,
+                  0.186496723838113,
+                  0.35359244791666666,
+                  0.06254534721374505
+                ],
+                "recognizer_score": 1
+              }
+            ],
+            "layout_unverified": true,
+            "extraction_method": "ocr_supplement",
+            "character_start": 0
+          },
+          "needs_review": true,
+          "provenance": {
+            "kind": "office_image_ocr",
+            "asset_id": "cdb423bcc51916794e56c1c6fac101c1",
+            "image_sha256": "b6cbd90b10646a62b136fe7f3d0423bfb2692307e7d37142c6f92e112264c1ed"
+          }
+        },
+        {
+          "text": "Calculus - self-authored parser QA",
+          "locator": {
+            "slide": 2,
+            "shape": 1,
+            "shape_path": [
+              1
+            ],
+            "shape_id": 2,
+            "part": "ppt/slides/slide2.xml",
+            "type": "slide",
+            "office_order": 3,
+            "character_start": 0
+          }
+        },
+        {
+          "text": "Vi tích phân: đạo hàm và tích phân\nf(х)=хг+Зх\nf'(x) =2x+zś\n/х< dx=х3/3 +С\nGiá trị tích phân xác định cần xét hai cận.",
+          "locator": {
+            "slide": 2,
+            "shape": 2,
+            "shape_path": [
+              2,
+              1
+            ],
+            "shape_id": 4,
+            "part": "ppt/slides/slide2.xml",
+            "office_order": 4,
+            "type": "office_image",
+            "image_occurrence": 2,
+            "asset_id": "7c07d58781decdeabe88f702b1cd23f0",
+            "ocr_observations": [
+              {
+                "text": "Vi tích phân: đạo hàm và tích phân",
+                "bounds": [
+                  0.04360465107675084,
+                  0.8569444432559842,
+                  0.375,
+                  0.05555555555555558
+                ],
+                "recognizer_score": 1
+              },
+              {
+                "text": "f(х)=хг+Зх",
+                "bounds": [
+                  0.04053900108439128,
+                  0.7202417887415362,
+                  0.19508902994791666,
+                  0.06893469492594395
+                ],
+                "recognizer_score": 0.30000001192092896
+              },
+              {
+                "text": "f'(x) =2x+zś",
+                "bounds": [
+                  0.04031363848146301,
+                  0.6014088572287795,
+                  0.19544114176432292,
+                  0.08455278078715012
+                ],
+                "recognizer_score": 0.30000001192092896
+              },
+              {
+                "text": "/х< dx=х3/3 +С",
+                "bounds": [
+                  0.043604651119640264,
+                  0.49696969766506927,
+                  0.2485465087890625,
+                  0.07272727224561892
+                ],
+                "recognizer_score": 0.30000001192092896
+              },
+              {
+                "text": "Giá trị tích phân xác định cần xét hai cận.",
+                "bounds": [
+                  0.04505813377889914,
+                  0.41212121165462623,
+                  0.44331396484374996,
+                  0.054545455508761886
+                ],
+                "recognizer_score": 1
+              }
+            ],
+            "layout_unverified": true,
+            "extraction_method": "ocr_supplement",
+            "character_start": 0
+          },
+          "needs_review": true,
+          "provenance": {
+            "kind": "office_image_ocr",
+            "asset_id": "7c07d58781decdeabe88f702b1cd23f0",
+            "image_sha256": "31c045724a9df9eac37b6f919abd17b1cf62b5432598243dd43ade9712e07caf"
+          }
+        },
+        {
+          "text": "Psychology - self-authored parser QA",
+          "locator": {
+            "slide": 3,
+            "shape": 1,
+            "shape_path": [
+              1
+            ],
+            "shape_id": 2,
+            "part": "ppt/slides/slide3.xml",
+            "type": "slide",
+            "office_order": 5,
+            "character_start": 0
+          }
+        },
+        {
+          "text": "Tâm lý học đại cương: trí nhớ\nTrí nhớ gồm mã hóa, lưu trữ và truy hồi thông tin.\nMã hóa là biến đổi thông tin để có thể lưu trữ.\nTruy hồi là lấy lại thông tin đã được lưu.\nVí dụ: tự nhắc lại kiến thức sau khi đọc.",
+          "locator": {
+            "slide": 3,
+            "shape": 2,
+            "shape_path": [
+              2,
+              1
+            ],
+            "shape_id": 4,
+            "part": "ppt/slides/slide3.xml",
+            "office_order": 6,
+            "type": "office_image",
+            "image_occurrence": 3,
+            "asset_id": "b90a811395a1883616d50035de96d680",
+            "ocr_observations": [
+              {
+                "text": "Tâm lý học đại cương: trí nhớ",
+                "bounds": [
+                  0.04215116721644036,
+                  0.8541666666808478,
+                  0.3183139444986979,
+                  0.05833333333333335
+                ],
+                "recognizer_score": 1
+              },
+              {
+                "text": "Trí nhớ gồm mã hóa, lưu trữ và truy hồi thông tin.",
+                "bounds": [
+                  0.04215116507899468,
+                  0.7454545464312425,
+                  0.5392441813151042,
+                  0.057575755649142746
+                ],
+                "recognizer_score": 1
+              },
+              {
+                "text": "Mã hóa là biến đổi thông tin để có thể lưu trữ.",
+                "bounds": [
+                  0.04505813947476561,
+                  0.6333333343117129,
+                  0.5,
+                  0.05757575564914286
+                ],
+                "recognizer_score": 1
+              },
+              {
+                "text": "Truy hồi là lấy lại thông tin đã được lưu.",
+                "bounds": [
+                  0.04215116265426176,
+                  0.5208333333604918,
+                  0.4375,
+                  0.05833333333333335
+                ],
+                "recognizer_score": 1
+              },
+              {
+                "text": "Ví dụ: tự nhắc lại kiến thức sau khi đọc.",
+                "bounds": [
+                  0.043471200608393816,
+                  0.4049446335129858,
+                  0.42177620442708336,
+                  0.0650531715816921
+                ],
+                "recognizer_score": 1
+              }
+            ],
+            "layout_unverified": true,
+            "extraction_method": "ocr_supplement",
+            "character_start": 0
+          },
+          "needs_review": true,
+          "provenance": {
+            "kind": "office_image_ocr",
+            "asset_id": "b90a811395a1883616d50035de96d680",
+            "image_sha256": "816678f95bff66c89c65373c649f6f8087f29e181ec1ed29343e9563d13b4efa"
+          }
+        }
+      ],
+      "warnings": [
+        "Hình nhúng có vị trí riêng; bản OCR/AI cần đối chiếu. Hình trong nhóm được xem riêng, không phải ảnh render toàn trang/slide.",
+        "OCR nhận dạng chữ, chưa chứng minh công thức/bảng/sơ đồ đúng. Đối chiếu ảnh và sửa bản trích trước khi tạo."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,532 @@
+{
+  "purpose": "Bounded real-model recovery in a private SQLite copy, not a production course mutation",
+  "original_job_id": "3773b30bc8e949f6b8f6489ed0b8d840",
+  "model": "gemma4:12b-mlx",
+  "processor_version": "20261019-source-cloze-isolation-v5",
+  "live_database_mutated": false,
+  "live_coin_changed": false,
+  "automatic_retries": 0,
+  "job": {
+    "id": "760c1ae13768413a9ad96a6894cfacb6",
+    "task": "lesson",
+    "context": {
+      "course_id": "d6ee061103f047518016b5e26a7b95b7",
+      "unit_id": "unit-1",
+      "expected_revision": 1
+    },
+    "status": "succeeded",
+    "attempts": 1,
+    "provider": {
+      "provider": "ollama_local",
+      "model": "gemma4:12b-mlx",
+      "model_choice_id": "local:gemma4:12b-mlx",
+      "selection_revision": 4,
+      "prompt_version": "20261019-cloze-isolation-v14",
+      "schema_version": 17,
+      "processor_version": "20261019-source-cloze-isolation-v5"
+    },
+    "result": {
+      "course_id": "d6ee061103f047518016b5e26a7b95b7",
+      "revision": 2
+    },
+    "partial": {
+      "reading": {
+        "title": "Giới thiệu địa chỉ mạng và các phiên bản IP",
+        "sections": [
+          {
+            "title": "Khái niệm địa chỉ mạng (identifier)",
+            "text": "Địa chỉ mạng (identifier) là định danh của một node mạng. Nó được chia thành hai loại chính: Địa chỉ vật lý và Địa chỉ logic.",
+            "source_refs": [
+              "052156e88ce448c29c6569576cdb5eac:2:4"
+            ]
+          },
+          {
+            "title": "Địa chỉ vật lý và Địa chỉ logic",
+            "text": "Địa chỉ vật lý (như địa chỉ MAC - Media Access Control) do nhà sản xuất ấn định trên sản phẩm. Trong khi đó, địa chỉ logic (như địa chỉ IP - Internet Protocol) do người dùng ấn định.",
+            "source_refs": [
+              "052156e88ce448c29c6569576cdb5eac:2:4"
+            ]
+          },
+          {
+            "title": "Địa chỉ IP và các phiên bản",
+            "text": "Địa chỉ IP hoạt động tại tầng Mạng trong mô hình TCP/IP. Hiện có các phiên bản chính bao gồm: IPv4, IPv5 (RFC 1819) và IPv6.",
+            "source_refs": [
+              "052156e88ce448c29c6569576cdb5eac:2:6"
+            ]
+          }
+        ],
+        "cards": [
+          {
+            "front": "Địa chỉ vật lý và địa chỉ logic khác nhau thế nào?",
+            "back": "Địa chỉ vật lý (ví dụ: MAC) do nhà sản xuất ấn định. Địa chỉ logic (ví dụ: IP) do người dùng ấn định.",
+            "source_refs": [
+              "052156e88ce448c29c6569576cdb5eac:2:4"
+            ]
+          },
+          {
+            "front": "Địa chỉ IP thuộc tầng nào trong mô hình TCP/IP?",
+            "back": "Địa chỉ IP thuộc tầng Mạng.",
+            "source_refs": [
+              "052156e88ce448c29c6569576cdb5eac:2:6"
+            ]
+          }
+        ],
+        "mindmap": [
+          {
+            "title": "Phân loại địa chỉ mạng",
+            "text": "Địa chỉ vật lý (MAC) và Địa chỉ logic (IP)",
+            "source_refs": [
+              "052156e88ce448c29c6569576cdb5eac:2:4"
+            ]
+          },
+          {
+            "title": "Đặc điểm địa chỉ",
+            "text": "Vật lý: Nhà sản xuất ấn định; Logic: Người dùng ấn định",
+            "source_refs": [
+              "052156e88ce448c29c6569576cdb5eac:2:4"
+            ]
+          },
+          {
+            "title": "Các phiên bản IP",
+            "text": "IPv4, IPv5 (RFC 1819), IPv6",
+            "source_refs": [
+              "052156e88ce448c29c6569576cdb5eac:2:6"
+            ]
+          }
+        ]
+      },
+      "questions": {
+        "mcq": {
+          "reason": "",
+          "question": {
+            "kind": "mcq",
+            "prompt": "Trong phân loại địa chỉ mạng (identifier), địa chỉ nào được coi là địa chỉ vật lý?",
+            "options": [
+              "địa chỉ IP (Internet Protocol)",
+              "địa chỉ MAC (Media Access Control)",
+              "địa chỉ IPv6"
+            ],
+            "left": [],
+            "answer": "địa chỉ MAC (Media Access Control)",
+            "explanation": "Địa chỉ vật lý là địa chỉ do nhà sản xuất ấn định trên sản phẩm, ví dụ như địa chỉ MAC (Media Access Control). Trong khi đó, địa chỉ IP là địa chỉ logic do người dùng ấn định.",
+            "source_refs": [
+              "052156e88ce448c29c6569576cdb5eac:2:4"
+            ],
+            "rubric": []
+          }
+        },
+        "cloze": {
+          "reason": "",
+          "question": {
+            "kind": "cloze",
+            "prompt": "“§Địachỉlogic •do ngườidùngấnđịnh •VD: ____”",
+            "options": [],
+            "left": [],
+            "answer": "địa chỉ IP (Internet Protocol)",
+            "explanation": "Địa chỉ IP là một loại địa chỉ logic, do người dùng ấn định trong mạng máy tính.",
+            "source_refs": [
+              "052156e88ce448c29c6569576cdb5eac:2:4"
+            ],
+            "rubric": []
+          }
+        },
+        "matching": {
+          "reason": "",
+          "question": {
+            "kind": "matching",
+            "prompt": "Hãy nối các loại địa chỉ mạng với đặc điểm tương ứng của chúng:",
+            "options": [
+              "địa chỉ vật lý",
+              "địa chỉ logic"
+            ],
+            "left": [
+              "địa chỉ MAC",
+              "địa chỉ IP"
+            ],
+            "answer": [
+              0,
+              1
+            ],
+            "explanation": "Địa chỉ MAC là địa chỉ vật lý do nhà sản xuất ấn định trên sản phẩm. Địa chỉ IP là địa chỉ logic do người dùng ấn định.",
+            "source_refs": [
+              "052156e88ce448c29c6569576cdb5eac:2:4"
+            ],
+            "rubric": []
+          }
+        },
+        "ordering": {
+          "question": null,
+          "reason": "Nguồn của bài chưa có các bước đánh số theo trình tự rõ. Không biến danh sách khái niệm thành câu sắp xếp."
+        },
+        "short_answer": {
+          "reason": "",
+          "question": {
+            "kind": "short_answer",
+            "prompt": "Địa chỉ IP thuộc loại địa chỉ nào và nằm ở tầng nào trong mô hình TCP/IP?",
+            "options": [],
+            "left": [],
+            "answer": "Địa chỉ IP là địa chỉ logic và thuộc tầng Mạng.",
+            "explanation": "Địa chỉ IP (Internet Protocol) là loại địa chỉ logic do người dùng ấn định, trong khi địa chỉ vật lý (như MAC) do nhà sản xuất ấn định. Địa chỉ IP hoạt động tại tầng Mạng trong mô hình TCP/IP.",
+            "source_refs": [
+              "052156e88ce448c29c6569576cdb5eac:2:4",
+              "052156e88ce448c29c6569576cdb5eac:2:6"
+            ],
+            "rubric": [
+              "Xác định đúng là địa chỉ logic",
+              "Xác định đúng thuộc tầng Mạng"
+            ]
+          }
+        }
+      },
+      "stage_providers": {
+        "reading": {
+          "provider": "ollama_local",
+          "model": "gemma4:12b-mlx",
+          "model_choice_id": "local:gemma4:12b-mlx",
+          "selection_revision": 4,
+          "prompt_version": "20261018-source-cloze-coverage-v13",
+          "schema_version": 16,
+          "processor_version": "20261018-source-keys-cloze-v4"
+        },
+        "mcq": {
+          "provider": "ollama_local",
+          "model": "gemma4:12b-mlx",
+          "model_choice_id": "local:gemma4:12b-mlx",
+          "selection_revision": 4,
+          "prompt_version": "20261018-source-cloze-coverage-v13",
+          "schema_version": 16,
+          "processor_version": "20261018-source-keys-cloze-v4"
+        },
+        "cloze": {
+          "provider": "ollama_local",
+          "model": "gemma4:12b-mlx",
+          "model_choice_id": "local:gemma4:12b-mlx",
+          "selection_revision": 4,
+          "prompt_version": "20261019-cloze-isolation-v14",
+          "schema_version": 17,
+          "processor_version": "20261019-source-cloze-isolation-v5"
+        },
+        "matching": {
+          "provider": "ollama_local",
+          "model": "gemma4:12b-mlx",
+          "model_choice_id": "local:gemma4:12b-mlx",
+          "selection_revision": 4,
+          "prompt_version": "20261019-cloze-isolation-v14",
+          "schema_version": 17,
+          "processor_version": "20261019-source-cloze-isolation-v5"
+        },
+        "short_answer": {
+          "provider": "ollama_local",
+          "model": "gemma4:12b-mlx",
+          "model_choice_id": "local:gemma4:12b-mlx",
+          "selection_revision": 4,
+          "prompt_version": "20261019-cloze-isolation-v14",
+          "schema_version": 17,
+          "processor_version": "20261019-source-cloze-isolation-v5"
+        }
+      },
+      "question_rejections": {}
+    },
+    "feedback_deferred": false,
+    "error": null,
+    "progress": {
+      "phase": "succeeded",
+      "requests": [
+        {
+          "index": 1,
+          "schema": "ClozeDraft",
+          "phase": "received",
+          "streaming": true,
+          "started_at": "2026-10-19T00:13:34.998520+00:00",
+          "first_chunk_ms": 7249.281,
+          "first_text_ms": null,
+          "elapsed_ms": 11240.703,
+          "chunks": 127,
+          "characters": 315,
+          "usage": {
+            "input_tokens": 2184,
+            "cached_input_tokens": 0,
+            "output_tokens": 127,
+            "load_duration_ns": 7283375,
+            "prompt_eval_duration_ns": 4956179334,
+            "eval_duration_ns": 4064838334,
+            "total_duration_ns": 9030852000,
+            "cloze_source_mask_derived": 1,
+            "cloze_statement_sha256": "a3b182bff73dbce78ed75740506957f36a3209561c334c4e841bc0d2fd0dd4bf"
+          },
+          "protocol_fallbacks": 1
+        },
+        {
+          "index": 2,
+          "schema": "MatchingDraft",
+          "phase": "received",
+          "streaming": true,
+          "started_at": "2026-10-19T00:13:46.252778+00:00",
+          "first_chunk_ms": 4775.185,
+          "first_text_ms": null,
+          "elapsed_ms": 10003.916,
+          "chunks": 204,
+          "characters": 541,
+          "usage": {
+            "input_tokens": 2148,
+            "cached_input_tokens": 0,
+            "output_tokens": 204,
+            "load_duration_ns": 4948875,
+            "prompt_eval_duration_ns": 4620626292,
+            "eval_duration_ns": 5332074709,
+            "total_duration_ns": 9965622583
+          },
+          "protocol_fallbacks": 1
+        },
+        {
+          "index": 3,
+          "schema": "ShortAnswerDraft",
+          "phase": "received",
+          "streaming": true,
+          "started_at": "2026-10-19T00:13:56.264043+00:00",
+          "first_chunk_ms": 2800.611,
+          "first_text_ms": null,
+          "elapsed_ms": 11139.275,
+          "chunks": 255,
+          "characters": 669,
+          "usage": {
+            "input_tokens": 2093,
+            "cached_input_tokens": 1071,
+            "output_tokens": 255,
+            "load_duration_ns": 4154875,
+            "prompt_eval_duration_ns": 2490420834,
+            "eval_duration_ns": 8611389042,
+            "total_duration_ns": 11110657708
+          },
+          "protocol_fallbacks": 1
+        }
+      ],
+      "preview": null,
+      "planned_stages": 6,
+      "saved_stages": 6,
+      "reused_stages": 2,
+      "started_at": "2026-10-19T00:13:34.995147+00:00",
+      "completed_at": "2026-10-19T00:14:07.416100+00:00",
+      "elapsed_ms": 32420.958,
+      "version": 112,
+      "updated_at": "2026-10-19T00:14:07.416143+00:00"
+    }
+  },
+  "elapsed_seconds": 32.454,
+  "new_model_stages": [
+    "ClozeDraft",
+    "MatchingDraft",
+    "ShortAnswerDraft"
+  ],
+  "reading_reused": true,
+  "mcq_reused": true,
+  "lesson": {
+    "title": "Giới thiệu địa chỉ mạng và các phiên bản IP",
+    "sections": [
+      {
+        "title": "Khái niệm địa chỉ mạng (identifier)",
+        "text": "Địa chỉ mạng (identifier) là định danh của một node mạng. Nó được chia thành hai loại chính: Địa chỉ vật lý và Địa chỉ logic.",
+        "source_refs": [
+          "052156e88ce448c29c6569576cdb5eac:2:4"
+        ]
+      },
+      {
+        "title": "Địa chỉ vật lý và Địa chỉ logic",
+        "text": "Địa chỉ vật lý (như địa chỉ MAC - Media Access Control) do nhà sản xuất ấn định trên sản phẩm. Trong khi đó, địa chỉ logic (như địa chỉ IP - Internet Protocol) do người dùng ấn định.",
+        "source_refs": [
+          "052156e88ce448c29c6569576cdb5eac:2:4"
+        ]
+      },
+      {
+        "title": "Địa chỉ IP và các phiên bản",
+        "text": "Địa chỉ IP hoạt động tại tầng Mạng trong mô hình TCP/IP. Hiện có các phiên bản chính bao gồm: IPv4, IPv5 (RFC 1819) và IPv6.",
+        "source_refs": [
+          "052156e88ce448c29c6569576cdb5eac:2:6"
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "kind": "mcq",
+        "prompt": "Trong phân loại địa chỉ mạng (identifier), địa chỉ nào được coi là địa chỉ vật lý?",
+        "options": [
+          "địa chỉ IP (Internet Protocol)",
+          "địa chỉ MAC (Media Access Control)",
+          "địa chỉ IPv6"
+        ],
+        "left": [],
+        "answer": "địa chỉ MAC (Media Access Control)",
+        "explanation": "Địa chỉ vật lý là địa chỉ do nhà sản xuất ấn định trên sản phẩm, ví dụ như địa chỉ MAC (Media Access Control). Trong khi đó, địa chỉ IP là địa chỉ logic do người dùng ấn định.",
+        "source_refs": [
+          "052156e88ce448c29c6569576cdb5eac:2:4"
+        ],
+        "rubric": [],
+        "difficulty": null,
+        "difficulty_basis": null
+      },
+      {
+        "kind": "cloze",
+        "prompt": "“§Địachỉlogic •do ngườidùngấnđịnh •VD: ____”",
+        "options": [],
+        "left": [],
+        "answer": "địa chỉ IP (Internet Protocol)",
+        "explanation": "Địa chỉ IP là một loại địa chỉ logic, do người dùng ấn định trong mạng máy tính.",
+        "source_refs": [
+          "052156e88ce448c29c6569576cdb5eac:2:4"
+        ],
+        "rubric": [],
+        "difficulty": null,
+        "difficulty_basis": null
+      },
+      {
+        "kind": "matching",
+        "prompt": "Hãy nối các loại địa chỉ mạng với đặc điểm tương ứng của chúng:",
+        "options": [
+          "địa chỉ vật lý",
+          "địa chỉ logic"
+        ],
+        "left": [
+          "địa chỉ MAC",
+          "địa chỉ IP"
+        ],
+        "answer": [
+          0,
+          1
+        ],
+        "explanation": "Địa chỉ MAC là địa chỉ vật lý do nhà sản xuất ấn định trên sản phẩm. Địa chỉ IP là địa chỉ logic do người dùng ấn định.",
+        "source_refs": [
+          "052156e88ce448c29c6569576cdb5eac:2:4"
+        ],
+        "rubric": [],
+        "difficulty": null,
+        "difficulty_basis": null
+      },
+      {
+        "kind": "short_answer",
+        "prompt": "Địa chỉ IP thuộc loại địa chỉ nào và nằm ở tầng nào trong mô hình TCP/IP?",
+        "options": [],
+        "left": [],
+        "answer": "Địa chỉ IP là địa chỉ logic và thuộc tầng Mạng.",
+        "explanation": "Địa chỉ IP (Internet Protocol) là loại địa chỉ logic do người dùng ấn định, trong khi địa chỉ vật lý (như MAC) do nhà sản xuất ấn định. Địa chỉ IP hoạt động tại tầng Mạng trong mô hình TCP/IP.",
+        "source_refs": [
+          "052156e88ce448c29c6569576cdb5eac:2:4",
+          "052156e88ce448c29c6569576cdb5eac:2:6"
+        ],
+        "rubric": [
+          "Xác định đúng là địa chỉ logic",
+          "Xác định đúng thuộc tầng Mạng"
+        ],
+        "difficulty": null,
+        "difficulty_basis": null
+      }
+    ],
+    "cards": [
+      {
+        "front": "Địa chỉ vật lý và địa chỉ logic khác nhau thế nào?",
+        "back": "Địa chỉ vật lý (ví dụ: MAC) do nhà sản xuất ấn định. Địa chỉ logic (ví dụ: IP) do người dùng ấn định.",
+        "source_refs": [
+          "052156e88ce448c29c6569576cdb5eac:2:4"
+        ]
+      },
+      {
+        "front": "Địa chỉ IP thuộc tầng nào trong mô hình TCP/IP?",
+        "back": "Địa chỉ IP thuộc tầng Mạng.",
+        "source_refs": [
+          "052156e88ce448c29c6569576cdb5eac:2:6"
+        ]
+      }
+    ],
+    "mindmap": [
+      {
+        "title": "Phân loại địa chỉ mạng",
+        "text": "Địa chỉ vật lý (MAC) và Địa chỉ logic (IP)",
+        "source_refs": [
+          "052156e88ce448c29c6569576cdb5eac:2:4"
+        ]
+      },
+      {
+        "title": "Đặc điểm địa chỉ",
+        "text": "Vật lý: Nhà sản xuất ấn định; Logic: Người dùng ấn định",
+        "source_refs": [
+          "052156e88ce448c29c6569576cdb5eac:2:4"
+        ]
+      },
+      {
+        "title": "Các phiên bản IP",
+        "text": "IPv4, IPv5 (RFC 1819), IPv6",
+        "source_refs": [
+          "052156e88ce448c29c6569576cdb5eac:2:6"
+        ]
+      }
+    ]
+  },
+  "coverage": {
+    "requested_count": 5,
+    "generated_count": 4,
+    "complete": false,
+    "requested_types": [
+      "mcq",
+      "cloze",
+      "matching",
+      "ordering",
+      "short_answer"
+    ],
+    "generated_types": [
+      "mcq",
+      "cloze",
+      "matching",
+      "short_answer"
+    ],
+    "uncreated": [
+      {
+        "stage": "ordering",
+        "kind": "ordering",
+        "reason": "Nguồn của bài chưa có các bước đánh số theo trình tự rõ. Không biến danh sách khái niệm thành câu sắp xếp.",
+        "origin": "backend_source_gate"
+      }
+    ]
+  },
+  "practice_checks": [
+    {
+      "kind": "mcq",
+      "correct": true,
+      "grading": "fixed"
+    },
+    {
+      "kind": "cloze",
+      "correct": true,
+      "grading": "fixed"
+    },
+    {
+      "kind": "matching",
+      "correct": true,
+      "grading": "fixed"
+    },
+    {
+      "kind": "short_answer",
+      "correct": null,
+      "grading": "self_review"
+    }
+  ],
+  "practice_result": {
+    "score": 3,
+    "fixed_total": 3,
+    "self_review_count": 1,
+    "course_revision": 2,
+    "session_id": "fad1141b84e04ec69308fcba39ebfd17",
+    "assisted_count": 0,
+    "assessment": "self_study_not_proctored",
+    "rewards": [
+      {
+        "amount": 0,
+        "disabled_for_test": true
+      },
+      {
+        "amount": 0,
+        "disabled_for_test": true
+      }
+    ]
+  },
+  "original_failed_job_unchanged": true,
+  "live_course_revision": 1
+}

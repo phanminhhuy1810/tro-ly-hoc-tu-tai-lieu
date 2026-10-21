@@ -1,0 +1,20 @@
+{
+  "purpose": "Read-only post-QA comparison of the original Huy course/source against the pre-trial backup, not all-user acceptance.",
+  "at": "2026-10-20T23:47:14.672335+00:00",
+  "course_id": "d6ee061103f047518016b5e26a7b95b7",
+  "source_id": "052156e88ce448c29c6569576cdb5eac",
+  "original_tables_unchanged": {
+    "courses": true,
+    "course_revisions": true,
+    "sources": true,
+    "extraction_revisions": true
+  },
+  "original_table_hashes": {
+    "courses": "2c70cad6e8a3f941eb1e73dacc650d99cbac0df33496be98c31c599d61036990",
+    "course_revisions": "b99e848bcc8a3b1654d5888388487dd7f53aa23e25764f53b0ca97159b0b0c2c",
+    "sources": "2a58d8a3ddcda2160d5f14ebca5c04967153f46c9187f1f258de91cc5415675b",
+    "extraction_revisions": "64d79760f5665b8e2bc6abe04cbec3177671bae97be7fee5417bd4fa95397332"
+  },
+  "pdf_original_sha256": "9037fecd5131c299809b7aa4776b782c2939b2c47c792d7ee09a5cfa6c795404",
+  "source_or_user_course_modified": false
+}

@@ -1,0 +1,49 @@
+{
+  "purpose": "Deploy question-input rederivation after403tests, with old solution omitted from one model request and creator metadata preserved; no default model or old data rewrite.",
+  "at": "2026-10-21T06:21:17.645322+00:00",
+  "old_pid": 6094,
+  "active_before": {
+    "jobs": 0,
+    "rooms": 0,
+    "parsing": 0
+  },
+  "backup": "study-before-correction-inputs-20261021T062117Z.sqlite3",
+  "table_hashes_before": {
+    "courses": "4e348094c115556ac75e13d75ecfa3cb96d5b2db3482bca7ad005886e23e3a80",
+    "course_revisions": "8ab0ef0b64b1c0d016f1ca1c30de769fa5159b572ba1735f52aac12a042defe4",
+    "sources": "98ebad7af03f60cb197fc8d5b6cd8287a201fea7ff4e2493144a7c54cd300f43",
+    "extraction_revisions": "1dd24953d9dcf06da72f9ed1fe145a76d9efa57fe4e13dca844915e51399c89a",
+    "jobs": "3478db166c6306031c9c1b1e1dd19bd9b619e17833401536ec12406d44f99901",
+    "ai_preferences": "704caaf10f25affedf0ad8ade10082ffae9b472d0660412f7961ad09e525e0a5",
+    "wallets": "8076abce282cd7b99e6ec76cdc875a608be11a5902c660019b28588f99dc5416",
+    "study_sessions": "8d5f14c201c83835922c2f5d3746de66a41fe4de98780f1d89a11c120e267908",
+    "answers": "86d4aed4e87169da374ba9c7ab7785f4018014406fc41b3c06e36a9384987648",
+    "coin_ledger": "3b796bf2a5b832161c50b792bf4f7396c228e430dce1cf37246f19daea4fecd5",
+    "chapter_contexts": "a7b4c4aa6c1c7524a1d80648d37f0b5adbebbf6c73881228c95d1cd058d1e223",
+    "question_review_flags": "03d0afb9daed578e91cd4e395f4eac80e7dce21060a0af2252f1cc293360c8db"
+  },
+  "backend_tests": 403,
+  "frontend_tests_retained": 71,
+  "correction_prompt_version": "20261021-question-inputs-without-old-solution-v4",
+  "unchanged_tables": {
+    "courses": true,
+    "course_revisions": true,
+    "sources": true,
+    "extraction_revisions": true,
+    "jobs": true,
+    "ai_preferences": true,
+    "wallets": true,
+    "study_sessions": true,
+    "answers": true,
+    "coin_ledger": true,
+    "chapter_contexts": true,
+    "question_review_flags": true
+  },
+  "sql_version": 18,
+  "active_jobs_after": 0,
+  "health": {
+    "backend": true,
+    "provider_health_checked": false
+  },
+  "new_pid": 6788
+}

@@ -1,0 +1,115 @@
+{
+  "purpose": "Codex-assisted source/oracle review; not independent human or instructor labels.",
+  "reviewed_at": "2026-10-21T04:59:40.381026+00:00",
+  "case_id": "net-dev-prefix",
+  "run_id": "dev-v5-chapter-focus",
+  "production_sha256": "4445b6ad08bbb79c0faaf00ba77f1f525e623b7860a156fcdc5ccdc12869e04c",
+  "source_sha256": "3d10baf8b4f76ce753b5baee11bcfb66d6c4d373658cb38a5e528ea1ac38585b",
+  "oracle": {
+    "verification": "computed",
+    "network": "10.12.7.128",
+    "broadcast": "10.12.7.255",
+    "first_host": "10.12.7.129",
+    "last_host": "10.12.7.254",
+    "mask": "255.255.255.128",
+    "host_bits": 7,
+    "total_addresses": 128,
+    "usable_hosts": 126
+  },
+  "reading_review": "Reading/cards/mindmap preserve /25 counts, endpoints, mask and the five-step procedure. Values match the independent ipaddress oracle; this is limited to a conventional /25.",
+  "independent_human_reviews": 0,
+  "factual_accuracy_score": null,
+  "questions": [
+    {
+      "question_index": 0,
+      "kind": "mcq",
+      "question_sha256": "fbb63f918c2976ee5adc97894670e633dde51d5c7bea143987a9d7e40b6b9562",
+      "status": "supported_in_checked_scope",
+      "note": "32-25=7, 2^7=128 and 126 usable hosts agree with the source/oracle; one option gives both requested quantities.",
+      "source_refs": [
+        "5f0f019833ac44b3b8e271ccae29e806:2:0"
+      ]
+    },
+    {
+      "question_index": 1,
+      "kind": "cloze",
+      "question_sha256": "7d7235eb63092bb16d13fdcb6542e9b17e6a39a9c8b3d72adc3c0a3ba5cf8f6d",
+      "status": "needs_review",
+      "note": "The broadcast key and numeric example are supported, but explanation exposes transport labels R7/R2 to the learner.",
+      "source_refs": [
+        "5f0f019833ac44b3b8e271ccae29e806:2:1",
+        "5f0f019833ac44b3b8e271ccae29e806:2:6"
+      ]
+    },
+    {
+      "question_index": 2,
+      "kind": "matching",
+      "question_sha256": "d9ecca91702f2a78a560ff6335f02c8ebb1c23a725c1977fcf87c342e0b52a24",
+      "status": "needs_review",
+      "note": "Stem omits the IP10.12.7.201: /25 alone does not identify these numeric network/broadcast addresses. The explanation depends on a lesson example absent from the standalone prompt.",
+      "source_refs": [
+        "5f0f019833ac44b3b8e271ccae29e806:2:1",
+        "5f0f019833ac44b3b8e271ccae29e806:2:6"
+      ]
+    },
+    {
+      "question_index": 3,
+      "kind": "ordering",
+      "question_sha256": "93e52645cacb539d2edfe15c8568022425fe27172eeb2062c898cb19241b9dd0",
+      "status": "supported_in_checked_scope",
+      "note": "Five exact numbered source actions give the program-derived permutation [4,2,3,1,0].",
+      "source_refs": [
+        "5f0f019833ac44b3b8e271ccae29e806:2:3",
+        "5f0f019833ac44b3b8e271ccae29e806:2:4",
+        "5f0f019833ac44b3b8e271ccae29e806:2:5",
+        "5f0f019833ac44b3b8e271ccae29e806:2:6",
+        "5f0f019833ac44b3b8e271ccae29e806:2:7"
+      ]
+    },
+    {
+      "question_index": 4,
+      "kind": "short_answer",
+      "question_sha256": "c967033696f608f56bd5d28d3ae20c9eb1d89ffdafd4133c6fefc85cdbbbdec8",
+      "status": "supported_in_checked_scope",
+      "note": "IP/prefix are supplied and host-bit/range calculation agrees with ipaddress; short answer remains self-review, not an AI-scored result.",
+      "source_refs": [
+        "5f0f019833ac44b3b8e271ccae29e806:2:0",
+        "5f0f019833ac44b3b8e271ccae29e806:2:1",
+        "5f0f019833ac44b3b8e271ccae29e806:2:3",
+        "5f0f019833ac44b3b8e271ccae29e806:2:4",
+        "5f0f019833ac44b3b8e271ccae29e806:2:5",
+        "5f0f019833ac44b3b8e271ccae29e806:2:6",
+        "5f0f019833ac44b3b8e271ccae29e806:2:7"
+      ]
+    },
+    {
+      "question_index": 5,
+      "kind": "mcq",
+      "question_sha256": "22ac724bae1b3bfaa146da23366e691a91f022dc8f53503260d0c80bf2283235",
+      "status": "supported_in_checked_scope",
+      "note": "Network/broadcast for the explicit /25 IP match ipaddress; alternatives contain host endpoints or a different network.",
+      "source_refs": [
+        "5f0f019833ac44b3b8e271ccae29e806:2:1"
+      ]
+    },
+    {
+      "question_index": 6,
+      "kind": "cloze",
+      "question_sha256": "6d549e9577daf107a58fd3fadccabe03b495f72895dfe51a5a66c100cf2130c8",
+      "status": "supported_in_checked_scope",
+      "note": "One blank asks the final action of removing the two boundary addresses, supported by source steps4/5; concept recall rather than a novel calculation.",
+      "source_refs": [
+        "5f0f019833ac44b3b8e271ccae29e806:2:6",
+        "5f0f019833ac44b3b8e271ccae29e806:2:7"
+      ]
+    }
+  ],
+  "uncreated": [
+    {
+      "stage": "matching:2",
+      "kind": "matching",
+      "reason": "Đã có câu hỏi dạng matching yêu cầu ghép nối các thành phần tương ứng với vai trò của chúng trong một subnet /25. Trong phạm vi nguồn của Phần 1 (R1-R8), không còn nội dung nào khác đủ căn cứ để tạo thêm một câu hỏi matching mới đáp ứng mục tiêu phân biệt vai trò của network và broadcast mà không bị trùng lặp về nội dung hoặc ý nghĩa với câu hỏi đã có.",
+      "origin": "model_declined"
+    }
+  ]
+}

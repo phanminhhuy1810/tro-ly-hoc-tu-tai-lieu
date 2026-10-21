@@ -1,0 +1,120 @@
+{
+  "purpose": "Read-only metadata closure after native OCR and Gemma trials; no new AI generation",
+  "ai_generation_requests": 0,
+  "monetary_payments": 0,
+  "issues_kept": [
+    "Read-only closure harness initially queried legacy fragments storage, assumed object instead of list and used the HTTP-fixture manual-text prefix for the browser fixture. These checks failed. Corrected extraction-revision lookup and direct revision2/4 page24 comparison confirm the actual stored manual text was preserved; no data repair or AI request."
+  ],
+  "checks": {
+    "default_and_qa_selection_unchanged": true,
+    "failed_generation_not_applied": true,
+    "failed_jobs_and_valid_partial_preserved": true,
+    "real_pdf_unchanged": true,
+    "no_active_job_or_room": true,
+    "native_ocr_qa_preserved": true,
+    "academic_source_unchanged": true
+  },
+  "health": {
+    "backend": true,
+    "provider_health_checked": false,
+    "elapsed_seconds": 0.0022
+  },
+  "catalog": {
+    "default_model_id": "kaggle:qwen3.8:27b",
+    "selected_model_id": "local:gemma4:12b-mlx",
+    "selection_revision": 1,
+    "models": [
+      {
+        "id": "local:qwen3.5:9b",
+        "ready": true,
+        "selectable": true,
+        "external": false,
+        "last_request_status": null,
+        "last_error_code": null
+      },
+      {
+        "id": "local:gemma4:12b-mlx",
+        "ready": true,
+        "selectable": true,
+        "external": false,
+        "last_request_status": "failed",
+        "last_error_code": "INVALID_OUTPUT"
+      },
+      {
+        "id": "kaggle:qwen3.8:27b",
+        "ready": false,
+        "selectable": false,
+        "external": true,
+        "last_request_status": null,
+        "last_error_code": null
+      },
+      {
+        "id": "gemini:gemini-2.5-flash",
+        "ready": true,
+        "selectable": true,
+        "external": true,
+        "last_request_status": null,
+        "last_error_code": null
+      }
+    ]
+  },
+  "gemma_source": {
+    "id": "147955a9405c4edfaa7dc35216b4237f",
+    "revision": 2,
+    "fragment_count": 6
+  },
+  "gemma_course": {
+    "id": "35926bc3d4744f6ba22826db7ebdd3dd",
+    "revision": 1,
+    "generated_unit_count": 0
+  },
+  "gemma_jobs": [
+    {
+      "id": "4e0fdec72c1e4cfc86bb8f9d55a4172d",
+      "status": "failed",
+      "saved_stages": 0,
+      "reused_stages": 0,
+      "has_reading": false,
+      "question_kinds": []
+    },
+    {
+      "id": "55825c81fdce47f1a3483600d6fcc41e",
+      "status": "failed",
+      "saved_stages": 2,
+      "reused_stages": 0,
+      "has_reading": true,
+      "question_kinds": [
+        "mcq"
+      ]
+    },
+    {
+      "id": "00b6e68136cf4895a57ac18dda359b2e",
+      "status": "failed",
+      "saved_stages": 2,
+      "reused_stages": 2,
+      "has_reading": true,
+      "question_kinds": [
+        "mcq"
+      ]
+    }
+  ],
+  "real_pdf_preserved": {
+    "revision": 2,
+    "original_sha256": "9037fecd5131c299809b7aa4776b782c2939b2c47c792d7ee09a5cfa6c795404",
+    "page32_diagram_quality": "unresolved_not_modified"
+  },
+  "active_jobs": 0,
+  "active_rooms": 0,
+  "native_ocr_browser_qa": {
+    "source_id": "860d9e658d834194a4aa5277c50bd8a8",
+    "fragment_count": 93,
+    "model_selected": "local:gemma4:12b-mlx",
+    "selection_revision": 1,
+    "extraction_revision": 4,
+    "reviewed": false,
+    "manual_page24_retained": true
+  },
+  "db_schema": 15,
+  "academic_source_sha256": "10477b780feb504d649ad458cc381ed05eca4f47bc162ea4a8fb6eeb70c3a66e",
+  "passed": true
+}

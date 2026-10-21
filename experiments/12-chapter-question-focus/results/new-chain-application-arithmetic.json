@@ -1,0 +1,39 @@
+{
+  "purpose": "Exact derivative arithmetic for one newly authored application, not a self-scored factual benchmark or source-scope proof.",
+  "at": "2026-10-21T05:26:30.259267+00:00",
+  "question_sha256": "db7653aa6cfdf5439a6da904ae714aec6ed57e92089e8e4ae19a1a685cbf2803",
+  "prompt": "Cho hàm số h(x) = (5x^2 + 2)^3. Hãy thực hiện quy trình 4 bước để tính đạo hàm h'(x) bằng cách áp dụng chain rule.",
+  "oracle_method": "Differentiate the polynomial specified in the prompt by coefficients, compare the model reference after exact bounded polynomial expansion.",
+  "prompt_polynomial_coefficients": [
+    "8",
+    "0",
+    "60",
+    "0",
+    "150",
+    "0",
+    "125"
+  ],
+  "expected_derivative_coefficients": [
+    "0",
+    "120",
+    "0",
+    "600",
+    "0",
+    "750"
+  ],
+  "reference_derivative_coefficients": [
+    "0",
+    "120",
+    "0",
+    "600",
+    "0",
+    "750"
+  ],
+  "matches": true,
+  "new_function_not_literal_in_source": true,
+  "source_scope_limit": "The notes give chain rule and a linear-inner fourth-power example. General power-rule differentiation of the new quadratic/cubic is prerequisite knowledge, not explicitly stated as a general formula in these short source notes; scope still needs review.",
+  "independent_human_reviews": 0,
+  "grading_stays": "self_review",
+  "inference_calls": 0,
+  "database_writes": 0
+}

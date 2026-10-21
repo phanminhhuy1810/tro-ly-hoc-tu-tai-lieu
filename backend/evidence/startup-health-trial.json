@@ -1,0 +1,18 @@
+{
+  "purpose": "Startup liveness separated from provider health; two HTTP probes, not inference or full browser-load benchmark",
+  "before": {
+    "purpose": "Before switching UI startup to liveness-only health; no inference",
+    "old_startup_route": "/api/status",
+    "elapsed_seconds": 1.388,
+    "backend": true,
+    "ai_ready": false,
+    "code": null
+  },
+  "after": {
+    "route": "/api/health",
+    "elapsed_seconds": 0.0248,
+    "backend": true,
+    "provider_health_checked": false
+  },
+  "no_ai_inference": true
+}

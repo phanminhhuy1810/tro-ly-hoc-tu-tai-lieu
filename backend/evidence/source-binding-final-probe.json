@@ -1,0 +1,21 @@
+{
+  "checked_at": "2026-10-16T19:13:59.651429+00:00",
+  "server": "loopback:8770",
+  "course_revision": 4,
+  "source_versions": [
+    {
+      "unit_id": "unit-1",
+      "source_id": "155c026611864de2ba468ffd07844189",
+      "extraction_revision": 2
+    },
+    {
+      "unit_id": "unit-2",
+      "source_id": "d49e13708e1846abbcd8ac0a9c113d70",
+      "extraction_revision": 3
+    }
+  ],
+  "old_attempt_revision": 2,
+  "old_attempt_score": 1,
+  "ai_generation_called": false,
+  "backend_running_with_current_routes": true
+}

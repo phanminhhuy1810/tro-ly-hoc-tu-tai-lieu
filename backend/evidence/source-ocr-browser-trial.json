@@ -1,0 +1,64 @@
+{
+  "purpose": "Desktop native OCR QA, separate localhost origin; not human trial",
+  "source_id": "860d9e658d834194a4aa5277c50bd8a8",
+  "revision": 4,
+  "reviewed": false,
+  "fragments": 93,
+  "manual_page_24_retained": true,
+  "batches": [
+    {
+      "id": "f421209bdc92463eb89ba234b4ba59ec",
+      "state": "applied",
+      "base_revision": 2,
+      "applied_revision": 3
+    },
+    {
+      "id": "9b2fcf2b7fe64b9f8ad2dc7d534becb4",
+      "state": "applied",
+      "base_revision": 3,
+      "applied_revision": 4
+    }
+  ],
+  "jobs": [
+    {
+      "id": "84c874a0596d409aab9af33d7f724a79",
+      "status": "succeeded"
+    },
+    {
+      "id": "1c90f8e0843e4f488d5fc9bd1dd366fc",
+      "status": "succeeded"
+    }
+  ],
+  "final_counts": {
+    "pending": 0,
+    "text_available_unverified": 46,
+    "protected": 1
+  },
+  "same_job_reloaded_while_running": "1c90f8e0843e4f488d5fc9bd1dd366fc",
+  "browser_checks": [
+    "draft disables OCR before save",
+    "save-draft leaves extraction unreviewed",
+    "20-item preview survives reload",
+    "preview before apply",
+    "reload while last6 running does not create another job",
+    "final pending0/OCR46/protected1",
+    "no false stale warning after apply",
+    "new profile startup fixed"
+  ],
+  "issues_kept": [
+    {
+      "kind": "fresh_profile_bug",
+      "detail": "pendingLessonJob optional-chain compared undefined to undefined courseId, then accessed id; fixed explicit presence guard."
+    },
+    {
+      "kind": "observation_deadline",
+      "detail": "Stop locator observed after completion; 3s selector wait after reload expired before initialization; fresh DOM confirmed existing preview; no job repeated."
+    },
+    {
+      "kind": "evidence_reporter",
+      "detail": "Reporter first queried fragments_json instead of content_json; corrected field; no API or source mutation."
+    }
+  ],
+  "screenshot": "preview/screenshots/native-ocr-continuation.png",
+  "quality_note": "Native 2^6 becomes216; not source accuracy completion."
+}

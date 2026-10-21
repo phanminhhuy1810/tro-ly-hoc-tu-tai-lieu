@@ -1,0 +1,339 @@
+{
+  "purpose": "One source-crosschecked correction preview, separate from original development measurements and independent human evaluation.",
+  "at": "2026-10-21T06:07:59.250858+00:00",
+  "case_id": "psy-dev-operant",
+  "course_id": "9a849bac6ffa42c4a54981900123de09",
+  "question_index": 4,
+  "dev_raw_sha256": "763de34447c8d07cdc74334143af6767716d5a560d30f1cd68d952a5f2669b2e",
+  "limits": {
+    "correction_jobs": 1,
+    "seconds": 210
+  },
+  "external_inference": 0,
+  "automatic_semantic_retries": 0,
+  "independent_human_reviews": 0,
+  "model_quality_pass": null,
+  "checks": {
+    "course_unchanged_before_apply": true,
+    "only_selected_question_preview": true,
+    "stem_kept_exactly": true,
+    "kind_kept": true,
+    "old_attempt_unchanged": true,
+    "original_job_unchanged": true,
+    "source_unchanged": true,
+    "original_measurement_retained": true,
+    "no_chapter_reading_request": true,
+    "one_short_answer_request": true,
+    "chapter_cache_unchanged": true,
+    "no_coin_held": true
+  },
+  "before_question": {
+    "kind": "short_answer",
+    "prompt": "Một học sinh thường xuyên làm ồn trong lớp. Giáo viên yêu cầu học sinh đó phải ngồi yên và nếu làm tốt, học sinh sẽ được giữ lại quyền sử dụng máy tính vào cuối giờ. Sau đó, hành vi làm ồn của học sinh giảm hẳn. Hãy áp dụng quy trình 4 bước để phân loại tình huống này.",
+    "options": [],
+    "left": [],
+    "answer": "1. Hành vi mục tiêu: Làm ồn trong lớp. 2. Tần suất hành vi: Giảm. 3. Hậu quả: Loại bỏ kích thích (quyền sử dụng máy tính). 4. Kết luận: Negative punishment.",
+    "explanation": "Áp dụng quy trình phân loại: Xác định hành vi làm ồn (Bước 1), nhận thấy hành vi giảm (Bước 2), xác định việc thu hồi quyền sử dụng máy tính là loại bỏ kích thích (Bước 3), và kết hợp để xác định là negative punishment (Bước 4).",
+    "source_refs": [
+      "22f107d3ced44c5ebafc8543b6b52f72:2:3",
+      "22f107d3ced44c5ebafc8543b6b52f72:2:4",
+      "22f107d3ced44c5ebafc8543b6b52f72:2:5",
+      "22f107d3ced44c5ebafc8543b6b52f72:2:6",
+      "22f107d3ced44c5ebafc8543b6b52f72:2:7"
+    ],
+    "rubric": [
+      "Xác định đúng hành vi mục tiêu là làm ồn.",
+      "Xác định đúng hành vi giảm.",
+      "Xác định đúng việc thu hồi quyền là loại bỏ kích thích.",
+      "Kết luận đúng là negative punishment."
+    ],
+    "difficulty": "applied",
+    "difficulty_basis": "creator_request_not_measured"
+  },
+  "chapter_before": {
+    "context_id": "93760dd1d0c0a89fc27c3b9f8755b6dc70a48f68c08a10b839fb00f0e19dc10b",
+    "reader_version": "20261020-whole-approved-chapter-v1",
+    "status": "ready",
+    "scope": "whole_approved_plan_selection",
+    "extraction_revision": 2,
+    "total_fragments": 8,
+    "covered_fragments": 8,
+    "total_characters": 1005,
+    "covered_characters": 1005,
+    "total_parts": 1,
+    "read_parts": 1,
+    "total_stages": 1,
+    "saved_stages": 1,
+    "complete": true,
+    "coverage_is_not_semantic_accuracy": true
+  },
+  "wallet_before": {
+    "balance": 27,
+    "held": 0,
+    "available": 27,
+    "policy_version": "dev-proposal-20261015-v2",
+    "policy_proposed": true,
+    "cash_payments": false,
+    "enforcement_enabled": true
+  },
+  "request": {
+    "expected_revision": 2,
+    "unit_id": "unit-1",
+    "target": "question",
+    "index": 4,
+    "request": "Giữ nguyên đề bài và tình huống học sinh được giữ lại quyền dùng máy tính; chỉ sửa đáp án tham khảo, lời giải và rubric. Không biến 'được giữ quyền' thành 'bị thu hồi'. Phân tích hành vi mục tiêu và thêm/loại bỏ kích thích theo chương. Nếu thiếu dữ kiện để kết luận duy nhất thì nói rõ chưa đủ, không cố bảo vệ nhãn negative punishment. Giữ dạng short_answer."
+  },
+  "quote_amount": 2,
+  "job_id": "a2158b82d123489e86a5355610fe52a7",
+  "job": {
+    "id": "a2158b82d123489e86a5355610fe52a7",
+    "task": "correction",
+    "context": {
+      "course_id": "9a849bac6ffa42c4a54981900123de09",
+      "unit_id": "unit-1",
+      "expected_revision": 2,
+      "target": "question",
+      "index": 4,
+      "request": "Giữ nguyên đề bài và tình huống học sinh được giữ lại quyền dùng máy tính; chỉ sửa đáp án tham khảo, lời giải và rubric. Không biến 'được giữ quyền' thành 'bị thu hồi'. Phân tích hành vi mục tiêu và thêm/loại bỏ kích thích theo chương. Nếu thiếu dữ kiện để kết luận duy nhất thì nói rõ chưa đủ, không cố bảo vệ nhãn negative punishment. Giữ dạng short_answer."
+    },
+    "status": "succeeded",
+    "attempts": 1,
+    "provider": {
+      "provider": "ollama_local",
+      "model": "gemma4:12b-mlx",
+      "reference_codec": "scoped-reference-aliases-v1",
+      "model_choice_id": "local:gemma4:12b-mlx",
+      "selection_revision": 1,
+      "prompt_version": "20261021-whole-chapter-scoped-correction-v3",
+      "schema_version": 20,
+      "processor_version": "20261021-polynomial-composition-proof-v13",
+      "chapter_evidence_version": "20261021-approved-chapter-support-v1",
+      "chapter_brief_prompt_version": "20261021-compact-readable-formulas-v2",
+      "question_focus_version": "20261021-kind-compatible-chapter-targets-v2"
+    },
+    "result": {
+      "proposal_id": "826c0710848841dbb4ad9dd9b0d27632"
+    },
+    "partial": {
+      "correction_scope": {
+        "version": "whole-chapter-correction-scope-v1",
+        "course_id": "9a849bac6ffa42c4a54981900123de09",
+        "base_revision": 2,
+        "unit_id": "unit-1",
+        "target": "question",
+        "index": 4,
+        "request_sha256": "66db8876c012a7a5abe00103720471f9c3fb00861e6aa28c9603065ced2feac7",
+        "before_sha256": "74353bcff8a8e239a5e21ccbebc66434016a6b81b19e530fee1d345887543335",
+        "unit_sha256": "7973038118aef3573690afd1c606d0ab2fac9195c662b8c1e737f2004a0992da",
+        "source_plan_id": "c359a69095fb4d5c8f58eb97d8ab9695",
+        "source_id": "22f107d3ced44c5ebafc8543b6b52f72",
+        "extraction_revision": 2,
+        "chapter_context_id": "93760dd1d0c0a89fc27c3b9f8755b6dc70a48f68c08a10b839fb00f0e19dc10b",
+        "input_source_refs": [
+          "22f107d3ced44c5ebafc8543b6b52f72:2:0",
+          "22f107d3ced44c5ebafc8543b6b52f72:2:1",
+          "22f107d3ced44c5ebafc8543b6b52f72:2:2",
+          "22f107d3ced44c5ebafc8543b6b52f72:2:3",
+          "22f107d3ced44c5ebafc8543b6b52f72:2:4",
+          "22f107d3ced44c5ebafc8543b6b52f72:2:5",
+          "22f107d3ced44c5ebafc8543b6b52f72:2:6",
+          "22f107d3ced44c5ebafc8543b6b52f72:2:7"
+        ],
+        "input_sha256": "9672cc91d1f30f2b2ab80ae44790a2efbb370d08fdcc759931a7ab137a50c859",
+        "sha256": "861873c1fead899e708425874858ae365db35a068257f91bfbd7020b12f6c450"
+      },
+      "chapter_context": {
+        "context_id": "93760dd1d0c0a89fc27c3b9f8755b6dc70a48f68c08a10b839fb00f0e19dc10b",
+        "reader_version": "20261020-whole-approved-chapter-v1",
+        "status": "ready",
+        "scope": "whole_approved_plan_selection",
+        "extraction_revision": 2,
+        "total_fragments": 8,
+        "covered_fragments": 8,
+        "total_characters": 1005,
+        "covered_characters": 1005,
+        "total_parts": 1,
+        "read_parts": 1,
+        "total_stages": 1,
+        "saved_stages": 1,
+        "complete": true,
+        "coverage_is_not_semantic_accuracy": true
+      },
+      "replacement": {
+        "kind": "short_answer",
+        "prompt": "Một học sinh thường xuyên làm ồn trong lớp. Giáo viên yêu cầu học sinh đó phải ngồi yên và nếu làm tốt, học sinh sẽ được giữ lại quyền sử dụng máy tính vào cuối giờ. Sau đó, hành vi làm ồn của học sinh giảm hẳn. Hãy áp dụng quy trình 4 bước để phân loại tình huống này.",
+        "options": [],
+        "left": [],
+        "answer": "1. Hành vi mục tiêu: Làm ồn trong lớp. 2. Tần suất hành vi: Giảm. 3. Hậu quả: Loại bỏ kích thích (quyền sử dụng máy tính). 4. Kết luận: Negative punishment.",
+        "explanation": "Áp dụng quy trình phân loại: Xác định hành vi làm ồn (Bước 1), nhận thấy hành vi giảm (Bước 2), xác định việc loại bỏ quyền sử dụng máy tính là loại bỏ kích thích (Bước 3), và kết hợp để xác định là negative punishment (Bước 4).",
+        "source_refs": [
+          "22f107d3ced44c5ebafc8543b6b52f72:2:3",
+          "22f107d3ced44c5ebafc8543b6b52f72:2:4",
+          "22f107d3ced44c5ebafc8543b6b52f72:2:5",
+          "22f107d3ced44c5ebafc8543b6b52f72:2:6",
+          "22f107d3ced44c5ebafc8543b6b52f72:2:7"
+        ],
+        "rubric": [
+          "Xác định đúng hành vi mục tiêu là làm ồn.",
+          "Xác định đúng hành vi giảm.",
+          "Xác định đúng việc loại bỏ quyền là loại bỏ kích thích.",
+          "Kết luận đúng là negative punishment."
+        ],
+        "difficulty": null,
+        "difficulty_basis": null
+      },
+      "replacement_provider": {
+        "provider": "ollama_local",
+        "model": "gemma4:12b-mlx",
+        "reference_codec": "scoped-reference-aliases-v1",
+        "model_choice_id": "local:gemma4:12b-mlx",
+        "selection_revision": 1,
+        "prompt_version": "20261021-whole-chapter-scoped-correction-v3",
+        "schema_version": 20,
+        "processor_version": "20261021-polynomial-composition-proof-v13",
+        "chapter_evidence_version": "20261021-approved-chapter-support-v1",
+        "chapter_brief_prompt_version": "20261021-compact-readable-formulas-v2",
+        "question_focus_version": "20261021-kind-compatible-chapter-targets-v2"
+      },
+      "replacement_sha256": "3018f96c163580eab439c731dbb4124df1b1e2e19774f0dd277cc7b795dea7b7",
+      "candidate_rejection": null,
+      "decline_reason": null
+    },
+    "feedback_deferred": false,
+    "error": null,
+    "progress": {
+      "phase": "succeeded",
+      "requests": [
+        {
+          "index": 1,
+          "schema": "ShortAnswerDraft",
+          "phase": "received",
+          "streaming": true,
+          "started_at": "2026-10-21T06:07:59.310262+00:00",
+          "first_chunk_ms": 10473.18,
+          "first_text_ms": null,
+          "elapsed_ms": 22479.182,
+          "chunks": 413,
+          "characters": 1376,
+          "usage": {
+            "input_tokens": 2952,
+            "cached_input_tokens": 0,
+            "output_tokens": 413,
+            "load_duration_ns": 9982584,
+            "prompt_eval_duration_ns": 5992936833,
+            "eval_duration_ns": 12088466875,
+            "total_duration_ns": 18111424084,
+            "provider_finish_reason": "stop",
+            "reference_alias_count": 8,
+            "reference_alias_map_sha256": "5cc7fb51a4e3caa2a608c31b69bfc3dda71d6f2158ee059722110e2a7a816619"
+          },
+          "protocol_fallbacks": 1
+        }
+      ],
+      "preview": null,
+      "planned_stages": 2,
+      "saved_stages": 2,
+      "reused_stages": 1,
+      "started_at": "2026-10-21T06:07:59.306049+00:00",
+      "completed_at": "2026-10-21T06:08:21.797199+00:00",
+      "chapter_context": {
+        "context_id": "93760dd1d0c0a89fc27c3b9f8755b6dc70a48f68c08a10b839fb00f0e19dc10b",
+        "reader_version": "20261020-whole-approved-chapter-v1",
+        "status": "ready",
+        "scope": "whole_approved_plan_selection",
+        "extraction_revision": 2,
+        "total_fragments": 8,
+        "covered_fragments": 8,
+        "total_characters": 1005,
+        "covered_characters": 1005,
+        "total_parts": 1,
+        "read_parts": 1,
+        "total_stages": 1,
+        "saved_stages": 1,
+        "complete": true,
+        "coverage_is_not_semantic_accuracy": true
+      },
+      "elapsed_ms": 22491.153,
+      "version": 77,
+      "updated_at": "2026-10-21T06:08:21.797227+00:00"
+    }
+  },
+  "status": "succeeded",
+  "elapsed_seconds": 22.531,
+  "preview": {
+    "id": "826c0710848841dbb4ad9dd9b0d27632",
+    "course_id": "9a849bac6ffa42c4a54981900123de09",
+    "base_revision": 2,
+    "scope": {
+      "unit_id": "unit-1",
+      "target": "question",
+      "index": 4
+    },
+    "request": "Giữ nguyên đề bài và tình huống học sinh được giữ lại quyền dùng máy tính; chỉ sửa đáp án tham khảo, lời giải và rubric. Không biến 'được giữ quyền' thành 'bị thu hồi'. Phân tích hành vi mục tiêu và thêm/loại bỏ kích thích theo chương. Nếu thiếu dữ kiện để kết luận duy nhất thì nói rõ chưa đủ, không cố bảo vệ nhãn negative punishment. Giữ dạng short_answer.",
+    "status": "preview",
+    "before": {
+      "kind": "short_answer",
+      "prompt": "Một học sinh thường xuyên làm ồn trong lớp. Giáo viên yêu cầu học sinh đó phải ngồi yên và nếu làm tốt, học sinh sẽ được giữ lại quyền sử dụng máy tính vào cuối giờ. Sau đó, hành vi làm ồn của học sinh giảm hẳn. Hãy áp dụng quy trình 4 bước để phân loại tình huống này.",
+      "options": [],
+      "left": [],
+      "answer": "1. Hành vi mục tiêu: Làm ồn trong lớp. 2. Tần suất hành vi: Giảm. 3. Hậu quả: Loại bỏ kích thích (quyền sử dụng máy tính). 4. Kết luận: Negative punishment.",
+      "explanation": "Áp dụng quy trình phân loại: Xác định hành vi làm ồn (Bước 1), nhận thấy hành vi giảm (Bước 2), xác định việc thu hồi quyền sử dụng máy tính là loại bỏ kích thích (Bước 3), và kết hợp để xác định là negative punishment (Bước 4).",
+      "source_refs": [
+        "22f107d3ced44c5ebafc8543b6b52f72:2:3",
+        "22f107d3ced44c5ebafc8543b6b52f72:2:4",
+        "22f107d3ced44c5ebafc8543b6b52f72:2:5",
+        "22f107d3ced44c5ebafc8543b6b52f72:2:6",
+        "22f107d3ced44c5ebafc8543b6b52f72:2:7"
+      ],
+      "rubric": [
+        "Xác định đúng hành vi mục tiêu là làm ồn.",
+        "Xác định đúng hành vi giảm.",
+        "Xác định đúng việc thu hồi quyền là loại bỏ kích thích.",
+        "Kết luận đúng là negative punishment."
+      ],
+      "difficulty": "applied",
+      "difficulty_basis": "creator_request_not_measured"
+    },
+    "after": {
+      "kind": "short_answer",
+      "prompt": "Một học sinh thường xuyên làm ồn trong lớp. Giáo viên yêu cầu học sinh đó phải ngồi yên và nếu làm tốt, học sinh sẽ được giữ lại quyền sử dụng máy tính vào cuối giờ. Sau đó, hành vi làm ồn của học sinh giảm hẳn. Hãy áp dụng quy trình 4 bước để phân loại tình huống này.",
+      "options": [],
+      "left": [],
+      "answer": "1. Hành vi mục tiêu: Làm ồn trong lớp. 2. Tần suất hành vi: Giảm. 3. Hậu quả: Loại bỏ kích thích (quyền sử dụng máy tính). 4. Kết luận: Negative punishment.",
+      "explanation": "Áp dụng quy trình phân loại: Xác định hành vi làm ồn (Bước 1), nhận thấy hành vi giảm (Bước 2), xác định việc loại bỏ quyền sử dụng máy tính là loại bỏ kích thích (Bước 3), và kết hợp để xác định là negative punishment (Bước 4).",
+      "source_refs": [
+        "22f107d3ced44c5ebafc8543b6b52f72:2:3",
+        "22f107d3ced44c5ebafc8543b6b52f72:2:4",
+        "22f107d3ced44c5ebafc8543b6b52f72:2:5",
+        "22f107d3ced44c5ebafc8543b6b52f72:2:6",
+        "22f107d3ced44c5ebafc8543b6b52f72:2:7"
+      ],
+      "rubric": [
+        "Xác định đúng hành vi mục tiêu là làm ồn.",
+        "Xác định đúng hành vi giảm.",
+        "Xác định đúng việc loại bỏ quyền là loại bỏ kích thích.",
+        "Kết luận đúng là negative punishment."
+      ],
+      "difficulty": null,
+      "difficulty_basis": null
+    }
+  },
+  "wallet_after": {
+    "balance": 25,
+    "held": 0,
+    "available": 25,
+    "policy_version": "dev-proposal-20261015-v2",
+    "policy_proposed": true,
+    "cash_payments": false,
+    "enforcement_enabled": true
+  },
+  "source_review": {
+    "reviewer": "Codex-assisted, not independent human/instructor review",
+    "at": "2026-10-21T06:09:57.401998+00:00",
+    "status": "reject_do_not_apply",
+    "program_proven": false,
+    "note": "The unchanged stem says the pupil KEEPS access if quiet. The proposed answer still invents REMOVAL of computer access and calls it negative punishment. The request explicitly forbade this change of causal facts; procedure-only citations do not establish removal. Reading the chapter and passing schema validation did not resolve the semantic error.",
+    "before_answer_equal_after": true,
+    "action": "Preview retained for diagnosis; not applied. Existing question stays needs_review in QA; old version/history remain intact."
+  }
+}

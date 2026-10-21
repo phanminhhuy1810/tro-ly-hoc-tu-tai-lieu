@@ -1,0 +1,75 @@
+{
+  "purpose": "Desktop browser scope review and read-only database verification on an agent-owned localhost profile; no human profile changed",
+  "source_id": "ceeb59596509446f8d6a12256a6cc0ad",
+  "extraction_revision": 2,
+  "source_fragments": 35,
+  "suggested_front_matter": 3,
+  "manually_excluded_other_fragment": "ceeb59596509446f8d6a12256a6cc0ad:2:3",
+  "selected_after_exclusion": 31,
+  "selected_after_undo": 34,
+  "undo_kept_manual_exclusion": true,
+  "subject_goal_selection_survived_reload": true,
+  "back_from_outline_kept_preferences": true,
+  "selected_fragment_ids": [
+    "ceeb59596509446f8d6a12256a6cc0ad:2:4",
+    "ceeb59596509446f8d6a12256a6cc0ad:2:5",
+    "ceeb59596509446f8d6a12256a6cc0ad:2:6",
+    "ceeb59596509446f8d6a12256a6cc0ad:2:7",
+    "ceeb59596509446f8d6a12256a6cc0ad:2:8",
+    "ceeb59596509446f8d6a12256a6cc0ad:2:9",
+    "ceeb59596509446f8d6a12256a6cc0ad:2:10",
+    "ceeb59596509446f8d6a12256a6cc0ad:2:11",
+    "ceeb59596509446f8d6a12256a6cc0ad:2:12",
+    "ceeb59596509446f8d6a12256a6cc0ad:2:13",
+    "ceeb59596509446f8d6a12256a6cc0ad:2:14",
+    "ceeb59596509446f8d6a12256a6cc0ad:2:15",
+    "ceeb59596509446f8d6a12256a6cc0ad:2:16",
+    "ceeb59596509446f8d6a12256a6cc0ad:2:17",
+    "ceeb59596509446f8d6a12256a6cc0ad:2:18",
+    "ceeb59596509446f8d6a12256a6cc0ad:2:19",
+    "ceeb59596509446f8d6a12256a6cc0ad:2:20",
+    "ceeb59596509446f8d6a12256a6cc0ad:2:21",
+    "ceeb59596509446f8d6a12256a6cc0ad:2:22",
+    "ceeb59596509446f8d6a12256a6cc0ad:2:23",
+    "ceeb59596509446f8d6a12256a6cc0ad:2:24",
+    "ceeb59596509446f8d6a12256a6cc0ad:2:25",
+    "ceeb59596509446f8d6a12256a6cc0ad:2:26",
+    "ceeb59596509446f8d6a12256a6cc0ad:2:27",
+    "ceeb59596509446f8d6a12256a6cc0ad:2:28",
+    "ceeb59596509446f8d6a12256a6cc0ad:2:29",
+    "ceeb59596509446f8d6a12256a6cc0ad:2:30",
+    "ceeb59596509446f8d6a12256a6cc0ad:2:31",
+    "ceeb59596509446f8d6a12256a6cc0ad:2:32",
+    "ceeb59596509446f8d6a12256a6cc0ad:2:33",
+    "ceeb59596509446f8d6a12256a6cc0ad:2:34"
+  ],
+  "excluded_fragment_ids": [
+    "ceeb59596509446f8d6a12256a6cc0ad:2:0",
+    "ceeb59596509446f8d6a12256a6cc0ad:2:1",
+    "ceeb59596509446f8d6a12256a6cc0ad:2:2",
+    "ceeb59596509446f8d6a12256a6cc0ad:2:3"
+  ],
+  "plan_status": "preview",
+  "unit_fragment_counts": [
+    8,
+    8,
+    8,
+    7
+  ],
+  "assigned_exactly_selected": true,
+  "job_summary": [
+    {
+      "task": "source_ocr",
+      "status": "succeeded"
+    },
+    {
+      "task": "source_ocr",
+      "status": "succeeded"
+    }
+  ],
+  "ai_usage_rows": 0,
+  "coin_amount": 0,
+  "approved_or_generated_lesson": false,
+  "screenshot": "preview/screenshots/source-opening-review-desktop.png",
+  "temporary_browser_tab_closed": true
+}

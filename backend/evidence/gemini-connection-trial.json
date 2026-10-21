@@ -1,0 +1,36 @@
+{
+  "kind": "one_authorized_free_tier_connection_probe_not_benchmark",
+  "checked_at": "2026-10-16T16:43:51.287249+00:00",
+  "provider": {
+    "provider": "gemini_api",
+    "model": "gemini-2.5-flash"
+  },
+  "source": {
+    "filename": "CTT105-2-IP&subnetting_2.0.pdf",
+    "sha256": "9037fecd5131c299809b7aa4776b782c2939b2c47c792d7ee09a5cfa6c795404",
+    "page_count": 33,
+    "selected_pages": [
+      8,
+      15,
+      23,
+      26,
+      27,
+      33
+    ],
+    "extraction": "pypdf extract_text, uncorrected original text; full source audit separate"
+  },
+  "selected_fragment_ids": [
+    "pdf-p08",
+    "pdf-p23"
+  ],
+  "reply": {
+    "text": "Địa chỉ IPv4 có kích thước 32 bit. Subnet mask dùng để phân định NetID và HostID trong địa chỉ IPv4. Các bit thuộc NetID có giá trị là 1, còn các bit thuộc HostID có giá trị là 0.",
+    "source_refs": [
+      "pdf-p08",
+      "pdf-p23"
+    ],
+    "needs_more_source": false
+  },
+  "status": "succeeded",
+  "duration_seconds": 1.915
+}

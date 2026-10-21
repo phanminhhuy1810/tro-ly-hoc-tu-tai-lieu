@@ -1,0 +1,1858 @@
+{
+  "workload_id": "pipeline_mcq_3",
+  "started_at": "2026-10-16T06:06:53.422810+00:00",
+  "prompt_sha256": "172f52a1de8e17a235844b818b22393a25d666f88e352e020f437e5815a9fe6a",
+  "request_sha256": "0227164cbc132cbf332a85f4b50cb053ce6df1a71591da751b109876764eaf9e",
+  "num_predict": 900,
+  "events": [
+    {
+      "elapsed_seconds": 3.054580249998253,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:56.472047Z",
+        "message": {
+          "role": "assistant",
+          "content": "{"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 3.1422074160072953,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:56.558532Z",
+        "message": {
+          "role": "assistant",
+          "content": "\n\""
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 3.14229433296714,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:56.560926Z",
+        "message": {
+          "role": "assistant",
+          "content": "kind"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 3.2208802080131136,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:56.643109Z",
+        "message": {
+          "role": "assistant",
+          "content": "\":"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 3.2209442909806967,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:56.64314Z",
+        "message": {
+          "role": "assistant",
+          "content": " \""
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 3.2722502909600735,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:56.694766Z",
+        "message": {
+          "role": "assistant",
+          "content": "mc"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 3.2723202079650946,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:56.694784Z",
+        "message": {
+          "role": "assistant",
+          "content": "q"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 3.475496082974132,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:56.897004Z",
+        "message": {
+          "role": "assistant",
+          "content": "\","
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 3.475734957959503,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:56.897365Z",
+        "message": {
+          "role": "assistant",
+          "content": "\n\""
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 3.4757615409907885,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:56.897878Z",
+        "message": {
+          "role": "assistant",
+          "content": "prompt"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 3.5223125829943456,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:56.94483Z",
+        "message": {
+          "role": "assistant",
+          "content": "\":"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 3.5223887079628184,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:56.944858Z",
+        "message": {
+          "role": "assistant",
+          "content": " \""
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 3.57286324998131,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:56.9953Z",
+        "message": {
+          "role": "assistant",
+          "content": "Số"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 3.573125374969095,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:56.995357Z",
+        "message": {
+          "role": "assistant",
+          "content": " bit"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 3.627330457966309,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:57.049688Z",
+        "message": {
+          "role": "assistant",
+          "content": " Host"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 3.627573999983724,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:57.049765Z",
+        "message": {
+          "role": "assistant",
+          "content": "ID"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 3.721237249963451,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:57.143615Z",
+        "message": {
+          "role": "assistant",
+          "content": " của"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 3.721543958003167,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:57.143646Z",
+        "message": {
+          "role": "assistant",
+          "content": " địa"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 3.721620875003282,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:57.143876Z",
+        "message": {
+          "role": "assistant",
+          "content": " chỉ"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 3.7969313329667784,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:57.219376Z",
+        "message": {
+          "role": "assistant",
+          "content": " 1"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 3.879399415978696,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:57.301834Z",
+        "message": {
+          "role": "assistant",
+          "content": "7"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 3.8794872079743072,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:57.301899Z",
+        "message": {
+          "role": "assistant",
+          "content": "2"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 3.9579611659864895,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:57.380482Z",
+        "message": {
+          "role": "assistant",
+          "content": "."
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 3.958034500014037,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:57.380503Z",
+        "message": {
+          "role": "assistant",
+          "content": "2"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 4.028986249992158,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:57.451412Z",
+        "message": {
+          "role": "assistant",
+          "content": "9"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 4.029062874964438,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:57.451457Z",
+        "message": {
+          "role": "assistant",
+          "content": "."
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 4.160067624994554,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:57.582477Z",
+        "message": {
+          "role": "assistant",
+          "content": "2"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 4.160216707969084,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:57.582612Z",
+        "message": {
+          "role": "assistant",
+          "content": "1"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 4.160238790966105,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:57.582636Z",
+        "message": {
+          "role": "assistant",
+          "content": "7"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 4.160247040970717,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:57.582678Z",
+        "message": {
+          "role": "assistant",
+          "content": "."
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 4.2837720409734175,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:57.706072Z",
+        "message": {
+          "role": "assistant",
+          "content": "1"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 4.283880750008393,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:57.706097Z",
+        "message": {
+          "role": "assistant",
+          "content": "0"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 4.28399799996987,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:57.706389Z",
+        "message": {
+          "role": "assistant",
+          "content": "/"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 4.284033207979519,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:57.706404Z",
+        "message": {
+          "role": "assistant",
+          "content": "1"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 4.418213540979195,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:57.840205Z",
+        "message": {
+          "role": "assistant",
+          "content": "9"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 4.418271582981106,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:57.840252Z",
+        "message": {
+          "role": "assistant",
+          "content": " là"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 4.418314665963408,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:57.840843Z",
+        "message": {
+          "role": "assistant",
+          "content": " bao"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 4.418327207968105,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:57.840876Z",
+        "message": {
+          "role": "assistant",
+          "content": " nhiêu"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 4.605295082961675,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:58.025227Z",
+        "message": {
+          "role": "assistant",
+          "content": "?\","
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 4.606099708005786,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:58.025295Z",
+        "message": {
+          "role": "assistant",
+          "content": "\n\""
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 4.606857625010889,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:58.025602Z",
+        "message": {
+          "role": "assistant",
+          "content": "options"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 4.606914915959351,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:58.025618Z",
+        "message": {
+          "role": "assistant",
+          "content": "\":"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 4.7374144999776036,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:58.159969Z",
+        "message": {
+          "role": "assistant",
+          "content": " ["
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 4.888018874975387,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:58.310462Z",
+        "message": {
+          "role": "assistant",
+          "content": "\n\""
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 4.8881047909962945,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:58.31055Z",
+        "message": {
+          "role": "assistant",
+          "content": "1"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 4.888150915969163,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:58.310646Z",
+        "message": {
+          "role": "assistant",
+          "content": "3"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 5.10054329095874,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:58.503175Z",
+        "message": {
+          "role": "assistant",
+          "content": "\","
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 5.105307874968275,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:58.505897Z",
+        "message": {
+          "role": "assistant",
+          "content": "\n\""
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 5.1053355829790235,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:58.509671Z",
+        "message": {
+          "role": "assistant",
+          "content": "1"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 5.165439374977723,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:58.587672Z",
+        "message": {
+          "role": "assistant",
+          "content": "4"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 5.165635540965013,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:58.587709Z",
+        "message": {
+          "role": "assistant",
+          "content": "\","
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 5.252335541008506,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:58.674795Z",
+        "message": {
+          "role": "assistant",
+          "content": "\n\""
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 5.2524107079952955,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:58.674839Z",
+        "message": {
+          "role": "assistant",
+          "content": "1"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 5.252464915974997,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:58.674939Z",
+        "message": {
+          "role": "assistant",
+          "content": "5"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 5.4211169999907725,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:58.843701Z",
+        "message": {
+          "role": "assistant",
+          "content": "\","
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 5.421166540996637,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:58.843717Z",
+        "message": {
+          "role": "assistant",
+          "content": "\n\""
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 5.421199125004932,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:58.843753Z",
+        "message": {
+          "role": "assistant",
+          "content": "1"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 5.421208499989007,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:58.843764Z",
+        "message": {
+          "role": "assistant",
+          "content": "6"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 5.421214665984735,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:58.843798Z",
+        "message": {
+          "role": "assistant",
+          "content": "\""
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 5.573941082984675,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:58.996455Z",
+        "message": {
+          "role": "assistant",
+          "content": "\n],"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 5.646278708009049,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:59.06888Z",
+        "message": {
+          "role": "assistant",
+          "content": "\n\""
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 5.6467383750132285,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:59.068892Z",
+        "message": {
+          "role": "assistant",
+          "content": "answer"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 5.715154458011966,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:59.137743Z",
+        "message": {
+          "role": "assistant",
+          "content": "\":"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 5.715210666006897,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:59.137758Z",
+        "message": {
+          "role": "assistant",
+          "content": " \""
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 5.715648790996056,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:59.137818Z",
+        "message": {
+          "role": "assistant",
+          "content": "1"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 5.7853472079732455,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:59.207835Z",
+        "message": {
+          "role": "assistant",
+          "content": "3"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 5.785461207968183,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:59.207853Z",
+        "message": {
+          "role": "assistant",
+          "content": "\","
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 5.877891332958825,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:59.300451Z",
+        "message": {
+          "role": "assistant",
+          "content": "\n\""
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 5.87794362497516,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:59.300465Z",
+        "message": {
+          "role": "assistant",
+          "content": "ex"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 5.878117290965747,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:59.30053Z",
+        "message": {
+          "role": "assistant",
+          "content": "planation"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 5.878136415965855,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:59.30054Z",
+        "message": {
+          "role": "assistant",
+          "content": "\":"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 5.953343499975745,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:59.37585Z",
+        "message": {
+          "role": "assistant",
+          "content": " \""
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 5.9533994579687715,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:59.375869Z",
+        "message": {
+          "role": "assistant",
+          "content": "Địa"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 6.031594790983945,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:59.454199Z",
+        "message": {
+          "role": "assistant",
+          "content": " chỉ"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 6.031640833010897,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:59.454214Z",
+        "message": {
+          "role": "assistant",
+          "content": " IP"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 6.0316686250153,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:59.454273Z",
+        "message": {
+          "role": "assistant",
+          "content": " có"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 6.1137273329659365,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:59.536301Z",
+        "message": {
+          "role": "assistant",
+          "content": " độ"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 6.1985571249970235,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:59.621063Z",
+        "message": {
+          "role": "assistant",
+          "content": " dài"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 6.198648874997161,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:59.621108Z",
+        "message": {
+          "role": "assistant",
+          "content": " 3"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 6.282712707994506,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:59.705213Z",
+        "message": {
+          "role": "assistant",
+          "content": "2"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 6.282805458002258,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:59.705236Z",
+        "message": {
+          "role": "assistant",
+          "content": " bit"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 6.363381290982943,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:59.785875Z",
+        "message": {
+          "role": "assistant",
+          "content": " ("
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 6.363443415961228,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:59.785888Z",
+        "message": {
+          "role": "assistant",
+          "content": "theo"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 6.363456457969733,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:59.78596Z",
+        "message": {
+          "role": "assistant",
+          "content": " pdf"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 6.441062750003766,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:59.863665Z",
+        "message": {
+          "role": "assistant",
+          "content": "-p"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 6.441124665958341,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:59.863673Z",
+        "message": {
+          "role": "assistant",
+          "content": "0"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 6.441150499973446,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:59.863729Z",
+        "message": {
+          "role": "assistant",
+          "content": "8"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 6.534862958011217,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:59.957478Z",
+        "message": {
+          "role": "assistant",
+          "content": ")."
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 6.534887290967163,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:06:59.957488Z",
+        "message": {
+          "role": "assistant",
+          "content": " Với"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 6.6048166250111535,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:00.027367Z",
+        "message": {
+          "role": "assistant",
+          "content": " mạng"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 6.676098332973197,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:00.09851Z",
+        "message": {
+          "role": "assistant",
+          "content": " /"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 6.74581854097778,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:00.168392Z",
+        "message": {
+          "role": "assistant",
+          "content": "1"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 6.745862915995531,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:00.168404Z",
+        "message": {
+          "role": "assistant",
+          "content": "9"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 6.745910416007973,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:00.168465Z",
+        "message": {
+          "role": "assistant",
+          "content": ","
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 6.818255790974945,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:00.240777Z",
+        "message": {
+          "role": "assistant",
+          "content": " phần"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 6.818340249999892,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:00.240795Z",
+        "message": {
+          "role": "assistant",
+          "content": " Network"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 6.818404791003559,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:00.240865Z",
+        "message": {
+          "role": "assistant",
+          "content": " ID"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 6.892065999971237,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:00.314603Z",
+        "message": {
+          "role": "assistant",
+          "content": " chiếm"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 6.892151165986434,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:00.314634Z",
+        "message": {
+          "role": "assistant",
+          "content": " 1"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 6.968887457973324,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:00.391398Z",
+        "message": {
+          "role": "assistant",
+          "content": "9"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 6.968980707984883,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:00.391426Z",
+        "message": {
+          "role": "assistant",
+          "content": " bit"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 6.96901879098732,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:00.391492Z",
+        "message": {
+          "role": "assistant",
+          "content": "."
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 7.048199415963609,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:00.470784Z",
+        "message": {
+          "role": "assistant",
+          "content": " Số"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 7.129458707990125,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:00.551974Z",
+        "message": {
+          "role": "assistant",
+          "content": " bit"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 7.1295447499724105,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:00.551993Z",
+        "message": {
+          "role": "assistant",
+          "content": " Host"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 7.1295573330135085,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:00.552115Z",
+        "message": {
+          "role": "assistant",
+          "content": "ID"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 7.210934165981598,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:00.633448Z",
+        "message": {
+          "role": "assistant",
+          "content": " được"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 7.289813500014134,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:00.712297Z",
+        "message": {
+          "role": "assistant",
+          "content": " tính"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 7.289901665993966,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:00.712317Z",
+        "message": {
+          "role": "assistant",
+          "content": " bằng"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 7.289994207967538,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:00.712429Z",
+        "message": {
+          "role": "assistant",
+          "content": " tổng"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 7.366045165981632,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:00.788582Z",
+        "message": {
+          "role": "assistant",
+          "content": " số"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 7.366121625003871,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:00.788604Z",
+        "message": {
+          "role": "assistant",
+          "content": " bit"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 7.3662234579678625,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:00.788697Z",
+        "message": {
+          "role": "assistant",
+          "content": " trừ"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 7.439314999966882,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:00.861819Z",
+        "message": {
+          "role": "assistant",
+          "content": " đi"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 7.439403374970425,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:00.861841Z",
+        "message": {
+          "role": "assistant",
+          "content": " số"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 7.511604916013312,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:00.934139Z",
+        "message": {
+          "role": "assistant",
+          "content": " bit"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 7.511669208004605,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:00.934161Z",
+        "message": {
+          "role": "assistant",
+          "content": " Network"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 7.582934874983039,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:01.005518Z",
+        "message": {
+          "role": "assistant",
+          "content": " ID"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 7.6512862499803305,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:01.073771Z",
+        "message": {
+          "role": "assistant",
+          "content": ":"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 7.651353624998592,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:01.073819Z",
+        "message": {
+          "role": "assistant",
+          "content": " 3"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 7.74225758301327,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:01.164841Z",
+        "message": {
+          "role": "assistant",
+          "content": "2"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 7.742299582983833,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:01.164853Z",
+        "message": {
+          "role": "assistant",
+          "content": " -"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 7.742324957973324,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:01.16492Z",
+        "message": {
+          "role": "assistant",
+          "content": " 1"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 7.8131999999750406,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:01.235777Z",
+        "message": {
+          "role": "assistant",
+          "content": "9"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 7.81324433296686,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:01.23579Z",
+        "message": {
+          "role": "assistant",
+          "content": " ="
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 7.891406832961366,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:01.313983Z",
+        "message": {
+          "role": "assistant",
+          "content": " 1"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 7.891467582958285,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:01.313998Z",
+        "message": {
+          "role": "assistant",
+          "content": "3"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 7.891497790988069,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:01.314059Z",
+        "message": {
+          "role": "assistant",
+          "content": " bit"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 7.982050624967087,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:01.404522Z",
+        "message": {
+          "role": "assistant",
+          "content": ".\","
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 7.982152582961135,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:01.40457Z",
+        "message": {
+          "role": "assistant",
+          "content": "\n\""
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 8.078356624988373,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:01.500825Z",
+        "message": {
+          "role": "assistant",
+          "content": "source"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 8.078498040966224,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:01.500843Z",
+        "message": {
+          "role": "assistant",
+          "content": "_refs"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 8.078613874968141,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:01.500973Z",
+        "message": {
+          "role": "assistant",
+          "content": "\":"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 8.168178749969229,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:01.590707Z",
+        "message": {
+          "role": "assistant",
+          "content": " ["
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 8.168277999968268,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:01.590749Z",
+        "message": {
+          "role": "assistant",
+          "content": "\n\""
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 8.248171999992337,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:01.670748Z",
+        "message": {
+          "role": "assistant",
+          "content": "pdf"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 8.248209707962815,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:01.670773Z",
+        "message": {
+          "role": "assistant",
+          "content": "-p"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 8.248241790977772,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:01.670818Z",
+        "message": {
+          "role": "assistant",
+          "content": "0"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 8.319003125012387,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:01.741585Z",
+        "message": {
+          "role": "assistant",
+          "content": "8"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 8.319041375012603,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:01.741601Z",
+        "message": {
+          "role": "assistant",
+          "content": "\","
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 8.391658790991642,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:01.814204Z",
+        "message": {
+          "role": "assistant",
+          "content": "\n\""
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 8.391711457981728,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:01.814219Z",
+        "message": {
+          "role": "assistant",
+          "content": "pdf"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 8.391742333013099,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:01.814286Z",
+        "message": {
+          "role": "assistant",
+          "content": "-p"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 8.465729540970642,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:01.888314Z",
+        "message": {
+          "role": "assistant",
+          "content": "2"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 8.465802749968134,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:01.888327Z",
+        "message": {
+          "role": "assistant",
+          "content": "6"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 8.465815957984887,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:01.888389Z",
+        "message": {
+          "role": "assistant",
+          "content": "\""
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 8.542137832962908,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:01.964605Z",
+        "message": {
+          "role": "assistant",
+          "content": "\n]"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 8.618881958012935,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:02.041302Z",
+        "message": {
+          "role": "assistant",
+          "content": "\n}"
+        },
+        "done": false
+      }
+    },
+    {
+      "elapsed_seconds": 8.619012082985137,
+      "data": {
+        "model": "qwen3.5:9b",
+        "created_at": "2026-10-16T06:07:02.041362Z",
+        "message": {
+          "role": "assistant",
+          "content": ""
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 8617712584,
+        "load_duration": 33472167,
+        "prompt_eval_count": 1767,
+        "prompt_eval_cached_count": 97,
+        "prompt_eval_duration": 2848985709,
+        "eval_count": 169,
+        "eval_duration": 5731395791
+      }
+    }
+  ],
+  "first_event_seconds": 3.054580249998253,
+  "first_content_seconds": 3.054580249998253,
+  "content": "{\n\"kind\": \"mcq\",\n\"prompt\": \"Số bit HostID của địa chỉ 172.29.217.10/19 là bao nhiêu?\",\n\"options\": [\n\"13\",\n\"14\",\n\"15\",\n\"16\"\n],\n\"answer\": \"13\",\n\"explanation\": \"Địa chỉ IP có độ dài 32 bit (theo pdf-p08). Với mạng /19, phần Network ID chiếm 19 bit. Số bit HostID được tính bằng tổng số bit trừ đi số bit Network ID: 32 - 19 = 13 bit.\",\n\"source_refs\": [\n\"pdf-p08\",\n\"pdf-p26\"\n]\n}",
+  "thinking": "",
+  "http_status": 200,
+  "final": {
+    "model": "qwen3.5:9b",
+    "created_at": "2026-10-16T06:07:02.041362Z",
+    "message": {
+      "role": "assistant",
+      "content": ""
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 8617712584,
+    "load_duration": 33472167,
+    "prompt_eval_count": 1767,
+    "prompt_eval_cached_count": 97,
+    "prompt_eval_duration": 2848985709,
+    "eval_count": 169,
+    "eval_duration": 5731395791
+  },
+  "status": "complete",
+  "total_seconds": 8.619229707983322,
+  "output_sha256": "b7665b7b6e315257416a5f8506156d7db52ffbfe79bb7465fae67122bc159fd8",
+  "validation": {
+    "json_valid": true,
+    "schema_valid": true,
+    "refs_valid": true,
+    "oracle_pass": true,
+    "errors": [],
+    "semantic_review_required": true,
+    "parsed": {
+      "kind": "mcq",
+      "prompt": "Số bit HostID của địa chỉ 172.29.217.10/19 là bao nhiêu?",
+      "options": [
+        "13",
+        "14",
+        "15",
+        "16"
+      ],
+      "answer": "13",
+      "explanation": "Địa chỉ IP có độ dài 32 bit (theo pdf-p08). Với mạng /19, phần Network ID chiếm 19 bit. Số bit HostID được tính bằng tổng số bit trừ đi số bit Network ID: 32 - 19 = 13 bit.",
+      "source_refs": [
+        "pdf-p08",
+        "pdf-p26"
+      ]
+    },
+    "oracle_expected": "13"
+  },
+  "decode_tokens_per_second": 29.486709025640906,
+  "call_index": 11,
+  "group": "pipeline"
+}

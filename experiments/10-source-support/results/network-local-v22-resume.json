@@ -1,0 +1,1379 @@
+{
+  "purpose": "One explicit local QA continuation after the missing mindmap-source field prompt fix; same chapter cache/source/goal/model.",
+  "started_at": "2026-10-20T23:41:32.049466+00:00",
+  "previous_failed_job_id": "65218ed1323945979e53750e66b4dd02",
+  "course_id": "c8825160ed2e4cc2b057b8e6710b20df",
+  "unit_id": "unit-5",
+  "source_id": "e517e6ec87a64ed19f751e8de8df6aff",
+  "qa_owner_id": "161d2b95211648b1bf64be794da8b955",
+  "model": "local:gemma4:12b-mlx",
+  "limits": {
+    "requests_to_generate": 1,
+    "poll_seconds": 210,
+    "automatic_failure_retries": 0
+  },
+  "external_inference": 0,
+  "payments": 0,
+  "independent_human_reviewed": false,
+  "before_revision": 1,
+  "source_sha256": "f1b735f89912e1f382986112e5822434904429e2168c7b5a5baf7f3475b09f59",
+  "wallet_before": {
+    "balance": 20,
+    "held": 0,
+    "available": 20,
+    "policy_version": "dev-proposal-20261015-v2",
+    "policy_proposed": true,
+    "cash_payments": false,
+    "enforcement_enabled": true
+  },
+  "default_model_before": "kaggle:qwen3.8:27b",
+  "job_id": "529e3104bc264ae8ab85980f8cb4aef0",
+  "job": {
+    "id": "529e3104bc264ae8ab85980f8cb4aef0",
+    "task": "lesson",
+    "context": {
+      "course_id": "c8825160ed2e4cc2b057b8e6710b20df",
+      "unit_id": "unit-5",
+      "expected_revision": 1
+    },
+    "status": "succeeded",
+    "attempts": 1,
+    "provider": {
+      "provider": "ollama_local",
+      "model": "gemma4:12b-mlx",
+      "reference_codec": "scoped-reference-aliases-v1",
+      "model_choice_id": "local:gemma4:12b-mlx",
+      "selection_revision": 1,
+      "prompt_version": "20261021-reading-evidence-fields-v22",
+      "schema_version": 19,
+      "processor_version": "20261021-chapter-subnet-claims-v10",
+      "chapter_evidence_version": "20261021-approved-chapter-support-v1"
+    },
+    "result": {
+      "course_id": "c8825160ed2e4cc2b057b8e6710b20df",
+      "revision": 2
+    },
+    "partial": {
+      "chapter_context": {
+        "context_id": "b81d2c13738adc79fd97152f809aeb1aaa1be45499ca8a77e2e6fcc49fa45e1a",
+        "reader_version": "20261020-whole-approved-chapter-v1",
+        "status": "ready",
+        "scope": "whole_approved_plan_selection",
+        "extraction_revision": 2,
+        "total_fragments": 33,
+        "covered_fragments": 33,
+        "total_characters": 7846,
+        "covered_characters": 7846,
+        "total_parts": 2,
+        "read_parts": 2,
+        "total_stages": 3,
+        "saved_stages": 3,
+        "complete": true,
+        "coverage_is_not_semantic_accuracy": true
+      },
+      "evidence_scope": {
+        "version": "20261021-approved-chapter-support-v1",
+        "context_id": "b81d2c13738adc79fd97152f809aeb1aaa1be45499ca8a77e2e6fcc49fa45e1a",
+        "focus_source_refs": [
+          "e517e6ec87a64ed19f751e8de8df6aff:2:32"
+        ],
+        "support_source_refs": [
+          "e517e6ec87a64ed19f751e8de8df6aff:2:8",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:13",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:14",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:26"
+        ],
+        "input_source_refs": [
+          "e517e6ec87a64ed19f751e8de8df6aff:2:8",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:13",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:14",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:26",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:32"
+        ],
+        "input_sha256": "86b5778e41e23445a57bc93580296ecb1c033f024156ea47fa305d8b57f558f4",
+        "query_sha256": "1720e889930647081c143408b92030d7c408f2d920ccefe5ac8ff167ee4163b4",
+        "added_support_refs": [
+          "e517e6ec87a64ed19f751e8de8df6aff:2:14",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:26",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:13",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:8"
+        ],
+        "omitted": [],
+        "relevance_is_not_entailment": true,
+        "ai_calls": 0,
+        "sha256": "cedb2acb0cb2b026d847b084db43a009db783277a3568eee4cd9b1155bb0be9f"
+      },
+      "reading": {
+        "title": "Vận dụng prefix để tìm subnet và số host",
+        "sections": [
+          {
+            "title": "Xác định Network và Broadcast từ Prefix",
+            "text": "Để xác định phạm vi của một network, ta dựa vào subnet mask (prefix). Net Addr là địa chỉ bắt đầu của dải mạng, trong đó các bit thuộc NetID được giữ nguyên. Broadcast là địa chỉ cuối cùng, được xác định bằng cách giữ nguyên NetID và bật tất cả các bit của HostID lên 1. Ví dụ: Với IP 172.100.112.4/19, Net Addr là 172.100.96.0 và Broadcast là 172.100.127.255.",
+            "source_refs": [
+              "e517e6ec87a64ed19f751e8de8df6aff:2:13",
+              "e517e6ec87a64ed19f751e8de8df6aff:2:32"
+            ]
+          },
+          {
+            "title": "Tính toán số lượng Host khả dụng",
+            "text": "Số lượng host hợp lệ trong một network được tính dựa trên số bit của phần HostID (m). Công thức là 2^m - 2. Số lượng host này không bao gồm Net Addr và Broadcast. Ví dụ: Với prefix /19, phần HostID có 13 bits, nên số host khả dụng là 2^13 - 2 = 8190.",
+            "source_refs": [
+              "e517e6ec87a64ed19f751e8de8df6aff:2:14",
+              "e517e6ec87a64ed19f751e8de8df6aff:2:32"
+            ]
+          },
+          {
+            "title": "Quy tắc chia Subnet",
+            "text": "Khi cần chia nhỏ một dải IP lớn thành các mạng con, ta thực hiện mượn các bit đầu trong phần HostID để làm NetID. Số lượng subnet tạo ra được tính bằng công thức 2^n, với n là số bit mượn từ phần HostID. Việc này giúp tối ưu hóa việc sử dụng địa chỉ IP cho các thiết bị thực tế.",
+            "source_refs": [
+              "e517e6ec87a64ed19f751e8de8df6aff:2:26"
+            ]
+          }
+        ],
+        "cards": [
+          {
+            "front": "Làm thế nào để xác định địa chỉ Broadcast của một mạng có prefix /19?",
+            "back": "Giữ nguyên phần NetID và bật tất cả các bit của HostID lên 1. Với 172.100.112.4/19, Broadcast là 172.100.127.255.",
+            "source_refs": [
+              "e517e6ec87a64ed19f751e8de8df6aff:2:13",
+              "e517e6ec87a64ed19f751e8de8df6aff:2:32"
+            ]
+          },
+          {
+            "front": "Tại sao số host khả dụng lại là 2^m - 2?",
+            "back": "Vì trong một dải mạng, địa chỉ Net Addr và địa chỉ Broadcast không được sử dụng cho các thiết bị (host).",
+            "source_refs": [
+              "e517e6ec87a64ed19f751e8de8df6aff:2:14"
+            ]
+          }
+        ],
+        "mindmap": [
+          {
+            "title": "Cấu trúc IP và Subnet",
+            "text": "Phân chia 32 bits thành Network ID và Host ID dựa trên subnet mask.",
+            "source_refs": [
+              "e517e6ec87a64ed19f751e8de8df6aff:2:13"
+            ]
+          },
+          {
+            "title": "Kỹ thuật chia Subnet",
+            "text": "Mượn bit từ HostID để tạo thêm Network ID, số subnet = 2^n.",
+            "source_refs": [
+              "e517e6ec87a64ed19f751e8de8df6aff:2:26"
+            ]
+          },
+          {
+            "title": "Xác định phạm vi mạng",
+            "text": "Net Addr (bắt đầu) và Broadcast (kết thúc) xác định dải IP khả dụng.",
+            "source_refs": [
+              "e517e6ec87a64ed19f751e8de8df6aff:2:13",
+              "e517e6ec87a64ed19f751e8de8df6aff:2:32"
+            ]
+          }
+        ]
+      },
+      "questions": {
+        "mcq": {
+          "reason": "Câu hỏi yêu cầu học viên vận dụng kiến thức về prefix để xác định ranh giới mạng (không đơn thuần là giữ nguyên octet) và tính toán số host hợp lệ dựa trên số bit HostID, bám sát dữ kiện từ bài tập thực hành trong nguồn R5.",
+          "question": {
+            "kind": "mcq",
+            "prompt": "Một thiết bị mạng có địa chỉ IP là 172.100.112.4 với prefix /19. Dựa trên cấu trúc của subnet mask, hãy xác định chính xác địa chỉ network (Net Addr) và số lượng host hợp lệ có thể sử dụng trong mạng này.",
+            "options": [
+              "Net Addr: 172.100.96.0; Số host hợp lệ: 8190",
+              "Net Addr: 172.100.64.0; Số host hợp lệ: 8190",
+              "Net Addr: 172.100.96.0; Số host hợp lệ: 8192",
+              "Net Addr: 172.100.112.0; Số host hợp lệ: 8190"
+            ],
+            "left": [],
+            "answer": "Net Addr: 172.100.96.0; Số host hợp lệ: 8190",
+            "explanation": "Với prefix /19, 19 bit đầu là Network ID. Ranh giới subnet nằm ở octet thứ 3 (vì 19 bits bao phủ 2 octet đầu và 1 bit của octet thứ 3). Net Addr là 172.100.96.0. Số host hợp lệ được tính bằng công thức 2^m - 2 (với m là số bit HostID), tại đây m=13, nên có 8190 host.",
+            "source_refs": [
+              "e517e6ec87a64ed19f751e8de8df6aff:2:13",
+              "e517e6ec87a64ed19f751e8de8df6aff:2:14",
+              "e517e6ec87a64ed19f751e8de8df6aff:2:32"
+            ],
+            "rubric": [],
+            "difficulty": "applied",
+            "difficulty_basis": "creator_request_not_measured"
+          }
+        },
+        "cloze": {
+          "reason": "",
+          "question": {
+            "kind": "cloze",
+            "prompt": "Một thiết bị có địa chỉ IP là 172.100.112.4 với prefix /19. Để xác định phạm vi mạng, ta cần xác định Net Addr và Broadcast. Trong trường hợp này, Net Addr của mạng là 172.100.96.0 và số lượng host hợp lệ có thể sử dụng là ____.",
+            "options": [],
+            "left": [],
+            "answer": "8190",
+            "explanation": "Với prefix /19, phần HostID có 13 bits (32 - 19 = 13). Tổng số địa chỉ trong mạng là 2^13 = 8192. Theo quy tắc, Net Addr và Broadcast không được dùng cho host, nên số host hợp lệ là 8192 - 2 = 8190.",
+            "source_refs": [
+              "e517e6ec87a64ed19f751e8de8df6aff:2:13",
+              "e517e6ec87a64ed19f751e8de8df6aff:2:14",
+              "e517e6ec87a64ed19f751e8de8df6aff:2:32"
+            ],
+            "rubric": [],
+            "difficulty": "applied",
+            "difficulty_basis": "creator_request_not_measured"
+          }
+        },
+        "short_answer": {
+          "reason": "Câu hỏi yêu cầu người học vận dụng quy tắc xác định Net Addr và Broadcast từ cấu trúc bit của subnet mask (R2) và công thức tính số host hợp lệ (R3) dựa trên dữ kiện cụ thể từ bài tập cuối chương (R5). Tình huống mới với IP 10.10.10.5/24 đảm bảo người học không chỉ nhớ máy móc mà phải hiểu cách trích xuất thông tin mạng từ prefix.",
+          "question": {
+            "kind": "short_answer",
+            "prompt": "Một thiết bị có địa chỉ IP là 10.10.10.5 với prefix /24. Dựa trên quy tắc xác định Net Addr và Broadcast, hãy cho biết địa chỉ đường mạng (Net Addr), địa chỉ broadcast và số lượng host hợp lệ có thể sử dụng trong mạng này.",
+            "options": [],
+            "left": [],
+            "answer": "Net Addr: 10.10.10.0; Broadcast: 10.10.10.255; Số host hợp lệ: 254.",
+            "explanation": "Với prefix /24, 24 bit đầu là Network ID và 8 bit cuối là Host ID. Net Addr được xác định bằng cách giữ nguyên NetID và đưa các bit HostID về 0 (10.10.10.0). Broadcast được xác định bằng cách giữ nguyên NetID và bật tất cả các bit HostID lên 1 (10.10.10.255). Số host hợp lệ được tính bằng công thức 2^m - 2 (với m=8), tức là 256 - 2 = 254.",
+            "source_refs": [
+              "e517e6ec87a64ed19f751e8de8df6aff:2:13",
+              "e517e6ec87a64ed19f751e8de8df6aff:2:14",
+              "e517e6ec87a64ed19f751e8de8df6aff:2:32"
+            ],
+            "rubric": [
+              "Xác định đúng Net Addr là 10.10.10.0",
+              "Xác định đúng Broadcast là 10.10.10.255",
+              "Tính toán chính xác 254 host hợp lệ"
+            ],
+            "difficulty": "applied",
+            "difficulty_basis": "creator_request_not_measured"
+          }
+        }
+      },
+      "stage_providers": {
+        "reading": {
+          "provider": "ollama_local",
+          "model": "gemma4:12b-mlx",
+          "reference_codec": "scoped-reference-aliases-v1",
+          "model_choice_id": "local:gemma4:12b-mlx",
+          "selection_revision": 1,
+          "prompt_version": "20261021-reading-evidence-fields-v22",
+          "schema_version": 19,
+          "processor_version": "20261021-chapter-subnet-claims-v10",
+          "chapter_evidence_version": "20261021-approved-chapter-support-v1"
+        },
+        "mcq": {
+          "provider": "ollama_local",
+          "model": "gemma4:12b-mlx",
+          "reference_codec": "scoped-reference-aliases-v1",
+          "model_choice_id": "local:gemma4:12b-mlx",
+          "selection_revision": 1,
+          "prompt_version": "20261021-reading-evidence-fields-v22",
+          "schema_version": 19,
+          "processor_version": "20261021-chapter-subnet-claims-v10",
+          "chapter_evidence_version": "20261021-approved-chapter-support-v1"
+        },
+        "cloze": {
+          "provider": "ollama_local",
+          "model": "gemma4:12b-mlx",
+          "reference_codec": "scoped-reference-aliases-v1",
+          "model_choice_id": "local:gemma4:12b-mlx",
+          "selection_revision": 1,
+          "prompt_version": "20261021-reading-evidence-fields-v22",
+          "schema_version": 19,
+          "processor_version": "20261021-chapter-subnet-claims-v10",
+          "chapter_evidence_version": "20261021-approved-chapter-support-v1"
+        },
+        "short_answer": {
+          "provider": "ollama_local",
+          "model": "gemma4:12b-mlx",
+          "reference_codec": "scoped-reference-aliases-v1",
+          "model_choice_id": "local:gemma4:12b-mlx",
+          "selection_revision": 1,
+          "prompt_version": "20261021-reading-evidence-fields-v22",
+          "schema_version": 19,
+          "processor_version": "20261021-chapter-subnet-claims-v10",
+          "chapter_evidence_version": "20261021-approved-chapter-support-v1"
+        }
+      },
+      "question_rejections": {}
+    },
+    "feedback_deferred": false,
+    "error": null,
+    "progress": {
+      "phase": "succeeded",
+      "requests": [
+        {
+          "index": 1,
+          "schema": "LessonReading",
+          "phase": "received",
+          "streaming": true,
+          "started_at": "2026-10-20T23:41:35.729221+00:00",
+          "first_chunk_ms": 7201.521,
+          "first_text_ms": null,
+          "elapsed_ms": 33799.229,
+          "chunks": 878,
+          "characters": 2493,
+          "usage": {
+            "input_tokens": 3315,
+            "cached_input_tokens": 109,
+            "output_tokens": 878,
+            "load_duration_ns": 4795042,
+            "prompt_eval_duration_ns": 6994673292,
+            "eval_duration_ns": 26764822500,
+            "total_duration_ns": 33768421833,
+            "reference_alias_count": 5,
+            "reference_alias_map_sha256": "22cb33a540baa8a9eb40381af2565f99263b8f74dc9007ebcced044d0de0227d"
+          },
+          "protocol_fallbacks": 1
+        },
+        {
+          "index": 2,
+          "schema": "McqDraft",
+          "phase": "received",
+          "streaming": true,
+          "started_at": "2026-10-20T23:42:09.533705+00:00",
+          "first_chunk_ms": 7061.14,
+          "first_text_ms": null,
+          "elapsed_ms": 22059.202,
+          "chunks": 479,
+          "characters": 1169,
+          "usage": {
+            "input_tokens": 3374,
+            "cached_input_tokens": 109,
+            "output_tokens": 479,
+            "load_duration_ns": 4844834,
+            "prompt_eval_duration_ns": 6875753666,
+            "eval_duration_ns": 15142556083,
+            "total_duration_ns": 22028638625,
+            "reference_alias_count": 5,
+            "reference_alias_map_sha256": "22cb33a540baa8a9eb40381af2565f99263b8f74dc9007ebcced044d0de0227d"
+          },
+          "protocol_fallbacks": 1
+        },
+        {
+          "index": 3,
+          "schema": "ClozeDraft",
+          "phase": "received",
+          "streaming": true,
+          "started_at": "2026-10-20T23:42:31.602690+00:00",
+          "first_chunk_ms": 5097.388,
+          "first_text_ms": null,
+          "elapsed_ms": 12388.013,
+          "chunks": 241,
+          "characters": 607,
+          "usage": {
+            "input_tokens": 3499,
+            "cached_input_tokens": 1335,
+            "output_tokens": 241,
+            "load_duration_ns": 4478916,
+            "prompt_eval_duration_ns": 4976003209,
+            "eval_duration_ns": 7369005333,
+            "total_duration_ns": 12355357958,
+            "reference_alias_count": 5,
+            "reference_alias_map_sha256": "22cb33a540baa8a9eb40381af2565f99263b8f74dc9007ebcced044d0de0227d"
+          },
+          "protocol_fallbacks": 1
+        },
+        {
+          "index": 4,
+          "schema": "ShortAnswerDraft",
+          "phase": "received",
+          "streaming": true,
+          "started_at": "2026-10-20T23:42:43.996853+00:00",
+          "first_chunk_ms": 4940.063,
+          "first_text_ms": null,
+          "elapsed_ms": 20222.338,
+          "chunks": 486,
+          "characters": 1323,
+          "usage": {
+            "input_tokens": 3478,
+            "cached_input_tokens": 1340,
+            "output_tokens": 486,
+            "load_duration_ns": 4696959,
+            "prompt_eval_duration_ns": 4831185125,
+            "eval_duration_ns": 15347370291,
+            "total_duration_ns": 20189603167,
+            "reference_alias_count": 5,
+            "reference_alias_map_sha256": "22cb33a540baa8a9eb40381af2565f99263b8f74dc9007ebcced044d0de0227d"
+          },
+          "protocol_fallbacks": 1
+        }
+      ],
+      "preview": null,
+      "planned_stages": 7,
+      "saved_stages": 7,
+      "reused_stages": 3,
+      "started_at": "2026-10-20T23:41:35.718708+00:00",
+      "completed_at": "2026-10-20T23:43:04.227019+00:00",
+      "chapter_context": {
+        "context_id": "b81d2c13738adc79fd97152f809aeb1aaa1be45499ca8a77e2e6fcc49fa45e1a",
+        "reader_version": "20261020-whole-approved-chapter-v1",
+        "status": "ready",
+        "scope": "whole_approved_plan_selection",
+        "extraction_revision": 2,
+        "total_fragments": 33,
+        "covered_fragments": 33,
+        "total_characters": 7846,
+        "covered_characters": 7846,
+        "total_parts": 2,
+        "read_parts": 2,
+        "total_stages": 3,
+        "saved_stages": 3,
+        "complete": true,
+        "coverage_is_not_semantic_accuracy": true
+      },
+      "elapsed_ms": 88508.316,
+      "version": 418,
+      "updated_at": "2026-10-20T23:43:04.227081+00:00"
+    }
+  },
+  "status": "succeeded",
+  "elapsed_seconds": 89.154,
+  "course_snapshot": {
+    "id": "c8825160ed2e4cc2b057b8e6710b20df",
+    "revision": 2,
+    "plan_id": "f35ec027ab8246b5b937d865d2fadea0",
+    "creator_id": "161d2b95211648b1bf64be794da8b955",
+    "access_role": "creator",
+    "content": {
+      "title": "Mạng máy tính — toàn chương IP và subnet",
+      "unlock_policy": "open",
+      "preferences": {
+        "source_id": "e517e6ec87a64ed19f751e8de8df6aff",
+        "subject": "Mạng máy tính — toàn chương IP và subnet",
+        "goal": "Hiểu quan hệ prefix, network, broadcast, số host và áp dụng tính subnet; không hỏi thuộc lòng chữ trên slide.",
+        "instructions": "",
+        "language": "vi",
+        "fragment_ids": [
+          "e517e6ec87a64ed19f751e8de8df6aff:2:0",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:1",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:2",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:3",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:4",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:5",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:6",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:7",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:8",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:9",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:10",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:11",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:12",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:13",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:14",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:15",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:16",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:17",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:18",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:19",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:20",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:21",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:22",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:23",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:24",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:25",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:26",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:27",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:28",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:29",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:30",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:31",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:32"
+        ],
+        "unlock_policy": "open",
+        "initial_mode": "learn",
+        "expected_extraction_revision": 2,
+        "excluded_fragment_ids": [],
+        "chapter_priorities": [],
+        "difficulty": "applied",
+        "question_types": [
+          "mcq",
+          "cloze",
+          "short_answer"
+        ],
+        "question_count": 3,
+        "card_count": 2,
+        "target_language": "",
+        "terms_to_keep": [
+          "prefix",
+          "network",
+          "broadcast",
+          "subnet mask"
+        ],
+        "teacher_notes": "",
+        "user_notes": "",
+        "extraction_revision": 2
+      },
+      "units": [
+        {
+          "title": "QA chương IP — bản trích chữ33trang PDF.txt · Phần 1",
+          "objective": "Học Phần 1 trong QA chương IP — bản trích chữ33trang PDF.txt; đối chiếu nguồn và luyện nội dung của phần này.",
+          "source_refs": [
+            "e517e6ec87a64ed19f751e8de8df6aff:2:0",
+            "e517e6ec87a64ed19f751e8de8df6aff:2:1",
+            "e517e6ec87a64ed19f751e8de8df6aff:2:2",
+            "e517e6ec87a64ed19f751e8de8df6aff:2:3",
+            "e517e6ec87a64ed19f751e8de8df6aff:2:4",
+            "e517e6ec87a64ed19f751e8de8df6aff:2:5",
+            "e517e6ec87a64ed19f751e8de8df6aff:2:6",
+            "e517e6ec87a64ed19f751e8de8df6aff:2:7"
+          ],
+          "id": "unit-1",
+          "data": null,
+          "completed": false,
+          "unlocked": true
+        },
+        {
+          "title": "QA chương IP — bản trích chữ33trang PDF.txt · Phần 2",
+          "objective": "Học Phần 2 trong QA chương IP — bản trích chữ33trang PDF.txt; đối chiếu nguồn và luyện nội dung của phần này.",
+          "source_refs": [
+            "e517e6ec87a64ed19f751e8de8df6aff:2:8",
+            "e517e6ec87a64ed19f751e8de8df6aff:2:9",
+            "e517e6ec87a64ed19f751e8de8df6aff:2:10",
+            "e517e6ec87a64ed19f751e8de8df6aff:2:11",
+            "e517e6ec87a64ed19f751e8de8df6aff:2:12",
+            "e517e6ec87a64ed19f751e8de8df6aff:2:13",
+            "e517e6ec87a64ed19f751e8de8df6aff:2:14",
+            "e517e6ec87a64ed19f751e8de8df6aff:2:15"
+          ],
+          "id": "unit-2",
+          "data": null,
+          "completed": false,
+          "unlocked": true
+        },
+        {
+          "title": "QA chương IP — bản trích chữ33trang PDF.txt · Phần 3",
+          "objective": "Học Phần 3 trong QA chương IP — bản trích chữ33trang PDF.txt; đối chiếu nguồn và luyện nội dung của phần này.",
+          "source_refs": [
+            "e517e6ec87a64ed19f751e8de8df6aff:2:16",
+            "e517e6ec87a64ed19f751e8de8df6aff:2:17",
+            "e517e6ec87a64ed19f751e8de8df6aff:2:18",
+            "e517e6ec87a64ed19f751e8de8df6aff:2:19",
+            "e517e6ec87a64ed19f751e8de8df6aff:2:20",
+            "e517e6ec87a64ed19f751e8de8df6aff:2:21",
+            "e517e6ec87a64ed19f751e8de8df6aff:2:22",
+            "e517e6ec87a64ed19f751e8de8df6aff:2:23"
+          ],
+          "id": "unit-3",
+          "data": null,
+          "completed": false,
+          "unlocked": true
+        },
+        {
+          "title": "QA chương IP — bản trích chữ33trang PDF.txt · Phần 4",
+          "objective": "Học Phần 4 trong QA chương IP — bản trích chữ33trang PDF.txt; đối chiếu nguồn và luyện nội dung của phần này.",
+          "source_refs": [
+            "e517e6ec87a64ed19f751e8de8df6aff:2:24",
+            "e517e6ec87a64ed19f751e8de8df6aff:2:25",
+            "e517e6ec87a64ed19f751e8de8df6aff:2:26",
+            "e517e6ec87a64ed19f751e8de8df6aff:2:27",
+            "e517e6ec87a64ed19f751e8de8df6aff:2:28",
+            "e517e6ec87a64ed19f751e8de8df6aff:2:29",
+            "e517e6ec87a64ed19f751e8de8df6aff:2:30",
+            "e517e6ec87a64ed19f751e8de8df6aff:2:31"
+          ],
+          "id": "unit-4",
+          "data": null,
+          "completed": false,
+          "unlocked": true
+        },
+        {
+          "title": "Vận dụng prefix để tìm subnet và số host",
+          "objective": "Vận dụng các nguyên lý đã đọc trong toàn chương để tính network, broadcast và số host dùng được, giải thích điều kiện sử dụng; lấy bài tập cuối chương làm trọng tâm.",
+          "source_refs": [
+            "e517e6ec87a64ed19f751e8de8df6aff:2:8",
+            "e517e6ec87a64ed19f751e8de8df6aff:2:13",
+            "e517e6ec87a64ed19f751e8de8df6aff:2:14",
+            "e517e6ec87a64ed19f751e8de8df6aff:2:26",
+            "e517e6ec87a64ed19f751e8de8df6aff:2:32"
+          ],
+          "id": "unit-5",
+          "data": {
+            "title": "Vận dụng prefix để tìm subnet và số host",
+            "sections": [
+              {
+                "title": "Xác định Network và Broadcast từ Prefix",
+                "text": "Để xác định phạm vi của một network, ta dựa vào subnet mask (prefix). Net Addr là địa chỉ bắt đầu của dải mạng, trong đó các bit thuộc NetID được giữ nguyên. Broadcast là địa chỉ cuối cùng, được xác định bằng cách giữ nguyên NetID và bật tất cả các bit của HostID lên 1. Ví dụ: Với IP 172.100.112.4/19, Net Addr là 172.100.96.0 và Broadcast là 172.100.127.255.",
+                "source_refs": [
+                  "e517e6ec87a64ed19f751e8de8df6aff:2:13",
+                  "e517e6ec87a64ed19f751e8de8df6aff:2:32"
+                ]
+              },
+              {
+                "title": "Tính toán số lượng Host khả dụng",
+                "text": "Số lượng host hợp lệ trong một network được tính dựa trên số bit của phần HostID (m). Công thức là 2^m - 2. Số lượng host này không bao gồm Net Addr và Broadcast. Ví dụ: Với prefix /19, phần HostID có 13 bits, nên số host khả dụng là 2^13 - 2 = 8190.",
+                "source_refs": [
+                  "e517e6ec87a64ed19f751e8de8df6aff:2:14",
+                  "e517e6ec87a64ed19f751e8de8df6aff:2:32"
+                ]
+              },
+              {
+                "title": "Quy tắc chia Subnet",
+                "text": "Khi cần chia nhỏ một dải IP lớn thành các mạng con, ta thực hiện mượn các bit đầu trong phần HostID để làm NetID. Số lượng subnet tạo ra được tính bằng công thức 2^n, với n là số bit mượn từ phần HostID. Việc này giúp tối ưu hóa việc sử dụng địa chỉ IP cho các thiết bị thực tế.",
+                "source_refs": [
+                  "e517e6ec87a64ed19f751e8de8df6aff:2:26"
+                ]
+              }
+            ],
+            "questions": [
+              {
+                "kind": "mcq",
+                "prompt": "Một thiết bị mạng có địa chỉ IP là 172.100.112.4 với prefix /19. Dựa trên cấu trúc của subnet mask, hãy xác định chính xác địa chỉ network (Net Addr) và số lượng host hợp lệ có thể sử dụng trong mạng này.",
+                "options": [
+                  "Net Addr: 172.100.96.0; Số host hợp lệ: 8190",
+                  "Net Addr: 172.100.64.0; Số host hợp lệ: 8190",
+                  "Net Addr: 172.100.96.0; Số host hợp lệ: 8192",
+                  "Net Addr: 172.100.112.0; Số host hợp lệ: 8190"
+                ],
+                "left": [],
+                "answer": "Net Addr: 172.100.96.0; Số host hợp lệ: 8190",
+                "explanation": "Với prefix /19, 19 bit đầu là Network ID. Ranh giới subnet nằm ở octet thứ 3 (vì 19 bits bao phủ 2 octet đầu và 1 bit của octet thứ 3). Net Addr là 172.100.96.0. Số host hợp lệ được tính bằng công thức 2^m - 2 (với m là số bit HostID), tại đây m=13, nên có 8190 host.",
+                "source_refs": [
+                  "e517e6ec87a64ed19f751e8de8df6aff:2:13",
+                  "e517e6ec87a64ed19f751e8de8df6aff:2:14",
+                  "e517e6ec87a64ed19f751e8de8df6aff:2:32"
+                ],
+                "rubric": [],
+                "difficulty": "applied",
+                "difficulty_basis": "creator_request_not_measured"
+              },
+              {
+                "kind": "cloze",
+                "prompt": "Một thiết bị có địa chỉ IP là 172.100.112.4 với prefix /19. Để xác định phạm vi mạng, ta cần xác định Net Addr và Broadcast. Trong trường hợp này, Net Addr của mạng là 172.100.96.0 và số lượng host hợp lệ có thể sử dụng là ____.",
+                "options": [],
+                "left": [],
+                "answer": "8190",
+                "explanation": "Với prefix /19, phần HostID có 13 bits (32 - 19 = 13). Tổng số địa chỉ trong mạng là 2^13 = 8192. Theo quy tắc, Net Addr và Broadcast không được dùng cho host, nên số host hợp lệ là 8192 - 2 = 8190.",
+                "source_refs": [
+                  "e517e6ec87a64ed19f751e8de8df6aff:2:13",
+                  "e517e6ec87a64ed19f751e8de8df6aff:2:14",
+                  "e517e6ec87a64ed19f751e8de8df6aff:2:32"
+                ],
+                "rubric": [],
+                "difficulty": "applied",
+                "difficulty_basis": "creator_request_not_measured"
+              },
+              {
+                "kind": "short_answer",
+                "prompt": "Một thiết bị có địa chỉ IP là 10.10.10.5 với prefix /24. Dựa trên quy tắc xác định Net Addr và Broadcast, hãy cho biết địa chỉ đường mạng (Net Addr), địa chỉ broadcast và số lượng host hợp lệ có thể sử dụng trong mạng này.",
+                "options": [],
+                "left": [],
+                "answer": "Net Addr: 10.10.10.0; Broadcast: 10.10.10.255; Số host hợp lệ: 254.",
+                "explanation": "Với prefix /24, 24 bit đầu là Network ID và 8 bit cuối là Host ID. Net Addr được xác định bằng cách giữ nguyên NetID và đưa các bit HostID về 0 (10.10.10.0). Broadcast được xác định bằng cách giữ nguyên NetID và bật tất cả các bit HostID lên 1 (10.10.10.255). Số host hợp lệ được tính bằng công thức 2^m - 2 (với m=8), tức là 256 - 2 = 254.",
+                "source_refs": [
+                  "e517e6ec87a64ed19f751e8de8df6aff:2:13",
+                  "e517e6ec87a64ed19f751e8de8df6aff:2:14",
+                  "e517e6ec87a64ed19f751e8de8df6aff:2:32"
+                ],
+                "rubric": [
+                  "Xác định đúng Net Addr là 10.10.10.0",
+                  "Xác định đúng Broadcast là 10.10.10.255",
+                  "Tính toán chính xác 254 host hợp lệ"
+                ],
+                "difficulty": "applied",
+                "difficulty_basis": "creator_request_not_measured"
+              }
+            ],
+            "cards": [
+              {
+                "front": "Làm thế nào để xác định địa chỉ Broadcast của một mạng có prefix /19?",
+                "back": "Giữ nguyên phần NetID và bật tất cả các bit của HostID lên 1. Với 172.100.112.4/19, Broadcast là 172.100.127.255.",
+                "source_refs": [
+                  "e517e6ec87a64ed19f751e8de8df6aff:2:13",
+                  "e517e6ec87a64ed19f751e8de8df6aff:2:32"
+                ]
+              },
+              {
+                "front": "Tại sao số host khả dụng lại là 2^m - 2?",
+                "back": "Vì trong một dải mạng, địa chỉ Net Addr và địa chỉ Broadcast không được sử dụng cho các thiết bị (host).",
+                "source_refs": [
+                  "e517e6ec87a64ed19f751e8de8df6aff:2:14"
+                ]
+              }
+            ],
+            "mindmap": [
+              {
+                "title": "Cấu trúc IP và Subnet",
+                "text": "Phân chia 32 bits thành Network ID và Host ID dựa trên subnet mask.",
+                "source_refs": [
+                  "e517e6ec87a64ed19f751e8de8df6aff:2:13"
+                ]
+              },
+              {
+                "title": "Kỹ thuật chia Subnet",
+                "text": "Mượn bit từ HostID để tạo thêm Network ID, số subnet = 2^n.",
+                "source_refs": [
+                  "e517e6ec87a64ed19f751e8de8df6aff:2:26"
+                ]
+              },
+              {
+                "title": "Xác định phạm vi mạng",
+                "text": "Net Addr (bắt đầu) và Broadcast (kết thúc) xác định dải IP khả dụng.",
+                "source_refs": [
+                  "e517e6ec87a64ed19f751e8de8df6aff:2:13",
+                  "e517e6ec87a64ed19f751e8de8df6aff:2:32"
+                ]
+              }
+            ]
+          },
+          "completed": false,
+          "unlocked": true,
+          "generation": {
+            "job_id": "529e3104bc264ae8ab85980f8cb4aef0",
+            "provider": {
+              "provider": "ollama_local",
+              "model": "gemma4:12b-mlx",
+              "reference_codec": "scoped-reference-aliases-v1",
+              "model_choice_id": "local:gemma4:12b-mlx",
+              "selection_revision": 1,
+              "prompt_version": "20261021-reading-evidence-fields-v22",
+              "schema_version": 19,
+              "processor_version": "20261021-chapter-subnet-claims-v10",
+              "chapter_evidence_version": "20261021-approved-chapter-support-v1"
+            },
+            "source_id": "e517e6ec87a64ed19f751e8de8df6aff",
+            "source_plan_id": "f35ec027ab8246b5b937d865d2fadea0",
+            "extraction_revision": 2,
+            "source_refs": [
+              "e517e6ec87a64ed19f751e8de8df6aff:2:8",
+              "e517e6ec87a64ed19f751e8de8df6aff:2:13",
+              "e517e6ec87a64ed19f751e8de8df6aff:2:14",
+              "e517e6ec87a64ed19f751e8de8df6aff:2:26",
+              "e517e6ec87a64ed19f751e8de8df6aff:2:32"
+            ],
+            "content_language": "vi",
+            "generated_at": "2026-10-20T23:43:04.225207+00:00",
+            "stage_providers": {
+              "reading": {
+                "provider": "ollama_local",
+                "model": "gemma4:12b-mlx",
+                "reference_codec": "scoped-reference-aliases-v1",
+                "model_choice_id": "local:gemma4:12b-mlx",
+                "selection_revision": 1,
+                "prompt_version": "20261021-reading-evidence-fields-v22",
+                "schema_version": 19,
+                "processor_version": "20261021-chapter-subnet-claims-v10",
+                "chapter_evidence_version": "20261021-approved-chapter-support-v1"
+              },
+              "mcq": {
+                "provider": "ollama_local",
+                "model": "gemma4:12b-mlx",
+                "reference_codec": "scoped-reference-aliases-v1",
+                "model_choice_id": "local:gemma4:12b-mlx",
+                "selection_revision": 1,
+                "prompt_version": "20261021-reading-evidence-fields-v22",
+                "schema_version": 19,
+                "processor_version": "20261021-chapter-subnet-claims-v10",
+                "chapter_evidence_version": "20261021-approved-chapter-support-v1"
+              },
+              "cloze": {
+                "provider": "ollama_local",
+                "model": "gemma4:12b-mlx",
+                "reference_codec": "scoped-reference-aliases-v1",
+                "model_choice_id": "local:gemma4:12b-mlx",
+                "selection_revision": 1,
+                "prompt_version": "20261021-reading-evidence-fields-v22",
+                "schema_version": 19,
+                "processor_version": "20261021-chapter-subnet-claims-v10",
+                "chapter_evidence_version": "20261021-approved-chapter-support-v1"
+              },
+              "short_answer": {
+                "provider": "ollama_local",
+                "model": "gemma4:12b-mlx",
+                "reference_codec": "scoped-reference-aliases-v1",
+                "model_choice_id": "local:gemma4:12b-mlx",
+                "selection_revision": 1,
+                "prompt_version": "20261021-reading-evidence-fields-v22",
+                "schema_version": 19,
+                "processor_version": "20261021-chapter-subnet-claims-v10",
+                "chapter_evidence_version": "20261021-approved-chapter-support-v1"
+              }
+            },
+            "resumed_from_job_id": "65218ed1323945979e53750e66b4dd02",
+            "chapter_context": {
+              "context_id": "b81d2c13738adc79fd97152f809aeb1aaa1be45499ca8a77e2e6fcc49fa45e1a",
+              "reader_version": "20261020-whole-approved-chapter-v1",
+              "status": "ready",
+              "scope": "whole_approved_plan_selection",
+              "extraction_revision": 2,
+              "total_fragments": 33,
+              "covered_fragments": 33,
+              "total_characters": 7846,
+              "covered_characters": 7846,
+              "total_parts": 2,
+              "read_parts": 2,
+              "total_stages": 3,
+              "saved_stages": 3,
+              "complete": true,
+              "coverage_is_not_semantic_accuracy": true
+            },
+            "evidence_scope": {
+              "version": "20261021-approved-chapter-support-v1",
+              "context_id": "b81d2c13738adc79fd97152f809aeb1aaa1be45499ca8a77e2e6fcc49fa45e1a",
+              "focus_source_refs": [
+                "e517e6ec87a64ed19f751e8de8df6aff:2:32"
+              ],
+              "support_source_refs": [
+                "e517e6ec87a64ed19f751e8de8df6aff:2:8",
+                "e517e6ec87a64ed19f751e8de8df6aff:2:13",
+                "e517e6ec87a64ed19f751e8de8df6aff:2:14",
+                "e517e6ec87a64ed19f751e8de8df6aff:2:26"
+              ],
+              "input_source_refs": [
+                "e517e6ec87a64ed19f751e8de8df6aff:2:8",
+                "e517e6ec87a64ed19f751e8de8df6aff:2:13",
+                "e517e6ec87a64ed19f751e8de8df6aff:2:14",
+                "e517e6ec87a64ed19f751e8de8df6aff:2:26",
+                "e517e6ec87a64ed19f751e8de8df6aff:2:32"
+              ],
+              "input_sha256": "86b5778e41e23445a57bc93580296ecb1c033f024156ea47fa305d8b57f558f4",
+              "query_sha256": "1720e889930647081c143408b92030d7c408f2d920ccefe5ac8ff167ee4163b4",
+              "added_support_refs": [
+                "e517e6ec87a64ed19f751e8de8df6aff:2:14",
+                "e517e6ec87a64ed19f751e8de8df6aff:2:26",
+                "e517e6ec87a64ed19f751e8de8df6aff:2:13",
+                "e517e6ec87a64ed19f751e8de8df6aff:2:8"
+              ],
+              "omitted": [],
+              "relevance_is_not_entailment": true,
+              "ai_calls": 0,
+              "sha256": "cedb2acb0cb2b026d847b084db43a009db783277a3568eee4cd9b1155bb0be9f"
+            },
+            "question_coverage": {
+              "requested_count": 3,
+              "generated_count": 3,
+              "complete": true,
+              "requested_types": [
+                "mcq",
+                "cloze",
+                "short_answer"
+              ],
+              "generated_types": [
+                "mcq",
+                "cloze",
+                "short_answer"
+              ],
+              "uncreated": []
+            }
+          }
+        }
+      ]
+    }
+  },
+  "chapter_context": {
+    "context_id": "b81d2c13738adc79fd97152f809aeb1aaa1be45499ca8a77e2e6fcc49fa45e1a",
+    "reader_version": "20261020-whole-approved-chapter-v1",
+    "status": "ready",
+    "scope": "whole_approved_plan_selection",
+    "extraction_revision": 2,
+    "total_fragments": 33,
+    "covered_fragments": 33,
+    "total_characters": 7846,
+    "covered_characters": 7846,
+    "total_parts": 2,
+    "read_parts": 2,
+    "total_stages": 3,
+    "saved_stages": 3,
+    "complete": true,
+    "coverage_is_not_semantic_accuracy": true
+  },
+  "context_manifest": {
+    "extraction_revision": 2,
+    "fragment_ids": [
+      "e517e6ec87a64ed19f751e8de8df6aff:2:0",
+      "e517e6ec87a64ed19f751e8de8df6aff:2:1",
+      "e517e6ec87a64ed19f751e8de8df6aff:2:2",
+      "e517e6ec87a64ed19f751e8de8df6aff:2:3",
+      "e517e6ec87a64ed19f751e8de8df6aff:2:4",
+      "e517e6ec87a64ed19f751e8de8df6aff:2:5",
+      "e517e6ec87a64ed19f751e8de8df6aff:2:6",
+      "e517e6ec87a64ed19f751e8de8df6aff:2:7",
+      "e517e6ec87a64ed19f751e8de8df6aff:2:8",
+      "e517e6ec87a64ed19f751e8de8df6aff:2:9",
+      "e517e6ec87a64ed19f751e8de8df6aff:2:10",
+      "e517e6ec87a64ed19f751e8de8df6aff:2:11",
+      "e517e6ec87a64ed19f751e8de8df6aff:2:12",
+      "e517e6ec87a64ed19f751e8de8df6aff:2:13",
+      "e517e6ec87a64ed19f751e8de8df6aff:2:14",
+      "e517e6ec87a64ed19f751e8de8df6aff:2:15",
+      "e517e6ec87a64ed19f751e8de8df6aff:2:16",
+      "e517e6ec87a64ed19f751e8de8df6aff:2:17",
+      "e517e6ec87a64ed19f751e8de8df6aff:2:18",
+      "e517e6ec87a64ed19f751e8de8df6aff:2:19",
+      "e517e6ec87a64ed19f751e8de8df6aff:2:20",
+      "e517e6ec87a64ed19f751e8de8df6aff:2:21",
+      "e517e6ec87a64ed19f751e8de8df6aff:2:22",
+      "e517e6ec87a64ed19f751e8de8df6aff:2:23",
+      "e517e6ec87a64ed19f751e8de8df6aff:2:24",
+      "e517e6ec87a64ed19f751e8de8df6aff:2:25",
+      "e517e6ec87a64ed19f751e8de8df6aff:2:26",
+      "e517e6ec87a64ed19f751e8de8df6aff:2:27",
+      "e517e6ec87a64ed19f751e8de8df6aff:2:28",
+      "e517e6ec87a64ed19f751e8de8df6aff:2:29",
+      "e517e6ec87a64ed19f751e8de8df6aff:2:30",
+      "e517e6ec87a64ed19f751e8de8df6aff:2:31",
+      "e517e6ec87a64ed19f751e8de8df6aff:2:32"
+    ],
+    "fragment_lengths": {
+      "e517e6ec87a64ed19f751e8de8df6aff:2:0": 69,
+      "e517e6ec87a64ed19f751e8de8df6aff:2:1": 151,
+      "e517e6ec87a64ed19f751e8de8df6aff:2:10": 103,
+      "e517e6ec87a64ed19f751e8de8df6aff:2:11": 154,
+      "e517e6ec87a64ed19f751e8de8df6aff:2:12": 116,
+      "e517e6ec87a64ed19f751e8de8df6aff:2:13": 261,
+      "e517e6ec87a64ed19f751e8de8df6aff:2:14": 310,
+      "e517e6ec87a64ed19f751e8de8df6aff:2:15": 239,
+      "e517e6ec87a64ed19f751e8de8df6aff:2:16": 268,
+      "e517e6ec87a64ed19f751e8de8df6aff:2:17": 242,
+      "e517e6ec87a64ed19f751e8de8df6aff:2:18": 166,
+      "e517e6ec87a64ed19f751e8de8df6aff:2:19": 153,
+      "e517e6ec87a64ed19f751e8de8df6aff:2:2": 130,
+      "e517e6ec87a64ed19f751e8de8df6aff:2:20": 233,
+      "e517e6ec87a64ed19f751e8de8df6aff:2:21": 98,
+      "e517e6ec87a64ed19f751e8de8df6aff:2:22": 671,
+      "e517e6ec87a64ed19f751e8de8df6aff:2:23": 120,
+      "e517e6ec87a64ed19f751e8de8df6aff:2:24": 269,
+      "e517e6ec87a64ed19f751e8de8df6aff:2:25": 237,
+      "e517e6ec87a64ed19f751e8de8df6aff:2:26": 233,
+      "e517e6ec87a64ed19f751e8de8df6aff:2:27": 388,
+      "e517e6ec87a64ed19f751e8de8df6aff:2:28": 513,
+      "e517e6ec87a64ed19f751e8de8df6aff:2:29": 335,
+      "e517e6ec87a64ed19f751e8de8df6aff:2:3": 135,
+      "e517e6ec87a64ed19f751e8de8df6aff:2:30": 225,
+      "e517e6ec87a64ed19f751e8de8df6aff:2:31": 270,
+      "e517e6ec87a64ed19f751e8de8df6aff:2:32": 498,
+      "e517e6ec87a64ed19f751e8de8df6aff:2:4": 297,
+      "e517e6ec87a64ed19f751e8de8df6aff:2:5": 152,
+      "e517e6ec87a64ed19f751e8de8df6aff:2:6": 154,
+      "e517e6ec87a64ed19f751e8de8df6aff:2:7": 331,
+      "e517e6ec87a64ed19f751e8de8df6aff:2:8": 222,
+      "e517e6ec87a64ed19f751e8de8df6aff:2:9": 103
+    },
+    "input_sha256": "ba978690856e89e343332d1bd876806c97b582b02fdd6f6de90d87965ac68699",
+    "parts": [
+      [
+        {
+          "end": 69,
+          "fragment_id": "e517e6ec87a64ed19f751e8de8df6aff:2:0",
+          "id": "e517e6ec87a64ed19f751e8de8df6aff:2:0",
+          "start": 0,
+          "text_sha256": "39efe7b7df39933312d99f648aa8dba337bc14be166cee13776d0a82fd782dc8"
+        },
+        {
+          "end": 151,
+          "fragment_id": "e517e6ec87a64ed19f751e8de8df6aff:2:1",
+          "id": "e517e6ec87a64ed19f751e8de8df6aff:2:1",
+          "start": 0,
+          "text_sha256": "6b342aec13f47e5c077324bc6550467e045dac24022cb76c19bd659f967b860d"
+        },
+        {
+          "end": 130,
+          "fragment_id": "e517e6ec87a64ed19f751e8de8df6aff:2:2",
+          "id": "e517e6ec87a64ed19f751e8de8df6aff:2:2",
+          "start": 0,
+          "text_sha256": "d83e3dd4355cd6e09985d73849a5dd5fd11b64b667395b9aa944a677fa1c6bcd"
+        },
+        {
+          "end": 135,
+          "fragment_id": "e517e6ec87a64ed19f751e8de8df6aff:2:3",
+          "id": "e517e6ec87a64ed19f751e8de8df6aff:2:3",
+          "start": 0,
+          "text_sha256": "32051c75750c01f10e4724c1d4be62db3161ffcb3beee681aa7f6250019c73e2"
+        },
+        {
+          "end": 297,
+          "fragment_id": "e517e6ec87a64ed19f751e8de8df6aff:2:4",
+          "id": "e517e6ec87a64ed19f751e8de8df6aff:2:4",
+          "start": 0,
+          "text_sha256": "bb9c86f1853bea3432ef2b71346d98c1213d7820d0b836c23ecb49d2e5c0f033"
+        },
+        {
+          "end": 152,
+          "fragment_id": "e517e6ec87a64ed19f751e8de8df6aff:2:5",
+          "id": "e517e6ec87a64ed19f751e8de8df6aff:2:5",
+          "start": 0,
+          "text_sha256": "2c356fd67e5ef5932e6b8f929c54ee495d4325124b93f8a0b2370d4796bd8857"
+        },
+        {
+          "end": 154,
+          "fragment_id": "e517e6ec87a64ed19f751e8de8df6aff:2:6",
+          "id": "e517e6ec87a64ed19f751e8de8df6aff:2:6",
+          "start": 0,
+          "text_sha256": "5571fb1a9e0ff23d371612d1a24a5e6fc68bc8db16212c5319254e7a6f45e05b"
+        },
+        {
+          "end": 331,
+          "fragment_id": "e517e6ec87a64ed19f751e8de8df6aff:2:7",
+          "id": "e517e6ec87a64ed19f751e8de8df6aff:2:7",
+          "start": 0,
+          "text_sha256": "0b63a548f49105591257b96757b5a4c0b276430bcc65758ef672be247e2cc5bc"
+        },
+        {
+          "end": 222,
+          "fragment_id": "e517e6ec87a64ed19f751e8de8df6aff:2:8",
+          "id": "e517e6ec87a64ed19f751e8de8df6aff:2:8",
+          "start": 0,
+          "text_sha256": "db536b86e560d1ce66b46bf4b2bc67f8a6024406d066b121cf5c5119ba59c24a"
+        },
+        {
+          "end": 103,
+          "fragment_id": "e517e6ec87a64ed19f751e8de8df6aff:2:9",
+          "id": "e517e6ec87a64ed19f751e8de8df6aff:2:9",
+          "start": 0,
+          "text_sha256": "1429fab150a8152861dc2eb92d7d61729a782744dfaad9da4ce1cc37884e8f54"
+        },
+        {
+          "end": 103,
+          "fragment_id": "e517e6ec87a64ed19f751e8de8df6aff:2:10",
+          "id": "e517e6ec87a64ed19f751e8de8df6aff:2:10",
+          "start": 0,
+          "text_sha256": "af828370cb423fe3c6509be4883e3a62aac9bfe7e72fabde9b2d24f2b6f13846"
+        },
+        {
+          "end": 154,
+          "fragment_id": "e517e6ec87a64ed19f751e8de8df6aff:2:11",
+          "id": "e517e6ec87a64ed19f751e8de8df6aff:2:11",
+          "start": 0,
+          "text_sha256": "c2e82a651960b2d24263613191943f8fce9933ed18b7c27d12dbd1aea21b5b2a"
+        },
+        {
+          "end": 116,
+          "fragment_id": "e517e6ec87a64ed19f751e8de8df6aff:2:12",
+          "id": "e517e6ec87a64ed19f751e8de8df6aff:2:12",
+          "start": 0,
+          "text_sha256": "683a9ab7f9f1a9df2145c0eda0c72b5b62e57fd6512aa2bc7cc52d72ed4727ff"
+        },
+        {
+          "end": 261,
+          "fragment_id": "e517e6ec87a64ed19f751e8de8df6aff:2:13",
+          "id": "e517e6ec87a64ed19f751e8de8df6aff:2:13",
+          "start": 0,
+          "text_sha256": "ace8ed9cd68d6ec66ac08a10ef78d245b9f6da2ce00d2d327c6c1102e110d72b"
+        },
+        {
+          "end": 310,
+          "fragment_id": "e517e6ec87a64ed19f751e8de8df6aff:2:14",
+          "id": "e517e6ec87a64ed19f751e8de8df6aff:2:14",
+          "start": 0,
+          "text_sha256": "bf360eb1d718d5d31d3c095975687ed2e8774aff84a21d143c769c9e5c2da7b8"
+        },
+        {
+          "end": 239,
+          "fragment_id": "e517e6ec87a64ed19f751e8de8df6aff:2:15",
+          "id": "e517e6ec87a64ed19f751e8de8df6aff:2:15",
+          "start": 0,
+          "text_sha256": "9352bf10b0f59e7af67772ec502ccd719d03b1e40eb38092d745c692328f4083"
+        },
+        {
+          "end": 268,
+          "fragment_id": "e517e6ec87a64ed19f751e8de8df6aff:2:16",
+          "id": "e517e6ec87a64ed19f751e8de8df6aff:2:16",
+          "start": 0,
+          "text_sha256": "cb25104c76c1fec1155eeb475237b200d01357453b894868e9d865346b77bbcc"
+        },
+        {
+          "end": 242,
+          "fragment_id": "e517e6ec87a64ed19f751e8de8df6aff:2:17",
+          "id": "e517e6ec87a64ed19f751e8de8df6aff:2:17",
+          "start": 0,
+          "text_sha256": "1ff05cefc88fad956853247cf9dae9ed41aa983d9358b0f07e1e3792f3f6135b"
+        },
+        {
+          "end": 166,
+          "fragment_id": "e517e6ec87a64ed19f751e8de8df6aff:2:18",
+          "id": "e517e6ec87a64ed19f751e8de8df6aff:2:18",
+          "start": 0,
+          "text_sha256": "31940977c4d7457ae7cb463b4e94f1929d82e510ba23b82318e947a64d6fa2a3"
+        },
+        {
+          "end": 153,
+          "fragment_id": "e517e6ec87a64ed19f751e8de8df6aff:2:19",
+          "id": "e517e6ec87a64ed19f751e8de8df6aff:2:19",
+          "start": 0,
+          "text_sha256": "017447ba413838013fea4e388f5628c58a0ec7c57a5abcc9b52e66c5355d66b3"
+        },
+        {
+          "end": 233,
+          "fragment_id": "e517e6ec87a64ed19f751e8de8df6aff:2:20",
+          "id": "e517e6ec87a64ed19f751e8de8df6aff:2:20",
+          "start": 0,
+          "text_sha256": "43474b6caea0753b489afadee16c6ace40bd40f15edd371fc7d3ebf2763691b3"
+        },
+        {
+          "end": 98,
+          "fragment_id": "e517e6ec87a64ed19f751e8de8df6aff:2:21",
+          "id": "e517e6ec87a64ed19f751e8de8df6aff:2:21",
+          "start": 0,
+          "text_sha256": "67c0c4115ae3428b0668d1d8052f636a623945a13f25ffc6978e4eed194ece7a"
+        },
+        {
+          "end": 671,
+          "fragment_id": "e517e6ec87a64ed19f751e8de8df6aff:2:22",
+          "id": "e517e6ec87a64ed19f751e8de8df6aff:2:22",
+          "start": 0,
+          "text_sha256": "acf8610042909076682e65d9eeabc9bad925fe48b6d03f5e00d90028d3d30101"
+        },
+        {
+          "end": 120,
+          "fragment_id": "e517e6ec87a64ed19f751e8de8df6aff:2:23",
+          "id": "e517e6ec87a64ed19f751e8de8df6aff:2:23",
+          "start": 0,
+          "text_sha256": "5a0d5ed67c0bc2c3326671bad4190c710dd2d64b1d232afca23ab3332ceebed4"
+        },
+        {
+          "end": 269,
+          "fragment_id": "e517e6ec87a64ed19f751e8de8df6aff:2:24",
+          "id": "e517e6ec87a64ed19f751e8de8df6aff:2:24",
+          "start": 0,
+          "text_sha256": "0646f568a147d07fdbbeda2d05244fdddc748b3be7c44d86cd67d458ed686809"
+        },
+        {
+          "end": 237,
+          "fragment_id": "e517e6ec87a64ed19f751e8de8df6aff:2:25",
+          "id": "e517e6ec87a64ed19f751e8de8df6aff:2:25",
+          "start": 0,
+          "text_sha256": "ac7dd0072a9ed9b41bf7dd4161b4175e83462ae232b01a45974a9bdcbea60a38"
+        },
+        {
+          "end": 233,
+          "fragment_id": "e517e6ec87a64ed19f751e8de8df6aff:2:26",
+          "id": "e517e6ec87a64ed19f751e8de8df6aff:2:26",
+          "start": 0,
+          "text_sha256": "ed7544a104b6f25ab60e23b3157ac93f5c8d35794bdba8bffdf58a4930d356c2"
+        }
+      ],
+      [
+        {
+          "end": 388,
+          "fragment_id": "e517e6ec87a64ed19f751e8de8df6aff:2:27",
+          "id": "e517e6ec87a64ed19f751e8de8df6aff:2:27",
+          "start": 0,
+          "text_sha256": "e5716c1c9b3a90ac30a7b1491196ed09cc1b644c989a6b41c6ca4e8483d13b9f"
+        },
+        {
+          "end": 513,
+          "fragment_id": "e517e6ec87a64ed19f751e8de8df6aff:2:28",
+          "id": "e517e6ec87a64ed19f751e8de8df6aff:2:28",
+          "start": 0,
+          "text_sha256": "1b2554ca4aae2962425da9407ba4744f0e105f458c9943a97e04530c38cef95c"
+        },
+        {
+          "end": 335,
+          "fragment_id": "e517e6ec87a64ed19f751e8de8df6aff:2:29",
+          "id": "e517e6ec87a64ed19f751e8de8df6aff:2:29",
+          "start": 0,
+          "text_sha256": "75b2ca0db5fead4849f906f8d8fe6e2cfc289dfe9562ec88328dd7b3d10342f6"
+        },
+        {
+          "end": 225,
+          "fragment_id": "e517e6ec87a64ed19f751e8de8df6aff:2:30",
+          "id": "e517e6ec87a64ed19f751e8de8df6aff:2:30",
+          "start": 0,
+          "text_sha256": "f1fa87b9e022d514840de41a7e71d52f8724051f40be550fd7deb620cac4d79d"
+        },
+        {
+          "end": 270,
+          "fragment_id": "e517e6ec87a64ed19f751e8de8df6aff:2:31",
+          "id": "e517e6ec87a64ed19f751e8de8df6aff:2:31",
+          "start": 0,
+          "text_sha256": "ccc8644098d6ee40d0c70e137223b69a606b943207a700719000eb535ff86c36"
+        },
+        {
+          "end": 498,
+          "fragment_id": "e517e6ec87a64ed19f751e8de8df6aff:2:32",
+          "id": "e517e6ec87a64ed19f751e8de8df6aff:2:32",
+          "start": 0,
+          "text_sha256": "7cc36912dd1ed892d57720c4a8bfc0e2a539e712cfd5f9a84e876e2074fa73c9"
+        }
+      ]
+    ],
+    "plan_id": "f35ec027ab8246b5b937d865d2fadea0",
+    "preferences_sha256": "53cb8c59e56eca100c8e61ce9d50a7733ce7059e5f3c4e71002ecf8311c32a87",
+    "reader_version": "20261020-whole-approved-chapter-v1",
+    "root": "reduce:0:0",
+    "source_id": "e517e6ec87a64ed19f751e8de8df6aff",
+    "tasks": [
+      {
+        "chunk": 0,
+        "id": "map:0",
+        "kind": "map"
+      },
+      {
+        "chunk": 1,
+        "id": "map:1",
+        "kind": "map"
+      },
+      {
+        "children": [
+          "map:0",
+          "map:1"
+        ],
+        "id": "reduce:0:0",
+        "kind": "reduce"
+      }
+    ]
+  },
+  "context_nodes": {
+    "map:0": {
+      "brief": {
+        "connections": [
+          "Sự chuyển đổi từ Classfull sang Classless nhằm giải quyết vấn đề lãng phí không gian địa chỉ.",
+          "Subnet mask là công cụ cốt lõi để xác định phạm vi của một network trong hệ thống Classless.",
+          "Địa chỉ broadcast được xác định bằng cách giữ nguyên NetID và bật tất cả các bit của Host ID lên 1."
+        ],
+        "key_ideas": [
+          "Địa chỉ IP là địa chỉ logic, khác với địa chỉ vật lý (như MAC) do nhà sản xuất ấn định.",
+          "IPv4 gồm 32 bits, chia thành Network ID và Host ID; được biểu diễn qua 4 octet.",
+          "Địa chỉ Classfull quy định cố định các lớp (A, B, C) nhưng gây lãng phí và khó quản trị.",
+          "Địa chỉ Classless sử dụng subnet mask để phân định linh hoạt giữa phần Net và Host.",
+          "Subnet mask có các bit thuộc NetID là 1 và HostID là 0.",
+          "Quy tắc chia subnet: Số subnet = 2^n (với n là số bit mượn từ phần HostID)."
+        ],
+        "misconceptions": [
+          "Nhầm lẫn giữa địa chỉ vật lý (MAC) và địa chỉ logic (IP) trong việc định danh node.",
+          "Cho rằng địa chỉ IP Classfull không thể thay đổi cấu trúc phân bổ giữa các lớp."
+        ],
+        "question_targets": [
+          "Cách tính số lượng host hợp lệ trong một network dựa trên số bit của phần HostID.",
+          "Quy trình xác định địa chỉ đường mạng và broadcast cho một IP cụ thể với subnet mask cho trước.",
+          "Cách tính toán số subnet và số node khi thực hiện chia subnet từ một dải IP lớn."
+        ],
+        "source_refs": [
+          "e517e6ec87a64ed19f751e8de8df6aff:2:4",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:6",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:7",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:8",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:13",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:14",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:16",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:18",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:20",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:22",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:24",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:26"
+        ],
+        "summary": "Chương trình cung cấp kiến thức về địa chỉ IP trong mạng máy tính, từ khái niệm cơ bản về địa chỉ vật lý và logic, cấu trúc IPv4 (32 bits), đến các phương pháp phân loại địa chỉ như Classful và Classless. Nội dung tập trung vào cách xác định Network ID, Host ID, địa chỉ broadcast và kỹ thuật chia subnet bằng cách mượn bit từ phần Host ID."
+      },
+      "created_at": "2026-10-20T23:36:35.391447+00:00",
+      "input_sha256": "9d98f592c406253f228dd9de40166ea914cb897307a1277ee0aaeecaa869ba21",
+      "job_id": "65218ed1323945979e53750e66b4dd02",
+      "output_sha256": "565b43e27d08a73efebbcbed31e6ba0db82528c67bf2942a5a9b622a688891ae",
+      "provider": {
+        "chapter_evidence_version": "20261021-approved-chapter-support-v1",
+        "model": "gemma4:12b-mlx",
+        "model_choice_id": "local:gemma4:12b-mlx",
+        "processor_version": "20261021-chapter-subnet-claims-v10",
+        "prompt_version": "20261021-chapter-evidence-support-v21",
+        "provider": "ollama_local",
+        "reference_codec": "scoped-reference-aliases-v1",
+        "schema_version": 19,
+        "selection_revision": 1
+      }
+    },
+    "map:1": {
+      "brief": {
+        "connections": [
+          "Mối quan hệ giữa Net Addr và Broadcast: Net Addr là địa chỉ bắt đầu, Broadcast là địa chỉ cuối cùng của dải mạng.",
+          "Sự tương quan giữa số lượng host yêu cầu và việc chọn subnet mask để đảm bảo đủ địa chỉ cho thiết bị."
+        ],
+        "key_ideas": [
+          "Xác định Net Addr và Broadcast cho từng subnet dựa trên cấu trúc bit của subnet mask.",
+          "Tính toán số lượng host khả dụng trong một subnet dựa trên dải IP từ Net Addr đến Broadcast.",
+          "Sử dụng các bit bổ sung để chia nhỏ dải mạng thành các subnet có kích thước khác nhau.",
+          "Xác định thuộc tính mạng của một IP cụ thể dựa trên prefix (ví dụ 172.100.112.4/19)."
+        ],
+        "misconceptions": [
+          "Nhầm lẫn giữa địa chỉ Net Addr và địa chỉ Host IP khả dụng (Net Addr không dùng cho host).",
+          "Nhầm lẫn giữa địa chỉ Broadcast và địa chỉ Host IP khả dụng (Broadcast không dùng cho host)."
+        ],
+        "question_targets": [
+          "Xác định dải mạng và số host hợp lệ từ một IP/prefix cho trước.",
+          "Tính toán và liệt kê các subnet khi biết yêu cầu số lượng host cụ thể.",
+          "Xác định chính xác Subnet Mask khi chia nhỏ mạng thành nhiều phân đoạn khác nhau."
+        ],
+        "source_refs": [
+          "e517e6ec87a64ed19f751e8de8df6aff:2:27",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:28",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:29",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:30",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:31",
+          "e517e6ec87a64ed19f751e8de8df6aff:2:32"
+        ],
+        "summary": "Nội dung tập trung vào kỹ thuật chia subnet từ một dải địa chỉ mạng lớn (ví dụ 172.29.0.0/16 và 192.168.1.0) thành các mạng con nhỏ hơn dựa trên yêu cầu số lượng host cụ thể. Nội dung bao gồm cách xác định Net Addr, Subnet Mask, Host IP và Broadcast cho từng subnet."
+      },
+      "created_at": "2026-10-20T23:36:55.788728+00:00",
+      "input_sha256": "600f786abe95173990a4fd8fe2af2d47a4394b2f13fc755fb54432733fb5a0bc",
+      "job_id": "65218ed1323945979e53750e66b4dd02",
+      "output_sha256": "cf52ca043b7fa749b924ea469bdb641452ed18797b30232dbe6ff020bd2cb8fd",
+      "provider": {
+        "chapter_evidence_version": "20261021-approved-chapter-support-v1",
+        "model": "gemma4:12b-mlx",
+        "model_choice_id": "local:gemma4:12b-mlx",
+        "processor_version": "20261021-chapter-subnet-claims-v10",
+        "prompt_version": "20261021-chapter-evidence-support-v21",
+        "provider": "ollama_local",
+        "reference_codec": "scoped-reference-aliases-v1",
+        "schema_version": 19,
+        "selection_revision": 1
+      }
+    },
+    "reduce:0:0": {
+      "brief": {
+        "connections": [
+          "Sự chuyển đổi từ Classful sang Classless nhằm giải quyết vấn đề lãng phí không gian địa chỉ.",
+          "Subnet mask là công cụ cốt lõi để xác định phạm vi của một network trong hệ thống Classless.",
+          "Mối quan hệ giữa Net Addr và Broadcast: Net Addr là địa chỉ bắt đầu, Broadcast là địa chỉ cuối cùng của dải mạng.",
+          "Sự tương quan giữa số lượng host yêu cầu và việc chọn subnet mask để đảm bảo đủ địa chỉ cho thiết bị."
+        ],
+        "key_ideas": [
+          "IPv4 gồm 32 bits chia thành Network ID và Host ID; Classless sử dụng subnet mask để phân định linh hoạt.",
+          "Subnet mask có các bit thuộc NetID là 1 và HostID là 0.",
+          "Quy tắc chia subnet: Số subnet = 2^n (với n là số bit mượn từ phần HostID).",
+          "Xác định Net Addr và Broadcast dựa trên cấu trúc bit của subnet mask; Broadcast được xác định bằng cách giữ nguyên NetID và bật tất cả các bit của Host ID lên 1.",
+          "Tính toán số lượng host khả dụng dựa trên dải IP từ Net Addr đến Broadcast.",
+          "Xác định thuộc tính mạng của một IP cụ thể dựa trên prefix (ví dụ 172.100.112.4/19)."
+        ],
+        "misconceptions": [
+          "Nhầm lẫn giữa địa chỉ vật lý (MAC) và địa chỉ logic (IP) trong việc định danh node.",
+          "Nhầm lẫn giữa địa chỉ Net Addr và địa chỉ Host IP khả dụng (Net Addr không dùng cho host).",
+          "Nhầm lẫn giữa địa chỉ Broadcast và địa chỉ Host IP khả dụng (Broadcast không dùng cho host)."
+        ],
+        "question_targets": [
+          "Cách tính số lượng host hợp lệ trong một network dựa trên số bit của phần HostID.",
+          "Quy trình xác định địa chỉ đường mạng và broadcast cho một IP cụ thể với subnet mask cho trước.",
+          "Cách tính toán số subnet và số node khi thực hiện chia subnet từ một dải IP lớn.",
+          "Xác định dải mạng và số host hợp lệ từ một IP/prefix cho trước.",
+          "Xác định chính xác Subnet Mask khi chia nhỏ mạng thành nhiều phân đoạn khác nhau."
+        ],
+        "source_refs": [
+          "map:0",
+          "map:1"
+        ],
+        "summary": "Nội dung tổng hợp kiến thức về địa chỉ IP trong mạng máy tính, từ cấu trúc IPv4 (32 bits) đến các phương pháp phân loại Classful và Classless. Chương trọng tâm vào việc sử dụng subnet mask để phân định Network ID và Host ID, kỹ thuật chia subnet bằng cách mượn bit từ phần HostID để tạo ra các mạng con nhỏ hơn dựa trên yêu cầu số lượng host thực tế, đồng thời xác định chính xác Net Addr, Broadcast và dải IP khả dụng cho mỗi subnet."
+      },
+      "created_at": "2026-10-20T23:37:19.561430+00:00",
+      "input_sha256": "5eca3468cf667944015bc2ea734eb80a84c41f65f16c6b8f85799d0127112316",
+      "job_id": "65218ed1323945979e53750e66b4dd02",
+      "output_sha256": "e3be0acfa1bbb7a28c8b2c23417505ab796fd7dbf4a61d0cf508ec605129a4b9",
+      "provider": {
+        "chapter_evidence_version": "20261021-approved-chapter-support-v1",
+        "model": "gemma4:12b-mlx",
+        "model_choice_id": "local:gemma4:12b-mlx",
+        "processor_version": "20261021-chapter-subnet-claims-v10",
+        "prompt_version": "20261021-chapter-evidence-support-v21",
+        "provider": "ollama_local",
+        "reference_codec": "scoped-reference-aliases-v1",
+        "schema_version": 19,
+        "selection_revision": 1
+      }
+    }
+  },
+  "checks": {
+    "same_complete_chapter": true,
+    "no_chapter_reread": true,
+    "source_unchanged": true,
+    "old_failed_partial_unchanged": true,
+    "default_model_unchanged": true
+  },
+  "wallet_after": {
+    "balance": 20,
+    "held": 0,
+    "available": 20,
+    "policy_version": "dev-proposal-20261015-v2",
+    "policy_proposed": true,
+    "cash_payments": false,
+    "enforcement_enabled": true
+  },
+  "default_model_after": "kaggle:qwen3.8:27b",
+  "finished_at": "2026-10-20T23:43:05.366997+00:00"
+}

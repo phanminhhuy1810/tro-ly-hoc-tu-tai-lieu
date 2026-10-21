@@ -1,0 +1,29 @@
+GHI CHÚ MINH HỌA — IP VÀ SUBNET
+
+Nội dung do AI biên soạn cho mẫu giao diện. Đây không phải tài liệu của Huy,
+giảng viên hoặc nguồn học phần; chưa dùng làm bằng chứng đọc PDF/OCR/AI.
+
+§1. IP address và subnet mask
+Một IPv4 address gồm 32 bit. Địa chỉ IP nhận diện một giao diện mạng trong ngữ cảnh đang xét.
+Subnet mask cho biết bit nào thuộc phần mạng (network), bit nào thuộc phần máy (host).
+IP cần đi cùng subnet mask hoặc prefix để xác định subnet; chỉ nhìn IP thì chưa đủ.
+
+§2. Prefix /26
+/26 nghĩa là 26 bit đầu thuộc network, còn 32 − 26 = 6 bit host.
+Subnet mask tương ứng là 255.255.255.192: octet cuối 192 = 11000000₂.
+Có 2⁶ = 64 địa chỉ trong một subnet /26. Mỗi block ở octet cuối rộng 64.
+
+§3. Ví dụ 192.168.1.70/26
+Các block ở octet cuối: 0–63, 64–127, 128–191, 192–255.
+70 nằm trong block 64–127, nên subnet chứa IP này là 192.168.1.64/26.
+Network address là 192.168.1.64; các bit host đều bằng 0.
+Broadcast address là 192.168.1.127; các bit host đều bằng 1.
+
+§4. Địa chỉ host dùng được của subnet trong ví dụ
+Hai địa chỉ network và broadcast được dành riêng trong subnet /26 này.
+Host dùng được: 192.168.1.65 đến 192.168.1.126.
+Số host dùng được: 2⁶ − 2 = 62.
+
+§5. Cách tự kiểm tra
+Đọc prefix → tính số bit host → tìm block chứa IP → xác định network/broadcast → đếm host dùng được.
+Phân biệt 64 địa chỉ tổng cộng với 62 địa chỉ host dùng được trong ví dụ.

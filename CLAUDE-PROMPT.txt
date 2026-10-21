@@ -1,0 +1,140 @@
+Tôi là Huy, sinh viên CNTT HCMUS. Tôi muốn bạn tiếp nhận dự án web trợ lý học từ tài liệu này, đọc và đánh giá độc lập trước, rồi giúp tôi hoàn thiện sản phẩm. Trả lời bằng tiếng Việt dễ hiểu. Hầu hết code được xây với AI hỗ trợ; đừng mặc định tôi đã tự viết hoặc hiểu hết các phần.
+
+Tôi đã trao đổi và sửa đi sửa lại với ChatGPT/Codex khoảng hai tuần. Quá trình đó bị sa lầy vào nhiều vòng chỉnh giao diện, thêm lớp CSS và bổ sung chi tiết, nhưng trải nghiệm tổng thể vẫn chưa thuyết phục tôi. Tôi đang nản vì mở web lên thấy rối, máy móc, khó biết phải bấm gì. Giao diện khiến tôi chưa muốn thử hết tính năng. Hãy xem đây là phản hồi thật của chủ dự án; kiểm tra code và web để đưa ra nhận định riêng, đừng bảo vệ quyết định cũ hoặc mặc định bản hiện tại đã tốt.
+
+Mục tiêu gần nhất: một frontend desktop đẹp, dễ hiểu và nối được luồng học thật, để tôi có thể dùng thử tính năng. Giao diện là một phần quan trọng giữ người học muốn quay lại. Tôi không muốn tiếp tục vòng thay màu, thêm sticker rồi báo đã cải tiến trong khi cách sử dụng vẫn rối.
+
+1. ĐỌC DỰ ÁN VÀ HIỂU ĐÚNG HIỆN TRẠNG TRƯỚC KHI VIẾT LẠI
+
+Thư mục dự án:
+/Users/phanminhhuy/Documents/learning resources/Hk4/TDTT/AI-STUDY-HANDOFF
+
+Đọc theo thứ tự:
+- AGENTS.md: quy tắc sản phẩm và cộng tác đã chốt.
+- README.md: sơ đồ thư mục và cách chạy.
+- PRODUCT-FLOW-UI.md: các flow, tính năng, gu giao diện và phản hồi đã bàn. Đọc cả phần phản hồi mới nhất ngày 21/10/2026.
+- BACKEND-REVIEW.md: triển khai, API, dữ liệu, benchmark đã làm, phần còn thiếu. Đây là tài liệu bàn giao để đối chiếu, không phải bằng chứng backend đã hoàn hảo.
+- sources/2026_Project_Virtual_Assistant_Academic.docx: đề bài nguyên bản của thầy; đọc cả bảng trong Word.
+- sources/ui-reference-taitor.png: ảnh tham chiếu thị giác tôi vừa gửi.
+
+Khảo sát toàn bộ cây mã nguồn do dự án sở hữu. Đọc có hệ thống frontend/, backend/study_backend/, tests, scripts, hợp đồng API và các phần experiments/evaluation/evidence liên quan. Lần các luồng chính xuyên suốt từ UI tới API và dữ liệu; xem cả phần hoạt động, phần mẫu, lỗi và chức năng có backend nhưng UI chưa nối. Nêu rõ phần đã đọc/đã chạy và phần chưa kiểm tra, không nói đã đọc hết nếu chỉ nhìn README hoặc tên file.
+
+Không cần đọc thư viện cài sẵn trong .venv/, node_modules hay dump toàn bộ runtime. backend/runtime/ chứa tài liệu, DB và cấu hình riêng; không đưa key, cookie hoặc endpoint riêng vào chat/log. Nếu cần thử dữ liệu, ưu tiên workspace QA cô lập và bản sao dữ liệu phù hợp. Không làm mất tài liệu/khóa học/kết quả hiện có. Không tự khởi động GPU, tải model lớn, bật billing hoặc dùng API trả phí để khảo sát.
+
+Chạy web và tự xem trên trình duyệt nếu môi trường cho phép. Phân biệt code có tồn tại, test đạt và flow người dùng đã chạy thật. Không kết luận tính năng hoạt động chỉ từ nút có thể bấm hoặc một màn dùng dữ liệu minh họa.
+
+2. PHÂN TÍCH ĐỀ BÀI CỦA THẦY
+
+Đối chiếu từng yêu cầu trong Word với dự án: yêu cầu gì, đang có gì, bằng chứng/file nào, còn thiếu gì, việc nào cần cho bản nộp. Phân biệt bắt buộc của học phần với tính năng chúng tôi tự thêm. Nói rõ phần nào nên hoàn thiện trước, phần nào có thể để sau để tránh đồ án phình ra.
+
+Tôi muốn ưu tiên frontend trước để dùng thử. Benchmark lớn, so sánh model và vòng nghiệm thu tổng thể làm sau khi luồng học đã đủ dùng; vẫn giữ dữ liệu đo cũ và chạy kiểm tra cần thiết để không phá chức năng đang có. Đừng trì hoãn giao diện vì mở thêm một chiến dịch benchmark. Nếu đề bài bắt buộc đánh giá, ghi nó vào chặng sau, không tự coi là đã hoàn thành.
+
+3. ĐỀ XUẤT HAI HƯỚNG, CHỌN BẰNG BẰNG CHỨNG
+
+Hướng A — dựng lại frontend và luồng tương tác từ nền sạch:
+- Dùng hành vi và flow đã nghiên cứu từ sản phẩm tham khảo để xây cấu trúc UI rõ ràng, component và trạng thái nhất quán.
+- Tận dụng backend/API/dữ liệu có giá trị sau khi đã kiểm tra. Dựng lại giao diện không tự đồng nghĩa phải bỏ cả backend.
+- Nếu một phần backend thực sự cản trở thiết kế, chỉ ra vấn đề cụ thể và đề xuất phạm vi thay đổi; việc viết lại toàn bộ cần có lý do riêng.
+
+Hướng B — giữ nền frontend hiện tại và sửa có hệ thống:
+- Chỉ chọn nếu kiến trúc, state, cách nối API và component còn dùng được với chi phí hợp lý.
+- Sửa cả cấu trúc điều hướng, cách nhóm chức năng, thứ bậc nội dung và các trạng thái; không tiếp tục chồng CSS lên từng triệu chứng.
+
+So sánh hai hướng về: khả năng tái sử dụng, độ rối/coupling hiện tại, chi phí bỏ sót tính năng, nối API, bảo toàn dữ liệu, độ dễ sửa tiếp và công sức tương đối. Dẫn vài file/luồng cụ thể. Tôi sợ vá code cũ còn tốn hơn làm mới, nhưng cũng không muốn viết lại theo phong trào. Khuyến nghị một hướng rõ ràng, giải thích điều gì khiến bạn chọn nó. Nếu chưa đủ bằng chứng để ước lượng, nói rõ thay vì đưa thời gian chắc chắn.
+
+4. NGHIÊN CỨU GIZMO, REA VÀ UI UX PRO MAX
+
+Hãy trực tiếp khảo sát https://gizmo.ai/ và các màn ứng dụng có thể truy cập hợp lệ. Quan sát các flow: nhận tài liệu, chọn phần muốn học, bắt đầu ôn, trả lời, xem gợi ý/giải thích, hỏi tiếp, kết quả và trở lại phần đang học. Chụp/ghi lại trạng thái cần thiết, phân biệt điều quan sát được với suy đoán. Trang marketing không đủ để kết luận flow bên trong. Nếu cần tài khoản/quyền truy cập, nói đúng chỗ bị chặn và tiếp tục phần độc lập.
+
+Tôi muốn tham khảo REA — Reverse Engineer Anything:
+https://github.com/morluto/rea
+Nếu môi trường có REA, đánh giá và dùng phần phù hợp để hiểu hành vi/giao diện có thể quan sát. Nếu chưa có, nói rõ điều kiện cài đặt và lợi ích thực tế; không mất buổi chỉ để setup một công cụ không cần thiết. REA không được xem như cách chắc chắn lấy được backend hoặc thuật toán riêng của Gizmo. Học cách tổ chức trải nghiệm, tự triển khai cho sản phẩm này; giữ thương hiệu và tài sản đồ họa riêng.
+
+Tôi cũng thấy repo UI UX Pro Max:
+https://github.com/nextlevelbuilder/ui-ux-pro-max-skill
+Đọc README, phần hướng dẫn/skill cần thiết, ví dụ và giấy phép; cho tôi biết có đáng dùng cho dự án không, nó giúp phần nào và không giải quyết phần nào. Kiểm tra đúng repo chính thức. Không lấy số star làm bảo đảm chất lượng. Nếu dùng, áp dụng có chọn lọc vào typography, spacing, thành phần và accessibility; đừng để preset chung quyết định gu thay cho ảnh tham chiếu và phản hồi của tôi. Đọc/đánh giá trước, không tự chạy script cài đặt chưa hiểu.
+
+5. GU THỊ GIÁC VÀ VẤN ĐỀ CẦN GIẢI QUYẾT
+
+Tôi thích ảnh TAITOR đính kèm vì nó đơn giản mà có cá tính: nền sáng, khối bo tròn thoáng, chữ có phân cấp, minh họa nhỏ, màu sage/vàng nhẹ và danh sách dễ quét. Học tỷ lệ, nhịp bố cục và độ rõ. Tôi vẫn ưu tiên điều hướng bên trái đã bàn, không cần bê nguyên thanh ngang, tím, tên hay logo trong ảnh.
+
+Hướng tới sinh viên: thân thiện, bắt mắt, có chút vui và có hồn; cân bằng để không quá trẻ con hoặc quá nghiêm như phần mềm quản trị. Tránh cảm giác template AI: nhiều card giống nhau, hàng thống kê thừa, icon ngẫu nhiên, minh họa quá lớn, quá nhiều pill/badge/CTA, gradient hay đồ trang trí không giúp sử dụng. Đừng diễn giải tối giản thành một trang trống, ít hình và vô hồn.
+
+Cần làm lại có chủ đích:
+- Điều hướng và phân cấp: người mới mở lên biết nên bắt đầu hoặc học tiếp ở đâu. Mỗi màn một hành động chính rõ; phần nâng cao xuất hiện đúng lúc. Đủ chức năng nhưng không bắt mọi tính năng có một mục menu ngang hàng.
+- Toàn bộ microcopy: tiêu đề, tên nút, header, lời chào, lời giảng, lỗi, trạng thái trống và thông báo. Tiếng Việt tự nhiên, ngắn, đúng ngữ cảnh, không khẩu hiệu hoặc văn máy. Nội dung bài có tên kiến thức thật.
+- Avatar/mascot/sticker hiện tại: tôi thấy xấu và chưa nhất quán. Đề xuất một nhân vật/bộ icon có nét riêng, ít nhưng dùng đúng chỗ; có vài biểu cảm và chuyển động phù hợp. Nếu có công cụ ảnh thì dùng có chủ đích; nếu chưa có, chọn cách tạo asset nhất quán và phù hợp môi trường. Tên tiếng Anh/logo vẫn có thể đề xuất nhưng không để việc đặt tên chặn flow học.
+- Nút 3D nhẹ có cảm giác nhấn, trạng thái chọn/tick rõ. Làm lại motion cho chuyển màn/bước, cây tiến trình, lật thẻ, chọn đáp án, lưu nội dung và chat. Animation cần ngắn, mượt, hỗ trợ thao tác, có reduced-motion, không gây mệt hoặc kéo dài thời gian chờ.
+- Loading thân thiện với người học: diễn đạt đang làm gì, phần nào đã lưu, có thể làm gì tiếp; có chuyển động nhẹ, lỗi có cách phục hồi/hủy/thử lại đúng phần. Không đưa tên job/pipeline hoặc thông báo debug lên UI chính; không tạo phần trăm/ETA giả.
+- Cây tiến trình hiện sơ sài: cần bố cục thu hút, đường đi và vị trí hiện tại rõ, phân biệt bài đã học/đang học/chưa tạo/đang khóa; mở đúng bài và giữ vị trí quay lại.
+- Giữ Dashboard với Progress timeline, Weekly streak, Learning progress nhưng đặt đúng chỗ, dùng dữ liệu thật. Hình ảnh hỗ trợ trải nghiệm, không lấn bài học.
+
+6. CHAT, BẢNG TRẮNG VÀ TRỢ GIÚP TẠI CHỖ
+
+Chatbot chung mặc định đóng thành icon; bấm mở là khung nhỏ gọn bên phải. Người dùng chủ động phóng to/toàn màn rồi thu lại/đóng; giữ hội thoại và vị trí học. Làm lại sticker/avatar của launcher. Không tự mở toàn màn và không khiến chat che hết câu đang làm.
+
+Chat chung dùng để hỏi thuật ngữ hoặc câu hỏi tự do. Trợ giúp cho câu/bài đang học phải nằm ngay trong bài: Gợi ý, Giải thích, Hỏi thêm, xem lời giải theo ngữ cảnh. Giữ câu hiện tại, đáp án nháp, trạng thái đã nộp và vị trí cuộn. Có gợi ý từng bước thay vì lộ đáp án ngay; tuân theo quy tắc của chế độ luyện/kiểm tra. Khi dùng giao diện chat lớn/bảng trắng, người học vẫn biết mình đang hỏi về phần nào và có đường quay lại.
+
+Tôi thích ý tưởng nền bảng trắng/giấy có dòng hoặc ô mờ nhưng bản hiện tại chưa đẹp. Hãy thiết kế lại độ thoáng, font, độ tương phản, vùng nội dung và công cụ; nền trang trí không được làm chữ khó đọc. Hỏi tôi xem mẫu cụ thể, không mặc định chỉ cần thêm một lớp nền kẻ ô.
+
+7. LUỒNG HỌC VÀ KHẢ NĂNG GIẢNG DẠY
+
+Giữ ba hướng đã chọn: Học – Flashcard – Ôn luyện. Tôi muốn dùng được kiến thức nền/backend hiện có mà không phải hiểu cấu trúc kỹ thuật của app. Khóa cá nhân/cộng đồng và tiến trình được tổ chức dễ tìm; giảm thao tác thừa.
+
+Tôi chưa hài lòng chất lượng AI: bài giảng khô, câu hỏi giống trích lại slide, mindmap thừa và thiếu chọn lọc. Tôi có cảm giác AI chưa đọc đủ tài liệu. Hãy coi đây là vấn đề cần kiểm tra bằng code, nguồn và output thật; không lặp lại thành một kết luận kỹ thuật chưa xác minh. Backend đã có cơ chế đọc chương và guard nhưng có cơ chế không bảo đảm nội dung cuối hay/đúng. Truy vết phần trích xuất, phạm vi nguồn, context/chunk/synthesis, prompt và UI đang hiển thị trước khi đề xuất sửa.
+
+Tôi muốn:
+- Người học được chọn tài liệu, bài, trang/ý hoặc trộn các phần theo cách học trên lớp; không ép giáo trình nào cũng học theo chương chuẩn. AI đọc đầy đủ phạm vi đã duyệt, có liên kết các phần cần thiết; không đọc một đoạn rồi báo đã hiểu hết.
+- Trước tạo có mục tiêu, mức hiện tại, phạm vi, ngôn ngữ, dạng/số câu và lưu ý riêng; gợi ý dễ chọn cho người chưa biết. Cho sửa trọng tâm khi AI lệch, xem trước và áp dụng có phạm vi.
+- Dạy từng phần vừa sức: giải thích ý chính → ví dụ cụ thể → một hoặc vài câu trắc nghiệm/kiểm tra ngắn phù hợp → phản hồi/gợi ý theo câu trả lời → tiếp tục. Giữ năm dạng câu đã chốt, dùng đúng chỗ thay vì ép mỗi ý có đủ mọi dạng. Tránh đổ một bài dài cùng một đống câu ở cuối. Đề xuất cách tận dụng bài/câu đã lưu để thực hiện flow này, chỉ mở rộng API khi cần.
+- Giảng linh hoạt theo thắc mắc, làm rõ điều kiện và chỗ dễ nhầm. Người học sửa yêu cầu, nói chưa hiểu hoặc báo câu lỗi phải có cách xử lý thật.
+- Sinh câu hiểu/vận dụng phù hợp mục tiêu từ nguyên lý trong nguồn; có thể thay dữ kiện, đưa tình huống mới và kiểm đáp án bằng chương trình ở những dạng có thể kiểm. Trích dẫn giúp đối chiếu, không biến mọi câu thành chép lại slide.
+- Lưu nội dung bài, thẻ, mindmap, lịch sử học và kết quả để mở/chọn/học lại. Quay lại nội dung đã có không được tự gọi AI và sinh lại toàn bộ. Những phần cần tạo mới hoặc chỉnh phải rõ ràng.
+- Hướng tới chất lượng khiến người học muốn tiếp tục ngay trong app thay vì phải mở một chatbot khác để nhờ giảng lại. Không hứa đạt được chỉ bằng model lớn hơn.
+
+Giai đoạn đầu frontend có thể dùng cấu trúc bài đã lưu để nối một flow tốt; vấn đề sư phạm/pipeline cần backend phải được ghi rõ và xử lý có phạm vi ở chặng sau. Không dùng UI đẹp để che lỗi nội dung hoặc thông báo đã sửa AI khi mới thay cách trình bày.
+
+8. BÌA LESSON, HÌNH MINH HỌA VÀ MINDMAP
+
+Đề xuất phương án thực tế cho tài liệu mới. Model sinh văn bản hiện có không tự đảm bảo sinh ảnh raster. Không lấy ảnh môn Mạng soạn sẵn làm cam kết mọi tài liệu upload đều có ảnh chuyên môn đúng.
+
+Hãy đánh giá:
+- Bìa lesson: bộ preset có chất lượng cho người dùng chọn/đổi; icon/vector và bố cục tạo từ metadata; tùy chọn model sinh ảnh riêng nếu đáng dùng về chi phí/quota.
+- Mindmap: text model sinh cấu trúc node/edge có nguồn, frontend tự dựng sơ đồ có bố cục đẹp và tương tác; chọn lọc ý chính, mối liên hệ có nghĩa, không nhồi mọi câu thành node. Người học bấm node để hiểu/đối chiếu/hỏi đúng ngữ cảnh.
+- Sơ đồ chuyên môn: nếu nguồn có hình thì trích và ghi đúng xuất xứ khi dùng được; đồ thị/bảng/sơ đồ sinh bằng mã cần dữ liệu và kiểm tra phù hợp. Nếu chưa hỗ trợ thì diễn đạt đúng, không tạo hình sai chỉ để lấp chỗ trống.
+
+Tôi chấp nhận dùng một số hình sẵn cho người học chọn nếu nó ổn định, đẹp và trung thực hơn. Nêu rõ trade-off chất lượng, độ đồng nhất, tốc độ và chi phí; đề xuất một phương án mặc định có thể triển khai.
+
+9. CHỌN MODEL VÀ NGUỒN AI MIỄN PHÍ/GIÁ RẺ
+
+UI chọn model hiện chưa rõ. Tôi muốn người dùng hiểu đang dùng AI nào, phù hợp việc gì, dữ liệu đi đâu, tình trạng sẵn sàng, tốc độ/chất lượng kỳ vọng và chi phí. Có lựa chọn gợi ý cho người không biết về model; thông tin nâng cao để sau. Chỉ hiển thị lựa chọn thực sự cấu hình được, không tạo danh sách marketing.
+
+Hãy nghiên cứu nguồn AI miễn phí/giá rẻ thực sự có thể tận dụng hiện tại cho: dạy/hỏi bài, đọc nguồn/tạo nội dung có cấu trúc, và ảnh nếu cần. Tôi cân nhắc sau này dùng OpenRouter để có lựa chọn tốt hơn:
+https://openrouter.ai/
+
+Tra tài liệu chính thức và ghi ngày kiểm tra. So sánh ngắn theo model/provider cụ thể, đầu vào/đầu ra, tiếng Việt và khả năng phù hợp, quota/context, giá hoặc giới hạn miễn phí, latency nếu có số đo, điều kiện dữ liệu và cách tích hợp. Phân biệt miễn phí thử nghiệm với vận hành bền vững; tách suy đoán khỏi đo thực tế. Đừng xếp hạng model chỉ từ tên hoặc số B, đừng gọi rate giới hạn là app hỏng. Kaggle là phiên tính toán có thể tắt, dữ liệu học vẫn phải lưu độc lập.
+
+Đề xuất cấu hình mặc định hợp ngân sách và cách mở thêm model tốt sau này, cùng cách kiểm soát token/chi phí. Coin trong app khác hạn mức nhà cung cấp. Chỉ phân tích và thiết kế trước; chưa có phép mua dịch vụ, bật thanh toán, nhập tiền, khởi chạy inference trả phí hay thay provider mặc định. Tôi sẽ chốt ngân sách riêng.
+
+10. CÁCH TRIỂN KHAI ĐỂ TÔI NHÌN THẤY TIẾN BỘ
+
+Lượt đầu tiên: chỉ đọc/khảo sát/chạy quan sát cần thiết và trả báo cáo ngắn, chưa sửa code sản phẩm. Đầu ra cần có:
+1) Bạn hiểu sản phẩm/flow hiện tại ra sao; cái gì đang thật, mẫu hoặc chưa kiểm tra.
+2) Vài nguyên nhân gốc của sự rối/xấu, có dẫn chứng từ màn hình và code.
+3) So sánh hai hướng A/B và khuyến nghị một hướng.
+4) Đối chiếu yêu cầu của thầy, ưu tiên phần cần cho bản nộp.
+5) Phác thảo điều hướng + một luồng học desktop, hướng mỹ thuật và ví dụ microcopy; giải thích học được gì từ ảnh/Gizmo. Báo rõ phần nào chưa quan sát được.
+6) Đánh giá có nên dùng REA/UI UX Pro Max và đề xuất ảnh/mindmap/nguồn model với giới hạn, dẫn nguồn chính thức.
+7) Mốc triển khai đầu tiên đủ nhỏ để tôi xem, góp ý và dùng thử; liệt kê đúng câu hỏi còn ảnh hưởng quyết định. Không hỏi lại những lựa chọn tôi đã ghi ở đây.
+
+Sau khi tôi chốt hướng, dựng một lát cắt desktop có thể xem trên trình duyệt: thư viện/trang chủ rõ chỗ học tiếp và tạo mới → chọn bài/cây tiến trình → học một phần → câu kiểm tra ngắn → gợi ý/hỏi tại chỗ → quay lại học, kèm chat nhỏ/phóng to. Bao gồm trạng thái trống/chờ/lỗi và một nội dung thật đã có để kiểm đường nối API. Nếu dùng dữ liệu minh họa cho bản xem thiết kế, ghi rõ; nghiệm thu chức năng cần backend thật.
+
+Đưa tôi xem lát cắt này trước khi nhân rộng ra tất cả màn. Khi chưa hợp gu, sửa hệ thống bố cục/mỹ thuật của lát cắt, không tiếp tục rải thêm tính năng. Hỏi phần còn thiếu có ảnh hưởng trực tiếp; đừng bắt tôi tự nghĩ mọi chi tiết hoặc chọn trong nhiều preset chung chung.
+
+Sau khi duyệt, hoàn thiện frontend theo flow đã thống nhất rồi xử lý các blocker backend/sư phạm theo thứ tự. Kiểm tra cần thiết theo thay đổi và ghi rõ giới hạn, chưa mở benchmark lớn ở chặng đầu. Giữ dữ liệu và raw kết quả cũ; không tự xóa experiments để làm đẹp cây thư mục hoặc làm mất regression. Không tạo lại ZIP/tài liệu phương án cũ, không mở thêm hàng loạt file kế hoạch.
+
+Tôi muốn bạn có chính kiến, chỉ ra giả định sai và chủ động đề xuất cách tốt hơn. Ưu tiên sản phẩm có thể dùng thật, lời giải thích mà tôi hiểu, và tiến bộ nhìn thấy được qua một flow cụ thể.
+
+--- TIN NHẮN TIẾP THEO SAU KHI ĐÃ CHỌN HƯỚNG ---
+
+Tôi chọn hướng [A hoặc B] theo báo cáo vừa thống nhất. Bắt đầu lát cắt frontend desktop đã đề xuất, giữ API/dữ liệu và phạm vi được duyệt. Cho tôi xem bản chạy trong trình duyệt với các trạng thái chờ/lỗi, chat nhỏ mặc định có phóng to và flow học ngắn có trợ giúp tại chỗ. Chưa nhân rộng mọi màn, chưa benchmark lớn hoặc mua dịch vụ. Làm xong mốc này thì nêu cách tôi mở và những thao tác tôi nên thử để góp ý thiết kế.

@@ -1,0 +1,1142 @@
+{
+  "purpose": "self-authored clean printed development probe; not user documents or held-out/human benchmark",
+  "human_review": false,
+  "language_change": "English-only baseline -> supported Vietnamese locale plus English",
+  "normalization": "NFC; whitespace collapse; case, punctuation and math symbols preserved",
+  "cases": [
+    {
+      "name": "networking.png",
+      "expected": "Mạng máy tính: IPv4 và subnet mask\nIPv4 có 32 bit. Prefix /26 dành 26 bit cho network.\nPhần host còn 6 bit: 2^6 = 64 địa chỉ.\nSubnet của 192.168.1.70/26 nằm trong block 64 - 127.\nNetwork: 192.168.1.64. Broadcast: 192.168.1.127.\nHost dùng được: 192.168.1.65 đến 192.168.1.126.\nSố host dùng được: 64 - 2 = 62.",
+      "runs": [
+        {
+          "label": "baseline_en",
+          "elapsed_seconds": 36.201,
+          "text": "Mạng máy tính: IPv4 và subnet mask\nIPv4 có 32 bit. Prefix/26 dành 26 bit cho network.\nPhần host còn 6 bit: 216 = 64 địa chỉ.\nSubnet của 192.168.1.70/26 nằm trong block 64 - 127.\nNetwork: 192.168.1.64. Broadcast: 192.168.1.127.\nHost dùng được: 192.168.1.65 đến 192.168.1.126.\nSố host dùng được: 64 - 2 = 62.",
+          "edit_distance": 2,
+          "reference_characters": 307,
+          "cer": 0.0065,
+          "fragments": [
+            {
+              "text": "Mạng máy tính: IPv4 và subnet mask",
+              "locator": {
+                "image_width": 1500,
+                "image_height": 720,
+                "type": "ocr_image",
+                "bounds_coordinate_system": "normalized_bottom_left",
+                "bounds": [
+                  0.04166666633736558,
+                  0.8521739124014983,
+                  0.4083333333333333,
+                  0.06086956659952791
+                ],
+                "frame": 1
+              },
+              "recognizer_score": 1
+            },
+            {
+              "locator": {
+                "image_height": 720,
+                "bounds": [
+                  0.04208931658279354,
+                  0.7458686522676001,
+                  0.5568201497395833,
+                  0.05465826458401146
+                ],
+                "bounds_coordinate_system": "normalized_bottom_left",
+                "image_width": 1500,
+                "frame": 1,
+                "type": "ocr_image"
+              },
+              "recognizer_score": 1,
+              "text": "IPv4 có 32 bit. Prefix/26 dành 26 bit cho network."
+            },
+            {
+              "text": "Phần host còn 6 bit: 216 = 64 địa chỉ.",
+              "recognizer_score": 1,
+              "locator": {
+                "bounds": [
+                  0.044982454007185806,
+                  0.6358324873654093,
+                  0.41150557454427084,
+                  0.05541444884406199
+                ],
+                "type": "ocr_image",
+                "bounds_coordinate_system": "normalized_bottom_left",
+                "image_width": 1500,
+                "image_height": 720,
+                "frame": 1
+              }
+            },
+            {
+              "locator": {
+                "bounds_coordinate_system": "normalized_bottom_left",
+                "type": "ocr_image",
+                "frame": 1,
+                "image_width": 1500,
+                "image_height": 720,
+                "bounds": [
+                  0.04360465672019093,
+                  0.5236111099226508,
+                  0.6191860351562499,
+                  0.05555555555555558
+                ]
+              },
+              "text": "Subnet của 192.168.1.70/26 nằm trong block 64 - 127.",
+              "recognizer_score": 1
+            },
+            {
+              "text": "Network: 192.168.1.64. Broadcast: 192.168.1.127.",
+              "locator": {
+                "image_width": 1500,
+                "type": "ocr_image",
+                "bounds": [
+                  0.045058130944916834,
+                  0.4121212128504178,
+                  0.571220947265625,
+                  0.05176767508188884
+                ],
+                "frame": 1,
+                "bounds_coordinate_system": "normalized_bottom_left",
+                "image_height": 720
+              },
+              "recognizer_score": 1
+            },
+            {
+              "recognizer_score": 1,
+              "text": "Host dùng được: 192.168.1.65 đến 192.168.1.126.",
+              "locator": {
+                "image_height": 720,
+                "bounds": [
+                  0.04499336150843446,
+                  0.29863857192060805,
+                  0.5727855631510417,
+                  0.06069104406568737
+                ],
+                "bounds_coordinate_system": "normalized_bottom_left",
+                "frame": 1,
+                "image_width": 1500,
+                "type": "ocr_image"
+              }
+            },
+            {
+              "recognizer_score": 1,
+              "text": "Số host dùng được: 64 - 2 = 62.",
+              "locator": {
+                "type": "ocr_image",
+                "bounds": [
+                  0.04343357477770534,
+                  0.186496723838113,
+                  0.35359244791666666,
+                  0.06254534721374505
+                ],
+                "image_width": 1500,
+                "bounds_coordinate_system": "normalized_bottom_left",
+                "image_height": 720,
+                "frame": 1
+              }
+            }
+          ],
+          "warnings": [
+            "OCR nhận dạng chữ, chưa chứng minh công thức/bảng/sơ đồ đúng. Đối chiếu ảnh và sửa bản trích trước khi tạo."
+          ]
+        },
+        {
+          "label": "vi_en",
+          "elapsed_seconds": 35.781,
+          "text": "Mạng máy tính: IPv4 và subnet mask\nIPv4 có 32 bit. Prefix/26 dành 26 bit cho network.\nPhần host còn 6 bit: 216 = 64 địa chỉ.\nSubnet của 192.168.1.70/26 nằm trong block 64 - 127.\nNetwork: 192.168.1.64. Broadcast: 192.168.1.127.\nHost dùng được: 192.168.1.65 đến 192.168.1.126.\nSố host dùng được: 64 - 2 = 62.",
+          "edit_distance": 2,
+          "reference_characters": 307,
+          "cer": 0.0065,
+          "fragments": [
+            {
+              "locator": {
+                "frame": 1,
+                "bounds": [
+                  0.04166666633736558,
+                  0.8521739124014983,
+                  0.4083333333333333,
+                  0.06086956659952791
+                ],
+                "bounds_coordinate_system": "normalized_bottom_left",
+                "image_height": 720,
+                "type": "ocr_image",
+                "image_width": 1500
+              },
+              "recognizer_score": 1,
+              "text": "Mạng máy tính: IPv4 và subnet mask"
+            },
+            {
+              "locator": {
+                "bounds": [
+                  0.04208931658279354,
+                  0.7458686522676001,
+                  0.5568201497395833,
+                  0.05465826458401146
+                ],
+                "bounds_coordinate_system": "normalized_bottom_left",
+                "type": "ocr_image",
+                "image_height": 720,
+                "frame": 1,
+                "image_width": 1500
+              },
+              "recognizer_score": 1,
+              "text": "IPv4 có 32 bit. Prefix/26 dành 26 bit cho network."
+            },
+            {
+              "text": "Phần host còn 6 bit: 216 = 64 địa chỉ.",
+              "recognizer_score": 1,
+              "locator": {
+                "bounds": [
+                  0.044982454007185806,
+                  0.6358324873654093,
+                  0.41150557454427084,
+                  0.05541444884406199
+                ],
+                "type": "ocr_image",
+                "image_height": 720,
+                "image_width": 1500,
+                "frame": 1,
+                "bounds_coordinate_system": "normalized_bottom_left"
+              }
+            },
+            {
+              "text": "Subnet của 192.168.1.70/26 nằm trong block 64 - 127.",
+              "locator": {
+                "frame": 1,
+                "type": "ocr_image",
+                "image_width": 1500,
+                "bounds_coordinate_system": "normalized_bottom_left",
+                "image_height": 720,
+                "bounds": [
+                  0.04360465672019093,
+                  0.5236111099226508,
+                  0.6191860351562499,
+                  0.05555555555555558
+                ]
+              },
+              "recognizer_score": 1
+            },
+            {
+              "text": "Network: 192.168.1.64. Broadcast: 192.168.1.127.",
+              "locator": {
+                "image_height": 720,
+                "type": "ocr_image",
+                "bounds_coordinate_system": "normalized_bottom_left",
+                "bounds": [
+                  0.045058130944916834,
+                  0.4121212128504178,
+                  0.571220947265625,
+                  0.05176767508188884
+                ],
+                "image_width": 1500,
+                "frame": 1
+              },
+              "recognizer_score": 1
+            },
+            {
+              "recognizer_score": 1,
+              "text": "Host dùng được: 192.168.1.65 đến 192.168.1.126.",
+              "locator": {
+                "image_height": 720,
+                "frame": 1,
+                "bounds": [
+                  0.04499336150843446,
+                  0.29863857192060805,
+                  0.5727855631510417,
+                  0.06069104406568737
+                ],
+                "bounds_coordinate_system": "normalized_bottom_left",
+                "type": "ocr_image",
+                "image_width": 1500
+              }
+            },
+            {
+              "recognizer_score": 1,
+              "locator": {
+                "frame": 1,
+                "bounds_coordinate_system": "normalized_bottom_left",
+                "type": "ocr_image",
+                "bounds": [
+                  0.04343357477770534,
+                  0.186496723838113,
+                  0.35359244791666666,
+                  0.06254534721374505
+                ],
+                "image_height": 720,
+                "image_width": 1500
+              },
+              "text": "Số host dùng được: 64 - 2 = 62."
+            }
+          ],
+          "warnings": [
+            "OCR nhận dạng chữ, chưa chứng minh công thức/bảng/sơ đồ đúng. Đối chiếu ảnh và sửa bản trích trước khi tạo."
+          ]
+        }
+      ],
+      "pdf_scan": {
+        "text": "Mạng máy tính: IPv4 và subnet mask\nIPv4 có 32 bit. Prefix/26 dành 26 bit cho network.\nPhần host còn 6 bit: 216 = 64 địa chỉ.\nSubnet của 192.168.1.70/26 năm trong block 64 - 127.\nNetwork: 192.168.1.64. Broadcast: 192.168.1.127.\nHost dùng được: 192.168.1.65 đến 192.168.1.126.\nSố host dùng được: 64 - 2 = 62.",
+        "fragments": [
+          {
+            "text": "Mạng máy tính: IPv4 và subnet mask",
+            "locator": {
+              "bounds_coordinate_system": "normalized_bottom_left",
+              "bounds": [
+                0.04166666645618561,
+                0.8521739123837859,
+                0.4083333333333334,
+                0.060869566599528024
+              ],
+              "page_index_base": 1,
+              "type": "ocr_page",
+              "page": 1,
+              "image_height": 720,
+              "image_width": 1500,
+              "ocr_engine": "macOS_Vision",
+              "ocr_revision": 3,
+              "image_orientation": "exif_normalized",
+              "character_start": 0
+            },
+            "needs_review": true,
+            "recognizer_score": 1
+          },
+          {
+            "text": "IPv4 có 32 bit. Prefix/26 dành 26 bit cho network.",
+            "locator": {
+              "type": "ocr_page",
+              "image_height": 720,
+              "bounds": [
+                0.04208935545627692,
+                0.7458686821629695,
+                0.55826904296875,
+                0.05465823279486759
+              ],
+              "page_index_base": 1,
+              "image_width": 1500,
+              "page": 1,
+              "bounds_coordinate_system": "normalized_bottom_left",
+              "ocr_engine": "macOS_Vision",
+              "ocr_revision": 3,
+              "image_orientation": "exif_normalized",
+              "character_start": 0
+            },
+            "needs_review": true,
+            "recognizer_score": 1
+          },
+          {
+            "text": "Phần host còn 6 bit: 216 = 64 địa chỉ.",
+            "locator": {
+              "bounds": [
+                0.044983304514563734,
+                0.6362912019638853,
+                0.41151053873697924,
+                0.054955731497870586
+              ],
+              "type": "ocr_page",
+              "image_height": 720,
+              "page": 1,
+              "bounds_coordinate_system": "normalized_bottom_left",
+              "image_width": 1500,
+              "page_index_base": 1,
+              "ocr_engine": "macOS_Vision",
+              "ocr_revision": 3,
+              "image_orientation": "exif_normalized",
+              "character_start": 0
+            },
+            "needs_review": true,
+            "recognizer_score": 1
+          },
+          {
+            "text": "Subnet của 192.168.1.70/26 năm trong block 64 - 127.",
+            "locator": {
+              "page_index_base": 1,
+              "bounds_coordinate_system": "normalized_bottom_left",
+              "bounds": [
+                0.04351093316880656,
+                0.5219870836975282,
+                0.6194117838541666,
+                0.060984057850307916
+              ],
+              "page": 1,
+              "image_height": 720,
+              "type": "ocr_page",
+              "image_width": 1500,
+              "ocr_engine": "macOS_Vision",
+              "ocr_revision": 3,
+              "image_orientation": "exif_normalized",
+              "character_start": 0
+            },
+            "needs_review": true,
+            "recognizer_score": 1
+          },
+          {
+            "text": "Network: 192.168.1.64. Broadcast: 192.168.1.127.",
+            "locator": {
+              "image_width": 1500,
+              "image_height": 720,
+              "bounds_coordinate_system": "normalized_bottom_left",
+              "type": "ocr_page",
+              "bounds": [
+                0.041666666510903456,
+                0.40833333209481837,
+                0.575,
+                0.06123188601599794
+              ],
+              "page": 1,
+              "page_index_base": 1,
+              "ocr_engine": "macOS_Vision",
+              "ocr_revision": 3,
+              "image_orientation": "exif_normalized",
+              "character_start": 0
+            },
+            "needs_review": true,
+            "recognizer_score": 1
+          },
+          {
+            "text": "Host dùng được: 192.168.1.65 đến 192.168.1.126.",
+            "locator": {
+              "type": "ocr_page",
+              "image_width": 1500,
+              "bounds_coordinate_system": "normalized_bottom_left",
+              "page_index_base": 1,
+              "page": 1,
+              "image_height": 720,
+              "bounds": [
+                0.044989866235264006,
+                0.29855679908281474,
+                0.5727914225260416,
+                0.06087816026475701
+              ],
+              "ocr_engine": "macOS_Vision",
+              "ocr_revision": 3,
+              "image_orientation": "exif_normalized",
+              "character_start": 0
+            },
+            "needs_review": true,
+            "recognizer_score": 1
+          },
+          {
+            "text": "Số host dùng được: 64 - 2 = 62.",
+            "locator": {
+              "bounds_coordinate_system": "normalized_bottom_left",
+              "page": 1,
+              "type": "ocr_page",
+              "image_width": 1500,
+              "bounds": [
+                0.04344175894663363,
+                0.18672060405462,
+                0.35501436360677086,
+                0.062293306986490826
+              ],
+              "image_height": 720,
+              "page_index_base": 1,
+              "ocr_engine": "macOS_Vision",
+              "ocr_revision": 3,
+              "image_orientation": "exif_normalized",
+              "character_start": 0
+            },
+            "needs_review": true,
+            "recognizer_score": 1
+          }
+        ],
+        "warnings": [
+          "Trang 1 chưa có chữ trích được; có thể là scan, cần OCR.",
+          "OCR nhận dạng chữ, chưa chứng minh công thức/bảng/sơ đồ đúng. Đối chiếu ảnh và sửa bản trích trước khi tạo.",
+          "PDF: chữ/công thức/sơ đồ cần đối chiếu trang gốc; trích được chữ chưa chứng minh bố cục đúng."
+        ],
+        "edit_distance": 3,
+        "reference_characters": 307,
+        "cer": 0.0098
+      }
+    },
+    {
+      "name": "psychology.png",
+      "expected": "Tâm lý học đại cương: trí nhớ\nTrí nhớ gồm mã hóa, lưu trữ và truy hồi thông tin.\nMã hóa là biến đổi thông tin để có thể lưu trữ.\nTruy hồi là lấy lại thông tin đã được lưu.\nVí dụ: tự nhắc lại kiến thức sau khi đọc.",
+      "runs": [
+        {
+          "label": "baseline_en",
+          "elapsed_seconds": 0.172,
+          "text": "Tâm lý học đại cương: trí nhớ\nTrí nhớ gồm mã hóa, lưu trữ và truy hồi thông tin.\nMã hóa là biến đổi thông tin để có thể lưu trữ.\nTruy hồi là lấy lại thông tin đã được lưu.\nVí dụ: tự nhắc lại kiến thức sau khi đọc.",
+          "edit_distance": 0,
+          "reference_characters": 213,
+          "cer": 0.0,
+          "fragments": [
+            {
+              "recognizer_score": 1,
+              "text": "Tâm lý học đại cương: trí nhớ",
+              "locator": {
+                "image_height": 720,
+                "frame": 1,
+                "image_width": 1500,
+                "bounds": [
+                  0.04215116721644036,
+                  0.8541666666808478,
+                  0.3183139444986979,
+                  0.05833333333333335
+                ],
+                "type": "ocr_image",
+                "bounds_coordinate_system": "normalized_bottom_left"
+              }
+            },
+            {
+              "recognizer_score": 1,
+              "locator": {
+                "image_height": 720,
+                "frame": 1,
+                "bounds_coordinate_system": "normalized_bottom_left",
+                "bounds": [
+                  0.04215116507899468,
+                  0.7454545464312425,
+                  0.5392441813151042,
+                  0.057575755649142746
+                ],
+                "image_width": 1500,
+                "type": "ocr_image"
+              },
+              "text": "Trí nhớ gồm mã hóa, lưu trữ và truy hồi thông tin."
+            },
+            {
+              "text": "Mã hóa là biến đổi thông tin để có thể lưu trữ.",
+              "locator": {
+                "image_width": 1500,
+                "bounds": [
+                  0.04505813947476561,
+                  0.6333333343117129,
+                  0.5,
+                  0.05757575564914286
+                ],
+                "bounds_coordinate_system": "normalized_bottom_left",
+                "frame": 1,
+                "image_height": 720,
+                "type": "ocr_image"
+              },
+              "recognizer_score": 1
+            },
+            {
+              "locator": {
+                "bounds_coordinate_system": "normalized_bottom_left",
+                "type": "ocr_image",
+                "frame": 1,
+                "image_width": 1500,
+                "image_height": 720,
+                "bounds": [
+                  0.04215116265426176,
+                  0.5208333333604918,
+                  0.4375,
+                  0.05833333333333335
+                ]
+              },
+              "recognizer_score": 1,
+              "text": "Truy hồi là lấy lại thông tin đã được lưu."
+            },
+            {
+              "recognizer_score": 1,
+              "text": "Ví dụ: tự nhắc lại kiến thức sau khi đọc.",
+              "locator": {
+                "bounds_coordinate_system": "normalized_bottom_left",
+                "frame": 1,
+                "type": "ocr_image",
+                "image_width": 1500,
+                "bounds": [
+                  0.043471200608393816,
+                  0.4049446335129858,
+                  0.42177620442708336,
+                  0.0650531715816921
+                ],
+                "image_height": 720
+              }
+            }
+          ],
+          "warnings": [
+            "OCR nhận dạng chữ, chưa chứng minh công thức/bảng/sơ đồ đúng. Đối chiếu ảnh và sửa bản trích trước khi tạo."
+          ]
+        },
+        {
+          "label": "vi_en",
+          "elapsed_seconds": 0.161,
+          "text": "Tâm lý học đại cương: trí nhớ\nTrí nhớ gồm mã hóa, lưu trữ và truy hồi thông tin.\nMã hóa là biến đổi thông tin để có thể lưu trữ.\nTruy hồi là lấy lại thông tin đã được lưu.\nVí dụ: tự nhắc lại kiến thức sau khi đọc.",
+          "edit_distance": 0,
+          "reference_characters": 213,
+          "cer": 0.0,
+          "fragments": [
+            {
+              "recognizer_score": 1,
+              "locator": {
+                "type": "ocr_image",
+                "bounds": [
+                  0.04215116721644036,
+                  0.8541666666808478,
+                  0.3183139444986979,
+                  0.05833333333333335
+                ],
+                "bounds_coordinate_system": "normalized_bottom_left",
+                "image_height": 720,
+                "image_width": 1500,
+                "frame": 1
+              },
+              "text": "Tâm lý học đại cương: trí nhớ"
+            },
+            {
+              "locator": {
+                "frame": 1,
+                "bounds_coordinate_system": "normalized_bottom_left",
+                "type": "ocr_image",
+                "bounds": [
+                  0.04215116507899468,
+                  0.7454545464312425,
+                  0.5392441813151042,
+                  0.057575755649142746
+                ],
+                "image_height": 720,
+                "image_width": 1500
+              },
+              "recognizer_score": 1,
+              "text": "Trí nhớ gồm mã hóa, lưu trữ và truy hồi thông tin."
+            },
+            {
+              "text": "Mã hóa là biến đổi thông tin để có thể lưu trữ.",
+              "locator": {
+                "image_height": 720,
+                "bounds_coordinate_system": "normalized_bottom_left",
+                "frame": 1,
+                "bounds": [
+                  0.04505813947476561,
+                  0.6333333343117129,
+                  0.5,
+                  0.05757575564914286
+                ],
+                "image_width": 1500,
+                "type": "ocr_image"
+              },
+              "recognizer_score": 1
+            },
+            {
+              "recognizer_score": 1,
+              "text": "Truy hồi là lấy lại thông tin đã được lưu.",
+              "locator": {
+                "bounds_coordinate_system": "normalized_bottom_left",
+                "frame": 1,
+                "bounds": [
+                  0.04215116265426176,
+                  0.5208333333604918,
+                  0.4375,
+                  0.05833333333333335
+                ],
+                "image_height": 720,
+                "type": "ocr_image",
+                "image_width": 1500
+              }
+            },
+            {
+              "recognizer_score": 1,
+              "locator": {
+                "frame": 1,
+                "bounds_coordinate_system": "normalized_bottom_left",
+                "type": "ocr_image",
+                "image_height": 720,
+                "image_width": 1500,
+                "bounds": [
+                  0.043471200608393816,
+                  0.4049446335129858,
+                  0.42177620442708336,
+                  0.0650531715816921
+                ]
+              },
+              "text": "Ví dụ: tự nhắc lại kiến thức sau khi đọc."
+            }
+          ],
+          "warnings": [
+            "OCR nhận dạng chữ, chưa chứng minh công thức/bảng/sơ đồ đúng. Đối chiếu ảnh và sửa bản trích trước khi tạo."
+          ]
+        }
+      ],
+      "pdf_scan": {
+        "text": "Tâm lý học đại cương: trí nhớ\nTrí nhớ gồm mã hóa, lưu trữ và truy hồi thông tin.\nMã hóa là biến đổi thông tin để có thể lưu trữ.\nTruy hồi là lấy lại thông tin đã được lưu.\nVí dụ: tự nhắc lại kiến thức sau khi đọc.",
+        "fragments": [
+          {
+            "text": "Tâm lý học đại cương: trí nhớ",
+            "locator": {
+              "bounds_coordinate_system": "normalized_bottom_left",
+              "image_height": 720,
+              "page_index_base": 1,
+              "image_width": 1500,
+              "bounds": [
+                0.04166666645833334,
+                0.8521739123919356,
+                0.32083333333333336,
+                0.06086956659952791
+              ],
+              "page": 1,
+              "type": "ocr_page",
+              "ocr_engine": "macOS_Vision",
+              "ocr_revision": 3,
+              "image_orientation": "exif_normalized",
+              "character_start": 0
+            },
+            "needs_review": true,
+            "recognizer_score": 1
+          },
+          {
+            "text": "Trí nhớ gồm mã hóa, lưu trữ và truy hồi thông tin.",
+            "locator": {
+              "bounds": [
+                0.042151165079353105,
+                0.7454545464311806,
+                0.5392441813151041,
+                0.057575755649142746
+              ],
+              "page_index_base": 1,
+              "type": "ocr_page",
+              "page": 1,
+              "image_width": 1500,
+              "image_height": 720,
+              "bounds_coordinate_system": "normalized_bottom_left",
+              "ocr_engine": "macOS_Vision",
+              "ocr_revision": 3,
+              "image_orientation": "exif_normalized",
+              "character_start": 0
+            },
+            "needs_review": true,
+            "recognizer_score": 1
+          },
+          {
+            "text": "Mã hóa là biến đổi thông tin để có thể lưu trữ.",
+            "locator": {
+              "image_height": 720,
+              "bounds_coordinate_system": "normalized_bottom_left",
+              "bounds": [
+                0.04505813947476561,
+                0.6361111108845632,
+                0.5,
+                0.054797980520460365
+              ],
+              "page": 1,
+              "page_index_base": 1,
+              "type": "ocr_page",
+              "image_width": 1500,
+              "ocr_engine": "macOS_Vision",
+              "ocr_revision": 3,
+              "image_orientation": "exif_normalized",
+              "character_start": 0
+            },
+            "needs_review": true,
+            "recognizer_score": 1
+          },
+          {
+            "text": "Truy hồi là lấy lại thông tin đã được lưu.",
+            "locator": {
+              "bounds": [
+                0.04360465244509138,
+                0.5208333333604918,
+                0.43604650878906254,
+                0.05833333333333335
+              ],
+              "image_height": 720,
+              "type": "ocr_page",
+              "page": 1,
+              "page_index_base": 1,
+              "image_width": 1500,
+              "bounds_coordinate_system": "normalized_bottom_left",
+              "ocr_engine": "macOS_Vision",
+              "ocr_revision": 3,
+              "image_orientation": "exif_normalized",
+              "character_start": 0
+            },
+            "needs_review": true,
+            "recognizer_score": 1
+          },
+          {
+            "text": "Ví dụ: tự nhắc lại kiến thức sau khi đọc.",
+            "locator": {
+              "image_width": 1500,
+              "type": "ocr_page",
+              "page": 1,
+              "page_index_base": 1,
+              "image_height": 720,
+              "bounds_coordinate_system": "normalized_bottom_left",
+              "bounds": [
+                0.04348697148073965,
+                0.40753182402669474,
+                0.42176041666666664,
+                0.06246587700313988
+              ],
+              "ocr_engine": "macOS_Vision",
+              "ocr_revision": 3,
+              "image_orientation": "exif_normalized",
+              "character_start": 0
+            },
+            "needs_review": true,
+            "recognizer_score": 1
+          }
+        ],
+        "warnings": [
+          "Trang 1 chưa có chữ trích được; có thể là scan, cần OCR.",
+          "OCR nhận dạng chữ, chưa chứng minh công thức/bảng/sơ đồ đúng. Đối chiếu ảnh và sửa bản trích trước khi tạo.",
+          "PDF: chữ/công thức/sơ đồ cần đối chiếu trang gốc; trích được chữ chưa chứng minh bố cục đúng."
+        ],
+        "edit_distance": 0,
+        "reference_characters": 213,
+        "cer": 0.0
+      }
+    },
+    {
+      "name": "calculus.png",
+      "expected": "Vi tích phân: đạo hàm và tích phân\nf(x) = x² + 3x\nf′(x) = 2x + 3\n∫ x² dx = x³/3 + C\nGiá trị tích phân xác định cần xét hai cận.",
+      "runs": [
+        {
+          "label": "baseline_en",
+          "elapsed_seconds": 0.165,
+          "text": "Vi tích phân: đạo hàm và tích phân\nf(х)=хг+Зх\nf'(x) =2x+zś\n/х< dx=х3/3 +С\nGiá trị tích phân xác định cần xét hai cận.",
+          "edit_distance": 24,
+          "reference_characters": 127,
+          "cer": 0.189,
+          "fragments": [
+            {
+              "text": "Vi tích phân: đạo hàm và tích phân",
+              "recognizer_score": 1,
+              "locator": {
+                "image_width": 1500,
+                "bounds_coordinate_system": "normalized_bottom_left",
+                "type": "ocr_image",
+                "image_height": 720,
+                "frame": 1,
+                "bounds": [
+                  0.04360465107675084,
+                  0.8569444432559842,
+                  0.375,
+                  0.05555555555555558
+                ]
+              }
+            },
+            {
+              "locator": {
+                "type": "ocr_image",
+                "bounds": [
+                  0.04053900108439128,
+                  0.7202417887415362,
+                  0.19508902994791666,
+                  0.06893469492594395
+                ],
+                "bounds_coordinate_system": "normalized_bottom_left",
+                "image_width": 1500,
+                "frame": 1,
+                "image_height": 720
+              },
+              "text": "f(х)=хг+Зх",
+              "recognizer_score": 1
+            },
+            {
+              "text": "f'(x) =2x+zś",
+              "locator": {
+                "type": "ocr_image",
+                "bounds_coordinate_system": "normalized_bottom_left",
+                "frame": 1,
+                "bounds": [
+                  0.04031363848146301,
+                  0.6014088572287795,
+                  0.19544114176432292,
+                  0.08455278078715012
+                ],
+                "image_width": 1500,
+                "image_height": 720
+              },
+              "recognizer_score": 1
+            },
+            {
+              "recognizer_score": 0.5,
+              "locator": {
+                "image_height": 720,
+                "bounds_coordinate_system": "normalized_bottom_left",
+                "image_width": 1500,
+                "type": "ocr_image",
+                "frame": 1,
+                "bounds": [
+                  0.043604651119640264,
+                  0.49696969766506927,
+                  0.2485465087890625,
+                  0.07272727224561892
+                ]
+              },
+              "text": "/х< dx=х3/3 +С"
+            },
+            {
+              "locator": {
+                "frame": 1,
+                "type": "ocr_image",
+                "bounds": [
+                  0.04505813377889914,
+                  0.41212121165462623,
+                  0.44331396484374996,
+                  0.054545455508761886
+                ],
+                "image_height": 720,
+                "bounds_coordinate_system": "normalized_bottom_left",
+                "image_width": 1500
+              },
+              "recognizer_score": 1,
+              "text": "Giá trị tích phân xác định cần xét hai cận."
+            }
+          ],
+          "warnings": [
+            "OCR nhận dạng chữ, chưa chứng minh công thức/bảng/sơ đồ đúng. Đối chiếu ảnh và sửa bản trích trước khi tạo."
+          ]
+        },
+        {
+          "label": "vi_en",
+          "elapsed_seconds": 0.163,
+          "text": "Vi tích phân: đạo hàm và tích phân\nf(х)=хг+Зх\nf'(x) =2x+zś\n/х< dx=х3/3 +С\nGiá trị tích phân xác định cần xét hai cận.",
+          "edit_distance": 24,
+          "reference_characters": 127,
+          "cer": 0.189,
+          "fragments": [
+            {
+              "locator": {
+                "frame": 1,
+                "bounds": [
+                  0.04360465107675084,
+                  0.8569444432559842,
+                  0.375,
+                  0.05555555555555558
+                ],
+                "image_width": 1500,
+                "image_height": 720,
+                "bounds_coordinate_system": "normalized_bottom_left",
+                "type": "ocr_image"
+              },
+              "text": "Vi tích phân: đạo hàm và tích phân",
+              "recognizer_score": 1
+            },
+            {
+              "recognizer_score": 0.30000001192092896,
+              "locator": {
+                "frame": 1,
+                "image_height": 720,
+                "bounds": [
+                  0.04053900108439128,
+                  0.7202417887415362,
+                  0.19508902994791666,
+                  0.06893469492594395
+                ],
+                "image_width": 1500,
+                "type": "ocr_image",
+                "bounds_coordinate_system": "normalized_bottom_left"
+              },
+              "text": "f(х)=хг+Зх"
+            },
+            {
+              "recognizer_score": 0.30000001192092896,
+              "text": "f'(x) =2x+zś",
+              "locator": {
+                "bounds_coordinate_system": "normalized_bottom_left",
+                "image_height": 720,
+                "bounds": [
+                  0.04031363848146301,
+                  0.6014088572287795,
+                  0.19544114176432292,
+                  0.08455278078715012
+                ],
+                "frame": 1,
+                "type": "ocr_image",
+                "image_width": 1500
+              }
+            },
+            {
+              "text": "/х< dx=х3/3 +С",
+              "recognizer_score": 0.30000001192092896,
+              "locator": {
+                "image_width": 1500,
+                "type": "ocr_image",
+                "frame": 1,
+                "bounds_coordinate_system": "normalized_bottom_left",
+                "image_height": 720,
+                "bounds": [
+                  0.043604651119640264,
+                  0.49696969766506927,
+                  0.2485465087890625,
+                  0.07272727224561892
+                ]
+              }
+            },
+            {
+              "locator": {
+                "bounds": [
+                  0.04505813377889914,
+                  0.41212121165462623,
+                  0.44331396484374996,
+                  0.054545455508761886
+                ],
+                "type": "ocr_image",
+                "image_height": 720,
+                "frame": 1,
+                "image_width": 1500,
+                "bounds_coordinate_system": "normalized_bottom_left"
+              },
+              "text": "Giá trị tích phân xác định cần xét hai cận.",
+              "recognizer_score": 1
+            }
+          ],
+          "warnings": [
+            "OCR nhận dạng chữ, chưa chứng minh công thức/bảng/sơ đồ đúng. Đối chiếu ảnh và sửa bản trích trước khi tạo."
+          ]
+        }
+      ],
+      "pdf_scan": {
+        "text": "Vi tích phân: đạo hàm và tích phân\nf(х) =хг+Зх\nf'(x) = 2x + 3\n/х2 dx =х3/3 +С\nGiá trị tích phân xác định cần xét hai cận.",
+        "fragments": [
+          {
+            "text": "Vi tích phân: đạo hàm và tích phân",
+            "locator": {
+              "page": 1,
+              "bounds_coordinate_system": "normalized_bottom_left",
+              "bounds": [
+                0.04360465107675084,
+                0.8569444432559842,
+                0.375,
+                0.05555555555555558
+              ],
+              "image_width": 1500,
+              "type": "ocr_page",
+              "image_height": 720,
+              "page_index_base": 1,
+              "ocr_engine": "macOS_Vision",
+              "ocr_revision": 3,
+              "image_orientation": "exif_normalized",
+              "character_start": 0
+            },
+            "needs_review": true,
+            "recognizer_score": 1
+          },
+          {
+            "text": "f(х) =хг+Зх",
+            "locator": {
+              "bounds": [
+                0.040486241997655666,
+                0.7204260157100049,
+                0.1952168986002604,
+                0.06980812549591064
+              ],
+              "page_index_base": 1,
+              "bounds_coordinate_system": "normalized_bottom_left",
+              "image_width": 1500,
+              "type": "ocr_page",
+              "image_height": 720,
+              "page": 1,
+              "ocr_engine": "macOS_Vision",
+              "ocr_revision": 3,
+              "image_orientation": "exif_normalized",
+              "character_start": 0
+            },
+            "needs_review": true,
+            "recognizer_score": 0.30000001192092896
+          },
+          {
+            "text": "f'(x) = 2x + 3",
+            "locator": {
+              "image_width": 1500,
+              "page_index_base": 1,
+              "page": 1,
+              "image_height": 720,
+              "bounds": [
+                0.04204347111936979,
+                0.6107507481220169,
+                0.19207584635416663,
+                0.06940759552849673
+              ],
+              "type": "ocr_page",
+              "bounds_coordinate_system": "normalized_bottom_left",
+              "ocr_engine": "macOS_Vision",
+              "ocr_revision": 3,
+              "image_orientation": "exif_normalized",
+              "character_start": 0
+            },
+            "needs_review": true,
+            "recognizer_score": 0.30000001192092896
+          },
+          {
+            "text": "/х2 dx =х3/3 +С",
+            "locator": {
+              "page_index_base": 1,
+              "image_width": 1500,
+              "bounds_coordinate_system": "normalized_bottom_left",
+              "bounds": [
+                0.043604651119640264,
+                0.49696969766506927,
+                0.2485465087890625,
+                0.07272727224561892
+              ],
+              "page": 1,
+              "image_height": 720,
+              "type": "ocr_page",
+              "ocr_engine": "macOS_Vision",
+              "ocr_revision": 3,
+              "image_orientation": "exif_normalized",
+              "character_start": 0
+            },
+            "needs_review": true,
+            "recognizer_score": 0.30000001192092896
+          },
+          {
+            "text": "Giá trị tích phân xác định cần xét hai cận.",
+            "locator": {
+              "type": "ocr_page",
+              "page_index_base": 1,
+              "page": 1,
+              "image_width": 1500,
+              "bounds": [
+                0.04505813376271798,
+                0.4121212116577402,
+                0.44331396484375,
+                0.054545455508762
+              ],
+              "image_height": 720,
+              "bounds_coordinate_system": "normalized_bottom_left",
+              "ocr_engine": "macOS_Vision",
+              "ocr_revision": 3,
+              "image_orientation": "exif_normalized",
+              "character_start": 0
+            },
+            "needs_review": true,
+            "recognizer_score": 1
+          }
+        ],
+        "warnings": [
+          "Trang 1 chưa có chữ trích được; có thể là scan, cần OCR.",
+          "OCR nhận dạng chữ, chưa chứng minh công thức/bảng/sơ đồ đúng. Đối chiếu ảnh và sửa bản trích trước khi tạo.",
+          "PDF: chữ/công thức/sơ đồ cần đối chiếu trang gốc; trích được chữ chưa chứng minh bố cục đúng."
+        ],
+        "edit_distance": 18,
+        "reference_characters": 127,
+        "cer": 0.1417
+      }
+    }
+  ],
+  "two_dimensional_math": {
+    "expected_latex": "\\int_0^1 x^2\\,dx = \\frac{1}{3}",
+    "raw": {
+      "revision": 3,
+      "fragments": [
+        {
+          "locator": {
+            "image_height": 400,
+            "frame": 1,
+            "image_width": 1000,
+            "bounds": [
+              0.053563261642082124,
+              0.28592884164392596,
+              0.4948734741210937,
+              0.343142318725586
+            ],
+            "bounds_coordinate_system": "normalized_bottom_left",
+            "type": "ocr_image"
+          },
+          "recognizer_score": 0.30000001192092896,
+          "text": "Ť =xPzx"
+        }
+      ],
+      "warnings": [
+        "OCR nhận dạng chữ, chưa chứng minh công thức/bảng/sơ đồ đúng. Đối chiếu ảnh và sửa bản trích trước khi tạo."
+      ],
+      "engine": "macOS_Vision"
+    },
+    "automatically_proven_semantically_correct": false
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "purpose": "Read-only comparison of the original Huy course/source/profile rows after separate development QA and fixes.",
+  "at": "2026-10-21T00:42:52.428826+00:00",
+  "unchanged_original_tables": {
+    "courses": true,
+    "course_revisions": true,
+    "sources": true,
+    "extraction_revisions": true,
+    "wallets": true,
+    "ai_preferences": true,
+    "coin_ledger": true,
+    "study_sessions": true
+  },
+  "table_hashes": {
+    "courses": "2c70cad6e8a3f941eb1e73dacc650d99cbac0df33496be98c31c599d61036990",
+    "course_revisions": "b99e848bcc8a3b1654d5888388487dd7f53aa23e25764f53b0ca97159b0b0c2c",
+    "sources": "2a58d8a3ddcda2160d5f14ebca5c04967153f46c9187f1f258de91cc5415675b",
+    "extraction_revisions": "64d79760f5665b8e2bc6abe04cbec3177671bae97be7fee5417bd4fa95397332",
+    "wallets": "1346c3c3c25d5c0c67e2d155e17de47aab9846cb48e98148d10f8fa054218863",
+    "ai_preferences": "5bf52a2eda5cadc4e72003ee77107f91255040ad8830bccf406e7887f1fa2e96",
+    "coin_ledger": "d832de15f81eafef738261631beae9f36a649d8cf5ce94415d17e005a2f72861",
+    "study_sessions": "9ec53ef844de1c7b421a0123bf86899af83edfe2a032ff7604eed006c5749a88"
+  },
+  "pdf_original_sha256": "9037fecd5131c299809b7aa4776b782c2939b2c47c792d7ee09a5cfa6c795404"
+}

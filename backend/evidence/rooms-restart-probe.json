@@ -1,0 +1,81 @@
+{
+  "checked_at": "2026-10-16T17:56:47.580806+00:00",
+  "purpose": "Persisted room and model selection after backend restart; no AI generation call.",
+  "room_http_status": 200,
+  "room_phase": "finished",
+  "result_keys": [
+    "course_revision",
+    "end_reason",
+    "phase",
+    "policy",
+    "questions",
+    "room_id",
+    "scoreboard"
+  ],
+  "scoreboard": [
+    {
+      "member_id": "4773cace9971487f9319fae4523a9a6e",
+      "nickname": "QA 2",
+      "state": "joined",
+      "is_host": false,
+      "score": 2,
+      "answered_closed_questions": 2,
+      "connected": false,
+      "rank": 1
+    },
+    {
+      "member_id": "6ca77cc7b460446e95d95602135d715c",
+      "nickname": "QA Host",
+      "state": "joined",
+      "is_host": true,
+      "score": 2,
+      "answered_closed_questions": 2,
+      "connected": false,
+      "rank": 1
+    },
+    {
+      "member_id": "61a9ce1374234831a5d7e4a35805e269",
+      "nickname": "QA 1",
+      "state": "joined",
+      "is_host": false,
+      "score": 1,
+      "answered_closed_questions": 2,
+      "connected": false,
+      "rank": 3
+    },
+    {
+      "member_id": "f445cedbb98a4f6cbe5048dd7cf6c7de",
+      "nickname": "QA 3",
+      "state": "joined",
+      "is_host": false,
+      "score": 1,
+      "answered_closed_questions": 1,
+      "connected": false,
+      "rank": 3
+    },
+    {
+      "member_id": "80cbe551738044a5b4e160f4b870e93d",
+      "nickname": "QA 4",
+      "state": "joined",
+      "is_host": false,
+      "score": 1,
+      "answered_closed_questions": 1,
+      "connected": false,
+      "rank": 3
+    }
+  ],
+  "room_route_count": 9,
+  "status": {
+    "backend": true,
+    "ai": {
+      "provider": "gemini_api",
+      "model": "gemini-2.5-flash",
+      "ready": true,
+      "code": "ACCESS_CHECKED_QUOTA_UNVERIFIED",
+      "generation_verified": false,
+      "model_choice_id": "gemini:gemini-2.5-flash",
+      "selection_revision": 1
+    }
+  },
+  "selected_model_id": "gemini:gemini-2.5-flash"
+}

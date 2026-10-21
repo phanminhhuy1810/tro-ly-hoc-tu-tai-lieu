@@ -1,0 +1,210 @@
+{
+  "purpose": "Gemma12B MLX local backend pipeline on self-authored source; not Huy performance or held-out quality",
+  "model": "local:gemma4:12b-mlx",
+  "passed": false,
+  "confirmed_proposed_app_coin": 0,
+  "monetary_payments": 0,
+  "runs": [
+    {
+      "path": "/courses/35926bc3d4744f6ba22826db7ebdd3dd/generate",
+      "job_id": "00b6e68136cf4895a57ac18dda359b2e",
+      "events": [
+        {
+          "elapsed_seconds": 0.012,
+          "status": "running",
+          "phase": "connecting",
+          "saved_stages": 2,
+          "preview_chars": 0
+        },
+        {
+          "elapsed_seconds": 11.941,
+          "status": "failed",
+          "phase": "failed",
+          "saved_stages": 2,
+          "preview_chars": 0
+        }
+      ],
+      "status": "failed",
+      "completed_seconds": 11.941,
+      "provider": {
+        "provider": "ollama_local",
+        "model": "gemma4:12b-mlx",
+        "model_choice_id": "local:gemma4:12b-mlx",
+        "selection_revision": 1,
+        "prompt_version": "20261018-question-shape-schema-v7",
+        "schema_version": 13
+      },
+      "progress": {
+        "phase": "failed",
+        "requests": [
+          {
+            "index": 1,
+            "schema": "ClozeDraft",
+            "phase": "failed",
+            "streaming": true,
+            "started_at": "2026-10-18T09:42:37.140183+00:00",
+            "first_chunk_ms": 4398.4,
+            "first_text_ms": null,
+            "elapsed_ms": null,
+            "chunks": 221,
+            "characters": 637,
+            "usage": {},
+            "protocol_fallbacks": 1
+          }
+        ],
+        "preview": null,
+        "planned_stages": 6,
+        "saved_stages": 2,
+        "reused_stages": 2,
+        "started_at": "2026-10-18T09:42:37.137511+00:00",
+        "completed_at": "2026-10-18T09:42:49.060472+00:00",
+        "elapsed_ms": 11922.969,
+        "version": 41,
+        "updated_at": "2026-10-18T09:42:49.060509+00:00"
+      },
+      "error": {
+        "message": "AI trả cấu trúc chưa hợp lệ ở question.left: List should have at most 0 items after validation, not 1. Nguồn và phần đã lưu vẫn còn; chưa áp dụng đầu ra này. Có thể thử lại hoặc thu hẹp mục tiêu."
+      },
+      "partial": {
+        "reading": {
+          "title": "IPv4 và subnet /26",
+          "sections": [
+            {
+              "title": "Cấu trúc IPv4 và Prefix /26",
+              "text": "IPv4 có 32 bit, chia thành bốn octet (mỗi octet 8 bit). Prefix /26 nghĩa là 26 bit được dành cho network và còn lại 6 bit cho host. Một block /26 có 2^6 = 64 địa chỉ, trong đó có 62 địa chỉ host dùng được sau khi loại bỏ network và broadcast.",
+              "source_refs": [
+                "147955a9405c4edfaa7dc35216b4237f:2:0"
+              ]
+            },
+            {
+              "title": "Ví dụ thực hành với 192.168.1.70/26",
+              "text": "Với địa chỉ 192.168.1.70/26, block thuộc phạm vi 64–127. Cụ thể: Network là 192.168.1.64; Broadcast là 192.168.1.127; dải host dùng được là từ 192.168.1.65 đến 192.168.1.126.",
+              "source_refs": [
+                "147955a9405c4edfaa7dc35216b4237f:2:0"
+              ]
+            },
+            {
+              "title": "Quy trình 5 bước xác định Subnet",
+              "text": "Để xác định subnet, thực hiện 5 bước: 1. Đọc prefix và tính số bit host. 2. Tính kích thước block. 3. Xác định block chứa octet cuối. 4. Lấy đầu block làm network và cuối block làm broadcast. 5. Loại hai biên để lấy dải host dùng được.",
+              "source_refs": [
+                "147955a9405c4edfaa7dc35216b4237f:2:1",
+                "147955a9405c4edfaa7dc35216b4237f:2:2",
+                "147955a9405c4edfaa7dc35216b4237f:2:3",
+                "147955a9405c4edfaa7dc35216b4237f:2:4",
+                "147955a9405c4edfaa7dc35216b4237f:2:5"
+              ]
+            }
+          ],
+          "cards": [
+            {
+              "front": "Một block /26 có bao nhiêu địa chỉ và bao nhiêu địa chỉ host dùng được?",
+              "back": "Một block /26 có 2^6 = 64 địa chỉ, gồm 62 địa chỉ host dùng được sau khi bỏ network và broadcast.",
+              "source_refs": [
+                "147955a9405c4edfaa7dc35216b4237f:2:0"
+              ]
+            },
+            {
+              "front": "Nêu quy trình 5 bước để xác định subnet.",
+              "back": "1. Đọc prefix và tính số bit host. 2. Tính kích thước block. 3. Xác định block chứa octet cuối. 4. Lấy đầu block làm network và cuối block làm broadcast. 5. Loại hai biên để lấy dải host dùng được.",
+              "source_refs": [
+                "147955a9405c4edfaa7dc35216b4237f:2:1",
+                "147955a9405c4edfaa7dc35216b4237f:2:2",
+                "147955a9405c4edfaa7dc35216b4237f:2:3",
+                "147955a9405c4edfaa7dc35216b4237f:2:4",
+                "147955a9405c4edfaa7dc35216b4237f:2:5"
+              ]
+            }
+          ],
+          "mindmap": [
+            {
+              "title": "Cấu trúc IPv4 /26",
+              "text": "32 bit (4 octet), 26 bit network, 6 bit host.",
+              "source_refs": [
+                "147955a9405c4edfaa7dc35216b4237f:2:0"
+              ]
+            },
+            {
+              "title": "Tính toán Block",
+              "text": "64 địa chỉ/block, 62 địa chỉ host.",
+              "source_refs": [
+                "147955a9405c4edfaa7dc35216b4237f:2:0"
+              ]
+            },
+            {
+              "title": "Quy trình Subnet",
+              "text": "Đọc prefix -> Tính block -> Xác định block chứa -> Lấy Network/Broadcast -> Lấy dải Host.",
+              "source_refs": [
+                "147955a9405c4edfaa7dc35216b4237f:2:1",
+                "147955a9405c4edfaa7dc35216b4237f:2:2",
+                "147955a9405c4edfaa7dc35216b4237f:2:3",
+                "147955a9405c4edfaa7dc35216b4237f:2:4",
+                "147955a9405c4edfaa7dc35216b4237f:2:5"
+              ]
+            }
+          ]
+        },
+        "questions": {
+          "mcq": {
+            "reason": "",
+            "question": {
+              "kind": "mcq",
+              "prompt": "Trong cấu trúc địa chỉ IPv4 với prefix /26, số lượng địa chỉ host dùng được trong một block là bao nhiêu?",
+              "options": [
+                "64 địa chỉ",
+                "62 địa chỉ",
+                "32 địa chỉ"
+              ],
+              "left": [],
+              "answer": "62 địa chỉ",
+              "explanation": "Một block /26 có 2^6 = 64 địa chỉ, nhưng sau khi loại bỏ địa chỉ network và broadcast, còn lại 62 địa chỉ host dùng được.",
+              "source_refs": [
+                "147955a9405c4edfaa7dc35216b4237f:2:0"
+              ],
+              "rubric": [
+                "62 địa chỉ là đáp án đúng vì sau khi bỏ network và broadcast từ tổng số 64 địa chỉ của block /26."
+              ]
+            }
+          }
+        },
+        "stage_providers": {
+          "reading": {
+            "provider": "ollama_local",
+            "model": "gemma4:12b-mlx",
+            "model_choice_id": "local:gemma4:12b-mlx",
+            "selection_revision": 1,
+            "prompt_version": "20261017-unit-source-server-metadata-v6",
+            "schema_version": 13
+          },
+          "mcq": {
+            "provider": "ollama_local",
+            "model": "gemma4:12b-mlx",
+            "model_choice_id": "local:gemma4:12b-mlx",
+            "selection_revision": 1,
+            "prompt_version": "20261017-unit-source-server-metadata-v6",
+            "schema_version": 13
+          }
+        }
+      }
+    }
+  ],
+  "errors": [
+    {
+      "type": "RuntimeError",
+      "message": "Generation failed; partial stages retained, no automatic semantic retry."
+    }
+  ],
+  "source_id": "147955a9405c4edfaa7dc35216b4237f",
+  "source_revision": 2,
+  "course_id": "35926bc3d4744f6ba22826db7ebdd3dd",
+  "global_default_before": "kaggle:qwen3.8:27b",
+  "selection": {
+    "model_id": "local:gemma4:12b-mlx",
+    "revision": 1,
+    "provider": "ollama_local",
+    "model": "gemma4:12b-mlx",
+    "external": false
+  },
+  "resumed_from": "55825c81fdce47f1a3483600d6fcc41e",
+  "recovery_mode": "reuse_valid_reading",
+  "recovery_reason": "Generation schema now expresses existing per-kind constraints; preserve reading/MCQ and try missing stages once."
+}

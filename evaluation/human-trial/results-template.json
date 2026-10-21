@@ -1,0 +1,25 @@
+{
+  "kind": "blank_template_not_observed_results",
+  "participant_id": null,
+  "date": null,
+  "production_sha256": null,
+  "browser_profile_separate": null,
+  "qa_owner_id": null,
+  "source_id": null,
+  "course_id": null,
+  "session_ids": [],
+  "observer_id": null,
+  "tasks": [
+    {"id": "A1", "started_at": null, "finished_at": null, "outcome": null, "help_given": null, "observations": null},
+    {"id": "A2", "started_at": null, "finished_at": null, "outcome": null, "help_given": null, "observations": null},
+    {"id": "A3", "started_at": null, "finished_at": null, "outcome": null, "help_given": null, "observations": null},
+    {"id": "A4", "started_at": null, "finished_at": null, "outcome": null, "help_given": null, "observations": null},
+    {"id": "A5", "started_at": null, "finished_at": null, "outcome": null, "help_given": null, "observations": null},
+    {"id": "A6", "started_at": null, "finished_at": null, "outcome": null, "help_given": null, "observations": null},
+    {"id": "A7", "started_at": null, "finished_at": null, "outcome": null, "help_given": null, "observations": null},
+    {"id": "A8", "started_at": null, "finished_at": null, "outcome": null, "help_given": null, "observations": null},
+    {"id": "A9", "started_at": null, "finished_at": null, "outcome": null, "help_given": null, "observations": null}
+  ],
+  "content_review": {"reviewer_id": null, "independent_of_code_author": null, "questions": [], "unresolved": []},
+  "feedback": {"hardest_step": null, "suspect_content": null, "missing_action": null, "ease_1_to_5": null, "ease_reason": null, "would_use_again": null, "reason": null}
+}

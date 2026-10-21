@@ -1,0 +1,13 @@
+{
+  "purpose": "Local package consistency and exact known-secret scan; no provider call or credentials printed",
+  "manifest_files": 484,
+  "private_files_checked": 15,
+  "private_permissions_600": true,
+  "known_secret_match_files": [],
+  "internal_markdown_missing_targets": [],
+  "academic_original_sha256": "10477b780feb504d649ad458cc381ed05eca4f47bc162ea4a8fb6eeb70c3a66e",
+  "academic_original_unchanged": true,
+  "runtime_excluded": true,
+  "external_zip_unchanged": true,
+  "all_passed": true
+}

@@ -1,0 +1,129 @@
+{
+  "verified_at": "2026-10-15T10:49:04.744806+00:00",
+  "scope": "Real HTTP and local Qwen, script-owned self-authored dev source; not a broad quality or human trial",
+  "source_sha256": "b6cbd90b10646a62b136fe7f3d0423bfb2692307e7d37142c6f92e112264c1ed",
+  "checks": {
+    "explanation_cached_without_second_charge": true,
+    "saved_note_has_server_text_sources_and_ai_label": true,
+    "save_note_idempotent": true,
+    "only_section_sources_in_reply": true
+  },
+  "quote_amount": 1,
+  "job_id": "bc09c971338d4c639fda841f92b272ef",
+  "job": {
+    "id": "bc09c971338d4c639fda841f92b272ef",
+    "status": "succeeded",
+    "attempts": 1,
+    "provider": {
+      "provider": "ollama_local",
+      "model": "qwen3.5:9b",
+      "prompt_version": "20261015-pinned-inline-help-v2",
+      "schema_version": 11
+    },
+    "result": {
+      "text": "The pinned context introduces the topic of IPv4 and subnet masks within computer networking. It states that IPv4 is a network protocol that uses 32-bit addresses to identify devices on a network.",
+      "source_refs": [
+        "89035cb15fb34bc1b6c5b4e7cae3f82e:2:0"
+      ],
+      "needs_more_source": false,
+      "thread_id": "d661981f6be043cc9742022ec69fcad7",
+      "message_id": "e4252b42bb6f4fd4a4de164b2964b43c"
+    },
+    "partial": {},
+    "feedback_deferred": false,
+    "error": null
+  },
+  "course_id": "0b3c505ebc194963b04cc66a8c2644b6",
+  "revision": 8,
+  "thread_id": "d661981f6be043cc9742022ec69fcad7",
+  "context": {
+    "kind": "section",
+    "unit_id": "unit-1",
+    "unit_title": "Cấu trúc cơ bản của IPv4 và Subnet mask",
+    "section_index": 0,
+    "section": {
+      "source_refs": [
+        "89035cb15fb34bc1b6c5b4e7cae3f82e:2:0"
+      ],
+      "text": "IPv4 là giao thức mạng sử dụng địa chỉ 32 bit để xác định thiết bị trên mạng.",
+      "title": "Giới thiệu về IPv4"
+    }
+  },
+  "source_excerpts": [
+    {
+      "id": "89035cb15fb34bc1b6c5b4e7cae3f82e:2:0",
+      "locator": {
+        "bounds": [
+          0.04166666633736558,
+          0.8521739124014983,
+          0.4083333333333333,
+          0.06086956659952791
+        ],
+        "bounds_coordinate_system": "normalized_bottom_left",
+        "frame": 1,
+        "image_height": 720,
+        "image_orientation": "exif_normalized",
+        "image_width": 1500,
+        "ocr_engine": "macOS_Vision",
+        "ocr_revision": 3,
+        "type": "ocr_image"
+      },
+      "text": "Mạng máy tính: IPv4 và subnet mask"
+    }
+  ],
+  "messages": [
+    {
+      "id": "e7f8061491f44fdfaf1287897f82b185",
+      "role": "user",
+      "action": "explain",
+      "content": {
+        "student": null,
+        "text": "Giải thích đúng phần đang chọn theo nguồn."
+      },
+      "created_at": "2026-10-15T10:49:04.798717+00:00"
+    },
+    {
+      "id": "e4252b42bb6f4fd4a4de164b2964b43c",
+      "role": "assistant",
+      "action": "explain",
+      "content": {
+        "ai_generated": true,
+        "needs_more_source": false,
+        "source_refs": [
+          "89035cb15fb34bc1b6c5b4e7cae3f82e:2:0"
+        ],
+        "text": "The pinned context introduces the topic of IPv4 and subnet masks within computer networking. It states that IPv4 is a network protocol that uses 32-bit addresses to identify devices on a network."
+      },
+      "created_at": "2026-10-15T10:49:11.476156+00:00"
+    }
+  ],
+  "note": {
+    "id": "9e10457b8c9e436883068895bcb208e2",
+    "body": "Giới thiệu về IPv4\n\nThe pinned context introduces the topic of IPv4 and subnet masks within computer networking. It states that IPv4 is a network protocol that uses 32-bit addresses to identify devices on a network.\n\n[Lời trợ giúp tham khảo; cần đối chiếu nguồn.]",
+    "label": "ai",
+    "source_refs": [
+      "89035cb15fb34bc1b6c5b4e7cae3f82e:2:0"
+    ],
+    "version": 1,
+    "updated_at": "2026-10-15T10:49:13.028377+00:00"
+  },
+  "wallet_before": {
+    "balance": 25,
+    "held": 0,
+    "available": 25,
+    "policy_version": "dev-proposal-20261015-v2",
+    "policy_proposed": true,
+    "cash_payments": false,
+    "enforcement_enabled": true
+  },
+  "wallet_after": {
+    "balance": 24,
+    "held": 0,
+    "available": 24,
+    "policy_version": "dev-proposal-20261015-v2",
+    "policy_proposed": true,
+    "cash_payments": false,
+    "enforcement_enabled": true
+  },
+  "passed": true
+}

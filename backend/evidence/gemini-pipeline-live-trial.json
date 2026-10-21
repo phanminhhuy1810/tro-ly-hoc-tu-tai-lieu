@@ -1,0 +1,547 @@
+{
+  "kind": "HTTP Gemini pipeline on real uploaded PDF; automated development QA, not human source review or benchmark",
+  "started_at": "2026-10-16T16:52:55.389990+00:00",
+  "stages": [
+    {
+      "stage": "catalog",
+      "models": [
+        {
+          "provider": "ollama_local",
+          "model": "qwen3.5:9b",
+          "ready": true,
+          "id": "local:qwen3.5:9b",
+          "label": "qwen3.5:9b · máy này",
+          "external": false,
+          "configured": true,
+          "enabled": true,
+          "selectable": true,
+          "capabilities": {
+            "text": true,
+            "image_review_adapter": true
+          },
+          "data_destination": "this_machine"
+        },
+        {
+          "provider": "ollama_kaggle",
+          "model": "qwen3.8:27b",
+          "deployment": "30d9e57bb7bcc7da",
+          "ready": false,
+          "id": "kaggle:qwen3.8:27b",
+          "label": "qwen3.8:27b · Kaggle",
+          "external": true,
+          "configured": true,
+          "enabled": true,
+          "selectable": false,
+          "capabilities": {
+            "text": true,
+            "image_review_adapter": true
+          },
+          "data_destination": "external_provider"
+        },
+        {
+          "provider": "gemini_api",
+          "model": "gemini-2.5-flash",
+          "ready": true,
+          "code": "ACCESS_CHECKED_QUOTA_UNVERIFIED",
+          "generation_verified": false,
+          "id": "gemini:gemini-2.5-flash",
+          "label": "gemini-2.5-flash · Gemini API",
+          "external": true,
+          "configured": true,
+          "enabled": true,
+          "selectable": true,
+          "capabilities": {
+            "text": true,
+            "image_review_adapter": true
+          },
+          "data_destination": "external_provider"
+        }
+      ]
+    },
+    {
+      "stage": "source_uploaded",
+      "source_id": "e83e396d6d0047a78d9acd06c6a3dfb4",
+      "metadata": {
+        "name": "CTT105-2-IP&subnetting_2.0.pdf",
+        "sha256": "9037fecd5131c299809b7aa4776b782c2939b2c47c792d7ee09a5cfa6c795404",
+        "bytes": 4228547,
+        "warnings": [
+          "PDF: chữ/công thức/sơ đồ cần đối chiếu trang gốc; trích được chữ chưa chứng minh bố cục đúng."
+        ],
+        "subject_suggestion": ""
+      },
+      "fragment_count": 33,
+      "selected_fragments": [
+        {
+          "text": "ĐịachỉIPv4\nqKíchthước: 4 bytes (32 bits)\nqĐịnhdạng:\n§Mỗibyte đượcbiểudiễnbằngsốthậpphân, gọilàmộtoctet \n§haioctet đượcviếtcáchnhaubằng1 dấuchấm“.”\nVD:\nà172.29.1.10\nqChiathành2 phần:\n§Network ID (NetID)\n§Host ID\n32 bit\n10101100 00011101 00000001 00001010\n8Khoa Công nghệ thông tin -Đại học Khoa học tự nhiên TP Hồ Chí Minh",
+          "locator": {
+            "type": "page",
+            "page": 8,
+            "page_index_base": 1,
+            "character_start": 0
+          },
+          "id": "e83e396d6d0047a78d9acd06c6a3dfb4:1:7",
+          "original_text": "ĐịachỉIPv4\nqKíchthước: 4 bytes (32 bits)\nqĐịnhdạng:\n§Mỗibyte đượcbiểudiễnbằngsốthậpphân, gọilàmộtoctet \n§haioctet đượcviếtcáchnhaubằng1 dấuchấm“.”\nVD:\nà172.29.1.10\nqChiathành2 phần:\n§Network ID (NetID)\n§Host ID\n32 bit\n10101100 00011101 00000001 00001010\n8Khoa Công nghệ thông tin -Đại học Khoa học tự nhiên TP Hồ Chí Minh"
+        },
+        {
+          "text": "ĐịachỉIP Classless\nqSubnet mask\n§DùngphânđịnhphầnNetIDvàHostIDtrongđịachỉIPv4\n§kíchthước4 bytes\n•cácbit thuộcNetIDcógiátrịlà1\n•cácbit thuộcHostIDcógiátrịlà0 \n§VD: 172.29.5.128/255.255.192.0\n(hoặc172.29.5.128/18)\nHostIP 1010 11000001 11010000 0101 1000 0000\nSubnetMask1111  11111111  11111100 0000 0000 0000\nHostIP 1010 11000001 11010000 0101 1000 0000\nSubnetMask1111  11111111  11111100 0000 0000 0000\nHostIP 1010 11000001 11010000 0101 1000 0000\nSubnetMask1111  11111111  11111100 0000 0000 0000\nHostIP 1010 11000001 11010000 0101 1000 0000\nSubnetMask1111  11111111  11111100 0000 0000 0000\n23Khoa Công nghệ thông tin -Đại học Khoa học tự nhiên TP Hồ Chí Minh",
+          "locator": {
+            "type": "page",
+            "page": 23,
+            "page_index_base": 1,
+            "character_start": 0
+          },
+          "id": "e83e396d6d0047a78d9acd06c6a3dfb4:1:22",
+          "original_text": "ĐịachỉIP Classless\nqSubnet mask\n§DùngphânđịnhphầnNetIDvàHostIDtrongđịachỉIPv4\n§kíchthước4 bytes\n•cácbit thuộcNetIDcógiátrịlà1\n•cácbit thuộcHostIDcógiátrịlà0 \n§VD: 172.29.5.128/255.255.192.0\n(hoặc172.29.5.128/18)\nHostIP 1010 11000001 11010000 0101 1000 0000\nSubnetMask1111  11111111  11111100 0000 0000 0000\nHostIP 1010 11000001 11010000 0101 1000 0000\nSubnetMask1111  11111111  11111100 0000 0000 0000\nHostIP 1010 11000001 11010000 0101 1000 0000\nSubnetMask1111  11111111  11111100 0000 0000 0000\nHostIP 1010 11000001 11010000 0101 1000 0000\nSubnetMask1111  11111111  11111100 0000 0000 0000\n23Khoa Công nghệ thông tin -Đại học Khoa học tự nhiên TP Hồ Chí Minh"
+        }
+      ],
+      "review_scope_note": "Only selected pages 8 and 23 compared for this automated test. Whole-document extraction/OCR quality not certified; page24 table issue remains."
+    },
+    {
+      "stage": "outline",
+      "id": "9bf7b0848e1f47a98864e3203565a1f4",
+      "status": "succeeded",
+      "attempts": 1,
+      "provider": {
+        "provider": "gemini_api",
+        "model": "gemini-2.5-flash",
+        "model_choice_id": "gemini:gemini-2.5-flash",
+        "selection_revision": 1,
+        "prompt_version": "20261015-confirmed-preferences-v2",
+        "schema_version": 12
+      },
+      "result": {
+        "plan_id": "f2bde53b785c403185e3940125f11849"
+      },
+      "partial": {},
+      "feedback_deferred": false,
+      "error": null,
+      "elapsed_seconds": 2.292
+    },
+    {
+      "stage": "reading_and_mcq",
+      "id": "952ac8def0054766831e17300f276bef",
+      "status": "succeeded",
+      "attempts": 1,
+      "provider": {
+        "provider": "gemini_api",
+        "model": "gemini-2.5-flash",
+        "model_choice_id": "gemini:gemini-2.5-flash",
+        "selection_revision": 1,
+        "prompt_version": "20261015-unit-objective-ordering-v5",
+        "schema_version": 12
+      },
+      "result": {
+        "course_id": "4c95b91853c6483098605d90f856a23e",
+        "revision": 2
+      },
+      "partial": {
+        "reading": {
+          "title": "Cấu trúc địa chỉ IPv4",
+          "sections": [
+            {
+              "title": "Kích thước và định dạng địa chỉ IPv4",
+              "text": "Địa chỉ IPv4 có kích thước 4 bytes, tương đương 32 bits. Mỗi byte được biểu diễn bằng một số thập phân, gọi là một octet. Các octet được viết cách nhau bằng một dấu chấm “.”. Ví dụ: 172.29.1.10 là một địa chỉ IPv4.",
+              "source_refs": [
+                "e83e396d6d0047a78d9acd06c6a3dfb4:2:7"
+              ]
+            },
+            {
+              "title": "Cấu tạo địa chỉ IPv4",
+              "text": "Địa chỉ IPv4 được chia thành hai phần chính: Network ID (NetID) và Host ID. NetID xác định mạng mà thiết bị thuộc về, trong khi Host ID xác định thiết bị cụ thể trong mạng đó. Cả hai phần này cùng nhau tạo nên địa chỉ 32 bit duy nhất cho mỗi thiết bị trên mạng.",
+              "source_refs": [
+                "e83e396d6d0047a78d9acd06c6a3dfb4:2:7"
+              ]
+            },
+            {
+              "title": "Ví dụ về cấu trúc 32 bit",
+              "text": "Một địa chỉ IPv4 32 bit có thể được biểu diễn dưới dạng nhị phân, ví dụ: 10101100 00011101 00000001 00001010. Mỗi nhóm 8 bit (octet) tương ứng với một số thập phân trong định dạng chấm thập phân. Ví dụ trên tương ứng với địa chỉ 172.29.1.10.",
+              "source_refs": [
+                "e83e396d6d0047a78d9acd06c6a3dfb4:2:7"
+              ]
+            }
+          ],
+          "cards": [
+            {
+              "front": "Địa chỉ IPv4 có kích thước bao nhiêu và được chia thành mấy phần?",
+              "back": "Địa chỉ IPv4 có kích thước 32 bits (4 bytes) và được chia thành hai phần: Network ID (NetID) và Host ID.",
+              "source_refs": [
+                "e83e396d6d0047a78d9acd06c6a3dfb4:2:7"
+              ]
+            }
+          ],
+          "mindmap": [
+            {
+              "title": "Kích thước IPv4",
+              "text": "Địa chỉ IPv4 có kích thước 32 bits, tương đương 4 bytes.",
+              "source_refs": [
+                "e83e396d6d0047a78d9acd06c6a3dfb4:2:7"
+              ]
+            },
+            {
+              "title": "Định dạng IPv4",
+              "text": "Mỗi byte được gọi là một octet, biểu diễn bằng số thập phân và cách nhau bởi dấu chấm. Ví dụ: 172.29.1.10.",
+              "source_refs": [
+                "e83e396d6d0047a78d9acd06c6a3dfb4:2:7"
+              ]
+            },
+            {
+              "title": "Thành phần IPv4",
+              "text": "Địa chỉ IPv4 được chia thành hai phần chính: Network ID (NetID) và Host ID.",
+              "source_refs": [
+                "e83e396d6d0047a78d9acd06c6a3dfb4:2:7"
+              ]
+            }
+          ]
+        },
+        "questions": {
+          "mcq": {
+            "reason": "",
+            "question": {
+              "kind": "mcq",
+              "prompt": "Địa chỉ IPv4 có kích thước bao nhiêu và được chia thành mấy phần chính?",
+              "options": [
+                "32 bits, chia thành 2 phần: Network ID và Host ID",
+                "4 bytes, chia thành 3 phần: Network ID, Subnet ID và Host ID",
+                "32 bits, chia thành 4 octet",
+                "4 bytes, chia thành 2 phần: Network ID và Host ID"
+              ],
+              "left": [],
+              "answer": "32 bits, chia thành 2 phần: Network ID và Host ID",
+              "explanation": "Địa chỉ IPv4 có kích thước 32 bit (tương đương 4 bytes) và được chia thành hai phần chính là Network ID (NetID) và Host ID. Mỗi byte được biểu diễn bằng số thập phân và gọi là một octet.",
+              "source_refs": [
+                "e83e396d6d0047a78d9acd06c6a3dfb4:2:7"
+              ],
+              "rubric": [],
+              "difficulty": null,
+              "difficulty_basis": null
+            }
+          }
+        },
+        "stage_providers": {
+          "reading": {
+            "provider": "gemini_api",
+            "model": "gemini-2.5-flash",
+            "model_choice_id": "gemini:gemini-2.5-flash",
+            "selection_revision": 1,
+            "prompt_version": "20261015-unit-objective-ordering-v5",
+            "schema_version": 12
+          },
+          "mcq": {
+            "provider": "gemini_api",
+            "model": "gemini-2.5-flash",
+            "model_choice_id": "gemini:gemini-2.5-flash",
+            "selection_revision": 1,
+            "prompt_version": "20261015-unit-objective-ordering-v5",
+            "schema_version": 12
+          }
+        }
+      },
+      "feedback_deferred": false,
+      "error": null,
+      "elapsed_seconds": 7.629
+    },
+    {
+      "stage": "fixed_grading_and_completion",
+      "status": "succeeded",
+      "grade": {
+        "correct": true,
+        "reference": "32 bits, chia thành 2 phần: Network ID và Host ID",
+        "explanation": "Địa chỉ IPv4 có kích thước 32 bit (tương đương 4 bytes) và được chia thành hai phần chính là Network ID (NetID) và Host ID. Mỗi byte được biểu diễn bằng số thập phân và gọi là một octet.",
+        "rubric": [],
+        "source_refs": [
+          "e83e396d6d0047a78d9acd06c6a3dfb4:2:7"
+        ],
+        "grading": "fixed"
+      },
+      "result": {
+        "score": 1,
+        "fixed_total": 1,
+        "self_review_count": 0,
+        "course_revision": 2,
+        "session_id": "9812d8e97e504dedae3f4b8f6cfd2739",
+        "assisted_count": 0,
+        "assessment": "self_study_not_proctored",
+        "rewards": [
+          {
+            "amount": 1,
+            "requested": 1,
+            "capped": false,
+            "replayed": false,
+            "event_key": "practice:2026-10-16:4c95b91853c6483098605d90f856a23e:b7f4ecc30d8bb7d6c73c35f3020b9b437a119688ba04e3a89eabd29da7a937f8",
+            "policy_version": "dev-proposal-20261015-v2"
+          },
+          {
+            "amount": 1,
+            "requested": 1,
+            "capped": false,
+            "replayed": false,
+            "event_key": "mission:practice:2026-10-16",
+            "policy_version": "dev-proposal-20261015-v2"
+          },
+          {
+            "amount": 2,
+            "requested": 2,
+            "capped": false,
+            "replayed": false,
+            "event_key": "achievement:first_session",
+            "policy_version": "dev-proposal-20261015-v2"
+          }
+        ]
+      },
+      "method": "program grades generated fixed key; not an independent content accuracy score"
+    }
+  ],
+  "course_id": "4c95b91853c6483098605d90f856a23e",
+  "generated_unit": {
+    "title": "Cấu trúc địa chỉ IPv4",
+    "objective": "Hiểu địa chỉ IPv4 có kích thước 32 bit, được chia thành 4 byte (octet) và cấu tạo từ hai phần: Network ID (NetID) và Host ID.",
+    "source_refs": [
+      "e83e396d6d0047a78d9acd06c6a3dfb4:2:7"
+    ],
+    "id": "unit-1",
+    "data": {
+      "title": "Cấu trúc địa chỉ IPv4",
+      "sections": [
+        {
+          "title": "Kích thước và định dạng địa chỉ IPv4",
+          "text": "Địa chỉ IPv4 có kích thước 4 bytes, tương đương 32 bits. Mỗi byte được biểu diễn bằng một số thập phân, gọi là một octet. Các octet được viết cách nhau bằng một dấu chấm “.”. Ví dụ: 172.29.1.10 là một địa chỉ IPv4.",
+          "source_refs": [
+            "e83e396d6d0047a78d9acd06c6a3dfb4:2:7"
+          ]
+        },
+        {
+          "title": "Cấu tạo địa chỉ IPv4",
+          "text": "Địa chỉ IPv4 được chia thành hai phần chính: Network ID (NetID) và Host ID. NetID xác định mạng mà thiết bị thuộc về, trong khi Host ID xác định thiết bị cụ thể trong mạng đó. Cả hai phần này cùng nhau tạo nên địa chỉ 32 bit duy nhất cho mỗi thiết bị trên mạng.",
+          "source_refs": [
+            "e83e396d6d0047a78d9acd06c6a3dfb4:2:7"
+          ]
+        },
+        {
+          "title": "Ví dụ về cấu trúc 32 bit",
+          "text": "Một địa chỉ IPv4 32 bit có thể được biểu diễn dưới dạng nhị phân, ví dụ: 10101100 00011101 00000001 00001010. Mỗi nhóm 8 bit (octet) tương ứng với một số thập phân trong định dạng chấm thập phân. Ví dụ trên tương ứng với địa chỉ 172.29.1.10.",
+          "source_refs": [
+            "e83e396d6d0047a78d9acd06c6a3dfb4:2:7"
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "kind": "mcq",
+          "prompt": "Địa chỉ IPv4 có kích thước bao nhiêu và được chia thành mấy phần chính?",
+          "options": [
+            "32 bits, chia thành 2 phần: Network ID và Host ID",
+            "4 bytes, chia thành 3 phần: Network ID, Subnet ID và Host ID",
+            "32 bits, chia thành 4 octet",
+            "4 bytes, chia thành 2 phần: Network ID và Host ID"
+          ],
+          "left": [],
+          "answer": "32 bits, chia thành 2 phần: Network ID và Host ID",
+          "explanation": "Địa chỉ IPv4 có kích thước 32 bit (tương đương 4 bytes) và được chia thành hai phần chính là Network ID (NetID) và Host ID. Mỗi byte được biểu diễn bằng số thập phân và gọi là một octet.",
+          "source_refs": [
+            "e83e396d6d0047a78d9acd06c6a3dfb4:2:7"
+          ],
+          "rubric": [],
+          "difficulty": null,
+          "difficulty_basis": null
+        }
+      ],
+      "cards": [
+        {
+          "front": "Địa chỉ IPv4 có kích thước bao nhiêu và được chia thành mấy phần?",
+          "back": "Địa chỉ IPv4 có kích thước 32 bits (4 bytes) và được chia thành hai phần: Network ID (NetID) và Host ID.",
+          "source_refs": [
+            "e83e396d6d0047a78d9acd06c6a3dfb4:2:7"
+          ]
+        }
+      ],
+      "mindmap": [
+        {
+          "title": "Kích thước IPv4",
+          "text": "Địa chỉ IPv4 có kích thước 32 bits, tương đương 4 bytes.",
+          "source_refs": [
+            "e83e396d6d0047a78d9acd06c6a3dfb4:2:7"
+          ]
+        },
+        {
+          "title": "Định dạng IPv4",
+          "text": "Mỗi byte được gọi là một octet, biểu diễn bằng số thập phân và cách nhau bởi dấu chấm. Ví dụ: 172.29.1.10.",
+          "source_refs": [
+            "e83e396d6d0047a78d9acd06c6a3dfb4:2:7"
+          ]
+        },
+        {
+          "title": "Thành phần IPv4",
+          "text": "Địa chỉ IPv4 được chia thành hai phần chính: Network ID (NetID) và Host ID.",
+          "source_refs": [
+            "e83e396d6d0047a78d9acd06c6a3dfb4:2:7"
+          ]
+        }
+      ]
+    },
+    "completed": false,
+    "unlocked": true,
+    "generation": {
+      "job_id": "952ac8def0054766831e17300f276bef",
+      "provider": {
+        "provider": "gemini_api",
+        "model": "gemini-2.5-flash",
+        "model_choice_id": "gemini:gemini-2.5-flash",
+        "selection_revision": 1,
+        "prompt_version": "20261015-unit-objective-ordering-v5",
+        "schema_version": 12
+      },
+      "extraction_revision": 2,
+      "source_refs": [
+        "e83e396d6d0047a78d9acd06c6a3dfb4:2:7"
+      ],
+      "content_language": "vi",
+      "generated_at": "2026-10-16T16:53:05.759081+00:00",
+      "stage_providers": {
+        "reading": {
+          "provider": "gemini_api",
+          "model": "gemini-2.5-flash",
+          "model_choice_id": "gemini:gemini-2.5-flash",
+          "selection_revision": 1,
+          "prompt_version": "20261015-unit-objective-ordering-v5",
+          "schema_version": 12
+        },
+        "mcq": {
+          "provider": "gemini_api",
+          "model": "gemini-2.5-flash",
+          "model_choice_id": "gemini:gemini-2.5-flash",
+          "selection_revision": 1,
+          "prompt_version": "20261015-unit-objective-ordering-v5",
+          "schema_version": 12
+        }
+      },
+      "resumed_from_job_id": null
+    }
+  },
+  "status": "completed_with_content_error_found_and_manual_repair",
+  "finished_at": "2026-10-16T16:53:06.261910+00:00",
+  "http_pipeline_status_before_review": "succeeded",
+  "content_review": {
+    "status": "ambiguous_mcq_detected",
+    "original_question": {
+      "kind": "mcq",
+      "prompt": "Địa chỉ IPv4 có kích thước bao nhiêu và được chia thành mấy phần chính?",
+      "options": [
+        "32 bits, chia thành 2 phần: Network ID và Host ID",
+        "4 bytes, chia thành 3 phần: Network ID, Subnet ID và Host ID",
+        "32 bits, chia thành 4 octet",
+        "4 bytes, chia thành 2 phần: Network ID và Host ID"
+      ],
+      "left": [],
+      "answer": "32 bits, chia thành 2 phần: Network ID và Host ID",
+      "explanation": "Địa chỉ IPv4 có kích thước 32 bit (tương đương 4 bytes) và được chia thành hai phần chính là Network ID (NetID) và Host ID. Mỗi byte được biểu diễn bằng số thập phân và gọi là một octet.",
+      "source_refs": [
+        "e83e396d6d0047a78d9acd06c6a3dfb4:2:7"
+      ],
+      "rubric": [],
+      "difficulty": null,
+      "difficulty_basis": null
+    },
+    "issue": "Options 0 and 3 are both true: 32 bits equals 4 bytes. Fixed-key grading success does not certify AI correctness.",
+    "automated_guard": "Conservative bit/byte equivalence and case/spacing check; not a general semantic proof."
+  },
+  "manual_repair_trial": {
+    "checked_at": "2026-10-16T17:01:25.350859+00:00",
+    "method": "manual API proposal/preview/apply; no AI regeneration",
+    "quarantine_flags": [
+      {
+        "question_revision_id": "4c95b91853c6483098605d90f856a23e:unit-1:4903f0e09ed96b2300a60371",
+        "state": "needs_review",
+        "reason": "Trắc nghiệm có lựa chọn tương đương sau đổi đơn vị bit/byte hoặc chuẩn hóa chữ; cần sửa để chỉ có một đáp án đúng."
+      }
+    ],
+    "proposal_id": "561a596e9bec4e4b817a030d673e7bc5",
+    "preview_before": {
+      "kind": "mcq",
+      "prompt": "Địa chỉ IPv4 có kích thước bao nhiêu và được chia thành mấy phần chính?",
+      "options": [
+        "32 bits, chia thành 2 phần: Network ID và Host ID",
+        "4 bytes, chia thành 3 phần: Network ID, Subnet ID và Host ID",
+        "32 bits, chia thành 4 octet",
+        "4 bytes, chia thành 2 phần: Network ID và Host ID"
+      ],
+      "left": [],
+      "answer": "32 bits, chia thành 2 phần: Network ID và Host ID",
+      "explanation": "Địa chỉ IPv4 có kích thước 32 bit (tương đương 4 bytes) và được chia thành hai phần chính là Network ID (NetID) và Host ID. Mỗi byte được biểu diễn bằng số thập phân và gọi là một octet.",
+      "source_refs": [
+        "e83e396d6d0047a78d9acd06c6a3dfb4:2:7"
+      ],
+      "rubric": [],
+      "difficulty": null,
+      "difficulty_basis": null
+    },
+    "preview_after": {
+      "kind": "mcq",
+      "prompt": "Theo trang 8, địa chỉ IPv4 dài bao nhiêu bit và gồm hai phần nào?",
+      "options": [
+        "32 bits; Network ID và Host ID",
+        "16 bits; Network ID và Host ID",
+        "64 bits; Network ID và Host ID",
+        "32 bits; chỉ Network ID, không có Host ID"
+      ],
+      "left": [],
+      "answer": "32 bits; Network ID và Host ID",
+      "explanation": "Trang 8 ghi IPv4 có 32 bits (4 bytes), chia thành Network ID (NetID) và Host ID. 32 bits và 4 bytes là cùng một kích thước, vì vậy không thể dùng chúng như hai lựa chọn đối lập.",
+      "source_refs": [
+        "e83e396d6d0047a78d9acd06c6a3dfb4:2:7"
+      ],
+      "rubric": [],
+      "difficulty": null,
+      "difficulty_basis": null
+    },
+    "applied_revision": 3,
+    "new_question": {
+      "kind": "mcq",
+      "prompt": "Theo trang 8, địa chỉ IPv4 dài bao nhiêu bit và gồm hai phần nào?",
+      "options": [
+        "32 bits; Network ID và Host ID",
+        "16 bits; Network ID và Host ID",
+        "64 bits; Network ID và Host ID",
+        "32 bits; chỉ Network ID, không có Host ID"
+      ],
+      "left": [],
+      "source_refs": [
+        "e83e396d6d0047a78d9acd06c6a3dfb4:2:7"
+      ],
+      "difficulty": null,
+      "difficulty_basis": null,
+      "id": "unit-1:q0",
+      "unit_id": "unit-1",
+      "question_revision_id": "4c95b91853c6483098605d90f856a23e:unit-1:34775c348d6219d1959b3053",
+      "payload": {
+        "options": [
+          {
+            "id": "option-0",
+            "text": "32 bits; Network ID và Host ID"
+          },
+          {
+            "id": "option-1",
+            "text": "16 bits; Network ID và Host ID"
+          },
+          {
+            "id": "option-2",
+            "text": "64 bits; Network ID và Host ID"
+          },
+          {
+            "id": "option-3",
+            "text": "32 bits; chỉ Network ID, không có Host ID"
+          }
+        ],
+        "left": []
+      }
+    },
+    "old_result_unchanged": true,
+    "old_question_snapshot_unchanged": true,
+    "old_attempt_id": "9812d8e97e504dedae3f4b8f6cfd2739",
+    "live_review_warnings": null,
+    "trial_assertion_correction": "First QA compared the entire attempt response and failed after a live review warning was added. Rechecked immutable result and question snapshot separately; both unchanged. No second apply or regeneration.",
+    "isolated_qa_open_sessions_closed": [
+      "d97c59e91f234f45adcb88b4b160e07d"
+    ]
+  }
+}

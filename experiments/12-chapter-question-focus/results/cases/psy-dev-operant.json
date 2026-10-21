@@ -1,0 +1,130 @@
+{
+  "purpose": "Codex-assisted source/oracle review; not independent human or instructor labels.",
+  "reviewed_at": "2026-10-21T04:59:40.382426+00:00",
+  "case_id": "psy-dev-operant",
+  "run_id": "dev-v5-chapter-focus",
+  "production_sha256": "4445b6ad08bbb79c0faaf00ba77f1f525e623b7860a156fcdc5ccdc12869e04c",
+  "source_sha256": "89f307e17c2baf035b0a33267fbc83cf5ee740c03106ed0b19cee23320879036",
+  "oracle": {
+    "verification": "agent_source_crosscheck_only_needs_independent_review",
+    "limit": "A deterministic computation cannot establish these psychology labels; no automatic factual pass."
+  },
+  "reading_review": "Reading/cards/mindmap distinguish increase/decrease from add/remove and keep the source belt/alarm example and numbered procedure. These are Codex source crosschecks, not program-proven psychology judgments.",
+  "independent_human_reviews": 0,
+  "factual_accuracy_score": null,
+  "questions": [
+    {
+      "question_index": 0,
+      "kind": "mcq",
+      "question_sha256": "e4d50bd59391a3e163d57f7f9d039367349c8cc982adc4b05344d37076b5bc22",
+      "status": "supported_in_checked_scope",
+      "note": "New dog/alarm scenario explicitly makes alarm removal contingent on sitting and says sitting increases, supporting negative reinforcement.",
+      "source_refs": [
+        "22f107d3ced44c5ebafc8543b6b52f72:2:0",
+        "22f107d3ced44c5ebafc8543b6b52f72:2:1",
+        "22f107d3ced44c5ebafc8543b6b52f72:2:2",
+        "22f107d3ced44c5ebafc8543b6b52f72:2:5",
+        "22f107d3ced44c5ebafc8543b6b52f72:2:6"
+      ]
+    },
+    {
+      "question_index": 1,
+      "kind": "cloze",
+      "question_sha256": "986fdc0196370c75e7eaec7f8f21cae3ff8ef092c2f0907abc1652b636ffbe79",
+      "status": "supported_in_checked_scope",
+      "note": "Voucher addition is contingent on overtime and overtime increases; both classification dimensions are explicit, supporting positive reinforcement.",
+      "source_refs": [
+        "22f107d3ced44c5ebafc8543b6b52f72:2:0",
+        "22f107d3ced44c5ebafc8543b6b52f72:2:1",
+        "22f107d3ced44c5ebafc8543b6b52f72:2:3",
+        "22f107d3ced44c5ebafc8543b6b52f72:2:4",
+        "22f107d3ced44c5ebafc8543b6b52f72:2:5",
+        "22f107d3ced44c5ebafc8543b6b52f72:2:6",
+        "22f107d3ced44c5ebafc8543b6b52f72:2:7"
+      ]
+    },
+    {
+      "question_index": 2,
+      "kind": "matching",
+      "question_sha256": "b42ee9422c87d775621e0733a3f4d5184ccf21d101807b9123468db3679ddb0a",
+      "status": "supported_in_checked_scope",
+      "note": "The cited example fragment explicitly contains both increased belt use with alarm removal and reduced violations with withdrawn play rights, including their labels. Both matching cases are sufficiently specified and supported. The explanation awkwardly says belt fastening increases the behavior itself, but the intended frequency relation is explicit in the stem.",
+      "source_refs": [
+        "22f107d3ced44c5ebafc8543b6b52f72:2:2",
+        "22f107d3ced44c5ebafc8543b6b52f72:2:5",
+        "22f107d3ced44c5ebafc8543b6b52f72:2:6"
+      ]
+    },
+    {
+      "question_index": 3,
+      "kind": "ordering",
+      "question_sha256": "b7ba5a307ed3c6129715db3d3e9aa0fefbae1220c23953030e4230cfc80cb240",
+      "status": "supported_in_checked_scope",
+      "note": "Four exact cited numbered steps yield [1,2,3,0] without an AI-invented key.",
+      "source_refs": [
+        "22f107d3ced44c5ebafc8543b6b52f72:2:4",
+        "22f107d3ced44c5ebafc8543b6b52f72:2:5",
+        "22f107d3ced44c5ebafc8543b6b52f72:2:6",
+        "22f107d3ced44c5ebafc8543b6b52f72:2:7"
+      ]
+    },
+    {
+      "question_index": 4,
+      "kind": "short_answer",
+      "question_sha256": "b1fc90fdd27e6be7dc1143c9026dc810b5c2132931625e40938e0a9f888ec1e1",
+      "status": "needs_review",
+      "note": "Stem says the student KEEPS computer access after sitting quietly; answer/explanation invent WITHDRAWAL of access and call it negative punishment. The target noisy behavior decreasing does not establish removal in this stem.",
+      "source_refs": [
+        "22f107d3ced44c5ebafc8543b6b52f72:2:3",
+        "22f107d3ced44c5ebafc8543b6b52f72:2:4",
+        "22f107d3ced44c5ebafc8543b6b52f72:2:5",
+        "22f107d3ced44c5ebafc8543b6b52f72:2:6",
+        "22f107d3ced44c5ebafc8543b6b52f72:2:7"
+      ]
+    },
+    {
+      "question_index": 5,
+      "kind": "mcq",
+      "question_sha256": "d4b521dd2bc8bf86c14e113f2badb9911962d4a8b7622ba6b44ded8371359538",
+      "status": "needs_review",
+      "note": "Contingent withdrawal of break-room access and reduced lateness support negative punishment under the source definitions. The supplied refs cite only procedure steps, not the actual definitions needed to justify that label.",
+      "source_refs": [
+        "22f107d3ced44c5ebafc8543b6b52f72:2:3",
+        "22f107d3ced44c5ebafc8543b6b52f72:2:4",
+        "22f107d3ced44c5ebafc8543b6b52f72:2:5",
+        "22f107d3ced44c5ebafc8543b6b52f72:2:6",
+        "22f107d3ced44c5ebafc8543b6b52f72:2:7"
+      ]
+    },
+    {
+      "question_index": 6,
+      "kind": "cloze",
+      "question_sha256": "5539e7ade038d21c159136c1d9ecc3854cdd7ca3a2dce39f58d42161e51617ba",
+      "status": "supported_in_checked_scope",
+      "note": "Belt use increases when the alarm is removed contingent on fastening; definitions plus example are cited. This differs from the earlier cloze positive-reinforcement classification.",
+      "source_refs": [
+        "22f107d3ced44c5ebafc8543b6b52f72:2:0",
+        "22f107d3ced44c5ebafc8543b6b52f72:2:1",
+        "22f107d3ced44c5ebafc8543b6b52f72:2:2",
+        "22f107d3ced44c5ebafc8543b6b52f72:2:5",
+        "22f107d3ced44c5ebafc8543b6b52f72:2:6"
+      ]
+    }
+  ],
+  "uncreated": [
+    {
+      "stage": "matching:2",
+      "kind": "matching",
+      "reason": "Đã có câu hỏi dạng matching với nội dung tương tự (ghép cặp hành vi mục tiêu và loại hậu quả). Trong nguồn không còn dữ kiện nào khác đủ để tạo một câu matching mới đáp ứng mục tiêu phân biệt negative reinforcement và punishment mà không bị trùng lặp nội dung với các câu đã có.",
+      "origin": "model_declined"
+    }
+  ],
+  "review_corrections": [
+    {
+      "question_index": 2,
+      "previous_status": "needs_review",
+      "previous_note": "Both matching cases have sufficient data and correct classifications, but source_refs cite the alarm/example and frequency/add-remove procedure without the actual definitions of reinforcement/punishment. Include the definitions supporting the second mapping. Explanation also phrases doing the behavior as increasing itself.",
+      "reason": "Re-read the exact cited example fragment: it contains BOTH the belt/alarm and withdrawn-play-rights examples, including their classifications. The original citation criticism was incorrect; no generated content was changed."
+    }
+  ]
+}

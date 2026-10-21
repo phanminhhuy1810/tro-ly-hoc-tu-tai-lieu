@@ -1,0 +1,14 @@
+✔ MCQ IDs and normalized numeric answers reject distractors and partial answers (4.598083ms)
+✔ Matching uses pair IDs, rejects duplicate targets and survives display reordering (0.72675ms)
+✔ Ordering requires a complete permutation and the order supported by source §5 (1.038167ms)
+✔ Short answers are ungraded; self review does not inflate the fixed-answer score (1.181541ms)
+✔ Legacy two-question scope and stored attempt snapshots remain independent of later edits (0.682208ms)
+✔ Saving a question creates one personal card; editing it preserves fixtures and attempt history (0.992167ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 70.334542

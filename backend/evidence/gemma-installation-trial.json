@@ -1,0 +1,52 @@
+{
+  "purpose": "Install verification, not inference quality/speed evidence",
+  "download_seconds": 1016.07,
+  "model": {
+    "name": "gemma4:12b-mlx",
+    "model": "gemma4:12b-mlx",
+    "modified_at": "2026-10-18T16:25:40.083273064+07:00",
+    "size": 7714091504,
+    "digest": "ded7a27350032202d9e9b2a6071e8aa89959ab156771b5228f30863c741c4970",
+    "details": {
+      "parent_model": "",
+      "format": "safetensors",
+      "family": "",
+      "families": null,
+      "parameter_size": "",
+      "quantization_level": "",
+      "runner": "mlx"
+    },
+    "capabilities": [
+      "completion",
+      "vision",
+      "audio",
+      "tools",
+      "thinking"
+    ]
+  },
+  "capabilities": [
+    "completion",
+    "vision",
+    "audio",
+    "tools",
+    "thinking"
+  ],
+  "details": {
+    "parent_model": "",
+    "format": "safetensors",
+    "family": "gemma4_unified",
+    "families": null,
+    "parameter_size": "12.4B",
+    "quantization_level": "nvfp4"
+  },
+  "ollama_version": {
+    "version": "0.40.3"
+  },
+  "hardware_memory_bytes": 25769803776,
+  "official_source": "https://ollama.com/library/gemma4:12b-mlx",
+  "registry_status": "success",
+  "other_models_kept": [
+    "qwen3.5:9b",
+    "qwen2.5-coder:3b"
+  ]
+}

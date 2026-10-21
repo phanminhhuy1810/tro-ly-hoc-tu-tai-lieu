@@ -1,0 +1,55 @@
+'use strict';
+/* Shared presentation. Covers are reusable typography templates, not AI images. */
+window.STUDIO_VIEWS = (() => {
+  const text=(c,vi,en)=>c.state.uiLanguage==='en'?en:vi;
+  const escape=x=>String(x??'').replace(/[&<>"']/g,x=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[x]));
+  function cover(title,kind='book'){
+    const hash=Array.from(title).reduce((a,ch)=>a+ch.codePointAt(0),0);
+    const initials=title.trim().split(/\s+/).slice(0,2).map(x=>Array.from(x)[0]).join('').toUpperCase();
+    return `<span class="studio-course-cover cover-${hash%4}" aria-hidden="true"><span class="studio-book-spine"></span><span class="studio-book-mark">${kind==='sample'?'01':escape(initials||'N')}</span><span class="studio-book-lines"><i></i><i></i><i></i></span><span class="studio-book-ribbon"></span></span>`;
+  }
+  function sampleCourses(c){return [{id:'network',title:text(c,'Mạng máy tính','Computer networks'),subtitle:text(c,'Địa chỉ IPv4 và subnet mask','IPv4 addresses and subnet masks'),total:2,ready:1,completed:c.state.completed?1:0,sample:true}];}
+  function courseRow(c,course,index=0){
+    const e=c.e||escape,t=(vi,en)=>text(c,vi,en),pct=Math.round(100*course.completed/Math.max(1,course.total));
+    const action=course.sample?'data-action="open-course" data-course="network"':`data-live="open-portal-course" data-course="${e(course.id)}"`;
+    const first=index===0;
+    return `<article class="studio-course-row ${first?'is-current':''}" data-course-search="${e(course.title.toLocaleLowerCase())}">
+      ${cover(course.title,course.sample?'sample':'book')}
+      <div class="studio-course-info"><span class="studio-row-label">${course.sample?t('Bài học mẫu','Sample lesson'):course.role==='learner'?t('Khóa đã tham gia','Enrolled course'):course.ready?t('Khóa cá nhân','My course'):t('Lộ trình đã duyệt','Approved outline')}</span><h3>${e(course.title)}</h3><p>${e(course.subtitle||t(`${course.ready} bài sẵn sàng · ${course.total} bài trong lộ trình`,`${course.ready} ready lessons · ${course.total} planned lessons`))}</p><div class="studio-course-meta"><span>${course.completed}/${course.total} ${t('bài đã hoàn thành','lessons completed')}</span><span class="studio-mini-progress" role="img" aria-label="${pct}%"><i style="width:${pct}%"></i></span></div></div>
+      <button type="button" class="${first?'primary':'secondary'} studio-open-course" ${action}>${t(course.ready?'Tiếp tục học':'Mở lộ trình',course.ready?'Continue learning':'Open outline')}${c.icon('arrow')}</button>
+    </article>`;
+  }
+  function sectionHead(c,title,route,label){return `<div class="studio-section-head"><h2>${title}</h2>${route?`<button class="text-button" data-action="page" data-page="${route}">${label||text(c,'Xem tất cả','View all')}${c.icon('chevron')}</button>`:''}</div>`;}
+  function community(c){
+    const t=(vi,en)=>text(c,vi,en);
+    return `<section class="studio-community">${sectionHead(c,t('Khóa cộng đồng','Community courses'),'community',t('Khám phá','Explore'))}<p class="studio-section-note">${t('Hai khóa mẫu để xem thử.','Two sample courses to explore.')} <span>${t('Nội dung mẫu','Sample content')}</span></p><div class="studio-community-grid">${[['calculus','Vi tích phân','Calculus','Giới hạn và đạo hàm','Limits and derivatives'],['psychology','Tâm lý học đại cương','Introduction to psychology','Nhận thức và trí nhớ','Cognition and memory']].map(([id,vi,en,subVi,subEn])=>`<button class="studio-community-item" data-action="open-course" data-course="${id}">${cover(t(vi,en),'sample')}<span><small>${t('Khóa mẫu','Sample course')}</small><strong>${t(vi,en)}</strong><span>${t(subVi,subEn)}</span></span>${c.icon('chevron')}</button>`).join('')}</div></section>`;
+  }
+  function home(c,data={}){
+    const t=(vi,en)=>text(c,vi,en),courses=data.courses||sampleCourses(c);
+    return `<main id="main" class="product-page studio-home"><header class="studio-welcome"><div><h1>${t('Trang chủ','Home')}</h1><p>${t('Tiếp tục bài cũ hoặc thêm tài liệu.','Continue a lesson or add a document.')}</p>${!courses.length?`<button class="primary" data-action="import">${c.icon('plus')}${t('Thêm tài liệu đầu tiên','Add your first document')}</button>`:''}${courses.length?`<button class="secondary studio-mobile-add" data-action="import">${c.icon('plus')}${t('Thêm tài liệu','Add document')}</button>`:''}</div><button type="button" class="studio-art-toggle" data-action="studio-art" aria-label="${t('Lật trang sổ','Turn the notebook page')}" title="${t('Bấm để lật trang','Click to turn the page')}">${window.STUDIO_ART.hero()}</button></header>
+      ${data.error?`<p role="alert" class="live-error">${(c.e||escape)(data.error)}</p>`:''}
+      ${data.live?window.LIVE_ACTIVITY.checkIn(c,data.checkIn):''}
+      <section class="studio-personal">${sectionHead(c,t('Khóa học của bạn','Your courses'),'library')}<button class="text-button studio-card-shortcut" data-action="page" data-page="flashcards">${c.icon('cards')}${t('Flashcard của bạn','Your flashcards')}${c.icon('arrow')}</button><div class="studio-course-list">${courses.length?courses.slice(0,3).map((course,i)=>courseRow(c,course,i)).join(''):`<div class="studio-empty"><span class="studio-empty-icon">${c.icon('book')}</span><h3>${t('Chưa có khóa học','No courses yet')}</h3><p>${t('Thêm PDF, slide, ảnh hoặc ghi chú. Sau đó chọn Học, Flashcard hay Ôn luyện.','Add a PDF, slides, images or notes, then choose Learn, Flashcards or Practice.')}</p></div>`}</div></section>
+      ${community(c)}<p class="studio-cover-note">${c.icon('info')}${t('Bìa dùng mẫu có sẵn, không tự sinh tranh theo tài liệu.','Covers use reusable templates; uploading does not generate custom artwork.')}</p>
+    </main>`;
+  }
+  function library(c,data={}){
+    const t=(vi,en)=>text(c,vi,en),e=c.e||escape,courses=data.courses||sampleCourses(c),sources=data.sources||[],tab=data.tab||'courses',browser=data.sourceBrowser;
+    const liveSources=data.live&&tab==='sources';
+    const search=liveSources?`<form id="live-source-library-search" class="live-library-search"><label class="product-search">${c.icon('search')}<input type="search" data-source-library-query value="${e(browser?.draft||'')}" maxlength="120" placeholder="${t('Tìm tên tài liệu…','Find a document by name…')}" aria-label="${t('Tìm tài liệu theo tên','Find source documents by name')}"></label><button class="secondary" ${browser?.loading?'disabled':''}>${t('Tìm','Search')}</button><button type="button" class="text-button" data-live="library-clear" ${browser?.loading?'disabled':''}>${t('Xóa lọc','Clear filter')}</button></form>`:`<label class="product-search">${c.icon('search')}<input type="search" id="studio-course-search" placeholder="${t('Tìm theo tên…','Search by name…')}" aria-label="${t('Tìm khóa hoặc tài liệu','Search courses or sources')}"></label>`;
+    return `<main id="main" class="product-page studio-library"><header class="product-head"><div><p class="product-breadcrumb">${t('Tài liệu đã lưu','Saved materials')}</p><h1>${t('Khóa học của bạn','Your courses')}</h1><p>${t('Mở khóa học hoặc xem lại tài liệu gốc.','Open a course or review the source.')}</p></div><button class="primary" data-action="import">${c.icon('plus')}${t('Thêm tài liệu','Add document')}</button></header>
+      ${data.error?`<p role="alert" class="live-error">${e(data.error)}</p>`:''}
+      <div class="studio-library-toolbar"><div class="content-tabs" role="group" aria-label="${t('Xem khóa học hoặc nguồn','Courses or sources')}">${[['courses',t('Khóa học','Courses')],['sources',t('Tài liệu gốc','Source documents')]].map(([id,label])=>`<button type="button" ${data.live?`data-live="portal-tab" data-tab="${id}"`:`data-action="studio-library-tab" data-tab="${id}"`} aria-pressed="${tab===id}">${label} <span>${id==='courses'?courses.length:data.live?browser?.libraryTotal??sources.length:1}</span></button>`).join('')}</div>${search}</div>
+      ${liveSources?`<div class="live-library-pages"><p role="status">${browser?.loading?t('Đang tìm tài liệu…','Finding documents…'):`${browser?.total??sources.length} ${t('tài liệu phù hợp','matching documents')} · ${t('Trang','Page')} ${browser?.page||1}`}</p><nav aria-label="${t('Trang thư viện tài liệu','Source library pages')}"><button class="secondary" data-live="library-previous" ${browser?.loading||!browser?.back.length?'disabled':''}>${t('Trước','Previous')}</button><button class="secondary" data-live="library-next" ${browser?.loading||!browser?.nextCursor?'disabled':''}>${t('Tiếp','Next')}</button><button class="text-button" data-live="library-reload" ${browser?.loading?'disabled':''}>${t('Tải lại danh sách','Reload list')}</button></nav></div>${browser?.error?`<p role="alert" class="live-error">${e(browser.error)}</p>`:''}`:''}
+      <div class="studio-course-list">${tab==='courses'?courses.map((course,i)=>courseRow(c,course,i)).join(''):data.live?sources.map(source=>`<article class="studio-source-row"><span class="studio-file-icon">${c.icon('file')}</span><div><h3>${e(source.metadata.name)}</h3><p>${t(source.reviewed?'Đã kiểm tra bản trích':'Cần kiểm tra bản trích',source.reviewed?'Extraction reviewed':'Review extraction')}</p></div><button class="secondary" data-live="open-portal-source" data-source="${e(source.id)}">${t('Mở tài liệu','Open source')}${c.icon('arrow')}</button></article>`).join(''):`<article class="studio-source-row"><span class="studio-file-icon">${c.icon('file')}</span><div><h3>${t('Ghi chú IP và subnet','IP and subnet notes')}</h3><p>${t('Tài liệu mẫu · 7 trích đoạn','Sample source · 7 excerpts')}</p></div><button class="secondary" data-action="source" data-source="src-ip-and-mask">${t('Xem nguồn','View source')}</button></article>`}</div><p class="studio-search-empty" hidden>${t('Không tìm thấy nội dung phù hợp.','No matching items.')}</p>
+      ${!(tab==='courses'?courses.length:data.live?sources.length:1)&&!browser?.loading?`<div class="studio-empty"><h3>${liveSources&&browser?.query?t('Không có tài liệu khớp tên này.','No documents match this name.'):t('Chưa có nội dung ở đây.','Nothing here yet.')}</h3><p>${liveSources&&browser?.query?t('Thử từ khóa khác hoặc xóa lọc. Tài liệu đã lưu vẫn còn.','Try another keyword or clear the filter. Saved sources are retained.'):t('Thêm tài liệu để bắt đầu khóa đầu tiên.','Add a document to start your first course.')}</p></div>`:''}
+      <p class="studio-cover-note">${c.icon('info')}${t('Bìa là mẫu trình bày dùng chung. Nội dung bên trong mới được tạo từ nguồn bạn đã duyệt.','Covers are shared display templates. Learning content is generated from your approved sources.')}</p></main>`;
+  }
+  document.addEventListener('input',event=>{
+    if(event.target.id!=='studio-course-search')return;
+    const query=event.target.value.toLocaleLowerCase().trim(),main=event.target.closest('main'),rows=[...main.querySelectorAll('[data-course-search]')];
+    rows.forEach(row=>row.hidden=!row.dataset.courseSearch.includes(query));
+    main.querySelector('.studio-search-empty').hidden=!rows.length||rows.some(row=>!row.hidden);
+  });
+  return {cover,home,library,sampleCourses,courseRow};
+})();

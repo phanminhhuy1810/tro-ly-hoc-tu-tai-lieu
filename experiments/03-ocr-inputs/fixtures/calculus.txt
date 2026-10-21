@@ -1,0 +1,5 @@
+Vi tích phân: đạo hàm và tích phân
+f(x) = x² + 3x
+f′(x) = 2x + 3
+∫ x² dx = x³/3 + C
+Giá trị tích phân xác định cần xét hai cận.

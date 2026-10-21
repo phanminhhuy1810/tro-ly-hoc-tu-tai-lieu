@@ -1,0 +1,56 @@
+{
+  "purpose": "One bounded dev reproduction, not raw from the original failed request or final evaluation.",
+  "case_id": "psy-dev-operant",
+  "kind": "mcq",
+  "baseline_job_id": "8f40d194fc454eb6b92dffa38558dc3b",
+  "production_sha256": "2bde55f1fb4c7dc4add9927766747ae42a3701cd8229e07519d75f5fe7b1faa3",
+  "started_at": "2026-10-20T11:22:00.122460+00:00",
+  "model": "gemma4:12b-mlx",
+  "source_ids": [
+    "0e0d88ce1cd74656836799dc6ae240e3:2:0",
+    "0e0d88ce1cd74656836799dc6ae240e3:2:1",
+    "0e0d88ce1cd74656836799dc6ae240e3:2:2",
+    "0e0d88ce1cd74656836799dc6ae240e3:2:3",
+    "0e0d88ce1cd74656836799dc6ae240e3:2:4",
+    "0e0d88ce1cd74656836799dc6ae240e3:2:5",
+    "0e0d88ce1cd74656836799dc6ae240e3:2:6",
+    "0e0d88ce1cd74656836799dc6ae240e3:2:7"
+  ],
+  "instruction": "Tạo đúng một bài theo mục tiêu đã duyệt: {\"preferences\": {\"subject\": \"Tâm lý đại cương\", \"goal\": \"Phân biệt thêm/bớt kích thích với tăng/giảm hành vi, đặc biệt negative reinforcement không phải punishment.\", \"instructions\": \"\", \"language\": \"vi\", \"chapter_priorities\": [], \"difficulty\": \"applied\", \"question_types\": [\"mcq\", \"cloze\", \"matching\", \"ordering\", \"short_answer\"], \"question_count\": 8, \"card_count\": 2, \"target_language\": \"\", \"terms_to_keep\": [\"reinforcement\", \"punishment\", \"positive\", \"negative\"], \"teacher_notes\": \"\", \"user_notes\": \"\"}, \"unit\": {\"title\": \"QA psy-dev-operant — Củng cố và trừng phạt.txt · Phần 1\", \"objective\": \"Học Phần 1 trong QA psy-dev-operant — Củng cố và trừng phạt.txt; đối chiếu nguồn và luyện nội dung của phần này.\"}} Viết nội dung bằng tiếng Việt, giữ thuật ngữ gốc và từ đang học.  Mọi source_refs chỉ được chép ID của các đoạn trong danh sách Nguồn của request này; không dùng ID tài liệu, plan hoặc bài làm trích dẫn. \nChỉ tạo MỘT câu dạng mcq. Trả object có question và reason theo schema. options là 3–4 chuỗi khác nhau và chỉ MỘT lựa chọn đúng theo nguồn. Không dùng lựa chọn tương đương về nghĩa hoặc chỉ đổi đơn vị (ví dụ bit/byte) làm đáp án nhiễu. answer là NGUYÊN VĂN một chuỗi trong options, không dùng A/B/C, số hay chỉ số. Câu hỏi chỉ kiểm tra mục tiêu RIÊNG CỦA BÀI NÀY: Học Phần 1 trong QA psy-dev-operant — Củng cố và trừng phạt.txt; đối chiếu nguồn và luyện nội dung của phần này.. Mục tiêu toàn khóa chỉ là bối cảnh; không buộc câu của bài đầu giải toàn bộ khóa. Có thể hỏi khái niệm, giá trị hoặc quan hệ được nêu trong các đoạn nguồn của bài. Mỗi explanation tối đa 70 từ. Nếu không đủ nguồn cho dạng này, question=null và reason nói rõ phần thiếu; không bịa để đủ dạng. Viết ngôn ngữ đã chọn. question chỉ có các trường kind, prompt, options, answer, explanation, source_refs; không thêm id/type/index hay trường của dạng khác, kể cả mảng rỗng.",
+  "semantic_retries": 0,
+  "course_mutated": false,
+  "output": {
+    "reason": "Câu hỏi tập trung vào việc phân biệt reinforcement và punishment dựa trên sự thay đổi của hành vi như yêu cầu của mục tiêu.",
+    "question": {
+      "kind": "mcq",
+      "prompt": "Trong operant conditioning, sự khác biệt cơ bản giữa reinforcement và punishment là gì?",
+      "options": [
+        "reinforcement làm tăng khả năng hành vi được lặp lại; punishment làm giảm khả năng đó",
+        "reinforcement là thêm kích thích; punishment là loại bỏ kích thích",
+        "reinforcement là kết quả tốt; punishment là kết quả xấu"
+      ],
+      "left": [],
+      "answer": "reinforcement làm tăng khả năng hành vi được lặp lại; punishment làm giảm khả năng đó",
+      "explanation": "Trong operant conditioning, reinforcement được định nghĩa là hậu quả làm tăng khả năng hành vi được lặp lại, trong khi punishment là hậu quả làm giảm khả năng đó. Positive và negative chỉ mô tả việc thêm hoặc loại bỏ kích thích, không mang nghĩa tốt hay xấu.",
+      "source_refs": [
+        "0e0d88ce1cd74656836799dc6ae240e3:2:0"
+      ],
+      "rubric": []
+    }
+  },
+  "status": "succeeded",
+  "raw": "```json\n{\n  \"question\": {\n    \"kind\": \"mcq\",\n    \"prompt\": \"Trong operant conditioning, sự khác biệt cơ bản giữa reinforcement và punishment là gì?\",\n    \"options\": [\n      \"reinforcement làm tăng khả năng hành vi được lặp lại; punishment làm giảm khả năng đó\",\n      \"reinforcement là thêm kích thích; punishment là loại bỏ kích thích\",\n      \"reinforcement là kết quả tốt; punishment là kết quả xấu\"\n    ],\n    \"answer\": \"reinforcement làm tăng khả năng hành vi được lặp lại; punishment làm giảm khả năng đó\",\n    \"explanation\": \"Trong operant conditioning, reinforcement được định nghĩa là hậu quả làm tăng khả năng hành vi được lặp lại, trong khi punishment là hậu quả làm giảm khả năng đó. Positive và negative chỉ mô tả việc thêm hoặc loại bỏ kích thích, không mang nghĩa tốt hay xấu.\",\n    \"source_refs\": [\n      \"R1\"\n    ]\n  },\n  \"reason\": \"Câu hỏi tập trung vào việc phân biệt reinforcement và punishment dựa trên sự thay đổi của hành vi như yêu cầu của mục tiêu.\"\n}\n```",
+  "protocol_fallbacks": 1,
+  "usage": {
+    "input_tokens": 2158,
+    "cached_input_tokens": 127,
+    "output_tokens": 251,
+    "load_duration_ns": 4746667,
+    "prompt_eval_duration_ns": 4474020833,
+    "eval_duration_ns": 8052375750,
+    "total_duration_ns": 12535275875,
+    "reference_alias_count": 8,
+    "reference_alias_map_sha256": "aea1e3e76d79aa9063f94a23981ad0652a890dccddc639f94c8a443d1d541526"
+  },
+  "elapsed_seconds": 12.588
+}

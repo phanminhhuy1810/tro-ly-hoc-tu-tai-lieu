@@ -1,0 +1,46 @@
+{
+  "purpose": "Complete bounded development measurement on chapter-first pipeline, keeping non-generation and quality labels separate.",
+  "run_id": "dev-v4-chapter",
+  "production_sha256": "00cedb8c5ef56d83f3d5414884997f791138535095e563040d01fdd3e0db3dbd",
+  "protocol_sha256": "f9c80bb55af1823e4ad12f37cd49e3cb764eab1d32fe6b3e5e56ab61cfe476c0",
+  "started_at": "2026-10-20T23:56:43.649224+00:00",
+  "finished_at": "2026-10-21T00:10:10.782631+00:00",
+  "model": "local:gemma4:12b-mlx",
+  "cases": 6,
+  "requested_questions": 48,
+  "published_lessons": 5,
+  "published_questions": 30,
+  "failed_cases": [
+    "calc-dev-ftc"
+  ],
+  "published_kind_counts": {
+    "mcq": 9,
+    "cloze": 9,
+    "matching": 5,
+    "ordering": 2,
+    "short_answer": 5
+  },
+  "uncreated_by_origin": {
+    "model_declined": 8,
+    "backend_source_gate": 2
+  },
+  "failure_missing_questions": 8,
+  "review_status_counts": {
+    "supported_in_checked_scope": 21,
+    "needs_review": 9
+  },
+  "factual_accuracy_score": null,
+  "independent_human_reviews": 0,
+  "all_output_questions_reviewed": true,
+  "external_inference": 0,
+  "semantic_retries": 0,
+  "payments": 0,
+  "release_ready": false,
+  "blocking_findings": [
+    "One calculus case ends incomplete before any chapter node; final provider metrics were lost in this failure path.",
+    "Source gate incorrectly blocks chain-rule ordering because a function argument(0) is parsed as step0.",
+    "Some generated psychology applications do not establish the required behavior-consequence contingency or overclaim independence of memory functions.",
+    "Several model declines claim missing source despite distinct facts/procedures being available; technical citation labels leak into some prose."
+  ],
+  "comparison_limit": "Old dev-v3 produced35/48 with the extraction-only pipeline; current dev-v4 produces30/48 after whole-chapter preparation. Prompt/validator/context changed together and model varies; this is not a single-variable accuracy or speed comparison."
+}

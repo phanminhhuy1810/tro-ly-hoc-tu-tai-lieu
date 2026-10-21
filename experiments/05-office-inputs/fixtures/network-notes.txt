@@ -1,0 +1,80 @@
+Development excerpt 1: IPv4 has 32 bits.
+Development excerpt 2: Prefix /26 leaves 6 host bits.
+Development excerpt 3: A /26 block contains 64 addresses.
+Development excerpt 4: 192.168.1.70/26 belongs to network 192.168.1.64.
+Development excerpt 5: The broadcast is 192.168.1.127.
+Development excerpt 6: Usable hosts are 192.168.1.65 through 192.168.1.126, or 62 addresses.
+Development excerpt 7: IPv4 has 32 bits.
+Development excerpt 8: Prefix /26 leaves 6 host bits.
+Development excerpt 9: A /26 block contains 64 addresses.
+Development excerpt 10: 192.168.1.70/26 belongs to network 192.168.1.64.
+Development excerpt 11: The broadcast is 192.168.1.127.
+Development excerpt 12: Usable hosts are 192.168.1.65 through 192.168.1.126, or 62 addresses.
+Development excerpt 13: IPv4 has 32 bits.
+Development excerpt 14: Prefix /26 leaves 6 host bits.
+Development excerpt 15: A /26 block contains 64 addresses.
+Development excerpt 16: 192.168.1.70/26 belongs to network 192.168.1.64.
+Development excerpt 17: The broadcast is 192.168.1.127.
+Development excerpt 18: Usable hosts are 192.168.1.65 through 192.168.1.126, or 62 addresses.
+Development excerpt 19: IPv4 has 32 bits.
+Development excerpt 20: Prefix /26 leaves 6 host bits.
+Development excerpt 21: A /26 block contains 64 addresses.
+Development excerpt 22: 192.168.1.70/26 belongs to network 192.168.1.64.
+Development excerpt 23: The broadcast is 192.168.1.127.
+Development excerpt 24: Usable hosts are 192.168.1.65 through 192.168.1.126, or 62 addresses.
+Development excerpt 25: IPv4 has 32 bits.
+Development excerpt 26: Prefix /26 leaves 6 host bits.
+Development excerpt 27: A /26 block contains 64 addresses.
+Development excerpt 28: 192.168.1.70/26 belongs to network 192.168.1.64.
+Development excerpt 29: The broadcast is 192.168.1.127.
+Development excerpt 30: Usable hosts are 192.168.1.65 through 192.168.1.126, or 62 addresses.
+Development excerpt 31: IPv4 has 32 bits.
+Development excerpt 32: Prefix /26 leaves 6 host bits.
+Development excerpt 33: A /26 block contains 64 addresses.
+Development excerpt 34: 192.168.1.70/26 belongs to network 192.168.1.64.
+Development excerpt 35: The broadcast is 192.168.1.127.
+Development excerpt 36: Usable hosts are 192.168.1.65 through 192.168.1.126, or 62 addresses.
+Development excerpt 37: IPv4 has 32 bits.
+Development excerpt 38: Prefix /26 leaves 6 host bits.
+Development excerpt 39: A /26 block contains 64 addresses.
+Development excerpt 40: 192.168.1.70/26 belongs to network 192.168.1.64.
+Development excerpt 41: The broadcast is 192.168.1.127.
+Development excerpt 42: Usable hosts are 192.168.1.65 through 192.168.1.126, or 62 addresses.
+Development excerpt 43: IPv4 has 32 bits.
+Development excerpt 44: Prefix /26 leaves 6 host bits.
+Development excerpt 45: A /26 block contains 64 addresses.
+Development excerpt 46: 192.168.1.70/26 belongs to network 192.168.1.64.
+Development excerpt 47: The broadcast is 192.168.1.127.
+Development excerpt 48: Usable hosts are 192.168.1.65 through 192.168.1.126, or 62 addresses.
+Development excerpt 49: IPv4 has 32 bits.
+Development excerpt 50: Prefix /26 leaves 6 host bits.
+Development excerpt 51: A /26 block contains 64 addresses.
+Development excerpt 52: 192.168.1.70/26 belongs to network 192.168.1.64.
+Development excerpt 53: The broadcast is 192.168.1.127.
+Development excerpt 54: Usable hosts are 192.168.1.65 through 192.168.1.126, or 62 addresses.
+Development excerpt 55: IPv4 has 32 bits.
+Development excerpt 56: Prefix /26 leaves 6 host bits.
+Development excerpt 57: A /26 block contains 64 addresses.
+Development excerpt 58: 192.168.1.70/26 belongs to network 192.168.1.64.
+Development excerpt 59: The broadcast is 192.168.1.127.
+Development excerpt 60: Usable hosts are 192.168.1.65 through 192.168.1.126, or 62 addresses.
+Development excerpt 61: IPv4 has 32 bits.
+Development excerpt 62: Prefix /26 leaves 6 host bits.
+Development excerpt 63: A /26 block contains 64 addresses.
+Development excerpt 64: 192.168.1.70/26 belongs to network 192.168.1.64.
+Development excerpt 65: The broadcast is 192.168.1.127.
+Development excerpt 66: Usable hosts are 192.168.1.65 through 192.168.1.126, or 62 addresses.
+Development excerpt 67: IPv4 has 32 bits.
+Development excerpt 68: Prefix /26 leaves 6 host bits.
+Development excerpt 69: A /26 block contains 64 addresses.
+Development excerpt 70: 192.168.1.70/26 belongs to network 192.168.1.64.
+Development excerpt 71: The broadcast is 192.168.1.127.
+Development excerpt 72: Usable hosts are 192.168.1.65 through 192.168.1.126, or 62 addresses.
+Development excerpt 73: IPv4 has 32 bits.
+Development excerpt 74: Prefix /26 leaves 6 host bits.
+Development excerpt 75: A /26 block contains 64 addresses.
+Development excerpt 76: 192.168.1.70/26 belongs to network 192.168.1.64.
+Development excerpt 77: The broadcast is 192.168.1.127.
+Development excerpt 78: Usable hosts are 192.168.1.65 through 192.168.1.126, or 62 addresses.
+Development excerpt 79: IPv4 has 32 bits.
+Development excerpt 80: Prefix /26 leaves 6 host bits.

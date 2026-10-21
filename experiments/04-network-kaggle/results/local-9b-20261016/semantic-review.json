@@ -1,0 +1,108 @@
+{
+  "reviewer": "Codex agent network_benchmark",
+  "review_type": "limited AI-assisted review against PDF fragments and independent Python ipaddress arithmetic",
+  "independent_human_review": false,
+  "not_a_held_out_evaluation": true,
+  "model": "qwen3.5:9b",
+  "source_pdf_sha256": "9037fecd5131c299809b7aa4776b782c2939b2c47c792d7ee09a5cfa6c795404",
+  "bundle_sha256": "2da4009d3c6a1a15424c1861b833c30cc1de87e454a256a6b365ecc9720bbf59",
+  "scope": "All13 responses read; selected numerical/method claims checked. Citation existence is automatic; exhaustive factual entailment and pedagogical quality are not certified.",
+  "oracle": {
+    "input": "172.29.217.10/19",
+    "prefix_network_bits": 19,
+    "host_bits": 13,
+    "bits_borrowed_relative_to_16": 3,
+    "octet3_block_size": 32,
+    "octet3_block_including_217": [192, 223],
+    "netmask": "255.255.224.0",
+    "network": "172.29.192.0",
+    "broadcast": "172.29.223.255",
+    "total_addresses": 8192,
+    "usable_hosts": 8190,
+    "first_host": "172.29.192.1",
+    "last_host": "172.29.223.254"
+  },
+  "checks": [
+    {
+      "call_ids": [1, 2, 3, 4],
+      "finding": "No error found in the checked term definition; all four correctly map mask1bits to NetID and0bits to HostID.",
+      "source_pages": [23],
+      "status": "checked_claims_pass"
+    },
+    {
+      "call_ids": [5],
+      "status": "explanation_fail_despite_correct_answer_key",
+      "source_pages": [23, 26, 27],
+      "wrong_claims": [
+        "Trong binary, vị trí thứ3 từ phải sang trái tương ứng với giá trị2^2 =4.",
+        "Thay bit cuối cùng của phần NetID (bit thứ3) bằng0 để tìm địa chỉ mạng:11011000 =216? Không, cần tính lại."
+      ],
+      "correction": "For/19 the first3bits from the LEFT of octet3 are network bits; zero all5host bits in that octet. The answer key192 is correct, but the explanation exposes false intermediate steps before self-correcting."
+    },
+    {
+      "call_ids": [6],
+      "status": "explanation_fail_despite_correct_answer_key",
+      "source_pages": [23, 26, 27],
+      "wrong_claims": [
+        "prefix/19 chiếm7bit đầu tiên (vì8+8+7=23? Sai,8+8=16, còn lại3bit...)",
+        "3bit đầu tiên của octet3 là NetID (giá trị1), còn lại là HostID (giá trị0)."
+      ],
+      "correction": "The mask's prefix bits are1; an IP's network bits retain their values from the IP, not necessarily all1. The final answer is correct but the explanation contains conflicting claims/self-correction."
+    },
+    {
+      "call_ids": [7],
+      "status": "explanation_fail_despite_correct_answer_key",
+      "source_pages": [23, 26, 27],
+      "wrong_claims": [
+        "Với/19, ta mượn thêm1bit từ phầnHostID so với lớpB mặc định(/16).",
+        "ngưỡng chia mạng/19 là chia dải172.29.x.x thành các khối64(2^6)",
+        "217 nằm trong khoảng192-255"
+      ],
+      "correction": "3bits relative to/16; block32in octet3; this network spans192–223in octet3. Final network address happens to match the oracle despite a wrong method."
+    },
+    {
+      "call_ids": [8],
+      "status": "reading_schema_and_numerical_fail",
+      "source_pages": [8, 15, 23, 26, 27],
+      "wrong_claims": [
+        "prefix là/19, nghĩa là mượn5bit từ phầnHostID",
+        "217...chia cho32...kết quả nguyên là0",
+        "Network Address là172.29.0.0",
+        "Broadcast...172.29.31.255",
+        "Dải host hợp lệ...172.29.0.1 đến172.29.31.254"
+      ],
+      "correction": "floor(217/32)=6;6*32=192. Network192.0,broadcast223.255,usable host192.1–223.254 in172.29. The output repeats wrong values in mindmap. Mask,total8192,and usable8190are correct.",
+      "schema_issue": "cards/mindmap objects were placed inside sections; required top-level cards and mindmap keys missing. No retry performed."
+    },
+    {
+      "call_ids": [9, 10, 11],
+      "status": "checked_claims_pass",
+      "source_pages": [8, 23, 26],
+      "finding": "32bits,4bytes,and32-19=13HostIDbits correct in both answer and checked explanation."
+    },
+    {
+      "call_ids": [12],
+      "status": "explanation_fail_despite_correct_answer_key",
+      "source_pages": [23, 26],
+      "wrong_claims": [
+        "172.29.(224+23).255 =172.29.223.255"
+      ],
+      "correction": "192+32-1=223;224+23is247,not223. Final broadcast key223.255is correct while the shown arithmetic is false."
+    },
+    {
+      "call_ids": [13],
+      "status": "answer_key_fail_internal_contradiction",
+      "source_pages": [15, 26],
+      "wrong_claims": ["answer is510 while explanation computes8190"],
+      "correction": "13HostIDbits give2^13-2=8190usable hosts. The correct8190option exists, but the selected answer is510."
+    }
+  ],
+  "summary": {
+    "transport_complete": "13/13",
+    "json_parseable": "13/13",
+    "schema_valid": "12/13",
+    "fixed_mcq_keys_correct": "7/8",
+    "responses_with_checked_semantic_issue": 6,
+    "caution": "Correct key or validJSON does not make these responses safe to present as reliable learning content. This is one small development trial, not a general model ranking."
+  }
+}

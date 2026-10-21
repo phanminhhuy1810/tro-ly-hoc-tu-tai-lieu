@@ -1,0 +1,99 @@
+{
+  "purpose": "Codex-assisted source/oracle review; not independent human or instructor labels.",
+  "reviewed_at": "2026-10-21T05:02:58.380452+00:00",
+  "case_id": "net-dev-ipv6",
+  "run_id": "dev-v5-chapter-focus",
+  "production_sha256": "4445b6ad08bbb79c0faaf00ba77f1f525e623b7860a156fcdc5ccdc12869e04c",
+  "source_sha256": "798de26ecf40eb78c08ee1c8cb55693e319335a0f3deaa2f33c496b1f8fe0f15",
+  "oracle": {
+    "verification": "computed",
+    "compressed": "2001:db8::1",
+    "expanded": "2001:0db8:0000:0000:0000:0000:0000:0001",
+    "bits": 128
+  },
+  "reading_review": "Reading/cards/mindmap preserve128bits,8hextets,zero compression and special-address roles. The concrete compression2001:db8::1 matches ipaddress. The text is mostly source paraphrase; no claim of broad IPv6 understanding.",
+  "independent_human_reviews": 0,
+  "factual_accuracy_score": null,
+  "questions": [
+    {
+      "question_index": 0,
+      "kind": "mcq",
+      "question_sha256": "02deceaa3798ec5b44158a067eb79f5c1eea5f66f77e33933b018abf68e63b35",
+      "status": "supported_in_checked_scope",
+      "note": "The at-most-once :: rule is directly supported and one option gives it; this is concept-rule recall in a source example rather than a new address problem.",
+      "source_refs": [
+        "dd94aedef54b450f9a14a4b9edf505de:2:0"
+      ]
+    },
+    {
+      "question_index": 1,
+      "kind": "cloze",
+      "question_sha256": "bc443298f7da9bf0015d610166d9d8f2846a9e14176b419f49f8093b595501db",
+      "status": "supported_in_checked_scope",
+      "note": "::1 loopback and :: unspecified agree with source and independent ipaddress special-address checks.",
+      "source_refs": [
+        "dd94aedef54b450f9a14a4b9edf505de:2:1"
+      ]
+    },
+    {
+      "question_index": 2,
+      "kind": "matching",
+      "question_sha256": "4b331828f87c73f6d90625c37bd41bd968ab11907e10690d968b8cb6245eff7f",
+      "status": "needs_review",
+      "note": "The mappings match the cited procedure, but the question asks which slide step number has which wording. That tests memorizing numbered positions rather than understanding an operation; use concepts or a concrete compression situation for matching.",
+      "source_refs": [
+        "dd94aedef54b450f9a14a4b9edf505de:2:4",
+        "dd94aedef54b450f9a14a4b9edf505de:2:5"
+      ]
+    },
+    {
+      "question_index": 3,
+      "kind": "ordering",
+      "question_sha256": "0c18836198eb60986dd6ad09cbcbc13414be64115c13c0205d32adae8f264a3f",
+      "status": "supported_in_checked_scope",
+      "note": "Four source steps match the program-derived [2,3,0,1] permutation; ordering is the intentional exact-procedure exception.",
+      "source_refs": [
+        "dd94aedef54b450f9a14a4b9edf505de:2:2",
+        "dd94aedef54b450f9a14a4b9edf505de:2:3",
+        "dd94aedef54b450f9a14a4b9edf505de:2:4",
+        "dd94aedef54b450f9a14a4b9edf505de:2:5",
+        "dd94aedef54b450f9a14a4b9edf505de:2:6"
+      ]
+    },
+    {
+      "question_index": 4,
+      "kind": "short_answer",
+      "question_sha256": "82f04c9e511d602faaeb87b833918f5cb97555fe179965ca93a296d847372ee1",
+      "status": "supported_in_checked_scope",
+      "note": "Reference names both special-address roles consistently with source/ipaddress. The prompt asks for functions, but the source and answer provide only category names, so explanatory depth is limited.",
+      "source_refs": [
+        "dd94aedef54b450f9a14a4b9edf505de:2:1"
+      ]
+    },
+    {
+      "question_index": 5,
+      "kind": "mcq",
+      "question_sha256": "3134e4430d5e35e2e8f100fa082c10291c3c320a06deb27daaefe6a4217e0086",
+      "status": "supported_in_checked_scope",
+      "note": "One option correctly distinguishes loopback from unspecified and both other mappings conflict with source; different objective from first MCQ.",
+      "source_refs": [
+        "dd94aedef54b450f9a14a4b9edf505de:2:1"
+      ]
+    }
+  ],
+  "uncreated": [
+    {
+      "stage": "cloze:2",
+      "kind": "cloze",
+      "reason": "Đã có câu hỏi dạng cloze kiểm tra kiến thức về địa chỉ loopback và unspecified (đã được liệt kê trong danh sách câu hỏi đã có). Trong nguồn hiện tại, các nội dung còn lại như quy trình rút gọn (R4-R7) hoặc quy tắc sử dụng ký hiệu :: (R1) không đủ dữ kiện để tạo thêm một câu hỏi dạng cloze mới mà không bị trùng lặp về mặt kiến thức hoặc quá đơn giản so với các câu hỏi đã có.",
+      "origin": "model_declined"
+    },
+    {
+      "stage": "matching:2",
+      "kind": "matching",
+      "reason": "Đã có câu hỏi dạng matching với nội dung tương tự (quy trình xử lý các nhóm hextet). Trong nguồn không còn nội dung nào khác phù hợp để tạo một câu matching mới đáp ứng mục tiêu bài học mà không bị trùng lặp về ý tưởng hoặc dữ kiện.",
+      "origin": "model_declined"
+    }
+  ],
+  "uncreated_review": "The source also supplies128bits,16-bit hextets and two special-address roles. Model refusal is not proof that these approved facts cannot support another cloze or pair of mappings."
+}

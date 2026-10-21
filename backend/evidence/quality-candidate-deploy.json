@@ -1,0 +1,39 @@
+{
+  "purpose": "Load validated v18/processor-v7 after backup; no live AI job/room, no inference in deploy probe.",
+  "backup": "study-before-candidate-isolation-20261020T151141Z.sqlite3",
+  "active_jobs_before": 0,
+  "active_rooms_before": 0,
+  "table_hashes_before": {
+    "courses": "3a3904cf9ca7cef14e7d04c86357741fe8d2be16cdc0d500e0b758707360ca06",
+    "course_revisions": "d25af44997d6d908ae229307d39b7443dfc7ea1207ed013d10c66e306c228599",
+    "sources": "0e0aa3d353e99e009d980ad2705493f7f057ec3670122b9917e762e01e4aa0a1",
+    "extraction_revisions": "637d822c9623fe9a8567edb4ae99c9e8a976e0fecf373a3921594e3018df45e0",
+    "jobs": "caa7ff561e86f25826f9d88ae365324030a14c180e25ce71bfddb6c5b9acaab3",
+    "ai_preferences": "710274bacd6723169029a86946aa92fc81c3068d3a98fe23bfab17b5c53cc79c",
+    "wallets": "2c902c3538c4750522f14536ecc2681c30f7d8deca78dcb5ff3246ff3f84757e",
+    "study_sessions": "e29e9f752803179c3e32373974de1a0d8bd4698322e5d552ad774cc58aeee61a",
+    "answers": "9c7375bf869c85a52abbe0dcccb9160693a6cf9ab581eabc70b459799b697e57",
+    "coin_ledger": "05ce4914b4252cc7accb61d7a7f4bc3087f209cdb9f78d9b4b7d142c06d8e0b1"
+  },
+  "production_version": "lesson-v18/completion-v5/processor-v7",
+  "sql_version": 17,
+  "unchanged_tables": {
+    "courses": true,
+    "course_revisions": true,
+    "sources": true,
+    "extraction_revisions": true,
+    "jobs": true,
+    "ai_preferences": true,
+    "wallets": true,
+    "study_sessions": true,
+    "answers": true,
+    "coin_ledger": true
+  },
+  "active_jobs_after": 0,
+  "active_rooms_after": 0,
+  "health": {
+    "backend": true,
+    "provider_health_checked": false
+  },
+  "all_passed": true
+}

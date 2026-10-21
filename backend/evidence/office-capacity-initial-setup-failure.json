@@ -1,0 +1,11 @@
+{
+  "purpose": "Functional localhost trial on self-authored development fixtures, not a held-out AI-quality benchmark",
+  "calls": [],
+  "failures": [
+    {
+      "stage": "trial",
+      "error_type": "StopIteration",
+      "message": ""
+    }
+  ]
+}

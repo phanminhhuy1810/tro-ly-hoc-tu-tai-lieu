@@ -1,0 +1,59 @@
+{
+  "purpose": "Replay the exact published v22 model MCQ through a revised numeric guard. No model regeneration or retrospective raw-output repair.",
+  "at": "2026-10-20T23:56:00.398733+00:00",
+  "inference_calls": 0,
+  "database_writes": 0,
+  "input_question": {
+    "kind": "mcq",
+    "prompt": "Một thiết bị mạng có địa chỉ IP là 172.100.112.4 với prefix /19. Dựa trên cấu trúc của subnet mask, hãy xác định chính xác địa chỉ network (Net Addr) và số lượng host hợp lệ có thể sử dụng trong mạng này.",
+    "options": [
+      "Net Addr: 172.100.96.0; Số host hợp lệ: 8190",
+      "Net Addr: 172.100.64.0; Số host hợp lệ: 8190",
+      "Net Addr: 172.100.96.0; Số host hợp lệ: 8192",
+      "Net Addr: 172.100.112.0; Số host hợp lệ: 8190"
+    ],
+    "left": [],
+    "answer": "Net Addr: 172.100.96.0; Số host hợp lệ: 8190",
+    "explanation": "Với prefix /19, 19 bit đầu là Network ID. Ranh giới subnet nằm ở octet thứ 3 (vì 19 bits bao phủ 2 octet đầu và 1 bit của octet thứ 3). Net Addr là 172.100.96.0. Số host hợp lệ được tính bằng công thức 2^m - 2 (với m là số bit HostID), tại đây m=13, nên có 8190 host.",
+    "source_refs": [
+      "e517e6ec87a64ed19f751e8de8df6aff:2:13",
+      "e517e6ec87a64ed19f751e8de8df6aff:2:14",
+      "e517e6ec87a64ed19f751e8de8df6aff:2:32"
+    ],
+    "rubric": [],
+    "difficulty": "applied",
+    "difficulty_basis": "creator_request_not_measured"
+  },
+  "input_sha256": "05b4d4561507006e60d725f9a339419db56df400a71a86e59f13af939bf58d10",
+  "before": {
+    "processor_version": "20261021-chapter-subnet-claims-v10",
+    "published_in_course_revision": 2,
+    "evidence": "Historical v22 HTTP trial and retained raw question; the old pipeline accepted it."
+  },
+  "after": {
+    "processor_version": "20261021-prefix-bit-arithmetic-v11",
+    "rejection": {
+      "code": "SUBNET_DERIVATION_MISMATCH",
+      "message": "Lời giải phân tích số bit thành octet không khớp: mỗi octet có8bit. Chưa dùng câu này; không tự sửa nội dung AI."
+    },
+    "question_unchanged": true
+  },
+  "manual_positive_comparison": "The independently labeled three-bit correction passes; it is not substituted for the original model question.",
+  "other_saved_questions_accepted": 2,
+  "oracle": {
+    "given": "172.100.112.4/19",
+    "network": "172.100.96.0",
+    "broadcast": "172.100.127.255",
+    "subnet_mask": "255.255.224.0",
+    "prefix": 19,
+    "host_bits": 13,
+    "network_full_octets": 2,
+    "network_remainder_bits": 3,
+    "boundary_octet": 3,
+    "total_addresses": 8192,
+    "usable_hosts": 8190,
+    "first_host": "172.100.96.1",
+    "last_host": "172.100.127.254"
+  },
+  "limit": "Narrow IPv4 arithmetic guard, not general semantic validation or a factual-accuracy score for all model answers."
+}

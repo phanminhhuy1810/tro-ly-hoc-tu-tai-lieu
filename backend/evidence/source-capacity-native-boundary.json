@@ -1,0 +1,33 @@
+{
+  "purpose": "Generated one-line pages for native bounds verification; not a real book or quality benchmark",
+  "file_bytes": 335358,
+  "actual_pages": 1001,
+  "native_fragments": 1000,
+  "native_read_seconds": 0.156,
+  "last_native_fragment": {
+    "text": "Capacity page 1000",
+    "locator": {
+      "type": "page",
+      "page": 1000,
+      "page_index_base": 1,
+      "character_start": 0
+    }
+  },
+  "warnings": [
+    "Chỉ đọc 1000 trang đầu trong lượt này.",
+    "PDF: chữ/công thức/sơ đồ cần đối chiếu trang gốc; trích được chữ chưa chứng minh bố cục đúng."
+  ],
+  "rendered_page": 1000,
+  "render_dimensions": {
+    "width": 750,
+    "height": 500
+  },
+  "ocr_selected_page": 1000,
+  "ocr_text": [
+    "Capacity page 1000"
+  ],
+  "ocr_warnings": [
+    "OCR nhận dạng chữ, chưa chứng minh công thức/bảng/sơ đồ đúng. Đối chiếu ảnh và sửa bản trích trước khi tạo."
+  ],
+  "external_ai_calls": 0
+}

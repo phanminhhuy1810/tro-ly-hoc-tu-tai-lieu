@@ -1,0 +1,132 @@
+{
+  "purpose": "Read-only API/DB verification after restart and scoped QA correction; no new model requests",
+  "checked_at": "2026-10-18T10:34:51.475776+00:00",
+  "ai_generation_requests": 0,
+  "profiles": {
+    "qwen9b": {
+      "selection": "local:qwen3.5:9b",
+      "default": "kaggle:qwen3.8:27b",
+      "course_revision": 3,
+      "source_revision": 2,
+      "source_sha256": "304e02ed7c5a96963e81c4e884d16e66bf3b3195f7f3c7c32af79898b3ed71ee",
+      "question_coverage": {
+        "requested_count": 5,
+        "generated_count": 5,
+        "complete": true,
+        "requested_types": [
+          "mcq",
+          "cloze",
+          "matching",
+          "ordering",
+          "short_answer"
+        ],
+        "generated_types": [
+          "mcq",
+          "cloze",
+          "matching",
+          "ordering",
+          "short_answer"
+        ],
+        "uncreated": []
+      },
+      "job_statuses": [
+        "succeeded",
+        "succeeded"
+      ],
+      "chat_error_code": null,
+      "old_attempt_revision": 2,
+      "old_score": 4,
+      "fixed_total": 4,
+      "self_review_count": 1,
+      "wallet": {
+        "balance": 26,
+        "held": 0,
+        "available": 26,
+        "policy_version": "dev-proposal-20261015-v2",
+        "policy_proposed": true,
+        "cash_payments": false,
+        "enforcement_enabled": true
+      },
+      "original_bytes_sha256": "304e02ed7c5a96963e81c4e884d16e66bf3b3195f7f3c7c32af79898b3ed71ee"
+    },
+    "gemini": {
+      "selection": "gemini:gemini-2.5-flash",
+      "default": "kaggle:qwen3.8:27b",
+      "course_revision": 2,
+      "source_revision": 2,
+      "source_sha256": "304e02ed7c5a96963e81c4e884d16e66bf3b3195f7f3c7c32af79898b3ed71ee",
+      "question_coverage": {
+        "requested_count": 5,
+        "generated_count": 5,
+        "complete": true,
+        "requested_types": [
+          "mcq",
+          "cloze",
+          "matching",
+          "ordering",
+          "short_answer"
+        ],
+        "generated_types": [
+          "mcq",
+          "cloze",
+          "matching",
+          "ordering",
+          "short_answer"
+        ],
+        "uncreated": []
+      },
+      "job_statuses": [
+        "succeeded",
+        "failed"
+      ],
+      "chat_error_code": "RATE_LIMITED",
+      "old_attempt_revision": 2,
+      "old_score": 4,
+      "fixed_total": 4,
+      "self_review_count": 1,
+      "wallet": {
+        "balance": 27,
+        "held": 0,
+        "available": 27,
+        "policy_version": "dev-proposal-20261015-v2",
+        "policy_proposed": true,
+        "cash_payments": false,
+        "enforcement_enabled": true
+      },
+      "original_bytes_sha256": "304e02ed7c5a96963e81c4e884d16e66bf3b3195f7f3c7c32af79898b3ed71ee"
+    }
+  },
+  "checks": {
+    "qwen9b_selection_and_data_persisted": true,
+    "qwen9b_five_kinds_and_old_attempt_kept": true,
+    "qwen_scoped_display_fix_survived_restart": true,
+    "gemini_selection_and_data_persisted": true,
+    "gemini_five_kinds_and_old_attempt_kept": true,
+    "gemini_quota_error_kept_no_fallback": true,
+    "failed_gemini_chat_hold_released": true,
+    "no_active_job_or_room": true,
+    "native_ocr_qa_preserved": true,
+    "gemma-pipeline-live-trial.json_terminal_kept": true,
+    "gemma-pipeline-explicit-recovery.json_terminal_kept": true,
+    "gemma-question-schema-recovery.json_terminal_kept": true,
+    "gemma-complete-contract-trial.json_terminal_kept": true,
+    "academic_original_unchanged": true,
+    "same_source_bytes": true,
+    "qwen9b_original_bytes_match_metadata": true,
+    "gemini_original_bytes_match_metadata": true,
+    "network_pdf_original_unchanged": true
+  },
+  "gemini_chat_reservations": [
+    {
+      "amount": 1,
+      "status": "released"
+    }
+  ],
+  "active_jobs": 0,
+  "active_rooms": 0,
+  "database_schema": 15,
+  "academic_source_sha256": "10477b780feb504d649ad458cc381ed05eca4f47bc162ea4a8fb6eeb70c3a66e",
+  "metadata_ready_is_not_quota_guarantee": true,
+  "passed": true,
+  "original_network_pdf_sha256": "9037fecd5131c299809b7aa4776b782c2939b2c47c792d7ee09a5cfa6c795404"
+}

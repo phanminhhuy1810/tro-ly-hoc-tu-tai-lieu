@@ -1,0 +1,12 @@
+Ghi chú tự soạn để thử luồng học, không phải slide hoặc tài liệu của giảng viên.
+
+IPv4 có 32 bit. Prefix /25 dành 25 bit cho network và còn 7 bit host. Một block /25 có 128 địa chỉ; trong subnet thông thường này có 126 host dùng được sau khi bỏ hai biên.
+
+Ví dụ 10.12.7.201/25 thuộc block 128–255 của octet cuối. Network là 10.12.7.128; broadcast là 10.12.7.255. Host dùng được từ 10.12.7.129 đến 10.12.7.254. Subnet mask là 255.255.255.128.
+
+Quy trình xác định dải host:
+1. Đọc prefix để tính số bit host.
+2. Tính số địa chỉ trong mỗi block.
+3. Xác định block chứa địa chỉ IP đã cho.
+4. Lấy đầu block làm network và cuối block làm broadcast.
+5. Loại hai biên để lấy dải host dùng được.

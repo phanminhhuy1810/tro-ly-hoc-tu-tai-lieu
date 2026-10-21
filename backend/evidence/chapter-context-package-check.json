@@ -1,0 +1,19 @@
+{
+  "purpose": "Local package checks after chapter-first development work, not a deployment or independent academic/user evaluation. External ZIP unchanged.",
+  "created_at": "2026-10-20T17:16:03.354286+00:00",
+  "backend_tests": 344,
+  "frontend_tests": 62,
+  "protocol_tests": 8,
+  "academic_original_sha256": "10477b780feb504d649ad458cc381ed05eca4f47bc162ea4a8fb6eeb70c3a66e",
+  "academic_original_unchanged": true,
+  "relative_markdown_links_checked": 448,
+  "broken_relative_links": [],
+  "private_json_files_checked_600": 36,
+  "credential_byte_hits": [],
+  "frozen_evaluation_splits_unchanged": true,
+  "held_out_run_performed": false,
+  "human_trial_results": 0,
+  "excluded_runtime": true,
+  "external_zip_updated": false,
+  "all_checks_passed": true
+}

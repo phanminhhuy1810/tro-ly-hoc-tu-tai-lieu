@@ -1,0 +1,101 @@
+{
+  "purpose": "script-controlled real HTTP/native OCR/Qwen9B development trial; not independent learner or final benchmark",
+  "checks": {
+    "ocr_requires_review": true,
+    "original_bytes_preserved": true,
+    "corrected_power_and_reviewed": true,
+    "zero_score_unlocks_next": true,
+    "save_question_once_and_unremembered": true,
+    "notebook_saved_to_db": true,
+    "reader_payload_has_no_keys": true,
+    "test_feedback_hidden_until_final": true,
+    "private_in_other_profile": true
+  },
+  "jobs": [
+    {
+      "id": "6b7297a3ab074d8b81ba0be25c17af3d",
+      "status": "succeeded",
+      "elapsed_seconds": 50.414,
+      "error": null,
+      "partial_saved": true
+    }
+  ],
+  "source_id": "89035cb15fb34bc1b6c5b4e7cae3f82e",
+  "extraction_revision": 2,
+  "plan_id": "e749776ef2514427afbaa33aa2d9e9b6",
+  "course_id": "0b3c505ebc194963b04cc66a8c2644b6",
+  "passed": true,
+  "previous_failures": [
+    {
+      "error": "{'message': 'AI trả cấu trúc chưa hợp lệ ở source_id: Extra inputs are not permitted. Nguồn và phần đã lưu vẫn còn; chưa áp dụng đầu ra này. Có thể thử lại hoặc thu hẹp mục tiêu.'}",
+      "jobs": [
+        {
+          "id": "ae1fe79fd2fd43809db227dc5e2ab338",
+          "status": "succeeded",
+          "elapsed_seconds": 21.183,
+          "error": null,
+          "partial_saved": false
+        },
+        {
+          "id": "287cdc7ffb1d48809fcdb6fe787764a0",
+          "status": "failed",
+          "elapsed_seconds": 15.122,
+          "error": {
+            "message": "AI trả cấu trúc chưa hợp lệ ở source_id: Extra inputs are not permitted. Nguồn và phần đã lưu vẫn còn; chưa áp dụng đầu ra này. Có thể thử lại hoặc thu hẹp mục tiêu."
+          },
+          "partial_saved": false
+        }
+      ]
+    },
+    {
+      "error": "{'message': '1 validation error for Lesson\\nquestions\\n  List should have at least 1 item after validation, not 0 [type=too_short, input_value=[], input_type=list]\\n    For further information visit https://errors.pydantic.dev/2.14/v/too_short'}",
+      "jobs": [
+        {
+          "id": "75534ff54a554df181a8504f958df1c8",
+          "status": "succeeded",
+          "elapsed_seconds": 19.174,
+          "error": null,
+          "partial_saved": false
+        },
+        {
+          "id": "3a6889a9ef934e91898890b94424629a",
+          "status": "failed",
+          "elapsed_seconds": 39.276,
+          "error": {
+            "message": "1 validation error for Lesson\nquestions\n  List should have at least 1 item after validation, not 0 [type=too_short, input_value=[], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.14/v/too_short"
+          },
+          "partial_saved": true
+        }
+      ]
+    }
+  ],
+  "course_revision": 2,
+  "question_types": [
+    "mcq",
+    "cloze",
+    "matching",
+    "ordering",
+    "short_answer"
+  ],
+  "session_id": "c106cfabaabb48d38fdf8e6dcfd2e85d",
+  "practice_result": {
+    "score": 0,
+    "fixed_total": 4,
+    "self_review_count": 1,
+    "course_revision": 2,
+    "session_id": "c106cfabaabb48d38fdf8e6dcfd2e85d",
+    "assisted_count": 0,
+    "assessment": "self_study_not_proctored"
+  },
+  "note_id": "a6baaf5182434f21949006d44e7bf320",
+  "semantic_review": {
+    "status": "limited_development_audit_not_full_benchmark",
+    "issue": "Ordering in revision 2 was not supported by an explicit sequence in unit sources; functional passing did not establish semantic correctness.",
+    "guard_added": "Only numbered procedural source sequences may generate ordering; unsupported type skipped before provider call.",
+    "corrected_revision": 3,
+    "historical_attempt_revision": 2,
+    "questions_remaining": 4,
+    "correction_preview_checked": true,
+    "old_attempt_preserved": true
+  }
+}

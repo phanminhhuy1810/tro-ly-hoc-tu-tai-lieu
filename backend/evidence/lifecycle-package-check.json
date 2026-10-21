@@ -1,0 +1,16 @@
+{
+  "purpose": "Current project package integrity; no external ZIP update or product-quality acceptance.",
+  "date": "2026-10-20",
+  "academic_source_sha256": "10477b780feb504d649ad458cc381ed05eca4f47bc162ea4a8fb6eeb70c3a66e",
+  "academic_source_unchanged": true,
+  "relative_markdown_links_checked": 394,
+  "missing_link_targets": [],
+  "private_runtime_json_files_mode_600": 16,
+  "exact_known_credential_matches_in_package": [],
+  "runtime_excluded": true,
+  "cache_env_excluded": true,
+  "external_zip_updated": false,
+  "backend_tests": 311,
+  "frontend_tests": 61,
+  "all_passed": true
+}

@@ -1,0 +1,1345 @@
+{
+  "purpose": "Separate explicit QA recovery after new validator/prompt; never relabel the old failed development measurement.",
+  "at": "2026-10-21T05:21:29.626085+00:00",
+  "case_id": "calc-dev-chain",
+  "course_id": "0d9fc3c74956422f9496edc32fa7fae4",
+  "old_job_id": "1dd5cc5c54fe4045929e3d06f43695f0",
+  "dev_raw_sha256": "763de34447c8d07cdc74334143af6767716d5a560d30f1cd68d952a5f2669b2e",
+  "old_rejected_candidates": {
+    "mcq": "MCQ_COMPOSITION_NOT_UNIQUE"
+  },
+  "valid_saved_question_stages": [
+    "cloze",
+    "matching",
+    "ordering"
+  ],
+  "limits": {
+    "resume_jobs": 1,
+    "seconds": 210
+  },
+  "external_inference": 0,
+  "automatic_semantic_retries": 0,
+  "independent_human_reviews": 0,
+  "model_quality_pass": null,
+  "checks": {
+    "old_job_retained": true,
+    "original_measurement_retained": true,
+    "source_unchanged": true,
+    "no_reading_or_chapter_regeneration": true,
+    "chapter_cache_unchanged": true,
+    "reading_cards_mindmap_unchanged": true,
+    "valid_saved_questions_preserved": true,
+    "ambiguous_old_candidate_not_published": true,
+    "old_focus_plan_stays_v1": true,
+    "old_valid_stage_providers_preserved": true,
+    "no_coin_held": true
+  },
+  "wallet_before": {
+    "balance": 20,
+    "held": 0,
+    "available": 20,
+    "policy_version": "dev-proposal-20261015-v2",
+    "policy_proposed": true,
+    "cash_payments": false,
+    "enforcement_enabled": true
+  },
+  "job_id": "ca60032658db43e382e28e79f46ef7d5",
+  "job": {
+    "id": "ca60032658db43e382e28e79f46ef7d5",
+    "task": "lesson",
+    "context": {
+      "course_id": "0d9fc3c74956422f9496edc32fa7fae4",
+      "unit_id": "unit-1",
+      "expected_revision": 1
+    },
+    "status": "succeeded",
+    "attempts": 1,
+    "provider": {
+      "provider": "ollama_local",
+      "model": "gemma4:12b-mlx",
+      "reference_codec": "scoped-reference-aliases-v1",
+      "model_choice_id": "local:gemma4:12b-mlx",
+      "selection_revision": 1,
+      "prompt_version": "20261021-kind-compatible-chapter-focus-v26",
+      "schema_version": 20,
+      "processor_version": "20261021-polynomial-composition-proof-v13",
+      "chapter_evidence_version": "20261021-approved-chapter-support-v1",
+      "chapter_brief_prompt_version": "20261021-compact-readable-formulas-v2",
+      "question_focus_version": "20261021-kind-compatible-chapter-targets-v2"
+    },
+    "result": {
+      "course_id": "0d9fc3c74956422f9496edc32fa7fae4",
+      "revision": 2
+    },
+    "partial": {
+      "chapter_context": {
+        "context_id": "5aeb106e14d8138be34bfe2fe29bd66f1176e6184b0285ef78d25da2c4ab8215",
+        "reader_version": "20261020-whole-approved-chapter-v1",
+        "status": "ready",
+        "scope": "whole_approved_plan_selection",
+        "extraction_revision": 2,
+        "total_fragments": 7,
+        "covered_fragments": 7,
+        "total_characters": 504,
+        "covered_characters": 504,
+        "total_parts": 1,
+        "read_parts": 1,
+        "total_stages": 1,
+        "saved_stages": 1,
+        "complete": true,
+        "coverage_is_not_semantic_accuracy": true
+      },
+      "evidence_scope": {
+        "version": "20261021-approved-chapter-support-v1",
+        "context_id": "5aeb106e14d8138be34bfe2fe29bd66f1176e6184b0285ef78d25da2c4ab8215",
+        "focus_source_refs": [
+          "0d5328df43c044658a814526ae502b88:2:0",
+          "0d5328df43c044658a814526ae502b88:2:1",
+          "0d5328df43c044658a814526ae502b88:2:2",
+          "0d5328df43c044658a814526ae502b88:2:3",
+          "0d5328df43c044658a814526ae502b88:2:4",
+          "0d5328df43c044658a814526ae502b88:2:5",
+          "0d5328df43c044658a814526ae502b88:2:6"
+        ],
+        "support_source_refs": [],
+        "input_source_refs": [
+          "0d5328df43c044658a814526ae502b88:2:0",
+          "0d5328df43c044658a814526ae502b88:2:1",
+          "0d5328df43c044658a814526ae502b88:2:2",
+          "0d5328df43c044658a814526ae502b88:2:3",
+          "0d5328df43c044658a814526ae502b88:2:4",
+          "0d5328df43c044658a814526ae502b88:2:5",
+          "0d5328df43c044658a814526ae502b88:2:6"
+        ],
+        "input_sha256": "648780b62c3a36cf5020c589aaa1dd4697f19e5fa384da1469ccbbff935f1e24",
+        "query_sha256": "cb2f0e08603d3f03f39dc3daac6f3005bbca0f8ebab7098081a6a6175bc92671",
+        "added_support_refs": [],
+        "omitted": [],
+        "relevance_is_not_entailment": true,
+        "ai_calls": 0,
+        "sha256": "66e28928e7d49a7fd44f5897f49a4330707c66717042a4a54e77e113a7e56dac"
+      },
+      "reading": {
+        "title": "Áp dụng chain rule cho hàm hợp",
+        "sections": [
+          {
+            "title": "Công thức và Nguyên lý Chain Rule",
+            "text": "Để tính đạo hàm của hàm hợp h(x)=f(g(x)), ta sử dụng chain rule: h'(x)=f'(g(x))*g'(x). Lưu ý quan trọng là đạo hàm của hàm ngoài phải được tính tại g(x), không phải tại g'(x).",
+            "source_refs": [
+              "0d5328df43c044658a814526ae502b88:2:0"
+            ]
+          },
+          {
+            "title": "Quy trình 4 bước thực hiện",
+            "text": "Để áp dụng chain rule hiệu quả, thực hiện theo quy trình: (1) Xác định hàm trong và hàm ngoài; (2) Lấy đạo hàm hàm ngoài rồi thế hàm trong vào; (3) Tính đạo hàm hàm trong; (4) Nhân hai kết quả lại với nhau.",
+            "source_refs": [
+              "0d5328df43c044658a814526ae502b88:2:2",
+              "0d5328df43c044658a814526ae502b88:2:3",
+              "0d5328df43c044658a814526ae502b88:2:4",
+              "0d5328df43c044658a814526ae502b88:2:5",
+              "0d5328df43c044658a814526ae502b88:2:6"
+            ]
+          },
+          {
+            "title": "Ví dụ minh họa và tính giá trị",
+            "text": "Xét h(x)=(3x+1)^4. Hàm trong là g(x)=3x+1, g'(x)=3. Hàm ngoài là f(u)=u^4, f'(u)=4u^3. Áp dụng chain rule: h'(x)=4(3x+1)^3 * 3 = 12(3x+1)^3. Tại x=0, h'(0)=12.",
+            "source_refs": [
+              "0d5328df43c044658a814526ae502b88:2:1"
+            ]
+          }
+        ],
+        "cards": [
+          {
+            "front": "Công thức chain rule cho hàm hợp h(x)=f(g(x)) là gì?",
+            "back": "h'(x)=f'(g(x))*g'(x). Đạo hàm hàm ngoài phải được tính tại g(x).",
+            "source_refs": [
+              "0d5328df43c044658a814526ae502b88:2:0"
+            ]
+          },
+          {
+            "front": "Tại sao biểu thức 4(3x+1)^3 lại sai khi tính đạo hàm của (3x+1)^4?",
+            "back": "Vì biểu thức này bỏ mất hệ số 3 từ đạo hàm của hàm trong g(x)=3x+1.",
+            "source_refs": [
+              "0d5328df43c044658a814526ae502b88:2:1"
+            ]
+          }
+        ],
+        "mindmap": [
+          {
+            "title": "Xác định thành phần",
+            "text": "Xác định hàm trong và hàm ngoài của hàm hợp.",
+            "source_refs": [
+              "0d5328df43c044658a814526ae502b88:2:3"
+            ]
+          },
+          {
+            "title": "Tính toán thành phần",
+            "text": "Tính đạo hàm hàm ngoài (thế hàm trong) và đạo hàm hàm trong.",
+            "source_refs": [
+              "0d5328df43c044658a814526ae502b88:2:4",
+              "0d5328df43c044658a814526ae502b88:2:5"
+            ]
+          },
+          {
+            "title": "Kết hợp",
+            "text": "Nhân hai kết quả để hoàn thiện chain rule.",
+            "source_refs": [
+              "0d5328df43c044658a814526ae502b88:2:6"
+            ]
+          }
+        ]
+      },
+      "questions": {
+        "cloze": {
+          "reason": "Câu hỏi kiểm tra bước cuối cùng trong quy trình 4 bước để tính đạo hàm hàm hợp dựa trên dữ kiện cụ thể của ví dụ $h(x)=(3x+1)^4$.",
+          "question": {
+            "kind": "cloze",
+            "prompt": "Khi tính đạo hàm của hàm hợp $h(x)=(3x+1)^4$ bằng quy trình chain rule, sau khi lấy đạo hàm hàm ngoài và thế hàm trong vào, bước tiếp theo là tính đạo hàm của hàm trong $g(x)=3x+1$, sau đó ____ hai kết quả để hoàn thiện $h'(x)$.",
+            "options": [],
+            "left": [],
+            "answer": "nhân",
+            "explanation": "Theo quy trình 4 bước của chain rule, sau khi tính đạo hàm hàm ngoài và đạo hàm hàm trong, bước cuối cùng là nhân hai kết quả này với nhau để được đạo hàm của hàm hợp.",
+            "source_refs": [
+              "0d5328df43c044658a814526ae502b88:2:6"
+            ],
+            "rubric": [],
+            "difficulty": "applied",
+            "difficulty_basis": "creator_request_not_measured"
+          }
+        },
+        "matching": {
+          "reason": "The source R2 provides both the general derivative h'(x)=12(3x+1)^3 and the specific value h'(0)=12 for the function h(x)=(3x+1)^4, which directly supports the matching task of differentiating and evaluating at a point.",
+          "question": {
+            "kind": "matching",
+            "prompt": "Dựa trên ví dụ về hàm hợp $h(x)=(3x+1)^4$, hãy ghép cặp các thành phần tương ứng trong quá trình tính đạo hàm và giá trị tại điểm.",
+            "options": [
+              "h'(0)=12",
+              "h'(x)=12(3x+1)^3"
+            ],
+            "left": [
+              "Đạo hàm của hàm hợp $h(x)=(3x+1)^4$",
+              "Giá trị của đạo hàm tại điểm $x=0$"
+            ],
+            "answer": [
+              1,
+              0
+            ],
+            "explanation": "Từ ví dụ trong nguồn, đạo hàm của hàm hợp là $h'(x)=12(3x+1)^3$. Khi thay $x=0$ vào biểu thức này, ta được giá trị $h'(0)=12$. Việc tính toán này yêu cầu áp dụng đúng quy trình chain rule.",
+            "source_refs": [
+              "0d5328df43c044658a814526ae502b88:2:1"
+            ],
+            "rubric": [],
+            "difficulty": "applied",
+            "difficulty_basis": "creator_request_not_measured"
+          }
+        },
+        "ordering": {
+          "reason": "",
+          "question": {
+            "kind": "ordering",
+            "prompt": "Để tính đạo hàm của hàm hợp $h(x)=(3x+1)^4$ bằng cách áp dụng chain rule, hãy sắp xếp các bước thực hiện theo đúng quy trình chuẩn:",
+            "options": [
+              "Lấy đạo hàm hàm ngoài rồi thế hàm trong vào",
+              "Nhân hai kết quả để được đạo hàm hàm hợp",
+              "Xác định hàm trong và hàm ngoài",
+              "Tính đạo hàm hàm trong"
+            ],
+            "left": [],
+            "answer": [
+              2,
+              0,
+              3,
+              1
+            ],
+            "explanation": "Quy trình chuẩn gồm 4 bước: Xác định hàm trong/ngoài, lấy đạo hàm hàm ngoài (thế hàm trong vào), tính đạo hàm hàm trong, và cuối cùng là nhân hai kết quả này với nhau.",
+            "source_refs": [
+              "0d5328df43c044658a814526ae502b88:2:3",
+              "0d5328df43c044658a814526ae502b88:2:4",
+              "0d5328df43c044658a814526ae502b88:2:5",
+              "0d5328df43c044658a814526ae502b88:2:6"
+            ],
+            "rubric": [],
+            "difficulty": "applied",
+            "difficulty_basis": "creator_request_not_measured"
+          }
+        },
+        "mcq": {
+          "reason": "Câu hỏi tập trung vào mục tiêu xác định hàm trong và hàm ngoài của một hàm hợp cho trước dựa trên quy trình chuẩn trong nguồn.",
+          "question": {
+            "kind": "mcq",
+            "prompt": "Xét hàm hợp h(x) = (3x + 1)^4. Để áp dụng chain rule nhằm tính đạo hàm h'(x), bước đầu tiên trong quy trình là gì?",
+            "options": [
+              "Tính đạo hàm của hàm ngoài f(u) = u^4",
+              "Xác định hàm trong g(x) = 3x + 1 và hàm ngoài f(u) = u^4",
+              "Tính đạo hàm của hàm trong g'(x) = 3",
+              "Nhân kết quả đạo hàm của hàm ngoài và hàm trong"
+            ],
+            "left": [],
+            "answer": "Xác định hàm trong g(x) = 3x + 1 và hàm ngoài f(u) = u^4",
+            "explanation": "Theo quy trình 4 bước của chain rule, bước 1 luôn là xác định hàm trong và hàm ngoài trước khi thực hiện các bước tính toán đạo hàm tiếp theo.",
+            "source_refs": [
+              "0d5328df43c044658a814526ae502b88:2:3"
+            ],
+            "rubric": [],
+            "difficulty": "applied",
+            "difficulty_basis": "creator_request_not_measured"
+          }
+        },
+        "short_answer": {
+          "reason": "Câu hỏi yêu cầu người học áp dụng quy trình 4 bước để tính đạo hàm của một hàm hợp cụ thể, phù hợp với mục tiêu và gợi ý của bài.",
+          "question": {
+            "kind": "short_answer",
+            "prompt": "Cho hàm số h(x) = (5x^2 + 2)^3. Hãy thực hiện quy trình 4 bước để tính đạo hàm h'(x) bằng cách áp dụng chain rule.",
+            "options": [],
+            "left": [],
+            "answer": "Bước 1: Hàm trong g(x) = 5x^2 + 2, hàm ngoài f(u) = u^3. Bước 2: f'(u) = 3u^2, thế vào được 3(5x^2 + 2)^2. Bước 3: g'(x) = 10x. Bước 4: h'(x) = 3(5x^2 + 2)^2 * 10x = 30x(5x^2 + 2)^2.",
+            "explanation": "Để tính đạo hàm hàm hợp, ta thực hiện quy trình: xác định hàm trong/ngoài, lấy đạo hàm hàm ngoài (giữ nguyên hàm trong), tính đạo hàm hàm trong, và nhân hai kết quả lại với nhau. Lưu ý đạo hàm hàm ngoài phải được tính tại g(x).",
+            "source_refs": [
+              "0d5328df43c044658a814526ae502b88:2:0",
+              "0d5328df43c044658a814526ae502b88:2:1",
+              "0d5328df43c044658a814526ae502b88:2:3",
+              "0d5328df43c044658a814526ae502b88:2:4",
+              "0d5328df43c044658a814526ae502b88:2:5",
+              "0d5328df43c044658a814526ae502b88:2:6"
+            ],
+            "rubric": [
+              "Xác định đúng hàm trong g(x) và hàm ngoài f(u).",
+              "Tính đúng đạo hàm hàm ngoài và hàm trong.",
+              "Nhân đúng hai kết quả để ra biểu thức h'(x) cuối cùng."
+            ],
+            "difficulty": "applied",
+            "difficulty_basis": "creator_request_not_measured"
+          }
+        },
+        "mcq:2": {
+          "reason": "Câu hỏi tập trung vào bước 2 của quy trình tính đạo hàm hàm hợp theo mục tiêu 'Tính đạo hàm của hàm hợp bằng cách áp dụng quy trình 4 bước' và tránh trùng lặp với câu hỏi về bước 1 đã có.",
+          "question": {
+            "kind": "mcq",
+            "prompt": "Khi áp dụng quy trình tính đạo hàm cho hàm hợp h(x) = (3x+1)^4, sau khi đã xác định được hàm trong g(x)=3x+1 và hàm ngoài f(u)=u^4, bước tiếp theo cần thực hiện là gì?",
+            "options": [
+              "Tính đạo hàm hàm trong",
+              "Lấy đạo hàm hàm ngoài rồi thế hàm trong vào",
+              "Nhân hai kết quả đạo hàm"
+            ],
+            "left": [],
+            "answer": "Lấy đạo hàm hàm ngoài rồi thế hàm trong vào",
+            "explanation": "Theo quy trình 4 bước trong nguồn, sau bước 1 (xác định hàm trong/ngoài), bước 2 yêu cầu lấy đạo hàm hàm ngoài rồi thế hàm trong vào.",
+            "source_refs": [
+              "0d5328df43c044658a814526ae502b88:2:3",
+              "0d5328df43c044658a814526ae502b88:2:4"
+            ],
+            "rubric": [],
+            "difficulty": "applied",
+            "difficulty_basis": "creator_request_not_measured"
+          }
+        },
+        "cloze:2": {
+          "reason": "",
+          "question": {
+            "kind": "cloze",
+            "prompt": "Xét hàm hợp h(x)=(3x+1)^4. Sau khi áp dụng chain rule để tìm đạo hàm h'(x)=12(3x+1)^3, giá trị của đạo hàm tại điểm x=0 là ____.",
+            "options": [],
+            "left": [],
+            "answer": "12",
+            "explanation": "Từ ví dụ trong nguồn, hàm hợp h(x)=(3x+1)^4 có đạo hàm h'(x)=12(3x+1)^3. Thay x=0 vào biểu thức này, ta được h'(0)=12(3(0)+1)^3 = 12(1)^3 = 12.",
+            "source_refs": [
+              "0d5328df43c044658a814526ae502b88:2:1"
+            ],
+            "rubric": [],
+            "difficulty": "applied",
+            "difficulty_basis": "creator_request_not_measured"
+          }
+        },
+        "matching:2": {
+          "reason": "Đã có câu hỏi dạng matching sử dụng ví dụ h(x)=(3x+1)^4. Trong nguồn hiện tại, các nội dung còn lại tập trung vào quy trình 4 bước và các lưu ý kỹ thuật (như việc tính đạo hàm hàm ngoài tại g(x)). Tuy nhiên, do yêu cầu chỉ tạo đúng một câu dạng matching và không được trùng nội dung/ý nghĩa với câu đã có, đồng thời các dữ kiện còn lại trong nguồn không đủ để tạo ra một cặp matching mới khác biệt về mặt kiến thức mà không bị lặp lại các thành phần của ví dụ trên.",
+          "question": null
+        }
+      },
+      "stage_providers": {
+        "reading": {
+          "provider": "ollama_local",
+          "model": "gemma4:12b-mlx",
+          "reference_codec": "scoped-reference-aliases-v1",
+          "model_choice_id": "local:gemma4:12b-mlx",
+          "selection_revision": 1,
+          "prompt_version": "20261021-chapter-question-focus-v25",
+          "schema_version": 20,
+          "processor_version": "20261021-math-argument-step-boundary-v12",
+          "chapter_evidence_version": "20261021-approved-chapter-support-v1",
+          "chapter_brief_prompt_version": "20261021-compact-readable-formulas-v2",
+          "question_focus_version": "20261021-chapter-question-targets-v1"
+        },
+        "mcq": {
+          "provider": "ollama_local",
+          "model": "gemma4:12b-mlx",
+          "reference_codec": "scoped-reference-aliases-v1",
+          "model_choice_id": "local:gemma4:12b-mlx",
+          "selection_revision": 1,
+          "prompt_version": "20261021-kind-compatible-chapter-focus-v26",
+          "schema_version": 20,
+          "processor_version": "20261021-polynomial-composition-proof-v13",
+          "chapter_evidence_version": "20261021-approved-chapter-support-v1",
+          "chapter_brief_prompt_version": "20261021-compact-readable-formulas-v2",
+          "question_focus_version": "20261021-kind-compatible-chapter-targets-v2"
+        },
+        "cloze": {
+          "provider": "ollama_local",
+          "model": "gemma4:12b-mlx",
+          "reference_codec": "scoped-reference-aliases-v1",
+          "model_choice_id": "local:gemma4:12b-mlx",
+          "selection_revision": 1,
+          "prompt_version": "20261021-chapter-question-focus-v25",
+          "schema_version": 20,
+          "processor_version": "20261021-math-argument-step-boundary-v12",
+          "chapter_evidence_version": "20261021-approved-chapter-support-v1",
+          "chapter_brief_prompt_version": "20261021-compact-readable-formulas-v2",
+          "question_focus_version": "20261021-chapter-question-targets-v1"
+        },
+        "matching": {
+          "provider": "ollama_local",
+          "model": "gemma4:12b-mlx",
+          "reference_codec": "scoped-reference-aliases-v1",
+          "model_choice_id": "local:gemma4:12b-mlx",
+          "selection_revision": 1,
+          "prompt_version": "20261021-chapter-question-focus-v25",
+          "schema_version": 20,
+          "processor_version": "20261021-math-argument-step-boundary-v12",
+          "chapter_evidence_version": "20261021-approved-chapter-support-v1",
+          "chapter_brief_prompt_version": "20261021-compact-readable-formulas-v2",
+          "question_focus_version": "20261021-chapter-question-targets-v1"
+        },
+        "ordering": {
+          "provider": "ollama_local",
+          "model": "gemma4:12b-mlx",
+          "reference_codec": "scoped-reference-aliases-v1",
+          "model_choice_id": "local:gemma4:12b-mlx",
+          "selection_revision": 1,
+          "prompt_version": "20261021-chapter-question-focus-v25",
+          "schema_version": 20,
+          "processor_version": "20261021-math-argument-step-boundary-v12",
+          "chapter_evidence_version": "20261021-approved-chapter-support-v1",
+          "chapter_brief_prompt_version": "20261021-compact-readable-formulas-v2",
+          "question_focus_version": "20261021-chapter-question-targets-v1"
+        },
+        "short_answer": {
+          "provider": "ollama_local",
+          "model": "gemma4:12b-mlx",
+          "reference_codec": "scoped-reference-aliases-v1",
+          "model_choice_id": "local:gemma4:12b-mlx",
+          "selection_revision": 1,
+          "prompt_version": "20261021-kind-compatible-chapter-focus-v26",
+          "schema_version": 20,
+          "processor_version": "20261021-polynomial-composition-proof-v13",
+          "chapter_evidence_version": "20261021-approved-chapter-support-v1",
+          "chapter_brief_prompt_version": "20261021-compact-readable-formulas-v2",
+          "question_focus_version": "20261021-kind-compatible-chapter-targets-v2"
+        },
+        "mcq:2": {
+          "provider": "ollama_local",
+          "model": "gemma4:12b-mlx",
+          "reference_codec": "scoped-reference-aliases-v1",
+          "model_choice_id": "local:gemma4:12b-mlx",
+          "selection_revision": 1,
+          "prompt_version": "20261021-kind-compatible-chapter-focus-v26",
+          "schema_version": 20,
+          "processor_version": "20261021-polynomial-composition-proof-v13",
+          "chapter_evidence_version": "20261021-approved-chapter-support-v1",
+          "chapter_brief_prompt_version": "20261021-compact-readable-formulas-v2",
+          "question_focus_version": "20261021-kind-compatible-chapter-targets-v2"
+        },
+        "cloze:2": {
+          "provider": "ollama_local",
+          "model": "gemma4:12b-mlx",
+          "reference_codec": "scoped-reference-aliases-v1",
+          "model_choice_id": "local:gemma4:12b-mlx",
+          "selection_revision": 1,
+          "prompt_version": "20261021-kind-compatible-chapter-focus-v26",
+          "schema_version": 20,
+          "processor_version": "20261021-polynomial-composition-proof-v13",
+          "chapter_evidence_version": "20261021-approved-chapter-support-v1",
+          "chapter_brief_prompt_version": "20261021-compact-readable-formulas-v2",
+          "question_focus_version": "20261021-kind-compatible-chapter-targets-v2"
+        },
+        "matching:2": {
+          "provider": "ollama_local",
+          "model": "gemma4:12b-mlx",
+          "reference_codec": "scoped-reference-aliases-v1",
+          "model_choice_id": "local:gemma4:12b-mlx",
+          "selection_revision": 1,
+          "prompt_version": "20261021-kind-compatible-chapter-focus-v26",
+          "schema_version": 20,
+          "processor_version": "20261021-polynomial-composition-proof-v13",
+          "chapter_evidence_version": "20261021-approved-chapter-support-v1",
+          "chapter_brief_prompt_version": "20261021-compact-readable-formulas-v2",
+          "question_focus_version": "20261021-kind-compatible-chapter-targets-v2"
+        }
+      },
+      "question_rejections": {},
+      "question_focus_plan": {
+        "version": "20261021-chapter-question-targets-v1",
+        "context_id": "5aeb106e14d8138be34bfe2fe29bd66f1176e6184b0285ef78d25da2c4ab8215",
+        "evidence_sha256": "66e28928e7d49a7fd44f5897f49a4330707c66717042a4a54e77e113a7e56dac",
+        "unit_sha256": "bb3c9d250911ace9572cbd06ced74d6dd577d4b215ea6f6dbe8d741be8bcb052",
+        "preferences_sha256": "84a3ae14d4b6868f921f0af2f52301b365a2d15a79fccfb67673080eb78f5353",
+        "reading_sha256": "d41117961b908fad0be4bfb4e61edf1d89006cb2cfa9b4d15c5d041bceff82d5",
+        "brief_sha256": "32d1ea9e511b3f5b6d3074e1355a27d83acd0f8f812033d56d7d9a26f7413f87",
+        "assignments": {
+          "mcq": {
+            "kind": "mcq",
+            "topic": "Xác định hàm trong và hàm ngoài của một hàm hợp cho trước.",
+            "basis": "chapter_question_target",
+            "index": 0
+          },
+          "cloze": {
+            "kind": "cloze",
+            "topic": "Tính đạo hàm của hàm hợp bằng cách áp dụng quy trình 4 bước.",
+            "basis": "chapter_question_target",
+            "index": 1
+          },
+          "matching": {
+            "kind": "matching",
+            "topic": "Tính giá trị đạo hàm tại một điểm cụ thể sau khi áp dụng chain rule.",
+            "basis": "chapter_question_target",
+            "index": 2
+          },
+          "ordering": {
+            "kind": "ordering",
+            "topic": "Xác định hàm trong và hàm ngoài của một hàm hợp cho trước.",
+            "basis": "chapter_question_target",
+            "index": 0
+          },
+          "short_answer": {
+            "kind": "short_answer",
+            "topic": "Tính đạo hàm của hàm hợp bằng cách áp dụng quy trình 4 bước.",
+            "basis": "chapter_question_target",
+            "index": 1
+          },
+          "mcq:2": {
+            "kind": "mcq",
+            "topic": "Tính đạo hàm của hàm hợp bằng cách áp dụng quy trình 4 bước.",
+            "basis": "chapter_question_target",
+            "index": 1
+          },
+          "cloze:2": {
+            "kind": "cloze",
+            "topic": "Tính giá trị đạo hàm tại một điểm cụ thể sau khi áp dụng chain rule.",
+            "basis": "chapter_question_target",
+            "index": 2
+          },
+          "matching:2": {
+            "kind": "matching",
+            "topic": "Xác định hàm trong và hàm ngoài của một hàm hợp cho trước.",
+            "basis": "chapter_question_target",
+            "index": 0
+          }
+        },
+        "ai_calls": 0,
+        "is_suggestion_not_evidence": true,
+        "sha256": "4d62ec97262c6c6f47e1f7043111ad98e74dfd86209104fe1a06b0ede911f32d"
+      },
+      "stage_focus": {
+        "mcq": {
+          "plan_sha256": "4d62ec97262c6c6f47e1f7043111ad98e74dfd86209104fe1a06b0ede911f32d",
+          "job_id": "ca60032658db43e382e28e79f46ef7d5"
+        },
+        "cloze": {
+          "plan_sha256": "4d62ec97262c6c6f47e1f7043111ad98e74dfd86209104fe1a06b0ede911f32d",
+          "job_id": "1dd5cc5c54fe4045929e3d06f43695f0"
+        },
+        "matching": {
+          "plan_sha256": "4d62ec97262c6c6f47e1f7043111ad98e74dfd86209104fe1a06b0ede911f32d",
+          "job_id": "1dd5cc5c54fe4045929e3d06f43695f0"
+        },
+        "ordering": {
+          "plan_sha256": "4d62ec97262c6c6f47e1f7043111ad98e74dfd86209104fe1a06b0ede911f32d",
+          "job_id": "1dd5cc5c54fe4045929e3d06f43695f0"
+        },
+        "short_answer": {
+          "plan_sha256": "4d62ec97262c6c6f47e1f7043111ad98e74dfd86209104fe1a06b0ede911f32d",
+          "job_id": "ca60032658db43e382e28e79f46ef7d5"
+        },
+        "mcq:2": {
+          "plan_sha256": "4d62ec97262c6c6f47e1f7043111ad98e74dfd86209104fe1a06b0ede911f32d",
+          "job_id": "ca60032658db43e382e28e79f46ef7d5"
+        },
+        "cloze:2": {
+          "plan_sha256": "4d62ec97262c6c6f47e1f7043111ad98e74dfd86209104fe1a06b0ede911f32d",
+          "job_id": "ca60032658db43e382e28e79f46ef7d5"
+        },
+        "matching:2": {
+          "plan_sha256": "4d62ec97262c6c6f47e1f7043111ad98e74dfd86209104fe1a06b0ede911f32d",
+          "job_id": "ca60032658db43e382e28e79f46ef7d5"
+        }
+      }
+    },
+    "feedback_deferred": false,
+    "error": null,
+    "progress": {
+      "phase": "succeeded",
+      "requests": [
+        {
+          "index": 1,
+          "schema": "McqDraft",
+          "phase": "received",
+          "streaming": true,
+          "started_at": "2026-10-21T05:21:29.674445+00:00",
+          "first_chunk_ms": 6318.165,
+          "first_text_ms": null,
+          "elapsed_ms": 15804.613,
+          "chunks": 288,
+          "characters": 844,
+          "usage": {
+            "input_tokens": 2872,
+            "cached_input_tokens": 0,
+            "output_tokens": 288,
+            "load_duration_ns": 4883083,
+            "prompt_eval_duration_ns": 6027219459,
+            "eval_duration_ns": 9735078209,
+            "total_duration_ns": 15771104875,
+            "provider_finish_reason": "stop",
+            "reference_alias_count": 7,
+            "reference_alias_map_sha256": "924cfcd69c56f4d507f04308f983b06101c23b6134340830f9bcc6fd100a89f6"
+          },
+          "protocol_fallbacks": 1
+        },
+        {
+          "index": 2,
+          "schema": "ShortAnswerDraft",
+          "phase": "received",
+          "streaming": true,
+          "started_at": "2026-10-21T05:21:45.483462+00:00",
+          "first_chunk_ms": 5623.596,
+          "first_text_ms": null,
+          "elapsed_ms": 19135.34,
+          "chunks": 420,
+          "characters": 1082,
+          "usage": {
+            "input_tokens": 2712,
+            "cached_input_tokens": 109,
+            "output_tokens": 420,
+            "load_duration_ns": 5138041,
+            "prompt_eval_duration_ns": 5443969167,
+            "eval_duration_ns": 13646974625,
+            "total_duration_ns": 19099709916,
+            "provider_finish_reason": "stop",
+            "reference_alias_count": 7,
+            "reference_alias_map_sha256": "924cfcd69c56f4d507f04308f983b06101c23b6134340830f9bcc6fd100a89f6"
+          },
+          "protocol_fallbacks": 1
+        },
+        {
+          "index": 3,
+          "schema": "McqDraft",
+          "phase": "received",
+          "streaming": true,
+          "started_at": "2026-10-21T05:22:04.621942+00:00",
+          "first_chunk_ms": 4918.753,
+          "first_text_ms": null,
+          "elapsed_ms": 14811.017,
+          "chunks": 279,
+          "characters": 851,
+          "usage": {
+            "input_tokens": 3132,
+            "cached_input_tokens": 1133,
+            "output_tokens": 279,
+            "load_duration_ns": 4533917,
+            "prompt_eval_duration_ns": 4593135500,
+            "eval_duration_ns": 10173620083,
+            "total_duration_ns": 14775650084,
+            "provider_finish_reason": "stop",
+            "reference_alias_count": 7,
+            "reference_alias_map_sha256": "924cfcd69c56f4d507f04308f983b06101c23b6134340830f9bcc6fd100a89f6"
+          },
+          "protocol_fallbacks": 1
+        },
+        {
+          "index": 4,
+          "schema": "ClozeDraft",
+          "phase": "received",
+          "streaming": true,
+          "started_at": "2026-10-21T05:22:19.438422+00:00",
+          "first_chunk_ms": 4669.02,
+          "first_text_ms": null,
+          "elapsed_ms": 10348.373,
+          "chunks": 194,
+          "characters": 444,
+          "usage": {
+            "input_tokens": 3194,
+            "cached_input_tokens": 1133,
+            "output_tokens": 194,
+            "load_duration_ns": 4746917,
+            "prompt_eval_duration_ns": 4522071667,
+            "eval_duration_ns": 5776593375,
+            "total_duration_ns": 10314722083,
+            "provider_finish_reason": "stop",
+            "question_empty_reason_normalized": 1,
+            "reference_alias_count": 7,
+            "reference_alias_map_sha256": "924cfcd69c56f4d507f04308f983b06101c23b6134340830f9bcc6fd100a89f6"
+          },
+          "protocol_fallbacks": 1
+        },
+        {
+          "index": 5,
+          "schema": "MatchingDraft",
+          "phase": "received",
+          "streaming": true,
+          "started_at": "2026-10-21T05:22:29.791057+00:00",
+          "first_chunk_ms": 5463.023,
+          "first_text_ms": null,
+          "elapsed_ms": 11142.523,
+          "chunks": 146,
+          "characters": 515,
+          "usage": {
+            "input_tokens": 3122,
+            "cached_input_tokens": 1133,
+            "output_tokens": 146,
+            "load_duration_ns": 4869917,
+            "prompt_eval_duration_ns": 5057793542,
+            "eval_duration_ns": 6045006750,
+            "total_duration_ns": 11112027834,
+            "provider_finish_reason": "stop",
+            "reference_alias_count": 7,
+            "reference_alias_map_sha256": "924cfcd69c56f4d507f04308f983b06101c23b6134340830f9bcc6fd100a89f6"
+          },
+          "protocol_fallbacks": 1
+        }
+      ],
+      "preview": null,
+      "planned_stages": 10,
+      "saved_stages": 10,
+      "reused_stages": 5,
+      "started_at": "2026-10-21T05:21:29.668055+00:00",
+      "completed_at": "2026-10-21T05:22:40.942148+00:00",
+      "chapter_context": {
+        "context_id": "5aeb106e14d8138be34bfe2fe29bd66f1176e6184b0285ef78d25da2c4ab8215",
+        "reader_version": "20261020-whole-approved-chapter-v1",
+        "status": "ready",
+        "scope": "whole_approved_plan_selection",
+        "extraction_revision": 2,
+        "total_fragments": 7,
+        "covered_fragments": 7,
+        "total_characters": 504,
+        "covered_characters": 504,
+        "total_parts": 1,
+        "read_parts": 1,
+        "total_stages": 1,
+        "saved_stages": 1,
+        "complete": true,
+        "coverage_is_not_semantic_accuracy": true
+      },
+      "elapsed_ms": 71274.097,
+      "version": 249,
+      "updated_at": "2026-10-21T05:22:40.942197+00:00"
+    }
+  },
+  "status": "succeeded",
+  "elapsed_seconds": 71.761,
+  "course_snapshot": {
+    "id": "0d9fc3c74956422f9496edc32fa7fae4",
+    "revision": 2,
+    "plan_id": "1eb0e852ee6e427a82f75f1edb107709",
+    "creator_id": "3853c9ff548a46e18916984f8484acad",
+    "access_role": "creator",
+    "content": {
+      "title": "Vi tích phân",
+      "unlock_policy": "locked",
+      "preferences": {
+        "source_id": "0d5328df43c044658a814526ae502b88",
+        "subject": "Vi tích phân",
+        "goal": "Áp dụng chain rule, giữ nhân đạo hàm hàm trong; tính đạo hàm và giá trị tại điểm trong ví dụ.",
+        "instructions": "",
+        "language": "vi",
+        "fragment_ids": [
+          "0d5328df43c044658a814526ae502b88:2:0",
+          "0d5328df43c044658a814526ae502b88:2:1",
+          "0d5328df43c044658a814526ae502b88:2:2",
+          "0d5328df43c044658a814526ae502b88:2:3",
+          "0d5328df43c044658a814526ae502b88:2:4",
+          "0d5328df43c044658a814526ae502b88:2:5",
+          "0d5328df43c044658a814526ae502b88:2:6"
+        ],
+        "unlock_policy": "locked",
+        "initial_mode": "learn",
+        "expected_extraction_revision": 2,
+        "excluded_fragment_ids": [],
+        "chapter_priorities": [],
+        "difficulty": "applied",
+        "question_types": [
+          "mcq",
+          "cloze",
+          "matching",
+          "ordering",
+          "short_answer"
+        ],
+        "question_count": 8,
+        "card_count": 2,
+        "target_language": "",
+        "terms_to_keep": [
+          "chain rule"
+        ],
+        "teacher_notes": "",
+        "user_notes": "",
+        "extraction_revision": 2
+      },
+      "units": [
+        {
+          "title": "QA calc-dev-chain — Đạo hàm hàm hợp.txt · Phần 1",
+          "objective": "Học Phần 1 trong QA calc-dev-chain — Đạo hàm hàm hợp.txt; đối chiếu nguồn và luyện nội dung của phần này.",
+          "source_refs": [
+            "0d5328df43c044658a814526ae502b88:2:0",
+            "0d5328df43c044658a814526ae502b88:2:1",
+            "0d5328df43c044658a814526ae502b88:2:2",
+            "0d5328df43c044658a814526ae502b88:2:3",
+            "0d5328df43c044658a814526ae502b88:2:4",
+            "0d5328df43c044658a814526ae502b88:2:5",
+            "0d5328df43c044658a814526ae502b88:2:6"
+          ],
+          "id": "unit-1",
+          "data": {
+            "title": "Áp dụng chain rule cho hàm hợp",
+            "sections": [
+              {
+                "title": "Công thức và Nguyên lý Chain Rule",
+                "text": "Để tính đạo hàm của hàm hợp h(x)=f(g(x)), ta sử dụng chain rule: h'(x)=f'(g(x))*g'(x). Lưu ý quan trọng là đạo hàm của hàm ngoài phải được tính tại g(x), không phải tại g'(x).",
+                "source_refs": [
+                  "0d5328df43c044658a814526ae502b88:2:0"
+                ]
+              },
+              {
+                "title": "Quy trình 4 bước thực hiện",
+                "text": "Để áp dụng chain rule hiệu quả, thực hiện theo quy trình: (1) Xác định hàm trong và hàm ngoài; (2) Lấy đạo hàm hàm ngoài rồi thế hàm trong vào; (3) Tính đạo hàm hàm trong; (4) Nhân hai kết quả lại với nhau.",
+                "source_refs": [
+                  "0d5328df43c044658a814526ae502b88:2:2",
+                  "0d5328df43c044658a814526ae502b88:2:3",
+                  "0d5328df43c044658a814526ae502b88:2:4",
+                  "0d5328df43c044658a814526ae502b88:2:5",
+                  "0d5328df43c044658a814526ae502b88:2:6"
+                ]
+              },
+              {
+                "title": "Ví dụ minh họa và tính giá trị",
+                "text": "Xét h(x)=(3x+1)^4. Hàm trong là g(x)=3x+1, g'(x)=3. Hàm ngoài là f(u)=u^4, f'(u)=4u^3. Áp dụng chain rule: h'(x)=4(3x+1)^3 * 3 = 12(3x+1)^3. Tại x=0, h'(0)=12.",
+                "source_refs": [
+                  "0d5328df43c044658a814526ae502b88:2:1"
+                ]
+              }
+            ],
+            "questions": [
+              {
+                "kind": "cloze",
+                "prompt": "Khi tính đạo hàm của hàm hợp $h(x)=(3x+1)^4$ bằng quy trình chain rule, sau khi lấy đạo hàm hàm ngoài và thế hàm trong vào, bước tiếp theo là tính đạo hàm của hàm trong $g(x)=3x+1$, sau đó ____ hai kết quả để hoàn thiện $h'(x)$.",
+                "options": [],
+                "left": [],
+                "answer": "nhân",
+                "explanation": "Theo quy trình 4 bước của chain rule, sau khi tính đạo hàm hàm ngoài và đạo hàm hàm trong, bước cuối cùng là nhân hai kết quả này với nhau để được đạo hàm của hàm hợp.",
+                "source_refs": [
+                  "0d5328df43c044658a814526ae502b88:2:6"
+                ],
+                "rubric": [],
+                "difficulty": "applied",
+                "difficulty_basis": "creator_request_not_measured"
+              },
+              {
+                "kind": "matching",
+                "prompt": "Dựa trên ví dụ về hàm hợp $h(x)=(3x+1)^4$, hãy ghép cặp các thành phần tương ứng trong quá trình tính đạo hàm và giá trị tại điểm.",
+                "options": [
+                  "h'(0)=12",
+                  "h'(x)=12(3x+1)^3"
+                ],
+                "left": [
+                  "Đạo hàm của hàm hợp $h(x)=(3x+1)^4$",
+                  "Giá trị của đạo hàm tại điểm $x=0$"
+                ],
+                "answer": [
+                  1,
+                  0
+                ],
+                "explanation": "Từ ví dụ trong nguồn, đạo hàm của hàm hợp là $h'(x)=12(3x+1)^3$. Khi thay $x=0$ vào biểu thức này, ta được giá trị $h'(0)=12$. Việc tính toán này yêu cầu áp dụng đúng quy trình chain rule.",
+                "source_refs": [
+                  "0d5328df43c044658a814526ae502b88:2:1"
+                ],
+                "rubric": [],
+                "difficulty": "applied",
+                "difficulty_basis": "creator_request_not_measured"
+              },
+              {
+                "kind": "ordering",
+                "prompt": "Để tính đạo hàm của hàm hợp $h(x)=(3x+1)^4$ bằng cách áp dụng chain rule, hãy sắp xếp các bước thực hiện theo đúng quy trình chuẩn:",
+                "options": [
+                  "Lấy đạo hàm hàm ngoài rồi thế hàm trong vào",
+                  "Nhân hai kết quả để được đạo hàm hàm hợp",
+                  "Xác định hàm trong và hàm ngoài",
+                  "Tính đạo hàm hàm trong"
+                ],
+                "left": [],
+                "answer": [
+                  2,
+                  0,
+                  3,
+                  1
+                ],
+                "explanation": "Quy trình chuẩn gồm 4 bước: Xác định hàm trong/ngoài, lấy đạo hàm hàm ngoài (thế hàm trong vào), tính đạo hàm hàm trong, và cuối cùng là nhân hai kết quả này với nhau.",
+                "source_refs": [
+                  "0d5328df43c044658a814526ae502b88:2:3",
+                  "0d5328df43c044658a814526ae502b88:2:4",
+                  "0d5328df43c044658a814526ae502b88:2:5",
+                  "0d5328df43c044658a814526ae502b88:2:6"
+                ],
+                "rubric": [],
+                "difficulty": "applied",
+                "difficulty_basis": "creator_request_not_measured"
+              },
+              {
+                "kind": "mcq",
+                "prompt": "Xét hàm hợp h(x) = (3x + 1)^4. Để áp dụng chain rule nhằm tính đạo hàm h'(x), bước đầu tiên trong quy trình là gì?",
+                "options": [
+                  "Tính đạo hàm của hàm ngoài f(u) = u^4",
+                  "Xác định hàm trong g(x) = 3x + 1 và hàm ngoài f(u) = u^4",
+                  "Tính đạo hàm của hàm trong g'(x) = 3",
+                  "Nhân kết quả đạo hàm của hàm ngoài và hàm trong"
+                ],
+                "left": [],
+                "answer": "Xác định hàm trong g(x) = 3x + 1 và hàm ngoài f(u) = u^4",
+                "explanation": "Theo quy trình 4 bước của chain rule, bước 1 luôn là xác định hàm trong và hàm ngoài trước khi thực hiện các bước tính toán đạo hàm tiếp theo.",
+                "source_refs": [
+                  "0d5328df43c044658a814526ae502b88:2:3"
+                ],
+                "rubric": [],
+                "difficulty": "applied",
+                "difficulty_basis": "creator_request_not_measured"
+              },
+              {
+                "kind": "short_answer",
+                "prompt": "Cho hàm số h(x) = (5x^2 + 2)^3. Hãy thực hiện quy trình 4 bước để tính đạo hàm h'(x) bằng cách áp dụng chain rule.",
+                "options": [],
+                "left": [],
+                "answer": "Bước 1: Hàm trong g(x) = 5x^2 + 2, hàm ngoài f(u) = u^3. Bước 2: f'(u) = 3u^2, thế vào được 3(5x^2 + 2)^2. Bước 3: g'(x) = 10x. Bước 4: h'(x) = 3(5x^2 + 2)^2 * 10x = 30x(5x^2 + 2)^2.",
+                "explanation": "Để tính đạo hàm hàm hợp, ta thực hiện quy trình: xác định hàm trong/ngoài, lấy đạo hàm hàm ngoài (giữ nguyên hàm trong), tính đạo hàm hàm trong, và nhân hai kết quả lại với nhau. Lưu ý đạo hàm hàm ngoài phải được tính tại g(x).",
+                "source_refs": [
+                  "0d5328df43c044658a814526ae502b88:2:0",
+                  "0d5328df43c044658a814526ae502b88:2:1",
+                  "0d5328df43c044658a814526ae502b88:2:3",
+                  "0d5328df43c044658a814526ae502b88:2:4",
+                  "0d5328df43c044658a814526ae502b88:2:5",
+                  "0d5328df43c044658a814526ae502b88:2:6"
+                ],
+                "rubric": [
+                  "Xác định đúng hàm trong g(x) và hàm ngoài f(u).",
+                  "Tính đúng đạo hàm hàm ngoài và hàm trong.",
+                  "Nhân đúng hai kết quả để ra biểu thức h'(x) cuối cùng."
+                ],
+                "difficulty": "applied",
+                "difficulty_basis": "creator_request_not_measured"
+              },
+              {
+                "kind": "mcq",
+                "prompt": "Khi áp dụng quy trình tính đạo hàm cho hàm hợp h(x) = (3x+1)^4, sau khi đã xác định được hàm trong g(x)=3x+1 và hàm ngoài f(u)=u^4, bước tiếp theo cần thực hiện là gì?",
+                "options": [
+                  "Tính đạo hàm hàm trong",
+                  "Lấy đạo hàm hàm ngoài rồi thế hàm trong vào",
+                  "Nhân hai kết quả đạo hàm"
+                ],
+                "left": [],
+                "answer": "Lấy đạo hàm hàm ngoài rồi thế hàm trong vào",
+                "explanation": "Theo quy trình 4 bước trong nguồn, sau bước 1 (xác định hàm trong/ngoài), bước 2 yêu cầu lấy đạo hàm hàm ngoài rồi thế hàm trong vào.",
+                "source_refs": [
+                  "0d5328df43c044658a814526ae502b88:2:3",
+                  "0d5328df43c044658a814526ae502b88:2:4"
+                ],
+                "rubric": [],
+                "difficulty": "applied",
+                "difficulty_basis": "creator_request_not_measured"
+              },
+              {
+                "kind": "cloze",
+                "prompt": "Xét hàm hợp h(x)=(3x+1)^4. Sau khi áp dụng chain rule để tìm đạo hàm h'(x)=12(3x+1)^3, giá trị của đạo hàm tại điểm x=0 là ____.",
+                "options": [],
+                "left": [],
+                "answer": "12",
+                "explanation": "Từ ví dụ trong nguồn, hàm hợp h(x)=(3x+1)^4 có đạo hàm h'(x)=12(3x+1)^3. Thay x=0 vào biểu thức này, ta được h'(0)=12(3(0)+1)^3 = 12(1)^3 = 12.",
+                "source_refs": [
+                  "0d5328df43c044658a814526ae502b88:2:1"
+                ],
+                "rubric": [],
+                "difficulty": "applied",
+                "difficulty_basis": "creator_request_not_measured"
+              }
+            ],
+            "cards": [
+              {
+                "front": "Công thức chain rule cho hàm hợp h(x)=f(g(x)) là gì?",
+                "back": "h'(x)=f'(g(x))*g'(x). Đạo hàm hàm ngoài phải được tính tại g(x).",
+                "source_refs": [
+                  "0d5328df43c044658a814526ae502b88:2:0"
+                ]
+              },
+              {
+                "front": "Tại sao biểu thức 4(3x+1)^3 lại sai khi tính đạo hàm của (3x+1)^4?",
+                "back": "Vì biểu thức này bỏ mất hệ số 3 từ đạo hàm của hàm trong g(x)=3x+1.",
+                "source_refs": [
+                  "0d5328df43c044658a814526ae502b88:2:1"
+                ]
+              }
+            ],
+            "mindmap": [
+              {
+                "title": "Xác định thành phần",
+                "text": "Xác định hàm trong và hàm ngoài của hàm hợp.",
+                "source_refs": [
+                  "0d5328df43c044658a814526ae502b88:2:3"
+                ]
+              },
+              {
+                "title": "Tính toán thành phần",
+                "text": "Tính đạo hàm hàm ngoài (thế hàm trong) và đạo hàm hàm trong.",
+                "source_refs": [
+                  "0d5328df43c044658a814526ae502b88:2:4",
+                  "0d5328df43c044658a814526ae502b88:2:5"
+                ]
+              },
+              {
+                "title": "Kết hợp",
+                "text": "Nhân hai kết quả để hoàn thiện chain rule.",
+                "source_refs": [
+                  "0d5328df43c044658a814526ae502b88:2:6"
+                ]
+              }
+            ]
+          },
+          "completed": false,
+          "unlocked": true,
+          "generation": {
+            "job_id": "ca60032658db43e382e28e79f46ef7d5",
+            "provider": {
+              "provider": "ollama_local",
+              "model": "gemma4:12b-mlx",
+              "reference_codec": "scoped-reference-aliases-v1",
+              "model_choice_id": "local:gemma4:12b-mlx",
+              "selection_revision": 1,
+              "prompt_version": "20261021-kind-compatible-chapter-focus-v26",
+              "schema_version": 20,
+              "processor_version": "20261021-polynomial-composition-proof-v13",
+              "chapter_evidence_version": "20261021-approved-chapter-support-v1",
+              "chapter_brief_prompt_version": "20261021-compact-readable-formulas-v2",
+              "question_focus_version": "20261021-kind-compatible-chapter-targets-v2"
+            },
+            "source_id": "0d5328df43c044658a814526ae502b88",
+            "source_plan_id": "1eb0e852ee6e427a82f75f1edb107709",
+            "extraction_revision": 2,
+            "source_refs": [
+              "0d5328df43c044658a814526ae502b88:2:0",
+              "0d5328df43c044658a814526ae502b88:2:1",
+              "0d5328df43c044658a814526ae502b88:2:2",
+              "0d5328df43c044658a814526ae502b88:2:3",
+              "0d5328df43c044658a814526ae502b88:2:4",
+              "0d5328df43c044658a814526ae502b88:2:5",
+              "0d5328df43c044658a814526ae502b88:2:6"
+            ],
+            "content_language": "vi",
+            "generated_at": "2026-10-21T05:22:40.938753+00:00",
+            "stage_providers": {
+              "reading": {
+                "provider": "ollama_local",
+                "model": "gemma4:12b-mlx",
+                "reference_codec": "scoped-reference-aliases-v1",
+                "model_choice_id": "local:gemma4:12b-mlx",
+                "selection_revision": 1,
+                "prompt_version": "20261021-chapter-question-focus-v25",
+                "schema_version": 20,
+                "processor_version": "20261021-math-argument-step-boundary-v12",
+                "chapter_evidence_version": "20261021-approved-chapter-support-v1",
+                "chapter_brief_prompt_version": "20261021-compact-readable-formulas-v2",
+                "question_focus_version": "20261021-chapter-question-targets-v1"
+              },
+              "mcq": {
+                "provider": "ollama_local",
+                "model": "gemma4:12b-mlx",
+                "reference_codec": "scoped-reference-aliases-v1",
+                "model_choice_id": "local:gemma4:12b-mlx",
+                "selection_revision": 1,
+                "prompt_version": "20261021-kind-compatible-chapter-focus-v26",
+                "schema_version": 20,
+                "processor_version": "20261021-polynomial-composition-proof-v13",
+                "chapter_evidence_version": "20261021-approved-chapter-support-v1",
+                "chapter_brief_prompt_version": "20261021-compact-readable-formulas-v2",
+                "question_focus_version": "20261021-kind-compatible-chapter-targets-v2"
+              },
+              "cloze": {
+                "provider": "ollama_local",
+                "model": "gemma4:12b-mlx",
+                "reference_codec": "scoped-reference-aliases-v1",
+                "model_choice_id": "local:gemma4:12b-mlx",
+                "selection_revision": 1,
+                "prompt_version": "20261021-chapter-question-focus-v25",
+                "schema_version": 20,
+                "processor_version": "20261021-math-argument-step-boundary-v12",
+                "chapter_evidence_version": "20261021-approved-chapter-support-v1",
+                "chapter_brief_prompt_version": "20261021-compact-readable-formulas-v2",
+                "question_focus_version": "20261021-chapter-question-targets-v1"
+              },
+              "matching": {
+                "provider": "ollama_local",
+                "model": "gemma4:12b-mlx",
+                "reference_codec": "scoped-reference-aliases-v1",
+                "model_choice_id": "local:gemma4:12b-mlx",
+                "selection_revision": 1,
+                "prompt_version": "20261021-chapter-question-focus-v25",
+                "schema_version": 20,
+                "processor_version": "20261021-math-argument-step-boundary-v12",
+                "chapter_evidence_version": "20261021-approved-chapter-support-v1",
+                "chapter_brief_prompt_version": "20261021-compact-readable-formulas-v2",
+                "question_focus_version": "20261021-chapter-question-targets-v1"
+              },
+              "ordering": {
+                "provider": "ollama_local",
+                "model": "gemma4:12b-mlx",
+                "reference_codec": "scoped-reference-aliases-v1",
+                "model_choice_id": "local:gemma4:12b-mlx",
+                "selection_revision": 1,
+                "prompt_version": "20261021-chapter-question-focus-v25",
+                "schema_version": 20,
+                "processor_version": "20261021-math-argument-step-boundary-v12",
+                "chapter_evidence_version": "20261021-approved-chapter-support-v1",
+                "chapter_brief_prompt_version": "20261021-compact-readable-formulas-v2",
+                "question_focus_version": "20261021-chapter-question-targets-v1"
+              },
+              "short_answer": {
+                "provider": "ollama_local",
+                "model": "gemma4:12b-mlx",
+                "reference_codec": "scoped-reference-aliases-v1",
+                "model_choice_id": "local:gemma4:12b-mlx",
+                "selection_revision": 1,
+                "prompt_version": "20261021-kind-compatible-chapter-focus-v26",
+                "schema_version": 20,
+                "processor_version": "20261021-polynomial-composition-proof-v13",
+                "chapter_evidence_version": "20261021-approved-chapter-support-v1",
+                "chapter_brief_prompt_version": "20261021-compact-readable-formulas-v2",
+                "question_focus_version": "20261021-kind-compatible-chapter-targets-v2"
+              },
+              "mcq:2": {
+                "provider": "ollama_local",
+                "model": "gemma4:12b-mlx",
+                "reference_codec": "scoped-reference-aliases-v1",
+                "model_choice_id": "local:gemma4:12b-mlx",
+                "selection_revision": 1,
+                "prompt_version": "20261021-kind-compatible-chapter-focus-v26",
+                "schema_version": 20,
+                "processor_version": "20261021-polynomial-composition-proof-v13",
+                "chapter_evidence_version": "20261021-approved-chapter-support-v1",
+                "chapter_brief_prompt_version": "20261021-compact-readable-formulas-v2",
+                "question_focus_version": "20261021-kind-compatible-chapter-targets-v2"
+              },
+              "cloze:2": {
+                "provider": "ollama_local",
+                "model": "gemma4:12b-mlx",
+                "reference_codec": "scoped-reference-aliases-v1",
+                "model_choice_id": "local:gemma4:12b-mlx",
+                "selection_revision": 1,
+                "prompt_version": "20261021-kind-compatible-chapter-focus-v26",
+                "schema_version": 20,
+                "processor_version": "20261021-polynomial-composition-proof-v13",
+                "chapter_evidence_version": "20261021-approved-chapter-support-v1",
+                "chapter_brief_prompt_version": "20261021-compact-readable-formulas-v2",
+                "question_focus_version": "20261021-kind-compatible-chapter-targets-v2"
+              },
+              "matching:2": {
+                "provider": "ollama_local",
+                "model": "gemma4:12b-mlx",
+                "reference_codec": "scoped-reference-aliases-v1",
+                "model_choice_id": "local:gemma4:12b-mlx",
+                "selection_revision": 1,
+                "prompt_version": "20261021-kind-compatible-chapter-focus-v26",
+                "schema_version": 20,
+                "processor_version": "20261021-polynomial-composition-proof-v13",
+                "chapter_evidence_version": "20261021-approved-chapter-support-v1",
+                "chapter_brief_prompt_version": "20261021-compact-readable-formulas-v2",
+                "question_focus_version": "20261021-kind-compatible-chapter-targets-v2"
+              }
+            },
+            "resumed_from_job_id": "1dd5cc5c54fe4045929e3d06f43695f0",
+            "chapter_context": {
+              "context_id": "5aeb106e14d8138be34bfe2fe29bd66f1176e6184b0285ef78d25da2c4ab8215",
+              "reader_version": "20261020-whole-approved-chapter-v1",
+              "status": "ready",
+              "scope": "whole_approved_plan_selection",
+              "extraction_revision": 2,
+              "total_fragments": 7,
+              "covered_fragments": 7,
+              "total_characters": 504,
+              "covered_characters": 504,
+              "total_parts": 1,
+              "read_parts": 1,
+              "total_stages": 1,
+              "saved_stages": 1,
+              "complete": true,
+              "coverage_is_not_semantic_accuracy": true
+            },
+            "evidence_scope": {
+              "version": "20261021-approved-chapter-support-v1",
+              "context_id": "5aeb106e14d8138be34bfe2fe29bd66f1176e6184b0285ef78d25da2c4ab8215",
+              "focus_source_refs": [
+                "0d5328df43c044658a814526ae502b88:2:0",
+                "0d5328df43c044658a814526ae502b88:2:1",
+                "0d5328df43c044658a814526ae502b88:2:2",
+                "0d5328df43c044658a814526ae502b88:2:3",
+                "0d5328df43c044658a814526ae502b88:2:4",
+                "0d5328df43c044658a814526ae502b88:2:5",
+                "0d5328df43c044658a814526ae502b88:2:6"
+              ],
+              "support_source_refs": [],
+              "input_source_refs": [
+                "0d5328df43c044658a814526ae502b88:2:0",
+                "0d5328df43c044658a814526ae502b88:2:1",
+                "0d5328df43c044658a814526ae502b88:2:2",
+                "0d5328df43c044658a814526ae502b88:2:3",
+                "0d5328df43c044658a814526ae502b88:2:4",
+                "0d5328df43c044658a814526ae502b88:2:5",
+                "0d5328df43c044658a814526ae502b88:2:6"
+              ],
+              "input_sha256": "648780b62c3a36cf5020c589aaa1dd4697f19e5fa384da1469ccbbff935f1e24",
+              "query_sha256": "cb2f0e08603d3f03f39dc3daac6f3005bbca0f8ebab7098081a6a6175bc92671",
+              "added_support_refs": [],
+              "omitted": [],
+              "relevance_is_not_entailment": true,
+              "ai_calls": 0,
+              "sha256": "66e28928e7d49a7fd44f5897f49a4330707c66717042a4a54e77e113a7e56dac"
+            },
+            "question_focus_plan": {
+              "version": "20261021-chapter-question-targets-v1",
+              "context_id": "5aeb106e14d8138be34bfe2fe29bd66f1176e6184b0285ef78d25da2c4ab8215",
+              "evidence_sha256": "66e28928e7d49a7fd44f5897f49a4330707c66717042a4a54e77e113a7e56dac",
+              "unit_sha256": "bb3c9d250911ace9572cbd06ced74d6dd577d4b215ea6f6dbe8d741be8bcb052",
+              "preferences_sha256": "84a3ae14d4b6868f921f0af2f52301b365a2d15a79fccfb67673080eb78f5353",
+              "reading_sha256": "d41117961b908fad0be4bfb4e61edf1d89006cb2cfa9b4d15c5d041bceff82d5",
+              "brief_sha256": "32d1ea9e511b3f5b6d3074e1355a27d83acd0f8f812033d56d7d9a26f7413f87",
+              "assignments": {
+                "mcq": {
+                  "kind": "mcq",
+                  "topic": "Xác định hàm trong và hàm ngoài của một hàm hợp cho trước.",
+                  "basis": "chapter_question_target",
+                  "index": 0
+                },
+                "cloze": {
+                  "kind": "cloze",
+                  "topic": "Tính đạo hàm của hàm hợp bằng cách áp dụng quy trình 4 bước.",
+                  "basis": "chapter_question_target",
+                  "index": 1
+                },
+                "matching": {
+                  "kind": "matching",
+                  "topic": "Tính giá trị đạo hàm tại một điểm cụ thể sau khi áp dụng chain rule.",
+                  "basis": "chapter_question_target",
+                  "index": 2
+                },
+                "ordering": {
+                  "kind": "ordering",
+                  "topic": "Xác định hàm trong và hàm ngoài của một hàm hợp cho trước.",
+                  "basis": "chapter_question_target",
+                  "index": 0
+                },
+                "short_answer": {
+                  "kind": "short_answer",
+                  "topic": "Tính đạo hàm của hàm hợp bằng cách áp dụng quy trình 4 bước.",
+                  "basis": "chapter_question_target",
+                  "index": 1
+                },
+                "mcq:2": {
+                  "kind": "mcq",
+                  "topic": "Tính đạo hàm của hàm hợp bằng cách áp dụng quy trình 4 bước.",
+                  "basis": "chapter_question_target",
+                  "index": 1
+                },
+                "cloze:2": {
+                  "kind": "cloze",
+                  "topic": "Tính giá trị đạo hàm tại một điểm cụ thể sau khi áp dụng chain rule.",
+                  "basis": "chapter_question_target",
+                  "index": 2
+                },
+                "matching:2": {
+                  "kind": "matching",
+                  "topic": "Xác định hàm trong và hàm ngoài của một hàm hợp cho trước.",
+                  "basis": "chapter_question_target",
+                  "index": 0
+                }
+              },
+              "ai_calls": 0,
+              "is_suggestion_not_evidence": true,
+              "sha256": "4d62ec97262c6c6f47e1f7043111ad98e74dfd86209104fe1a06b0ede911f32d"
+            },
+            "stage_focus": {
+              "mcq": {
+                "plan_sha256": "4d62ec97262c6c6f47e1f7043111ad98e74dfd86209104fe1a06b0ede911f32d",
+                "job_id": "ca60032658db43e382e28e79f46ef7d5"
+              },
+              "cloze": {
+                "plan_sha256": "4d62ec97262c6c6f47e1f7043111ad98e74dfd86209104fe1a06b0ede911f32d",
+                "job_id": "1dd5cc5c54fe4045929e3d06f43695f0"
+              },
+              "matching": {
+                "plan_sha256": "4d62ec97262c6c6f47e1f7043111ad98e74dfd86209104fe1a06b0ede911f32d",
+                "job_id": "1dd5cc5c54fe4045929e3d06f43695f0"
+              },
+              "ordering": {
+                "plan_sha256": "4d62ec97262c6c6f47e1f7043111ad98e74dfd86209104fe1a06b0ede911f32d",
+                "job_id": "1dd5cc5c54fe4045929e3d06f43695f0"
+              },
+              "short_answer": {
+                "plan_sha256": "4d62ec97262c6c6f47e1f7043111ad98e74dfd86209104fe1a06b0ede911f32d",
+                "job_id": "ca60032658db43e382e28e79f46ef7d5"
+              },
+              "mcq:2": {
+                "plan_sha256": "4d62ec97262c6c6f47e1f7043111ad98e74dfd86209104fe1a06b0ede911f32d",
+                "job_id": "ca60032658db43e382e28e79f46ef7d5"
+              },
+              "cloze:2": {
+                "plan_sha256": "4d62ec97262c6c6f47e1f7043111ad98e74dfd86209104fe1a06b0ede911f32d",
+                "job_id": "ca60032658db43e382e28e79f46ef7d5"
+              },
+              "matching:2": {
+                "plan_sha256": "4d62ec97262c6c6f47e1f7043111ad98e74dfd86209104fe1a06b0ede911f32d",
+                "job_id": "ca60032658db43e382e28e79f46ef7d5"
+              }
+            },
+            "question_coverage": {
+              "requested_count": 8,
+              "generated_count": 7,
+              "complete": false,
+              "requested_types": [
+                "mcq",
+                "cloze",
+                "matching",
+                "ordering",
+                "short_answer"
+              ],
+              "generated_types": [
+                "cloze",
+                "matching",
+                "ordering",
+                "mcq",
+                "short_answer"
+              ],
+              "uncreated": [
+                {
+                  "stage": "matching:2",
+                  "kind": "matching",
+                  "reason": "Đã có câu hỏi dạng matching sử dụng ví dụ h(x)=(3x+1)^4. Trong nguồn hiện tại, các nội dung còn lại tập trung vào quy trình 4 bước và các lưu ý kỹ thuật (như việc tính đạo hàm hàm ngoài tại g(x)). Tuy nhiên, do yêu cầu chỉ tạo đúng một câu dạng matching và không được trùng nội dung/ý nghĩa với câu đã có, đồng thời các dữ kiện còn lại trong nguồn không đủ để tạo ra một cặp matching mới khác biệt về mặt kiến thức mà không bị lặp lại các thành phần của ví dụ trên.",
+                  "origin": "model_declined"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  },
+  "question_count": 7,
+  "wallet_after": {
+    "balance": 20,
+    "held": 0,
+    "available": 20,
+    "policy_version": "dev-proposal-20261015-v2",
+    "policy_proposed": true,
+    "cash_payments": false,
+    "enforcement_enabled": true
+  }
+}

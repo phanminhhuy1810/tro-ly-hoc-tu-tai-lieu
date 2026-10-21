@@ -1,0 +1,830 @@
+{
+  "purpose": "One fresh Gemini development pipeline after per-kind output and numbered-action source gate fixes; earlier Gemma four-question result remains unchanged. Not a held-out speed/quality benchmark.",
+  "model": "gemini:gemini-2.5-flash",
+  "passed": false,
+  "external_ai": true,
+  "confirmed_proposed_app_coin": 1,
+  "monetary_payments": 0,
+  "runs": [
+    {
+      "path": "/courses/3d36cba04f46488aa4142d52da99a2b5/generate",
+      "job_id": "8db2e2a1405d48d7933b397b4d4f2b7c",
+      "events": [
+        {
+          "elapsed_seconds": 0.013,
+          "status": "running",
+          "phase": "connecting",
+          "saved_stages": 0,
+          "preview_chars": 0
+        },
+        {
+          "elapsed_seconds": 7.833,
+          "status": "running",
+          "phase": "connecting",
+          "saved_stages": 1,
+          "preview_chars": 0
+        },
+        {
+          "elapsed_seconds": 10.179,
+          "status": "running",
+          "phase": "connecting",
+          "saved_stages": 2,
+          "preview_chars": 0
+        },
+        {
+          "elapsed_seconds": 12.022,
+          "status": "running",
+          "phase": "connecting",
+          "saved_stages": 3,
+          "preview_chars": 0
+        },
+        {
+          "elapsed_seconds": 14.361,
+          "status": "running",
+          "phase": "connecting",
+          "saved_stages": 4,
+          "preview_chars": 0
+        },
+        {
+          "elapsed_seconds": 17.245,
+          "status": "running",
+          "phase": "connecting",
+          "saved_stages": 5,
+          "preview_chars": 0
+        },
+        {
+          "elapsed_seconds": 19.604,
+          "status": "succeeded",
+          "phase": "succeeded",
+          "saved_stages": 6,
+          "preview_chars": 0
+        }
+      ],
+      "status": "succeeded",
+      "completed_seconds": 19.604,
+      "provider": {
+        "provider": "gemini_api",
+        "model": "gemini-2.5-flash",
+        "model_choice_id": "gemini:gemini-2.5-flash",
+        "selection_revision": 1,
+        "prompt_version": "20261018-source-keys-coverage-v11",
+        "schema_version": 14
+      },
+      "progress": {
+        "phase": "succeeded",
+        "requests": [
+          {
+            "index": 1,
+            "schema": "LessonReading",
+            "phase": "received",
+            "streaming": true,
+            "started_at": "2026-10-18T10:25:09.700672+00:00",
+            "first_chunk_ms": 1794.798,
+            "first_text_ms": null,
+            "elapsed_ms": 7735.668,
+            "chunks": 30,
+            "characters": 3226,
+            "usage": {
+              "input_tokens": 1530,
+              "output_tokens": 1427,
+              "total_tokens": 2957
+            }
+          },
+          {
+            "index": 2,
+            "schema": "McqDraft",
+            "phase": "received",
+            "streaming": true,
+            "started_at": "2026-10-18T10:25:17.442073+00:00",
+            "first_chunk_ms": 1735.367,
+            "first_text_ms": null,
+            "elapsed_ms": 2290.136,
+            "chunks": 4,
+            "characters": 497,
+            "usage": {
+              "input_tokens": 1684,
+              "output_tokens": 153,
+              "total_tokens": 1837
+            }
+          },
+          {
+            "index": 3,
+            "schema": "ClozeDraft",
+            "phase": "received",
+            "streaming": true,
+            "started_at": "2026-10-18T10:25:19.736223+00:00",
+            "first_chunk_ms": 1450.557,
+            "first_text_ms": null,
+            "elapsed_ms": 1963.575,
+            "chunks": 5,
+            "characters": 420,
+            "usage": {
+              "input_tokens": 1749,
+              "output_tokens": 160,
+              "total_tokens": 1909
+            }
+          },
+          {
+            "index": 4,
+            "schema": "MatchingDraft",
+            "phase": "received",
+            "streaming": true,
+            "started_at": "2026-10-18T10:25:21.706309+00:00",
+            "first_chunk_ms": 1809.536,
+            "first_text_ms": null,
+            "elapsed_ms": 2293.686,
+            "chunks": 5,
+            "characters": 476,
+            "usage": {
+              "input_tokens": 1790,
+              "output_tokens": 184,
+              "total_tokens": 1974
+            }
+          },
+          {
+            "index": 5,
+            "schema": "OrderingDraft",
+            "phase": "received",
+            "streaming": true,
+            "started_at": "2026-10-18T10:25:24.007617+00:00",
+            "first_chunk_ms": 1462.378,
+            "first_text_ms": null,
+            "elapsed_ms": 2795.147,
+            "chunks": 8,
+            "characters": 817,
+            "usage": {
+              "input_tokens": 1879,
+              "output_tokens": 331,
+              "total_tokens": 2210
+            }
+          },
+          {
+            "index": 6,
+            "schema": "ShortAnswerDraft",
+            "phase": "received",
+            "streaming": true,
+            "started_at": "2026-10-18T10:25:26.809670+00:00",
+            "first_chunk_ms": 1280.646,
+            "first_text_ms": null,
+            "elapsed_ms": 2427.907,
+            "chunks": 7,
+            "characters": 813,
+            "usage": {
+              "input_tokens": 1802,
+              "output_tokens": 268,
+              "total_tokens": 2070
+            }
+          }
+        ],
+        "preview": null,
+        "planned_stages": 6,
+        "saved_stages": 6,
+        "reused_stages": 0,
+        "started_at": "2026-10-18T10:25:09.699280+00:00",
+        "completed_at": "2026-10-18T10:25:29.243240+00:00",
+        "elapsed_ms": 19543.962,
+        "version": 66,
+        "updated_at": "2026-10-18T10:25:29.243267+00:00"
+      },
+      "error": null,
+      "partial": {
+        "reading": {
+          "title": "IPv4 và subnet /26",
+          "sections": [
+            {
+              "title": "Tổng quan về IPv4 và Prefix /26",
+              "text": "IPv4 là một hệ thống địa chỉ 32 bit, được chia thành bốn octet, mỗi octet gồm 8 bit. Prefix /26 chỉ định rằng 26 bit đầu tiên được sử dụng cho phần network, để lại 6 bit cho phần host. Điều này có nghĩa là mỗi block /26 sẽ có 2^6 = 64 địa chỉ. Trong số này, 62 địa chỉ có thể được sử dụng cho các host, sau khi loại bỏ địa chỉ network và địa chỉ broadcast. Ví dụ, với địa chỉ 192.168.1.70/26, block cuối cùng sẽ là 64–127.",
+              "source_refs": [
+                "0cbf5ec610f54f2b86aa455f6c0c4830:2:0"
+              ]
+            },
+            {
+              "title": "Xác định Network, Broadcast và Host trong Subnet /26",
+              "text": "Trong một subnet /26, địa chỉ network là địa chỉ đầu tiên của block, và địa chỉ broadcast là địa chỉ cuối cùng của block. Các địa chỉ host dùng được nằm giữa địa chỉ network và địa chỉ broadcast. Ví dụ, với địa chỉ 192.168.1.70/26, địa chỉ network là 192.168.1.64, địa chỉ broadcast là 192.168.1.127. Các địa chỉ host dùng được sẽ từ 192.168.1.65 đến 192.168.1.126.",
+              "source_refs": [
+                "0cbf5ec610f54f2b86aa455f6c0c4830:2:0"
+              ]
+            },
+            {
+              "title": "Quy trình tính toán Subnet",
+              "text": "Để tính toán subnet, có năm bước chính. Đầu tiên, đọc prefix và tính số bit host. Thứ hai, tính kích thước block. Thứ ba, xác định block chứa octet cuối cùng của địa chỉ IP. Thứ tư, lấy địa chỉ đầu block làm network và địa chỉ cuối block làm broadcast. Cuối cùng, loại bỏ hai địa chỉ biên (network và broadcast) để có được dải địa chỉ host dùng được.",
+              "source_refs": [
+                "0cbf5ec610f54f2b86aa455f6c0c4830:2:1",
+                "0cbf5ec610f54f2b86aa455f6c0c4830:2:2",
+                "0cbf5ec610f54f2b86aa455f6c0c4830:2:3",
+                "0cbf5ec610f54f2b86aa455f6c0c4830:2:4",
+                "0cbf5ec610f54f2b86aa455f6c0c4830:2:5"
+              ]
+            }
+          ],
+          "cards": [
+            {
+              "front": "IPv4 có bao nhiêu bit và được chia thành mấy octet?",
+              "back": "IPv4 có 32 bit, được chia thành bốn octet, mỗi octet có 8 bit.",
+              "source_refs": [
+                "0cbf5ec610f54f2b86aa455f6c0c4830:2:0"
+              ]
+            },
+            {
+              "front": "Với prefix /26, có bao nhiêu địa chỉ trong một block và bao nhiêu địa chỉ host dùng được?",
+              "back": "Với prefix /26, có 2^6 = 64 địa chỉ trong một block. Sau khi loại bỏ địa chỉ network và broadcast, có 62 địa chỉ host dùng được.",
+              "source_refs": [
+                "0cbf5ec610f54f2b86aa455f6c0c4830:2:0"
+              ]
+            }
+          ],
+          "mindmap": [
+            {
+              "title": "IPv4",
+              "text": "IPv4 là hệ thống địa chỉ 32 bit, chia thành 4 octet, mỗi octet 8 bit. Nó là nền tảng cho việc định tuyến và giao tiếp trên mạng internet.",
+              "source_refs": [
+                "0cbf5ec610f54f2b86aa455f6c0c4830:2:0"
+              ]
+            },
+            {
+              "title": "Subnet /26",
+              "text": "Prefix /26 dành 26 bit cho network và 6 bit cho host. Một block /26 có 64 địa chỉ, trong đó 62 địa chỉ host có thể sử dụng được. Ví dụ: 192.168.1.70/26 có network 192.168.1.64 và broadcast 192.168.1.127.",
+              "source_refs": [
+                "0cbf5ec610f54f2b86aa455f6c0c4830:2:0"
+              ]
+            },
+            {
+              "title": "Quy trình tính Subnet",
+              "text": "Quy trình gồm 5 bước: 1. Đọc prefix và tính bit host. 2. Tính kích thước block. 3. Xác định block chứa octet cuối. 4. Lấy đầu block làm network, cuối block làm broadcast. 5. Loại hai biên để lấy dải host dùng được.",
+              "source_refs": [
+                "0cbf5ec610f54f2b86aa455f6c0c4830:2:1",
+                "0cbf5ec610f54f2b86aa455f6c0c4830:2:2",
+                "0cbf5ec610f54f2b86aa455f6c0c4830:2:3",
+                "0cbf5ec610f54f2b86aa455f6c0c4830:2:4",
+                "0cbf5ec610f54f2b86aa455f6c0c4830:2:5"
+              ]
+            }
+          ]
+        },
+        "questions": {
+          "mcq": {
+            "reason": "",
+            "question": {
+              "kind": "mcq",
+              "prompt": "Theo nguồn, bước đầu tiên để tính toán subnet là gì?",
+              "options": [
+                "Đọc prefix và tính số bit host.",
+                "Tính kích thước block.",
+                "Xác định block chứa octet cuối.",
+                "Lấy đầu block làm network và cuối block làm broadcast."
+              ],
+              "left": [],
+              "answer": "Đọc prefix và tính số bit host.",
+              "explanation": "Bước đầu tiên trong quy trình tính toán subnet là đọc prefix và xác định số bit dành cho phần host của địa chỉ IP.",
+              "source_refs": [
+                "0cbf5ec610f54f2b86aa455f6c0c4830:2:1"
+              ],
+              "rubric": []
+            }
+          },
+          "cloze": {
+            "reason": "",
+            "question": {
+              "kind": "cloze",
+              "prompt": "Với prefix /26, một block subnet có 2^6 = 64 địa chỉ, trong đó có ____ địa chỉ host có thể sử dụng được.",
+              "options": [],
+              "left": [],
+              "answer": "62",
+              "explanation": "Prefix /26 dành 26 bit cho network và 6 bit cho host. Một block /26 có 2^6 = 64 địa chỉ. Sau khi loại bỏ địa chỉ network và broadcast, còn lại 62 địa chỉ host có thể sử dụng được.",
+              "source_refs": [
+                "0cbf5ec610f54f2b86aa455f6c0c4830:2:0"
+              ],
+              "rubric": []
+            }
+          },
+          "matching": {
+            "reason": "",
+            "question": {
+              "kind": "matching",
+              "prompt": "Ghép các khái niệm về IPv4 và subnet /26 với mô tả tương ứng.",
+              "options": [
+                "Số bit dành cho phần host trong địa chỉ IPv4 với prefix /26.",
+                "Tổng số địa chỉ trong một block subnet /26."
+              ],
+              "left": [
+                "6 bit",
+                "64 địa chỉ"
+              ],
+              "answer": [
+                0,
+                1
+              ],
+              "explanation": "Với prefix /26, có 26 bit dành cho network, vậy còn lại 32 - 26 = 6 bit cho host. Một block /26 có 2^6 = 64 địa chỉ.",
+              "source_refs": [
+                "0cbf5ec610f54f2b86aa455f6c0c4830:2:0"
+              ],
+              "rubric": []
+            }
+          },
+          "ordering": {
+            "reason": "",
+            "question": {
+              "kind": "ordering",
+              "prompt": "Sắp xếp các bước sau theo đúng thứ tự để tính toán subnet theo nguồn đã cho:",
+              "options": [
+                "Xác định block chứa octet cuối.",
+                "Đọc prefix và tính số bit host.",
+                "Tính kích thước block.",
+                "Loại hai biên để lấy dải host dùng được.",
+                "Lấy đầu block làm network và cuối block làm broadcast."
+              ],
+              "left": [],
+              "answer": [
+                1,
+                2,
+                0,
+                4,
+                3
+              ],
+              "explanation": "Để tính toán subnet, trước tiên cần đọc prefix và tính số bit host, sau đó tính kích thước block. Tiếp theo, xác định block chứa octet cuối, lấy đầu block làm network và cuối block làm broadcast, cuối cùng loại hai biên để lấy dải host dùng được.",
+              "source_refs": [
+                "0cbf5ec610f54f2b86aa455f6c0c4830:2:1",
+                "0cbf5ec610f54f2b86aa455f6c0c4830:2:2",
+                "0cbf5ec610f54f2b86aa455f6c0c4830:2:3",
+                "0cbf5ec610f54f2b86aa455f6c0c4830:2:4",
+                "0cbf5ec610f54f2b86aa455f6c0c4830:2:5"
+              ],
+              "rubric": []
+            }
+          },
+          "short_answer": {
+            "reason": "",
+            "question": {
+              "kind": "short_answer",
+              "prompt": "Giải thích cách tính số lượng địa chỉ host có thể sử dụng được trong một block subnet /26.",
+              "options": [],
+              "left": [],
+              "answer": "Với prefix /26, có 6 bit host. Số địa chỉ trong một block là 2^6 = 64. Sau khi trừ địa chỉ network và broadcast, còn lại 62 địa chỉ host có thể sử dụng được.",
+              "explanation": "Prefix /26 có nghĩa là 26 bit dành cho network, để lại 32 - 26 = 6 bit cho host. Số địa chỉ trong một block là 2^6 = 64. Trừ đi địa chỉ network và broadcast, còn lại 64 - 2 = 62 địa chỉ host có thể sử dụng được.",
+              "source_refs": [
+                "0cbf5ec610f54f2b86aa455f6c0c4830:2:0"
+              ],
+              "rubric": [
+                "Giải thích đúng cách tính số bit host từ prefix /26.",
+                "Tính toán chính xác tổng số địa chỉ trong block.",
+                "Xác định đúng số địa chỉ host có thể sử dụng được sau khi loại trừ network và broadcast."
+              ]
+            }
+          }
+        },
+        "stage_providers": {
+          "reading": {
+            "provider": "gemini_api",
+            "model": "gemini-2.5-flash",
+            "model_choice_id": "gemini:gemini-2.5-flash",
+            "selection_revision": 1,
+            "prompt_version": "20261018-source-keys-coverage-v11",
+            "schema_version": 14
+          },
+          "mcq": {
+            "provider": "gemini_api",
+            "model": "gemini-2.5-flash",
+            "model_choice_id": "gemini:gemini-2.5-flash",
+            "selection_revision": 1,
+            "prompt_version": "20261018-source-keys-coverage-v11",
+            "schema_version": 14
+          },
+          "cloze": {
+            "provider": "gemini_api",
+            "model": "gemini-2.5-flash",
+            "model_choice_id": "gemini:gemini-2.5-flash",
+            "selection_revision": 1,
+            "prompt_version": "20261018-source-keys-coverage-v11",
+            "schema_version": 14
+          },
+          "matching": {
+            "provider": "gemini_api",
+            "model": "gemini-2.5-flash",
+            "model_choice_id": "gemini:gemini-2.5-flash",
+            "selection_revision": 1,
+            "prompt_version": "20261018-source-keys-coverage-v11",
+            "schema_version": 14
+          },
+          "ordering": {
+            "provider": "gemini_api",
+            "model": "gemini-2.5-flash",
+            "model_choice_id": "gemini:gemini-2.5-flash",
+            "selection_revision": 1,
+            "prompt_version": "20261018-source-keys-coverage-v11",
+            "schema_version": 14
+          },
+          "short_answer": {
+            "provider": "gemini_api",
+            "model": "gemini-2.5-flash",
+            "model_choice_id": "gemini:gemini-2.5-flash",
+            "selection_revision": 1,
+            "prompt_version": "20261018-source-keys-coverage-v11",
+            "schema_version": 14
+          }
+        }
+      }
+    },
+    {
+      "path": "/courses/3d36cba04f46488aa4142d52da99a2b5/chat",
+      "job_id": "be6896c8b46748169082648e2710c1b4",
+      "events": [
+        {
+          "elapsed_seconds": 0.009,
+          "status": "running",
+          "phase": "connecting",
+          "saved_stages": 0,
+          "preview_chars": 0
+        },
+        {
+          "elapsed_seconds": 0.794,
+          "status": "failed",
+          "phase": "failed",
+          "saved_stages": 0,
+          "preview_chars": 0
+        }
+      ],
+      "status": "failed",
+      "completed_seconds": 0.794,
+      "provider": {
+        "provider": "gemini_api",
+        "model": "gemini-2.5-flash",
+        "model_choice_id": "gemini:gemini-2.5-flash",
+        "selection_revision": 1,
+        "prompt_version": "20261017-pinned-source-context-v2",
+        "schema_version": 13
+      },
+      "progress": {
+        "phase": "failed",
+        "requests": [
+          {
+            "index": 1,
+            "schema": "ChatReply",
+            "phase": "failed",
+            "streaming": true,
+            "started_at": "2026-10-18T10:25:29.345285+00:00",
+            "first_chunk_ms": null,
+            "first_text_ms": null,
+            "elapsed_ms": null,
+            "chunks": 0,
+            "characters": 0,
+            "usage": {}
+          }
+        ],
+        "preview": null,
+        "planned_stages": null,
+        "saved_stages": 0,
+        "reused_stages": 0,
+        "started_at": "2026-10-18T10:25:29.344919+00:00",
+        "completed_at": "2026-10-18T10:25:30.044999+00:00",
+        "elapsed_ms": 700.087,
+        "version": 4,
+        "updated_at": "2026-10-18T10:25:30.045040+00:00"
+      },
+      "error": {
+        "message": "Gemini giới hạn tốc độ/hạn mức; chưa tự gọi lại hoặc đổi model.",
+        "code": "RATE_LIMITED",
+        "retryable": true,
+        "provider": {
+          "provider": "gemini_api",
+          "model": "gemini-2.5-flash",
+          "model_choice_id": "gemini:gemini-2.5-flash",
+          "selection_revision": 1,
+          "prompt_version": "20261017-pinned-source-context-v2",
+          "schema_version": 13
+        }
+      },
+      "partial": {}
+    }
+  ],
+  "errors": [
+    {
+      "type": "AssertionError",
+      "message": ""
+    }
+  ],
+  "global_default_before": "kaggle:qwen3.8:27b",
+  "selection": {
+    "model_id": "gemini:gemini-2.5-flash",
+    "revision": 1,
+    "provider": "gemini_api",
+    "model": "gemini-2.5-flash",
+    "external": true
+  },
+  "source_id": "0cbf5ec610f54f2b86aa455f6c0c4830",
+  "source_revision": 2,
+  "course_id": "3d36cba04f46488aa4142d52da99a2b5",
+  "lesson": {
+    "title": "IPv4 và subnet /26",
+    "sections": [
+      {
+        "title": "Tổng quan về IPv4 và Prefix /26",
+        "text": "IPv4 là một hệ thống địa chỉ 32 bit, được chia thành bốn octet, mỗi octet gồm 8 bit. Prefix /26 chỉ định rằng 26 bit đầu tiên được sử dụng cho phần network, để lại 6 bit cho phần host. Điều này có nghĩa là mỗi block /26 sẽ có 2^6 = 64 địa chỉ. Trong số này, 62 địa chỉ có thể được sử dụng cho các host, sau khi loại bỏ địa chỉ network và địa chỉ broadcast. Ví dụ, với địa chỉ 192.168.1.70/26, block cuối cùng sẽ là 64–127.",
+        "source_refs": [
+          "0cbf5ec610f54f2b86aa455f6c0c4830:2:0"
+        ]
+      },
+      {
+        "title": "Xác định Network, Broadcast và Host trong Subnet /26",
+        "text": "Trong một subnet /26, địa chỉ network là địa chỉ đầu tiên của block, và địa chỉ broadcast là địa chỉ cuối cùng của block. Các địa chỉ host dùng được nằm giữa địa chỉ network và địa chỉ broadcast. Ví dụ, với địa chỉ 192.168.1.70/26, địa chỉ network là 192.168.1.64, địa chỉ broadcast là 192.168.1.127. Các địa chỉ host dùng được sẽ từ 192.168.1.65 đến 192.168.1.126.",
+        "source_refs": [
+          "0cbf5ec610f54f2b86aa455f6c0c4830:2:0"
+        ]
+      },
+      {
+        "title": "Quy trình tính toán Subnet",
+        "text": "Để tính toán subnet, có năm bước chính. Đầu tiên, đọc prefix và tính số bit host. Thứ hai, tính kích thước block. Thứ ba, xác định block chứa octet cuối cùng của địa chỉ IP. Thứ tư, lấy địa chỉ đầu block làm network và địa chỉ cuối block làm broadcast. Cuối cùng, loại bỏ hai địa chỉ biên (network và broadcast) để có được dải địa chỉ host dùng được.",
+        "source_refs": [
+          "0cbf5ec610f54f2b86aa455f6c0c4830:2:1",
+          "0cbf5ec610f54f2b86aa455f6c0c4830:2:2",
+          "0cbf5ec610f54f2b86aa455f6c0c4830:2:3",
+          "0cbf5ec610f54f2b86aa455f6c0c4830:2:4",
+          "0cbf5ec610f54f2b86aa455f6c0c4830:2:5"
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "kind": "mcq",
+        "prompt": "Theo nguồn, bước đầu tiên để tính toán subnet là gì?",
+        "options": [
+          "Đọc prefix và tính số bit host.",
+          "Tính kích thước block.",
+          "Xác định block chứa octet cuối.",
+          "Lấy đầu block làm network và cuối block làm broadcast."
+        ],
+        "left": [],
+        "answer": "Đọc prefix và tính số bit host.",
+        "explanation": "Bước đầu tiên trong quy trình tính toán subnet là đọc prefix và xác định số bit dành cho phần host của địa chỉ IP.",
+        "source_refs": [
+          "0cbf5ec610f54f2b86aa455f6c0c4830:2:1"
+        ],
+        "rubric": [],
+        "difficulty": null,
+        "difficulty_basis": null
+      },
+      {
+        "kind": "cloze",
+        "prompt": "Với prefix /26, một block subnet có 2^6 = 64 địa chỉ, trong đó có ____ địa chỉ host có thể sử dụng được.",
+        "options": [],
+        "left": [],
+        "answer": "62",
+        "explanation": "Prefix /26 dành 26 bit cho network và 6 bit cho host. Một block /26 có 2^6 = 64 địa chỉ. Sau khi loại bỏ địa chỉ network và broadcast, còn lại 62 địa chỉ host có thể sử dụng được.",
+        "source_refs": [
+          "0cbf5ec610f54f2b86aa455f6c0c4830:2:0"
+        ],
+        "rubric": [],
+        "difficulty": null,
+        "difficulty_basis": null
+      },
+      {
+        "kind": "matching",
+        "prompt": "Ghép các khái niệm về IPv4 và subnet /26 với mô tả tương ứng.",
+        "options": [
+          "Số bit dành cho phần host trong địa chỉ IPv4 với prefix /26.",
+          "Tổng số địa chỉ trong một block subnet /26."
+        ],
+        "left": [
+          "6 bit",
+          "64 địa chỉ"
+        ],
+        "answer": [
+          0,
+          1
+        ],
+        "explanation": "Với prefix /26, có 26 bit dành cho network, vậy còn lại 32 - 26 = 6 bit cho host. Một block /26 có 2^6 = 64 địa chỉ.",
+        "source_refs": [
+          "0cbf5ec610f54f2b86aa455f6c0c4830:2:0"
+        ],
+        "rubric": [],
+        "difficulty": null,
+        "difficulty_basis": null
+      },
+      {
+        "kind": "ordering",
+        "prompt": "Sắp xếp các bước sau theo đúng thứ tự để tính toán subnet theo nguồn đã cho:",
+        "options": [
+          "Xác định block chứa octet cuối.",
+          "Đọc prefix và tính số bit host.",
+          "Tính kích thước block.",
+          "Loại hai biên để lấy dải host dùng được.",
+          "Lấy đầu block làm network và cuối block làm broadcast."
+        ],
+        "left": [],
+        "answer": [
+          1,
+          2,
+          0,
+          4,
+          3
+        ],
+        "explanation": "Để tính toán subnet, trước tiên cần đọc prefix và tính số bit host, sau đó tính kích thước block. Tiếp theo, xác định block chứa octet cuối, lấy đầu block làm network và cuối block làm broadcast, cuối cùng loại hai biên để lấy dải host dùng được.",
+        "source_refs": [
+          "0cbf5ec610f54f2b86aa455f6c0c4830:2:1",
+          "0cbf5ec610f54f2b86aa455f6c0c4830:2:2",
+          "0cbf5ec610f54f2b86aa455f6c0c4830:2:3",
+          "0cbf5ec610f54f2b86aa455f6c0c4830:2:4",
+          "0cbf5ec610f54f2b86aa455f6c0c4830:2:5"
+        ],
+        "rubric": [],
+        "difficulty": null,
+        "difficulty_basis": null
+      },
+      {
+        "kind": "short_answer",
+        "prompt": "Giải thích cách tính số lượng địa chỉ host có thể sử dụng được trong một block subnet /26.",
+        "options": [],
+        "left": [],
+        "answer": "Với prefix /26, có 6 bit host. Số địa chỉ trong một block là 2^6 = 64. Sau khi trừ địa chỉ network và broadcast, còn lại 62 địa chỉ host có thể sử dụng được.",
+        "explanation": "Prefix /26 có nghĩa là 26 bit dành cho network, để lại 32 - 26 = 6 bit cho host. Số địa chỉ trong một block là 2^6 = 64. Trừ đi địa chỉ network và broadcast, còn lại 64 - 2 = 62 địa chỉ host có thể sử dụng được.",
+        "source_refs": [
+          "0cbf5ec610f54f2b86aa455f6c0c4830:2:0"
+        ],
+        "rubric": [
+          "Giải thích đúng cách tính số bit host từ prefix /26.",
+          "Tính toán chính xác tổng số địa chỉ trong block.",
+          "Xác định đúng số địa chỉ host có thể sử dụng được sau khi loại trừ network và broadcast."
+        ],
+        "difficulty": null,
+        "difficulty_basis": null
+      }
+    ],
+    "cards": [
+      {
+        "front": "IPv4 có bao nhiêu bit và được chia thành mấy octet?",
+        "back": "IPv4 có 32 bit, được chia thành bốn octet, mỗi octet có 8 bit.",
+        "source_refs": [
+          "0cbf5ec610f54f2b86aa455f6c0c4830:2:0"
+        ]
+      },
+      {
+        "front": "Với prefix /26, có bao nhiêu địa chỉ trong một block và bao nhiêu địa chỉ host dùng được?",
+        "back": "Với prefix /26, có 2^6 = 64 địa chỉ trong một block. Sau khi loại bỏ địa chỉ network và broadcast, có 62 địa chỉ host dùng được.",
+        "source_refs": [
+          "0cbf5ec610f54f2b86aa455f6c0c4830:2:0"
+        ]
+      }
+    ],
+    "mindmap": [
+      {
+        "title": "IPv4",
+        "text": "IPv4 là hệ thống địa chỉ 32 bit, chia thành 4 octet, mỗi octet 8 bit. Nó là nền tảng cho việc định tuyến và giao tiếp trên mạng internet.",
+        "source_refs": [
+          "0cbf5ec610f54f2b86aa455f6c0c4830:2:0"
+        ]
+      },
+      {
+        "title": "Subnet /26",
+        "text": "Prefix /26 dành 26 bit cho network và 6 bit cho host. Một block /26 có 64 địa chỉ, trong đó 62 địa chỉ host có thể sử dụng được. Ví dụ: 192.168.1.70/26 có network 192.168.1.64 và broadcast 192.168.1.127.",
+        "source_refs": [
+          "0cbf5ec610f54f2b86aa455f6c0c4830:2:0"
+        ]
+      },
+      {
+        "title": "Quy trình tính Subnet",
+        "text": "Quy trình gồm 5 bước: 1. Đọc prefix và tính bit host. 2. Tính kích thước block. 3. Xác định block chứa octet cuối. 4. Lấy đầu block làm network, cuối block làm broadcast. 5. Loại hai biên để lấy dải host dùng được.",
+        "source_refs": [
+          "0cbf5ec610f54f2b86aa455f6c0c4830:2:1",
+          "0cbf5ec610f54f2b86aa455f6c0c4830:2:2",
+          "0cbf5ec610f54f2b86aa455f6c0c4830:2:3",
+          "0cbf5ec610f54f2b86aa455f6c0c4830:2:4",
+          "0cbf5ec610f54f2b86aa455f6c0c4830:2:5"
+        ]
+      }
+    ]
+  },
+  "question_coverage": {
+    "requested_count": 5,
+    "generated_count": 5,
+    "complete": true,
+    "requested_types": [
+      "mcq",
+      "cloze",
+      "matching",
+      "ordering",
+      "short_answer"
+    ],
+    "generated_types": [
+      "mcq",
+      "cloze",
+      "matching",
+      "ordering",
+      "short_answer"
+    ],
+    "uncreated": []
+  },
+  "deterministic_roundtrip": {
+    "note": "Submitting generated reference keys tests grading/storage, NOT question correctness or Huy knowledge",
+    "answers": [
+      {
+        "correct": true,
+        "reference": "Đọc prefix và tính số bit host.",
+        "explanation": "Bước đầu tiên trong quy trình tính toán subnet là đọc prefix và xác định số bit dành cho phần host của địa chỉ IP.",
+        "rubric": [],
+        "source_refs": [
+          "0cbf5ec610f54f2b86aa455f6c0c4830:2:1"
+        ],
+        "grading": "fixed"
+      },
+      {
+        "correct": true,
+        "reference": "62",
+        "explanation": "Prefix /26 dành 26 bit cho network và 6 bit cho host. Một block /26 có 2^6 = 64 địa chỉ. Sau khi loại bỏ địa chỉ network và broadcast, còn lại 62 địa chỉ host có thể sử dụng được.",
+        "rubric": [],
+        "source_refs": [
+          "0cbf5ec610f54f2b86aa455f6c0c4830:2:0"
+        ],
+        "grading": "fixed"
+      },
+      {
+        "correct": true,
+        "reference": [
+          0,
+          1
+        ],
+        "explanation": "Với prefix /26, có 26 bit dành cho network, vậy còn lại 32 - 26 = 6 bit cho host. Một block /26 có 2^6 = 64 địa chỉ.",
+        "rubric": [],
+        "source_refs": [
+          "0cbf5ec610f54f2b86aa455f6c0c4830:2:0"
+        ],
+        "grading": "fixed"
+      },
+      {
+        "correct": true,
+        "reference": [
+          1,
+          2,
+          0,
+          4,
+          3
+        ],
+        "explanation": "Để tính toán subnet, trước tiên cần đọc prefix và tính số bit host, sau đó tính kích thước block. Tiếp theo, xác định block chứa octet cuối, lấy đầu block làm network và cuối block làm broadcast, cuối cùng loại hai biên để lấy dải host dùng được.",
+        "rubric": [],
+        "source_refs": [
+          "0cbf5ec610f54f2b86aa455f6c0c4830:2:1",
+          "0cbf5ec610f54f2b86aa455f6c0c4830:2:2",
+          "0cbf5ec610f54f2b86aa455f6c0c4830:2:3",
+          "0cbf5ec610f54f2b86aa455f6c0c4830:2:4",
+          "0cbf5ec610f54f2b86aa455f6c0c4830:2:5"
+        ],
+        "grading": "fixed"
+      },
+      {
+        "correct": null,
+        "reference": "Với prefix /26, có 6 bit host. Số địa chỉ trong một block là 2^6 = 64. Sau khi trừ địa chỉ network và broadcast, còn lại 62 địa chỉ host có thể sử dụng được.",
+        "explanation": "Prefix /26 có nghĩa là 26 bit dành cho network, để lại 32 - 26 = 6 bit cho host. Số địa chỉ trong một block là 2^6 = 64. Trừ đi địa chỉ network và broadcast, còn lại 64 - 2 = 62 địa chỉ host có thể sử dụng được.",
+        "rubric": [
+          "Giải thích đúng cách tính số bit host từ prefix /26.",
+          "Tính toán chính xác tổng số địa chỉ trong block.",
+          "Xác định đúng số địa chỉ host có thể sử dụng được sau khi loại trừ network và broadcast."
+        ],
+        "source_refs": [
+          "0cbf5ec610f54f2b86aa455f6c0c4830:2:0"
+        ],
+        "grading": "self_review"
+      }
+    ],
+    "completion": {
+      "score": 4,
+      "fixed_total": 4,
+      "self_review_count": 1,
+      "course_revision": 2,
+      "session_id": "ce68b6b2f6de40eb8c4791fe2bc0ed03",
+      "assisted_count": 0,
+      "assessment": "self_study_not_proctored",
+      "rewards": [
+        {
+          "amount": 1,
+          "requested": 1,
+          "capped": false,
+          "replayed": false,
+          "event_key": "practice:2026-10-18:3d36cba04f46488aa4142d52da99a2b5:5feba7e70d455fd2e8a24e7f31164ace271933503a11e54147f77ff87f370af6",
+          "policy_version": "dev-proposal-20261015-v2"
+        },
+        {
+          "amount": 1,
+          "requested": 1,
+          "capped": false,
+          "replayed": false,
+          "event_key": "mission:practice:2026-10-18",
+          "policy_version": "dev-proposal-20261015-v2"
+        },
+        {
+          "amount": 2,
+          "requested": 2,
+          "capped": false,
+          "replayed": false,
+          "event_key": "achievement:first_session",
+          "policy_version": "dev-proposal-20261015-v2"
+        },
+        {
+          "amount": 3,
+          "requested": 3,
+          "capped": false,
+          "replayed": false,
+          "event_key": "achievement:course_complete:3d36cba04f46488aa4142d52da99a2b5",
+          "policy_version": "dev-proposal-20261015-v2"
+        }
+      ]
+    }
+  }
+}

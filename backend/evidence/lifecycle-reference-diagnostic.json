@@ -1,0 +1,17 @@
+{
+  "job_id": "992710d5b01a48f2b584bfb1ffa6e749",
+  "method": "Compare known QA identifier hashes against rejected candidate hash; no guessing secrets or model call",
+  "allowed_refs": [
+    "9e4fd21e3d03413c98be56a868494c36:2:0",
+    "9e4fd21e3d03413c98be56a868494c36:2:1",
+    "9e4fd21e3d03413c98be56a868494c36:2:2",
+    "9e4fd21e3d03413c98be56a868494c36:2:3",
+    "9e4fd21e3d03413c98be56a868494c36:2:4",
+    "9e4fd21e3d03413c98be56a868494c36:2:5"
+  ],
+  "rejected_known_candidate": "9e4fd21e3d03413c98be56a868494c36:2:6",
+  "candidate_hash_matches": true,
+  "classification": "Model emitted the next ordinal beyond the six provided references; source boundaries remained enforced",
+  "raw_output_available": false,
+  "diagnostic_limit": "The original full response was not retained. This establishes the rejected reference identity, not all reading content."
+}

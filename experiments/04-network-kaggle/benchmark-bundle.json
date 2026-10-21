@@ -1,0 +1,611 @@
+{
+  "version": 1,
+  "source": {
+    "filename": "CTT105-2-IP&subnetting_2.0.pdf",
+    "sha256": "9037fecd5131c299809b7aa4776b782c2939b2c47c792d7ee09a5cfa6c795404",
+    "page_count": 33,
+    "selected_pages": [
+      8,
+      15,
+      23,
+      26,
+      27,
+      33
+    ],
+    "extraction": "pypdf extract_text, uncorrected original text; full source audit separate"
+  },
+  "fragments": [
+    {
+      "id": "pdf-p08",
+      "page": 8,
+      "text": "ĐịachỉIPv4\nqKíchthước: 4 bytes (32 bits)\nqĐịnhdạng:\n§Mỗibyte đượcbiểudiễnbằngsốthậpphân, gọilàmộtoctet \n§haioctet đượcviếtcáchnhaubằng1 dấuchấm“.”\nVD:\nà172.29.1.10\nqChiathành2 phần:\n§Network ID (NetID)\n§Host ID\n32 bit\n10101100 00011101 00000001 00001010\n8Khoa Công nghệ thông tin -Đại học Khoa học tự nhiên TP Hồ Chí Minh"
+    },
+    {
+      "id": "pdf-p15",
+      "page": 15,
+      "text": "ĐịachỉIP Classfull\nqHai host cócùngđịachỉđườngmạngthìthuộc\ncùng1 đườngmạng\nqSốđịachỉhost hợplệtrong1 đườngmạng\n§2m-2 \n•m làsốbit trongphầnHostID\n192.168.1.2 và192.168.1.200 ècùng1 đườngmạng\n192.168.1.2 và192.168.2.1 èkhácđườngmạng\n15Khoa Công nghệ thông tin -Đại học Khoa học tự nhiên TP Hồ Chí Minh"
+    },
+    {
+      "id": "pdf-p23",
+      "page": 23,
+      "text": "ĐịachỉIP Classless\nqSubnet mask\n§DùngphânđịnhphầnNetIDvàHostIDtrongđịachỉIPv4\n§kíchthước4 bytes\n•cácbit thuộcNetIDcógiátrịlà1\n•cácbit thuộcHostIDcógiátrịlà0 \n§VD: 172.29.5.128/255.255.192.0\n(hoặc172.29.5.128/18)\nHostIP 1010 11000001 11010000 0101 1000 0000\nSubnetMask1111  11111111  11111100 0000 0000 0000\nHostIP 1010 11000001 11010000 0101 1000 0000\nSubnetMask1111  11111111  11111100 0000 0000 0000\nHostIP 1010 11000001 11010000 0101 1000 0000\nSubnetMask1111  11111111  11111100 0000 0000 0000\nHostIP 1010 11000001 11010000 0101 1000 0000\nSubnetMask1111  11111111  11111100 0000 0000 0000\n23Khoa Công nghệ thông tin -Đại học Khoa học tự nhiên TP Hồ Chí Minh"
+    },
+    {
+      "id": "pdf-p26",
+      "page": 26,
+      "text": "ĐịachỉIP Classless\nqCho địachỉIP: 172.29.217.10/19\n•Địa chỉ đường mạng:\n•Địachỉbroadcast:\n•Sốđịa chỉ IP trongcùngnetwork:\n•Dãy địa chỉ IP trong cùng network:\n26Khoa Công nghệ thông tin -Đại học Khoa học tự nhiên TP Hồ Chí Minh"
+    },
+    {
+      "id": "pdf-p27",
+      "page": 27,
+      "text": "Chia subnet\nqQui tắc:\n§Mượncácbit đầutrongHostIDlàmNetID\n§Sốsubnet = 2n(n: sốbit vaymượnphầnHostID)\nqLênkếhoạch:\n§Sốsubnet cầnchia\n§Sốnode trongmỗisubnet\n27Khoa Công nghệ thông tin -Đại học Khoa học tự nhiên TP Hồ Chí Minh"
+    },
+    {
+      "id": "pdf-p33",
+      "page": 33,
+      "text": "Bài tập\nCho 172.100.112.4/19. Hãychobiết:\n1.Địachỉtrênthuộcvềđườngmạngnào?\n2.SốIP hợplệcóthểdùngtrongđườngmạngđó. Vàhãychobiết\ngồmnhữngđịachỉnào?\n3.Địachỉbroadcast củađườngmạngđó\n4.Vớiđịachỉđườngmạngtrên, hãychiathành5 subnet nhưsau: 2 \nsubnet có1000 host, 2 subnet có500 host, 1 subnet có100 host\n5.Vớiđịachỉđườngmạngtrên, hãychiathành17 subnet nhưsau: \n4 subnet có1000 host, 6 subnet có500 host, 7 subnet có100 \nhost\n33Khoa Công nghệ thông tin -Đại học Khoa học tự nhiên TP Hồ Chí Minh"
+    }
+  ],
+  "workloads": [
+    {
+      "id": "term",
+      "kind": "term",
+      "num_predict": 384,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4000
+          },
+          "source_refs": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 12,
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 30
+            }
+          },
+          "needs_more_source": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "text",
+          "source_refs",
+          "needs_more_source"
+        ],
+        "additionalProperties": false
+      },
+      "instruction": "Subnet mask là gì, và các bit 1/0 phân định NetID/HostID thế nào? Giải thích tiếng Việt trong tối đa80 từ, giữ hai thuật ngữ NetID/HostID, chỉ dùng nguồn và nêu source_refs. needs_more_source=false nếu nguồn đủ."
+    },
+    {
+      "id": "mcq",
+      "kind": "mcq",
+      "num_predict": 900,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "type": "string",
+            "const": "mcq"
+          },
+          "prompt": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          },
+          "options": {
+            "type": "array",
+            "minItems": 4,
+            "maxItems": 4,
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000
+            },
+            "uniqueItems": true
+          },
+          "answer": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1000
+          },
+          "explanation": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 3000
+          },
+          "source_refs": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 12,
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 30
+            }
+          }
+        },
+        "required": [
+          "kind",
+          "prompt",
+          "options",
+          "answer",
+          "explanation",
+          "source_refs"
+        ],
+        "additionalProperties": false
+      },
+      "instruction": "Tạo đúng một câu trắc nghiệm 4 lựa chọn, một đáp án đúng. Dựa vào bài tập trang26: 'Địa chỉ đường mạng của 172.29.217.10/19 là gì?'. Mỗi option và answer chỉ là một địa chỉ IPv4, không kèm prefix hoặc nhãn A/B/C/D. Giải thích cách dùng /19 để tìm NetID. Dùng source_refs hỗ trợ quy tắc và bài tập. Không tự đổi IP hoặc prefix. answer phải trùng nguyên văn một option.",
+      "oracle": {
+        "answer": "172.29.192.0",
+        "basis": "Python ipaddress.ip_interface(...).network.network_address"
+      }
+    },
+    {
+      "id": "reading",
+      "kind": "reading",
+      "num_predict": 2400,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "sections": {
+            "type": "array",
+            "minItems": 3,
+            "maxItems": 3,
+            "items": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200
+                },
+                "text": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 5000
+                },
+                "source_refs": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 12,
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 30
+                  }
+                }
+              },
+              "required": [
+                "title",
+                "text",
+                "source_refs"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "cards": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": {
+              "type": "object",
+              "properties": {
+                "front": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 1000
+                },
+                "back": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 3000
+                },
+                "source_refs": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 12,
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 30
+                  }
+                }
+              },
+              "required": [
+                "front",
+                "back",
+                "source_refs"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "mindmap": {
+            "type": "array",
+            "minItems": 3,
+            "maxItems": 3,
+            "items": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200
+                },
+                "text": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 5000
+                },
+                "source_refs": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 12,
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 30
+                  }
+                }
+              },
+              "required": [
+                "title",
+                "text",
+                "source_refs"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "title",
+          "sections",
+          "cards",
+          "mindmap"
+        ],
+        "additionalProperties": false
+      },
+      "instruction": "Tạo bài đọc ngắn bằng tiếng Việt về IPv4 và subnetting cho người mới: đúng3 mục lý thuyết (IPv4 32bit và NetID/HostID; subnet mask/prefix; số host và nguyên tắc chia subnet), đúng2 flashcard và đúng3 nhánh mindmap. Mỗi mục120 từ trở xuống. Dùng ví dụ172.29.217.10/19 ở trang26 và giải đúng network, broadcast, sốIP tổng, sốhost hợp lệ, dải host. Giữ NetID/HostID, nguyên ngữ Classless. Chỉ dùng nguồn và tính toán suy ra; source_refs phải đúng trang."
+    },
+    {
+      "id": "pipeline_mcq_1",
+      "kind": "mcq",
+      "num_predict": 900,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "type": "string",
+            "const": "mcq"
+          },
+          "prompt": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          },
+          "options": {
+            "type": "array",
+            "minItems": 4,
+            "maxItems": 4,
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000
+            },
+            "uniqueItems": true
+          },
+          "answer": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1000
+          },
+          "explanation": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 3000
+          },
+          "source_refs": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 12,
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 30
+            }
+          }
+        },
+        "required": [
+          "kind",
+          "prompt",
+          "options",
+          "answer",
+          "explanation",
+          "source_refs"
+        ],
+        "additionalProperties": false
+      },
+      "instruction": "Tạo đúng một câu trắc nghiệm4 lựa chọn, một đáp án đúng cho câu hỏi: IPv4 có bao nhiêu bit? Mỗi option và answer chỉ là một số nguyên, không thêm đơn vị. Không đổi dữ kiện. Giải thích ngắn gọn bằng tiếng Việt, ghi source_refs hỗ trợ quy tắc và bài tập. answer phải trùng nguyên văn một option.",
+      "oracle": {
+        "answer": "32",
+        "basis": "PDF fact or Python ipaddress; reviewed independently from model output"
+      }
+    },
+    {
+      "id": "pipeline_mcq_2",
+      "kind": "mcq",
+      "num_predict": 900,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "type": "string",
+            "const": "mcq"
+          },
+          "prompt": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          },
+          "options": {
+            "type": "array",
+            "minItems": 4,
+            "maxItems": 4,
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000
+            },
+            "uniqueItems": true
+          },
+          "answer": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1000
+          },
+          "explanation": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 3000
+          },
+          "source_refs": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 12,
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 30
+            }
+          }
+        },
+        "required": [
+          "kind",
+          "prompt",
+          "options",
+          "answer",
+          "explanation",
+          "source_refs"
+        ],
+        "additionalProperties": false
+      },
+      "instruction": "Tạo đúng một câu trắc nghiệm4 lựa chọn, một đáp án đúng cho câu hỏi: Subnet mask có bao nhiêu byte? Mỗi option và answer chỉ là một số nguyên, không thêm đơn vị. Không đổi dữ kiện. Giải thích ngắn gọn bằng tiếng Việt, ghi source_refs hỗ trợ quy tắc và bài tập. answer phải trùng nguyên văn một option.",
+      "oracle": {
+        "answer": "4",
+        "basis": "PDF fact or Python ipaddress; reviewed independently from model output"
+      }
+    },
+    {
+      "id": "pipeline_mcq_3",
+      "kind": "mcq",
+      "num_predict": 900,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "type": "string",
+            "const": "mcq"
+          },
+          "prompt": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          },
+          "options": {
+            "type": "array",
+            "minItems": 4,
+            "maxItems": 4,
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000
+            },
+            "uniqueItems": true
+          },
+          "answer": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1000
+          },
+          "explanation": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 3000
+          },
+          "source_refs": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 12,
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 30
+            }
+          }
+        },
+        "required": [
+          "kind",
+          "prompt",
+          "options",
+          "answer",
+          "explanation",
+          "source_refs"
+        ],
+        "additionalProperties": false
+      },
+      "instruction": "Tạo đúng một câu trắc nghiệm4 lựa chọn, một đáp án đúng cho câu hỏi: Số bit HostID của địa chỉ172.29.217.10/19 là bao nhiêu? Mỗi option và answer chỉ là một số nguyên, không thêm đơn vị. Không đổi dữ kiện. Giải thích ngắn gọn bằng tiếng Việt, ghi source_refs hỗ trợ quy tắc và bài tập. answer phải trùng nguyên văn một option.",
+      "oracle": {
+        "answer": "13",
+        "basis": "PDF fact or Python ipaddress; reviewed independently from model output"
+      }
+    },
+    {
+      "id": "pipeline_mcq_4",
+      "kind": "mcq",
+      "num_predict": 900,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "type": "string",
+            "const": "mcq"
+          },
+          "prompt": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          },
+          "options": {
+            "type": "array",
+            "minItems": 4,
+            "maxItems": 4,
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000
+            },
+            "uniqueItems": true
+          },
+          "answer": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1000
+          },
+          "explanation": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 3000
+          },
+          "source_refs": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 12,
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 30
+            }
+          }
+        },
+        "required": [
+          "kind",
+          "prompt",
+          "options",
+          "answer",
+          "explanation",
+          "source_refs"
+        ],
+        "additionalProperties": false
+      },
+      "instruction": "Tạo đúng một câu trắc nghiệm4 lựa chọn, một đáp án đúng cho câu hỏi: Địa chỉ broadcast của172.29.217.10/19 là gì? Mỗi option và answer chỉ là một địa chỉ IPv4, không thêm prefix. Không đổi dữ kiện. Giải thích ngắn gọn bằng tiếng Việt, ghi source_refs hỗ trợ quy tắc và bài tập. answer phải trùng nguyên văn một option.",
+      "oracle": {
+        "answer": "172.29.223.255",
+        "basis": "PDF fact or Python ipaddress; reviewed independently from model output"
+      }
+    },
+    {
+      "id": "pipeline_mcq_5",
+      "kind": "mcq",
+      "num_predict": 900,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "type": "string",
+            "const": "mcq"
+          },
+          "prompt": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          },
+          "options": {
+            "type": "array",
+            "minItems": 4,
+            "maxItems": 4,
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000
+            },
+            "uniqueItems": true
+          },
+          "answer": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1000
+          },
+          "explanation": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 3000
+          },
+          "source_refs": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 12,
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 30
+            }
+          }
+        },
+        "required": [
+          "kind",
+          "prompt",
+          "options",
+          "answer",
+          "explanation",
+          "source_refs"
+        ],
+        "additionalProperties": false
+      },
+      "instruction": "Tạo đúng một câu trắc nghiệm4 lựa chọn, một đáp án đúng cho câu hỏi: Số địa chỉ host hợp lệ của network chứa172.29.217.10/19 là bao nhiêu? Mỗi option và answer chỉ là một số nguyên, không thêm đơn vị. Không đổi dữ kiện. Giải thích ngắn gọn bằng tiếng Việt, ghi source_refs hỗ trợ quy tắc và bài tập. answer phải trùng nguyên văn một option.",
+      "oracle": {
+        "answer": "8190",
+        "basis": "PDF fact or Python ipaddress; reviewed independently from model output"
+      }
+    }
+  ],
+  "oracle": {
+    "ip": "172.29.217.10/19",
+    "netmask": "255.255.224.0",
+    "network": "172.29.192.0",
+    "broadcast": "172.29.223.255",
+    "total_addresses": 8192,
+    "usable_hosts": 8190,
+    "first_host": "172.29.192.1",
+    "last_host": "172.29.223.254"
+  }
+}

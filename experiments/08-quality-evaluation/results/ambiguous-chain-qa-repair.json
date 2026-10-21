@@ -1,0 +1,115 @@
+{
+  "purpose": "Manual correction of one genuinely ambiguous dev-v2 QA MCQ; original evaluation output stays unchanged.",
+  "course_id": "194908143b6b47e78778ebcca54e591c",
+  "base_revision": 2,
+  "question_index": 4,
+  "inference_calls": 0,
+  "payments": 0,
+  "ambiguity": "Both missing factor3 and failing to multiply by the inner derivative describe the defect. A single correct key is not justified.",
+  "before_question": {
+    "kind": "mcq",
+    "prompt": "Trong ví dụ hàm hợp h(x)=(3x+1)^4, tại sao biểu thức 4(3x+1)^3 được coi là sai khi tính đạo hàm h'(x)?",
+    "options": [
+      "Vì bỏ mất hệ số 3",
+      "Vì không tính đạo hàm hàm trong",
+      "Vì không thế hàm trong vào hàm ngoài"
+    ],
+    "left": [],
+    "answer": "Vì bỏ mất hệ số 3",
+    "explanation": "Theo nguồn R2, khi tính đạo hàm của h(x)=(3x+1)^4, đạo hàm hàm trong g(x)=3x+1 là g'(x)=3. Biểu thức 4(3x+1)^3 bị sai vì thiếu hệ số 3 này.",
+    "source_refs": [
+      "de7ee7a2766145db9be4b1c4565d02c0:2:1"
+    ],
+    "rubric": [],
+    "difficulty": "applied",
+    "difficulty_basis": "creator_request_not_measured"
+  },
+  "checks": {
+    "flag_excludes_old_question_from_new_session": true,
+    "preview_did_not_apply": true,
+    "new_revision_is_3": true,
+    "only_selected_question_changed": true,
+    "reading_cards_mindmap_preserved": true,
+    "old_snapshot_answers_result_preserved": true,
+    "old_attempt_warns_about_ambiguous_key": true,
+    "new_session_has_replacement_not_old_prompt": true,
+    "wallet_unchanged": true
+  },
+  "harness_initial_guard_failure": "The first read-only attempt compared the dynamic unit.completed overlay before/after practice. Guard corrected to pin revision and lesson data; no mutation occurred before that assertion.",
+  "flag": {
+    "question_revision_id": "194908143b6b47e78778ebcca54e591c:unit-1:1663dc37fc5e2dd2cc056f0c",
+    "state": "needs_review",
+    "old_attempts_preserved": true
+  },
+  "preview": {
+    "id": "b147c99175504f9e8f23bb6308c4da86",
+    "course_id": "194908143b6b47e78778ebcca54e591c",
+    "base_revision": 2,
+    "scope": {
+      "unit_id": "unit-1",
+      "target": "question",
+      "index": 4
+    },
+    "request": "QA: thay câu nguyên nhân có hai lựa chọn cùng đúng bằng câu giá trị tại điểm có một đáp án, giữ các phần khác.",
+    "status": "preview",
+    "before": {
+      "kind": "mcq",
+      "prompt": "Trong ví dụ hàm hợp h(x)=(3x+1)^4, tại sao biểu thức 4(3x+1)^3 được coi là sai khi tính đạo hàm h'(x)?",
+      "options": [
+        "Vì bỏ mất hệ số 3",
+        "Vì không tính đạo hàm hàm trong",
+        "Vì không thế hàm trong vào hàm ngoài"
+      ],
+      "left": [],
+      "answer": "Vì bỏ mất hệ số 3",
+      "explanation": "Theo nguồn R2, khi tính đạo hàm của h(x)=(3x+1)^4, đạo hàm hàm trong g(x)=3x+1 là g'(x)=3. Biểu thức 4(3x+1)^3 bị sai vì thiếu hệ số 3 này.",
+      "source_refs": [
+        "de7ee7a2766145db9be4b1c4565d02c0:2:1"
+      ],
+      "rubric": [],
+      "difficulty": "applied",
+      "difficulty_basis": "creator_request_not_measured"
+    },
+    "after": {
+      "kind": "mcq",
+      "prompt": "Với h(x)=(3x+1)^4, giá trị h'(0) bằng bao nhiêu?",
+      "options": [
+        "12",
+        "4",
+        "3"
+      ],
+      "left": [],
+      "answer": "12",
+      "explanation": "Chain rule cho h'(x)=4(3x+1)^3*3=12(3x+1)^3, nên h'(0)=12.",
+      "source_refs": [
+        "de7ee7a2766145db9be4b1c4565d02c0:2:1"
+      ],
+      "rubric": [],
+      "difficulty": "applied",
+      "difficulty_basis": "creator_request_not_measured"
+    }
+  },
+  "applied": {
+    "course_id": "194908143b6b47e78778ebcca54e591c",
+    "revision": 3
+  },
+  "after_question": {
+    "kind": "mcq",
+    "prompt": "Với h(x)=(3x+1)^4, giá trị h'(0) bằng bao nhiêu?",
+    "options": [
+      "12",
+      "4",
+      "3"
+    ],
+    "left": [],
+    "answer": "12",
+    "explanation": "Chain rule cho h'(x)=4(3x+1)^3*3=12(3x+1)^3, nên h'(0)=12.",
+    "source_refs": [
+      "de7ee7a2766145db9be4b1c4565d02c0:2:1"
+    ],
+    "rubric": [],
+    "difficulty": "applied",
+    "difficulty_basis": "creator_request_not_measured"
+  },
+  "all_passed": true
+}

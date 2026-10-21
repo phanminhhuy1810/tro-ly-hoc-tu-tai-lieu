@@ -1,0 +1,3071 @@
+{
+  "verified_at": "2026-10-15T08:00:57.533223+00:00",
+  "scope": "Real local HTTP; script-controlled dev profile; no independent humans; no AI quality claim",
+  "source_id": "89035cb15fb34bc1b6c5b4e7cae3f82e",
+  "original_sha256": "b6cbd90b10646a62b136fe7f3d0423bfb2692307e7d37142c6f92e112264c1ed",
+  "checks": {
+    "completed_round_and_replay_no_duplicate_reward": true,
+    "five_distinct_reviews_complete_card_mission": true,
+    "old_attempts_kept_with_original_revision_and_result": true,
+    "no_ai_required_for_activity_or_rewards": true
+  },
+  "wallet_before": {
+    "balance": 20,
+    "held": 0,
+    "available": 20,
+    "policy_version": "dev-proposal-20261015-v1",
+    "policy_proposed": true,
+    "cash_payments": false,
+    "enforcement_enabled": true
+  },
+  "session_id": "5a945daee1b34982b509162884780afe",
+  "result": {
+    "score": 0,
+    "fixed_total": 1,
+    "self_review_count": 0,
+    "course_revision": 8,
+    "session_id": "5a945daee1b34982b509162884780afe",
+    "assisted_count": 0,
+    "assessment": "self_study_not_proctored",
+    "rewards": [
+      {
+        "amount": 1,
+        "requested": 1,
+        "capped": false,
+        "replayed": false,
+        "event_key": "practice:2026-10-15:0b3c505ebc194963b04cc66a8c2644b6:1d70da32592586254a56e7452a19e1b78bf49c2c54b0a25114ec2f0e32eccf40",
+        "policy_version": "dev-proposal-20261015-v1"
+      },
+      {
+        "amount": 1,
+        "requested": 1,
+        "capped": false,
+        "replayed": false,
+        "event_key": "mission:practice:2026-10-15",
+        "policy_version": "dev-proposal-20261015-v1"
+      },
+      {
+        "amount": 2,
+        "requested": 2,
+        "capped": false,
+        "replayed": false,
+        "event_key": "achievement:first_session",
+        "policy_version": "dev-proposal-20261015-v1"
+      }
+    ]
+  },
+  "card_reviews": [
+    {
+      "card_id": "personal-44dbf25c424f40518c97e82bae4c4277",
+      "remembered": false,
+      "version": 1,
+      "rewards": []
+    },
+    {
+      "card_id": "personal-bd67f53890f647faa089342d79abfecc",
+      "remembered": false,
+      "version": 1,
+      "rewards": []
+    },
+    {
+      "card_id": "personal-71d20eb6ec9a4b9395e505ad0f25ab53",
+      "remembered": false,
+      "version": 1,
+      "rewards": []
+    },
+    {
+      "card_id": "personal-4f20de02ad164cc084d5e38a9ed9365d",
+      "remembered": false,
+      "version": 1,
+      "rewards": []
+    },
+    {
+      "card_id": "personal-8d706b4616314b929fbcc8b16e9dcc67",
+      "remembered": false,
+      "version": 1,
+      "rewards": [
+        {
+          "amount": 1,
+          "requested": 1,
+          "capped": false,
+          "replayed": false,
+          "event_key": "card-round:2026-10-15",
+          "policy_version": "dev-proposal-20261015-v1"
+        },
+        {
+          "amount": 1,
+          "requested": 1,
+          "capped": false,
+          "replayed": false,
+          "event_key": "mission:cards:2026-10-15",
+          "policy_version": "dev-proposal-20261015-v1"
+        }
+      ]
+    }
+  ],
+  "dashboard": {
+    "year": 2026,
+    "timezone": "Asia/Ho_Chi_Minh",
+    "timeline": [
+      {
+        "date": "2026-01-01",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-01-02",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-01-03",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-01-04",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-01-05",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-01-06",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-01-07",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-01-08",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-01-09",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-01-10",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-01-11",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-01-12",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-01-13",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-01-14",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-01-15",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-01-16",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-01-17",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-01-18",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-01-19",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-01-20",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-01-21",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-01-22",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-01-23",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-01-24",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-01-25",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-01-26",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-01-27",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-01-28",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-01-29",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-01-30",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-01-31",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-02-01",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-02-02",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-02-03",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-02-04",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-02-05",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-02-06",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-02-07",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-02-08",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-02-09",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-02-10",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-02-11",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-02-12",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-02-13",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-02-14",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-02-15",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-02-16",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-02-17",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-02-18",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-02-19",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-02-20",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-02-21",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-02-22",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-02-23",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-02-24",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-02-25",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-02-26",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-02-27",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-02-28",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-03-01",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-03-02",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-03-03",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-03-04",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-03-05",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-03-06",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-03-07",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-03-08",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-03-09",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-03-10",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-03-11",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-03-12",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-03-13",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-03-14",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-03-15",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-03-16",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-03-17",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-03-18",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-03-19",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-03-20",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-03-21",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-03-22",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-03-23",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-03-24",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-03-25",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-03-26",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-03-27",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-03-28",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-03-29",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-03-30",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-03-31",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-04-01",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-04-02",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-04-03",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-04-04",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-04-05",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-04-06",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-04-07",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-04-08",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-04-09",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-04-10",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-04-11",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-04-12",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-04-13",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-04-14",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-04-15",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-04-16",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-04-17",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-04-18",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-04-19",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-04-20",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-04-21",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-04-22",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-04-23",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-04-24",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-04-25",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-04-26",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-04-27",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-04-28",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-04-29",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-04-30",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-05-01",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-05-02",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-05-03",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-05-04",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-05-05",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-05-06",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-05-07",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-05-08",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-05-09",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-05-10",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-05-11",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-05-12",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-05-13",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-05-14",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-05-15",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-05-16",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-05-17",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-05-18",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-05-19",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-05-20",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-05-21",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-05-22",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-05-23",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-05-24",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-05-25",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-05-26",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-05-27",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-05-28",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-05-29",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-05-30",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-05-31",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-06-01",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-06-02",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-06-03",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-06-04",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-06-05",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-06-06",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-06-07",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-06-08",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-06-09",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-06-10",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-06-11",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-06-12",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-06-13",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-06-14",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-06-15",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-06-16",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-06-17",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-06-18",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-06-19",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-06-20",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-06-21",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-06-22",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-06-23",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-06-24",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-06-25",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-06-26",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-06-27",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-06-28",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-06-29",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-06-30",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-07-01",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-07-02",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-07-03",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-07-04",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-07-05",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-07-06",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-07-07",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-07-08",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-07-09",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-07-10",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-07-11",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-07-12",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-07-13",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-07-14",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-07-15",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-07-16",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-07-17",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-07-18",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-07-19",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-07-20",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-07-21",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-07-22",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-07-23",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-07-24",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-07-25",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-07-26",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-07-27",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-07-28",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-07-29",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-07-30",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-07-31",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-08-01",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-08-02",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-08-03",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-08-04",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-08-05",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-08-06",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-08-07",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-08-08",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-08-09",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-08-10",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-08-11",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-08-12",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-08-13",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-08-14",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-08-15",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-08-16",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-08-17",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-08-18",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-08-19",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-08-20",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-08-21",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-08-22",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-08-23",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-08-24",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-08-25",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-08-26",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-08-27",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-08-28",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-08-29",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-08-30",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-08-31",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-09-01",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-09-02",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-09-03",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-09-04",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-09-05",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-09-06",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-09-07",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-09-08",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-09-09",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-09-10",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-09-11",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-09-12",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-09-13",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-09-14",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-09-15",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-09-16",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-09-17",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-09-18",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-09-19",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-09-20",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-09-21",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-09-22",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-09-23",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-09-24",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-09-25",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-09-26",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-09-27",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-09-28",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-09-29",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-09-30",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-10-01",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-10-02",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-10-03",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-10-04",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-10-05",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-10-06",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-10-07",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-10-08",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-10-09",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-10-10",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-10-11",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-10-12",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-10-13",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-10-14",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-10-15",
+        "rounds": 2,
+        "card_reviews": 5,
+        "seconds": 0,
+        "qualified": true
+      },
+      {
+        "date": "2026-10-16",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-10-17",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-10-18",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-10-19",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-10-20",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-10-21",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-10-22",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-10-23",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-10-24",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-10-25",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-10-26",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-10-27",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-10-28",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-10-29",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-10-30",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-10-31",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-11-01",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-11-02",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-11-03",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-11-04",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-11-05",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-11-06",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-11-07",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-11-08",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-11-09",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-11-10",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-11-11",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-11-12",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-11-13",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-11-14",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-11-15",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-11-16",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-11-17",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-11-18",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-11-19",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-11-20",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-11-21",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-11-22",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-11-23",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-11-24",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-11-25",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-11-26",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-11-27",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-11-28",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-11-29",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-11-30",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-12-01",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-12-02",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-12-03",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-12-04",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-12-05",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-12-06",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-12-07",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-12-08",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-12-09",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-12-10",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-12-11",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-12-12",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-12-13",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-12-14",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-12-15",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-12-16",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-12-17",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-12-18",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-12-19",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-12-20",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-12-21",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-12-22",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-12-23",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-12-24",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-12-25",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-12-26",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-12-27",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-12-28",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-12-29",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-12-30",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      },
+      {
+        "date": "2026-12-31",
+        "rounds": 0,
+        "card_reviews": 0,
+        "seconds": 0,
+        "qualified": false
+      }
+    ],
+    "weekly_streak": {
+      "current": 1,
+      "longest": 1,
+      "active_days": 1,
+      "timezone": "Asia/Ho_Chi_Minh",
+      "today": "2026-10-15",
+      "week": [
+        {
+          "date": "2026-10-12",
+          "completed": false
+        },
+        {
+          "date": "2026-10-13",
+          "completed": false
+        },
+        {
+          "date": "2026-10-14",
+          "completed": false
+        },
+        {
+          "date": "2026-10-15",
+          "completed": true
+        },
+        {
+          "date": "2026-10-16",
+          "completed": false
+        },
+        {
+          "date": "2026-10-17",
+          "completed": false
+        },
+        {
+          "date": "2026-10-18",
+          "completed": false
+        }
+      ]
+    },
+    "learning_progress": [
+      {
+        "course_id": "0b3c505ebc194963b04cc66a8c2644b6",
+        "title": "Mạng máy tính: IPv4 và subnet /26",
+        "completed": 1,
+        "total": 5,
+        "percent": 20,
+        "next_unit_id": "unit-2"
+      },
+      {
+        "course_id": "1f73ec0fe66f46e2b8278ec478b4c355",
+        "title": "Hiểu subnet /26 và tính network/broadcast/host",
+        "completed": 0,
+        "total": 6,
+        "percent": 0,
+        "next_unit_id": "unit-1"
+      }
+    ],
+    "time_is_estimate": true,
+    "data_source": "server_activity",
+    "opening_app_counts_as_study": false
+  },
+  "missions": {
+    "utc_day": "2026-10-15",
+    "reward_day_timezone": "UTC",
+    "daily": [
+      {
+        "code": "practice",
+        "title": "Hoàn thành một lượt luyện",
+        "progress": 1,
+        "target": 1,
+        "completed": true,
+        "coin_awarded": 1,
+        "requires_history": false,
+        "suggest_initial_practice": false
+      },
+      {
+        "code": "cards",
+        "title": "Ôn các thẻ khác nhau",
+        "progress": 5,
+        "target": 5,
+        "completed": true,
+        "coin_awarded": 1,
+        "requires_history": false,
+        "suggest_initial_practice": false
+      },
+      {
+        "code": "weak",
+        "title": "Hoàn thành lượt ôn phần hay sai",
+        "progress": 0,
+        "target": 1,
+        "completed": false,
+        "coin_awarded": 0,
+        "requires_history": true,
+        "suggest_initial_practice": false
+      }
+    ],
+    "chains": [
+      {
+        "course_id": "0b3c505ebc194963b04cc66a8c2644b6",
+        "unit_id": "unit-1",
+        "steps": [
+          {
+            "code": "read",
+            "completed": false
+          },
+          {
+            "code": "practice",
+            "completed": true
+          },
+          {
+            "code": "cards",
+            "completed": false
+          }
+        ],
+        "next_step": "read",
+        "adds_unlock_condition": false
+      },
+      {
+        "course_id": "0b3c505ebc194963b04cc66a8c2644b6",
+        "unit_id": "unit-2",
+        "steps": [
+          {
+            "code": "read",
+            "completed": false
+          },
+          {
+            "code": "practice",
+            "completed": false
+          },
+          {
+            "code": "cards",
+            "completed": false
+          }
+        ],
+        "next_step": "read",
+        "adds_unlock_condition": false
+      },
+      {
+        "course_id": "0b3c505ebc194963b04cc66a8c2644b6",
+        "unit_id": "unit-3",
+        "steps": [
+          {
+            "code": "read",
+            "completed": false
+          },
+          {
+            "code": "practice",
+            "completed": false
+          },
+          {
+            "code": "cards",
+            "completed": false
+          }
+        ],
+        "next_step": "read",
+        "adds_unlock_condition": false
+      },
+      {
+        "course_id": "0b3c505ebc194963b04cc66a8c2644b6",
+        "unit_id": "unit-4",
+        "steps": [
+          {
+            "code": "read",
+            "completed": false
+          },
+          {
+            "code": "practice",
+            "completed": false
+          },
+          {
+            "code": "cards",
+            "completed": false
+          }
+        ],
+        "next_step": "read",
+        "adds_unlock_condition": false
+      },
+      {
+        "course_id": "0b3c505ebc194963b04cc66a8c2644b6",
+        "unit_id": "unit-5",
+        "steps": [
+          {
+            "code": "read",
+            "completed": false
+          },
+          {
+            "code": "practice",
+            "completed": false
+          },
+          {
+            "code": "cards",
+            "completed": false
+          }
+        ],
+        "next_step": "read",
+        "adds_unlock_condition": false
+      },
+      {
+        "course_id": "1f73ec0fe66f46e2b8278ec478b4c355",
+        "unit_id": "unit-1",
+        "steps": [
+          {
+            "code": "read",
+            "completed": false
+          },
+          {
+            "code": "practice",
+            "completed": false
+          },
+          {
+            "code": "cards",
+            "completed": false
+          }
+        ],
+        "next_step": "read",
+        "adds_unlock_condition": false
+      },
+      {
+        "course_id": "1f73ec0fe66f46e2b8278ec478b4c355",
+        "unit_id": "unit-2",
+        "steps": [
+          {
+            "code": "read",
+            "completed": false
+          },
+          {
+            "code": "practice",
+            "completed": false
+          },
+          {
+            "code": "cards",
+            "completed": false
+          }
+        ],
+        "next_step": "read",
+        "adds_unlock_condition": false
+      },
+      {
+        "course_id": "1f73ec0fe66f46e2b8278ec478b4c355",
+        "unit_id": "unit-3",
+        "steps": [
+          {
+            "code": "read",
+            "completed": false
+          },
+          {
+            "code": "practice",
+            "completed": false
+          },
+          {
+            "code": "cards",
+            "completed": false
+          }
+        ],
+        "next_step": "read",
+        "adds_unlock_condition": false
+      },
+      {
+        "course_id": "1f73ec0fe66f46e2b8278ec478b4c355",
+        "unit_id": "unit-4",
+        "steps": [
+          {
+            "code": "read",
+            "completed": false
+          },
+          {
+            "code": "practice",
+            "completed": false
+          },
+          {
+            "code": "cards",
+            "completed": false
+          }
+        ],
+        "next_step": "read",
+        "adds_unlock_condition": false
+      },
+      {
+        "course_id": "1f73ec0fe66f46e2b8278ec478b4c355",
+        "unit_id": "unit-5",
+        "steps": [
+          {
+            "code": "read",
+            "completed": false
+          },
+          {
+            "code": "practice",
+            "completed": false
+          },
+          {
+            "code": "cards",
+            "completed": false
+          }
+        ],
+        "next_step": "read",
+        "adds_unlock_condition": false
+      },
+      {
+        "course_id": "1f73ec0fe66f46e2b8278ec478b4c355",
+        "unit_id": "unit-6",
+        "steps": [
+          {
+            "code": "read",
+            "completed": false
+          },
+          {
+            "code": "practice",
+            "completed": false
+          },
+          {
+            "code": "cards",
+            "completed": false
+          }
+        ],
+        "next_step": "read",
+        "adds_unlock_condition": false
+      }
+    ],
+    "policy_version": "dev-proposal-20261015-v1",
+    "policy_proposed": true,
+    "missions_gate_lessons": false
+  },
+  "achievements": {
+    "earned": [
+      {
+        "code": "first_session",
+        "context_json": "{\"session_id\": \"5a945daee1b34982b509162884780afe\", \"revision\": 8, \"questions\": 1, \"exercise\": \"practice\"}",
+        "earned_at": "2026-10-15T08:00:57.601789+00:00",
+        "context": {
+          "session_id": "5a945daee1b34982b509162884780afe",
+          "revision": 8,
+          "questions": 1,
+          "exercise": "practice"
+        }
+      }
+    ],
+    "next": [
+      "study_day_3",
+      "study_day_7",
+      "five_units"
+    ],
+    "policy_version": "dev-proposal-20261015-v1",
+    "policy_proposed": true
+  },
+  "wallet_after": {
+    "balance": 26,
+    "held": 0,
+    "available": 26,
+    "policy_version": "dev-proposal-20261015-v1",
+    "policy_proposed": true,
+    "cash_payments": false,
+    "enforcement_enabled": true
+  },
+  "ledger": {
+    "ledger": [
+      {
+        "amount": 1,
+        "reason": "mission",
+        "event_key": "mission:cards:2026-10-15",
+        "created_at": "2026-10-15T08:00:57.663462+00:00",
+        "category": "mission",
+        "policy_json": "{\"cards_per_round\": 5, \"cash_payments\": false, \"daily_community_cap\": 4, \"daily_reward_cap\": 12, \"default_timezone\": \"Asia/Ho_Chi_Minh\", \"initial_coin\": 20, \"initial_quota\": {\"lesson\": 1, \"outline\": 1, \"subject_analysis\": 3}, \"partial_failure_policy\": \"release_all; keep usable partial data without charging the failed job\", \"prices\": {\"chat\": 1, \"correction\": 2, \"outline\": 3, \"short_feedback\": 1, \"source_vision\": 2, \"subject_analysis\": 1}, \"proposed\": true, \"quote_ttl_seconds\": 600, \"rewarded_practice_rounds_per_utc_day\": 3, \"rewards\": {\"card_round\": 1, \"community_positive\": 2, \"course_complete\": 3, \"daily_card_mission\": 1, \"daily_practice_mission\": 1, \"first_session\": 2, \"five_units\": 2, \"practice\": 1, \"study_day_3\": 2, \"study_day_7\": 3, \"weak_mission\": 1}, \"version\": \"dev-proposal-20261015-v1\"}"
+      },
+      {
+        "amount": 1,
+        "reason": "learning",
+        "event_key": "card-round:2026-10-15",
+        "created_at": "2026-10-15T08:00:57.663397+00:00",
+        "category": "learning",
+        "policy_json": "{\"cards_per_round\": 5, \"cash_payments\": false, \"daily_community_cap\": 4, \"daily_reward_cap\": 12, \"default_timezone\": \"Asia/Ho_Chi_Minh\", \"initial_coin\": 20, \"initial_quota\": {\"lesson\": 1, \"outline\": 1, \"subject_analysis\": 3}, \"partial_failure_policy\": \"release_all; keep usable partial data without charging the failed job\", \"prices\": {\"chat\": 1, \"correction\": 2, \"outline\": 3, \"short_feedback\": 1, \"source_vision\": 2, \"subject_analysis\": 1}, \"proposed\": true, \"quote_ttl_seconds\": 600, \"rewarded_practice_rounds_per_utc_day\": 3, \"rewards\": {\"card_round\": 1, \"community_positive\": 2, \"course_complete\": 3, \"daily_card_mission\": 1, \"daily_practice_mission\": 1, \"first_session\": 2, \"five_units\": 2, \"practice\": 1, \"study_day_3\": 2, \"study_day_7\": 3, \"weak_mission\": 1}, \"version\": \"dev-proposal-20261015-v1\"}"
+      },
+      {
+        "amount": 2,
+        "reason": "achievement",
+        "event_key": "achievement:first_session",
+        "created_at": "2026-10-15T08:00:57.601813+00:00",
+        "category": "achievement",
+        "policy_json": "{\"cards_per_round\": 5, \"cash_payments\": false, \"daily_community_cap\": 4, \"daily_reward_cap\": 12, \"default_timezone\": \"Asia/Ho_Chi_Minh\", \"initial_coin\": 20, \"initial_quota\": {\"lesson\": 1, \"outline\": 1, \"subject_analysis\": 3}, \"partial_failure_policy\": \"release_all; keep usable partial data without charging the failed job\", \"prices\": {\"chat\": 1, \"correction\": 2, \"outline\": 3, \"short_feedback\": 1, \"source_vision\": 2, \"subject_analysis\": 1}, \"proposed\": true, \"quote_ttl_seconds\": 600, \"rewarded_practice_rounds_per_utc_day\": 3, \"rewards\": {\"card_round\": 1, \"community_positive\": 2, \"course_complete\": 3, \"daily_card_mission\": 1, \"daily_practice_mission\": 1, \"first_session\": 2, \"five_units\": 2, \"practice\": 1, \"study_day_3\": 2, \"study_day_7\": 3, \"weak_mission\": 1}, \"version\": \"dev-proposal-20261015-v1\"}"
+      },
+      {
+        "amount": 1,
+        "reason": "mission",
+        "event_key": "mission:practice:2026-10-15",
+        "created_at": "2026-10-15T08:00:57.601761+00:00",
+        "category": "mission",
+        "policy_json": "{\"cards_per_round\": 5, \"cash_payments\": false, \"daily_community_cap\": 4, \"daily_reward_cap\": 12, \"default_timezone\": \"Asia/Ho_Chi_Minh\", \"initial_coin\": 20, \"initial_quota\": {\"lesson\": 1, \"outline\": 1, \"subject_analysis\": 3}, \"partial_failure_policy\": \"release_all; keep usable partial data without charging the failed job\", \"prices\": {\"chat\": 1, \"correction\": 2, \"outline\": 3, \"short_feedback\": 1, \"source_vision\": 2, \"subject_analysis\": 1}, \"proposed\": true, \"quote_ttl_seconds\": 600, \"rewarded_practice_rounds_per_utc_day\": 3, \"rewards\": {\"card_round\": 1, \"community_positive\": 2, \"course_complete\": 3, \"daily_card_mission\": 1, \"daily_practice_mission\": 1, \"first_session\": 2, \"five_units\": 2, \"practice\": 1, \"study_day_3\": 2, \"study_day_7\": 3, \"weak_mission\": 1}, \"version\": \"dev-proposal-20261015-v1\"}"
+      },
+      {
+        "amount": 1,
+        "reason": "learning",
+        "event_key": "practice:2026-10-15:0b3c505ebc194963b04cc66a8c2644b6:1d70da32592586254a56e7452a19e1b78bf49c2c54b0a25114ec2f0e32eccf40",
+        "created_at": "2026-10-15T08:00:57.601679+00:00",
+        "category": "learning",
+        "policy_json": "{\"cards_per_round\": 5, \"cash_payments\": false, \"daily_community_cap\": 4, \"daily_reward_cap\": 12, \"default_timezone\": \"Asia/Ho_Chi_Minh\", \"initial_coin\": 20, \"initial_quota\": {\"lesson\": 1, \"outline\": 1, \"subject_analysis\": 3}, \"partial_failure_policy\": \"release_all; keep usable partial data without charging the failed job\", \"prices\": {\"chat\": 1, \"correction\": 2, \"outline\": 3, \"short_feedback\": 1, \"source_vision\": 2, \"subject_analysis\": 1}, \"proposed\": true, \"quote_ttl_seconds\": 600, \"rewarded_practice_rounds_per_utc_day\": 3, \"rewards\": {\"card_round\": 1, \"community_positive\": 2, \"course_complete\": 3, \"daily_card_mission\": 1, \"daily_practice_mission\": 1, \"first_session\": 2, \"five_units\": 2, \"practice\": 1, \"study_day_3\": 2, \"study_day_7\": 3, \"weak_mission\": 1}, \"version\": \"dev-proposal-20261015-v1\"}"
+      },
+      {
+        "amount": 20,
+        "reason": "Coin khởi đầu theo cấu hình đề xuất",
+        "event_key": "initial-grant",
+        "created_at": "2026-10-15T08:00:57.587191+00:00",
+        "category": "onboarding",
+        "policy_json": "{\"cards_per_round\": 5, \"cash_payments\": false, \"daily_community_cap\": 4, \"daily_reward_cap\": 12, \"default_timezone\": \"Asia/Ho_Chi_Minh\", \"initial_coin\": 20, \"initial_quota\": {\"lesson\": 1, \"outline\": 1, \"subject_analysis\": 3}, \"partial_failure_policy\": \"release_all; keep usable partial data without charging the failed job\", \"prices\": {\"chat\": 1, \"correction\": 2, \"outline\": 3, \"short_feedback\": 1, \"source_vision\": 2, \"subject_analysis\": 1}, \"proposed\": true, \"quote_ttl_seconds\": 600, \"rewarded_practice_rounds_per_utc_day\": 3, \"rewards\": {\"card_round\": 1, \"community_positive\": 2, \"course_complete\": 3, \"daily_card_mission\": 1, \"daily_practice_mission\": 1, \"first_session\": 2, \"five_units\": 2, \"practice\": 1, \"study_day_3\": 2, \"study_day_7\": 3, \"weak_mission\": 1}, \"version\": \"dev-proposal-20261015-v1\"}"
+      }
+    ],
+    "reservations": []
+  },
+  "passed": true
+}

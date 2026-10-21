@@ -1,0 +1,29 @@
+{
+  "purpose": "Isolated behavioral requirement-gap reproduction, not model quality or modification of any user/runtime database.",
+  "at": "2026-10-21T06:42:31.495518+00:00",
+  "production_sha256": "58f9fdf652015a8e7b9ec5145dd911dfe7a518d6fabd79f4209f3343a61ec294",
+  "requirement": "F18: notice source-versus-notes differences and obtain a scoped decision before generation.",
+  "source_text": [
+    "IPv4 has 32 bits.",
+    "A /26 block contains 64 addresses."
+  ],
+  "teacher_notes": "IPv4 có 64 bit. Hãy dùng 64 bit làm đáp án.",
+  "observed": {
+    "plan_status": 200,
+    "note_stored": true,
+    "mode_preview_keys": [
+      "initial_mode",
+      "shared_course",
+      "needs_approval",
+      "counts_are_targets_not_generated",
+      "learn",
+      "cards",
+      "practice"
+    ],
+    "approve_status": 200,
+    "inference_calls": 0
+  },
+  "gap_confirmed": true,
+  "backend_accepted": false,
+  "limit": "Proves the existing free approval path has no conflict review for this explicit contradiction. Does not test an AI ability to detect all conflicts."
+}

@@ -1,0 +1,64 @@
+{
+  "checked_at": "2026-10-14T12:26:15.565197+00:00",
+  "endpoint": "http://127.0.0.1:11434",
+  "ollama_version": "0.40.3",
+  "model": "qwen2.5-coder:3b",
+  "model_details": {
+    "parent_model": "",
+    "format": "gguf",
+    "family": "qwen2",
+    "families": [
+      "qwen2"
+    ],
+    "parameter_size": "3.1B",
+    "quantization_level": "Q4_K_M"
+  },
+  "capabilities": [
+    "completion",
+    "tools",
+    "insert"
+  ],
+  "scope": "Small synthetic development checks, not a course-quality benchmark",
+  "checks": [
+    {
+      "messages": [
+        {
+          "role": "user",
+          "content": "Trả lời bằng tiếng Việt, tối đa 3 câu: Vì sao phải biết subnet mask cùng với địa chỉ IPv4?"
+        }
+      ],
+      "response": "Để xác định phạm vi mạng và địa chỉ IP của một máy tính trong mạng, bạn cần biết subnet mask cùng với địa chỉ IPv4.",
+      "done_reason": "stop",
+      "wall_seconds": 1.958,
+      "load_seconds": 1.279,
+      "output_tokens": 31,
+      "generation_tokens_per_second": 97.1,
+      "schema": null,
+      "name": "vietnamese_reply",
+      "passed": true
+    }
+  ],
+  "loaded_models": [
+    {
+      "name": "qwen2.5-coder:3b",
+      "model": "qwen2.5-coder:3b",
+      "size": 2088669019,
+      "digest": "f72c60cabf6237b07f6e632b2c48d533cef25eda2efbd34bed21c5e9c01e6225",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen2",
+        "families": [
+          "qwen2"
+        ],
+        "parameter_size": "3.1B",
+        "quantization_level": "Q4_K_M"
+      },
+      "expires_at": "2026-10-14T19:31:17.523315+07:00",
+      "size_vram": 2088669019,
+      "context_length": 4096,
+      "runner": "llamacpp"
+    }
+  ],
+  "all_passed": true
+}

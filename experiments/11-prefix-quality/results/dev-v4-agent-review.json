@@ -1,0 +1,679 @@
+{
+  "purpose": "Per-question Codex-assisted source/oracle review of the new whole-chapter development trial; not independent human or instructor labels.",
+  "review_rubric": "evaluation/QUALITY-REVIEW.md",
+  "run_id": "dev-v4-chapter",
+  "production_sha256": "00cedb8c5ef56d83f3d5414884997f791138535095e563040d01fdd3e0db3dbd",
+  "protocol_sha256": "f9c80bb55af1823e4ad12f37cd49e3cb764eab1d32fe6b3e5e56ab61cfe476c0",
+  "factual_accuracy_score": null,
+  "independent_human_reviews": 0,
+  "cases": [
+    {
+      "case_id": "net-dev-prefix",
+      "reviewed_at": "2026-10-21T00:01:18.194455+00:00",
+      "oracle": {
+        "verification": "computed",
+        "network": "10.12.7.128",
+        "broadcast": "10.12.7.255",
+        "first_host": "10.12.7.129",
+        "last_host": "10.12.7.254",
+        "mask": "255.255.255.128",
+        "host_bits": 7,
+        "total_addresses": 128,
+        "usable_hosts": 126
+      },
+      "source_sha256": "3d10baf8b4f76ce753b5baee11bcfb66d6c4d373658cb38a5e528ea1ac38585b",
+      "published_question_count": 7,
+      "requested_question_count": 8,
+      "chapter_context": {
+        "context_id": "8ec31842204d2238d8c260827ba1b9b1df6b624327409883681c0b447c9fc188",
+        "reader_version": "20261020-whole-approved-chapter-v1",
+        "status": "ready",
+        "scope": "whole_approved_plan_selection",
+        "extraction_revision": 2,
+        "total_fragments": 8,
+        "covered_fragments": 8,
+        "total_characters": 592,
+        "covered_characters": 592,
+        "total_parts": 1,
+        "read_parts": 1,
+        "total_stages": 1,
+        "saved_stages": 1,
+        "complete": true,
+        "coverage_is_not_semantic_accuracy": true
+      },
+      "reading_review": "The /25 counts, endpoints and mask agree with ipaddress/source; mindmap/cards retain the same procedure. The generic reserved-endpoint explanation is limited to this conventional subnet.",
+      "questions": [
+        {
+          "question_index": 0,
+          "kind": "mcq",
+          "question_sha256": "1ec0762f8854c0fd5838102a3ea3bc386f3cb1d27153049f47c04abe57ff0fe0",
+          "status": "supported_in_checked_scope",
+          "note": "Network, broadcast and endpoints match independent ipaddress facts; exactly one of the endpoint options excludes both boundaries.",
+          "source_refs": [
+            "ba24b94bbc704efda8230bfdcc3d70a5:2:0",
+            "ba24b94bbc704efda8230bfdcc3d70a5:2:1",
+            "ba24b94bbc704efda8230bfdcc3d70a5:2:7"
+          ]
+        },
+        {
+          "question_index": 1,
+          "kind": "cloze",
+          "question_sha256": "c8b470bed7c323c431f8a8331aa2246c805d36347627bb61e4ea94fbd03daab9",
+          "status": "supported_in_checked_scope",
+          "note": "One blank uniquely asks the broadcast boundary and cites the source rule.",
+          "source_refs": [
+            "ba24b94bbc704efda8230bfdcc3d70a5:2:1",
+            "ba24b94bbc704efda8230bfdcc3d70a5:2:6",
+            "ba24b94bbc704efda8230bfdcc3d70a5:2:7"
+          ]
+        },
+        {
+          "question_index": 2,
+          "kind": "matching",
+          "question_sha256": "90c60a122ac333db5f0dfc6fb12518406006ec569a44ef5201053becd013275b",
+          "status": "needs_review",
+          "note": "Question stem names only an IPv4 /25, omitting the given IP10.12.7.201; the numeric mapping depends on the lesson example. Include the IP in the standalone practice question.",
+          "source_refs": [
+            "ba24b94bbc704efda8230bfdcc3d70a5:2:1",
+            "ba24b94bbc704efda8230bfdcc3d70a5:2:6"
+          ]
+        },
+        {
+          "question_index": 3,
+          "kind": "ordering",
+          "question_sha256": "06e58d90b5916e2a7234fa5944e47233b4f1d0b20c55b92a18173a34c47413a5",
+          "status": "supported_in_checked_scope",
+          "note": "Five cited numbered source steps match [1,3,0,4,2], with no answer invented by the model.",
+          "source_refs": [
+            "ba24b94bbc704efda8230bfdcc3d70a5:2:3",
+            "ba24b94bbc704efda8230bfdcc3d70a5:2:4",
+            "ba24b94bbc704efda8230bfdcc3d70a5:2:5",
+            "ba24b94bbc704efda8230bfdcc3d70a5:2:6",
+            "ba24b94bbc704efda8230bfdcc3d70a5:2:7"
+          ]
+        },
+        {
+          "question_index": 4,
+          "kind": "short_answer",
+          "question_sha256": "5ab3f0b4ee75cbb75307f8c44931ad9ff2741ddc9248ed962f616e1cf4b3d9d0",
+          "status": "supported_in_checked_scope",
+          "note": "Reference and rubric give the computed network/broadcast/host endpoints.",
+          "source_refs": [
+            "ba24b94bbc704efda8230bfdcc3d70a5:2:0",
+            "ba24b94bbc704efda8230bfdcc3d70a5:2:1",
+            "ba24b94bbc704efda8230bfdcc3d70a5:2:2",
+            "ba24b94bbc704efda8230bfdcc3d70a5:2:3",
+            "ba24b94bbc704efda8230bfdcc3d70a5:2:4",
+            "ba24b94bbc704efda8230bfdcc3d70a5:2:5",
+            "ba24b94bbc704efda8230bfdcc3d70a5:2:6",
+            "ba24b94bbc704efda8230bfdcc3d70a5:2:7"
+          ]
+        },
+        {
+          "question_index": 5,
+          "kind": "mcq",
+          "question_sha256": "9c6e9e4c4f60fedb5906908938aab991316bd97a162eeddba2480aba367f634e",
+          "status": "supported_in_checked_scope",
+          "note": "Key is the step explicitly assigning boundary labels in the cited source; more precise wording could distinguish finding a block from labeling its boundaries.",
+          "source_refs": [
+            "ba24b94bbc704efda8230bfdcc3d70a5:2:6"
+          ]
+        },
+        {
+          "question_index": 6,
+          "kind": "cloze",
+          "question_sha256": "dbe6de58535e98a41f5c50bde052534fcf9974a7d658d66b599546253c6b2a83",
+          "status": "needs_review",
+          "note": "Key is supported by the procedure, but explanation exposes request-local R7/R6 source labels instead of reader-facing citations.",
+          "source_refs": [
+            "ba24b94bbc704efda8230bfdcc3d70a5:2:5",
+            "ba24b94bbc704efda8230bfdcc3d70a5:2:6"
+          ]
+        }
+      ],
+      "uncreated": [
+        {
+          "stage": "matching:2",
+          "kind": "matching",
+          "reason": "Nguồn không đủ để tạo câu hỏi matching mới ngoài các ý đã bị loại trừ hoặc trùng lặp với câu hỏi đã có (xác định network, broadcast, và dải host từ ví dụ 10.12.7.201/25).",
+          "origin": "model_declined"
+        }
+      ]
+    },
+    {
+      "case_id": "calc-dev-ftc",
+      "reviewed_at": "2026-10-21T00:07:11.700660+00:00",
+      "oracle": {
+        "verification": "computed",
+        "integral": "8/3",
+        "reversed": "-8/3",
+        "second_integral": "2"
+      },
+      "source_sha256": "7d7f383d0ebe5029dad17b42a5ff28974010781354878a98ed232bde19b87e04",
+      "published_question_count": 0,
+      "requested_question_count": 8,
+      "chapter_context": {
+        "context_id": "56b26f3f7cda39a6da3f75a3ebecbcf79bb9a7fb7a8d4229310b81c42a6ff693",
+        "reader_version": "20261020-whole-approved-chapter-v1",
+        "status": "reading",
+        "scope": "whole_approved_plan_selection",
+        "extraction_revision": 2,
+        "total_fragments": 7,
+        "covered_fragments": 0,
+        "total_characters": 551,
+        "covered_characters": 0,
+        "total_parts": 1,
+        "read_parts": 0,
+        "total_stages": 1,
+        "saved_stages": 0,
+        "complete": false,
+        "coverage_is_not_semantic_accuracy": true
+      },
+      "questions": [],
+      "failure": {
+        "message": "Luồng AI kết thúc thiếu dữ liệu; phần đã lưu vẫn còn, chưa áp dụng đầu ra.",
+        "code": "INCOMPLETE_OUTPUT",
+        "retryable": false,
+        "provider": {
+          "provider": "ollama_local",
+          "model": "gemma4:12b-mlx",
+          "reference_codec": "scoped-reference-aliases-v1",
+          "model_choice_id": "local:gemma4:12b-mlx",
+          "selection_revision": 1,
+          "prompt_version": "20261021-prefix-bit-arithmetic-v23",
+          "schema_version": 19,
+          "processor_version": "20261021-prefix-bit-arithmetic-v11",
+          "chapter_evidence_version": "20261021-approved-chapter-support-v1"
+        }
+      },
+      "note": "INCOMPLETE_OUTPUT at ChapterBrief before any saved chapter node or reading/questions. Request shows4736characters but no token/finish-reason metadata retained; do not infer the truncation cause from this alone."
+    },
+    {
+      "case_id": "psy-dev-operant",
+      "reviewed_at": "2026-10-21T00:07:11.700994+00:00",
+      "oracle": {
+        "verification": "agent_source_crosscheck_only_needs_independent_review",
+        "limit": "A deterministic computation cannot establish these psychology labels; no automatic factual pass."
+      },
+      "source_sha256": "89f307e17c2baf035b0a33267fbc83cf5ee740c03106ed0b19cee23320879036",
+      "published_question_count": 6,
+      "requested_question_count": 8,
+      "chapter_context": {
+        "context_id": "1fb42d63b24caebc752d634dd796853e9389090d5fb6c5d449ece7fcc0788407",
+        "reader_version": "20261020-whole-approved-chapter-v1",
+        "status": "ready",
+        "scope": "whole_approved_plan_selection",
+        "extraction_revision": 2,
+        "total_fragments": 8,
+        "covered_fragments": 8,
+        "total_characters": 1005,
+        "covered_characters": 1005,
+        "total_parts": 1,
+        "read_parts": 1,
+        "total_stages": 1,
+        "saved_stages": 1,
+        "complete": true,
+        "coverage_is_not_semantic_accuracy": true
+      },
+      "primary_crosscheck": "https://openstax.org/books/psychology-2e/pages/6-3-operant-conditioning",
+      "reading_review": "The four quadrant definitions and source procedure agree with the notes and primary text; the generated set overfocuses negative reinforcement and several new examples conflate an antecedent/environment improvement with a consequence contingent on the named target.",
+      "questions": [
+        {
+          "question_index": 0,
+          "kind": "mcq",
+          "question_sha256": "4e8e2b8ea68a500a258598716cddcf810b24135b257d054e77b47900fd417bc7",
+          "status": "supported_in_checked_scope",
+          "note": "The alarm is removed contingent on completing the difficult exercise and the same target behavior increases; the negative-reinforcement label follows the given relation.",
+          "source_refs": [
+            "d1d2e6e8df8d41b0b3b3898002476299:2:0",
+            "d1d2e6e8df8d41b0b3b3898002476299:2:1",
+            "d1d2e6e8df8d41b0b3b3898002476299:2:2",
+            "d1d2e6e8df8d41b0b3b3898002476299:2:5",
+            "d1d2e6e8df8d41b0b3b3898002476299:2:6"
+          ]
+        },
+        {
+          "question_index": 1,
+          "kind": "cloze",
+          "question_sha256": "a272e2ce5130b626369a11eb99606396607a7cafd1cf6b9d69a6fe0a630f7e15",
+          "status": "supported_in_checked_scope",
+          "note": "Stem explicitly states removal of office noise and increased remote-work behavior. Given those assertions the label follows; permission itself should be distinguished from the aversive stimulus removal.",
+          "source_refs": [
+            "d1d2e6e8df8d41b0b3b3898002476299:2:0",
+            "d1d2e6e8df8d41b0b3b3898002476299:2:1",
+            "d1d2e6e8df8d41b0b3b3898002476299:2:2",
+            "d1d2e6e8df8d41b0b3b3898002476299:2:5",
+            "d1d2e6e8df8d41b0b3b3898002476299:2:6"
+          ]
+        },
+        {
+          "question_index": 2,
+          "kind": "matching",
+          "question_sha256": "5d2df0265ab9f8c83d3aec01bb4755ca737d00edc9171a3d26830e3b8933cf13",
+          "status": "needs_review",
+          "note": "Stem describes increased homework behavior but the second left item contradicts it and supplies no second complete contingency. A reduced frequency alone does not determine the positive/negative axis; clarify both scenarios.",
+          "source_refs": [
+            "d1d2e6e8df8d41b0b3b3898002476299:2:0",
+            "d1d2e6e8df8d41b0b3b3898002476299:2:1",
+            "d1d2e6e8df8d41b0b3b3898002476299:2:5",
+            "d1d2e6e8df8d41b0b3b3898002476299:2:6"
+          ]
+        },
+        {
+          "question_index": 3,
+          "kind": "short_answer",
+          "question_sha256": "0586666b95a263806056998d17fdf752b403aa2db4f642530fdf7d8b5856109d",
+          "status": "needs_review",
+          "note": "Gloves prevent injury before technical work; no evidence that the technical-work target produces the removal contingency. More efficient work is not the same as increased glove-wearing behavior. Reference and rubric overclaim one label.",
+          "source_refs": [
+            "d1d2e6e8df8d41b0b3b3898002476299:2:0",
+            "d1d2e6e8df8d41b0b3b3898002476299:2:1",
+            "d1d2e6e8df8d41b0b3b3898002476299:2:3",
+            "d1d2e6e8df8d41b0b3b3898002476299:2:4",
+            "d1d2e6e8df8d41b0b3b3898002476299:2:5",
+            "d1d2e6e8df8d41b0b3b3898002476299:2:6",
+            "d1d2e6e8df8d41b0b3b3898002476299:2:7"
+          ]
+        },
+        {
+          "question_index": 4,
+          "kind": "mcq",
+          "question_sha256": "5c6b54f6a545d42db8cc2d7e9ff88b3a7280c12e38714be2e2e5b7be94c7c106",
+          "status": "needs_review",
+          "note": "Reduced heat is a consequence of turning on cooling, not clearly of the working-more target selected by the key. Improvement in work efficiency alone is insufficient to prove operant reinforcement of that target. Also repeats the earlier MCQ category.",
+          "source_refs": [
+            "d1d2e6e8df8d41b0b3b3898002476299:2:0",
+            "d1d2e6e8df8d41b0b3b3898002476299:2:1",
+            "d1d2e6e8df8d41b0b3b3898002476299:2:5",
+            "d1d2e6e8df8d41b0b3b3898002476299:2:6",
+            "d1d2e6e8df8d41b0b3b3898002476299:2:7"
+          ]
+        },
+        {
+          "question_index": 5,
+          "kind": "cloze",
+          "question_sha256": "5519154d59067ce7b8a4a74b2e81c4a946f6259848017efa996533bbeb28459d",
+          "status": "needs_review",
+          "note": "Headphones reduce noise, but the claimed target is work efficiency rather than headphone-wearing. The needed contingent relation and behavior-frequency observation are not established; repeats the previous cloze category.",
+          "source_refs": [
+            "d1d2e6e8df8d41b0b3b3898002476299:2:0",
+            "d1d2e6e8df8d41b0b3b3898002476299:2:1",
+            "d1d2e6e8df8d41b0b3b3898002476299:2:6",
+            "d1d2e6e8df8d41b0b3b3898002476299:2:7"
+          ]
+        }
+      ],
+      "uncreated": [
+        {
+          "stage": "ordering",
+          "kind": "ordering",
+          "reason": "Nguồn không cung cấp đủ dữ kiện để tạo câu hỏi dạng ordering vì các bước trong quy trình phân loại (R5, R6, R7, R8) không đi kèm với các ví dụ cụ thể hoặc dữ kiện thực tế để áp dụng vào một tình huống mới theo yêu cầu của mục tiêu bài.",
+          "origin": "model_declined"
+        },
+        {
+          "stage": "matching:2",
+          "kind": "matching",
+          "reason": "Nguồn không đủ để tạo câu hỏi dạng matching đáp ứng yêu cầu khác biệt với câu hỏi đã có (về việc học sinh làm bài tập để tránh bị mắng). Các ví dụ còn lại trong nguồn (tiếng còi, tặng điểm, thu hồi quyền chơi) đều đã được sử dụng hoặc quá gần với các ví dụ bị cấm trong prompt.",
+          "origin": "model_declined"
+        }
+      ],
+      "decline_review": "Ordering source contains four explicit numbered steps; the model declined despite that, invoking insufficient new-example data. This is not the backend source gate and should not be called a justified source deficiency."
+    },
+    {
+      "case_id": "net-dev-ipv6",
+      "reviewed_at": "2026-10-21T00:08:31.940306+00:00",
+      "oracle": {
+        "verification": "computed",
+        "compressed": "2001:db8::1",
+        "expanded": "2001:0db8:0000:0000:0000:0000:0000:0001",
+        "bits": 128
+      },
+      "source_sha256": "798de26ecf40eb78c08ee1c8cb55693e319335a0f3deaa2f33c496b1f8fe0f15",
+      "published_question_count": 7,
+      "requested_question_count": 8,
+      "chapter_context": {
+        "context_id": "f64a70e6f21866bb265b81723b721d71eb088ab1099cb841169c1e3df342189d",
+        "reader_version": "20261020-whole-approved-chapter-v1",
+        "status": "ready",
+        "scope": "whole_approved_plan_selection",
+        "extraction_revision": 2,
+        "total_fragments": 7,
+        "covered_fragments": 7,
+        "total_characters": 683,
+        "covered_characters": 683,
+        "total_parts": 1,
+        "read_parts": 1,
+        "total_stages": 1,
+        "saved_stages": 1,
+        "complete": true,
+        "coverage_is_not_semantic_accuracy": true
+      },
+      "primary_crosscheck": "https://www.rfc-editor.org/rfc/rfc4291.html#section-2.2",
+      "numeric_crosscheck": {
+        "compressed": "2001:db8::1",
+        "loopback": "::1",
+        "unspecified": "::"
+      },
+      "reading_review": "128bits/eight16-bit groups, special-address definitions and the concrete compressed address match source/RFC/ipaddress. Longest-run instruction is valid for this example, not a full canonical-address specification.",
+      "questions": [
+        {
+          "question_index": 0,
+          "kind": "mcq",
+          "question_sha256": "d4ee7e90d34e9f2e26c8e81051fe869889abbdcb77ddd05e5dbc8a93ce62f6fc",
+          "status": "supported_in_checked_scope",
+          "note": "The single-double-colon rule prevents ambiguous expansion; source and RFC4291 support the key.128-bit length alone does not disambiguate two separate omitted runs.",
+          "source_refs": [
+            "2fce3f26378946778802ad0c0a8c779d:2:0",
+            "2fce3f26378946778802ad0c0a8c779d:2:5"
+          ]
+        },
+        {
+          "question_index": 1,
+          "kind": "cloze",
+          "question_sha256": "8e0bd933cd5182a71d65ad8bb30a5049ffe101a3139ce93694847d10ed8506e0",
+          "status": "supported_in_checked_scope",
+          "note": "One blank asks the maximum number of double-colon occurrences; source rule is explicit.",
+          "source_refs": [
+            "2fce3f26378946778802ad0c0a8c779d:2:0",
+            "2fce3f26378946778802ad0c0a8c779d:2:5"
+          ]
+        },
+        {
+          "question_index": 2,
+          "kind": "matching",
+          "question_sha256": "8573ab757af4e52cabc732858c959f36f7d0b8e52d58d8e010253a3dffba5fe1",
+          "status": "supported_in_checked_scope",
+          "note": "Both address labels are explicit in source and confirmed with ipaddress: ::1 loopback, :: unspecified.",
+          "source_refs": [
+            "2fce3f26378946778802ad0c0a8c779d:2:1"
+          ]
+        },
+        {
+          "question_index": 3,
+          "kind": "ordering",
+          "question_sha256": "398b1752597b7beffa1865807a153a935393614d204be60d93dc6281cc6e1edc",
+          "status": "supported_in_checked_scope",
+          "note": "Four cited steps match source order [2,3,0,1]; conversion preserves the eight 16-bit groups.",
+          "source_refs": [
+            "2fce3f26378946778802ad0c0a8c779d:2:3",
+            "2fce3f26378946778802ad0c0a8c779d:2:4",
+            "2fce3f26378946778802ad0c0a8c779d:2:5",
+            "2fce3f26378946778802ad0c0a8c779d:2:6"
+          ]
+        },
+        {
+          "question_index": 4,
+          "kind": "short_answer",
+          "question_sha256": "73983ebf31bc42e21fd570d608a2fd1ccc60a2a08822d81ccd4ace6e2b2f47af",
+          "status": "supported_in_checked_scope",
+          "note": "Computed compression is2001:db8::1, and the explanation gives the same unambiguous one-run rule.",
+          "source_refs": [
+            "2fce3f26378946778802ad0c0a8c779d:2:0",
+            "2fce3f26378946778802ad0c0a8c779d:2:1",
+            "2fce3f26378946778802ad0c0a8c779d:2:4",
+            "2fce3f26378946778802ad0c0a8c779d:2:5",
+            "2fce3f26378946778802ad0c0a8c779d:2:6"
+          ]
+        },
+        {
+          "question_index": 5,
+          "kind": "mcq",
+          "question_sha256": "0b7f7dbcfe4d485dba12fd01695080ea8d048569eb844f6b457b74dfe1968ee7",
+          "status": "supported_in_checked_scope",
+          "note": "The keyed option correctly keeps a zero digit for an all-zero hextet during leading-zero removal, before optional run compression.",
+          "source_refs": [
+            "2fce3f26378946778802ad0c0a8c779d:2:4"
+          ]
+        },
+        {
+          "question_index": 6,
+          "kind": "cloze",
+          "question_sha256": "1658f41151c432ee7cfc1c841edfd9efb354a49660ca35ac2323d619b347767b",
+          "status": "needs_review",
+          "note": "Answer0 is stated in the same prompt as the condition that the group is a zero group; tautological recall and exposed key make this a weak cloze despite a correct numeric key.",
+          "source_refs": [
+            "2fce3f26378946778802ad0c0a8c779d:2:4"
+          ]
+        }
+      ],
+      "uncreated": [
+        {
+          "stage": "matching:2",
+          "kind": "matching",
+          "reason": "Đã có câu hỏi dạng matching với nội dung tương tự (nối các thành phần địa chỉ với ý nghĩa/đặc điểm). Nguồn không còn đủ dữ kiện để tạo một câu hỏi matching khác đáp ứng mục tiêu riêng biệt của bài này mà không bị trùng lặp ý nghĩa.",
+          "origin": "model_declined"
+        }
+      ],
+      "decline_review": "Second matching declined. Other distinct source facts (128bits,8groups,16bits/group) exist; preserve the model decline rather than treating it as proof that the source is insufficient."
+    },
+    {
+      "case_id": "calc-dev-chain",
+      "reviewed_at": "2026-10-21T00:13:47.477999+00:00",
+      "oracle": {
+        "verification": "computed",
+        "coefficient": 12,
+        "value_at": 12
+      },
+      "source_sha256": "e3ca3832513038de4f00704288cb424462bc14c70e3600262c3e201200c3815b",
+      "published_question_count": 4,
+      "requested_question_count": 8,
+      "chapter_context": {
+        "context_id": "9c215d97cf0ee137fcd8d735568820b4be2724d358e6d2007612d7dbe7934189",
+        "reader_version": "20261020-whole-approved-chapter-v1",
+        "status": "ready",
+        "scope": "whole_approved_plan_selection",
+        "extraction_revision": 2,
+        "total_fragments": 7,
+        "covered_fragments": 7,
+        "total_characters": 504,
+        "covered_characters": 504,
+        "total_parts": 1,
+        "read_parts": 1,
+        "total_stages": 1,
+        "saved_stages": 1,
+        "complete": true,
+        "coverage_is_not_semantic_accuracy": true
+      },
+      "questions": [
+        {
+          "question_index": 0,
+          "kind": "mcq",
+          "question_sha256": "4d2babfe9759f2c6c8cfa4245bb6b8bf9ede1816d8e30f93ac3537eaaac66f6e",
+          "status": "supported_in_checked_scope",
+          "note": "Outer derivative must be evaluated at g(x); options distinguish g(x), g-prime(x), and x for the stated composition.",
+          "source_refs": [
+            "2c10071173134975857b17534788440c:2:0",
+            "2c10071173134975857b17534788440c:2:1"
+          ]
+        },
+        {
+          "question_index": 1,
+          "kind": "cloze",
+          "question_sha256": "8c621773f114e020c1d290e3a52b7ed07315911c1a46d4dd73cb2f77213e3b7d",
+          "status": "supported_in_checked_scope",
+          "note": "Cloze asks the same central composition rule with one uniquely supported g(x) blank.",
+          "source_refs": [
+            "2c10071173134975857b17534788440c:2:0"
+          ]
+        },
+        {
+          "question_index": 2,
+          "kind": "matching",
+          "question_sha256": "517d80fa5f754369b9fc15cdf9af25607c436dcd9d1dadf61685b25d313d11b6",
+          "status": "supported_in_checked_scope",
+          "note": "Step1/Step2 map exactly to the two cited procedure statements; permutation [1,0] is correct.",
+          "source_refs": [
+            "2c10071173134975857b17534788440c:2:3",
+            "2c10071173134975857b17534788440c:2:4",
+            "2c10071173134975857b17534788440c:2:5",
+            "2c10071173134975857b17534788440c:2:6"
+          ]
+        },
+        {
+          "question_index": 3,
+          "kind": "short_answer",
+          "question_sha256": "4b4bc94c8932f628a13ce0eb8b0f704c94d17f5391769ed520ee3151c617497d",
+          "status": "supported_in_checked_scope",
+          "note": "Independent polynomial chain arithmetic gives12(3x+1)^3 and value12 at0, matching reference and rubric.",
+          "source_refs": [
+            "2c10071173134975857b17534788440c:2:0",
+            "2c10071173134975857b17534788440c:2:1",
+            "2c10071173134975857b17534788440c:2:3",
+            "2c10071173134975857b17534788440c:2:4",
+            "2c10071173134975857b17534788440c:2:5",
+            "2c10071173134975857b17534788440c:2:6"
+          ]
+        }
+      ],
+      "uncreated": [
+        {
+          "stage": "ordering",
+          "kind": "ordering",
+          "reason": "Nguồn của bài chưa có các bước đánh số theo trình tự rõ. Không biến danh sách khái niệm thành câu sắp xếp.",
+          "origin": "backend_source_gate"
+        },
+        {
+          "stage": "mcq:2",
+          "kind": "mcq",
+          "reason": "Đã có câu hỏi kiểm tra bước tính đạo hàm hàm ngoài và quy trình 4 bước. Tuy nhiên, nguồn không cung cấp đủ dữ kiện hoặc tình huống mới để tạo thêm một câu hỏi MCQ khác về việc tính giá trị đạo hàm tại điểm cụ thể hoặc các lỗi sai khác ngoài việc bỏ sót hệ số 3 trong ví dụ cụ thể đã được hỏi.",
+          "origin": "model_declined"
+        },
+        {
+          "stage": "cloze:2",
+          "kind": "cloze",
+          "reason": "Nguồn không đủ dữ kiện để tạo câu hỏi cloze mới ngoài các ý đã bị loại trừ hoặc trùng lặp với câu hỏi đã có (về việc tính đạo hàm hàm ngoài tại g(x) thay vì g'(x)).",
+          "origin": "model_declined"
+        },
+        {
+          "stage": "matching:2",
+          "kind": "matching",
+          "reason": "Nguồn không cung cấp đủ dữ kiện để tạo câu hỏi dạng matching mới ngoài việc liệt kê quy trình 4 bước đã bị trùng lặp với câu hỏi mẫu.",
+          "origin": "model_declined"
+        }
+      ],
+      "reading_review": "Chain formula, explicit four steps, worked derivative and point value agree with source and arithmetic oracle.",
+      "source_gate_defect": "Backend missed an explicit four-step procedure. Offline diagnosis: h-prime(0) was parsed as numbered step0 immediately before1-4, contaminating the group. Filtering an attached function-argument marker recovers1-4 using the exact same fragments,0AI.",
+      "decline_review": "The remaining model declines overstate source insufficiency; source contains the outer/inner derivative factors, point value and explicit error example."
+    },
+    {
+      "case_id": "psy-dev-memory",
+      "reviewed_at": "2026-10-21T00:13:47.478245+00:00",
+      "oracle": {
+        "verification": "agent_source_crosscheck_only_needs_independent_review",
+        "limit": "A deterministic computation cannot establish these psychology labels; no automatic factual pass."
+      },
+      "source_sha256": "b115ab111d1f37bf943ea209551a363bde1c96a07e06199967bf45c868c4e619",
+      "published_question_count": 6,
+      "requested_question_count": 8,
+      "chapter_context": {
+        "context_id": "baadf79dba3fbb76c16937e75366edd6094d5ff8b1680beefb3e0a17e41a7ccf",
+        "reader_version": "20261020-whole-approved-chapter-v1",
+        "status": "ready",
+        "scope": "whole_approved_plan_selection",
+        "extraction_revision": 2,
+        "total_fragments": 3,
+        "covered_fragments": 3,
+        "total_characters": 768,
+        "covered_characters": 768,
+        "total_parts": 1,
+        "read_parts": 1,
+        "total_stages": 1,
+        "saved_stages": 1,
+        "complete": true,
+        "coverage_is_not_semantic_accuracy": true
+      },
+      "questions": [
+        {
+          "question_index": 0,
+          "kind": "mcq",
+          "question_sha256": "e9e6e4ffd9857d48b020a8e7cc235e25e7b0aeb11032391de50dce3225fd0c78",
+          "status": "needs_review",
+          "note": "Knowledge key Encoding is supported, but explanation displays technical request-local R1/R3 labels.",
+          "source_refs": [
+            "a532738ce23c4ac8891bb35234cd689b:2:0",
+            "a532738ce23c4ac8891bb35234cd689b:2:2"
+          ]
+        },
+        {
+          "question_index": 1,
+          "kind": "cloze",
+          "question_sha256": "4cb2418c6440ee9c1f5c92186bd99fd5ca702699ec37d335b4b5bd82618ffce1",
+          "status": "supported_in_checked_scope",
+          "note": "Associating meaning with prior concepts is encoding in the given source example.",
+          "source_refs": [
+            "a532738ce23c4ac8891bb35234cd689b:2:0",
+            "a532738ce23c4ac8891bb35234cd689b:2:2"
+          ]
+        },
+        {
+          "question_index": 2,
+          "kind": "matching",
+          "question_sha256": "b4ecddba2619e7324185bfdd5e360001319d68c4317fa692c2b634daadf9aafb",
+          "status": "supported_in_checked_scope",
+          "note": "Definitions map uniquely to Encoding and Storage; cites their original source paragraph.",
+          "source_refs": [
+            "a532738ce23c4ac8891bb35234cd689b:2:0"
+          ]
+        },
+        {
+          "question_index": 3,
+          "kind": "short_answer",
+          "question_sha256": "5c5ce41efca9c5a2594a9fd6d11d4ffba521a08828ac2c4c035e1265f2e5e563",
+          "status": "needs_review",
+          "note": "Reference correctly distinguishes retrieval failure from absent encoding, but explanation adds that the functions operate independently. Distinct functions do not imply independence; this overclaim is not in the cited source.",
+          "source_refs": [
+            "a532738ce23c4ac8891bb35234cd689b:2:0",
+            "a532738ce23c4ac8891bb35234cd689b:2:1",
+            "a532738ce23c4ac8891bb35234cd689b:2:2"
+          ]
+        },
+        {
+          "question_index": 4,
+          "kind": "mcq",
+          "question_sha256": "7817ad7c02df5cf917e01bf483a98535206ab083aedab2bf031afad11546c912",
+          "status": "supported_in_checked_scope",
+          "note": "Processing shape/appearance is visual encoding under the explicitly provided category definitions.",
+          "source_refs": [
+            "a532738ce23c4ac8891bb35234cd689b:2:1"
+          ]
+        },
+        {
+          "question_index": 5,
+          "kind": "cloze",
+          "question_sha256": "d469f530567598d6eba8ddcc8e06a7211f66c78fd2943e2292f5770127f42ed5",
+          "status": "supported_in_checked_scope",
+          "note": "Visual-processing example has the supported visual encoding blank; independent of whether retrieval later succeeds.",
+          "source_refs": [
+            "a532738ce23c4ac8891bb35234cd689b:2:1"
+          ]
+        }
+      ],
+      "uncreated": [
+        {
+          "stage": "ordering",
+          "kind": "ordering",
+          "reason": "Nguồn của bài chưa có các bước đánh số theo trình tự rõ. Không biến danh sách khái niệm thành câu sắp xếp.",
+          "origin": "backend_source_gate"
+        },
+        {
+          "stage": "matching:2",
+          "kind": "matching",
+          "reason": "Nguồn không đủ để tạo câu hỏi matching mới vì các cặp chức năng và kiểu mã hóa đã được sử dụng trong các câu hỏi mẫu bị loại trừ hoặc đã xuất hiện trong các câu hỏi cùng dạng trước đó.",
+          "origin": "model_declined"
+        }
+      ],
+      "primary_crosscheck": "https://openstax.org/books/psychology-2e/pages/8-1-how-memory-functions",
+      "reading_review": "Definitions of encoding/storage/retrieval and three encoding types match source. The second card uses last-step wording although source distinguishes functions from an instruction sequence; review wording rather than inferring procedural ordering.",
+      "decline_review": "Ordering correctly source-gated because these paragraphs explicitly name functions and not numbered actions. Second matching still had distinct retrieval/acoustic/semantic facts available; record model decline, not proven source insufficiency."
+    }
+  ],
+  "updated_at": "2026-10-21T00:13:47.478506+00:00",
+  "all_cases_reviewed": true,
+  "review_status_counts": {
+    "supported_in_checked_scope": 21,
+    "needs_review": 9
+  },
+  "raw_run_sha256": "67b4e5111f9e95695daa997a8f2c61b71c7cb0a2ff7d15ae742366267003bb40",
+  "requested_questions": 48,
+  "published_questions_reviewed": 30
+}

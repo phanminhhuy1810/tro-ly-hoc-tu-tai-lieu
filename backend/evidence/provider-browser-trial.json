@@ -1,0 +1,42 @@
+{
+  "kind": "browser model selection and real Gemini chat on existing self-authored development fixture",
+  "ui_observations": [
+    "Settings catalogue showed local9B, Kaggle27B unavailable, Gemini API available",
+    "Selected Gemini with external excerpt confirmation; preference survived browser reload and backend restart",
+    "Coin quote displayed gemini-2.5-flash; explicitly confirmed one proposed Coin",
+    "Actual reply rendered; two existing unsubmitted matching selections preserved"
+  ],
+  "job_id": "8b902ec5e1be4af2aab008efa8e877b7",
+  "course_id": "1b22ac289c664c3f84b3adb43508a7cf",
+  "provider": {
+    "provider": "gemini_api",
+    "model": "gemini-2.5-flash",
+    "model_choice_id": "gemini:gemini-2.5-flash",
+    "selection_revision": 1,
+    "prompt_version": "20261015-context-v1",
+    "schema_version": 12
+  },
+  "status": "succeeded",
+  "duration_seconds": 1.919,
+  "question": "Thử Gemini API: vì sao block /26 có 64 địa chỉ nhưng chỉ dùng được 62 host? Trả lời tối đa 3 câu theo nguồn.",
+  "reply": {
+    "text": "Mặc dù một block /26 có 2^6 = 64 địa chỉ, nhưng hai địa chỉ biên là địa chỉ network và địa chỉ broadcast không thể dùng làm địa chỉ host. Do đó, số lượng host thực sự có thể sử dụng được là 64 - 2 = 62 host.",
+    "source_refs": [
+      "c44feeece5c441089388b6ef88cd4b1d:2:2",
+      "c44feeece5c441089388b6ef88cd4b1d:2:4"
+    ],
+    "needs_more_source": false
+  },
+  "screenshots": [
+    "preview/screenshots/gemini-chat-live.jpg",
+    "preview/screenshots/model-selection-live.jpg"
+  ],
+  "not_a_speed_comparison": true,
+  "desktop_layout_check": {
+    "viewport": 1280,
+    "page_width": 1265,
+    "control_width": 614.609375,
+    "control_overflow": false,
+    "viewport_restored": true
+  }
+}

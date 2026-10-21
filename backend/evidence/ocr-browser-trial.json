@@ -1,0 +1,209 @@
+{
+  "purpose": "actual browser + native OCR + Qwen9B vision proposal trial on self-authored fixture; not human benchmark",
+  "source_id": "04277b74f6bf4beabc0e5c70738c5d16",
+  "original_sha256": "0b8234f2bdaf1e3a9c40116bc22f37e29151bc9205bba8e4e8bfe928a480f4bb",
+  "original_matches_fixture": true,
+  "status": "ready",
+  "metadata": {
+    "name": "calculus-layout.png",
+    "sha256": "0b8234f2bdaf1e3a9c40116bc22f37e29151bc9205bba8e4e8bfe928a480f4bb",
+    "bytes": 10127,
+    "warnings": [
+      "OCR nhận dạng chữ, chưa chứng minh công thức/bảng/sơ đồ đúng. Đối chiếu ảnh và sửa bản trích trước khi tạo.",
+      "AI có thể chép sai cả khi không báo phần chưa chắc. Đối chiếu ảnh; chưa dùng bản đề xuất để tạo bài."
+    ],
+    "subject_suggestion": "Ť =xPzx",
+    "last_vision_review": {
+      "model": "qwen3.5:9b",
+      "page": 1,
+      "uncertain_spans": [],
+      "proposal_id": "aa0bebef39ef4675b1e0dcd9293af9b2"
+    }
+  },
+  "revisions": [
+    {
+      "revision": 1,
+      "fragments": [
+        {
+          "locator": {
+            "bounds_coordinate_system": "normalized_bottom_left",
+            "image_width": 1000,
+            "type": "ocr_image",
+            "image_height": 400,
+            "bounds": [
+              0.053563261642082124,
+              0.28592884164392596,
+              0.4948734741210937,
+              0.343142318725586
+            ],
+            "frame": 1,
+            "ocr_engine": "macOS_Vision",
+            "ocr_revision": 3,
+            "image_orientation": "exif_normalized"
+          },
+          "recognizer_score": 0.30000001192092896,
+          "text": "Ť =xPzx",
+          "needs_review": true,
+          "id": "04277b74f6bf4beabc0e5c70738c5d16:1:0",
+          "original_text": "Ť =xPzx"
+        }
+      ],
+      "reviewed_at": null
+    },
+    {
+      "revision": 2,
+      "fragments": [
+        {
+          "text": "\\int_{0}^{1} x^{2} dx = \\frac{1}{3}",
+          "locator": {
+            "type": "vision_page",
+            "line": 1,
+            "character_start": 0,
+            "frame": 1,
+            "location_scope": "full_page",
+            "model": "qwen3.5:9b"
+          },
+          "needs_review": true,
+          "provenance": {
+            "kind": "ai_transcription",
+            "proposal_id": "aa0bebef39ef4675b1e0dcd9293af9b2",
+            "prior_fragment_ids": [
+              "04277b74f6bf4beabc0e5c70738c5d16:1:0"
+            ]
+          },
+          "id": "04277b74f6bf4beabc0e5c70738c5d16:2:0",
+          "original_text": "\\int_{0}^{1} x^{2} dx = \\frac{1}{3}"
+        }
+      ],
+      "reviewed_at": null
+    },
+    {
+      "revision": 3,
+      "fragments": [
+        {
+          "text": "\\int_{0}^{1} x^{2} dx = \\frac{1}{3}",
+          "locator": {
+            "type": "vision_page",
+            "line": 1,
+            "character_start": 0,
+            "frame": 1,
+            "location_scope": "full_page",
+            "model": "qwen3.5:9b"
+          },
+          "needs_review": true,
+          "provenance": {
+            "kind": "ai_transcription",
+            "proposal_id": "aa0bebef39ef4675b1e0dcd9293af9b2",
+            "prior_fragment_ids": [
+              "04277b74f6bf4beabc0e5c70738c5d16:1:0"
+            ]
+          },
+          "id": "04277b74f6bf4beabc0e5c70738c5d16:3:0",
+          "original_text": "\\int_{0}^{1} x^{2} dx = \\frac{1}{3}",
+          "edited_by_user": false
+        }
+      ],
+      "reviewed_at": "2026-10-14T21:22:28.179876+00:00"
+    },
+    {
+      "revision": 4,
+      "fragments": [
+        {
+          "text": "\\int_{0}^{1} x^{2} dx = \\frac{1}{3}",
+          "locator": {
+            "type": "vision_page",
+            "line": 1,
+            "character_start": 0,
+            "frame": 1,
+            "location_scope": "full_page",
+            "model": "qwen3.5:9b"
+          },
+          "needs_review": true,
+          "provenance": {
+            "kind": "ai_transcription",
+            "proposal_id": "aa0bebef39ef4675b1e0dcd9293af9b2",
+            "prior_fragment_ids": [
+              "04277b74f6bf4beabc0e5c70738c5d16:1:0"
+            ]
+          },
+          "id": "04277b74f6bf4beabc0e5c70738c5d16:4:0",
+          "original_text": "\\int_{0}^{1} x^{2} dx = \\frac{1}{3}",
+          "edited_by_user": false
+        }
+      ],
+      "reviewed_at": "2026-10-14T21:38:11.488011+00:00"
+    }
+  ],
+  "proposals": [
+    {
+      "id": "aa0bebef39ef4675b1e0dcd9293af9b2",
+      "base_revision": 1,
+      "page": 1,
+      "page_kind": "frame",
+      "status": "applied",
+      "content": {
+        "text": "\\int_{0}^{1} x^{2} dx = \\frac{1}{3}",
+        "uncertain_spans": [],
+        "model": "qwen3.5:9b",
+        "dimensions": {
+          "width": 1000,
+          "height": 400
+        },
+        "before": [
+          {
+            "locator": {
+              "bounds_coordinate_system": "normalized_bottom_left",
+              "image_width": 1000,
+              "type": "ocr_image",
+              "image_height": 400,
+              "bounds": [
+                0.053563261642082124,
+                0.28592884164392596,
+                0.4948734741210937,
+                0.343142318725586
+              ],
+              "frame": 1,
+              "ocr_engine": "macOS_Vision",
+              "ocr_revision": 3,
+              "image_orientation": "exif_normalized"
+            },
+            "recognizer_score": 0.30000001192092896,
+            "text": "Ť =xPzx",
+            "needs_review": true,
+            "id": "04277b74f6bf4beabc0e5c70738c5d16:1:0",
+            "original_text": "Ť =xPzx"
+          }
+        ],
+        "requires_review": true,
+        "warning": "AI có thể chép sai cả khi không báo phần chưa chắc. Đối chiếu ảnh; chưa dùng bản đề xuất để tạo bài."
+      }
+    }
+  ],
+  "analyses": [
+    {
+      "id": "17fe041fd0c54c9cb7025adc308b2551",
+      "extraction_revision": 4,
+      "content": {
+        "subjects": [
+          {
+            "subject": "Calculus",
+            "evidence": "Nội dung hiển thị tích phân xác định \\int_{0}^{1} x^{2} dx, đây là khái niệm cốt lõi của Giải tích.",
+            "source_refs": [
+              "04277b74f6bf4beabc0e5c70738c5d16:4:0"
+            ]
+          }
+        ],
+        "recommended_mode": "learn",
+        "reason": "Nội dung chỉ là một kết quả tính toán đơn lẻ, chưa có ngữ cảnh bài tập hay lý thuyết giải thích. Người học cần học khái niệm tích phân và quy tắc tính trước khi thực hành.",
+        "uncertainty": "Chỉ có một nguồn duy nhất với một công thức ngắn gọn; không đủ thông tin để xác định chính xác cấp độ (ví dụ: đại số cao cấp, giải tích I) hoặc các chủ đề con cụ thể khác nếu phạm vi rộng hơn.",
+        "scope_fragment_ids": [
+          "04277b74f6bf4beabc0e5c70738c5d16:4:0"
+        ],
+        "source_id": "04277b74f6bf4beabc0e5c70738c5d16",
+        "extraction_revision": 4,
+        "inference_not_confirmation": true,
+        "scope_limited": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,471 @@
+{
+  "purpose": "One real local-model completion, on an isolated copy of an existing QA course.\n\nThis is a development regression case, not held-out model evaluation. The live\ncourse, profile selection, Coin and source files are never modified by this probe.\n",
+  "course_id": "98ff5b545574402f811f17de49c199cb",
+  "model": "gemma4:12b-mlx",
+  "economy_disabled_in_clone": true,
+  "live_coin_changed": false,
+  "automatic_retries": 0,
+  "new_model_stages": [
+    "OrderingDraft"
+  ],
+  "options": {
+    "course_id": "98ff5b545574402f811f17de49c199cb",
+    "unit_id": "unit-1",
+    "base_revision": 2,
+    "requested_count": 5,
+    "existing_count": 4,
+    "missing": [
+      {
+        "stage": "ordering",
+        "kind": "ordering",
+        "reason": "Dạng câu này chưa đủ số lượng đã duyệt.",
+        "can_generate": true,
+        "origin": "content_count"
+      }
+    ],
+    "available_slots": 4,
+    "source_id": "1010d673ef094945bdb109951ae57c70",
+    "extraction_revision": 2,
+    "requires_preview": true,
+    "ai_called": false
+  },
+  "job": {
+    "id": "4bf74f46804d463ea2791f869ed3f4cb",
+    "task": "question_completion",
+    "context": {
+      "course_id": "98ff5b545574402f811f17de49c199cb",
+      "unit_id": "unit-1",
+      "expected_revision": 2
+    },
+    "status": "succeeded",
+    "attempts": 1,
+    "provider": {
+      "provider": "ollama_local",
+      "model": "gemma4:12b-mlx",
+      "model_choice_id": "local:gemma4:12b-mlx",
+      "selection_revision": 1,
+      "prompt_version": "20261019-missing-question-preview-v1",
+      "schema_version": 17,
+      "processor_version": "20261019-source-cloze-isolation-v5"
+    },
+    "result": {
+      "proposal_id": "3af7d33ae567456c941872ca8b37201d",
+      "base_revision": 2,
+      "requires_apply": true,
+      "added_count": 1,
+      "question_coverage": {
+        "requested_count": 5,
+        "generated_count": 5,
+        "requested_types": [
+          "mcq",
+          "cloze",
+          "matching",
+          "ordering",
+          "short_answer"
+        ],
+        "generated_types": [
+          "mcq",
+          "cloze",
+          "matching",
+          "short_answer",
+          "ordering"
+        ],
+        "complete": true,
+        "uncreated": []
+      }
+    },
+    "partial": {
+      "questions": {
+        "ordering": {
+          "reason": "The source provides a clear 5-step numbered list for calculating subnets with prefix /26. I extracted the descriptions for each step while removing the numbers to ensure the ordering task is valid.",
+          "question": {
+            "kind": "ordering",
+            "prompt": "Sắp xếp các bước trong quy trình tính subnet cho prefix /26 theo đúng trình tự từ nguồn:",
+            "options": [
+              "Loại hai biên để lấy dải host dùng được (Remove two boundaries to get usable host range)",
+              "Đọc prefix và tính số bit host (Read prefix and calculate host bits)",
+              "Xác định block chứa octet cuối (Identify the block containing the last octet)",
+              "Tính kích thước block (Calculate block size)",
+              "Lấy đầu block làm network và cuối block làm broadcast (Take the start of the block as network and the end as broadcast)"
+            ],
+            "left": [],
+            "answer": [
+              1,
+              3,
+              2,
+              4,
+              0
+            ],
+            "explanation": "Quy trình gồm 5 bước: (1) Đọc prefix và tính số bit host, (2) Tính kích thước block, (3) Xác định block chứa octet cuối, (4) Lấy đầu block làm network và cuối block làm broadcast, (5) Loại hai biên để lấy dải host dùng được.",
+            "source_refs": [
+              "1010d673ef094945bdb109951ae57c70:2:1",
+              "1010d673ef094945bdb109951ae57c70:2:2",
+              "1010d673ef094945bdb109951ae57c70:2:3",
+              "1010d673ef094945bdb109951ae57c70:2:4",
+              "1010d673ef094945bdb109951ae57c70:2:5"
+            ],
+            "rubric": []
+          }
+        }
+      },
+      "stage_providers": {
+        "ordering": {
+          "provider": "ollama_local",
+          "model": "gemma4:12b-mlx",
+          "model_choice_id": "local:gemma4:12b-mlx",
+          "selection_revision": 1,
+          "prompt_version": "20261019-missing-question-preview-v1",
+          "schema_version": 17,
+          "processor_version": "20261019-source-cloze-isolation-v5"
+        }
+      },
+      "question_rejections": {},
+      "requested_stages": [
+        "ordering"
+      ]
+    },
+    "feedback_deferred": false,
+    "error": null,
+    "progress": {
+      "phase": "succeeded",
+      "requests": [
+        {
+          "index": 1,
+          "schema": "OrderingDraft",
+          "phase": "received",
+          "streaming": true,
+          "started_at": "2026-10-19T12:03:49.889359+00:00",
+          "first_chunk_ms": 8194.345,
+          "first_text_ms": null,
+          "elapsed_ms": 22077.697,
+          "chunks": 478,
+          "characters": 1350,
+          "usage": {
+            "input_tokens": 2008,
+            "cached_input_tokens": 0,
+            "output_tokens": 478,
+            "load_duration_ns": 11478959,
+            "prompt_eval_duration_ns": 4115835833,
+            "eval_duration_ns": 13980702709,
+            "total_duration_ns": 18113672875,
+            "ordering_answer_derived": 1,
+            "ordering_step_labels_removed": 0,
+            "ordering_model_options_sha256": "787c35363a0399d04f07774480ff0e1a4c710a3f73679317e7002d05ea4ef254",
+            "ordering_answer_method": "explicit_source_step_positions_v1"
+          },
+          "protocol_fallbacks": 1
+        }
+      ],
+      "preview": null,
+      "planned_stages": 1,
+      "saved_stages": 1,
+      "reused_stages": 0,
+      "started_at": "2026-10-19T12:03:49.887028+00:00",
+      "completed_at": "2026-10-19T12:04:11.978181+00:00",
+      "elapsed_ms": 22091.158,
+      "version": 80,
+      "updated_at": "2026-10-19T12:04:11.978239+00:00"
+    }
+  },
+  "elapsed_seconds": 22.119,
+  "preview_did_not_change_content": true,
+  "preview": {
+    "id": "3af7d33ae567456c941872ca8b37201d",
+    "course_id": "98ff5b545574402f811f17de49c199cb",
+    "base_revision": 2,
+    "scope": {
+      "target": "question_completion",
+      "unit_id": "unit-1",
+      "stages": [
+        "ordering"
+      ]
+    },
+    "request": "Bổ sung riêng các câu còn thiếu; giữ nội dung và lịch sử đã học.",
+    "status": "preview",
+    "before": {
+      "questions": [
+        {
+          "kind": "mcq",
+          "prompt": "Trong cấu trúc địa chỉ IPv4 với prefix /26, số bit dành cho host là bao nhiêu?",
+          "options": [
+            "26 bit",
+            "6 bit",
+            "32 bit"
+          ],
+          "left": [],
+          "answer": "6 bit",
+          "explanation": "IPv4 có tổng cộng 32 bit. Với prefix /26, có 26 bit dành cho network, còn lại 6 bit dành cho host.",
+          "source_refs": [
+            "1010d673ef094945bdb109951ae57c70:2:0"
+          ],
+          "rubric": [],
+          "difficulty": null,
+          "difficulty_basis": null
+        },
+        {
+          "kind": "cloze",
+          "prompt": "Trong quy trình tính subnet, bước thứ 3 là xác định block chứa ____.",
+          "options": [],
+          "left": [],
+          "answer": "octet cuối",
+          "explanation": "Theo quy trình 5 bước, bước 3 yêu cầu xác định block chứa octet cuối để xác định phạm vi của dải IP.",
+          "source_refs": [
+            "1010d673ef094945bdb109951ae57c70:2:3"
+          ],
+          "rubric": [],
+          "difficulty": null,
+          "difficulty_basis": null
+        },
+        {
+          "kind": "matching",
+          "prompt": "Ghép các bước trong quy trình tính subnet cho prefix /26 từ nguồn:",
+          "options": [
+            "Tính kích thước block",
+            "Loại hai biên để lấy dải host dùng được"
+          ],
+          "left": [
+            "Bước 2",
+            "Bước 5"
+          ],
+          "answer": [
+            0,
+            1
+          ],
+          "explanation": "Theo quy trình 5 bước: Bước 2 là Tính kích thước block và Bước 5 là Loại hai biên để lấy dải host dùng được.",
+          "source_refs": [
+            "1010d673ef094945bdb109951ae57c70:2:2",
+            "1010d673ef094945bdb109951ae57c70:2:5"
+          ],
+          "rubric": [],
+          "difficulty": null,
+          "difficulty_basis": null
+        },
+        {
+          "kind": "short_answer",
+          "prompt": "Với địa chỉ 192.168.1.70/26, hãy xác định dải host dùng được (usable host range) và giải thích tại sao?",
+          "options": [],
+          "left": [],
+          "answer": "Dải host dùng được là từ 192.168.1.65 đến 192.168.1.126. Vì block /26 có 64 địa chỉ (từ 64 đến 127), sau khi loại bỏ địa chỉ network (192.168.1.64) và broadcast (192.168.1.127).",
+          "explanation": "Với prefix /26, số bit host là 6, tương ứng với block 64 địa chỉ. Block chứa 192.168.1.70 là 64–127. Quy trình loại bỏ hai biên giúp xác định dải IP thực tế cho thiết bị.",
+          "source_refs": [
+            "1010d673ef094945bdb109951ae57c70:2:0",
+            "1010d673ef094945bdb109951ae57c70:2:5"
+          ],
+          "rubric": [
+            "Xác định đúng dải từ 192.168.1.65 đến 192.168.1.126.",
+            "Giải thích được việc loại bỏ network và broadcast."
+          ],
+          "difficulty": null,
+          "difficulty_basis": null
+        }
+      ],
+      "question_coverage": null
+    },
+    "after": {
+      "questions": [
+        {
+          "kind": "mcq",
+          "prompt": "Trong cấu trúc địa chỉ IPv4 với prefix /26, số bit dành cho host là bao nhiêu?",
+          "options": [
+            "26 bit",
+            "6 bit",
+            "32 bit"
+          ],
+          "left": [],
+          "answer": "6 bit",
+          "explanation": "IPv4 có tổng cộng 32 bit. Với prefix /26, có 26 bit dành cho network, còn lại 6 bit dành cho host.",
+          "source_refs": [
+            "1010d673ef094945bdb109951ae57c70:2:0"
+          ],
+          "rubric": [],
+          "difficulty": null,
+          "difficulty_basis": null
+        },
+        {
+          "kind": "cloze",
+          "prompt": "Trong quy trình tính subnet, bước thứ 3 là xác định block chứa ____.",
+          "options": [],
+          "left": [],
+          "answer": "octet cuối",
+          "explanation": "Theo quy trình 5 bước, bước 3 yêu cầu xác định block chứa octet cuối để xác định phạm vi của dải IP.",
+          "source_refs": [
+            "1010d673ef094945bdb109951ae57c70:2:3"
+          ],
+          "rubric": [],
+          "difficulty": null,
+          "difficulty_basis": null
+        },
+        {
+          "kind": "matching",
+          "prompt": "Ghép các bước trong quy trình tính subnet cho prefix /26 từ nguồn:",
+          "options": [
+            "Tính kích thước block",
+            "Loại hai biên để lấy dải host dùng được"
+          ],
+          "left": [
+            "Bước 2",
+            "Bước 5"
+          ],
+          "answer": [
+            0,
+            1
+          ],
+          "explanation": "Theo quy trình 5 bước: Bước 2 là Tính kích thước block và Bước 5 là Loại hai biên để lấy dải host dùng được.",
+          "source_refs": [
+            "1010d673ef094945bdb109951ae57c70:2:2",
+            "1010d673ef094945bdb109951ae57c70:2:5"
+          ],
+          "rubric": [],
+          "difficulty": null,
+          "difficulty_basis": null
+        },
+        {
+          "kind": "short_answer",
+          "prompt": "Với địa chỉ 192.168.1.70/26, hãy xác định dải host dùng được (usable host range) và giải thích tại sao?",
+          "options": [],
+          "left": [],
+          "answer": "Dải host dùng được là từ 192.168.1.65 đến 192.168.1.126. Vì block /26 có 64 địa chỉ (từ 64 đến 127), sau khi loại bỏ địa chỉ network (192.168.1.64) và broadcast (192.168.1.127).",
+          "explanation": "Với prefix /26, số bit host là 6, tương ứng với block 64 địa chỉ. Block chứa 192.168.1.70 là 64–127. Quy trình loại bỏ hai biên giúp xác định dải IP thực tế cho thiết bị.",
+          "source_refs": [
+            "1010d673ef094945bdb109951ae57c70:2:0",
+            "1010d673ef094945bdb109951ae57c70:2:5"
+          ],
+          "rubric": [
+            "Xác định đúng dải từ 192.168.1.65 đến 192.168.1.126.",
+            "Giải thích được việc loại bỏ network và broadcast."
+          ],
+          "difficulty": null,
+          "difficulty_basis": null
+        },
+        {
+          "kind": "ordering",
+          "prompt": "Sắp xếp các bước trong quy trình tính subnet cho prefix /26 theo đúng trình tự từ nguồn:",
+          "options": [
+            "Loại hai biên để lấy dải host dùng được (Remove two boundaries to get usable host range)",
+            "Đọc prefix và tính số bit host (Read prefix and calculate host bits)",
+            "Xác định block chứa octet cuối (Identify the block containing the last octet)",
+            "Tính kích thước block (Calculate block size)",
+            "Lấy đầu block làm network và cuối block làm broadcast (Take the start of the block as network and the end as broadcast)"
+          ],
+          "left": [],
+          "answer": [
+            1,
+            3,
+            2,
+            4,
+            0
+          ],
+          "explanation": "Quy trình gồm 5 bước: (1) Đọc prefix và tính số bit host, (2) Tính kích thước block, (3) Xác định block chứa octet cuối, (4) Lấy đầu block làm network và cuối block làm broadcast, (5) Loại hai biên để lấy dải host dùng được.",
+          "source_refs": [
+            "1010d673ef094945bdb109951ae57c70:2:1",
+            "1010d673ef094945bdb109951ae57c70:2:2",
+            "1010d673ef094945bdb109951ae57c70:2:3",
+            "1010d673ef094945bdb109951ae57c70:2:4",
+            "1010d673ef094945bdb109951ae57c70:2:5"
+          ],
+          "rubric": [],
+          "difficulty": null,
+          "difficulty_basis": null
+        }
+      ],
+      "question_coverage": {
+        "requested_count": 5,
+        "generated_count": 5,
+        "requested_types": [
+          "mcq",
+          "cloze",
+          "matching",
+          "ordering",
+          "short_answer"
+        ],
+        "generated_types": [
+          "mcq",
+          "cloze",
+          "matching",
+          "short_answer",
+          "ordering"
+        ],
+        "complete": true,
+        "uncreated": []
+      }
+    }
+  },
+  "applied_revision": 3,
+  "non_question_content_unchanged": true,
+  "old_session_unchanged": true,
+  "source_binding_unchanged": true,
+  "old_provider_unchanged": true,
+  "coverage": {
+    "requested_count": 5,
+    "generated_count": 5,
+    "requested_types": [
+      "mcq",
+      "cloze",
+      "matching",
+      "ordering",
+      "short_answer"
+    ],
+    "generated_types": [
+      "mcq",
+      "cloze",
+      "matching",
+      "short_answer",
+      "ordering"
+    ],
+    "complete": true,
+    "uncreated": []
+  },
+  "old_question_ids_unchanged": true,
+  "new_question_grade": {
+    "correct": true,
+    "reference": [
+      1,
+      3,
+      2,
+      4,
+      0
+    ],
+    "explanation": "Quy trình gồm 5 bước: (1) Đọc prefix và tính số bit host, (2) Tính kích thước block, (3) Xác định block chứa octet cuối, (4) Lấy đầu block làm network và cuối block làm broadcast, (5) Loại hai biên để lấy dải host dùng được.",
+    "rubric": [],
+    "source_refs": [
+      "1010d673ef094945bdb109951ae57c70:2:1",
+      "1010d673ef094945bdb109951ae57c70:2:2",
+      "1010d673ef094945bdb109951ae57c70:2:3",
+      "1010d673ef094945bdb109951ae57c70:2:4",
+      "1010d673ef094945bdb109951ae57c70:2:5"
+    ],
+    "grading": "fixed"
+  },
+  "new_question": {
+    "kind": "ordering",
+    "prompt": "Sắp xếp các bước trong quy trình tính subnet cho prefix /26 theo đúng trình tự từ nguồn:",
+    "options": [
+      "Loại hai biên để lấy dải host dùng được (Remove two boundaries to get usable host range)",
+      "Đọc prefix và tính số bit host (Read prefix and calculate host bits)",
+      "Xác định block chứa octet cuối (Identify the block containing the last octet)",
+      "Tính kích thước block (Calculate block size)",
+      "Lấy đầu block làm network và cuối block làm broadcast (Take the start of the block as network and the end as broadcast)"
+    ],
+    "left": [],
+    "answer": [
+      1,
+      3,
+      2,
+      4,
+      0
+    ],
+    "explanation": "Quy trình gồm 5 bước: (1) Đọc prefix và tính số bit host, (2) Tính kích thước block, (3) Xác định block chứa octet cuối, (4) Lấy đầu block làm network và cuối block làm broadcast, (5) Loại hai biên để lấy dải host dùng được.",
+    "source_refs": [
+      "1010d673ef094945bdb109951ae57c70:2:1",
+      "1010d673ef094945bdb109951ae57c70:2:2",
+      "1010d673ef094945bdb109951ae57c70:2:3",
+      "1010d673ef094945bdb109951ae57c70:2:4",
+      "1010d673ef094945bdb109951ae57c70:2:5"
+    ],
+    "rubric": [],
+    "difficulty": null,
+    "difficulty_basis": null
+  },
+  "live_course_unchanged": true,
+  "live_revision_unchanged": true
+}

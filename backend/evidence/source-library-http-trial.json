@@ -1,0 +1,76 @@
+{
+  "purpose": "Local source-library HTTP functional test with self-authored fixtures; not a model-quality or multi-user load benchmark",
+  "started_at": "2026-10-18T15:23:52.173579+00:00",
+  "checks": {
+    "past100_exact_once": true,
+    "new_upload_not_in_old_window": true,
+    "back_keeps_window": true,
+    "fresh_page_sees_upload": true,
+    "literal_accent_search": true,
+    "foreign_source_denied": true,
+    "foreign_cursor_denied": true,
+    "search_across_fragment_pages": true,
+    "all_matching_ids_exact": true,
+    "preview_exact_scope": true,
+    "old_revision_immutable": true,
+    "stale_plan_denied": true,
+    "original_unchanged": true,
+    "no_job_ai_or_coin_write": true
+  },
+  "qa_owner_id": "e5acc2fe02e840c590863bf61c692756",
+  "sources_created": 117,
+  "source_pages": 6,
+  "source_window_count": 115,
+  "scope_source_id": "b0b0da1c576b4d75a1f26b3c7b2e2f1e",
+  "scope_fragments": 180,
+  "matches": 18,
+  "plan_id": "4faf52f453964f3e81733e459b2ccd21",
+  "plan_status": "preview",
+  "selected_ids": [
+    "b0b0da1c576b4d75a1f26b3c7b2e2f1e:2:0",
+    "b0b0da1c576b4d75a1f26b3c7b2e2f1e:2:10",
+    "b0b0da1c576b4d75a1f26b3c7b2e2f1e:2:20",
+    "b0b0da1c576b4d75a1f26b3c7b2e2f1e:2:30",
+    "b0b0da1c576b4d75a1f26b3c7b2e2f1e:2:40",
+    "b0b0da1c576b4d75a1f26b3c7b2e2f1e:2:50",
+    "b0b0da1c576b4d75a1f26b3c7b2e2f1e:2:60",
+    "b0b0da1c576b4d75a1f26b3c7b2e2f1e:2:70",
+    "b0b0da1c576b4d75a1f26b3c7b2e2f1e:2:80",
+    "b0b0da1c576b4d75a1f26b3c7b2e2f1e:2:90",
+    "b0b0da1c576b4d75a1f26b3c7b2e2f1e:2:100",
+    "b0b0da1c576b4d75a1f26b3c7b2e2f1e:2:110",
+    "b0b0da1c576b4d75a1f26b3c7b2e2f1e:2:120",
+    "b0b0da1c576b4d75a1f26b3c7b2e2f1e:2:130",
+    "b0b0da1c576b4d75a1f26b3c7b2e2f1e:2:140",
+    "b0b0da1c576b4d75a1f26b3c7b2e2f1e:2:150",
+    "b0b0da1c576b4d75a1f26b3c7b2e2f1e:2:160",
+    "b0b0da1c576b4d75a1f26b3c7b2e2f1e:2:170"
+  ],
+  "source_original_sha256": "12809e09d975ff4272981b083c13c710420a807b38e9c12bf17a74439f5d13c2",
+  "counters_before": {
+    "jobs": 93,
+    "ai_usage": 66,
+    "coin_ledger": 67
+  },
+  "counters_after": {
+    "jobs": 93,
+    "ai_usage": 66,
+    "coin_ledger": 67
+  },
+  "all_passed": true,
+  "initial_probe": {
+    "all_passed": false,
+    "failed_checks": [
+      "literal_accent_search"
+    ],
+    "invalid_test_query": "DIA CHI 100%_",
+    "reason": "Test query requested literal100%_ but fixture filename contains _100%; corrected test query only, no implementation change or source rewrite."
+  },
+  "query_recheck": {
+    "query": "DIA CHI % _",
+    "matching_count": 1,
+    "only_get": true,
+    "matching_source_id": "78f51719dd8a423284792e2168b2efbc",
+    "matching_name": "Source-library QA 037 · Địa chỉ_100%.txt"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "purpose": "Load chapter question focus and compact readable formula brief after377backend tests. Preserve sources, questions, history and configured default.",
+  "at": "2026-10-21T04:48:56.788639+00:00",
+  "old_pid": 97027,
+  "active_before": {
+    "jobs": 0,
+    "rooms": 0,
+    "parsing": 0
+  },
+  "backup": "study-before-chapter-focus-20261021T044856Z.sqlite3",
+  "table_hashes_before": {
+    "courses": "ee634b8cfd52371cffcefd29eb31c25aefc947a809bad5d88d835d853edb606b",
+    "course_revisions": "b34b874bb4dddf3108654a5e4cca60e9783c3bdfbd5c07bbb877fd058ea5a518",
+    "sources": "eb881e6f4e827251636f6ff6b3d490f8c6b507318b328f78e48c8a8c3fca4063",
+    "extraction_revisions": "c3da02dac96ae702b94ca19bb207cbeee924198a429213ea84756611a3180991",
+    "jobs": "a95c9b3373c26d361b19f9c48ee0a10fc60ca8961c16a76c5e675259b7447083",
+    "ai_preferences": "c49edf41c3e0e6ac56c240e1afca399f7423e5e2ff7251369e68ab208d7fe0d1",
+    "wallets": "01f1eeb0d8dea7f714d94bc22c37e0854fa49c227c2102f4edadcb87c2aa34f6",
+    "study_sessions": "e64a4a461ce10465a616bd58e06c77ff3b47f6d833a1aa9745c674611d8cb4a2",
+    "answers": "512a6e29bf5f80732838fa577d573aea901888afe84518519525a13f024c0bfb",
+    "coin_ledger": "1b3886969401de653ed26dbff8f1c2b98191a9bcbaa7b1571e6a8d1249a9050c",
+    "chapter_contexts": "bc2d7c1863b87db9e7f6f0974e097106f5fb95101327955193adf29e01a9715a",
+    "question_review_flags": "dc5bb1facb1f7f6c6f8b0ba12ba3283998740bdb432884e22f76cb9d18cbfdc2"
+  },
+  "backend_tests": 377,
+  "lesson_prompt_version": "20261021-chapter-question-focus-v25",
+  "completion_prompt_version": "20261021-missing-question-chapter-focus-v11",
+  "processor_version": "20261021-math-argument-step-boundary-v12",
+  "wire_version": 20,
+  "unchanged_tables": {
+    "courses": true,
+    "course_revisions": true,
+    "sources": true,
+    "extraction_revisions": true,
+    "jobs": true,
+    "ai_preferences": true,
+    "wallets": true,
+    "study_sessions": true,
+    "answers": true,
+    "coin_ledger": true,
+    "chapter_contexts": true,
+    "question_review_flags": true
+  },
+  "sql_version": 18,
+  "active_jobs_after": 0,
+  "new_pid": 1630,
+  "health": {
+    "backend": true,
+    "provider_health_checked": false
+  }
+}

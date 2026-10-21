@@ -1,0 +1,50 @@
+{
+  "purpose": "Load v24/completion-v10/processor-v12 after366tests; exclude function arguments from step markers and keep safe metrics on failed output. No source/question/history rewrite.",
+  "at": "2026-10-21T00:22:50.228963+00:00",
+  "old_pid": 95314,
+  "active_before": {
+    "jobs": 0,
+    "rooms": 0,
+    "parsing": 0
+  },
+  "backup": "study-before-math-step-diagnostics-20261021T002250Z.sqlite3",
+  "table_hashes_before": {
+    "courses": "bb14c1390908f97ddca80cb8a673dd3d35a22594289d59b369377a44a7166afb",
+    "course_revisions": "ae9253195e949519a72248151aaf0a2099be8afb3954b87e3b27761679a9197e",
+    "sources": "fe4759fe82e80fa51ffa742f0eab61e692dc231d671943c5e2d556af26b7ce54",
+    "extraction_revisions": "76425e274c3f09d894e57cec32c2b5effdf2b4a896dc9609f5a9abd100f4f1bf",
+    "jobs": "e3bb7cdf37fa1c7f33a7686f65b9569f7b26832242aae28fbdfd2f5e2ece9bf8",
+    "ai_preferences": "fd208ff1ec503e46419254e592ebc98ba0bda9b8fd84cbd20c0ec025a0f6eaf8",
+    "wallets": "39fa636ad1ce48a2dac1a5b0d914344acb6b7e0b1ac2c6b6bcaeecf3290061cf",
+    "study_sessions": "ee61dc68a6779f0bf186664b8cf6ddda7e03fcbab2b5248ec8c0c950323a5a69",
+    "answers": "62c7992acd7d771cbe86cae4325835c32576dd26d5fe044f86dad4e0542878c5",
+    "coin_ledger": "ef9c0add3426d995e67b6ddb2dd363ba87c9bf6220deb6d1cd665f82e9a316c5",
+    "chapter_contexts": "eb96ed30dd99791d797dcde091c0c2f7bf2300c281e548628fcb6a4eb2aec262",
+    "question_review_flags": "4744d41ebb293880d7356d86b7887e96ac5c44d2b8980caaaa2383ee83a26027"
+  },
+  "backend_tests": 366,
+  "lesson_prompt_version": "20261021-math-step-output-diagnostics-v24",
+  "completion_prompt_version": "20261021-missing-question-math-steps-v10",
+  "processor_version": "20261021-math-argument-step-boundary-v12",
+  "unchanged_tables": {
+    "courses": true,
+    "course_revisions": true,
+    "sources": true,
+    "extraction_revisions": true,
+    "jobs": true,
+    "ai_preferences": true,
+    "wallets": true,
+    "study_sessions": true,
+    "answers": true,
+    "coin_ledger": true,
+    "chapter_contexts": true,
+    "question_review_flags": true
+  },
+  "sql_version": 18,
+  "active_jobs_after": 0,
+  "new_pid": 97027,
+  "health": {
+    "backend": true,
+    "provider_health_checked": false
+  }
+}

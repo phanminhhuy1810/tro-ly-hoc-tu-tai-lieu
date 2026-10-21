@@ -1,0 +1,2082 @@
+{
+  "extraction_version": "docx-body-xml-v1",
+  "source_name": "2026_Project_Virtual_Assistant_Academic.docx",
+  "source_sha256": "10477b780feb504d649ad458cc381ed05eca4f47bc162ea4a8fb6eeb70c3a66e",
+  "source_bytes": 1179917,
+  "locator_note": "All indices are 1-based and valid only for this source checksum; no page numbers are inferred.",
+  "limitations": [
+    "Only word/document.xml text nodes are extracted; headers, footers, image pixels, and page layout are not read.",
+    "Text run order is preserved without correction; semantic accuracy and reading order require comparison with the rendered source.",
+    "The assignment brief is not a study-material or OCR benchmark."
+  ],
+  "structure": {
+    "paragraphs": 187,
+    "nonempty_paragraphs": 173,
+    "tables": 18,
+    "embedded_media": 1,
+    "body_drawings": 0,
+    "body_math_nodes": 0,
+    "text_characters": 9748,
+    "paragraph_styles": {
+      "(none)": 178,
+      "Title": 1,
+      "Heading2": 8
+    }
+  },
+  "fragments": [
+    {
+      "id": "assignment-p0001",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 1
+      },
+      "style": null,
+      "heading_context": null,
+      "text": "CSC10014  /  COMPUTATIONAL THINKING  /  2026"
+    },
+    {
+      "id": "assignment-p0002",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 2
+      },
+      "style": "Title",
+      "heading_context": "ENGINEERING ASMART VIRTUAL ASSISTANT",
+      "text": "ENGINEERING ASMART VIRTUAL ASSISTANT"
+    },
+    {
+      "id": "assignment-p0004",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 4
+      },
+      "style": null,
+      "heading_context": "ENGINEERING ASMART VIRTUAL ASSISTANT",
+      "text": "PROJECT AT A GLANCE"
+    },
+    {
+      "id": "assignment-p0005",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 5,
+        "table_index": 1,
+        "row_index": 1,
+        "cell_index": 1
+      },
+      "style": null,
+      "heading_context": "ENGINEERING ASMART VIRTUAL ASSISTANT",
+      "text": "TEAM"
+    },
+    {
+      "id": "assignment-p0006",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 6,
+        "table_index": 1,
+        "row_index": 1,
+        "cell_index": 2
+      },
+      "style": null,
+      "heading_context": "ENGINEERING ASMART VIRTUAL ASSISTANT",
+      "text": "DURATION"
+    },
+    {
+      "id": "assignment-p0007",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 7,
+        "table_index": 1,
+        "row_index": 1,
+        "cell_index": 3
+      },
+      "style": null,
+      "heading_context": "ENGINEERING ASMART VIRTUAL ASSISTANT",
+      "text": "CORE OUTPUT"
+    },
+    {
+      "id": "assignment-p0008",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 8,
+        "table_index": 1,
+        "row_index": 1,
+        "cell_index": 4
+      },
+      "style": null,
+      "heading_context": "ENGINEERING ASMART VIRTUAL ASSISTANT",
+      "text": "EVIDENCE"
+    },
+    {
+      "id": "assignment-p0009",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 9,
+        "table_index": 1,
+        "row_index": 2,
+        "cell_index": 1
+      },
+      "style": null,
+      "heading_context": "ENGINEERING ASMART VIRTUAL ASSISTANT",
+      "text": "5–7 students"
+    },
+    {
+      "id": "assignment-p0010",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 10,
+        "table_index": 1,
+        "row_index": 2,
+        "cell_index": 2
+      },
+      "style": null,
+      "heading_context": "ENGINEERING ASMART VIRTUAL ASSISTANT",
+      "text": "10-week project arc"
+    },
+    {
+      "id": "assignment-p0011",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 11,
+        "table_index": 1,
+        "row_index": 2,
+        "cell_index": 3
+      },
+      "style": null,
+      "heading_context": "ENGINEERING ASMART VIRTUAL ASSISTANT",
+      "text": "Wontelligentrking i system"
+    },
+    {
+      "id": "assignment-p0012",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 12,
+        "table_index": 1,
+        "row_index": 2,
+        "cell_index": 4
+      },
+      "style": null,
+      "heading_context": "ENGINEERING ASMART VIRTUAL ASSISTANT",
+      "text": "Design + code + evaluation"
+    },
+    {
+      "id": "assignment-p0013",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 13
+      },
+      "style": null,
+      "heading_context": "ENGINEERING ASMART VIRTUAL ASSISTANT",
+      "text": "What this project is really about"
+    },
+    {
+      "id": "assignment-p0014",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 14
+      },
+      "style": null,
+      "heading_context": "ENGINEERING ASMART VIRTUAL ASSISTANT",
+      "text": "The goal is not to maximize model complexity. The goal is to turn an ambiguous human need into a reliable computational process: understand → decompose → represent → decide → execute → verify → improve."
+    },
+    {
+      "id": "assignment-p0015",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 15
+      },
+      "style": null,
+      "heading_context": "ENGINEERING ASMART VIRTUAL ASSISTANT",
+      "text": "01  /  CHALLENGE & LEARNING GOALS"
+    },
+    {
+      "id": "assignment-p0016",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 16
+      },
+      "style": null,
+      "heading_context": "ENGINEERING ASMART VIRTUAL ASSISTANT",
+      "text": "A modern computing project framed around judgment, system design, and evidence — not just code generation."
+    },
+    {
+      "id": "assignment-p0017",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 17
+      },
+      "style": "Heading2",
+      "heading_context": "Why this project?",
+      "text": "Why this project?"
+    },
+    {
+      "id": "assignment-p0018",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 18
+      },
+      "style": null,
+      "heading_context": "Why this project?",
+      "text": "In academic and professional environments, users rarely express problems as clean specifications. They ask vague questions, provide incomplete constraints, mix factual lookup with planning, and expect the system to know when it should search, calculate, ask for clarification, or refuse. A Smart Virtual Assistant is therefore an ideal Computational Thinking project: the technical challenge is not merely generating text, but designing the computational process behind the response."
+    },
+    {
+      "id": "assignment-p0019",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 19
+      },
+      "style": "Heading2",
+      "heading_context": "By the end of the project, your team should be able to:",
+      "text": "By the end of the project, your team should be able to:"
+    },
+    {
+      "id": "assignment-p0020",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 20
+      },
+      "style": null,
+      "heading_context": "By the end of the project, your team should be able to:",
+      "text": "• Transform an ill-defined real-world need into a well-scoped and testable computational problem."
+    },
+    {
+      "id": "assignment-p0021",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 21
+      },
+      "style": null,
+      "heading_context": "By the end of the project, your team should be able to:",
+      "text": "• Decompose a complex assistant into explicit capabilities, modules, data flows, and interfaces."
+    },
+    {
+      "id": "assignment-p0022",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 22
+      },
+      "style": null,
+      "heading_context": "By the end of the project, your team should be able to:",
+      "text": "• Choose appropriately among rules, algorithms, databases, retrieval, machine learning, LLMs, and external APIs."
+    },
+    {
+      "id": "assignment-p0023",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 23
+      },
+      "style": null,
+      "heading_context": "By the end of the project, your team should be able to:",
+      "text": "• Design a system with explicit routing, validation, fallback, and failure handling rather than a single “send everything to the LLM” path."
+    },
+    {
+      "id": "assignment-p0024",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 24
+      },
+      "style": null,
+      "heading_context": "By the end of the project, your team should be able to:",
+      "text": "• Evaluate behavior using repeatable test cases, metrics, error analysis, and at least one documented improvement cycle."
+    },
+    {
+      "id": "assignment-p0025",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 25
+      },
+      "style": null,
+      "heading_context": "By the end of the project, your team should be able to:",
+      "text": "• Communicate technical decisions through diagrams, pseudocode, code, evidence, and an engineering defense."
+    },
+    {
+      "id": "assignment-p0026",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 26
+      },
+      "style": null,
+      "heading_context": "By the end of the project, your team should be able to:",
+      "text": "02  /  WHAT YOU WILL BUILD"
+    },
+    {
+      "id": "assignment-p0027",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 27
+      },
+      "style": null,
+      "heading_context": "By the end of the project, your team should be able to:",
+      "text": "A coherent intelligent system that converts human requests into computational actions."
+    },
+    {
+      "id": "assignment-p0028",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 28
+      },
+      "style": null,
+      "heading_context": "By the end of the project, your team should be able to:",
+      "text": "Your team will design and implement a Smart Virtual Assistant for a clearly defined user group and problem context. The assistant may support learning, productivity, document work, university life, software development, or another instructor-approved domain."
+    },
+    {
+      "id": "assignment-p0030",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 30
+      },
+      "style": "Heading2",
+      "heading_context": "A strong system should follow an explicit pipeline:",
+      "text": "A strong system should follow an explicit pipeline:"
+    },
+    {
+      "id": "assignment-p0031",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 31,
+        "table_index": 2,
+        "row_index": 1,
+        "cell_index": 1
+      },
+      "style": null,
+      "heading_context": "A strong system should follow an explicit pipeline:",
+      "text": "REQUEST"
+    },
+    {
+      "id": "assignment-p0032",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 32,
+        "table_index": 2,
+        "row_index": 1,
+        "cell_index": 2
+      },
+      "style": null,
+      "heading_context": "A strong system should follow an explicit pipeline:",
+      "text": "UNDERSTAND"
+    },
+    {
+      "id": "assignment-p0033",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 33,
+        "table_index": 2,
+        "row_index": 1,
+        "cell_index": 3
+      },
+      "style": null,
+      "heading_context": "A strong system should follow an explicit pipeline:",
+      "text": "ROUTE"
+    },
+    {
+      "id": "assignment-p0034",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 34,
+        "table_index": 2,
+        "row_index": 1,
+        "cell_index": 4
+      },
+      "style": null,
+      "heading_context": "A strong system should follow an explicit pipeline:",
+      "text": "RETRIEVE / COMPUTE"
+    },
+    {
+      "id": "assignment-p0035",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 35,
+        "table_index": 2,
+        "row_index": 1,
+        "cell_index": 5
+      },
+      "style": null,
+      "heading_context": "A strong system should follow an explicit pipeline:",
+      "text": "REASON"
+    },
+    {
+      "id": "assignment-p0036",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 36,
+        "table_index": 2,
+        "row_index": 1,
+        "cell_index": 6
+      },
+      "style": null,
+      "heading_context": "A strong system should follow an explicit pipeline:",
+      "text": "VERIFY"
+    },
+    {
+      "id": "assignment-p0037",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 37,
+        "table_index": 2,
+        "row_index": 1,
+        "cell_index": 7
+      },
+      "style": null,
+      "heading_context": "A strong system should follow an explicit pipeline:",
+      "text": "RESPOND / ACT"
+    },
+    {
+      "id": "assignment-p0038",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 38
+      },
+      "style": "Heading2",
+      "heading_context": "Design principle",
+      "text": "Design principle"
+    },
+    {
+      "id": "assignment-p0039",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 39,
+        "table_index": 3,
+        "row_index": 1,
+        "cell_index": 1
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "AI is one computational component, not the architecture. Use AI where uncertainty, language, perception, or synthesis justifies it. Use deterministic logic where correctness, constraints, or repeatability matter more."
+    },
+    {
+      "id": "assignment-p0040",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 40
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "03  /  MINIMUM SYSTEM REQUIREMENTS"
+    },
+    {
+      "id": "assignment-p0041",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 41
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "These requirements define the expected engineering depth; teams may go beyond them when justified."
+    },
+    {
+      "id": "assignment-p0042",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 42,
+        "table_index": 4,
+        "row_index": 1,
+        "cell_index": 1
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "ID"
+    },
+    {
+      "id": "assignment-p0043",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 43,
+        "table_index": 4,
+        "row_index": 1,
+        "cell_index": 2
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Requirement"
+    },
+    {
+      "id": "assignment-p0044",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 44,
+        "table_index": 4,
+        "row_index": 1,
+        "cell_index": 3
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "What good evidence looks like"
+    },
+    {
+      "id": "assignment-p0045",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 45,
+        "table_index": 4,
+        "row_index": 2,
+        "cell_index": 1
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "R1"
+    },
+    {
+      "id": "assignment-p0046",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 46,
+        "table_index": 4,
+        "row_index": 2,
+        "cell_index": 2
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Problem boundary"
+    },
+    {
+      "id": "assignment-p0047",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 47,
+        "table_index": 4,
+        "row_index": 2,
+        "cell_index": 3
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "A specific target user, pain point, 8–12 representative use cases, explicit non-goals, constraints, and measurable success criteria."
+    },
+    {
+      "id": "assignment-p0048",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 48,
+        "table_index": 4,
+        "row_index": 3,
+        "cell_index": 1
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "R2"
+    },
+    {
+      "id": "assignment-p0049",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 49,
+        "table_index": 4,
+        "row_index": 3,
+        "cell_index": 2
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Deterministic capability"
+    },
+    {
+      "id": "assignment-p0050",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 50,
+        "table_index": 4,
+        "row_index": 3,
+        "cell_index": 3
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "At least one rule/algorithm/calculation/workflow that is transparent and testable."
+    },
+    {
+      "id": "assignment-p0051",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 51,
+        "table_index": 4,
+        "row_index": 4,
+        "cell_index": 1
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "R3"
+    },
+    {
+      "id": "assignment-p0052",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 52,
+        "table_index": 4,
+        "row_index": 4,
+        "cell_index": 2
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Data / retrieval capability"
+    },
+    {
+      "id": "assignment-p0053",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 53,
+        "table_index": 4,
+        "row_index": 4,
+        "cell_index": 3
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "At least one structured or unstructured information source with documented provenance, metadata, and retrieval logic."
+    },
+    {
+      "id": "assignment-p0054",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 54,
+        "table_index": 4,
+        "row_index": 5,
+        "cell_index": 1
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "R4"
+    },
+    {
+      "id": "assignment-p0055",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 55,
+        "table_index": 4,
+        "row_index": 5,
+        "cell_index": 2
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "AI-enabled capability"
+    },
+    {
+      "id": "assignment-p0056",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 56,
+        "table_index": 4,
+        "row_index": 5,
+        "cell_index": 3
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "At least one AI/ML/LLM capability whose use is technically justified by the problem."
+    },
+    {
+      "id": "assignment-p0057",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 57,
+        "table_index": 4,
+        "row_index": 6,
+        "cell_index": 1
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "R5"
+    },
+    {
+      "id": "assignment-p0058",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 58,
+        "table_index": 4,
+        "row_index": 6,
+        "cell_index": 2
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Routing / orchestration"
+    },
+    {
+      "id": "assignment-p0059",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 59,
+        "table_index": 4,
+        "row_index": 6,
+        "cell_index": 3
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "An explicit mechanism that decides which capability should handle a request; include clarification and fallback paths."
+    },
+    {
+      "id": "assignment-p0060",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 60,
+        "table_index": 4,
+        "row_index": 7,
+        "cell_index": 1
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "R6"
+    },
+    {
+      "id": "assignment-p0061",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 61,
+        "table_index": 4,
+        "row_index": 7,
+        "cell_index": 2
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "End-to-end interface"
+    },
+    {
+      "id": "assignment-p0062",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 62,
+        "table_index": 4,
+        "row_index": 7,
+        "cell_index": 3
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "A user-facing interface or demonstrable API flow connected to the real backend/system logic."
+    },
+    {
+      "id": "assignment-p0063",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 63,
+        "table_index": 4,
+        "row_index": 8,
+        "cell_index": 1
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "R7"
+    },
+    {
+      "id": "assignment-p0064",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 64,
+        "table_index": 4,
+        "row_index": 8,
+        "cell_index": 2
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Reliability & safeguards"
+    },
+    {
+      "id": "assignment-p0065",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 65,
+        "table_index": 4,
+        "row_index": 8,
+        "cell_index": 3
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Input validation, error handling, timeout/failure behavior, privacy rules, and relevant misuse or prompt-injection defenses."
+    },
+    {
+      "id": "assignment-p0066",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 66,
+        "table_index": 4,
+        "row_index": 9,
+        "cell_index": 1
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "R8"
+    },
+    {
+      "id": "assignment-p0067",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 67,
+        "table_index": 4,
+        "row_index": 9,
+        "cell_index": 2
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Evaluation"
+    },
+    {
+      "id": "assignment-p0068",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 68,
+        "table_index": 4,
+        "row_index": 9,
+        "cell_index": 3
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": " A repeatable benchmark/test set, metrics or evaluation rubric, error taxonomy, and evidence of at least one improvement cycle."
+    },
+    {
+      "id": "assignment-p0070",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 70
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "04  /  SUGGESTED PROJECT TRACKS"
+    },
+    {
+      "id": "assignment-p0071",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 71
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Choose a domain because it creates an interesting computational problem — not because it sounds fashionable."
+    },
+    {
+      "id": "assignment-p0072",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 72,
+        "table_index": 5,
+        "row_index": 1,
+        "cell_index": 1
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "A"
+    },
+    {
+      "id": "assignment-p0073",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 73,
+        "table_index": 5,
+        "row_index": 1,
+        "cell_index": 2
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Intelligent Study Companion"
+    },
+    {
+      "id": "assignment-p0074",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 74,
+        "table_index": 5,
+        "row_index": 1,
+        "cell_index": 2
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Turn deadlines, progress, learning resources, and available time into an adaptive study plan."
+    },
+    {
+      "id": "assignment-p0075",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 75,
+        "table_index": 5,
+        "row_index": 1,
+        "cell_index": 2
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Core ideas: Scheduling • ranking • retrieval • learner modeling"
+    },
+    {
+      "id": "assignment-p0077",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 77,
+        "table_index": 6,
+        "row_index": 1,
+        "cell_index": 1
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "B"
+    },
+    {
+      "id": "assignment-p0078",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 78,
+        "table_index": 6,
+        "row_index": 1,
+        "cell_index": 2
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Personal Productivity Assistant"
+    },
+    {
+      "id": "assignment-p0079",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 79,
+        "table_index": 6,
+        "row_index": 1,
+        "cell_index": 2
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Convert unstructured requests into tasks, priorities, constraints, and executable schedules."
+    },
+    {
+      "id": "assignment-p0080",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 80,
+        "table_index": 6,
+        "row_index": 1,
+        "cell_index": 2
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Core ideas: Task decomposition • priority queues • constraint solving"
+    },
+    {
+      "id": "assignment-p0082",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 82,
+        "table_index": 7,
+        "row_index": 1,
+        "cell_index": 1
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "C"
+    },
+    {
+      "id": "assignment-p0083",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 83,
+        "table_index": 7,
+        "row_index": 1,
+        "cell_index": 2
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Intelligent Document Workspace"
+    },
+    {
+      "id": "assignment-p0084",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 84,
+        "table_index": 7,
+        "row_index": 1,
+        "cell_index": 2
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Search, compare, and synthesize PDFs, notes, reports, and structured records with traceable evidence."
+    },
+    {
+      "id": "assignment-p0085",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 85,
+        "table_index": 7,
+        "row_index": 1,
+        "cell_index": 2
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Core ideas: Parsing • indexing • retrieval • RAG • provenance"
+    },
+    {
+      "id": "assignment-p0087",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 87,
+        "table_index": 8,
+        "row_index": 1,
+        "cell_index": 1
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "D"
+    },
+    {
+      "id": "assignment-p0088",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 88,
+        "table_index": 8,
+        "row_index": 1,
+        "cell_index": 2
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Meeting Intelligence Assistant"
+    },
+    {
+      "id": "assignment-p0089",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 89,
+        "table_index": 8,
+        "row_index": 1,
+        "cell_index": 2
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Extract decisions, action items, owners, deadlines, and unresolved issues across meetings."
+    },
+    {
+      "id": "assignment-p0090",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 90,
+        "table_index": 8,
+        "row_index": 1,
+        "cell_index": 2
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Core ideas: Information extraction • temporal reasoning • state tracking"
+    },
+    {
+      "id": "assignment-p0092",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 92,
+        "table_index": 9,
+        "row_index": 1,
+        "cell_index": 1
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "E"
+    },
+    {
+      "id": "assignment-p0093",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 93,
+        "table_index": 9,
+        "row_index": 1,
+        "cell_index": 2
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "University Life Assistant"
+    },
+    {
+      "id": "assignment-p0094",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 94,
+        "table_index": 9,
+        "row_index": 1,
+        "cell_index": 2
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Combine course, campus, regulation, and schedule information into a student-facing assistant."
+    },
+    {
+      "id": "assignment-p0095",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 95,
+        "table_index": 9,
+        "row_index": 1,
+        "cell_index": 2
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Core ideas: Search • structured data • planning • routing"
+    },
+    {
+      "id": "assignment-p0097",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 97,
+        "table_index": 10,
+        "row_index": 1,
+        "cell_index": 1
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "F"
+    },
+    {
+      "id": "assignment-p0098",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 98,
+        "table_index": 10,
+        "row_index": 1,
+        "cell_index": 2
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Software Development Assistant"
+    },
+    {
+      "id": "assignment-p0099",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 99,
+        "table_index": 10,
+        "row_index": 1,
+        "cell_index": 2
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Support requirement breakdown, code/document retrieval, test generation, debugging, and change summaries."
+    },
+    {
+      "id": "assignment-p0100",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 100,
+        "table_index": 10,
+        "row_index": 1,
+        "cell_index": 2
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Core ideas: Dependency analysis • program context • testing • retrieval"
+    },
+    {
+      "id": "assignment-p0103",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 103
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "05  /  REFERENCE ARCHITECTURE"
+    },
+    {
+      "id": "assignment-p0104",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 104
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "A reference, not a mandatory stack. Your architecture should be simpler when the problem allows it."
+    },
+    {
+      "id": "assignment-p0105",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 105,
+        "table_index": 11,
+        "row_index": 1,
+        "cell_index": 1
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "USER / CLIENT"
+    },
+    {
+      "id": "assignment-p0106",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 106,
+        "table_index": 11,
+        "row_index": 1,
+        "cell_index": 2
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Chat or form UI • CLI • mobile/web prototype"
+    },
+    {
+      "id": "assignment-p0107",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 107
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "↓"
+    },
+    {
+      "id": "assignment-p0108",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 108,
+        "table_index": 12,
+        "row_index": 1,
+        "cell_index": 1
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "INPUT UNDERSTANDING"
+    },
+    {
+      "id": "assignment-p0109",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 109,
+        "table_index": 12,
+        "row_index": 1,
+        "cell_index": 2
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Intent • entities • constraints • validation"
+    },
+    {
+      "id": "assignment-p0110",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 110
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "↓"
+    },
+    {
+      "id": "assignment-p0111",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 111,
+        "table_index": 13,
+        "row_index": 1,
+        "cell_index": 1
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "ORCHESTRATION"
+    },
+    {
+      "id": "assignment-p0112",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 112,
+        "table_index": 13,
+        "row_index": 1,
+        "cell_index": 2
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Routing • state • policy • tool selection • fallback"
+    },
+    {
+      "id": "assignment-p0113",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 113
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "↓"
+    },
+    {
+      "id": "assignment-p0114",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 114,
+        "table_index": 14,
+        "row_index": 1,
+        "cell_index": 1
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "CAPABILITY LAYER"
+    },
+    {
+      "id": "assignment-p0115",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 115,
+        "table_index": 14,
+        "row_index": 1,
+        "cell_index": 2
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Algorithms / rules  |  retrieval / search  |  AI / ML / LLM"
+    },
+    {
+      "id": "assignment-p0116",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 116
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "↓"
+    },
+    {
+      "id": "assignment-p0117",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 117,
+        "table_index": 15,
+        "row_index": 1,
+        "cell_index": 1
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "DATA & TOOLS"
+    },
+    {
+      "id": "assignment-p0118",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 118,
+        "table_index": 15,
+        "row_index": 1,
+        "cell_index": 2
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Database • documents • APIs • calendar • approved external services"
+    },
+    {
+      "id": "assignment-p0119",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 119
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "↓"
+    },
+    {
+      "id": "assignment-p0120",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 120,
+        "table_index": 16,
+        "row_index": 1,
+        "cell_index": 1
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "VALIDATION & SAFETY"
+    },
+    {
+      "id": "assignment-p0121",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 121,
+        "table_index": 16,
+        "row_index": 1,
+        "cell_index": 2
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Evidence checks • constraint checks • privacy • guardrails • escalation"
+    },
+    {
+      "id": "assignment-p0122",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 122
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "↓"
+    },
+    {
+      "id": "assignment-p0123",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 123,
+        "table_index": 17,
+        "row_index": 1,
+        "cell_index": 1
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "OBSERVABILITY & EVALUATION"
+    },
+    {
+      "id": "assignment-p0124",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 124,
+        "table_index": 17,
+        "row_index": 1,
+        "cell_index": 2
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Logs • feedback • test cases • metrics • error analysis"
+    },
+    {
+      "id": "assignment-p0126",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 126
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "06  /  SUBMISSION PACKAGE"
+    },
+    {
+      "id": "assignment-p0127",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 127
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Treat the submission as an engineering handoff: another team should be able to understand, run, test, and critique your system."
+    },
+    {
+      "id": "assignment-p0128",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 128
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "01  Engineering Report"
+    },
+    {
+      "id": "assignment-p0129",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 129
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "12–18 pages recommended, excluding appendices. Problem framing, CT reasoning, architecture, data/knowledge design, algorithms/routing, AI role, implementation, risks, evaluation, errors, limitations, roadmap."
+    },
+    {
+      "id": "assignment-p0130",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 130
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "02  Source Repository / Demo"
+    },
+    {
+      "id": "assignment-p0131",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 131
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Source code, environment/dependency files, sample configuration, reproducible setup/run instructions, and a working demo. Never submit real credentials."
+    },
+    {
+      "id": "assignment-p0132",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 132
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "03  Architecture & Design Pack"
+    },
+    {
+      "id": "assignment-p0133",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 133
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "System-context diagram, component diagram, sequence/data-flow diagram, key schemas/data models, pseudocode, and important interface contracts."
+    },
+    {
+      "id": "assignment-p0134",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 134
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "04  Evaluation Pack"
+    },
+    {
+      "id": "assignment-p0135",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 135
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Benchmark/test set, expected outputs/labels where applicable, evaluation script or rubric, metrics, error taxonomy, regression tests, before/after evidence."
+    },
+    {
+      "id": "assignment-p0136",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 136
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "05  Failure & Risk Pack"
+    },
+    {
+      "id": "assignment-p0137",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 137
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Failure catalogue, threat/privacy analysis, red-team cases, safeguards, fallback/escalation paths, and unresolved risks."
+    },
+    {
+      "id": "assignment-p0138",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 138
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "06  Presentation & Final Demo"
+    },
+    {
+      "id": "assignment-p0139",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 139
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Concise technical story: problem → key decisions → architecture → evidence → demo → limitations → lessons learned."
+    },
+    {
+      "id": "assignment-p0140",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 140
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "07  Team Logbook & Contribution Evidence"
+    },
+    {
+      "id": "assignment-p0141",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 141
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Weekly task allocation, issues/PRs, meeting/progress notes, contribution summary, and a short record of how AI tools were used and verified."
+    },
+    {
+      "id": "assignment-p0143",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 143
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "07 /  EVALUATION RUBRIC"
+    },
+    {
+      "id": "assignment-p0144",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 144
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "The rubric rewards evidence of thinking, system quality, and disciplined iteration — not code volume or model size."
+    },
+    {
+      "id": "assignment-p0145",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 145,
+        "table_index": 18,
+        "row_index": 1,
+        "cell_index": 1
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Criterion"
+    },
+    {
+      "id": "assignment-p0146",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 146,
+        "table_index": 18,
+        "row_index": 1,
+        "cell_index": 2
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Weight"
+    },
+    {
+      "id": "assignment-p0147",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 147,
+        "table_index": 18,
+        "row_index": 1,
+        "cell_index": 3
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "What distinguishes strong work"
+    },
+    {
+      "id": "assignment-p0148",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 148,
+        "table_index": 18,
+        "row_index": 2,
+        "cell_index": 1
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Problem framing & CT reasoning"
+    },
+    {
+      "id": "assignment-p0149",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 149,
+        "table_index": 18,
+        "row_index": 2,
+        "cell_index": 2
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "15%"
+    },
+    {
+      "id": "assignment-p0150",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 150,
+        "table_index": 18,
+        "row_index": 2,
+        "cell_index": 3
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Clear user/problem boundary; measurable success; strong decomposition, abstraction, and explicit trade-offs."
+    },
+    {
+      "id": "assignment-p0151",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 151,
+        "table_index": 18,
+        "row_index": 3,
+        "cell_index": 1
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "System architecture & orchestration"
+    },
+    {
+      "id": "assignment-p0152",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 152,
+        "table_index": 18,
+        "row_index": 3,
+        "cell_index": 2
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "15%"
+    },
+    {
+      "id": "assignment-p0153",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 153,
+        "table_index": 18,
+        "row_index": 3,
+        "cell_index": 3
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Coherent components, interfaces, data/control flow, routing, fallback, and failure-aware design."
+    },
+    {
+      "id": "assignment-p0154",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 154,
+        "table_index": 18,
+        "row_index": 4,
+        "cell_index": 1
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Data / retrieval layer"
+    },
+    {
+      "id": "assignment-p0155",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 155,
+        "table_index": 18,
+        "row_index": 4,
+        "cell_index": 2
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "10%"
+    },
+    {
+      "id": "assignment-p0156",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 156,
+        "table_index": 18,
+        "row_index": 4,
+        "cell_index": 3
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Appropriate sources, metadata, provenance, retrieval logic, and traceability."
+    },
+    {
+      "id": "assignment-p0157",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 157,
+        "table_index": 18,
+        "row_index": 5,
+        "cell_index": 1
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Algorithm & technology selection"
+    },
+    {
+      "id": "assignment-p0158",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 158,
+        "table_index": 18,
+        "row_index": 5,
+        "cell_index": 2
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "10%"
+    },
+    {
+      "id": "assignment-p0159",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 159,
+        "table_index": 18,
+        "row_index": 5,
+        "cell_index": 3
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Well-justified choice of deterministic logic, search, AI, tools, and APIs; avoids unnecessary complexity."
+    },
+    {
+      "id": "assignment-p0160",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 160,
+        "table_index": 18,
+        "row_index": 6,
+        "cell_index": 1
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "MVP & integration"
+    },
+    {
+      "id": "assignment-p0161",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 161,
+        "table_index": 18,
+        "row_index": 6,
+        "cell_index": 2
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "20%"
+    },
+    {
+      "id": "assignment-p0162",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 162,
+        "table_index": 18,
+        "row_index": 6,
+        "cell_index": 3
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "End-to-end system works reliably; components are actually integrated; code/repository is understandable and reproducible."
+    },
+    {
+      "id": "assignment-p0163",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 163,
+        "table_index": 18,
+        "row_index": 7,
+        "cell_index": 1
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Reliability, security & responsible AI"
+    },
+    {
+      "id": "assignment-p0164",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 164,
+        "table_index": 18,
+        "row_index": 7,
+        "cell_index": 2
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "10%"
+    },
+    {
+      "id": "assignment-p0165",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 165,
+        "table_index": 18,
+        "row_index": 7,
+        "cell_index": 3
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Failure model, privacy/safety thinking, safeguards, red-team cases, and appropriate abstention/escalation."
+    },
+    {
+      "id": "assignment-p0166",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 166,
+        "table_index": 18,
+        "row_index": 8,
+        "cell_index": 1
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Testing & evaluation"
+    },
+    {
+      "id": "assignment-p0167",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 167,
+        "table_index": 18,
+        "row_index": 8,
+        "cell_index": 2
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "10%"
+    },
+    {
+      "id": "assignment-p0168",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 168,
+        "table_index": 18,
+        "row_index": 8,
+        "cell_index": 3
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Balanced benchmark, meaningful metrics/rubric, error analysis, regression testing, and before/after improvement."
+    },
+    {
+      "id": "assignment-p0169",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 169,
+        "table_index": 18,
+        "row_index": 9,
+        "cell_index": 1
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Report, demo & presentation"
+    },
+    {
+      "id": "assignment-p0170",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 170,
+        "table_index": 18,
+        "row_index": 9,
+        "cell_index": 2
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "10%"
+    },
+    {
+      "id": "assignment-p0171",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 171,
+        "table_index": 18,
+        "row_index": 9,
+        "cell_index": 3
+      },
+      "style": null,
+      "heading_context": "Design principle",
+      "text": "Professional technical communication, evidence-centered demo, clear ownership, and ability to defend decisions."
+    },
+    {
+      "id": "assignment-p0172",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 172
+      },
+      "style": "Heading2",
+      "heading_context": "Assessment note",
+      "text": "Assessment note"
+    },
+    {
+      "id": "assignment-p0173",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 173
+      },
+      "style": null,
+      "heading_context": "Assessment note",
+      "text": "Final quality matters, but weekly milestone evidence also matters. A polished Week-8 demo cannot fully compensate for weak problem framing, undocumented decisions, fabricated evaluation, or an inability to explain how the system works."
+    },
+    {
+      "id": "assignment-p0175",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 175
+      },
+      "style": null,
+      "heading_context": "Assessment note",
+      "text": "08 /  POLICIES, TECHNICAL EXPECTATIONS & RESOURCES"
+    },
+    {
+      "id": "assignment-p0176",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 176
+      },
+      "style": null,
+      "heading_context": "Assessment note",
+      "text": "Use modern AI tools as engineering aids, while preserving understanding, accountability, and reproducibility."
+    },
+    {
+      "id": "assignment-p0177",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 177
+      },
+      "style": "Heading2",
+      "heading_context": "Team & workflow expectations",
+      "text": "Team & workflow expectations"
+    },
+    {
+      "id": "assignment-p0178",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 178
+      },
+      "style": null,
+      "heading_context": "Team & workflow expectations",
+      "text": "• Team size: 5–7 students unless approved otherwise."
+    },
+    {
+      "id": "assignment-p0179",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 179
+      },
+      "style": null,
+      "heading_context": "Team & workflow expectations",
+      "text": "• Maintain a shared Git repository, issue/task board, and weekly project log."
+    },
+    {
+      "id": "assignment-p0180",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 180
+      },
+      "style": null,
+      "heading_context": "Team & workflow expectations",
+      "text": "• Every member should contribute across analysis, design, implementation, evaluation, and communication—not only one isolated role."
+    },
+    {
+      "id": "assignment-p0181",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 181
+      },
+      "style": null,
+      "heading_context": "Team & workflow expectations",
+      "text": "• Important design changes should be documented briefly (for example in README notes, issues, or lightweight ADR-style records)."
+    },
+    {
+      "id": "assignment-p0182",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 182
+      },
+      "style": "Heading2",
+      "heading_context": "AI tool policy",
+      "text": "AI tool policy"
+    },
+    {
+      "id": "assignment-p0183",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 183
+      },
+      "style": null,
+      "heading_context": "AI tool policy",
+      "text": "• ChatGPT, Claude, Gemini, Copilot, and similar tools may be used for brainstorming, code assistance, debugging, writing support, or test generation."
+    },
+    {
+      "id": "assignment-p0184",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 184
+      },
+      "style": null,
+      "heading_context": "AI tool policy",
+      "text": "• The team remains responsible for understanding, adapting, verifying, and testing all generated content or code."
+    },
+    {
+      "id": "assignment-p0185",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 185
+      },
+      "style": null,
+      "heading_context": "AI tool policy",
+      "text": "• AI-generated text/code is not evidence by itself. Technical claims and evaluation results must come from the team’s sources, code, measurements, or experiments."
+    },
+    {
+      "id": "assignment-p0186",
+      "locator": {
+        "part": "word/document.xml",
+        "paragraph_index": 186
+      },
+      "style": null,
+      "heading_context": "AI tool policy",
+      "text": "• Do not upload secrets, private credentials, restricted data, or sensitive university/company information to public repositories or external AI services."
+    }
+  ]
+}

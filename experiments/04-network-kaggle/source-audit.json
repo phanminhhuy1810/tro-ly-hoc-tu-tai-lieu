@@ -1,0 +1,1536 @@
+{
+  "audit_type": "single-source developer trial; not a held-out or multi-subject benchmark",
+  "created_at_utc": "2026-10-16T06:03:22.842200+00:00",
+  "source": {
+    "path": "/Users/phanminhhuy/Documents/learning resources/Hk4/tai lieu MMT/slide vn/CTT105-2-IP&subnetting_2.0.pdf",
+    "filename": "CTT105-2-IP&subnetting_2.0.pdf",
+    "bytes": 4228547,
+    "sha256": "9037fecd5131c299809b7aa4776b782c2939b2c47c792d7ee09a5cfa6c795404",
+    "pages": 33,
+    "page_numbering": "1-based physical PDF page and visible slide number agree for pages 24,26,32,33"
+  },
+  "method": {
+    "extraction": "study_backend.extract.extract(filename, bytes), default ocr=True, in memory, no Source DB insertion",
+    "python": "3.12.14",
+    "pypdf": "6.20.1",
+    "visual_review": "Viewed original page rasters, not an AI vision model call",
+    "page_render": "Existing native backend renderer limited to first 20 pages. Used pypdf one-page derivative in memory per selected original page, then render_page(..., page=1); original source preserved. Output rasters 1800x1350.",
+    "model_calls": 0,
+    "runtime_db_writes": 0,
+    "scope": "Selected-page diagnostic; all 33 pages have text fragments, which does not prove all visible content was read."
+  },
+  "extraction": {
+    "elapsed_seconds": 0.154921,
+    "fragment_count": 33,
+    "text_characters": 7492,
+    "pages_with_any_extracted_text": 33,
+    "page_character_counts": {
+      "1": 59,
+      "2": 141,
+      "3": 120,
+      "4": 125,
+      "5": 287,
+      "6": 142,
+      "7": 144,
+      "8": 321,
+      "9": 212,
+      "10": 92,
+      "11": 92,
+      "12": 143,
+      "13": 105,
+      "14": 250,
+      "15": 299,
+      "16": 228,
+      "17": 257,
+      "18": 231,
+      "19": 155,
+      "20": 142,
+      "21": 222,
+      "22": 87,
+      "23": 660,
+      "24": 109,
+      "25": 258,
+      "26": 226,
+      "27": 222,
+      "28": 377,
+      "29": 502,
+      "30": 324,
+      "31": 214,
+      "32": 259,
+      "33": 487
+    },
+    "warnings": [
+      "PDF: chữ/công thức/sơ đồ cần đối chiếu trang gốc; trích được chữ chưa chứng minh bố cục đúng."
+    ],
+    "parser_log_messages": [
+      "Ignoring wrong pointing object 15 0 (offset 0)",
+      "Ignoring wrong pointing object 17 0 (offset 0)",
+      "Ignoring wrong pointing object 19 0 (offset 0)",
+      "Ignoring wrong pointing object 41 0 (offset 0)",
+      "Ignoring wrong pointing object 43 0 (offset 0)",
+      "Ignoring wrong pointing object 45 0 (offset 0)",
+      "Ignoring wrong pointing object 47 0 (offset 0)",
+      "Ignoring wrong pointing object 64 0 (offset 0)",
+      "Ignoring wrong pointing object 92 0 (offset 0)",
+      "Ignoring wrong pointing object 94 0 (offset 0)",
+      "Ignoring wrong pointing object 96 0 (offset 0)",
+      "Ignoring wrong pointing object 98 0 (offset 0)",
+      "Ignoring wrong pointing object 100 0 (offset 0)",
+      "Ignoring wrong pointing object 144 0 (offset 0)",
+      "Ignoring wrong pointing object 146 0 (offset 0)",
+      "Ignoring wrong pointing object 148 0 (offset 0)",
+      "Ignoring wrong pointing object 150 0 (offset 0)",
+      "Ignoring wrong pointing object 154 0 (offset 0)",
+      "Ignoring wrong pointing object 238 0 (offset 0)",
+      "Ignoring wrong pointing object 276 0 (offset 0)",
+      "Ignoring wrong pointing object 305 0 (offset 0)",
+      "Ignoring wrong pointing object 427 0 (offset 0)",
+      "Ignoring wrong pointing object 460 0 (offset 0)",
+      "Ignoring wrong pointing object 462 0 (offset 0)",
+      "Ignoring wrong pointing object 557 0 (offset 0)"
+    ],
+    "automatic_ocr_trigger": "Only a page with no extracted text triggers fallback. A mixed page containing title/footer but an image table does not trigger fallback."
+  },
+  "selected_page_findings": [
+    {
+      "page": 24,
+      "image": "source-pages/page-24.png",
+      "backend_text": "ĐịachỉIP Classless\nqGiátrịcácsubnetmask:\n24Khoa Công nghệ thông tin -Đại học Khoa học tự nhiên TP Hồ Chí Minh",
+      "finding": "Complete subnet-mask octet bit table absent from text extraction; heading and footer survive.",
+      "missing_visual_content": [
+        "Header bit weights 128,64,32,16,8,4,2,1",
+        "Nine rows mapping 00000000 through 11111111 (leading ones only) to 0,128,192,224,240,248,252,254,255"
+      ],
+      "hand_verified_transcription": {
+        "origin": "Manually transcribed after visual review of rendered original page 24; independent of raw OCR, not injected into source DB or model fixtures",
+        "column_weights": [
+          128,
+          64,
+          32,
+          16,
+          8,
+          4,
+          2,
+          1
+        ],
+        "rows": [
+          {
+            "bits": "00000000",
+            "decimal": 0
+          },
+          {
+            "bits": "10000000",
+            "decimal": 128
+          },
+          {
+            "bits": "11000000",
+            "decimal": 192
+          },
+          {
+            "bits": "11100000",
+            "decimal": 224
+          },
+          {
+            "bits": "11110000",
+            "decimal": 240
+          },
+          {
+            "bits": "11111000",
+            "decimal": 248
+          },
+          {
+            "bits": "11111100",
+            "decimal": 252
+          },
+          {
+            "bits": "11111110",
+            "decimal": 254
+          },
+          {
+            "bits": "11111111",
+            "decimal": 255
+          }
+        ]
+      }
+    },
+    {
+      "page": 26,
+      "image": "source-pages/page-26.png",
+      "backend_text": "ĐịachỉIP Classless\nqCho địachỉIP: 172.29.217.10/19\n•Địa chỉ đường mạng:\n•Địachỉbroadcast:\n•Sốđịa chỉ IP trongcùngnetwork:\n•Dãy địa chỉ IP trong cùng network:\n26Khoa Công nghệ thông tin -Đại học Khoa học tự nhiên TP Hồ Chí Minh",
+      "finding": "Exercise input and four prompts survive text extraction. Source contains questions only, no answer key.",
+      "source_exercise": {
+        "ip_with_prefix": "172.29.217.10/19",
+        "asks": [
+          "network address",
+          "broadcast address",
+          "number of IP addresses in the network",
+          "IP address range in the network"
+        ]
+      },
+      "computed_answer_key": {
+        "input": "172.29.217.10/19",
+        "network_cidr": "172.29.192.0/19",
+        "netmask": "255.255.224.0",
+        "network": "172.29.192.0",
+        "broadcast": "172.29.223.255",
+        "total_addresses": 8192,
+        "usable_hosts": 8190,
+        "all_address_range": [
+          "172.29.192.0",
+          "172.29.223.255"
+        ],
+        "usable_host_range": [
+          "172.29.192.1",
+          "172.29.223.254"
+        ],
+        "host_bits": 13,
+        "block_size_in_third_octet": 32
+      },
+      "computed_answer_provenance": "Python standard-library ipaddress with strict=False plus num_addresses-2 for conventional host range; these answers are computed, not quoted from source."
+    },
+    {
+      "page": 32,
+      "image": "source-pages/page-32.png",
+      "backend_text": "Chia subnet –Vídụ2\n192.168.1.0\n192.168.1.0 192.168.1.64 192.168.1.128 192.168.1.192\n192.168.1.128 192.168.1.160\n2 bit\n1 bit\n192.168.1.0 192.168.1.64\n192.168.1.128 192.168.1.160\n192.168.1.192\n32Khoa Công nghệ thông tin -Đại học Khoa học tự nhiên TP Hồ Chí Minh",
+      "finding": "IP labels and 2 bit/1 bit strings survive, but directed parent-child arrows and grouping/colors are lost; linear text does not encode the subnet tree.",
+      "hand_verified_graph": {
+        "root": "192.168.1.0 (prefix not printed on this slide)",
+        "first_split_borrowed_bits": 2,
+        "first_level": [
+          "192.168.1.0",
+          "192.168.1.64",
+          "192.168.1.128",
+          "192.168.1.192"
+        ],
+        "split_parent": "192.168.1.128",
+        "second_split_borrowed_bits": 1,
+        "second_level": [
+          "192.168.1.128",
+          "192.168.1.160"
+        ],
+        "leaves": [
+          "192.168.1.0",
+          "192.168.1.64",
+          "192.168.1.128",
+          "192.168.1.160",
+          "192.168.1.192"
+        ]
+      },
+      "conditional_computed_interpretation": {
+        "assumption": "Starting network is 192.168.1.0/24; the /24 is inferred from four 64-address first children, not explicitly printed on page32",
+        "leaves_cidr": [
+          "192.168.1.0/26",
+          "192.168.1.64/26",
+          "192.168.1.128/27",
+          "192.168.1.160/27",
+          "192.168.1.192/26"
+        ],
+        "overlap_note": "The intermediate parent 192.168.1.128/26 must not be allocated alongside its two /27 children."
+      }
+    },
+    {
+      "page": 33,
+      "image": "source-pages/page-33.png",
+      "backend_text": "Bài tập\nCho 172.100.112.4/19. Hãychobiết:\n1.Địachỉtrênthuộcvềđườngmạngnào?\n2.SốIP hợplệcóthểdùngtrongđườngmạngđó. Vàhãychobiết\ngồmnhữngđịachỉnào?\n3.Địachỉbroadcast củađườngmạngđó\n4.Vớiđịachỉđườngmạngtrên, hãychiathành5 subnet nhưsau: 2 \nsubnet có1000 host, 2 subnet có500 host, 1 subnet có100 host\n5.Vớiđịachỉđườngmạngtrên, hãychiathành17 subnet nhưsau: \n4 subnet có1000 host, 6 subnet có500 host, 7 subnet có100 \nhost\n33Khoa Công nghệ thông tin -Đại học Khoa học tự nhiên TP Hồ Chí Minh",
+      "finding": "IP, all five numbered exercise items and host requirements survive. Source contains questions only, no answer key.",
+      "source_exercise": {
+        "ip_with_prefix": "172.100.112.4/19",
+        "five_subnets_required_hosts": [
+          1000,
+          1000,
+          500,
+          500,
+          100
+        ],
+        "seventeen_subnets_required_hosts": [
+          1000,
+          1000,
+          1000,
+          1000,
+          500,
+          500,
+          500,
+          500,
+          500,
+          500,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100
+        ]
+      },
+      "computed_answer_key": {
+        "input": "172.100.112.4/19",
+        "network_cidr": "172.100.96.0/19",
+        "netmask": "255.255.224.0",
+        "network": "172.100.96.0",
+        "broadcast": "172.100.127.255",
+        "total_addresses": 8192,
+        "usable_hosts": 8190,
+        "all_address_range": [
+          "172.100.96.0",
+          "172.100.127.255"
+        ],
+        "usable_host_range": [
+          "172.100.96.1",
+          "172.100.127.254"
+        ],
+        "host_bits": 13,
+        "block_size_in_third_octet": 32
+      },
+      "vlsm_five_subnet_example": {
+        "parent": "172.100.96.0/19",
+        "required_subnet_count": 5,
+        "total_required_hosts": 3100,
+        "allocated_addresses": 3200,
+        "parent_capacity": 8192,
+        "remaining_addresses": 4992,
+        "valid_allocation": true,
+        "allocated_subnets": [
+          {
+            "required_hosts": 1000,
+            "cidr": "172.100.96.0/22",
+            "netmask": "255.255.252.0",
+            "total_addresses": 1024,
+            "usable_hosts": 1022,
+            "usable_host_range": [
+              "172.100.96.1",
+              "172.100.99.254"
+            ],
+            "broadcast": "172.100.99.255"
+          },
+          {
+            "required_hosts": 1000,
+            "cidr": "172.100.100.0/22",
+            "netmask": "255.255.252.0",
+            "total_addresses": 1024,
+            "usable_hosts": 1022,
+            "usable_host_range": [
+              "172.100.100.1",
+              "172.100.103.254"
+            ],
+            "broadcast": "172.100.103.255"
+          },
+          {
+            "required_hosts": 500,
+            "cidr": "172.100.104.0/23",
+            "netmask": "255.255.254.0",
+            "total_addresses": 512,
+            "usable_hosts": 510,
+            "usable_host_range": [
+              "172.100.104.1",
+              "172.100.105.254"
+            ],
+            "broadcast": "172.100.105.255"
+          },
+          {
+            "required_hosts": 500,
+            "cidr": "172.100.106.0/23",
+            "netmask": "255.255.254.0",
+            "total_addresses": 512,
+            "usable_hosts": 510,
+            "usable_host_range": [
+              "172.100.106.1",
+              "172.100.107.254"
+            ],
+            "broadcast": "172.100.107.255"
+          },
+          {
+            "required_hosts": 100,
+            "cidr": "172.100.108.0/25",
+            "netmask": "255.255.255.128",
+            "total_addresses": 128,
+            "usable_hosts": 126,
+            "usable_host_range": [
+              "172.100.108.1",
+              "172.100.108.126"
+            ],
+            "broadcast": "172.100.108.127"
+          }
+        ],
+        "remaining_unallocated_cidrs": [
+          "172.100.108.128/25",
+          "172.100.109.0/24",
+          "172.100.110.0/23",
+          "172.100.112.0/20"
+        ]
+      },
+      "vlsm_seventeen_subnet_example": {
+        "parent": "172.100.96.0/19",
+        "required_subnet_count": 17,
+        "total_required_hosts": 7700,
+        "allocated_addresses": 8064,
+        "parent_capacity": 8192,
+        "remaining_addresses": 128,
+        "valid_allocation": true,
+        "allocated_subnets": [
+          {
+            "required_hosts": 1000,
+            "cidr": "172.100.96.0/22",
+            "netmask": "255.255.252.0",
+            "total_addresses": 1024,
+            "usable_hosts": 1022,
+            "usable_host_range": [
+              "172.100.96.1",
+              "172.100.99.254"
+            ],
+            "broadcast": "172.100.99.255"
+          },
+          {
+            "required_hosts": 1000,
+            "cidr": "172.100.100.0/22",
+            "netmask": "255.255.252.0",
+            "total_addresses": 1024,
+            "usable_hosts": 1022,
+            "usable_host_range": [
+              "172.100.100.1",
+              "172.100.103.254"
+            ],
+            "broadcast": "172.100.103.255"
+          },
+          {
+            "required_hosts": 1000,
+            "cidr": "172.100.104.0/22",
+            "netmask": "255.255.252.0",
+            "total_addresses": 1024,
+            "usable_hosts": 1022,
+            "usable_host_range": [
+              "172.100.104.1",
+              "172.100.107.254"
+            ],
+            "broadcast": "172.100.107.255"
+          },
+          {
+            "required_hosts": 1000,
+            "cidr": "172.100.108.0/22",
+            "netmask": "255.255.252.0",
+            "total_addresses": 1024,
+            "usable_hosts": 1022,
+            "usable_host_range": [
+              "172.100.108.1",
+              "172.100.111.254"
+            ],
+            "broadcast": "172.100.111.255"
+          },
+          {
+            "required_hosts": 500,
+            "cidr": "172.100.112.0/23",
+            "netmask": "255.255.254.0",
+            "total_addresses": 512,
+            "usable_hosts": 510,
+            "usable_host_range": [
+              "172.100.112.1",
+              "172.100.113.254"
+            ],
+            "broadcast": "172.100.113.255"
+          },
+          {
+            "required_hosts": 500,
+            "cidr": "172.100.114.0/23",
+            "netmask": "255.255.254.0",
+            "total_addresses": 512,
+            "usable_hosts": 510,
+            "usable_host_range": [
+              "172.100.114.1",
+              "172.100.115.254"
+            ],
+            "broadcast": "172.100.115.255"
+          },
+          {
+            "required_hosts": 500,
+            "cidr": "172.100.116.0/23",
+            "netmask": "255.255.254.0",
+            "total_addresses": 512,
+            "usable_hosts": 510,
+            "usable_host_range": [
+              "172.100.116.1",
+              "172.100.117.254"
+            ],
+            "broadcast": "172.100.117.255"
+          },
+          {
+            "required_hosts": 500,
+            "cidr": "172.100.118.0/23",
+            "netmask": "255.255.254.0",
+            "total_addresses": 512,
+            "usable_hosts": 510,
+            "usable_host_range": [
+              "172.100.118.1",
+              "172.100.119.254"
+            ],
+            "broadcast": "172.100.119.255"
+          },
+          {
+            "required_hosts": 500,
+            "cidr": "172.100.120.0/23",
+            "netmask": "255.255.254.0",
+            "total_addresses": 512,
+            "usable_hosts": 510,
+            "usable_host_range": [
+              "172.100.120.1",
+              "172.100.121.254"
+            ],
+            "broadcast": "172.100.121.255"
+          },
+          {
+            "required_hosts": 500,
+            "cidr": "172.100.122.0/23",
+            "netmask": "255.255.254.0",
+            "total_addresses": 512,
+            "usable_hosts": 510,
+            "usable_host_range": [
+              "172.100.122.1",
+              "172.100.123.254"
+            ],
+            "broadcast": "172.100.123.255"
+          },
+          {
+            "required_hosts": 100,
+            "cidr": "172.100.124.0/25",
+            "netmask": "255.255.255.128",
+            "total_addresses": 128,
+            "usable_hosts": 126,
+            "usable_host_range": [
+              "172.100.124.1",
+              "172.100.124.126"
+            ],
+            "broadcast": "172.100.124.127"
+          },
+          {
+            "required_hosts": 100,
+            "cidr": "172.100.124.128/25",
+            "netmask": "255.255.255.128",
+            "total_addresses": 128,
+            "usable_hosts": 126,
+            "usable_host_range": [
+              "172.100.124.129",
+              "172.100.124.254"
+            ],
+            "broadcast": "172.100.124.255"
+          },
+          {
+            "required_hosts": 100,
+            "cidr": "172.100.125.0/25",
+            "netmask": "255.255.255.128",
+            "total_addresses": 128,
+            "usable_hosts": 126,
+            "usable_host_range": [
+              "172.100.125.1",
+              "172.100.125.126"
+            ],
+            "broadcast": "172.100.125.127"
+          },
+          {
+            "required_hosts": 100,
+            "cidr": "172.100.125.128/25",
+            "netmask": "255.255.255.128",
+            "total_addresses": 128,
+            "usable_hosts": 126,
+            "usable_host_range": [
+              "172.100.125.129",
+              "172.100.125.254"
+            ],
+            "broadcast": "172.100.125.255"
+          },
+          {
+            "required_hosts": 100,
+            "cidr": "172.100.126.0/25",
+            "netmask": "255.255.255.128",
+            "total_addresses": 128,
+            "usable_hosts": 126,
+            "usable_host_range": [
+              "172.100.126.1",
+              "172.100.126.126"
+            ],
+            "broadcast": "172.100.126.127"
+          },
+          {
+            "required_hosts": 100,
+            "cidr": "172.100.126.128/25",
+            "netmask": "255.255.255.128",
+            "total_addresses": 128,
+            "usable_hosts": 126,
+            "usable_host_range": [
+              "172.100.126.129",
+              "172.100.126.254"
+            ],
+            "broadcast": "172.100.126.255"
+          },
+          {
+            "required_hosts": 100,
+            "cidr": "172.100.127.0/25",
+            "netmask": "255.255.255.128",
+            "total_addresses": 128,
+            "usable_hosts": 126,
+            "usable_host_range": [
+              "172.100.127.1",
+              "172.100.127.126"
+            ],
+            "broadcast": "172.100.127.127"
+          }
+        ],
+        "remaining_unallocated_cidrs": [
+          "172.100.127.128/25"
+        ]
+      },
+      "computed_answer_provenance": "Python ipaddress, greedy largest-first valid example with power-of-two host capacity and subnet/non-overlap assertions. A valid example need not be the unique solution; source has no solved allocation.",
+      "feasibility_note": "17 subnets fit: 4*1024 + 6*512 + 7*128 = 8064 <= 8192. Leaves one /25 (128 addresses). Do not call the exercise impossible."
+    }
+  ],
+  "page24_ocr_diagnostic": {
+    "engine": "macOS_Vision",
+    "revision": 3,
+    "elapsed_seconds": 0.300792,
+    "raw_result": {
+      "engine": "macOS_Vision",
+      "revision": 3,
+      "fragments": [
+        {
+          "recognizer_score": 1,
+          "text": "Địa chỉ IP Classless",
+          "locator": {
+            "bounds_coordinate_system": "normalized_bottom_left",
+            "image_width": 1800,
+            "image_height": 1350,
+            "frame": 1,
+            "bounds": [
+              0.03298043360349204,
+              0.863093198547563,
+              0.4877882554796007,
+              0.07654197410300922
+            ],
+            "type": "ocr_image"
+          }
+        },
+        {
+          "recognizer_score": 1,
+          "locator": {
+            "image_height": 1350,
+            "bounds_coordinate_system": "normalized_bottom_left",
+            "frame": 1,
+            "image_width": 1800,
+            "bounds": [
+              0.8822674420367259,
+              0.8817829454549957,
+              0.10029069688585068,
+              0.04651162889268656
+            ],
+            "type": "ocr_image"
+          },
+          "text": "cdio™"
+        },
+        {
+          "recognizer_score": 0.5,
+          "locator": {
+            "type": "ocr_image",
+            "bounds": [
+              0.03749999949074079,
+              0.7333333334182099,
+              0.4416666666666667,
+              0.061111111111111116
+            ],
+            "bounds_coordinate_system": "normalized_bottom_left",
+            "frame": 1,
+            "image_width": 1800,
+            "image_height": 1350
+          },
+          "text": "OIGia trị các subnetmask:"
+        },
+        {
+          "text": "128 64",
+          "locator": {
+            "frame": 1,
+            "bounds": [
+              0.1771946057125303,
+              0.677491019251174,
+              0.08456427680121528,
+              0.026800908689145753
+            ],
+            "type": "ocr_image",
+            "bounds_coordinate_system": "normalized_bottom_left",
+            "image_width": 1800,
+            "image_height": 1350
+          },
+          "recognizer_score": 0.5
+        },
+        {
+          "locator": {
+            "image_width": 1800,
+            "image_height": 1350,
+            "frame": 1,
+            "bounds": [
+              0.2921511630876644,
+              0.6782945739902462,
+              0.027616278330485078,
+              0.02519379792390042
+            ],
+            "type": "ocr_image",
+            "bounds_coordinate_system": "normalized_bottom_left"
+          },
+          "text": "32",
+          "recognizer_score": 1
+        },
+        {
+          "locator": {
+            "image_width": 1800,
+            "image_height": 1350,
+            "bounds_coordinate_system": "normalized_bottom_left",
+            "type": "ocr_image",
+            "frame": 1,
+            "bounds": [
+              0.3488372096038345,
+              0.6782945739849975,
+              0.027616278330485022,
+              0.025193797923900307
+            ]
+          },
+          "text": "16",
+          "recognizer_score": 1
+        },
+        {
+          "recognizer_score": 1,
+          "locator": {
+            "image_height": 1350,
+            "bounds": [
+              0.5305232560000279,
+              0.6802325583034277,
+              0.013081394831339521,
+              0.021317829555935308
+            ],
+            "frame": 1,
+            "bounds_coordinate_system": "normalized_bottom_left",
+            "image_width": 1800,
+            "type": "ocr_image"
+          },
+          "text": "2"
+        },
+        {
+          "recognizer_score": 1,
+          "text": "1",
+          "locator": {
+            "type": "ocr_image",
+            "bounds_coordinate_system": "normalized_bottom_left",
+            "image_width": 1800,
+            "image_height": 1350,
+            "frame": 1,
+            "bounds": [
+              0.19040697691814804,
+              0.5213178295857275,
+              0.013081394831339521,
+              0.021317829555935308
+            ]
+          }
+        },
+        {
+          "text": "1",
+          "locator": {
+            "image_width": 1800,
+            "image_height": 1350,
+            "type": "ocr_image",
+            "frame": 1,
+            "bounds": [
+              0.1904069765482979,
+              0.4670542636942545,
+              0.011627907223171668,
+              0.021317829555935308
+            ],
+            "bounds_coordinate_system": "normalized_bottom_left"
+          },
+          "recognizer_score": 1
+        },
+        {
+          "locator": {
+            "image_width": 1800,
+            "bounds_coordinate_system": "normalized_bottom_left",
+            "image_height": 1350,
+            "bounds": [
+              0.19040697656283279,
+              0.41085271387085065,
+              0.01162790722317164,
+              0.023255813033492556
+            ],
+            "type": "ocr_image",
+            "frame": 1
+          },
+          "text": "1",
+          "recognizer_score": 1
+        },
+        {
+          "text": "=",
+          "locator": {
+            "image_width": 1800,
+            "type": "ocr_image",
+            "bounds": [
+              0.6468023256092312,
+              0.5213178297436483,
+              0.014534883499145446,
+              0.019379844665527335
+            ],
+            "image_height": 1350,
+            "bounds_coordinate_system": "normalized_bottom_left",
+            "frame": 1
+          },
+          "recognizer_score": 1
+        },
+        {
+          "text": "=",
+          "locator": {
+            "image_height": 1350,
+            "bounds": [
+              0.646802325471757,
+              0.4670542638214138,
+              0.01598837216695148,
+              0.019379844665527335
+            ],
+            "frame": 1,
+            "type": "ocr_image",
+            "bounds_coordinate_system": "normalized_bottom_left",
+            "image_width": 1800
+          },
+          "recognizer_score": 0.30000001192092896
+        },
+        {
+          "locator": {
+            "image_height": 1350,
+            "bounds_coordinate_system": "normalized_bottom_left",
+            "image_width": 1800,
+            "type": "ocr_image",
+            "bounds": [
+              0.19040697707811696,
+              0.30232558214604444,
+              0.011627906163533541,
+              0.023255813033492556
+            ],
+            "frame": 1
+          },
+          "recognizer_score": 1,
+          "text": "1"
+        },
+        {
+          "recognizer_score": 1,
+          "locator": {
+            "frame": 1,
+            "bounds_coordinate_system": "normalized_bottom_left",
+            "type": "ocr_image",
+            "bounds": [
+              0.19040697656283279,
+              0.2480620161964321,
+              0.01162790722317164,
+              0.023255813033492556
+            ],
+            "image_height": 1350,
+            "image_width": 1800
+          },
+          "text": "1"
+        },
+        {
+          "locator": {
+            "image_height": 1350,
+            "bounds": [
+              0.1904069765482979,
+              0.19186046577007543,
+              0.011627907223171668,
+              0.023255813033492556
+            ],
+            "frame": 1,
+            "bounds_coordinate_system": "normalized_bottom_left",
+            "image_width": 1800,
+            "type": "ocr_image"
+          },
+          "recognizer_score": 1,
+          "text": "1"
+        },
+        {
+          "locator": {
+            "bounds_coordinate_system": "normalized_bottom_left",
+            "image_height": 1350,
+            "frame": 1,
+            "type": "ocr_image",
+            "image_width": 1800,
+            "bounds": [
+              0.19040697655867994,
+              0.13759689985091694,
+              0.011627907223171668,
+              0.023255813033492445
+            ]
+          },
+          "recognizer_score": 1,
+          "text": "1"
+        },
+        {
+          "text": "1",
+          "locator": {
+            "frame": 1,
+            "bounds": [
+              0.2427325583256093,
+              0.4670542637297843,
+              0.013081394831339521,
+              0.021317829555935308
+            ],
+            "image_width": 1800,
+            "bounds_coordinate_system": "normalized_bottom_left",
+            "image_height": 1350,
+            "type": "ocr_image"
+          },
+          "recognizer_score": 1
+        },
+        {
+          "text": "1",
+          "locator": {
+            "frame": 1,
+            "bounds_coordinate_system": "normalized_bottom_left",
+            "bounds": [
+              0.2427325583256093,
+              0.41085271387085065,
+              0.013081394831339521,
+              0.023255813033492556
+            ],
+            "image_width": 1800,
+            "image_height": 1350,
+            "type": "ocr_image"
+          },
+          "recognizer_score": 1
+        },
+        {
+          "recognizer_score": 1,
+          "text": "1",
+          "locator": {
+            "frame": 1,
+            "image_width": 1800,
+            "image_height": 1350,
+            "bounds_coordinate_system": "normalized_bottom_left",
+            "bounds": [
+              0.2427325583256093,
+              0.3565891479793779,
+              0.013081394831339521,
+              0.023255813033492445
+            ],
+            "type": "ocr_image"
+          }
+        },
+        {
+          "locator": {
+            "image_width": 1800,
+            "bounds_coordinate_system": "normalized_bottom_left",
+            "image_height": 1350,
+            "frame": 1,
+            "bounds": [
+              0.2427325579540288,
+              0.30232558149833355,
+              0.011627907223171668,
+              0.02131782955593542
+            ],
+            "type": "ocr_image"
+          },
+          "text": "1",
+          "recognizer_score": 1
+        },
+        {
+          "recognizer_score": 1,
+          "text": "1",
+          "locator": {
+            "image_height": 1350,
+            "bounds_coordinate_system": "normalized_bottom_left",
+            "bounds": [
+              0.24273255850980302,
+              0.24806201625457158,
+              0.011627906163533541,
+              0.023255813033492445
+            ],
+            "frame": 1,
+            "type": "ocr_image",
+            "image_width": 1800
+          }
+        },
+        {
+          "locator": {
+            "image_width": 1800,
+            "bounds": [
+              0.2427325583256093,
+              0.1918604657423899,
+              0.013081394831339521,
+              0.023255813033492556
+            ],
+            "frame": 1,
+            "bounds_coordinate_system": "normalized_bottom_left",
+            "image_height": 1350,
+            "type": "ocr_image"
+          },
+          "text": "1",
+          "recognizer_score": 1
+        },
+        {
+          "locator": {
+            "image_width": 1800,
+            "frame": 1,
+            "type": "ocr_image",
+            "bounds": [
+              0.2427325583256093,
+              0.13759689985091694,
+              0.013081394831339521,
+              0.023255813033492445
+            ],
+            "bounds_coordinate_system": "normalized_bottom_left",
+            "image_height": 1350
+          },
+          "text": "1",
+          "recognizer_score": 1
+        },
+        {
+          "recognizer_score": 1,
+          "text": "1",
+          "locator": {
+            "bounds": [
+              0.2979651163415125,
+              0.410852713832091,
+              0.014534883499145557,
+              0.023255813033492445
+            ],
+            "frame": 1,
+            "type": "ocr_image",
+            "bounds_coordinate_system": "normalized_bottom_left",
+            "image_height": 1350,
+            "image_width": 1800
+          }
+        },
+        {
+          "locator": {
+            "type": "ocr_image",
+            "image_height": 1350,
+            "frame": 1,
+            "bounds": [
+              0.3008720928273677,
+              0.35658914794061813,
+              0.01162790722317164,
+              0.023255813033492445
+            ],
+            "image_width": 1800,
+            "bounds_coordinate_system": "normalized_bottom_left"
+          },
+          "text": "1",
+          "recognizer_score": 1
+        },
+        {
+          "locator": {
+            "type": "ocr_image",
+            "frame": 1,
+            "image_height": 1350,
+            "bounds": [
+              0.2979651163415125,
+              0.30232558204914517,
+              0.014534883499145557,
+              0.023255813033492445
+            ],
+            "bounds_coordinate_system": "normalized_bottom_left",
+            "image_width": 1800
+          },
+          "text": "1",
+          "recognizer_score": 1
+        },
+        {
+          "locator": {
+            "image_height": 1350,
+            "image_width": 1800,
+            "bounds_coordinate_system": "normalized_bottom_left",
+            "bounds": [
+              0.2994186048493496,
+              0.24806201615767232,
+              0.013081394831339521,
+              0.023255813033492445
+            ],
+            "type": "ocr_image",
+            "frame": 1
+          },
+          "text": "1",
+          "recognizer_score": 1
+        },
+        {
+          "locator": {
+            "bounds_coordinate_system": "normalized_bottom_left",
+            "bounds": [
+              0.2994186048493496,
+              0.19186046577007543,
+              0.013081394831339521,
+              0.023255813033492556
+            ],
+            "type": "ocr_image",
+            "image_width": 1800,
+            "image_height": 1350,
+            "frame": 1
+          },
+          "recognizer_score": 1,
+          "text": "1"
+        },
+        {
+          "locator": {
+            "image_height": 1350,
+            "type": "ocr_image",
+            "bounds_coordinate_system": "normalized_bottom_left",
+            "image_width": 1800,
+            "bounds": [
+              0.3008720928273677,
+              0.13759689987860246,
+              0.01162790722317164,
+              0.023255813033492556
+            ],
+            "frame": 1
+          },
+          "recognizer_score": 1,
+          "text": "1"
+        },
+        {
+          "locator": {
+            "bounds": [
+              0.3590116276965537,
+              0.3565891479793779,
+              0.01162790722317164,
+              0.023255813033492445
+            ],
+            "image_width": 1800,
+            "type": "ocr_image",
+            "bounds_coordinate_system": "normalized_bottom_left",
+            "frame": 1,
+            "image_height": 1350
+          },
+          "text": "1",
+          "recognizer_score": 1
+        },
+        {
+          "recognizer_score": 1,
+          "text": "1",
+          "locator": {
+            "image_width": 1800,
+            "type": "ocr_image",
+            "bounds_coordinate_system": "normalized_bottom_left",
+            "frame": 1,
+            "image_height": 1350,
+            "bounds": [
+              0.3575581397209582,
+              0.30038759741401866,
+              0.013081394831339521,
+              0.02519379792390053
+            ]
+          }
+        },
+        {
+          "locator": {
+            "frame": 1,
+            "image_height": 1350,
+            "type": "ocr_image",
+            "bounds_coordinate_system": "normalized_bottom_left",
+            "bounds": [
+              0.3575581397209582,
+              0.2461240315225458,
+              0.013081394831339521,
+              0.02519379792390053
+            ],
+            "image_width": 1800
+          },
+          "text": "1",
+          "recognizer_score": 1
+        },
+        {
+          "text": "1",
+          "locator": {
+            "bounds": [
+              0.3575581397209582,
+              0.1918604657423899,
+              0.013081394831339521,
+              0.023255813033492556
+            ],
+            "type": "ocr_image",
+            "frame": 1,
+            "image_height": 1350,
+            "image_width": 1800,
+            "bounds_coordinate_system": "normalized_bottom_left"
+          },
+          "recognizer_score": 1
+        },
+        {
+          "text": "1",
+          "recognizer_score": 1,
+          "locator": {
+            "bounds": [
+              0.3590116277110885,
+              0.13759689987860246,
+              0.011627907223171696,
+              0.023255813033492556
+            ],
+            "type": "ocr_image",
+            "bounds_coordinate_system": "normalized_bottom_left",
+            "frame": 1,
+            "image_width": 1800,
+            "image_height": 1350
+          }
+        },
+        {
+          "text": "1",
+          "locator": {
+            "image_height": 1350,
+            "type": "ocr_image",
+            "bounds": [
+              0.4156976742372514,
+              0.30038759741401866,
+              0.01162790722317164,
+              0.02519379792390053
+            ],
+            "image_width": 1800,
+            "frame": 1,
+            "bounds_coordinate_system": "normalized_bottom_left"
+          },
+          "recognizer_score": 1
+        },
+        {
+          "text": "1",
+          "recognizer_score": 1,
+          "locator": {
+            "image_width": 1800,
+            "bounds": [
+              0.4156976742372514,
+              0.2480620161964321,
+              0.01162790722317164,
+              0.023255813033492556
+            ],
+            "image_height": 1350,
+            "type": "ocr_image",
+            "frame": 1,
+            "bounds_coordinate_system": "normalized_bottom_left"
+          }
+        },
+        {
+          "recognizer_score": 1,
+          "text": "1",
+          "locator": {
+            "frame": 1,
+            "bounds_coordinate_system": "normalized_bottom_left",
+            "type": "ocr_image",
+            "image_width": 1800,
+            "bounds": [
+              0.41569767422271653,
+              0.19186046577007543,
+              0.01162790722317164,
+              0.023255813033492556
+            ],
+            "image_height": 1350
+          }
+        },
+        {
+          "locator": {
+            "bounds": [
+              0.41569767422271653,
+              0.13759689987860246,
+              0.01162790722317164,
+              0.023255813033492556
+            ],
+            "frame": 1,
+            "image_height": 1350,
+            "image_width": 1800,
+            "type": "ocr_image",
+            "bounds_coordinate_system": "normalized_bottom_left"
+          },
+          "recognizer_score": 1,
+          "text": "1"
+        },
+        {
+          "locator": {
+            "bounds": [
+              0.4738372091209723,
+              0.2480620161964321,
+              0.011627907223171696,
+              0.023255813033492556
+            ],
+            "type": "ocr_image",
+            "bounds_coordinate_system": "normalized_bottom_left",
+            "frame": 1,
+            "image_width": 1800,
+            "image_height": 1350
+          },
+          "recognizer_score": 1,
+          "text": "1"
+        },
+        {
+          "recognizer_score": 1,
+          "text": "1",
+          "locator": {
+            "frame": 1,
+            "bounds_coordinate_system": "normalized_bottom_left",
+            "bounds": [
+              0.47383720910643734,
+              0.19186046577007543,
+              0.011627907223171696,
+              0.023255813033492556
+            ],
+            "image_width": 1800,
+            "image_height": 1350,
+            "type": "ocr_image"
+          }
+        },
+        {
+          "text": "1",
+          "locator": {
+            "image_height": 1350,
+            "type": "ocr_image",
+            "image_width": 1800,
+            "frame": 1,
+            "bounds": [
+              0.47383720910643734,
+              0.13759689987860246,
+              0.011627907223171696,
+              0.023255813033492556
+            ],
+            "bounds_coordinate_system": "normalized_bottom_left"
+          },
+          "recognizer_score": 1
+        },
+        {
+          "recognizer_score": 1,
+          "locator": {
+            "image_width": 1800,
+            "image_height": 1350,
+            "type": "ocr_image",
+            "bounds_coordinate_system": "normalized_bottom_left",
+            "bounds": [
+              0.5319767441501272,
+              0.19186046577007543,
+              0.010174418555365716,
+              0.023255813033492556
+            ],
+            "frame": 1
+          },
+          "text": "1"
+        },
+        {
+          "text": "1",
+          "locator": {
+            "bounds_coordinate_system": "normalized_bottom_left",
+            "frame": 1,
+            "image_height": 1350,
+            "image_width": 1800,
+            "bounds": [
+              0.5319767441501272,
+              0.13759689987860246,
+              0.010174418555365716,
+              0.023255813033492556
+            ],
+            "type": "ocr_image"
+          },
+          "recognizer_score": 1
+        },
+        {
+          "locator": {
+            "bounds_coordinate_system": "normalized_bottom_left",
+            "image_height": 1350,
+            "image_width": 1800,
+            "type": "ocr_image",
+            "frame": 1,
+            "bounds": [
+              0.5901162790338481,
+              0.13759689987860246,
+              0.010174418555365605,
+              0.023255813033492556
+            ]
+          },
+          "recognizer_score": 1,
+          "text": "1"
+        },
+        {
+          "recognizer_score": 1,
+          "text": "128",
+          "locator": {
+            "bounds_coordinate_system": "normalized_bottom_left",
+            "image_height": 1350,
+            "image_width": 1800,
+            "type": "ocr_image",
+            "frame": 1,
+            "bounds": [
+              0.6889534882531613,
+              0.5232558140757269,
+              0.04215116288926868,
+              0.027131782814308503
+            ]
+          }
+        },
+        {
+          "locator": {
+            "image_width": 1800,
+            "bounds": [
+              0.6904069766101136,
+              0.4651162793615796,
+              0.04215116288926868,
+              0.02713178281430839
+            ],
+            "type": "ocr_image",
+            "image_height": 1350,
+            "frame": 1,
+            "bounds_coordinate_system": "normalized_bottom_left"
+          },
+          "recognizer_score": 1,
+          "text": "192"
+        },
+        {
+          "text": "224",
+          "recognizer_score": 1,
+          "locator": {
+            "bounds": [
+              0.690406976622226,
+              0.4108527134915382,
+              0.04215116288926868,
+              0.02519379792390042
+            ],
+            "frame": 1,
+            "image_width": 1800,
+            "image_height": 1350,
+            "type": "ocr_image",
+            "bounds_coordinate_system": "normalized_bottom_left"
+          }
+        },
+        {
+          "text": "240",
+          "locator": {
+            "bounds_coordinate_system": "normalized_bottom_left",
+            "image_width": 1800,
+            "image_height": 1350,
+            "frame": 1,
+            "type": "ocr_image",
+            "bounds": [
+              0.6904069767700827,
+              0.3546511631020033,
+              0.04069767422146264,
+              0.02519379792390042
+            ]
+          },
+          "recognizer_score": 1
+        },
+        {
+          "recognizer_score": 1,
+          "text": "248",
+          "locator": {
+            "type": "ocr_image",
+            "bounds": [
+              0.690406976622226,
+              0.2984496125277969,
+              0.04215116288926868,
+              0.027131782814308503
+            ],
+            "bounds_coordinate_system": "normalized_bottom_left",
+            "image_width": 1800,
+            "image_height": 1350,
+            "frame": 1
+          }
+        },
+        {
+          "locator": {
+            "bounds": [
+              0.6904069766252543,
+              0.24612403112999048,
+              0.04215116288926868,
+              0.027131782814308503
+            ],
+            "image_width": 1800,
+            "image_height": 1350,
+            "type": "ocr_image",
+            "bounds_coordinate_system": "normalized_bottom_left",
+            "frame": 1
+          },
+          "recognizer_score": 1,
+          "text": "252"
+        },
+        {
+          "locator": {
+            "type": "ocr_image",
+            "image_height": 1350,
+            "bounds_coordinate_system": "normalized_bottom_left",
+            "bounds": [
+              0.6904069768838541,
+              0.18798449646106274,
+              0.04215116288926868,
+              0.027131782814308503
+            ],
+            "image_width": 1800,
+            "frame": 1
+          },
+          "recognizer_score": 1,
+          "text": "254"
+        },
+        {
+          "recognizer_score": 0.30000001192092896,
+          "text": "255",
+          "locator": {
+            "frame": 1,
+            "bounds": [
+              0.690406976622226,
+              0.1337209305458018,
+              0.04215116288926868,
+              0.02519379792390042
+            ],
+            "bounds_coordinate_system": "normalized_bottom_left",
+            "image_width": 1800,
+            "type": "ocr_image",
+            "image_height": 1350
+          }
+        },
+        {
+          "text": "Khoa Công nghệ thông tin - Đại học Khoa học tự nhiên TP Hồ Chí Minh",
+          "locator": {
+            "bounds_coordinate_system": "normalized_bottom_left",
+            "frame": 1,
+            "bounds": [
+              0.22383721081466193,
+              0.028888888892788955,
+              0.5261627875434028,
+              0.02537467673972804
+            ],
+            "image_height": 1350,
+            "image_width": 1800,
+            "type": "ocr_image"
+          },
+          "recognizer_score": 1
+        },
+        {
+          "text": "24",
+          "recognizer_score": 1,
+          "locator": {
+            "bounds_coordinate_system": "normalized_bottom_left",
+            "type": "ocr_image",
+            "image_width": 1800,
+            "image_height": 1350,
+            "bounds": [
+              0.9593023258829042,
+              0.03294573677569501,
+              0.027616278330485078,
+              0.02519379792390053
+            ],
+            "frame": 1
+          }
+        },
+        {
+          "locator": {
+            "bounds": [
+              0.02449605252165563,
+              0.006706558619097969,
+              0.05996328989664715,
+              0.01288264521846072
+            ],
+            "type": "ocr_image",
+            "bounds_coordinate_system": "normalized_bottom_left",
+            "image_width": 1800,
+            "frame": 1,
+            "image_height": 1350
+          },
+          "recognizer_score": 0.30000001192092896,
+          "text": "I₽.HO CHIMINH"
+        }
+      ],
+      "warnings": [
+        "OCR nhận dạng chữ, chưa chứng minh công thức/bảng/sơ đồ đúng. Đối chiếu ảnh và sửa bản trích trước khi tạo."
+      ]
+    },
+    "assessment": "Partial recovery only. Raw OCR recognizes decimal results 128..255, but not the 0 result and most bit-0 cells, and misses header weights 8/4/1. It does not reconstruct nine reliable rows. Recognizer score is not accuracy.",
+    "hand_transcription_kept_separate": true,
+    "no_automatic_source_correction_applied": true
+  },
+  "recommended_benchmark_source_policy": "Compare models using identical frozen source text. State whether it is raw extraction or manually reviewed/repaired extraction. Never credit a model for information the extractor silently lost; report extraction loss separately."
+}

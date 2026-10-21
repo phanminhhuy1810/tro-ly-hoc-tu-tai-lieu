@@ -1,0 +1,86 @@
+{
+  "purpose": "Load whole-chapter v20/completion-v7/processor-v9 with computed subnet evidence and candidate guard after343 backend tests; preserve user and original QA failures.",
+  "backup": "study-before-subnet-claims-20261020T170029Z.sqlite3",
+  "active_before": {
+    "jobs": 0,
+    "rooms": 0,
+    "parsing": 0
+  },
+  "table_hashes_before": {
+    "courses": "0009405e23a382a0d7426fdf82e22a8ef8e1211a7f897d4d272016328d804bbe",
+    "course_revisions": "01bc0bebe8c2e57d445b730ecb4af7dcedb901defef496eecd5410aa4647b52d",
+    "sources": "23b5b01728e94fb8a08e2cef841f3770ba2bdc33b7ef9f05d1236e6cc3280967",
+    "extraction_revisions": "1f9d37d10f2f6f8606a30fd454d851a0ad3bfab4738c6f73fd821ec6947e4e4d",
+    "jobs": "c87fb6289e08f4328d5285579af4cc431806dbbd0b951e88a882bdf19658694a",
+    "ai_preferences": "2d8660f5c3ad044ec6c06b0b7020cbcc25665268beb6444d622de33267afe029",
+    "wallets": "e519c925186191a7a1b5bc88a3d138827847898793bc66a0094e26c1722e4af1",
+    "study_sessions": "32c50246ed7eb62b387f27d8fabe0e9aae52943f3ec08f078607b43416c57aa0",
+    "answers": "131815f3c434e6766e634e97f8a76354b4d820e7584086e10df5bce3c9f7c3a1",
+    "coin_ledger": "6379e86f573580a0a09ea9173a7d62dd0005dd6ef3209450801842dbc95ccfc9",
+    "chapter_contexts": "a7e1aacad68aed5708b51ecf6ba37c92592c0d88b9212b7d7cfd6b9ca3bce45e",
+    "question_review_flags": "cbc6e4587aae5e3fb25e7f7f21776546cada308a9fccbead1ecd52b0a78dc680"
+  },
+  "old_pid": 80127,
+  "unchanged_tables": {
+    "courses": true,
+    "course_revisions": true,
+    "sources": true,
+    "extraction_revisions": true,
+    "jobs": true,
+    "ai_preferences": true,
+    "wallets": true,
+    "study_sessions": true,
+    "answers": true,
+    "coin_ledger": true,
+    "chapter_contexts": true,
+    "question_review_flags": true
+  },
+  "sql_version": 18,
+  "active_jobs_after": 0,
+  "health": {
+    "backend": true,
+    "provider_health_checked": false
+  },
+  "new_pid": 80795,
+  "final_reload": {
+    "old_pid": 80795,
+    "backup": "study-before-final-chapter-20261020T171115Z.sqlite3",
+    "active_before": 0,
+    "table_hashes_before": {
+      "courses": "e8d564e0688f00a1c2965b890cadd2960b574c6a28a8283cb160df9de9cc4c3e",
+      "course_revisions": "ddbb0aa253b7a9c36118d20fa619b6dc9222223c499081e70520987ef40f4474",
+      "sources": "9445b1d1ee82366e1ca8d4289b6c562eed9375b8b2c5f96227e4b4ef96a82a98",
+      "extraction_revisions": "08855c6d664ea9033eb6eeeac3a8e532875ec5cc7dfe4c74bacd16da0220cada",
+      "jobs": "7dc99f2b2437df95bbd69c094e574cabfd2fc14effd676c7c3f77cdff378e2e8",
+      "ai_preferences": "bd6a9837004aa172f8d00c316341b92ea1fa1089398e80e17856793b94a08adf",
+      "wallets": "aedb0ca082bd18d9721a604efb36527017cd61afaa0e990ed6bf997a3d40c4b1",
+      "study_sessions": "475c58a1186334368b30d8b5795ac527f82c958a3c6a4f2b19388006158ffa8a",
+      "answers": "dfce4d7458b9540aba827f0ae6a31eac6656df83ae95d5c295fbc7fec3c4b270",
+      "coin_ledger": "9323fd2a507a1874e6ac2f13ec677a4ea3a8ba6829e4f7a2edddae91ca071519",
+      "chapter_contexts": "6ac62c4e705084c31677dc7eeaf41f61931b11225f8ca53767fb4a487b5f9a5a",
+      "question_review_flags": "cbc6e4587aae5e3fb25e7f7f21776546cada308a9fccbead1ecd52b0a78dc680"
+    },
+    "processor_version": "20261021-chapter-subnet-claims-v10",
+    "backend_tests": 344,
+    "unchanged_tables": {
+      "courses": true,
+      "course_revisions": true,
+      "sources": true,
+      "extraction_revisions": true,
+      "jobs": true,
+      "ai_preferences": true,
+      "wallets": true,
+      "study_sessions": true,
+      "answers": true,
+      "coin_ledger": true,
+      "chapter_contexts": true,
+      "question_review_flags": true
+    },
+    "active_jobs_after": 0,
+    "new_pid": 81253,
+    "health": {
+      "backend": true,
+      "provider_health_checked": false
+    }
+  }
+}

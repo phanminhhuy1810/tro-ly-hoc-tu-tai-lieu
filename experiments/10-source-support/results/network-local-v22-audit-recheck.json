@@ -1,0 +1,24 @@
+{
+  "purpose": "Read-only diagnosis of one audit-harness comparison, retaining the original failed audit. No new practice/apply or inference.",
+  "at": "2026-10-20T23:46:35.208258+00:00",
+  "inference_calls": 0,
+  "data_writes": 0,
+  "initial_audit_sha256": "b8db70938d7b0ad8bc766226a19e7e0fe96dc2adfb345b1533501c2fa1c4a767",
+  "initial_audit_retained": true,
+  "initial_failed_check": "Compared complete course DTO from before practice with DTO after practice; completed changes independently of content editing.",
+  "actual_changed_fields": [
+    {
+      "unit_id": "unit-5",
+      "field": "completed",
+      "before": false,
+      "after": true
+    }
+  ],
+  "all_stored_material_and_source_fields_match_old_snapshot": true,
+  "proposal_base_revision_preserved": true,
+  "applied_as_revision": 3,
+  "other_workflow_checks_passed": 20,
+  "model_quality_pass": false,
+  "qa_manual_prose_repair_applied": true,
+  "limit": "The original whole-DTO preview assertion remains false in its report. Tests and saved proposal/version/content checks support non-mutation; this recheck does not pretend to replay an earlier instant."
+}

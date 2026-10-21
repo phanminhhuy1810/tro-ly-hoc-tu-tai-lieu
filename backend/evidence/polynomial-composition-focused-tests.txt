@@ -1,0 +1,24 @@
+/Users/phanminhhuy/Documents/learning resources/Hk4/TDTT/AI-STUDY-HANDOFF/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+test_a_fixed_decomposition_or_wrong_choice_question_is_outside_this_guard (test_polynomial_questions.PolynomialProofTests.test_a_fixed_decomposition_or_wrong_choice_question_is_outside_this_guard) ... ok
+test_exact_coefficients_unary_precedence_implicit_products_and_composition (test_polynomial_questions.PolynomialProofTests.test_exact_coefficients_unary_precedence_implicit_products_and_composition) ... ok
+test_generated_bad_candidate_is_rejected_as_one_stage_not_a_silent_key_repair (test_polynomial_questions.PolynomialProofTests.test_generated_bad_candidate_is_rejected_as_one_stage_not_a_silent_key_repair) ... ok
+test_partial_formulas_unknown_domains_labels_and_unsafe_or_oversized_syntax_are_not_guessed (test_polynomial_questions.PolynomialProofTests.test_partial_formulas_unknown_domains_labels_and_unsafe_or_oversized_syntax_are_not_guessed) ... ok
+test_single_correct_decomposition_and_wrong_key_are_distinguished (test_polynomial_questions.PolynomialProofTests.test_single_correct_decomposition_and_wrong_key_are_distinguished) ... ok
+test_the_actual_dev_v5_saved_question_has_the_same_two_correct_options (test_polynomial_questions.PolynomialProofTests.test_the_actual_dev_v5_saved_question_has_the_same_two_correct_options) ... ok
+test_two_correct_decompositions_are_proved_without_editing_or_selecting_a_key (test_polynomial_questions.PolynomialProofTests.test_two_correct_decompositions_are_proved_without_editing_or_selecting_a_key) ... FAIL
+test_ambiguous_legacy_question_is_quarantined_without_changing_old_attempt (test_polynomial_questions.PolynomialWorkflowTests.test_ambiguous_legacy_question_is_quarantined_without_changing_old_attempt) ... ok
+
+======================================================================
+FAIL: test_two_correct_decompositions_are_proved_without_editing_or_selecting_a_key (test_polynomial_questions.PolynomialProofTests.test_two_correct_decompositions_are_proved_without_editing_or_selecting_a_key)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/phanminhhuy/Documents/learning resources/Hk4/TDTT/AI-STUDY-HANDOFF/backend/tests/test_polynomial_questions.py", line 32, in test_two_correct_decompositions_are_proved_without_editing_or_selecting_a_key
+    with self.assertRaises(ValueError): Question.model_validate(q)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.250s
+
+FAILED (failures=1)

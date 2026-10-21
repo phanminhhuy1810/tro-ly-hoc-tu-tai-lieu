@@ -1,0 +1,118 @@
+{
+  "purpose": "Development numeric-claim checks and fixed grading over the three retained v20 local outputs; not academic accuracy across subjects or independent human review.",
+  "course_id": "7343f7a0b4854d51ac9bb3548943508b",
+  "unit_id": "unit-5",
+  "oracle": {
+    "network": "172.100.96.0",
+    "broadcast": "172.100.127.255",
+    "hosts": 8190,
+    "new_example_broadcast": "10.0.10.255",
+    "new_example_hosts": 254
+  },
+  "checks": {
+    "mcq_key_matches_computed_broadcast_and_host_count": true,
+    "cloze_new_case_broadcast_correct": true,
+    "cloze_given_host_count_correct": true,
+    "short_reference_correct": true,
+    "short_explanation_network_correct": true,
+    "full_context_before_questions": true,
+    "all_approved_text_covered": true,
+    "cloze_prompt_is_new_not_a_source_quotation": true,
+    "two_fixed_questions_grade_correct_without_ai": true,
+    "short_answer_is_self_review_not_ai_score": true
+  },
+  "inference_calls": 0,
+  "human_reviewed": false,
+  "citation_limit": "Reference IDs belong to the approved final-exercise unit. Whether a reader can verify every underlying principle directly at those citations still requires source support review; valid IDs alone do not prove it.",
+  "session_id": "17d32825624e436284e0a40a3987cfd6",
+  "grades": [
+    {
+      "kind": "mcq",
+      "result": {
+        "correct": true,
+        "reference": "Broadcast: 172.100.127.255; Số host hợp lệ: 8190",
+        "explanation": "Với prefix /19, mạng có 13 bit dành cho HostID. Tổng số địa chỉ là 2^13 = 8192. Địa chỉ broadcast là địa chỉ có tất cả các bit HostID bằng 1 (172.100.127.255). Số host hợp lệ là tổng số địa chỉ trừ đi Net Addr và Broadcast (8192 - 2 = 8190).",
+        "rubric": [],
+        "source_refs": [
+          "f5f69f018a27466eb3176ac560cf63d8:2:32"
+        ],
+        "grading": "fixed"
+      }
+    },
+    {
+      "kind": "cloze",
+      "result": {
+        "correct": true,
+        "reference": "10.0.10.255",
+        "explanation": "Với prefix /24, 24 bit đầu là NetID và 8 bit cuối là HostID. Địa chỉ broadcast được xác định bằng cách giữ nguyên NetID và đặt tất cả các bit HostID lên 1, tương ứng với 10.0.10.255. Số host hợp lệ là 2^8 - 2 = 254.",
+        "rubric": [],
+        "source_refs": [
+          "f5f69f018a27466eb3176ac560cf63d8:2:32"
+        ],
+        "grading": "fixed"
+      }
+    },
+    {
+      "kind": "short_answer",
+      "result": {
+        "correct": null,
+        "reference": "Địa chỉ broadcast là 172.100.127.255 và số lượng host IP hợp lệ là 8190.",
+        "explanation": "Với prefix /19, phần NetID chiếm 19 bit, phần HostID còn lại 13 bit (32 - 19 = 13). Địa chỉ network là 172.100.96.0. Địa chỉ broadcast được xác định bằng cách bật tất cả các bit trong phần HostID lên 1, tương ứng với 172.100.127.255. Số lượng host hợp lệ được tính bằng công thức 2^n - 2 (với n là số bit HostID), tức là 2^13 - 2 = 8190.",
+        "rubric": [
+          "Xác định đúng địa chỉ broadcast là 172.100.127.255.",
+          "Tính toán chính xác số lượng host hợp lệ là 8190."
+        ],
+        "source_refs": [
+          "f5f69f018a27466eb3176ac560cf63d8:2:32"
+        ],
+        "grading": "self_review"
+      }
+    }
+  ],
+  "result": {
+    "score": 2,
+    "fixed_total": 2,
+    "self_review_count": 1,
+    "course_revision": 2,
+    "session_id": "17d32825624e436284e0a40a3987cfd6",
+    "assisted_count": 0,
+    "assessment": "self_study_not_proctored",
+    "rewards": [
+      {
+        "amount": 1,
+        "requested": 1,
+        "capped": false,
+        "replayed": false,
+        "event_key": "practice:2026-10-20:7343f7a0b4854d51ac9bb3548943508b:7054b417388849800116203e00996d63525cae3381c97b043be70681eda325eb",
+        "policy_version": "dev-proposal-20261015-v2"
+      },
+      {
+        "amount": 1,
+        "requested": 1,
+        "capped": false,
+        "replayed": false,
+        "event_key": "mission:practice:2026-10-20",
+        "policy_version": "dev-proposal-20261015-v2"
+      },
+      {
+        "amount": 2,
+        "requested": 2,
+        "capped": false,
+        "replayed": false,
+        "event_key": "achievement:first_session",
+        "policy_version": "dev-proposal-20261015-v2"
+      }
+    ]
+  },
+  "wallet_after_practice": {
+    "balance": 24,
+    "held": 0,
+    "available": 24,
+    "policy_version": "dev-proposal-20261015-v2",
+    "policy_proposed": true,
+    "cash_payments": false,
+    "enforcement_enabled": true
+  },
+  "wallet_note": "Practice may earn proposed activity rewards. The inference trial itself kept20Coin before/after; no cash or provider inference occurred in this audit.",
+  "all_checks_passed": true
+}

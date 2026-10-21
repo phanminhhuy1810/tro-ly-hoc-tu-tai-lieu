@@ -1,0 +1,62 @@
+{
+  "purpose": "Offline replay of exactly one captured v16 development output; no additional inference or DB edit.",
+  "captured_file": "rejection-net-dev-prefix-ordering-v16.json",
+  "before": {
+    "status": "failed",
+    "error": "Nguồn trích chưa có quy trình đánh số để kiểm chứng thứ tự.",
+    "processor": "20261019-source-cloze-isolation-v5"
+  },
+  "after": {
+    "status": "accepted",
+    "processor": "20261020-scoped-sequence-context-v6",
+    "output": {
+      "reason": "",
+      "question": {
+        "kind": "ordering",
+        "prompt": "Hãy sắp xếp các bước đúng để tìm hai biên từ một IPv4/prefix:",
+        "options": [
+          "Lấy đầu khối làm network và cuối khối làm broadcast.",
+          "Đọc prefix để xác định số bit host.",
+          "Bỏ hai biên để lấy dải host dùng được.",
+          "Tính kích thước khối địa chỉ từ số bit host.",
+          "Tìm khối chứa địa chỉ đã cho."
+        ],
+        "left": [],
+        "answer": [
+          1,
+          3,
+          4,
+          0,
+          2
+        ],
+        "explanation": "Quy trình gồm 5 bước: xác định số bit host từ prefix, tính kích thước khối, tìm khối chứa địa chỉ, xác định network/broadcast và cuối cùng là loại bỏ hai biên để tìm dải host.",
+        "source_refs": [
+          "d3d343e5cc954975affd3a51f61b9ccc:2:3",
+          "d3d343e5cc954975affd3a51f61b9ccc:2:4",
+          "d3d343e5cc954975affd3a51f61b9ccc:2:5",
+          "d3d343e5cc954975affd3a51f61b9ccc:2:6",
+          "d3d343e5cc954975affd3a51f61b9ccc:2:7"
+        ],
+        "rubric": []
+      }
+    },
+    "audit": {
+      "ordering_answer_derived": 1,
+      "ordering_answer_method": "explicit_scoped_source_steps_v2",
+      "ordering_step_labels_removed": 0,
+      "ordering_model_options_sha256": "3a62935204d8997d5aaa5aa988630a2d7f2e678e528db9a9cf98e54e9ca91495",
+      "reference_alias_count": 8,
+      "reference_alias_map_sha256": "42a675a0c43fce11eb2b4caaece23546ebf01529c8ac3293250d72aead32e7be"
+    }
+  },
+  "checks": {
+    "answer_matches_explicit_step_order": true,
+    "options_not_rewritten": true,
+    "source_refs_not_rewritten": true,
+    "same_raw_sha256": "f6ff66c655f4a024ef25b48526e1d3f623b4a234663ba460e544f6977f1c39cc"
+  },
+  "all_passed": true,
+  "inference_calls": 0,
+  "data_mutations": 0,
+  "limit": "Captured reproduction is separate from original baseline job; do not claim its raw is the original request."
+}

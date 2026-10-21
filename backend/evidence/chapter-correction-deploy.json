@@ -1,0 +1,51 @@
+{
+  "purpose": "Deploy tested whole-chapter scoped correction and resumable preview. No default-model or source/key/history rewrite.",
+  "at": "2026-10-21T06:06:10.265137+00:00",
+  "old_pid": 3585,
+  "active_before": {
+    "jobs": 0,
+    "rooms": 0,
+    "parsing": 0
+  },
+  "backup": "study-before-chapter-correction-20261021T060610Z.sqlite3",
+  "table_hashes_before": {
+    "courses": "4e348094c115556ac75e13d75ecfa3cb96d5b2db3482bca7ad005886e23e3a80",
+    "course_revisions": "8ab0ef0b64b1c0d016f1ca1c30de769fa5159b572ba1735f52aac12a042defe4",
+    "sources": "98ebad7af03f60cb197fc8d5b6cd8287a201fea7ff4e2493144a7c54cd300f43",
+    "extraction_revisions": "1dd24953d9dcf06da72f9ed1fe145a76d9efa57fe4e13dca844915e51399c89a",
+    "jobs": "798d286f344aa01a951bff6df758cb751027ff74a5b36295e44d8aaf2f85c127",
+    "ai_preferences": "704caaf10f25affedf0ad8ade10082ffae9b472d0660412f7961ad09e525e0a5",
+    "wallets": "a15738478c551dc3a7ffc14f37ab358aff0be7a63a4c0745a8990e184a881efa",
+    "study_sessions": "8d5f14c201c83835922c2f5d3746de66a41fe4de98780f1d89a11c120e267908",
+    "answers": "86d4aed4e87169da374ba9c7ab7785f4018014406fc41b3c06e36a9384987648",
+    "coin_ledger": "dd931c209aa8abec88a536b5fdfe703f3ca650160c0e55456bc44859beefeb7a",
+    "chapter_contexts": "a7b4c4aa6c1c7524a1d80648d37f0b5adbebbf6c73881228c95d1cd058d1e223",
+    "question_review_flags": "03d0afb9daed578e91cd4e395f4eac80e7dce21060a0af2252f1cc293360c8db"
+  },
+  "backend_tests": 400,
+  "frontend_tests": 71,
+  "correction_prompt_version": "20261021-whole-chapter-scoped-correction-v3",
+  "unchanged_tables": {
+    "courses": true,
+    "course_revisions": true,
+    "sources": true,
+    "extraction_revisions": true,
+    "jobs": true,
+    "ai_preferences": true,
+    "wallets": true,
+    "study_sessions": true,
+    "answers": true,
+    "coin_ledger": true,
+    "chapter_contexts": true,
+    "question_review_flags": true
+  },
+  "sql_version": 18,
+  "active_jobs_after": 0,
+  "health": {
+    "backend": true,
+    "provider_health_checked": false
+  },
+  "frontend_correction_script_loaded": true,
+  "local_qa_model_installed": true,
+  "new_pid": 6094
+}

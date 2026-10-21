@@ -1,0 +1,52 @@
+{
+  "checked_at": "2026-10-16T23:03:38.976Z",
+  "draft": "Để tìm subnet của địa chỉ",
+  "viewport": {
+    "height": 900,
+    "width": 1280
+  },
+  "stop_enabled": true,
+  "matching_before": [
+    "tính số bit host",
+    "tính số bit host"
+  ],
+  "model_restored": {
+    "selected": "gemini:gemini-2.5-flash",
+    "save_notice": "Đã lưu model cho những lượt AI tiếp theo."
+  },
+  "cancelled_draft_restored_seen_in_dom": true,
+  "inline_completed_preserved": {
+    "matching": [
+      "tính số bit host",
+      "tính số bit host"
+    ],
+    "reply": "AI · theo câu/đoạn nàyBạn đang chọn \"tính số bit host\" cho cả bước (2) và bước (5). Tuy nhiên, theo quy trình 5 bước trong tài liệu, bước (2) là \"tính số bit host\" và bước (5) là \"đếm host dùng được\".\n\nSự khác biệt chính giữa hai bước này là:\n\n*   **Bước (2) - Tính số bit host:** Đây là bước đầu tiên để xác định số lượng bit dành cho phần host trong một địa chỉ IP. Bạn lấy tổng số bit của địa chỉ IPv4 (32 bit) trừ đi số bit của prefix (ví dụ: 26 bit cho /26). Kết quả là số bit host. Ví dụ, với subnet /26, số bit host là 32 - 26 = 6 bit. Bước này chỉ đơn thuần là một phép tính toán học để biết \"có bao nhiêu bit\" dành cho host.\n\n*   **Bước (5) - Đếm host dùng được:** Đây là bước cuối cùng trong quy trình, sau khi bạn đã xác định được địa chỉ mạng (network address) và địa chỉ quảng bá (broadcast address). Từ tổng số host có thể có (được tính từ số bit host, ví dụ 2^6 = 64 host), bạn sẽ trừ đi 2 địa chỉ đặc biệt này (network và broadcast) để có được số lượng địa chỉ IP thực tế có thể gán cho các thiết bị trong mạng. Ví dụ, với 6 bit host, tổng số host là 2^6 = 64. Số host dùng được là 64 - 2 = 62 host. Bước này là về việc \"đếm số lượng host thực tế có thể sử dụng\" sau khi đã loại trừ các địa chỉ không thể gán.Lưu vào sổ tay",
+    "unsubmitted": true
+  },
+  "inline_draft": "Bạn đang chọn \"tính số bit",
+  "inline_final": {
+    "input": "",
+    "matching": [
+      "tính số bit host",
+      "tính số bit host"
+    ],
+    "reply": "AI · theo câu/đoạn nàyBạn đang chọn \"tính số bit host\" cho cả bước (2) và bước (5) trong bản nháp của mình. Tuy nhiên, theo quy trình 5 bước trong tài liệu, bước (2) là \"tính số bit host\" và bước (5) là \"đếm host dùng được\".\n\nSự khác biệt chính giữa hai bước này là:\n\n*   **Bước (2) - Tính số bit host:** Đây là bước đầu tiên để xác định số lượng bit dành cho phần host trong một địa chỉ IP. Bạn lấy tổng số bit của địa chỉ IPv4 (32 bit) trừ đi số bit của prefix (ví dụ: 26 bit cho /26). Kết quả là số bit host. Ví dụ, với địa chỉ 192.168.1.70/26, số bit host là 32 - 26 = 6 bit. Bước này chỉ đơn thuần là một phép tính toán học để biết \"có bao nhiêu bit\" dành cho host.Lưu vào sổ tay",
+    "unsubmitted": true
+  },
+  "console_errors": [],
+  "inline_partial_seen_before_finish": true,
+  "same_matching_after_help": true,
+  "scope": "Existing desktop QA course and browser profile; self-authored short IPv4 source, not an independent human trial or AI quality benchmark",
+  "notes": [
+    "Native indexed tab click failed, used documented Playwright controls.",
+    "First inline observer used the wrong descendant selector and missed a completed Gemini request; corrected selector then observed a partial reply.",
+    "External provider consent persisted across background render after fix; saved Gemini before inline trial."
+  ],
+  "viewport_reset": true,
+  "screenshots": {
+    "global": "preview/screenshots/streaming-chat-desktop.png",
+    "global_shows": "Unvalidated partial text and enabled Stop action in full chat",
+    "inline": "preview/screenshots/streaming-inline-desktop.png",
+    "inline_shows": "Full response history and question drafts; transient inline preview was verified separately in the rendered DOM"
+  }
+}

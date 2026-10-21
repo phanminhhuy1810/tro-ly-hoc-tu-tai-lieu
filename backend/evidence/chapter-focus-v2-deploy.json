@@ -1,0 +1,51 @@
+{
+  "purpose": "Load kind-compatible chapter focus, private reader-view filtering and exact polynomial-composition guard after387tests. No source/key/history rewrite or default-model change.",
+  "at": "2026-10-21T05:17:41.547963+00:00",
+  "old_pid": 1630,
+  "active_before": {
+    "jobs": 0,
+    "rooms": 0,
+    "parsing": 0
+  },
+  "backup": "study-before-kind-focus-20261021T051741Z.sqlite3",
+  "table_hashes_before": {
+    "courses": "518990120cdf6e48750d14a7bf50703c11e7b899c5d95a3400681a2e84073ea5",
+    "course_revisions": "b0cef82a3af451b76271cfb506d54a6aece338fe93a0777757bbbe897f3b4c18",
+    "sources": "fcedbb2f648e95d73c0aba4577f33da8c0c269a15ed4565949e9cb0b7c75240b",
+    "extraction_revisions": "bdf6fa26aa0fc4c4533ed10e20f4cdcb2dc9b6e3fb7f52d6e45ee0fe078db58d",
+    "jobs": "67770ee282b97fea702412e2fcfbfed2e486e1463c93c5c5eefc847c1e9f29f9",
+    "ai_preferences": "71eedcc3a3a4afc985dfe0f18110ea8c8655236caeb1a3757fec1395afc9cc9a",
+    "wallets": "1c538bb22e691410ec36f796c3fb340844f246c63c42e32e5d8bcdf2eb660511",
+    "study_sessions": "ede80f9a7c7e4f7dd497e9908791bfad9d87852852acde860f50760e95009adf",
+    "answers": "9a3e292582aa12554a11570367986cf59375a68d27f245c83658e37a6a903360",
+    "coin_ledger": "e98b8a3809f1fc234560c2c8428dbeb921cc2584eb3886edc21d7f7eaaae8a39",
+    "chapter_contexts": "e2a27704cd367169bc750eb1547b294c8de572916fc40f10501760d36a11f221",
+    "question_review_flags": "85729a23fff917290d9b28111c7cdc2a312aeb6626152e9234760cc09c3208d0"
+  },
+  "backend_tests": 387,
+  "lesson_prompt_version": "20261021-kind-compatible-chapter-focus-v26",
+  "completion_prompt_version": "20261021-missing-question-kind-focus-v12",
+  "processor_version": "20261021-polynomial-composition-proof-v13",
+  "wire_version": 20,
+  "unchanged_tables": {
+    "courses": true,
+    "course_revisions": true,
+    "sources": true,
+    "extraction_revisions": true,
+    "jobs": true,
+    "ai_preferences": true,
+    "wallets": true,
+    "study_sessions": true,
+    "answers": true,
+    "coin_ledger": true,
+    "chapter_contexts": true,
+    "question_review_flags": true
+  },
+  "sql_version": 18,
+  "active_jobs_after": 0,
+  "new_pid": 3585,
+  "health": {
+    "backend": true,
+    "provider_health_checked": false
+  }
+}

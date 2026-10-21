@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-18",
+  "purpose": "Desktop model-picker persistence on a separate localhost QA profile; no model inference or human trial",
+  "origin": "http://localhost:8770",
+  "route": "#settings",
+  "checks": {
+    "gemma_local_option_available": true,
+    "explicit_selection_saved": true,
+    "selected_after_reload": "gemma4:12b-mlx · máy này",
+    "save_button_disabled_for_current_selection": true,
+    "external_consent_not_required_for_local": true,
+    "kaggle_offline_option_disabled": true,
+    "human_127_origin_profile_unchanged": true
+  },
+  "screenshot": "preview/screenshots/gemma-local-model-picker.png",
+  "ai_generation_requests": 0,
+  "quality_note": "Selected and reachable does not mean all five question-generation formats passed; the real Gemma pipeline remains failed with two valid stages preserved.",
+  "temporary_tab_closed": true
+}

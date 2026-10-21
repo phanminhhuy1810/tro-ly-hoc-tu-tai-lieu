@@ -1,0 +1,67 @@
+{
+  "purpose": "Actual loopback HTTP deletion/restoration on a new, explicitly labelled QA profile.\n\nNo human data deletion. One bounded real local lesson over a self-authored\nnetworking fixture supports the sharing/history checks; not a quality benchmark.\n",
+  "fixture": "experiments/05-office-inputs/fixtures/network-notes.txt",
+  "checks": {},
+  "initial_probe_failure": {
+    "status": 409,
+    "step": "publication-preview before any lesson existed",
+    "message": "Tạo và xem lại ít nhất một phần trước khi chia sẻ.",
+    "classification": "Expected business guard; original harness lacked a ready lesson."
+  },
+  "generation_job": {
+    "id": "d8f824c6f5734a6fb824e3fb3284116c",
+    "task": "lesson",
+    "context": {
+      "course_id": "a012bc25502649498a180a773fc1efa9",
+      "unit_id": "unit-1",
+      "expected_revision": 2
+    },
+    "status": "failed",
+    "attempts": 1,
+    "provider": {
+      "provider": "ollama_local",
+      "model": "gemma4:12b-mlx",
+      "model_choice_id": "local:gemma4:12b-mlx",
+      "selection_revision": 1,
+      "prompt_version": "20261019-cloze-isolation-v14",
+      "schema_version": 17,
+      "processor_version": "20261019-source-cloze-isolation-v5"
+    },
+    "result": null,
+    "partial": {},
+    "feedback_deferred": false,
+    "error": {
+      "message": "AI referenced a fragment outside the approved source snapshot"
+    },
+    "progress": {
+      "phase": "failed",
+      "requests": [
+        {
+          "index": 1,
+          "schema": "LessonReading",
+          "phase": "failed",
+          "streaming": true,
+          "started_at": "2026-10-20T10:21:05.793712+00:00",
+          "first_chunk_ms": 9209.995,
+          "first_text_ms": null,
+          "elapsed_ms": null,
+          "chunks": 1297,
+          "characters": 2268,
+          "usage": {},
+          "protocol_fallbacks": 1
+        }
+      ],
+      "preview": null,
+      "planned_stages": 2,
+      "saved_stages": 0,
+      "reused_stages": 0,
+      "started_at": "2026-10-20T10:21:05.792242+00:00",
+      "completed_at": "2026-10-20T10:21:51.912965+00:00",
+      "elapsed_ms": 46120.732,
+      "version": 185,
+      "updated_at": "2026-10-20T10:21:51.913006+00:00"
+    }
+  },
+  "all_passed": false,
+  "failure": "Bounded real lesson failed; kept partial, did not retry or publish."
+}

@@ -1,0 +1,10 @@
+{
+  "purpose": "Public handoff link/hash consistency and exact-known-secret scan, not proof of model quality",
+  "private_files_checked": 14,
+  "wrong_private_modes": [],
+  "public_matches_of_known_private_values": [],
+  "missing_relative_markdown_targets": [],
+  "academic_source_sha256": "10477b780feb504d649ad458cc381ed05eca4f47bc162ea4a8fb6eeb70c3a66e",
+  "external_zip_updated": false,
+  "passed": true
+}

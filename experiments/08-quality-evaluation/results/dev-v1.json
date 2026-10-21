@@ -1,0 +1,4380 @@
+{
+  "purpose": "Frozen three-subject notes evaluation over local production HTTP; agent-authored sources and labels, not independent user/instructor review.",
+  "split": "dev",
+  "run_id": "dev-v1",
+  "started_at": "2026-10-20T11:13:20.477163+00:00",
+  "model": "local:gemma4:12b-mlx",
+  "production_sha256": "2bde55f1fb4c7dc4add9927766747ae42a3701cd8229e07519d75f5fe7b1faa3",
+  "split_hashes": {
+    "dev.json": "e995b36a9de2802328b7ffd8d93e27aef3c6f4dfb0c7ca68f0291dc6bdb04b21",
+    "final.json": "b9217a5a2ec433b3f449ad470ff473a13a092aede141562105234b0d81997d98"
+  },
+  "runs": [
+    {
+      "case_id": "net-dev-prefix",
+      "subject": "Mạng máy tính",
+      "started_at": "2026-10-20T11:13:20.496961+00:00",
+      "oracle": {
+        "verification": "computed",
+        "network": "10.12.7.128",
+        "broadcast": "10.12.7.255",
+        "first_host": "10.12.7.129",
+        "last_host": "10.12.7.254",
+        "mask": "255.255.255.128",
+        "host_bits": 7,
+        "total_addresses": 128,
+        "usable_hosts": 126
+      },
+      "expected_source_ordering": true,
+      "source_sha256": "3d10baf8b4f76ce753b5baee11bcfb66d6c4d373658cb38a5e528ea1ac38585b",
+      "events": [
+        {
+          "status": "running",
+          "phase": "connecting",
+          "saved_stages": 0,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:13:21.124390+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "receiving",
+          "saved_stages": 0,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:13:29.907780+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "connecting",
+          "saved_stages": 1,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:13:55.741194+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "receiving",
+          "saved_stages": 1,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:13:59.847071+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "connecting",
+          "saved_stages": 2,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:14:05.603790+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "receiving",
+          "saved_stages": 2,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:14:09.295105+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "connecting",
+          "saved_stages": 3,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:14:12.570357+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "receiving",
+          "saved_stages": 3,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:14:15.848601+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "connecting",
+          "saved_stages": 4,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:14:22.432047+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "receiving",
+          "saved_stages": 4,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:14:26.122201+00:00"
+        },
+        {
+          "status": "failed",
+          "phase": "failed",
+          "saved_stages": 4,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:14:34.030881+00:00"
+        },
+        {
+          "status": "failed",
+          "phase": "failed",
+          "saved_stages": 4,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:20:58.859348+00:00"
+        }
+      ],
+      "qa_owner_id": "68fca8d155df4a1186b46bff3409ab61",
+      "default_model_before": "kaggle:qwen3.8:27b",
+      "selection": {
+        "model_id": "local:gemma4:12b-mlx",
+        "revision": 1,
+        "provider": "ollama_local",
+        "model": "gemma4:12b-mlx",
+        "reference_codec": "scoped-reference-aliases-v1",
+        "external": false
+      },
+      "source_id": "d3d343e5cc954975affd3a51f61b9ccc",
+      "course_id": "28a95b23812a446fbfd201e139a220e3",
+      "source_snapshot": {
+        "id": "d3d343e5cc954975affd3a51f61b9ccc",
+        "metadata": {
+          "name": "QA net-dev-prefix — IPv4 và subnet /25.txt",
+          "sha256": "3d10baf8b4f76ce753b5baee11bcfb66d6c4d373658cb38a5e528ea1ac38585b",
+          "bytes": 731,
+          "warnings": [],
+          "subject_suggestion": ""
+        },
+        "status": "ready",
+        "revision": 2,
+        "reviewed": true,
+        "fragments": [
+          {
+            "text": "IPv4 dài 32 bit. Với prefix /25, phần mạng có 25 bit và phần host có 7 bit. Một subnet /25 có 128 địa chỉ; trong subnet thông thường này có 126 địa chỉ host dùng được khi bỏ hai biên.",
+            "locator": {
+              "type": "line",
+              "line": 1,
+              "character_start": 0
+            },
+            "id": "d3d343e5cc954975affd3a51f61b9ccc:2:0",
+            "original_text": "IPv4 dài 32 bit. Với prefix /25, phần mạng có 25 bit và phần host có 7 bit. Một subnet /25 có 128 địa chỉ; trong subnet thông thường này có 126 địa chỉ host dùng được khi bỏ hai biên.",
+            "edited_by_user": false,
+            "needs_review": false,
+            "review_status": "user_confirmed_not_accuracy_verified"
+          },
+          {
+            "text": "Ví dụ 10.12.7.201/25: network là 10.12.7.128, broadcast là 10.12.7.255. Dải host dùng được là 10.12.7.129 đến 10.12.7.254. Subnet mask là 255.255.255.128.",
+            "locator": {
+              "type": "line",
+              "line": 2,
+              "character_start": 0
+            },
+            "id": "d3d343e5cc954975affd3a51f61b9ccc:2:1",
+            "original_text": "Ví dụ 10.12.7.201/25: network là 10.12.7.128, broadcast là 10.12.7.255. Dải host dùng được là 10.12.7.129 đến 10.12.7.254. Subnet mask là 255.255.255.128.",
+            "edited_by_user": false,
+            "needs_review": false,
+            "review_status": "user_confirmed_not_accuracy_verified"
+          },
+          {
+            "text": "Quy trình tìm hai biên từ một IPv4/prefix:",
+            "locator": {
+              "type": "line",
+              "line": 3,
+              "character_start": 0
+            },
+            "id": "d3d343e5cc954975affd3a51f61b9ccc:2:2",
+            "original_text": "Quy trình tìm hai biên từ một IPv4/prefix:",
+            "edited_by_user": false,
+            "needs_review": false,
+            "review_status": "user_confirmed_not_accuracy_verified"
+          },
+          {
+            "text": "1. Đọc prefix để xác định số bit host.",
+            "locator": {
+              "type": "line",
+              "line": 4,
+              "character_start": 0
+            },
+            "id": "d3d343e5cc954975affd3a51f61b9ccc:2:3",
+            "original_text": "1. Đọc prefix để xác định số bit host.",
+            "edited_by_user": false,
+            "needs_review": false,
+            "review_status": "user_confirmed_not_accuracy_verified"
+          },
+          {
+            "text": "2. Tính kích thước khối địa chỉ từ số bit host.",
+            "locator": {
+              "type": "line",
+              "line": 5,
+              "character_start": 0
+            },
+            "id": "d3d343e5cc954975affd3a51f61b9ccc:2:4",
+            "original_text": "2. Tính kích thước khối địa chỉ từ số bit host.",
+            "edited_by_user": false,
+            "needs_review": false,
+            "review_status": "user_confirmed_not_accuracy_verified"
+          },
+          {
+            "text": "3. Tìm khối chứa địa chỉ đã cho.",
+            "locator": {
+              "type": "line",
+              "line": 6,
+              "character_start": 0
+            },
+            "id": "d3d343e5cc954975affd3a51f61b9ccc:2:5",
+            "original_text": "3. Tìm khối chứa địa chỉ đã cho.",
+            "edited_by_user": false,
+            "needs_review": false,
+            "review_status": "user_confirmed_not_accuracy_verified"
+          },
+          {
+            "text": "4. Lấy đầu khối làm network và cuối khối làm broadcast.",
+            "locator": {
+              "type": "line",
+              "line": 7,
+              "character_start": 0
+            },
+            "id": "d3d343e5cc954975affd3a51f61b9ccc:2:6",
+            "original_text": "4. Lấy đầu khối làm network và cuối khối làm broadcast.",
+            "edited_by_user": false,
+            "needs_review": false,
+            "review_status": "user_confirmed_not_accuracy_verified"
+          },
+          {
+            "text": "5. Bỏ hai biên để lấy dải host dùng được.",
+            "locator": {
+              "type": "line",
+              "line": 8,
+              "character_start": 0
+            },
+            "id": "d3d343e5cc954975affd3a51f61b9ccc:2:7",
+            "original_text": "5. Bỏ hai biên để lấy dải host dùng được.",
+            "edited_by_user": false,
+            "needs_review": false,
+            "review_status": "user_confirmed_not_accuracy_verified"
+          }
+        ]
+      },
+      "unit_id": "unit-1",
+      "wallet_before": {
+        "balance": 20,
+        "held": 0,
+        "available": 20,
+        "policy_version": "dev-proposal-20261015-v2",
+        "policy_proposed": true,
+        "cash_payments": false,
+        "enforcement_enabled": true
+      },
+      "job_id": "0a17a39590764c9f93c07c3f4518c906",
+      "job": {
+        "id": "0a17a39590764c9f93c07c3f4518c906",
+        "task": "lesson",
+        "context": {
+          "course_id": "28a95b23812a446fbfd201e139a220e3",
+          "unit_id": "unit-1",
+          "expected_revision": 1
+        },
+        "status": "failed",
+        "attempts": 1,
+        "provider": {
+          "provider": "ollama_local",
+          "model": "gemma4:12b-mlx",
+          "reference_codec": "scoped-reference-aliases-v1",
+          "model_choice_id": "local:gemma4:12b-mlx",
+          "selection_revision": 1,
+          "prompt_version": "20261020-scoped-reference-wire-v16",
+          "schema_version": 17,
+          "processor_version": "20261019-source-cloze-isolation-v5"
+        },
+        "result": null,
+        "partial": {
+          "reading": {
+            "title": "Phân biệt prefix, số địa chỉ, network, broadcast và host dùng được trong ví dụ /25.",
+            "sections": [
+              {
+                "title": "Cấu trúc IPv4 và Subnet /25",
+                "text": "IPv4 dài 32 bit. Với prefix /25, phần mạng có 25 bit và phần host có 7 bit. Một subnet /25 có 128 địa chỉ; trong subnet thông thường này có 126 địa chỉ host dùng được khi bỏ hai biên.",
+                "source_refs": [
+                  "d3d343e5cc954975affd3a51f61b9ccc:2:0"
+                ]
+              },
+              {
+                "title": "Ví dụ thực tế với 10.12.7.201/25",
+                "text": "Với địa chỉ 10.12.7.201/25: network là 10.12.7.128, broadcast là 10.12.7.255. Dải host dùng được là 10.12.7.129 đến 10.12.7.254. Subnet mask là 255.255.255.128.",
+                "source_refs": [
+                  "d3d343e5cc954975affd3a51f61b9ccc:2:1"
+                ]
+              },
+              {
+                "title": "Quy trình tìm hai biên",
+                "text": "Quy trình gồm: 1. Đọc prefix để xác định số bit host. 2. Tính kích thước khối địa chỉ. 3. Tìm khối chứa địa chỉ đã cho. 4. Lấy đầu khối làm network và cuối khối làm broadcast. 5. Bỏ hai biên để lấy dải host dùng được.",
+                "source_refs": [
+                  "d3d343e5cc954975affd3a51f61b9ccc:2:2",
+                  "d3d343e5cc954975affd3a51f61b9ccc:2:3",
+                  "d3d343e5cc954975affd3a51f61b9ccc:2:4",
+                  "d3d343e5cc954975affd3a51f61b9ccc:2:5",
+                  "d3d343e5cc954975affd3a51f61b9ccc:2:6",
+                  "d3d343e5cc954975affd3a51f61b9ccc:2:7"
+                ]
+              }
+            ],
+            "cards": [
+              {
+                "front": "Một subnet /25 có bao nhiêu địa chỉ và bao nhiêu địa chỉ host dùng được?",
+                "back": "Một subnet /25 có 128 địa chỉ; trong đó có 126 địa chỉ host dùng được khi bỏ hai biên.",
+                "source_refs": [
+                  "d3d343e5cc954975affd3a51f61b9ccc:2:0"
+                ]
+              },
+              {
+                "front": "Xác định network, broadcast và dải host cho 10.12.7.201/25.",
+                "back": "Network: 10.12.7.128; Broadcast: 10.12.7.255; Dải host: 10.12.7.129 đến 10.12.7.254.",
+                "source_refs": [
+                  "d3d343e5cc954975affd3a51f61b9ccc:2:1"
+                ]
+              }
+            ],
+            "mindmap": [
+              {
+                "title": "Cấu trúc Subnet /25",
+                "text": "Phần mạng: 25 bit; Phần host: 7 bit.",
+                "source_refs": [
+                  "d3d343e5cc954975affd3a51f61b9ccc:2:0"
+                ]
+              },
+              {
+                "title": "Thành phần địa chỉ",
+                "text": "Network, Broadcast, và dải Host dùng được.",
+                "source_refs": [
+                  "d3d343e5cc954975affd3a51f61b9ccc:2:1"
+                ]
+              },
+              {
+                "title": "Quy trình xác định",
+                "text": "Xác định bit host -> Tính kích thước khối -> Tìm khối -> Xác định biên.",
+                "source_refs": [
+                  "d3d343e5cc954975affd3a51f61b9ccc:2:2",
+                  "d3d343e5cc954975affd3a51f61b9ccc:2:3",
+                  "d3d343e5cc954975affd3a51f61b9ccc:2:4",
+                  "d3d343e5cc954975affd3a51f61b9ccc:2:5",
+                  "d3d343e5cc954975affd3a51f61b9ccc:2:6"
+                ]
+              }
+            ]
+          },
+          "questions": {
+            "mcq": {
+              "reason": "",
+              "question": {
+                "kind": "mcq",
+                "prompt": "Trong ví dụ 10.12.7.201/25, địa chỉ nào là network?",
+                "options": [
+                  "10.12.7.128",
+                  "10.12.7.255",
+                  "10.12.7.129"
+                ],
+                "left": [],
+                "answer": "10.12.7.128",
+                "explanation": "Dựa trên ví dụ 10.12.7.201/25, network là 10.12.7.128 và broadcast là 10.12.7.255.",
+                "source_refs": [
+                  "d3d343e5cc954975affd3a51f61b9ccc:2:1"
+                ],
+                "rubric": [],
+                "difficulty": "applied",
+                "difficulty_basis": "creator_request_not_measured"
+              }
+            },
+            "cloze": {
+              "reason": "",
+              "question": {
+                "kind": "cloze",
+                "prompt": "“Một subnet /25 có 128 địa chỉ; trong subnet thông thường này có ____ địa chỉ host dùng được khi bỏ hai biên.”",
+                "options": [],
+                "left": [],
+                "answer": "126",
+                "explanation": "Trong một subnet /25 thông thường, có tổng cộng 128 địa chỉ, nhưng sau khi bỏ đi hai biên (network và broadcast), sẽ còn lại 126 địa chỉ host dùng được.",
+                "source_refs": [
+                  "d3d343e5cc954975affd3a51f61b9ccc:2:0"
+                ],
+                "rubric": [],
+                "difficulty": "applied",
+                "difficulty_basis": "creator_request_not_measured"
+              }
+            },
+            "matching": {
+              "reason": "Nguồn R2 cung cấp trực tiếp giá trị network và broadcast cho ví dụ 10.12.7.201/25.",
+              "question": {
+                "kind": "matching",
+                "prompt": "Trong ví dụ 10.12.7.201/25, hãy nối các thành phần tương ứng với giá trị của chúng:",
+                "options": [
+                  "10.12.7.128",
+                  "10.12.7.255"
+                ],
+                "left": [
+                  "network",
+                  "broadcast"
+                ],
+                "answer": [
+                  0,
+                  1
+                ],
+                "explanation": "Trong ví dụ 10.12.7.201/25, network là 10.12.7.128 và broadcast là 10.12.7.255.",
+                "source_refs": [
+                  "d3d343e5cc954975affd3a51f61b9ccc:2:1"
+                ],
+                "rubric": [],
+                "difficulty": "applied",
+                "difficulty_basis": "creator_request_not_measured"
+              }
+            }
+          },
+          "stage_providers": {
+            "reading": {
+              "provider": "ollama_local",
+              "model": "gemma4:12b-mlx",
+              "reference_codec": "scoped-reference-aliases-v1",
+              "model_choice_id": "local:gemma4:12b-mlx",
+              "selection_revision": 1,
+              "prompt_version": "20261020-scoped-reference-wire-v16",
+              "schema_version": 17,
+              "processor_version": "20261019-source-cloze-isolation-v5"
+            },
+            "mcq": {
+              "provider": "ollama_local",
+              "model": "gemma4:12b-mlx",
+              "reference_codec": "scoped-reference-aliases-v1",
+              "model_choice_id": "local:gemma4:12b-mlx",
+              "selection_revision": 1,
+              "prompt_version": "20261020-scoped-reference-wire-v16",
+              "schema_version": 17,
+              "processor_version": "20261019-source-cloze-isolation-v5"
+            },
+            "cloze": {
+              "provider": "ollama_local",
+              "model": "gemma4:12b-mlx",
+              "reference_codec": "scoped-reference-aliases-v1",
+              "model_choice_id": "local:gemma4:12b-mlx",
+              "selection_revision": 1,
+              "prompt_version": "20261020-scoped-reference-wire-v16",
+              "schema_version": 17,
+              "processor_version": "20261019-source-cloze-isolation-v5"
+            },
+            "matching": {
+              "provider": "ollama_local",
+              "model": "gemma4:12b-mlx",
+              "reference_codec": "scoped-reference-aliases-v1",
+              "model_choice_id": "local:gemma4:12b-mlx",
+              "selection_revision": 1,
+              "prompt_version": "20261020-scoped-reference-wire-v16",
+              "schema_version": 17,
+              "processor_version": "20261019-source-cloze-isolation-v5"
+            }
+          },
+          "question_rejections": {}
+        },
+        "feedback_deferred": false,
+        "error": {
+          "message": "Nguồn trích chưa có quy trình đánh số để kiểm chứng thứ tự."
+        },
+        "progress": {
+          "phase": "failed",
+          "requests": [
+            {
+              "index": 1,
+              "schema": "LessonReading",
+              "phase": "received",
+              "streaming": true,
+              "started_at": "2026-10-20T11:13:21.113945+00:00",
+              "first_chunk_ms": 8612.242,
+              "first_text_ms": null,
+              "elapsed_ms": 34482.342,
+              "chunks": 874,
+              "characters": 2192,
+              "usage": {
+                "input_tokens": 1645,
+                "cached_input_tokens": 0,
+                "output_tokens": 874,
+                "load_duration_ns": 10429333,
+                "prompt_eval_duration_ns": 3350636458,
+                "eval_duration_ns": 26059679500,
+                "total_duration_ns": 29428919958,
+                "reference_alias_count": 8,
+                "reference_alias_map_sha256": "42a675a0c43fce11eb2b4caaece23546ebf01529c8ac3293250d72aead32e7be"
+              },
+              "protocol_fallbacks": 1
+            },
+            {
+              "index": 2,
+              "schema": "McqDraft",
+              "phase": "received",
+              "streaming": true,
+              "started_at": "2026-10-20T11:13:55.604042+00:00",
+              "first_chunk_ms": 4236.314,
+              "first_text_ms": null,
+              "elapsed_ms": 9800.847,
+              "chunks": 209,
+              "characters": 397,
+              "usage": {
+                "input_tokens": 1616,
+                "cached_input_tokens": 0,
+                "output_tokens": 209,
+                "load_duration_ns": 4720583,
+                "prompt_eval_duration_ns": 4006337959,
+                "eval_duration_ns": 5749876875,
+                "total_duration_ns": 9763704000,
+                "reference_alias_count": 8,
+                "reference_alias_map_sha256": "42a675a0c43fce11eb2b4caaece23546ebf01529c8ac3293250d72aead32e7be"
+              },
+              "protocol_fallbacks": 1
+            },
+            {
+              "index": 3,
+              "schema": "ClozeDraft",
+              "phase": "received",
+              "streaming": true,
+              "started_at": "2026-10-20T11:14:05.416185+00:00",
+              "first_chunk_ms": 3602.122,
+              "first_text_ms": null,
+              "elapsed_ms": 6874.21,
+              "chunks": 116,
+              "characters": 326,
+              "usage": {
+                "input_tokens": 1802,
+                "cached_input_tokens": 375,
+                "output_tokens": 116,
+                "load_duration_ns": 4573625,
+                "prompt_eval_duration_ns": 3229257500,
+                "eval_duration_ns": 3557201000,
+                "total_duration_ns": 6800150208,
+                "cloze_source_mask_derived": 1,
+                "cloze_statement_sha256": "8c4a991d84aeea85a61b9e6dc3d93677ee92b9b0701a27879395c8f5ef7bdb5f",
+                "reference_alias_count": 8,
+                "reference_alias_map_sha256": "42a675a0c43fce11eb2b4caaece23546ebf01529c8ac3293250d72aead32e7be"
+              },
+              "protocol_fallbacks": 1
+            },
+            {
+              "index": 4,
+              "schema": "MatchingDraft",
+              "phase": "received",
+              "streaming": true,
+              "started_at": "2026-10-20T11:14:12.299034+00:00",
+              "first_chunk_ms": 3260.566,
+              "first_text_ms": null,
+              "elapsed_ms": 9998.665,
+              "chunks": 247,
+              "characters": 559,
+              "usage": {
+                "input_tokens": 1776,
+                "cached_input_tokens": 380,
+                "output_tokens": 247,
+                "load_duration_ns": 4690459,
+                "prompt_eval_duration_ns": 3012513625,
+                "eval_duration_ns": 6911685042,
+                "total_duration_ns": 9935660292,
+                "reference_alias_count": 8,
+                "reference_alias_map_sha256": "42a675a0c43fce11eb2b4caaece23546ebf01529c8ac3293250d72aead32e7be"
+              },
+              "protocol_fallbacks": 1
+            },
+            {
+              "index": 5,
+              "schema": "OrderingDraft",
+              "phase": "failed",
+              "streaming": true,
+              "started_at": "2026-10-20T11:14:22.310777+00:00",
+              "first_chunk_ms": 3521.644,
+              "first_text_ms": null,
+              "elapsed_ms": null,
+              "chunks": 212,
+              "characters": 672,
+              "usage": {},
+              "protocol_fallbacks": 1
+            }
+          ],
+          "preview": null,
+          "planned_stages": 9,
+          "saved_stages": 4,
+          "reused_stages": 0,
+          "started_at": "2026-10-20T11:13:21.112445+00:00",
+          "completed_at": "2026-10-20T11:14:33.902556+00:00",
+          "elapsed_ms": 72790.116,
+          "version": 250,
+          "updated_at": "2026-10-20T11:14:33.902869+00:00"
+        }
+      },
+      "finished_observing_at": "2026-10-20T11:20:58.862322+00:00",
+      "course_snapshot": {
+        "id": "28a95b23812a446fbfd201e139a220e3",
+        "revision": 1,
+        "plan_id": "636a4821ccd84abc9eeffe879c68d94f",
+        "creator_id": "68fca8d155df4a1186b46bff3409ab61",
+        "access_role": "creator",
+        "content": {
+          "title": "Mạng máy tính",
+          "unlock_policy": "locked",
+          "preferences": {
+            "source_id": "d3d343e5cc954975affd3a51f61b9ccc",
+            "subject": "Mạng máy tính",
+            "goal": "Phân biệt prefix, số địa chỉ, network, broadcast và host dùng được trong ví dụ /25.",
+            "instructions": "",
+            "language": "vi",
+            "fragment_ids": [
+              "d3d343e5cc954975affd3a51f61b9ccc:2:0",
+              "d3d343e5cc954975affd3a51f61b9ccc:2:1",
+              "d3d343e5cc954975affd3a51f61b9ccc:2:2",
+              "d3d343e5cc954975affd3a51f61b9ccc:2:3",
+              "d3d343e5cc954975affd3a51f61b9ccc:2:4",
+              "d3d343e5cc954975affd3a51f61b9ccc:2:5",
+              "d3d343e5cc954975affd3a51f61b9ccc:2:6",
+              "d3d343e5cc954975affd3a51f61b9ccc:2:7"
+            ],
+            "unlock_policy": "locked",
+            "initial_mode": "learn",
+            "expected_extraction_revision": 2,
+            "excluded_fragment_ids": [],
+            "chapter_priorities": [],
+            "difficulty": "applied",
+            "question_types": [
+              "mcq",
+              "cloze",
+              "matching",
+              "ordering",
+              "short_answer"
+            ],
+            "question_count": 8,
+            "card_count": 2,
+            "target_language": "",
+            "terms_to_keep": [],
+            "teacher_notes": "",
+            "user_notes": "",
+            "extraction_revision": 2
+          },
+          "units": [
+            {
+              "title": "QA net-dev-prefix — IPv4 và subnet /25.txt · Phần 1",
+              "objective": "Học Phần 1 trong QA net-dev-prefix — IPv4 và subnet /25.txt; đối chiếu nguồn và luyện nội dung của phần này.",
+              "source_refs": [
+                "d3d343e5cc954975affd3a51f61b9ccc:2:0",
+                "d3d343e5cc954975affd3a51f61b9ccc:2:1",
+                "d3d343e5cc954975affd3a51f61b9ccc:2:2",
+                "d3d343e5cc954975affd3a51f61b9ccc:2:3",
+                "d3d343e5cc954975affd3a51f61b9ccc:2:4",
+                "d3d343e5cc954975affd3a51f61b9ccc:2:5",
+                "d3d343e5cc954975affd3a51f61b9ccc:2:6",
+                "d3d343e5cc954975affd3a51f61b9ccc:2:7"
+              ],
+              "id": "unit-1",
+              "data": null,
+              "completed": false,
+              "unlocked": true
+            }
+          ]
+        }
+      },
+      "published_question_count": 0,
+      "published_kinds": [],
+      "wallet_after": {
+        "balance": 20,
+        "held": 0,
+        "available": 20,
+        "policy_version": "dev-proposal-20261015-v2",
+        "policy_proposed": true,
+        "cash_payments": false,
+        "enforcement_enabled": true
+      },
+      "outcome_captured": true
+    },
+    {
+      "case_id": "calc-dev-ftc",
+      "subject": "Vi tích phân",
+      "started_at": "2026-10-20T11:14:34.073431+00:00",
+      "oracle": {
+        "verification": "computed",
+        "integral": "8/3",
+        "reversed": "-8/3",
+        "second_integral": "2"
+      },
+      "expected_source_ordering": true,
+      "source_sha256": "7d7f383d0ebe5029dad17b42a5ff28974010781354878a98ed232bde19b87e04",
+      "events": [
+        {
+          "status": "running",
+          "phase": "connecting",
+          "saved_stages": 0,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:14:34.656884+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "receiving",
+          "saved_stages": 0,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:14:37.926964+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "connecting",
+          "saved_stages": 1,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:15:03.246106+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "receiving",
+          "saved_stages": 1,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:15:08.201368+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "connecting",
+          "saved_stages": 2,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:15:15.576837+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "receiving",
+          "saved_stages": 2,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:15:19.257136+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "connecting",
+          "saved_stages": 3,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:15:24.174757+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "receiving",
+          "saved_stages": 3,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:15:28.703610+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "connecting",
+          "saved_stages": 4,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:15:35.281425+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "receiving",
+          "saved_stages": 4,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:15:38.971573+00:00"
+        },
+        {
+          "status": "failed",
+          "phase": "failed",
+          "saved_stages": 4,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:15:45.113907+00:00"
+        },
+        {
+          "status": "failed",
+          "phase": "failed",
+          "saved_stages": 4,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:20:58.879940+00:00"
+        }
+      ],
+      "qa_owner_id": "660a2c91e45145bd87170d93c9032f94",
+      "default_model_before": "kaggle:qwen3.8:27b",
+      "selection": {
+        "model_id": "local:gemma4:12b-mlx",
+        "revision": 1,
+        "provider": "ollama_local",
+        "model": "gemma4:12b-mlx",
+        "reference_codec": "scoped-reference-aliases-v1",
+        "external": false
+      },
+      "source_id": "7aa99047f3b54a8498288618a0850503",
+      "course_id": "c5fbd00648b34e56b32534e9fc1e3efd",
+      "source_snapshot": {
+        "id": "7aa99047f3b54a8498288618a0850503",
+        "metadata": {
+          "name": "QA calc-dev-ftc — Tích phân xác định và hai cận.txt",
+          "sha256": "7d7f383d0ebe5029dad17b42a5ff28974010781354878a98ed232bde19b87e04",
+          "bytes": 693,
+          "warnings": [],
+          "subject_suggestion": ""
+        },
+        "status": "ready",
+        "revision": 2,
+        "reviewed": true,
+        "fragments": [
+          {
+            "text": "Nếu f liên tục trên [a,b] và F là một nguyên hàm của f thì tích phân từ a đến b của f(x) dx bằng F(b)-F(a). Không lấy F(a)-F(b).",
+            "locator": {
+              "type": "line",
+              "line": 1,
+              "character_start": 0
+            },
+            "id": "7aa99047f3b54a8498288618a0850503:2:0",
+            "original_text": "Nếu f liên tục trên [a,b] và F là một nguyên hàm của f thì tích phân từ a đến b của f(x) dx bằng F(b)-F(a). Không lấy F(a)-F(b).",
+            "edited_by_user": false,
+            "needs_review": false,
+            "review_status": "user_confirmed_not_accuracy_verified"
+          },
+          {
+            "text": "Với f(x)=x^2, chọn F(x)=x^3/3. Trên [0,2], F(2)=8/3 và F(0)=0, nên tích phân bằng 8/3. Đổi cận từ 2 về 0 cho kết quả -8/3. Với g(x)=2x+1 trên [0,1], nguyên hàm G(x)=x^2+x và tích phân bằng 2.",
+            "locator": {
+              "type": "line",
+              "line": 2,
+              "character_start": 0
+            },
+            "id": "7aa99047f3b54a8498288618a0850503:2:1",
+            "original_text": "Với f(x)=x^2, chọn F(x)=x^3/3. Trên [0,2], F(2)=8/3 và F(0)=0, nên tích phân bằng 8/3. Đổi cận từ 2 về 0 cho kết quả -8/3. Với g(x)=2x+1 trên [0,1], nguyên hàm G(x)=x^2+x và tích phân bằng 2.",
+            "edited_by_user": false,
+            "needs_review": false,
+            "review_status": "user_confirmed_not_accuracy_verified"
+          },
+          {
+            "text": "Quy trình tính tích phân xác định bằng nguyên hàm:",
+            "locator": {
+              "type": "line",
+              "line": 3,
+              "character_start": 0
+            },
+            "id": "7aa99047f3b54a8498288618a0850503:2:2",
+            "original_text": "Quy trình tính tích phân xác định bằng nguyên hàm:",
+            "edited_by_user": false,
+            "needs_review": false,
+            "review_status": "user_confirmed_not_accuracy_verified"
+          },
+          {
+            "text": "1. Tìm một nguyên hàm của hàm dưới dấu tích phân.",
+            "locator": {
+              "type": "line",
+              "line": 4,
+              "character_start": 0
+            },
+            "id": "7aa99047f3b54a8498288618a0850503:2:3",
+            "original_text": "1. Tìm một nguyên hàm của hàm dưới dấu tích phân.",
+            "edited_by_user": false,
+            "needs_review": false,
+            "review_status": "user_confirmed_not_accuracy_verified"
+          },
+          {
+            "text": "2. Tính giá trị nguyên hàm tại cận trên.",
+            "locator": {
+              "type": "line",
+              "line": 5,
+              "character_start": 0
+            },
+            "id": "7aa99047f3b54a8498288618a0850503:2:4",
+            "original_text": "2. Tính giá trị nguyên hàm tại cận trên.",
+            "edited_by_user": false,
+            "needs_review": false,
+            "review_status": "user_confirmed_not_accuracy_verified"
+          },
+          {
+            "text": "3. Tính giá trị nguyên hàm tại cận dưới.",
+            "locator": {
+              "type": "line",
+              "line": 6,
+              "character_start": 0
+            },
+            "id": "7aa99047f3b54a8498288618a0850503:2:5",
+            "original_text": "3. Tính giá trị nguyên hàm tại cận dưới.",
+            "edited_by_user": false,
+            "needs_review": false,
+            "review_status": "user_confirmed_not_accuracy_verified"
+          },
+          {
+            "text": "4. Lấy giá trị tại cận trên trừ giá trị tại cận dưới.",
+            "locator": {
+              "type": "line",
+              "line": 7,
+              "character_start": 0
+            },
+            "id": "7aa99047f3b54a8498288618a0850503:2:6",
+            "original_text": "4. Lấy giá trị tại cận trên trừ giá trị tại cận dưới.",
+            "edited_by_user": false,
+            "needs_review": false,
+            "review_status": "user_confirmed_not_accuracy_verified"
+          }
+        ]
+      },
+      "unit_id": "unit-1",
+      "wallet_before": {
+        "balance": 20,
+        "held": 0,
+        "available": 20,
+        "policy_version": "dev-proposal-20261015-v2",
+        "policy_proposed": true,
+        "cash_payments": false,
+        "enforcement_enabled": true
+      },
+      "job_id": "acf45aef8a32445c831f71e1ef501870",
+      "job": {
+        "id": "acf45aef8a32445c831f71e1ef501870",
+        "task": "lesson",
+        "context": {
+          "course_id": "c5fbd00648b34e56b32534e9fc1e3efd",
+          "unit_id": "unit-1",
+          "expected_revision": 1
+        },
+        "status": "failed",
+        "attempts": 1,
+        "provider": {
+          "provider": "ollama_local",
+          "model": "gemma4:12b-mlx",
+          "reference_codec": "scoped-reference-aliases-v1",
+          "model_choice_id": "local:gemma4:12b-mlx",
+          "selection_revision": 1,
+          "prompt_version": "20261020-scoped-reference-wire-v16",
+          "schema_version": 17,
+          "processor_version": "20261019-source-cloze-isolation-v5"
+        },
+        "result": null,
+        "partial": {
+          "reading": {
+            "title": "Tích phân xác định và hai cận",
+            "sections": [
+              {
+                "title": "Định lý Newton-Leibniz cơ bản",
+                "text": "Nếu f liên tục trên [a,b] và F là một nguyên hàm của f thì tích phân từ a đến b của f(x) dx bằng F(b)-F(a). Lưu ý không lấy F(a)-F(b).",
+                "source_refs": [
+                  "7aa99047f3b54a8498288618a0850503:2:0"
+                ]
+              },
+              {
+                "title": "Ví dụ minh họa",
+                "text": "Với f(x)=x^2, chọn F(x)=x^3/3. Trên [0,2], F(2)=8/3 và F(0)=0, nên tích phân bằng 8/3. Với g(x)=2x+1 trên [0,1], nguyên hàm G(x)=x^2+x và tích phân bằng 2.",
+                "source_refs": [
+                  "7aa99047f3b54a8498288618a0850503:2:1"
+                ]
+              },
+              {
+                "title": "Quy trình tính tích phân",
+                "text": "Quy trình gồm 4 bước: 1. Tìm một nguyên hàm của hàm dưới dấu tích phân. 2. Tính giá trị nguyên hàm tại cận trên. 3. Tính giá trị nguyên hàm tại cận dưới. 4. Lấy giá trị tại cận trên trừ giá trị tại cận dưới.",
+                "source_refs": [
+                  "7aa99047f3b54a8498288618a0850503:2:2",
+                  "7aa99047f3b54a8498288618a0850503:2:3",
+                  "7aa99047f3b54a8498288618a0850503:2:4",
+                  "7aa99047f3b54a8498288618a0850503:2:5",
+                  "7aa99047f3b54a8498288618a0850503:2:6"
+                ]
+              }
+            ],
+            "cards": [
+              {
+                "front": "Công thức tính tích phân từ a đến b của f(x) dx là gì?",
+                "back": "F(b)-F(a), trong đó F là một nguyên hàm của f.",
+                "source_refs": [
+                  "7aa99047f3b54a8498288618a0850503:2:0"
+                ]
+              },
+              {
+                "front": "Các bước tính tích phân xác định?",
+                "back": "1. Tìm nguyên hàm. 2. Tính giá trị tại cận trên. 3. Tính giá trị tại cận dưới. 4. Lấy giá trị tại cận trên trừ giá trị tại cận dưới.",
+                "source_refs": [
+                  "7aa99047f3b54a8498288618a0850503:2:2",
+                  "7aa99047f3b54a8498288618a0850503:2:3",
+                  "7aa99047f3b54a8498288618a0850503:2:4",
+                  "7aa99047f3b54a8498288618a0850503:2:5",
+                  "7aa99047f3b54a8498288618a0850503:2:6"
+                ]
+              }
+            ],
+            "mindmap": [
+              {
+                "title": "Quy trình tính tích phân",
+                "text": "Tìm nguyên hàm của hàm dưới dấu tích phân.",
+                "source_refs": [
+                  "7aa99047f3b54a8498288618a0850503:2:3"
+                ]
+              },
+              {
+                "title": "Tính giá trị tại cận",
+                "text": "Tính giá trị nguyên hàm tại cận trên và cận dưới.",
+                "source_refs": [
+                  "7aa99047f3b54a8498288618a0850503:2:4",
+                  "7aa99047f3b54a8498288618a0850503:2:5"
+                ]
+              },
+              {
+                "title": "Kết quả",
+                "text": "Lấy giá trị tại cận trên trừ giá trị tại cận dưới.",
+                "source_refs": [
+                  "7aa99047f3b54a8498288618a0850503:2:6"
+                ]
+              }
+            ]
+          },
+          "questions": {
+            "mcq": {
+              "reason": "",
+              "question": {
+                "kind": "mcq",
+                "prompt": "Để tính tích phân xác định của hàm số f(x) trên đoạn [a,b] bằng cách sử dụng nguyên hàm F(x), bước cuối cùng trong quy trình là gì?",
+                "options": [
+                  "Tính giá trị nguyên hàm tại cận trên.",
+                  "Lấy giá trị tại cận trên trừ giá trị tại cận dưới.",
+                  "Tìm một nguyên hàm của hàm dưới dấu tích phân."
+                ],
+                "left": [],
+                "answer": "Lấy giá trị tại cận trên trừ giá trị tại cận dưới.",
+                "explanation": "Theo quy trình tính tích phân xác định bằng nguyên hàm, sau khi tìm nguyên hàm và tính giá trị tại hai cận, bước cuối cùng là lấy giá trị tại cận trên trừ giá trị tại cận dưới.",
+                "source_refs": [
+                  "7aa99047f3b54a8498288618a0850503:2:6"
+                ],
+                "rubric": [],
+                "difficulty": "applied",
+                "difficulty_basis": "creator_request_not_measured"
+              }
+            },
+            "cloze": {
+              "reason": "",
+              "question": {
+                "kind": "cloze",
+                "prompt": "“Nếu f liên tục trên [a,b] và F là một nguyên hàm của f thì tích phân từ a đến b của f(x) dx bằng ____.”",
+                "options": [],
+                "left": [],
+                "answer": "F(b)-F(a)",
+                "explanation": "Để tính tích phân xác định của hàm số f trên đoạn [a,b], ta sử dụng công thức F(b)-F(a) với F là nguyên hàm của f.",
+                "source_refs": [
+                  "7aa99047f3b54a8498288618a0850503:2:0"
+                ],
+                "rubric": [],
+                "difficulty": "applied",
+                "difficulty_basis": "creator_request_not_measured"
+              }
+            },
+            "matching": {
+              "reason": "",
+              "question": {
+                "kind": "matching",
+                "prompt": "Ghép các bước trong quy trình tính tích phân xác định bằng nguyên hàm cho đúng thứ tự:",
+                "options": [
+                  "Tính giá trị nguyên hàm tại cận trên",
+                  "Lấy giá trị tại cận trên trừ giá trị tại cận dưới"
+                ],
+                "left": [
+                  "Bước 2",
+                  "Bước 4"
+                ],
+                "answer": [
+                  0,
+                  1
+                ],
+                "explanation": "Theo quy trình tại R5 và R7, bước 2 là tính giá trị nguyên hàm tại cận trên, và bước 4 là lấy giá trị tại cận trên trừ giá trị tại cận dưới.",
+                "source_refs": [
+                  "7aa99047f3b54a8498288618a0850503:2:4",
+                  "7aa99047f3b54a8498288618a0850503:2:6"
+                ],
+                "rubric": [],
+                "difficulty": "applied",
+                "difficulty_basis": "creator_request_not_measured"
+              }
+            }
+          },
+          "stage_providers": {
+            "reading": {
+              "provider": "ollama_local",
+              "model": "gemma4:12b-mlx",
+              "reference_codec": "scoped-reference-aliases-v1",
+              "model_choice_id": "local:gemma4:12b-mlx",
+              "selection_revision": 1,
+              "prompt_version": "20261020-scoped-reference-wire-v16",
+              "schema_version": 17,
+              "processor_version": "20261019-source-cloze-isolation-v5"
+            },
+            "mcq": {
+              "provider": "ollama_local",
+              "model": "gemma4:12b-mlx",
+              "reference_codec": "scoped-reference-aliases-v1",
+              "model_choice_id": "local:gemma4:12b-mlx",
+              "selection_revision": 1,
+              "prompt_version": "20261020-scoped-reference-wire-v16",
+              "schema_version": 17,
+              "processor_version": "20261019-source-cloze-isolation-v5"
+            },
+            "cloze": {
+              "provider": "ollama_local",
+              "model": "gemma4:12b-mlx",
+              "reference_codec": "scoped-reference-aliases-v1",
+              "model_choice_id": "local:gemma4:12b-mlx",
+              "selection_revision": 1,
+              "prompt_version": "20261020-scoped-reference-wire-v16",
+              "schema_version": 17,
+              "processor_version": "20261019-source-cloze-isolation-v5"
+            },
+            "matching": {
+              "provider": "ollama_local",
+              "model": "gemma4:12b-mlx",
+              "reference_codec": "scoped-reference-aliases-v1",
+              "model_choice_id": "local:gemma4:12b-mlx",
+              "selection_revision": 1,
+              "prompt_version": "20261020-scoped-reference-wire-v16",
+              "schema_version": 17,
+              "processor_version": "20261019-source-cloze-isolation-v5"
+            }
+          },
+          "question_rejections": {}
+        },
+        "feedback_deferred": false,
+        "error": {
+          "message": "Nguồn trích chưa có quy trình đánh số để kiểm chứng thứ tự."
+        },
+        "progress": {
+          "phase": "failed",
+          "requests": [
+            {
+              "index": 1,
+              "schema": "LessonReading",
+              "phase": "received",
+              "streaming": true,
+              "started_at": "2026-10-20T11:14:34.648039+00:00",
+              "first_chunk_ms": 3238.246,
+              "first_text_ms": null,
+              "elapsed_ms": 28283.328,
+              "chunks": 746,
+              "characters": 2012,
+              "usage": {
+                "input_tokens": 1577,
+                "cached_input_tokens": 127,
+                "output_tokens": 746,
+                "load_duration_ns": 4399750,
+                "prompt_eval_duration_ns": 2994391959,
+                "eval_duration_ns": 25241235500,
+                "total_duration_ns": 28247303750,
+                "reference_alias_count": 7,
+                "reference_alias_map_sha256": "6708483adf6fbd645a37119ea11f09e8e0ca8953b7edbe7f2ace496f7b75a772"
+              },
+              "protocol_fallbacks": 1
+            },
+            {
+              "index": 2,
+              "schema": "McqDraft",
+              "phase": "received",
+              "streaming": true,
+              "started_at": "2026-10-20T11:15:02.937711+00:00",
+              "first_chunk_ms": 4911.665,
+              "first_text_ms": null,
+              "elapsed_ms": 12339.071,
+              "chunks": 214,
+              "characters": 710,
+              "usage": {
+                "input_tokens": 1554,
+                "cached_input_tokens": 0,
+                "output_tokens": 214,
+                "load_duration_ns": 6932875,
+                "prompt_eval_duration_ns": 4617050583,
+                "eval_duration_ns": 7646560041,
+                "total_duration_ns": 12285820792,
+                "reference_alias_count": 7,
+                "reference_alias_map_sha256": "6708483adf6fbd645a37119ea11f09e8e0ca8953b7edbe7f2ace496f7b75a772"
+              },
+              "protocol_fallbacks": 1
+            },
+            {
+              "index": 3,
+              "schema": "ClozeDraft",
+              "phase": "received",
+              "streaming": true,
+              "started_at": "2026-10-20T11:15:15.282769+00:00",
+              "first_chunk_ms": 3710.018,
+              "first_text_ms": null,
+              "elapsed_ms": 8672.293,
+              "chunks": 148,
+              "characters": 383,
+              "usage": {
+                "input_tokens": 1754,
+                "cached_input_tokens": 379,
+                "output_tokens": 148,
+                "load_duration_ns": 5973750,
+                "prompt_eval_duration_ns": 3425662209,
+                "eval_duration_ns": 5150366167,
+                "total_duration_ns": 8592762500,
+                "cloze_source_mask_derived": 1,
+                "cloze_statement_sha256": "4bee0e8dc5bf4b74d2f7089ea3d760c74980ba742bc604b3dcd497a7df463578",
+                "reference_alias_count": 7,
+                "reference_alias_map_sha256": "6708483adf6fbd645a37119ea11f09e8e0ca8953b7edbe7f2ace496f7b75a772"
+              },
+              "protocol_fallbacks": 1
+            },
+            {
+              "index": 4,
+              "schema": "MatchingDraft",
+              "phase": "received",
+              "streaming": true,
+              "started_at": "2026-10-20T11:15:23.959714+00:00",
+              "first_chunk_ms": 4415.609,
+              "first_text_ms": null,
+              "elapsed_ms": 10913.135,
+              "chunks": 204,
+              "characters": 612,
+              "usage": {
+                "input_tokens": 1732,
+                "cached_input_tokens": 384,
+                "output_tokens": 204,
+                "load_duration_ns": 4834750,
+                "prompt_eval_duration_ns": 4138171333,
+                "eval_duration_ns": 6697568625,
+                "total_duration_ns": 10847249709,
+                "reference_alias_count": 7,
+                "reference_alias_map_sha256": "6708483adf6fbd645a37119ea11f09e8e0ca8953b7edbe7f2ace496f7b75a772"
+              },
+              "protocol_fallbacks": 1
+            },
+            {
+              "index": 5,
+              "schema": "OrderingDraft",
+              "phase": "failed",
+              "streaming": true,
+              "started_at": "2026-10-20T11:15:34.879255+00:00",
+              "first_chunk_ms": 3766.479,
+              "first_text_ms": null,
+              "elapsed_ms": null,
+              "chunks": 194,
+              "characters": 642,
+              "usage": {},
+              "protocol_fallbacks": 1
+            }
+          ],
+          "preview": null,
+          "planned_stages": 9,
+          "saved_stages": 4,
+          "reused_stages": 0,
+          "started_at": "2026-10-20T11:14:34.646302+00:00",
+          "completed_at": "2026-10-20T11:15:44.730905+00:00",
+          "elapsed_ms": 70084.608,
+          "version": 253,
+          "updated_at": "2026-10-20T11:15:44.730950+00:00"
+        }
+      },
+      "finished_observing_at": "2026-10-20T11:20:58.882732+00:00",
+      "course_snapshot": {
+        "id": "c5fbd00648b34e56b32534e9fc1e3efd",
+        "revision": 1,
+        "plan_id": "9ce9a24046ac4df5937f0bf91e900545",
+        "creator_id": "660a2c91e45145bd87170d93c9032f94",
+        "access_role": "creator",
+        "content": {
+          "title": "Vi tích phân",
+          "unlock_policy": "locked",
+          "preferences": {
+            "source_id": "7aa99047f3b54a8498288618a0850503",
+            "subject": "Vi tích phân",
+            "goal": "Dùng nguyên hàm và hai cận để tính tích phân; phân biệt giá trị tại cận với hiệu hai giá trị.",
+            "instructions": "",
+            "language": "vi",
+            "fragment_ids": [
+              "7aa99047f3b54a8498288618a0850503:2:0",
+              "7aa99047f3b54a8498288618a0850503:2:1",
+              "7aa99047f3b54a8498288618a0850503:2:2",
+              "7aa99047f3b54a8498288618a0850503:2:3",
+              "7aa99047f3b54a8498288618a0850503:2:4",
+              "7aa99047f3b54a8498288618a0850503:2:5",
+              "7aa99047f3b54a8498288618a0850503:2:6"
+            ],
+            "unlock_policy": "locked",
+            "initial_mode": "learn",
+            "expected_extraction_revision": 2,
+            "excluded_fragment_ids": [],
+            "chapter_priorities": [],
+            "difficulty": "applied",
+            "question_types": [
+              "mcq",
+              "cloze",
+              "matching",
+              "ordering",
+              "short_answer"
+            ],
+            "question_count": 8,
+            "card_count": 2,
+            "target_language": "",
+            "terms_to_keep": [],
+            "teacher_notes": "",
+            "user_notes": "",
+            "extraction_revision": 2
+          },
+          "units": [
+            {
+              "title": "QA calc-dev-ftc — Tích phân xác định và hai cận.txt · Phần 1",
+              "objective": "Học Phần 1 trong QA calc-dev-ftc — Tích phân xác định và hai cận.txt; đối chiếu nguồn và luyện nội dung của phần này.",
+              "source_refs": [
+                "7aa99047f3b54a8498288618a0850503:2:0",
+                "7aa99047f3b54a8498288618a0850503:2:1",
+                "7aa99047f3b54a8498288618a0850503:2:2",
+                "7aa99047f3b54a8498288618a0850503:2:3",
+                "7aa99047f3b54a8498288618a0850503:2:4",
+                "7aa99047f3b54a8498288618a0850503:2:5",
+                "7aa99047f3b54a8498288618a0850503:2:6"
+              ],
+              "id": "unit-1",
+              "data": null,
+              "completed": false,
+              "unlocked": true
+            }
+          ]
+        }
+      },
+      "published_question_count": 0,
+      "published_kinds": [],
+      "wallet_after": {
+        "balance": 20,
+        "held": 0,
+        "available": 20,
+        "policy_version": "dev-proposal-20261015-v2",
+        "policy_proposed": true,
+        "cash_payments": false,
+        "enforcement_enabled": true
+      },
+      "outcome_captured": true
+    },
+    {
+      "case_id": "psy-dev-operant",
+      "subject": "Tâm lý đại cương",
+      "started_at": "2026-10-20T11:15:45.150435+00:00",
+      "oracle": {
+        "verification": "agent_source_crosscheck_only_needs_independent_review",
+        "limit": "A deterministic computation cannot establish these psychology labels; no automatic factual pass."
+      },
+      "expected_source_ordering": true,
+      "source_sha256": "89f307e17c2baf035b0a33267fbc83cf5ee740c03106ed0b19cee23320879036",
+      "events": [
+        {
+          "status": "running",
+          "phase": "connecting",
+          "saved_stages": 0,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:15:45.788045+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "receiving",
+          "saved_stages": 0,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:15:49.875474+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "connecting",
+          "saved_stages": 1,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:16:10.774289+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "receiving",
+          "saved_stages": 1,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:16:15.377494+00:00"
+        },
+        {
+          "status": "failed",
+          "phase": "failed",
+          "saved_stages": 1,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:16:24.031251+00:00"
+        },
+        {
+          "status": "failed",
+          "phase": "failed",
+          "saved_stages": 1,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:20:58.898644+00:00"
+        }
+      ],
+      "qa_owner_id": "2aab2a3b568446d3a5b58c2734819a21",
+      "default_model_before": "kaggle:qwen3.8:27b",
+      "selection": {
+        "model_id": "local:gemma4:12b-mlx",
+        "revision": 1,
+        "provider": "ollama_local",
+        "model": "gemma4:12b-mlx",
+        "reference_codec": "scoped-reference-aliases-v1",
+        "external": false
+      },
+      "source_id": "0e0d88ce1cd74656836799dc6ae240e3",
+      "course_id": "91a1086b24b44f0c83fef23bafc3275f",
+      "source_snapshot": {
+        "id": "0e0d88ce1cd74656836799dc6ae240e3",
+        "metadata": {
+          "name": "QA psy-dev-operant — Củng cố và trừng phạt.txt",
+          "sha256": "89f307e17c2baf035b0a33267fbc83cf5ee740c03106ed0b19cee23320879036",
+          "bytes": 1259,
+          "warnings": [],
+          "subject_suggestion": ""
+        },
+        "status": "ready",
+        "revision": 2,
+        "reviewed": true,
+        "fragments": [
+          {
+            "text": "Trong operant conditioning, reinforcement chỉ hậu quả làm tăng khả năng hành vi được lặp lại; punishment chỉ hậu quả làm giảm khả năng đó. Positive nghĩa là thêm một kích thích, negative nghĩa là loại bỏ một kích thích; chúng không có nghĩa là tốt và xấu.",
+            "locator": {
+              "type": "line",
+              "line": 1,
+              "character_start": 0
+            },
+            "id": "0e0d88ce1cd74656836799dc6ae240e3:2:0",
+            "original_text": "Trong operant conditioning, reinforcement chỉ hậu quả làm tăng khả năng hành vi được lặp lại; punishment chỉ hậu quả làm giảm khả năng đó. Positive nghĩa là thêm một kích thích, negative nghĩa là loại bỏ một kích thích; chúng không có nghĩa là tốt và xấu.",
+            "edited_by_user": false,
+            "needs_review": false,
+            "review_status": "user_confirmed_not_accuracy_verified"
+          },
+          {
+            "text": "Positive reinforcement là thêm kích thích để tăng hành vi. Negative reinforcement là loại bỏ kích thích để tăng hành vi. Positive punishment là thêm kích thích để giảm hành vi. Negative punishment là loại bỏ kích thích để giảm hành vi.",
+            "locator": {
+              "type": "line",
+              "line": 2,
+              "character_start": 0
+            },
+            "id": "0e0d88ce1cd74656836799dc6ae240e3:2:1",
+            "original_text": "Positive reinforcement là thêm kích thích để tăng hành vi. Negative reinforcement là loại bỏ kích thích để tăng hành vi. Positive punishment là thêm kích thích để giảm hành vi. Negative punishment là loại bỏ kích thích để giảm hành vi.",
+            "edited_by_user": false,
+            "needs_review": false,
+            "review_status": "user_confirmed_not_accuracy_verified"
+          },
+          {
+            "text": "Trong ví dụ giả định, tiếng còi khó chịu ngừng khi người lái cài dây an toàn và việc cài dây trở nên thường xuyên hơn: đó là negative reinforcement. Tặng điểm sau khi học khiến việc học tăng lên là positive reinforcement. Thu hồi quyền chơi sau vi phạm khiến vi phạm giảm là negative punishment.",
+            "locator": {
+              "type": "line",
+              "line": 3,
+              "character_start": 0
+            },
+            "id": "0e0d88ce1cd74656836799dc6ae240e3:2:2",
+            "original_text": "Trong ví dụ giả định, tiếng còi khó chịu ngừng khi người lái cài dây an toàn và việc cài dây trở nên thường xuyên hơn: đó là negative reinforcement. Tặng điểm sau khi học khiến việc học tăng lên là positive reinforcement. Thu hồi quyền chơi sau vi phạm khiến vi phạm giảm là negative punishment.",
+            "edited_by_user": false,
+            "needs_review": false,
+            "review_status": "user_confirmed_not_accuracy_verified"
+          },
+          {
+            "text": "Quy trình phân loại một ví dụ đã có dữ kiện:",
+            "locator": {
+              "type": "line",
+              "line": 4,
+              "character_start": 0
+            },
+            "id": "0e0d88ce1cd74656836799dc6ae240e3:2:3",
+            "original_text": "Quy trình phân loại một ví dụ đã có dữ kiện:",
+            "edited_by_user": false,
+            "needs_review": false,
+            "review_status": "user_confirmed_not_accuracy_verified"
+          },
+          {
+            "text": "1. Xác định hành vi mục tiêu cần xét.",
+            "locator": {
+              "type": "line",
+              "line": 5,
+              "character_start": 0
+            },
+            "id": "0e0d88ce1cd74656836799dc6ae240e3:2:4",
+            "original_text": "1. Xác định hành vi mục tiêu cần xét.",
+            "edited_by_user": false,
+            "needs_review": false,
+            "review_status": "user_confirmed_not_accuracy_verified"
+          },
+          {
+            "text": "2. Xác định dữ kiện nói hành vi tăng hay giảm.",
+            "locator": {
+              "type": "line",
+              "line": 6,
+              "character_start": 0
+            },
+            "id": "0e0d88ce1cd74656836799dc6ae240e3:2:5",
+            "original_text": "2. Xác định dữ kiện nói hành vi tăng hay giảm.",
+            "edited_by_user": false,
+            "needs_review": false,
+            "review_status": "user_confirmed_not_accuracy_verified"
+          },
+          {
+            "text": "3. Xác định hậu quả thêm hay loại bỏ kích thích.",
+            "locator": {
+              "type": "line",
+              "line": 7,
+              "character_start": 0
+            },
+            "id": "0e0d88ce1cd74656836799dc6ae240e3:2:6",
+            "original_text": "3. Xác định hậu quả thêm hay loại bỏ kích thích.",
+            "edited_by_user": false,
+            "needs_review": false,
+            "review_status": "user_confirmed_not_accuracy_verified"
+          },
+          {
+            "text": "4. Kết hợp hai chiều để gọi tên loại hậu quả.",
+            "locator": {
+              "type": "line",
+              "line": 8,
+              "character_start": 0
+            },
+            "id": "0e0d88ce1cd74656836799dc6ae240e3:2:7",
+            "original_text": "4. Kết hợp hai chiều để gọi tên loại hậu quả.",
+            "edited_by_user": false,
+            "needs_review": false,
+            "review_status": "user_confirmed_not_accuracy_verified"
+          }
+        ]
+      },
+      "unit_id": "unit-1",
+      "wallet_before": {
+        "balance": 20,
+        "held": 0,
+        "available": 20,
+        "policy_version": "dev-proposal-20261015-v2",
+        "policy_proposed": true,
+        "cash_payments": false,
+        "enforcement_enabled": true
+      },
+      "job_id": "8f40d194fc454eb6b92dffa38558dc3b",
+      "job": {
+        "id": "8f40d194fc454eb6b92dffa38558dc3b",
+        "task": "lesson",
+        "context": {
+          "course_id": "91a1086b24b44f0c83fef23bafc3275f",
+          "unit_id": "unit-1",
+          "expected_revision": 1
+        },
+        "status": "failed",
+        "attempts": 1,
+        "provider": {
+          "provider": "ollama_local",
+          "model": "gemma4:12b-mlx",
+          "reference_codec": "scoped-reference-aliases-v1",
+          "model_choice_id": "local:gemma4:12b-mlx",
+          "selection_revision": 1,
+          "prompt_version": "20261020-scoped-reference-wire-v16",
+          "schema_version": 17,
+          "processor_version": "20261019-source-cloze-isolation-v5"
+        },
+        "result": null,
+        "partial": {
+          "reading": {
+            "title": "Phân biệt Reinforcement và Punishment trong Operant Conditioning",
+            "sections": [
+              {
+                "title": "Phân biệt Reinforcement và Punishment",
+                "text": "Trong operant conditioning, reinforcement là hậu quả làm tăng khả năng hành vi được lặp lại; punishment chỉ là hậu quả làm giảm khả năng đó. Cần lưu ý rằng positive nghĩa là thêm một kích thích, negative nghĩa là loại bỏ một kích thích; chúng không đồng nghĩa với tốt hay xấu.",
+                "source_refs": [
+                  "0e0d88ce1cd74656836799dc6ae240e3:2:0"
+                ]
+              },
+              {
+                "title": "Cơ chế Positive và Negative",
+                "text": "Positive reinforcement là thêm kích thích để tăng hành vi. Negative reinforcement là loại bỏ kích thích để tăng hành vi. Positive punishment là thêm kích thích để giảm hành vi. Negative punishment là loại bỏ kích thích để giảm hành vi.",
+                "source_refs": [
+                  "0e0d88ce1cd74656836799dc6ae240e3:2:1"
+                ]
+              },
+              {
+                "title": "Ví dụ thực tế",
+                "text": "Ví dụ: Tiếng còi ngừng khi cài dây an toàn là negative reinforcement (loại bỏ kích thích để tăng hành vi). Tặng điểm sau khi học là positive reinforcement. Thu hồi quyền chơi sau vi phạm là negative punishment (loại bỏ kích thích để giảm hành vi).",
+                "source_refs": [
+                  "0e0d88ce1cd74656836799dc6ae240e3:2:2"
+                ]
+              }
+            ],
+            "cards": [
+              {
+                "front": "Sự khác biệt giữa reinforcement và punishment là gì?",
+                "back": "Reinforcement làm tăng khả năng hành vi được lặp lại; punishment làm giảm khả năng đó.",
+                "source_refs": [
+                  "0e0d88ce1cd74656836799dc6ae240e3:2:0"
+                ]
+              },
+              {
+                "front": "Negative reinforcement có phải là punishment không?",
+                "back": "Không. Negative reinforcement là loại bỏ kích thích để tăng hành vi, trong khi punishment làm giảm hành vi.",
+                "source_refs": [
+                  "0e0d88ce1cd74656836799dc6ae240e3:2:0",
+                  "0e0d88ce1cd74656836799dc6ae240e3:2:1"
+                ]
+              }
+            ],
+            "mindmap": [
+              {
+                "title": "Phân loại dựa trên mục tiêu",
+                "text": "Reinforcement: Tăng hành vi. Punishment: Giảm hành vi.",
+                "source_refs": [
+                  "0e0d88ce1cd74656836799dc6ae240e3:2:0"
+                ]
+              },
+              {
+                "title": "Phân loại dựa trên kích thích",
+                "text": "Positive: Thêm kích thích. Negative: Loại bỏ kích thích.",
+                "source_refs": [
+                  "0e0d88ce1cd74656836799dc6ae240e3:2:0"
+                ]
+              },
+              {
+                "title": "Kết hợp",
+                "text": "Ví dụ: Negative reinforcement (loại bỏ kích thích để tăng hành vi) và Negative punishment (loại bỏ kích thích để giảm hành vi).",
+                "source_refs": [
+                  "0e0d88ce1cd74656836799dc6ae240e3:2:1",
+                  "0e0d88ce1cd74656836799dc6ae240e3:2:2"
+                ]
+              }
+            ]
+          },
+          "questions": {},
+          "stage_providers": {
+            "reading": {
+              "provider": "ollama_local",
+              "model": "gemma4:12b-mlx",
+              "reference_codec": "scoped-reference-aliases-v1",
+              "model_choice_id": "local:gemma4:12b-mlx",
+              "selection_revision": 1,
+              "prompt_version": "20261020-scoped-reference-wire-v16",
+              "schema_version": 17,
+              "processor_version": "20261019-source-cloze-isolation-v5"
+            }
+          },
+          "question_rejections": {}
+        },
+        "feedback_deferred": false,
+        "error": {
+          "message": "AI trả cấu trúc chưa hợp lệ ở question: Value error, MCQ must have distinct options and an answer from those options. Nguồn và phần đã lưu vẫn còn; chưa áp dụng đầu ra này. Có thể thử lại hoặc thu hẹp mục tiêu."
+        },
+        "progress": {
+          "phase": "failed",
+          "requests": [
+            {
+              "index": 1,
+              "schema": "LessonReading",
+              "phase": "received",
+              "streaming": true,
+              "started_at": "2026-10-20T11:15:45.778964+00:00",
+              "first_chunk_ms": 3784.101,
+              "first_text_ms": null,
+              "elapsed_ms": 24958.151,
+              "chunks": 673,
+              "characters": 2360,
+              "usage": {
+                "input_tokens": 1653,
+                "cached_input_tokens": 0,
+                "output_tokens": 673,
+                "load_duration_ns": 5319666,
+                "prompt_eval_duration_ns": 3539220000,
+                "eval_duration_ns": 21373590541,
+                "total_duration_ns": 24925337375,
+                "reference_alias_count": 8,
+                "reference_alias_map_sha256": "aea1e3e76d79aa9063f94a23981ad0652a890dccddc639f94c8a443d1d541526"
+              },
+              "protocol_fallbacks": 1
+            },
+            {
+              "index": 2,
+              "schema": "McqDraft",
+              "phase": "failed",
+              "streaming": true,
+              "started_at": "2026-10-20T11:16:10.743939+00:00",
+              "first_chunk_ms": 4253.01,
+              "first_text_ms": null,
+              "elapsed_ms": null,
+              "chunks": 232,
+              "characters": 900,
+              "usage": {},
+              "protocol_fallbacks": 1
+            }
+          ],
+          "preview": null,
+          "planned_stages": 9,
+          "saved_stages": 1,
+          "reused_stages": 0,
+          "started_at": "2026-10-20T11:15:45.777029+00:00",
+          "completed_at": "2026-10-20T11:16:23.866419+00:00",
+          "elapsed_ms": 38089.51,
+          "version": 143,
+          "updated_at": "2026-10-20T11:16:23.866571+00:00"
+        }
+      },
+      "finished_observing_at": "2026-10-20T11:20:58.901528+00:00",
+      "course_snapshot": {
+        "id": "91a1086b24b44f0c83fef23bafc3275f",
+        "revision": 1,
+        "plan_id": "ad03de4b8985416baa80a861e5390c97",
+        "creator_id": "2aab2a3b568446d3a5b58c2734819a21",
+        "access_role": "creator",
+        "content": {
+          "title": "Tâm lý đại cương",
+          "unlock_policy": "locked",
+          "preferences": {
+            "source_id": "0e0d88ce1cd74656836799dc6ae240e3",
+            "subject": "Tâm lý đại cương",
+            "goal": "Phân biệt thêm/bớt kích thích với tăng/giảm hành vi, đặc biệt negative reinforcement không phải punishment.",
+            "instructions": "",
+            "language": "vi",
+            "fragment_ids": [
+              "0e0d88ce1cd74656836799dc6ae240e3:2:0",
+              "0e0d88ce1cd74656836799dc6ae240e3:2:1",
+              "0e0d88ce1cd74656836799dc6ae240e3:2:2",
+              "0e0d88ce1cd74656836799dc6ae240e3:2:3",
+              "0e0d88ce1cd74656836799dc6ae240e3:2:4",
+              "0e0d88ce1cd74656836799dc6ae240e3:2:5",
+              "0e0d88ce1cd74656836799dc6ae240e3:2:6",
+              "0e0d88ce1cd74656836799dc6ae240e3:2:7"
+            ],
+            "unlock_policy": "locked",
+            "initial_mode": "learn",
+            "expected_extraction_revision": 2,
+            "excluded_fragment_ids": [],
+            "chapter_priorities": [],
+            "difficulty": "applied",
+            "question_types": [
+              "mcq",
+              "cloze",
+              "matching",
+              "ordering",
+              "short_answer"
+            ],
+            "question_count": 8,
+            "card_count": 2,
+            "target_language": "",
+            "terms_to_keep": [
+              "reinforcement",
+              "punishment",
+              "positive",
+              "negative"
+            ],
+            "teacher_notes": "",
+            "user_notes": "",
+            "extraction_revision": 2
+          },
+          "units": [
+            {
+              "title": "QA psy-dev-operant — Củng cố và trừng phạt.txt · Phần 1",
+              "objective": "Học Phần 1 trong QA psy-dev-operant — Củng cố và trừng phạt.txt; đối chiếu nguồn và luyện nội dung của phần này.",
+              "source_refs": [
+                "0e0d88ce1cd74656836799dc6ae240e3:2:0",
+                "0e0d88ce1cd74656836799dc6ae240e3:2:1",
+                "0e0d88ce1cd74656836799dc6ae240e3:2:2",
+                "0e0d88ce1cd74656836799dc6ae240e3:2:3",
+                "0e0d88ce1cd74656836799dc6ae240e3:2:4",
+                "0e0d88ce1cd74656836799dc6ae240e3:2:5",
+                "0e0d88ce1cd74656836799dc6ae240e3:2:6",
+                "0e0d88ce1cd74656836799dc6ae240e3:2:7"
+              ],
+              "id": "unit-1",
+              "data": null,
+              "completed": false,
+              "unlocked": true
+            }
+          ]
+        }
+      },
+      "published_question_count": 0,
+      "published_kinds": [],
+      "wallet_after": {
+        "balance": 20,
+        "held": 0,
+        "available": 20,
+        "policy_version": "dev-proposal-20261015-v2",
+        "policy_proposed": true,
+        "cash_payments": false,
+        "enforcement_enabled": true
+      },
+      "outcome_captured": true
+    },
+    {
+      "case_id": "net-dev-ipv6",
+      "subject": "Mạng máy tính",
+      "started_at": "2026-10-20T11:16:24.069551+00:00",
+      "oracle": {
+        "verification": "computed",
+        "compressed": "2001:db8::1",
+        "expanded": "2001:0db8:0000:0000:0000:0000:0000:0001",
+        "bits": 128
+      },
+      "expected_source_ordering": true,
+      "source_sha256": "798de26ecf40eb78c08ee1c8cb55693e319335a0f3deaa2f33c496b1f8fe0f15",
+      "events": [
+        {
+          "status": "running",
+          "phase": "connecting",
+          "saved_stages": 0,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:16:29.184987+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "receiving",
+          "saved_stages": 0,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:16:33.695720+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "connecting",
+          "saved_stages": 1,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:16:56.371414+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "receiving",
+          "saved_stages": 1,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:17:00.484548+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "connecting",
+          "saved_stages": 2,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:17:05.432320+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "receiving",
+          "saved_stages": 2,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:17:08.712883+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "connecting",
+          "saved_stages": 3,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:17:11.997818+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "receiving",
+          "saved_stages": 3,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:17:15.276266+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "connecting",
+          "saved_stages": 4,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:17:19.380547+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "receiving",
+          "saved_stages": 4,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:17:22.667058+00:00"
+        },
+        {
+          "status": "failed",
+          "phase": "failed",
+          "saved_stages": 4,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:17:30.883854+00:00"
+        },
+        {
+          "status": "failed",
+          "phase": "failed",
+          "saved_stages": 4,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:20:58.918652+00:00"
+        }
+      ],
+      "qa_owner_id": "c8066131f5734d4cb409c3b2e062d1e8",
+      "default_model_before": "kaggle:qwen3.8:27b",
+      "selection": {
+        "model_id": "local:gemma4:12b-mlx",
+        "revision": 1,
+        "provider": "ollama_local",
+        "model": "gemma4:12b-mlx",
+        "reference_codec": "scoped-reference-aliases-v1",
+        "external": false
+      },
+      "source_id": "da30263de00c44d098b3bc077e9fa8ef",
+      "course_id": "68f2d5e036ad4e0f9cc8154d3406912e",
+      "source_snapshot": {
+        "id": "da30263de00c44d098b3bc077e9fa8ef",
+        "metadata": {
+          "name": "QA net-dev-ipv6 — Biểu diễn địa chỉ IPv6.txt",
+          "sha256": "798de26ecf40eb78c08ee1c8cb55693e319335a0f3deaa2f33c496b1f8fe0f15",
+          "bytes": 875,
+          "warnings": [],
+          "subject_suggestion": ""
+        },
+        "status": "ready",
+        "revision": 2,
+        "reviewed": true,
+        "fragments": [
+          {
+            "text": "IPv6 dùng địa chỉ 128 bit. Cách viết đầy đủ có tám nhóm hexadecimal 16 bit, mỗi nhóm thường gọi là hextet. Có thể bỏ các số 0 ở đầu một nhóm. Ký hiệu :: thay cho một dãy nhóm 0 và chỉ xuất hiện nhiều nhất một lần trong một địa chỉ để tránh mơ hồ.",
+            "locator": {
+              "type": "line",
+              "line": 1,
+              "character_start": 0
+            },
+            "id": "da30263de00c44d098b3bc077e9fa8ef:2:0",
+            "original_text": "IPv6 dùng địa chỉ 128 bit. Cách viết đầy đủ có tám nhóm hexadecimal 16 bit, mỗi nhóm thường gọi là hextet. Có thể bỏ các số 0 ở đầu một nhóm. Ký hiệu :: thay cho một dãy nhóm 0 và chỉ xuất hiện nhiều nhất một lần trong một địa chỉ để tránh mơ hồ.",
+            "edited_by_user": false,
+            "needs_review": false,
+            "review_status": "user_confirmed_not_accuracy_verified"
+          },
+          {
+            "text": "Địa chỉ ::1 là loopback. Địa chỉ :: là unspecified. IPv6 không có broadcast; multicast phục vụ các nhóm thiết bị. Với ví dụ 2001:db8:0000:0000:0000:0000:0000:0001, dạng rút gọn là 2001:db8::1.",
+            "locator": {
+              "type": "line",
+              "line": 2,
+              "character_start": 0
+            },
+            "id": "da30263de00c44d098b3bc077e9fa8ef:2:1",
+            "original_text": "Địa chỉ ::1 là loopback. Địa chỉ :: là unspecified. IPv6 không có broadcast; multicast phục vụ các nhóm thiết bị. Với ví dụ 2001:db8:0000:0000:0000:0000:0000:0001, dạng rút gọn là 2001:db8::1.",
+            "edited_by_user": false,
+            "needs_review": false,
+            "review_status": "user_confirmed_not_accuracy_verified"
+          },
+          {
+            "text": "Quy trình rút gọn ví dụ trên:",
+            "locator": {
+              "type": "line",
+              "line": 3,
+              "character_start": 0
+            },
+            "id": "da30263de00c44d098b3bc077e9fa8ef:2:2",
+            "original_text": "Quy trình rút gọn ví dụ trên:",
+            "edited_by_user": false,
+            "needs_review": false,
+            "review_status": "user_confirmed_not_accuracy_verified"
+          },
+          {
+            "text": "1. Chia địa chỉ đầy đủ thành tám nhóm hexadecimal.",
+            "locator": {
+              "type": "line",
+              "line": 4,
+              "character_start": 0
+            },
+            "id": "da30263de00c44d098b3bc077e9fa8ef:2:3",
+            "original_text": "1. Chia địa chỉ đầy đủ thành tám nhóm hexadecimal.",
+            "edited_by_user": false,
+            "needs_review": false,
+            "review_status": "user_confirmed_not_accuracy_verified"
+          },
+          {
+            "text": "2. Bỏ các số 0 ở đầu mỗi nhóm nhưng giữ nhóm 0 là 0.",
+            "locator": {
+              "type": "line",
+              "line": 5,
+              "character_start": 0
+            },
+            "id": "da30263de00c44d098b3bc077e9fa8ef:2:4",
+            "original_text": "2. Bỏ các số 0 ở đầu mỗi nhóm nhưng giữ nhóm 0 là 0.",
+            "edited_by_user": false,
+            "needs_review": false,
+            "review_status": "user_confirmed_not_accuracy_verified"
+          },
+          {
+            "text": "3. Thay dãy nhóm 0 liên tiếp dài nhất bằng một dấu ::.",
+            "locator": {
+              "type": "line",
+              "line": 6,
+              "character_start": 0
+            },
+            "id": "da30263de00c44d098b3bc077e9fa8ef:2:5",
+            "original_text": "3. Thay dãy nhóm 0 liên tiếp dài nhất bằng một dấu ::.",
+            "edited_by_user": false,
+            "needs_review": false,
+            "review_status": "user_confirmed_not_accuracy_verified"
+          },
+          {
+            "text": "4. Kiểm tra dạng rút gọn vẫn biểu diễn đúng 128 bit ban đầu.",
+            "locator": {
+              "type": "line",
+              "line": 7,
+              "character_start": 0
+            },
+            "id": "da30263de00c44d098b3bc077e9fa8ef:2:6",
+            "original_text": "4. Kiểm tra dạng rút gọn vẫn biểu diễn đúng 128 bit ban đầu.",
+            "edited_by_user": false,
+            "needs_review": false,
+            "review_status": "user_confirmed_not_accuracy_verified"
+          }
+        ]
+      },
+      "unit_id": "unit-1",
+      "wallet_before": {
+        "balance": 20,
+        "held": 0,
+        "available": 20,
+        "policy_version": "dev-proposal-20261015-v2",
+        "policy_proposed": true,
+        "cash_payments": false,
+        "enforcement_enabled": true
+      },
+      "job_id": "b215525ffca3460fa3a3b8381639b740",
+      "job": {
+        "id": "b215525ffca3460fa3a3b8381639b740",
+        "task": "lesson",
+        "context": {
+          "course_id": "68f2d5e036ad4e0f9cc8154d3406912e",
+          "unit_id": "unit-1",
+          "expected_revision": 1
+        },
+        "status": "failed",
+        "attempts": 1,
+        "provider": {
+          "provider": "ollama_local",
+          "model": "gemma4:12b-mlx",
+          "reference_codec": "scoped-reference-aliases-v1",
+          "model_choice_id": "local:gemma4:12b-mlx",
+          "selection_revision": 1,
+          "prompt_version": "20261020-scoped-reference-wire-v16",
+          "schema_version": 17,
+          "processor_version": "20261019-source-cloze-isolation-v5"
+        },
+        "result": null,
+        "partial": {
+          "reading": {
+            "title": "Biểu diễn địa chỉ IPv6",
+            "sections": [
+              {
+                "title": "Cấu trúc địa chỉ IPv6",
+                "text": "IPv6 sử dụng địa chỉ 128 bit. Cách viết đầy đủ gồm tám nhóm hexadecimal 16 bit, mỗi nhóm được gọi là hextet. Bạn có thể bỏ các số 0 ở đầu một nhóm. Ký hiệu :: thay cho một dãy nhóm 0 và chỉ xuất hiện tối đa một lần.",
+                "source_refs": [
+                  "da30263de00c44d098b3bc077e9fa8ef:2:0"
+                ]
+              },
+              {
+                "title": "Địa chỉ loopback, unspecified và multicast",
+                "text": "Địa chỉ ::1 là loopback. Địa chỉ :: là unspecified. Trong IPv6 không có broadcast; thay vào đó, multicast phục vụ cho các nhóm thiết bị.",
+                "source_refs": [
+                  "da30263de00c44d098b3bc077e9fa8ef:2:1"
+                ]
+              },
+              {
+                "title": "Cách rút gọn địa chỉ IPv6",
+                "text": "Ví dụ: 2001:db8:0000:0000:0000:0000:0000:0001 rút gọn thành 2001:db8::1. Quy trình gồm: chia thành 8 nhóm, bỏ số 0 ở đầu mỗi nhóm (giữ nhóm 0 là 0), thay dãy nhóm 0 liên tiếp bằng :: và kiểm tra độ chính xác.",
+                "source_refs": [
+                  "da30263de00c44d098b3bc077e9fa8ef:2:1",
+                  "da30263de00c44d098b3bc077e9fa8ef:2:2",
+                  "da30263de00c44d098b3bc077e9fa8ef:2:3",
+                  "da30263de00c44d098b3bc077e9fa8ef:2:4",
+                  "da30263de00c44d098b3bc077e9fa8ef:2:5",
+                  "da30263de00c44d098b3bc077e9fa8ef:2:6"
+                ]
+              }
+            ],
+            "cards": [
+              {
+                "front": "Địa chỉ loopback và unspecified trong IPv6 là gì?",
+                "back": "Địa chỉ ::1 là loopback. Địa chỉ :: là unspecified.",
+                "source_refs": [
+                  "da30263de00c44d098b3bc077e9fa8ef:2:1"
+                ]
+              },
+              {
+                "front": "Quy tắc sử dụng ký hiệu :: khi rút gọn địa chỉ IPv6?",
+                "back": "Ký hiệu :: thay cho một dãy nhóm 0 liên tiếp và chỉ xuất hiện tối đa một lần trong một địa chỉ để tránh mơ hồ.",
+                "source_refs": [
+                  "da30263de00c44d098b3bc077e9fa8ef:2:0",
+                  "da30263de00c44d098b3bc077e9fa8ef:2:5"
+                ]
+              }
+            ],
+            "mindmap": [
+              {
+                "title": "Cấu trúc và Rút gọn IPv6",
+                "text": "1. Cấu trúc: 128 bit, gồm 8 hextet (16 bit/nhóm).\n2. Rút gọn: Bỏ số 0 đầu nhóm, dùng :: cho dãy nhóm 0.\n3. Địa chỉ đặc biệt: ::1 (loopback), :: (unspecified), multicast.",
+                "source_refs": [
+                  "da30263de00c44d098b3bc077e9fa8ef:2:0",
+                  "da30263de00c44d098b3bc077e9fa8ef:2:1",
+                  "da30263de00c44d098b3bc077e9fa8ef:2:5"
+                ]
+              }
+            ]
+          },
+          "questions": {
+            "mcq": {
+              "reason": "",
+              "question": {
+                "kind": "mcq",
+                "prompt": "Trong cấu trúc địa chỉ IPv6, mỗi nhóm hexadecimal 16 bit được gọi là gì?",
+                "options": [
+                  "octet",
+                  "hextet",
+                  "byte"
+                ],
+                "left": [],
+                "answer": "hextet",
+                "explanation": "IPv6 sử dụng địa chỉ 128 bit, được chia thành tám nhóm hexadecimal 16 bit, mỗi nhóm này được gọi là hextet.",
+                "source_refs": [
+                  "da30263de00c44d098b3bc077e9fa8ef:2:0"
+                ],
+                "rubric": [],
+                "difficulty": "applied",
+                "difficulty_basis": "creator_request_not_measured"
+              }
+            },
+            "cloze": {
+              "reason": "",
+              "question": {
+                "kind": "cloze",
+                "prompt": "“Địa chỉ :: là ____.”",
+                "options": [],
+                "left": [],
+                "answer": "unspecified",
+                "explanation": "Trong giao thức IPv6, địa chỉ :: được quy ước là địa chỉ unspecified.",
+                "source_refs": [
+                  "da30263de00c44d098b3bc077e9fa8ef:2:1"
+                ],
+                "rubric": [],
+                "difficulty": "applied",
+                "difficulty_basis": "creator_request_not_measured"
+              }
+            },
+            "matching": {
+              "reason": "",
+              "question": {
+                "kind": "matching",
+                "prompt": "Ghép các loại địa chỉ IPv6 tương ứng với giá trị của chúng:",
+                "options": [
+                  "::1",
+                  "::"
+                ],
+                "left": [
+                  "loopback",
+                  "unspecified"
+                ],
+                "answer": [
+                  0,
+                  1
+                ],
+                "explanation": "Địa chỉ ::1 là loopback và địa chỉ :: là unspecified.",
+                "source_refs": [
+                  "da30263de00c44d098b3bc077e9fa8ef:2:1"
+                ],
+                "rubric": [],
+                "difficulty": "applied",
+                "difficulty_basis": "creator_request_not_measured"
+              }
+            }
+          },
+          "stage_providers": {
+            "reading": {
+              "provider": "ollama_local",
+              "model": "gemma4:12b-mlx",
+              "reference_codec": "scoped-reference-aliases-v1",
+              "model_choice_id": "local:gemma4:12b-mlx",
+              "selection_revision": 1,
+              "prompt_version": "20261020-scoped-reference-wire-v16",
+              "schema_version": 17,
+              "processor_version": "20261019-source-cloze-isolation-v5"
+            },
+            "mcq": {
+              "provider": "ollama_local",
+              "model": "gemma4:12b-mlx",
+              "reference_codec": "scoped-reference-aliases-v1",
+              "model_choice_id": "local:gemma4:12b-mlx",
+              "selection_revision": 1,
+              "prompt_version": "20261020-scoped-reference-wire-v16",
+              "schema_version": 17,
+              "processor_version": "20261019-source-cloze-isolation-v5"
+            },
+            "cloze": {
+              "provider": "ollama_local",
+              "model": "gemma4:12b-mlx",
+              "reference_codec": "scoped-reference-aliases-v1",
+              "model_choice_id": "local:gemma4:12b-mlx",
+              "selection_revision": 1,
+              "prompt_version": "20261020-scoped-reference-wire-v16",
+              "schema_version": 17,
+              "processor_version": "20261019-source-cloze-isolation-v5"
+            },
+            "matching": {
+              "provider": "ollama_local",
+              "model": "gemma4:12b-mlx",
+              "reference_codec": "scoped-reference-aliases-v1",
+              "model_choice_id": "local:gemma4:12b-mlx",
+              "selection_revision": 1,
+              "prompt_version": "20261020-scoped-reference-wire-v16",
+              "schema_version": 17,
+              "processor_version": "20261019-source-cloze-isolation-v5"
+            }
+          },
+          "question_rejections": {}
+        },
+        "feedback_deferred": false,
+        "error": {
+          "message": "Nguồn trích chưa có quy trình đánh số để kiểm chứng thứ tự."
+        },
+        "progress": {
+          "phase": "failed",
+          "requests": [
+            {
+              "index": 1,
+              "schema": "LessonReading",
+              "phase": "received",
+              "streaming": true,
+              "started_at": "2026-10-20T11:16:29.170042+00:00",
+              "first_chunk_ms": 4291.339,
+              "first_text_ms": null,
+              "elapsed_ms": 27074.963,
+              "chunks": 685,
+              "characters": 1887,
+              "usage": {
+                "input_tokens": 1622,
+                "cached_input_tokens": 136,
+                "output_tokens": 685,
+                "load_duration_ns": 4568917,
+                "prompt_eval_duration_ns": 4050872916,
+                "eval_duration_ns": 22965517959,
+                "total_duration_ns": 27027714667,
+                "reference_alias_count": 7,
+                "reference_alias_map_sha256": "4f18a076c8125f3356e9f12f9871f6002ab749f9422abfbbe8088b4e8d3de010"
+              },
+              "protocol_fallbacks": 1
+            },
+            {
+              "index": 2,
+              "schema": "McqDraft",
+              "phase": "received",
+              "streaming": true,
+              "started_at": "2026-10-20T11:16:56.250135+00:00",
+              "first_chunk_ms": 4026.26,
+              "first_text_ms": null,
+              "elapsed_ms": 8958.901,
+              "chunks": 150,
+              "characters": 420,
+              "usage": {
+                "input_tokens": 1598,
+                "cached_input_tokens": 127,
+                "output_tokens": 150,
+                "load_duration_ns": 4774208,
+                "prompt_eval_duration_ns": 3780351667,
+                "eval_duration_ns": 5130316958,
+                "total_duration_ns": 8919119375,
+                "reference_alias_count": 7,
+                "reference_alias_map_sha256": "4f18a076c8125f3356e9f12f9871f6002ab749f9422abfbbe8088b4e8d3de010"
+              },
+              "protocol_fallbacks": 1
+            },
+            {
+              "index": 3,
+              "schema": "ClozeDraft",
+              "phase": "received",
+              "streaming": true,
+              "started_at": "2026-10-20T11:17:05.216339+00:00",
+              "first_chunk_ms": 3444.933,
+              "first_text_ms": null,
+              "elapsed_ms": 6647.115,
+              "chunks": 82,
+              "characters": 235,
+              "usage": {
+                "input_tokens": 1779,
+                "cached_input_tokens": 402,
+                "output_tokens": 82,
+                "load_duration_ns": 4669917,
+                "prompt_eval_duration_ns": 3173997667,
+                "eval_duration_ns": 3386682166,
+                "total_duration_ns": 6577393542,
+                "cloze_source_mask_derived": 1,
+                "cloze_statement_sha256": "be436951349f6323fc5dd23e54a516022579a6b5d7051f19151be684bd30ea33",
+                "reference_alias_count": 7,
+                "reference_alias_map_sha256": "4f18a076c8125f3356e9f12f9871f6002ab749f9422abfbbe8088b4e8d3de010"
+              },
+              "protocol_fallbacks": 1
+            },
+            {
+              "index": 4,
+              "schema": "MatchingDraft",
+              "phase": "received",
+              "streaming": true,
+              "started_at": "2026-10-20T11:17:11.868074+00:00",
+              "first_chunk_ms": 3212.054,
+              "first_text_ms": null,
+              "elapsed_ms": 7318.499,
+              "chunks": 146,
+              "characters": 413,
+              "usage": {
+                "input_tokens": 1729,
+                "cached_input_tokens": 407,
+                "output_tokens": 146,
+                "load_duration_ns": 4753750,
+                "prompt_eval_duration_ns": 2966273500,
+                "eval_duration_ns": 4271918125,
+                "total_duration_ns": 7250746458,
+                "reference_alias_count": 7,
+                "reference_alias_map_sha256": "4f18a076c8125f3356e9f12f9871f6002ab749f9422abfbbe8088b4e8d3de010"
+              },
+              "protocol_fallbacks": 1
+            },
+            {
+              "index": 5,
+              "schema": "OrderingDraft",
+              "phase": "failed",
+              "streaming": true,
+              "started_at": "2026-10-20T11:17:19.190705+00:00",
+              "first_chunk_ms": 3373.108,
+              "first_text_ms": null,
+              "elapsed_ms": null,
+              "chunks": 267,
+              "characters": 735,
+              "usage": {},
+              "protocol_fallbacks": 1
+            }
+          ],
+          "preview": null,
+          "planned_stages": 9,
+          "saved_stages": 4,
+          "reused_stages": 0,
+          "started_at": "2026-10-20T11:16:29.168094+00:00",
+          "completed_at": "2026-10-20T11:17:30.838456+00:00",
+          "elapsed_ms": 61670.366,
+          "version": 224,
+          "updated_at": "2026-10-20T11:17:30.838491+00:00"
+        }
+      },
+      "finished_observing_at": "2026-10-20T11:20:58.921436+00:00",
+      "course_snapshot": {
+        "id": "68f2d5e036ad4e0f9cc8154d3406912e",
+        "revision": 1,
+        "plan_id": "f4ba1ba510ce4cc3877bfeeced34f75c",
+        "creator_id": "c8066131f5734d4cb409c3b2e062d1e8",
+        "access_role": "creator",
+        "content": {
+          "title": "Mạng máy tính",
+          "unlock_policy": "locked",
+          "preferences": {
+            "source_id": "da30263de00c44d098b3bc077e9fa8ef",
+            "subject": "Mạng máy tính",
+            "goal": "Đọc độ dài, các nhóm hextet, địa chỉ loopback/unspecified và cách rút gọn một địa chỉ IPv6.",
+            "instructions": "",
+            "language": "vi",
+            "fragment_ids": [
+              "da30263de00c44d098b3bc077e9fa8ef:2:0",
+              "da30263de00c44d098b3bc077e9fa8ef:2:1",
+              "da30263de00c44d098b3bc077e9fa8ef:2:2",
+              "da30263de00c44d098b3bc077e9fa8ef:2:3",
+              "da30263de00c44d098b3bc077e9fa8ef:2:4",
+              "da30263de00c44d098b3bc077e9fa8ef:2:5",
+              "da30263de00c44d098b3bc077e9fa8ef:2:6"
+            ],
+            "unlock_policy": "locked",
+            "initial_mode": "learn",
+            "expected_extraction_revision": 2,
+            "excluded_fragment_ids": [],
+            "chapter_priorities": [],
+            "difficulty": "applied",
+            "question_types": [
+              "mcq",
+              "cloze",
+              "matching",
+              "ordering",
+              "short_answer"
+            ],
+            "question_count": 8,
+            "card_count": 2,
+            "target_language": "",
+            "terms_to_keep": [
+              "IPv6",
+              "hextet",
+              "loopback",
+              "unspecified",
+              "multicast"
+            ],
+            "teacher_notes": "",
+            "user_notes": "",
+            "extraction_revision": 2
+          },
+          "units": [
+            {
+              "title": "QA net-dev-ipv6 — Biểu diễn địa chỉ IPv6.txt · Phần 1",
+              "objective": "Học Phần 1 trong QA net-dev-ipv6 — Biểu diễn địa chỉ IPv6.txt; đối chiếu nguồn và luyện nội dung của phần này.",
+              "source_refs": [
+                "da30263de00c44d098b3bc077e9fa8ef:2:0",
+                "da30263de00c44d098b3bc077e9fa8ef:2:1",
+                "da30263de00c44d098b3bc077e9fa8ef:2:2",
+                "da30263de00c44d098b3bc077e9fa8ef:2:3",
+                "da30263de00c44d098b3bc077e9fa8ef:2:4",
+                "da30263de00c44d098b3bc077e9fa8ef:2:5",
+                "da30263de00c44d098b3bc077e9fa8ef:2:6"
+              ],
+              "id": "unit-1",
+              "data": null,
+              "completed": false,
+              "unlocked": true
+            }
+          ]
+        }
+      },
+      "published_question_count": 0,
+      "published_kinds": [],
+      "wallet_after": {
+        "balance": 20,
+        "held": 0,
+        "available": 20,
+        "policy_version": "dev-proposal-20261015-v2",
+        "policy_proposed": true,
+        "cash_payments": false,
+        "enforcement_enabled": true
+      },
+      "outcome_captured": true
+    },
+    {
+      "case_id": "calc-dev-chain",
+      "subject": "Vi tích phân",
+      "started_at": "2026-10-20T11:17:30.914865+00:00",
+      "oracle": {
+        "verification": "computed",
+        "coefficient": 12,
+        "value_at": 12
+      },
+      "expected_source_ordering": true,
+      "source_sha256": "e3ca3832513038de4f00704288cb424462bc14c70e3600262c3e201200c3815b",
+      "events": [
+        {
+          "status": "running",
+          "phase": "connecting",
+          "saved_stages": 0,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:17:31.605292+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "receiving",
+          "saved_stages": 0,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:17:35.298314+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "connecting",
+          "saved_stages": 1,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:17:56.538054+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "receiving",
+          "saved_stages": 1,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:18:00.277315+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "connecting",
+          "saved_stages": 2,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:18:06.045134+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "receiving",
+          "saved_stages": 2,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:18:09.734907+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "connecting",
+          "saved_stages": 3,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:18:12.593494+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "receiving",
+          "saved_stages": 3,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:18:15.464532+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "connecting",
+          "saved_stages": 4,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:18:21.620252+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "receiving",
+          "saved_stages": 4,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:18:25.326739+00:00"
+        },
+        {
+          "status": "failed",
+          "phase": "failed",
+          "saved_stages": 4,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:18:33.134747+00:00"
+        },
+        {
+          "status": "failed",
+          "phase": "failed",
+          "saved_stages": 4,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:20:58.936846+00:00"
+        }
+      ],
+      "qa_owner_id": "c98f31775c9d44e4b13b9804208b2716",
+      "default_model_before": "kaggle:qwen3.8:27b",
+      "selection": {
+        "model_id": "local:gemma4:12b-mlx",
+        "revision": 1,
+        "provider": "ollama_local",
+        "model": "gemma4:12b-mlx",
+        "reference_codec": "scoped-reference-aliases-v1",
+        "external": false
+      },
+      "source_id": "9b908731c9bc4c8bb5b824e51cde3045",
+      "course_id": "cd3ced0813fa4351910353af362f9081",
+      "source_snapshot": {
+        "id": "9b908731c9bc4c8bb5b824e51cde3045",
+        "metadata": {
+          "name": "QA calc-dev-chain — Đạo hàm hàm hợp.txt",
+          "sha256": "e3ca3832513038de4f00704288cb424462bc14c70e3600262c3e201200c3815b",
+          "bytes": 620,
+          "warnings": [],
+          "subject_suggestion": ""
+        },
+        "status": "ready",
+        "revision": 2,
+        "reviewed": true,
+        "fragments": [
+          {
+            "text": "Nếu h(x)=f(g(x)) và các hàm khả vi tại những điểm cần xét, chain rule cho h'(x)=f'(g(x))*g'(x). Đạo hàm hàm ngoài phải được tính tại g(x), không phải tại g'(x).",
+            "locator": {
+              "type": "line",
+              "line": 1,
+              "character_start": 0
+            },
+            "id": "9b908731c9bc4c8bb5b824e51cde3045:2:0",
+            "original_text": "Nếu h(x)=f(g(x)) và các hàm khả vi tại những điểm cần xét, chain rule cho h'(x)=f'(g(x))*g'(x). Đạo hàm hàm ngoài phải được tính tại g(x), không phải tại g'(x).",
+            "edited_by_user": false,
+            "needs_review": false,
+            "review_status": "user_confirmed_not_accuracy_verified"
+          },
+          {
+            "text": "Ví dụ h(x)=(3x+1)^4: hàm trong g(x)=3x+1 có g'(x)=3; hàm ngoài f(u)=u^4 có f'(u)=4u^3. Do đó h'(x)=12(3x+1)^3 và h'(0)=12. Biểu thức 4(3x+1)^3 bỏ mất hệ số 3 nên sai.",
+            "locator": {
+              "type": "line",
+              "line": 2,
+              "character_start": 0
+            },
+            "id": "9b908731c9bc4c8bb5b824e51cde3045:2:1",
+            "original_text": "Ví dụ h(x)=(3x+1)^4: hàm trong g(x)=3x+1 có g'(x)=3; hàm ngoài f(u)=u^4 có f'(u)=4u^3. Do đó h'(x)=12(3x+1)^3 và h'(0)=12. Biểu thức 4(3x+1)^3 bỏ mất hệ số 3 nên sai.",
+            "edited_by_user": false,
+            "needs_review": false,
+            "review_status": "user_confirmed_not_accuracy_verified"
+          },
+          {
+            "text": "Quy trình dùng chain rule:",
+            "locator": {
+              "type": "line",
+              "line": 3,
+              "character_start": 0
+            },
+            "id": "9b908731c9bc4c8bb5b824e51cde3045:2:2",
+            "original_text": "Quy trình dùng chain rule:",
+            "edited_by_user": false,
+            "needs_review": false,
+            "review_status": "user_confirmed_not_accuracy_verified"
+          },
+          {
+            "text": "1. Xác định hàm trong và hàm ngoài.",
+            "locator": {
+              "type": "line",
+              "line": 4,
+              "character_start": 0
+            },
+            "id": "9b908731c9bc4c8bb5b824e51cde3045:2:3",
+            "original_text": "1. Xác định hàm trong và hàm ngoài.",
+            "edited_by_user": false,
+            "needs_review": false,
+            "review_status": "user_confirmed_not_accuracy_verified"
+          },
+          {
+            "text": "2. Lấy đạo hàm hàm ngoài rồi thế hàm trong vào.",
+            "locator": {
+              "type": "line",
+              "line": 5,
+              "character_start": 0
+            },
+            "id": "9b908731c9bc4c8bb5b824e51cde3045:2:4",
+            "original_text": "2. Lấy đạo hàm hàm ngoài rồi thế hàm trong vào.",
+            "edited_by_user": false,
+            "needs_review": false,
+            "review_status": "user_confirmed_not_accuracy_verified"
+          },
+          {
+            "text": "3. Tính đạo hàm hàm trong.",
+            "locator": {
+              "type": "line",
+              "line": 6,
+              "character_start": 0
+            },
+            "id": "9b908731c9bc4c8bb5b824e51cde3045:2:5",
+            "original_text": "3. Tính đạo hàm hàm trong.",
+            "edited_by_user": false,
+            "needs_review": false,
+            "review_status": "user_confirmed_not_accuracy_verified"
+          },
+          {
+            "text": "4. Nhân hai kết quả để được đạo hàm hàm hợp.",
+            "locator": {
+              "type": "line",
+              "line": 7,
+              "character_start": 0
+            },
+            "id": "9b908731c9bc4c8bb5b824e51cde3045:2:6",
+            "original_text": "4. Nhân hai kết quả để được đạo hàm hàm hợp.",
+            "edited_by_user": false,
+            "needs_review": false,
+            "review_status": "user_confirmed_not_accuracy_verified"
+          }
+        ]
+      },
+      "unit_id": "unit-1",
+      "wallet_before": {
+        "balance": 20,
+        "held": 0,
+        "available": 20,
+        "policy_version": "dev-proposal-20261015-v2",
+        "policy_proposed": true,
+        "cash_payments": false,
+        "enforcement_enabled": true
+      },
+      "job_id": "0d23078d0ea249d285a9ba882e6d65c8",
+      "job": {
+        "id": "0d23078d0ea249d285a9ba882e6d65c8",
+        "task": "lesson",
+        "context": {
+          "course_id": "cd3ced0813fa4351910353af362f9081",
+          "unit_id": "unit-1",
+          "expected_revision": 1
+        },
+        "status": "failed",
+        "attempts": 1,
+        "provider": {
+          "provider": "ollama_local",
+          "model": "gemma4:12b-mlx",
+          "reference_codec": "scoped-reference-aliases-v1",
+          "model_choice_id": "local:gemma4:12b-mlx",
+          "selection_revision": 1,
+          "prompt_version": "20261020-scoped-reference-wire-v16",
+          "schema_version": 17,
+          "processor_version": "20261019-source-cloze-isolation-v5"
+        },
+        "result": null,
+        "partial": {
+          "reading": {
+            "title": "Đạo hàm hàm hợp và chain rule",
+            "sections": [
+              {
+                "title": "Định nghĩa chain rule",
+                "text": "Nếu h(x)=f(g(x)) và các hàm khả vi tại những điểm cần xét, chain rule cho h'(x)=f'(g(x))*g'(x). Lưu ý rằng đạo hàm hàm ngoài phải được tính tại g(x), không phải tại g'(x).",
+                "source_refs": [
+                  "9b908731c9bc4c8bb5b824e51cde3045:2:0"
+                ]
+              },
+              {
+                "title": "Ví dụ áp dụng",
+                "text": "Xét h(x)=(3x+1)^4: hàm trong g(x)=3x+1 có g'(x)=3; hàm ngoài f(u)=u^4 có f'(u)=4u^3. Do đó h'(x)=12(3x+1)^3 và h'(0)=12. Lưu ý: Biểu thức 4(3x+1)^3 là sai vì bỏ mất hệ số 3.",
+                "source_refs": [
+                  "9b908731c9bc4c8bb5b824e51cde3045:2:1"
+                ]
+              },
+              {
+                "title": "Quy trình thực hiện",
+                "text": "Quy trình dùng chain rule gồm 4 bước: 1. Xác định hàm trong và hàm ngoài. 2. Lấy đạo hàm hàm ngoài rồi thế hàm trong vào. 3. Tính đạo hàm hàm trong. 4. Nhân hai kết quả để được đạo hàm hàm hợp.",
+                "source_refs": [
+                  "9b908731c9bc4c8bb5b824e51cde3045:2:2",
+                  "9b908731c9bc4c8bb5b824e51cde3045:2:3",
+                  "9b908731c9bc4c8bb5b824e51cde3045:2:4",
+                  "9b908731c9bc4c8bb5b824e51cde3045:2:5",
+                  "9b908731c9bc4c8bb5b824e51cde3045:2:6"
+                ]
+              }
+            ],
+            "cards": [
+              {
+                "front": "Công thức chain rule cho h(x)=f(g(x)) là gì?",
+                "back": "h'(x)=f'(g(x))*g'(x). Đạo hàm hàm ngoài phải được tính tại g(x).",
+                "source_refs": [
+                  "9b908731c9bc4c8bb5b824e51cde3045:2:0"
+                ]
+              },
+              {
+                "front": "Cách tính đạo hàm của h(x)=(3x+1)^4?",
+                "back": "g(x)=3x+1, g'(x)=3; f(u)=u^4, f'(u)=4u^3. Kết quả: h'(x)=12(3x+1)^3 và h'(0)=12.",
+                "source_refs": [
+                  "9b908731c9bc4c8bb5b824e51cde3045:2:1"
+                ]
+              }
+            ],
+            "mindmap": [
+              {
+                "title": "Xác định thành phần",
+                "text": "Xác định hàm trong và hàm ngoài.",
+                "source_refs": [
+                  "9b908731c9bc4c8bb5b824e51cde3045:2:3"
+                ]
+              },
+              {
+                "title": "Tính toán đạo hàm",
+                "text": "Đạo hàm hàm ngoài (thế hàm trong) và tính đạo hàm hàm trong.",
+                "source_refs": [
+                  "9b908731c9bc4c8bb5b824e51cde3045:2:4",
+                  "9b908731c9bc4c8bb5b824e51cde3045:2:5"
+                ]
+              },
+              {
+                "title": "Kết hợp",
+                "text": "Nhân hai kết quả để được đạo hàm hàm hợp.",
+                "source_refs": [
+                  "9b908731c9bc4c8bb5b824e51cde3045:2:6"
+                ]
+              }
+            ]
+          },
+          "questions": {
+            "mcq": {
+              "reason": "",
+              "question": {
+                "kind": "mcq",
+                "prompt": "Khi tính đạo hàm của hàm hợp h(x)=f(g(x)) bằng chain rule, đạo hàm của hàm ngoài phải được tính tại đâu?",
+                "options": [
+                  "tại g'(x)",
+                  "tại g(x)",
+                  "tại h'(x)"
+                ],
+                "left": [],
+                "answer": "tại g(x)",
+                "explanation": "Theo quy tắc chain rule, nếu h(x)=f(g(x)), đạo hàm của hàm ngoài phải được tính tại g(x), không phải tại g'(x).",
+                "source_refs": [
+                  "9b908731c9bc4c8bb5b824e51cde3045:2:0"
+                ],
+                "rubric": [],
+                "difficulty": "applied",
+                "difficulty_basis": "creator_request_not_measured"
+              }
+            },
+            "cloze": {
+              "reason": "",
+              "question": {
+                "kind": "cloze",
+                "prompt": "“Đạo hàm hàm ngoài phải được tính tại ____, không phải tại g'(x).”",
+                "options": [],
+                "left": [],
+                "answer": "g(x)",
+                "explanation": "Khi sử dụng chain rule cho hàm hợp h(x)=f(g(x)), đạo hàm của hàm ngoài phải được tính tại g(x) thay vì g'(x).",
+                "source_refs": [
+                  "9b908731c9bc4c8bb5b824e51cde3045:2:0"
+                ],
+                "rubric": [],
+                "difficulty": "applied",
+                "difficulty_basis": "creator_request_not_measured"
+              }
+            },
+            "matching": {
+              "reason": "Nguồn cung cấp đầy đủ quy trình và các thành phần của chain rule để tạo câu hỏi matching.",
+              "question": {
+                "kind": "matching",
+                "prompt": "Ghép các thành phần tương ứng trong quy trình sử dụng chain rule để tính đạo hàm hàm hợp:",
+                "options": [
+                  "g'(x)",
+                  "f'(g(x))"
+                ],
+                "left": [
+                  "Đạo hàm của hàm trong",
+                  "Đạo hàm của hàm ngoài"
+                ],
+                "answer": [
+                  0,
+                  1
+                ],
+                "explanation": "Theo quy trình tại R1 và R5, đạo hàm hàm ngoài là f'(g(x)) và đạo hàm hàm trong là g'(x).",
+                "source_refs": [
+                  "9b908731c9bc4c8bb5b824e51cde3045:2:0",
+                  "9b908731c9bc4c8bb5b824e51cde3045:2:4",
+                  "9b908731c9bc4c8bb5b824e51cde3045:2:5"
+                ],
+                "rubric": [],
+                "difficulty": "applied",
+                "difficulty_basis": "creator_request_not_measured"
+              }
+            }
+          },
+          "stage_providers": {
+            "reading": {
+              "provider": "ollama_local",
+              "model": "gemma4:12b-mlx",
+              "reference_codec": "scoped-reference-aliases-v1",
+              "model_choice_id": "local:gemma4:12b-mlx",
+              "selection_revision": 1,
+              "prompt_version": "20261020-scoped-reference-wire-v16",
+              "schema_version": 17,
+              "processor_version": "20261019-source-cloze-isolation-v5"
+            },
+            "mcq": {
+              "provider": "ollama_local",
+              "model": "gemma4:12b-mlx",
+              "reference_codec": "scoped-reference-aliases-v1",
+              "model_choice_id": "local:gemma4:12b-mlx",
+              "selection_revision": 1,
+              "prompt_version": "20261020-scoped-reference-wire-v16",
+              "schema_version": 17,
+              "processor_version": "20261019-source-cloze-isolation-v5"
+            },
+            "cloze": {
+              "provider": "ollama_local",
+              "model": "gemma4:12b-mlx",
+              "reference_codec": "scoped-reference-aliases-v1",
+              "model_choice_id": "local:gemma4:12b-mlx",
+              "selection_revision": 1,
+              "prompt_version": "20261020-scoped-reference-wire-v16",
+              "schema_version": 17,
+              "processor_version": "20261019-source-cloze-isolation-v5"
+            },
+            "matching": {
+              "provider": "ollama_local",
+              "model": "gemma4:12b-mlx",
+              "reference_codec": "scoped-reference-aliases-v1",
+              "model_choice_id": "local:gemma4:12b-mlx",
+              "selection_revision": 1,
+              "prompt_version": "20261020-scoped-reference-wire-v16",
+              "schema_version": 17,
+              "processor_version": "20261019-source-cloze-isolation-v5"
+            }
+          },
+          "question_rejections": {}
+        },
+        "feedback_deferred": false,
+        "error": {
+          "message": "Nguồn trích chưa có quy trình đánh số để kiểm chứng thứ tự."
+        },
+        "progress": {
+          "phase": "failed",
+          "requests": [
+            {
+              "index": 1,
+              "schema": "LessonReading",
+              "phase": "received",
+              "streaming": true,
+              "started_at": "2026-10-20T11:17:31.596110+00:00",
+              "first_chunk_ms": 3539.468,
+              "first_text_ms": null,
+              "elapsed_ms": 24540.657,
+              "chunks": 767,
+              "characters": 1926,
+              "usage": {
+                "input_tokens": 1565,
+                "cached_input_tokens": 135,
+                "output_tokens": 767,
+                "load_duration_ns": 4858708,
+                "prompt_eval_duration_ns": 3269531083,
+                "eval_duration_ns": 21233304458,
+                "total_duration_ns": 24511930625,
+                "reference_alias_count": 7,
+                "reference_alias_map_sha256": "35d851b85809d98192c687629fdfce37f2a0a124cd40206d11528fa718685c9a"
+              },
+              "protocol_fallbacks": 1
+            },
+            {
+              "index": 2,
+              "schema": "McqDraft",
+              "phase": "received",
+              "streaming": true,
+              "started_at": "2026-10-20T11:17:56.141257+00:00",
+              "first_chunk_ms": 4095.864,
+              "first_text_ms": null,
+              "elapsed_ms": 9667.747,
+              "chunks": 179,
+              "characters": 469,
+              "usage": {
+                "input_tokens": 1538,
+                "cached_input_tokens": 127,
+                "output_tokens": 179,
+                "load_duration_ns": 4705333,
+                "prompt_eval_duration_ns": 3733196125,
+                "eval_duration_ns": 5882142334,
+                "total_duration_ns": 9627716375,
+                "reference_alias_count": 7,
+                "reference_alias_map_sha256": "35d851b85809d98192c687629fdfce37f2a0a124cd40206d11528fa718685c9a"
+              },
+              "protocol_fallbacks": 1
+            },
+            {
+              "index": 3,
+              "schema": "ClozeDraft",
+              "phase": "received",
+              "streaming": true,
+              "started_at": "2026-10-20T11:18:05.814733+00:00",
+              "first_chunk_ms": 3689.527,
+              "first_text_ms": null,
+              "elapsed_ms": 6382.914,
+              "chunks": 110,
+              "characters": 284,
+              "usage": {
+                "input_tokens": 1731,
+                "cached_input_tokens": 375,
+                "output_tokens": 110,
+                "load_duration_ns": 5225166,
+                "prompt_eval_duration_ns": 3352882375,
+                "eval_duration_ns": 2943282708,
+                "total_duration_ns": 6310279291,
+                "cloze_source_mask_derived": 1,
+                "cloze_statement_sha256": "44b76ee9a8ac90361fa9d4bd7f19125adde3f865e7035a72a69cdbc405498d27",
+                "reference_alias_count": 7,
+                "reference_alias_map_sha256": "35d851b85809d98192c687629fdfce37f2a0a124cd40206d11528fa718685c9a"
+              },
+              "protocol_fallbacks": 1
+            },
+            {
+              "index": 4,
+              "schema": "MatchingDraft",
+              "phase": "received",
+              "streaming": true,
+              "started_at": "2026-10-20T11:18:12.201617+00:00",
+              "first_chunk_ms": 2995.587,
+              "first_text_ms": null,
+              "elapsed_ms": 9193.187,
+              "chunks": 217,
+              "characters": 623,
+              "usage": {
+                "input_tokens": 1693,
+                "cached_input_tokens": 380,
+                "output_tokens": 217,
+                "load_duration_ns": 4667167,
+                "prompt_eval_duration_ns": 2774303792,
+                "eval_duration_ns": 6376042875,
+                "total_duration_ns": 9161936208,
+                "reference_alias_count": 7,
+                "reference_alias_map_sha256": "35d851b85809d98192c687629fdfce37f2a0a124cd40206d11528fa718685c9a"
+              },
+              "protocol_fallbacks": 1
+            },
+            {
+              "index": 5,
+              "schema": "OrderingDraft",
+              "phase": "failed",
+              "streaming": true,
+              "started_at": "2026-10-20T11:18:21.405156+00:00",
+              "first_chunk_ms": 3514.986,
+              "first_text_ms": null,
+              "elapsed_ms": null,
+              "chunks": 254,
+              "characters": 900,
+              "usage": {},
+              "protocol_fallbacks": 1
+            }
+          ],
+          "preview": null,
+          "planned_stages": 9,
+          "saved_stages": 4,
+          "reused_stages": 0,
+          "started_at": "2026-10-20T11:17:31.595285+00:00",
+          "completed_at": "2026-10-20T11:18:32.810869+00:00",
+          "elapsed_ms": 61215.593,
+          "version": 215,
+          "updated_at": "2026-10-20T11:18:32.810968+00:00"
+        }
+      },
+      "finished_observing_at": "2026-10-20T11:20:58.939579+00:00",
+      "course_snapshot": {
+        "id": "cd3ced0813fa4351910353af362f9081",
+        "revision": 1,
+        "plan_id": "cf4ebadd6fd34c0f9fde50ebc7dbd32d",
+        "creator_id": "c98f31775c9d44e4b13b9804208b2716",
+        "access_role": "creator",
+        "content": {
+          "title": "Vi tích phân",
+          "unlock_policy": "locked",
+          "preferences": {
+            "source_id": "9b908731c9bc4c8bb5b824e51cde3045",
+            "subject": "Vi tích phân",
+            "goal": "Áp dụng chain rule, giữ nhân đạo hàm hàm trong; tính đạo hàm và giá trị tại điểm trong ví dụ.",
+            "instructions": "",
+            "language": "vi",
+            "fragment_ids": [
+              "9b908731c9bc4c8bb5b824e51cde3045:2:0",
+              "9b908731c9bc4c8bb5b824e51cde3045:2:1",
+              "9b908731c9bc4c8bb5b824e51cde3045:2:2",
+              "9b908731c9bc4c8bb5b824e51cde3045:2:3",
+              "9b908731c9bc4c8bb5b824e51cde3045:2:4",
+              "9b908731c9bc4c8bb5b824e51cde3045:2:5",
+              "9b908731c9bc4c8bb5b824e51cde3045:2:6"
+            ],
+            "unlock_policy": "locked",
+            "initial_mode": "learn",
+            "expected_extraction_revision": 2,
+            "excluded_fragment_ids": [],
+            "chapter_priorities": [],
+            "difficulty": "applied",
+            "question_types": [
+              "mcq",
+              "cloze",
+              "matching",
+              "ordering",
+              "short_answer"
+            ],
+            "question_count": 8,
+            "card_count": 2,
+            "target_language": "",
+            "terms_to_keep": [
+              "chain rule"
+            ],
+            "teacher_notes": "",
+            "user_notes": "",
+            "extraction_revision": 2
+          },
+          "units": [
+            {
+              "title": "QA calc-dev-chain — Đạo hàm hàm hợp.txt · Phần 1",
+              "objective": "Học Phần 1 trong QA calc-dev-chain — Đạo hàm hàm hợp.txt; đối chiếu nguồn và luyện nội dung của phần này.",
+              "source_refs": [
+                "9b908731c9bc4c8bb5b824e51cde3045:2:0",
+                "9b908731c9bc4c8bb5b824e51cde3045:2:1",
+                "9b908731c9bc4c8bb5b824e51cde3045:2:2",
+                "9b908731c9bc4c8bb5b824e51cde3045:2:3",
+                "9b908731c9bc4c8bb5b824e51cde3045:2:4",
+                "9b908731c9bc4c8bb5b824e51cde3045:2:5",
+                "9b908731c9bc4c8bb5b824e51cde3045:2:6"
+              ],
+              "id": "unit-1",
+              "data": null,
+              "completed": false,
+              "unlocked": true
+            }
+          ]
+        }
+      },
+      "published_question_count": 0,
+      "published_kinds": [],
+      "wallet_after": {
+        "balance": 20,
+        "held": 0,
+        "available": 20,
+        "policy_version": "dev-proposal-20261015-v2",
+        "policy_proposed": true,
+        "cash_payments": false,
+        "enforcement_enabled": true
+      },
+      "outcome_captured": true
+    },
+    {
+      "case_id": "psy-dev-memory",
+      "subject": "Tâm lý đại cương",
+      "started_at": "2026-10-20T11:18:33.173669+00:00",
+      "oracle": {
+        "verification": "agent_source_crosscheck_only_needs_independent_review",
+        "limit": "A deterministic computation cannot establish these psychology labels; no automatic factual pass."
+      },
+      "expected_source_ordering": false,
+      "source_sha256": "b115ab111d1f37bf943ea209551a363bde1c96a07e06199967bf45c868c4e619",
+      "events": [
+        {
+          "status": "running",
+          "phase": "connecting",
+          "saved_stages": 0,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:18:33.773813+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "receiving",
+          "saved_stages": 0,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:18:36.635796+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "connecting",
+          "saved_stages": 1,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:18:54.164108+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "receiving",
+          "saved_stages": 1,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:18:58.249824+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "connecting",
+          "saved_stages": 2,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:19:01.939935+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "receiving",
+          "saved_stages": 2,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:19:04.806182+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "connecting",
+          "saved_stages": 3,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:19:06.861869+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "receiving",
+          "saved_stages": 3,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:19:10.133337+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "connecting",
+          "saved_stages": 5,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:19:14.640500+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "receiving",
+          "saved_stages": 5,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:19:17.104044+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "connecting",
+          "saved_stages": 6,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:19:26.108827+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "receiving",
+          "saved_stages": 6,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:19:28.994432+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "connecting",
+          "saved_stages": 7,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:19:33.904301+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "receiving",
+          "saved_stages": 7,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:19:37.223188+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "connecting",
+          "saved_stages": 8,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:19:39.277336+00:00"
+        },
+        {
+          "status": "running",
+          "phase": "receiving",
+          "saved_stages": 8,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:19:42.148340+00:00"
+        },
+        {
+          "status": "succeeded",
+          "phase": "succeeded",
+          "saved_stages": 9,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:19:47.491067+00:00"
+        },
+        {
+          "status": "succeeded",
+          "phase": "succeeded",
+          "saved_stages": 9,
+          "planned_stages": 9,
+          "observed_at": "2026-10-20T11:20:58.954953+00:00"
+        }
+      ],
+      "qa_owner_id": "324b49d6f8264b30b46ecf34a0df80db",
+      "default_model_before": "kaggle:qwen3.8:27b",
+      "selection": {
+        "model_id": "local:gemma4:12b-mlx",
+        "revision": 1,
+        "provider": "ollama_local",
+        "model": "gemma4:12b-mlx",
+        "reference_codec": "scoped-reference-aliases-v1",
+        "external": false
+      },
+      "source_id": "05d4f718ca874552852d06206c1f9d83",
+      "course_id": "e970022ff5db404192d705624faee51a",
+      "source_snapshot": {
+        "id": "05d4f718ca874552852d06206c1f9d83",
+        "metadata": {
+          "name": "QA psy-dev-memory — Ba chức năng của trí nhớ.txt",
+          "sha256": "b115ab111d1f37bf943ea209551a363bde1c96a07e06199967bf45c868c4e619",
+          "bytes": 975,
+          "warnings": [],
+          "subject_suggestion": ""
+        },
+        "status": "ready",
+        "revision": 2,
+        "reviewed": true,
+        "fragments": [
+          {
+            "text": "Encoding là quá trình đưa thông tin vào hệ thống trí nhớ. Storage là lưu giữ thông tin đã được mã hóa. Retrieval là đưa thông tin đã lưu trở lại nhận thức. Ba thuật ngữ mô tả các chức năng khác nhau; đây không phải bản hướng dẫn thao tác từng bước.",
+            "locator": {
+              "type": "line",
+              "line": 1,
+              "character_start": 0
+            },
+            "id": "05d4f718ca874552852d06206c1f9d83:2:0",
+            "original_text": "Encoding là quá trình đưa thông tin vào hệ thống trí nhớ. Storage là lưu giữ thông tin đã được mã hóa. Retrieval là đưa thông tin đã lưu trở lại nhận thức. Ba thuật ngữ mô tả các chức năng khác nhau; đây không phải bản hướng dẫn thao tác từng bước.",
+            "edited_by_user": false,
+            "needs_review": false,
+            "review_status": "user_confirmed_not_accuracy_verified"
+          },
+          {
+            "text": "Semantic encoding xử lý ý nghĩa; visual encoding xử lý hình ảnh; acoustic encoding xử lý âm thanh. Nhận ra ý nghĩa của một từ là ví dụ semantic encoding. Hình dung hình dáng một vật là ví dụ visual encoding. Chú ý âm của một từ là ví dụ acoustic encoding.",
+            "locator": {
+              "type": "line",
+              "line": 2,
+              "character_start": 0
+            },
+            "id": "05d4f718ca874552852d06206c1f9d83:2:1",
+            "original_text": "Semantic encoding xử lý ý nghĩa; visual encoding xử lý hình ảnh; acoustic encoding xử lý âm thanh. Nhận ra ý nghĩa của một từ là ví dụ semantic encoding. Hình dung hình dáng một vật là ví dụ visual encoding. Chú ý âm của một từ là ví dụ acoustic encoding.",
+            "edited_by_user": false,
+            "needs_review": false,
+            "review_status": "user_confirmed_not_accuracy_verified"
+          },
+          {
+            "text": "Trong ví dụ giả định, lần đầu gắn nghĩa một thuật ngữ với kiến thức cũ thuộc encoding. Giữ thông tin qua thời gian thuộc storage. Khi được hỏi và nhớ lại định nghĩa đã học, đó là retrieval. Việc không nhớ ra ngay không tự chứng minh thông tin chưa từng được mã hóa.",
+            "locator": {
+              "type": "line",
+              "line": 3,
+              "character_start": 0
+            },
+            "id": "05d4f718ca874552852d06206c1f9d83:2:2",
+            "original_text": "Trong ví dụ giả định, lần đầu gắn nghĩa một thuật ngữ với kiến thức cũ thuộc encoding. Giữ thông tin qua thời gian thuộc storage. Khi được hỏi và nhớ lại định nghĩa đã học, đó là retrieval. Việc không nhớ ra ngay không tự chứng minh thông tin chưa từng được mã hóa.",
+            "edited_by_user": false,
+            "needs_review": false,
+            "review_status": "user_confirmed_not_accuracy_verified"
+          }
+        ]
+      },
+      "unit_id": "unit-1",
+      "wallet_before": {
+        "balance": 20,
+        "held": 0,
+        "available": 20,
+        "policy_version": "dev-proposal-20261015-v2",
+        "policy_proposed": true,
+        "cash_payments": false,
+        "enforcement_enabled": true
+      },
+      "job_id": "bfcc5102430849fbafc98c68dbd58d4b",
+      "job": {
+        "id": "bfcc5102430849fbafc98c68dbd58d4b",
+        "task": "lesson",
+        "context": {
+          "course_id": "e970022ff5db404192d705624faee51a",
+          "unit_id": "unit-1",
+          "expected_revision": 1
+        },
+        "status": "succeeded",
+        "attempts": 1,
+        "provider": {
+          "provider": "ollama_local",
+          "model": "gemma4:12b-mlx",
+          "reference_codec": "scoped-reference-aliases-v1",
+          "model_choice_id": "local:gemma4:12b-mlx",
+          "selection_revision": 1,
+          "prompt_version": "20261020-scoped-reference-wire-v16",
+          "schema_version": 17,
+          "processor_version": "20261019-source-cloze-isolation-v5"
+        },
+        "result": {
+          "course_id": "e970022ff5db404192d705624faee51a",
+          "revision": 2
+        },
+        "partial": {
+          "reading": {
+            "title": "Ba chức năng của trí nhớ",
+            "sections": [
+              {
+                "title": "Ba chức năng cơ bản của trí nhớ",
+                "text": "Trí nhớ bao gồm ba chức năng riêng biệt: Encoding là quá trình đưa thông tin vào hệ thống trí nhớ. Storage là việc lưu giữ thông tin đã được mã hóa. Retrieval là quá trình đưa thông tin đã lưu trở lại nhận thức. Đây là ba chức năng khác nhau, không phải là các bước thực hiện tuần tự.",
+                "source_refs": [
+                  "05d4f718ca874552852d06206c1f9d83:2:0"
+                ]
+              },
+              {
+                "title": "Các kiểu mã hóa (Encoding)",
+                "text": "Có nhiều cách để mã hóa thông tin: Semantic encoding xử lý ý nghĩa (ví dụ: nhận ra ý nghĩa của một từ); visual encoding xử lý hình ảnh (ví dụ: hình dung hình dáng một vật); và acoustic encoding xử lý âm thanh (ví dụ: chú ý âm của một từ).",
+                "source_refs": [
+                  "05d4f718ca874552852d06206c1f9d83:2:1"
+                ]
+              },
+              {
+                "title": "Phân biệt Encoding và Retrieval",
+                "text": "Việc gắn nghĩa một thuật ngữ với kiến thức cũ thuộc encoding. Giữ thông tin qua thời gian thuộc storage. Khi được hỏi và nhớ lại định nghĩa, đó là retrieval. Lưu ý: Việc không nhớ ra ngay không có nghĩa là thông tin chưa từng được mã hóa.",
+                "source_refs": [
+                  "05d4f718ca874552852d06206c1f9d83:2:2"
+                ]
+              }
+            ],
+            "cards": [
+              {
+                "front": "Phân biệt Encoding, Storage và Retrieval.",
+                "back": "Encoding: Đưa thông tin vào hệ thống. Storage: Lưu giữ thông tin. Retrieval: Đưa thông tin trở lại nhận thức.",
+                "source_refs": [
+                  "05d4f718ca874552852d06206c1f9d83:2:0"
+                ]
+              },
+              {
+                "front": "Các loại encoding và ví dụ?",
+                "back": "Semantic encoding (ý nghĩa), visual encoding (hình ảnh), acoustic encoding (âm thanh).",
+                "source_refs": [
+                  "05d4f718ca874552852d06206c1f9d83:2:1"
+                ]
+              }
+            ],
+            "mindmap": [
+              {
+                "title": "Chức năng trí nhớ",
+                "text": "Encoding (Đưa vào) -> Storage (Lưu giữ) -> Retrieval (Truy xuất)",
+                "source_refs": [
+                  "05d4f718ca874552852d06206c1f9d83:2:0"
+                ]
+              },
+              {
+                "title": "Các kiểu Encoding",
+                "text": "Semantic, Visual, Acoustic",
+                "source_refs": [
+                  "05d4f718ca874552852d06206c1f9d83:2:1"
+                ]
+              },
+              {
+                "title": "Lưu ý Retrieval",
+                "text": "Việc không nhớ ra ngay không chứng minh thông tin chưa được mã hóa.",
+                "source_refs": [
+                  "05d4f718ca874552852d06206c1f9d83:2:2"
+                ]
+              }
+            ]
+          },
+          "questions": {
+            "mcq": {
+              "reason": "",
+              "question": {
+                "kind": "mcq",
+                "prompt": "Trong ba chức năng của trí nhớ, quá trình đưa thông tin vào hệ thống trí nhớ được gọi là gì?",
+                "options": [
+                  "Storage",
+                  "Retrieval",
+                  "Encoding"
+                ],
+                "left": [],
+                "answer": "Encoding",
+                "explanation": "Encoding là quá trình đưa thông tin vào hệ thống trí nhớ, trong khi Storage là lưu giữ thông tin đã được mã hóa và Retrieval là đưa thông tin đã lưu trở lại nhận thức.",
+                "source_refs": [
+                  "05d4f718ca874552852d06206c1f9d83:2:0"
+                ],
+                "rubric": [],
+                "difficulty": "applied",
+                "difficulty_basis": "creator_request_not_measured"
+              }
+            },
+            "cloze": {
+              "reason": "",
+              "question": {
+                "kind": "cloze",
+                "prompt": "“____ là lưu giữ thông tin đã được mã hóa.”",
+                "options": [],
+                "left": [],
+                "answer": "Storage",
+                "explanation": "Storage là quá trình lưu giữ thông tin sau khi đã được mã hóa (encoding) trong hệ thống trí nhớ.",
+                "source_refs": [
+                  "05d4f718ca874552852d06206c1f9d83:2:0"
+                ],
+                "rubric": [],
+                "difficulty": "applied",
+                "difficulty_basis": "creator_request_not_measured"
+              }
+            },
+            "matching": {
+              "reason": "",
+              "question": {
+                "kind": "matching",
+                "prompt": "Ghép các chức năng của trí nhớ với định nghĩa tương ứng:",
+                "options": [
+                  "Storage",
+                  "Retrieval"
+                ],
+                "left": [
+                  "Lưu giữ thông tin đã được mã hóa",
+                  "Đưa thông tin đã lưu trở lại nhận thức"
+                ],
+                "answer": [
+                  0,
+                  1
+                ],
+                "explanation": "Storage là quá trình lưu giữ thông tin đã được mã hóa, trong khi Retrieval là quá trình đưa thông tin đã lưu trở lại nhận thức.",
+                "source_refs": [
+                  "05d4f718ca874552852d06206c1f9d83:2:0"
+                ],
+                "rubric": [],
+                "difficulty": "applied",
+                "difficulty_basis": "creator_request_not_measured"
+              }
+            },
+            "ordering": {
+              "question": null,
+              "reason": "Nguồn của bài chưa có các bước đánh số theo trình tự rõ. Không biến danh sách khái niệm thành câu sắp xếp."
+            },
+            "short_answer": {
+              "reason": "Câu hỏi tập trung vào việc phân biệt các chức năng của trí nhớ dựa trên nội dung của R3, đảm bảo không coi ví dụ nhớ lại là mã hóa.",
+              "question": {
+                "kind": "short_answer",
+                "prompt": "Tại sao việc không nhớ ra ngay một định nghĩa không tự chứng minh rằng thông tin đó chưa từng được mã hóa (encoding)?",
+                "options": [],
+                "left": [],
+                "answer": "Việc không nhớ ra ngay không tự chứng minh thông tin chưa từng được mã hóa vì quá trình mã hóa, lưu trữ và truy xuất là các chức năng khác nhau.",
+                "explanation": "Encoding là quá trình đưa thông tin vào hệ thống trí nhớ, trong khi việc nhớ lại thuộc về retrieval. Một thông tin có thể đã được mã hóa và lưu trữ (storage) nhưng việc truy xuất (retrieval) có thể gặp khó khăn tại thời điểm được hỏi.",
+                "source_refs": [
+                  "05d4f718ca874552852d06206c1f9d83:2:2"
+                ],
+                "rubric": [
+                  "Nêu được sự khác biệt giữa encoding và retrieval.",
+                  "Giải thích được việc không nhớ ra ngay không đồng nghĩa với việc chưa mã hóa."
+                ],
+                "difficulty": "applied",
+                "difficulty_basis": "creator_request_not_measured"
+              }
+            },
+            "mcq:2": {
+              "reason": "Câu hỏi kiểm tra khái niệm cơ bản về chức năng của trí nhớ trong Phần 1 của tài liệu.",
+              "question": {
+                "kind": "mcq",
+                "prompt": "Quá trình đưa thông tin vào hệ thống trí nhớ được gọi là gì?",
+                "options": [
+                  "Storage",
+                  "Retrieval",
+                  "Encoding"
+                ],
+                "left": [],
+                "answer": "Encoding",
+                "explanation": "Encoding là quá trình đưa thông tin vào hệ thống trí nhớ. Storage là lưu giữ thông tin đã được mã hóa, còn Retrieval là đưa thông tin đã lưu trở lại nhận thức.",
+                "source_refs": [
+                  "05d4f718ca874552852d06206c1f9d83:2:0"
+                ],
+                "rubric": [],
+                "difficulty": "applied",
+                "difficulty_basis": "creator_request_not_measured"
+              }
+            },
+            "cloze:2": {
+              "reason": "",
+              "question": {
+                "kind": "cloze",
+                "prompt": "“____ là đưa thông tin đã lưu trở lại nhận thức.”",
+                "options": [],
+                "left": [],
+                "answer": "Retrieval",
+                "explanation": "Retrieval là quá trình đưa thông tin đã được lưu trữ trở lại nhận thức.",
+                "source_refs": [
+                  "05d4f718ca874552852d06206c1f9d83:2:0"
+                ],
+                "rubric": [],
+                "difficulty": "applied",
+                "difficulty_basis": "creator_request_not_measured"
+              }
+            },
+            "matching:2": {
+              "reason": "Nguồn R1 cung cấp đầy đủ định nghĩa cho cả Encoding và Storage để tạo câu hỏi matching.",
+              "question": {
+                "kind": "matching",
+                "prompt": "Hãy nối các chức năng của trí nhớ với định nghĩa tương ứng:",
+                "options": [
+                  "Lưu giữ thông tin",
+                  "Đưa thông tin vào hệ thống"
+                ],
+                "left": [
+                  "Storage",
+                  "Encoding"
+                ],
+                "answer": [
+                  0,
+                  1
+                ],
+                "explanation": "Storage là quá trình lưu giữ thông tin đã được mã hóa, trong khi Encoding là quá trình đưa thông tin vào hệ thống trí nhớ.",
+                "source_refs": [
+                  "05d4f718ca874552852d06206c1f9d83:2:0"
+                ],
+                "rubric": [],
+                "difficulty": "applied",
+                "difficulty_basis": "creator_request_not_measured"
+              }
+            }
+          },
+          "stage_providers": {
+            "reading": {
+              "provider": "ollama_local",
+              "model": "gemma4:12b-mlx",
+              "reference_codec": "scoped-reference-aliases-v1",
+              "model_choice_id": "local:gemma4:12b-mlx",
+              "selection_revision": 1,
+              "prompt_version": "20261020-scoped-reference-wire-v16",
+              "schema_version": 17,
+              "processor_version": "20261019-source-cloze-isolation-v5"
+            },
+            "mcq": {
+              "provider": "ollama_local",
+              "model": "gemma4:12b-mlx",
+              "reference_codec": "scoped-reference-aliases-v1",
+              "model_choice_id": "local:gemma4:12b-mlx",
+              "selection_revision": 1,
+              "prompt_version": "20261020-scoped-reference-wire-v16",
+              "schema_version": 17,
+              "processor_version": "20261019-source-cloze-isolation-v5"
+            },
+            "cloze": {
+              "provider": "ollama_local",
+              "model": "gemma4:12b-mlx",
+              "reference_codec": "scoped-reference-aliases-v1",
+              "model_choice_id": "local:gemma4:12b-mlx",
+              "selection_revision": 1,
+              "prompt_version": "20261020-scoped-reference-wire-v16",
+              "schema_version": 17,
+              "processor_version": "20261019-source-cloze-isolation-v5"
+            },
+            "matching": {
+              "provider": "ollama_local",
+              "model": "gemma4:12b-mlx",
+              "reference_codec": "scoped-reference-aliases-v1",
+              "model_choice_id": "local:gemma4:12b-mlx",
+              "selection_revision": 1,
+              "prompt_version": "20261020-scoped-reference-wire-v16",
+              "schema_version": 17,
+              "processor_version": "20261019-source-cloze-isolation-v5"
+            },
+            "short_answer": {
+              "provider": "ollama_local",
+              "model": "gemma4:12b-mlx",
+              "reference_codec": "scoped-reference-aliases-v1",
+              "model_choice_id": "local:gemma4:12b-mlx",
+              "selection_revision": 1,
+              "prompt_version": "20261020-scoped-reference-wire-v16",
+              "schema_version": 17,
+              "processor_version": "20261019-source-cloze-isolation-v5"
+            },
+            "mcq:2": {
+              "provider": "ollama_local",
+              "model": "gemma4:12b-mlx",
+              "reference_codec": "scoped-reference-aliases-v1",
+              "model_choice_id": "local:gemma4:12b-mlx",
+              "selection_revision": 1,
+              "prompt_version": "20261020-scoped-reference-wire-v16",
+              "schema_version": 17,
+              "processor_version": "20261019-source-cloze-isolation-v5"
+            },
+            "cloze:2": {
+              "provider": "ollama_local",
+              "model": "gemma4:12b-mlx",
+              "reference_codec": "scoped-reference-aliases-v1",
+              "model_choice_id": "local:gemma4:12b-mlx",
+              "selection_revision": 1,
+              "prompt_version": "20261020-scoped-reference-wire-v16",
+              "schema_version": 17,
+              "processor_version": "20261019-source-cloze-isolation-v5"
+            },
+            "matching:2": {
+              "provider": "ollama_local",
+              "model": "gemma4:12b-mlx",
+              "reference_codec": "scoped-reference-aliases-v1",
+              "model_choice_id": "local:gemma4:12b-mlx",
+              "selection_revision": 1,
+              "prompt_version": "20261020-scoped-reference-wire-v16",
+              "schema_version": 17,
+              "processor_version": "20261019-source-cloze-isolation-v5"
+            }
+          },
+          "question_rejections": {}
+        },
+        "feedback_deferred": false,
+        "error": null,
+        "progress": {
+          "phase": "succeeded",
+          "requests": [
+            {
+              "index": 1,
+              "schema": "LessonReading",
+              "phase": "received",
+              "streaming": true,
+              "started_at": "2026-10-20T11:18:33.765545+00:00",
+              "first_chunk_ms": 2609.203,
+              "first_text_ms": null,
+              "elapsed_ms": 20310.354,
+              "chunks": 660,
+              "characters": 2178,
+              "usage": {
+                "input_tokens": 1378,
+                "cached_input_tokens": 140,
+                "output_tokens": 660,
+                "load_duration_ns": 4741375,
+                "prompt_eval_duration_ns": 2389832458,
+                "eval_duration_ns": 17881112334,
+                "total_duration_ns": 20282118959,
+                "reference_alias_count": 3,
+                "reference_alias_map_sha256": "03b76f6790b2f56a90942670dd9c2377cefcce0c4290f65e3ff9aede41f8f832"
+              },
+              "protocol_fallbacks": 1
+            },
+            {
+              "index": 2,
+              "schema": "McqDraft",
+              "phase": "received",
+              "streaming": true,
+              "started_at": "2026-10-20T11:18:54.079570+00:00",
+              "first_chunk_ms": 3906.896,
+              "first_text_ms": null,
+              "elapsed_ms": 7715.299,
+              "chunks": 155,
+              "characters": 511,
+              "usage": {
+                "input_tokens": 1368,
+                "cached_input_tokens": 127,
+                "output_tokens": 155,
+                "load_duration_ns": 4657791,
+                "prompt_eval_duration_ns": 2643739208,
+                "eval_duration_ns": 5030489083,
+                "total_duration_ns": 7686013083,
+                "reference_alias_count": 3,
+                "reference_alias_map_sha256": "03b76f6790b2f56a90942670dd9c2377cefcce0c4290f65e3ff9aede41f8f832"
+              },
+              "protocol_fallbacks": 1
+            },
+            {
+              "index": 3,
+              "schema": "ClozeDraft",
+              "phase": "received",
+              "streaming": true,
+              "started_at": "2026-10-20T11:19:01.802055+00:00",
+              "first_chunk_ms": 2675.454,
+              "first_text_ms": null,
+              "elapsed_ms": 5045.983,
+              "chunks": 93,
+              "characters": 274,
+              "usage": {
+                "input_tokens": 1552,
+                "cached_input_tokens": 397,
+                "output_tokens": 93,
+                "load_duration_ns": 5202000,
+                "prompt_eval_duration_ns": 2462205875,
+                "eval_duration_ns": 2528195166,
+                "total_duration_ns": 5001417792,
+                "cloze_source_mask_derived": 1,
+                "cloze_statement_sha256": "8538e591bf6f4b75653218a39c68ba98c32e8b19b614b0c18b5401b31c5d5960",
+                "reference_alias_count": 3,
+                "reference_alias_map_sha256": "03b76f6790b2f56a90942670dd9c2377cefcce0c4290f65e3ff9aede41f8f832"
+              },
+              "protocol_fallbacks": 1
+            },
+            {
+              "index": 4,
+              "schema": "MatchingDraft",
+              "phase": "received",
+              "streaming": true,
+              "started_at": "2026-10-20T11:19:06.852621+00:00",
+              "first_chunk_ms": 2952.462,
+              "first_text_ms": null,
+              "elapsed_ms": 7607.452,
+              "chunks": 175,
+              "characters": 546,
+              "usage": {
+                "input_tokens": 1507,
+                "cached_input_tokens": 402,
+                "output_tokens": 175,
+                "load_duration_ns": 5250666,
+                "prompt_eval_duration_ns": 2737432208,
+                "eval_duration_ns": 4833703750,
+                "total_duration_ns": 7579976750,
+                "reference_alias_count": 3,
+                "reference_alias_map_sha256": "03b76f6790b2f56a90942670dd9c2377cefcce0c4290f65e3ff9aede41f8f832"
+              },
+              "protocol_fallbacks": 1
+            },
+            {
+              "index": 5,
+              "schema": "ShortAnswerDraft",
+              "phase": "received",
+              "streaming": true,
+              "started_at": "2026-10-20T11:19:14.472922+00:00",
+              "first_chunk_ms": 2453.697,
+              "first_text_ms": null,
+              "elapsed_ms": 11320.552,
+              "chunks": 265,
+              "characters": 970,
+              "usage": {
+                "input_tokens": 1451,
+                "cached_input_tokens": 402,
+                "output_tokens": 265,
+                "load_duration_ns": 4607083,
+                "prompt_eval_duration_ns": 2267725709,
+                "eval_duration_ns": 9014272500,
+                "total_duration_ns": 11289717166,
+                "reference_alias_count": 3,
+                "reference_alias_map_sha256": "03b76f6790b2f56a90942670dd9c2377cefcce0c4290f65e3ff9aede41f8f832"
+              },
+              "protocol_fallbacks": 1
+            },
+            {
+              "index": 6,
+              "schema": "McqDraft",
+              "phase": "received",
+              "streaming": true,
+              "started_at": "2026-10-20T11:19:25.797553+00:00",
+              "first_chunk_ms": 2963.114,
+              "first_text_ms": null,
+              "elapsed_ms": 7953.384,
+              "chunks": 169,
+              "characters": 556,
+              "usage": {
+                "input_tokens": 1513,
+                "cached_input_tokens": 402,
+                "output_tokens": 169,
+                "load_duration_ns": 4753583,
+                "prompt_eval_duration_ns": 2739349708,
+                "eval_duration_ns": 5177763000,
+                "total_duration_ns": 7925975542,
+                "reference_alias_count": 3,
+                "reference_alias_map_sha256": "03b76f6790b2f56a90942670dd9c2377cefcce0c4290f65e3ff9aede41f8f832"
+              },
+              "protocol_fallbacks": 1
+            },
+            {
+              "index": 7,
+              "schema": "ClozeDraft",
+              "phase": "received",
+              "streaming": true,
+              "started_at": "2026-10-20T11:19:33.755280+00:00",
+              "first_chunk_ms": 3042.218,
+              "first_text_ms": null,
+              "elapsed_ms": 5505.123,
+              "chunks": 88,
+              "characters": 251,
+              "usage": {
+                "input_tokens": 1626,
+                "cached_input_tokens": 402,
+                "output_tokens": 88,
+                "load_duration_ns": 4293916,
+                "prompt_eval_duration_ns": 2820200292,
+                "eval_duration_ns": 2646250917,
+                "total_duration_ns": 5475284500,
+                "cloze_source_mask_derived": 1,
+                "cloze_statement_sha256": "6906e69e32d3a67565f140f78fece692c2e666b6b2203ea60b5503757fc56077",
+                "reference_alias_count": 3,
+                "reference_alias_map_sha256": "03b76f6790b2f56a90942670dd9c2377cefcce0c4290f65e3ff9aede41f8f832"
+              },
+              "protocol_fallbacks": 1
+            },
+            {
+              "index": 8,
+              "schema": "MatchingDraft",
+              "phase": "received",
+              "streaming": true,
+              "started_at": "2026-10-20T11:19:39.266206+00:00",
+              "first_chunk_ms": 2820.409,
+              "first_text_ms": null,
+              "elapsed_ms": 7864.738,
+              "chunks": 187,
+              "characters": 603,
+              "usage": {
+                "input_tokens": 1582,
+                "cached_input_tokens": 402,
+                "output_tokens": 187,
+                "load_duration_ns": 4485583,
+                "prompt_eval_duration_ns": 2581962708,
+                "eval_duration_ns": 5246577917,
+                "total_duration_ns": 7835996958,
+                "reference_alias_count": 3,
+                "reference_alias_map_sha256": "03b76f6790b2f56a90942670dd9c2377cefcce0c4290f65e3ff9aede41f8f832"
+              },
+              "protocol_fallbacks": 1
+            }
+          ],
+          "preview": null,
+          "planned_stages": 9,
+          "saved_stages": 9,
+          "reused_stages": 0,
+          "started_at": "2026-10-20T11:18:33.764824+00:00",
+          "completed_at": "2026-10-20T11:19:47.140035+00:00",
+          "elapsed_ms": 73375.214,
+          "version": 263,
+          "updated_at": "2026-10-20T11:19:47.140077+00:00"
+        }
+      },
+      "finished_observing_at": "2026-10-20T11:20:58.957828+00:00",
+      "course_snapshot": {
+        "id": "e970022ff5db404192d705624faee51a",
+        "revision": 2,
+        "plan_id": "e3c64d6074c7420b944fc19f6877131c",
+        "creator_id": "324b49d6f8264b30b46ecf34a0df80db",
+        "access_role": "creator",
+        "content": {
+          "title": "Tâm lý đại cương",
+          "unlock_policy": "locked",
+          "preferences": {
+            "source_id": "05d4f718ca874552852d06206c1f9d83",
+            "subject": "Tâm lý đại cương",
+            "goal": "Phân biệt encoding, storage, retrieval và các kiểu mã hóa; không coi ví dụ nhớ lại là mã hóa.",
+            "instructions": "",
+            "language": "vi",
+            "fragment_ids": [
+              "05d4f718ca874552852d06206c1f9d83:2:0",
+              "05d4f718ca874552852d06206c1f9d83:2:1",
+              "05d4f718ca874552852d06206c1f9d83:2:2"
+            ],
+            "unlock_policy": "locked",
+            "initial_mode": "learn",
+            "expected_extraction_revision": 2,
+            "excluded_fragment_ids": [],
+            "chapter_priorities": [],
+            "difficulty": "applied",
+            "question_types": [
+              "mcq",
+              "cloze",
+              "matching",
+              "ordering",
+              "short_answer"
+            ],
+            "question_count": 8,
+            "card_count": 2,
+            "target_language": "",
+            "terms_to_keep": [
+              "encoding",
+              "storage",
+              "retrieval",
+              "semantic encoding",
+              "visual encoding",
+              "acoustic encoding"
+            ],
+            "teacher_notes": "",
+            "user_notes": "",
+            "extraction_revision": 2
+          },
+          "units": [
+            {
+              "title": "QA psy-dev-memory — Ba chức năng của trí nhớ.txt · Phần 1",
+              "objective": "Học Phần 1 trong QA psy-dev-memory — Ba chức năng của trí nhớ.txt; đối chiếu nguồn và luyện nội dung của phần này.",
+              "source_refs": [
+                "05d4f718ca874552852d06206c1f9d83:2:0",
+                "05d4f718ca874552852d06206c1f9d83:2:1",
+                "05d4f718ca874552852d06206c1f9d83:2:2"
+              ],
+              "id": "unit-1",
+              "data": {
+                "title": "Ba chức năng của trí nhớ",
+                "sections": [
+                  {
+                    "title": "Ba chức năng cơ bản của trí nhớ",
+                    "text": "Trí nhớ bao gồm ba chức năng riêng biệt: Encoding là quá trình đưa thông tin vào hệ thống trí nhớ. Storage là việc lưu giữ thông tin đã được mã hóa. Retrieval là quá trình đưa thông tin đã lưu trở lại nhận thức. Đây là ba chức năng khác nhau, không phải là các bước thực hiện tuần tự.",
+                    "source_refs": [
+                      "05d4f718ca874552852d06206c1f9d83:2:0"
+                    ]
+                  },
+                  {
+                    "title": "Các kiểu mã hóa (Encoding)",
+                    "text": "Có nhiều cách để mã hóa thông tin: Semantic encoding xử lý ý nghĩa (ví dụ: nhận ra ý nghĩa của một từ); visual encoding xử lý hình ảnh (ví dụ: hình dung hình dáng một vật); và acoustic encoding xử lý âm thanh (ví dụ: chú ý âm của một từ).",
+                    "source_refs": [
+                      "05d4f718ca874552852d06206c1f9d83:2:1"
+                    ]
+                  },
+                  {
+                    "title": "Phân biệt Encoding và Retrieval",
+                    "text": "Việc gắn nghĩa một thuật ngữ với kiến thức cũ thuộc encoding. Giữ thông tin qua thời gian thuộc storage. Khi được hỏi và nhớ lại định nghĩa, đó là retrieval. Lưu ý: Việc không nhớ ra ngay không có nghĩa là thông tin chưa từng được mã hóa.",
+                    "source_refs": [
+                      "05d4f718ca874552852d06206c1f9d83:2:2"
+                    ]
+                  }
+                ],
+                "questions": [
+                  {
+                    "kind": "mcq",
+                    "prompt": "Trong ba chức năng của trí nhớ, quá trình đưa thông tin vào hệ thống trí nhớ được gọi là gì?",
+                    "options": [
+                      "Storage",
+                      "Retrieval",
+                      "Encoding"
+                    ],
+                    "left": [],
+                    "answer": "Encoding",
+                    "explanation": "Encoding là quá trình đưa thông tin vào hệ thống trí nhớ, trong khi Storage là lưu giữ thông tin đã được mã hóa và Retrieval là đưa thông tin đã lưu trở lại nhận thức.",
+                    "source_refs": [
+                      "05d4f718ca874552852d06206c1f9d83:2:0"
+                    ],
+                    "rubric": [],
+                    "difficulty": "applied",
+                    "difficulty_basis": "creator_request_not_measured"
+                  },
+                  {
+                    "kind": "cloze",
+                    "prompt": "“____ là lưu giữ thông tin đã được mã hóa.”",
+                    "options": [],
+                    "left": [],
+                    "answer": "Storage",
+                    "explanation": "Storage là quá trình lưu giữ thông tin sau khi đã được mã hóa (encoding) trong hệ thống trí nhớ.",
+                    "source_refs": [
+                      "05d4f718ca874552852d06206c1f9d83:2:0"
+                    ],
+                    "rubric": [],
+                    "difficulty": "applied",
+                    "difficulty_basis": "creator_request_not_measured"
+                  },
+                  {
+                    "kind": "matching",
+                    "prompt": "Ghép các chức năng của trí nhớ với định nghĩa tương ứng:",
+                    "options": [
+                      "Storage",
+                      "Retrieval"
+                    ],
+                    "left": [
+                      "Lưu giữ thông tin đã được mã hóa",
+                      "Đưa thông tin đã lưu trở lại nhận thức"
+                    ],
+                    "answer": [
+                      0,
+                      1
+                    ],
+                    "explanation": "Storage là quá trình lưu giữ thông tin đã được mã hóa, trong khi Retrieval là quá trình đưa thông tin đã lưu trở lại nhận thức.",
+                    "source_refs": [
+                      "05d4f718ca874552852d06206c1f9d83:2:0"
+                    ],
+                    "rubric": [],
+                    "difficulty": "applied",
+                    "difficulty_basis": "creator_request_not_measured"
+                  },
+                  {
+                    "kind": "short_answer",
+                    "prompt": "Tại sao việc không nhớ ra ngay một định nghĩa không tự chứng minh rằng thông tin đó chưa từng được mã hóa (encoding)?",
+                    "options": [],
+                    "left": [],
+                    "answer": "Việc không nhớ ra ngay không tự chứng minh thông tin chưa từng được mã hóa vì quá trình mã hóa, lưu trữ và truy xuất là các chức năng khác nhau.",
+                    "explanation": "Encoding là quá trình đưa thông tin vào hệ thống trí nhớ, trong khi việc nhớ lại thuộc về retrieval. Một thông tin có thể đã được mã hóa và lưu trữ (storage) nhưng việc truy xuất (retrieval) có thể gặp khó khăn tại thời điểm được hỏi.",
+                    "source_refs": [
+                      "05d4f718ca874552852d06206c1f9d83:2:2"
+                    ],
+                    "rubric": [
+                      "Nêu được sự khác biệt giữa encoding và retrieval.",
+                      "Giải thích được việc không nhớ ra ngay không đồng nghĩa với việc chưa mã hóa."
+                    ],
+                    "difficulty": "applied",
+                    "difficulty_basis": "creator_request_not_measured"
+                  },
+                  {
+                    "kind": "mcq",
+                    "prompt": "Quá trình đưa thông tin vào hệ thống trí nhớ được gọi là gì?",
+                    "options": [
+                      "Storage",
+                      "Retrieval",
+                      "Encoding"
+                    ],
+                    "left": [],
+                    "answer": "Encoding",
+                    "explanation": "Encoding là quá trình đưa thông tin vào hệ thống trí nhớ. Storage là lưu giữ thông tin đã được mã hóa, còn Retrieval là đưa thông tin đã lưu trở lại nhận thức.",
+                    "source_refs": [
+                      "05d4f718ca874552852d06206c1f9d83:2:0"
+                    ],
+                    "rubric": [],
+                    "difficulty": "applied",
+                    "difficulty_basis": "creator_request_not_measured"
+                  },
+                  {
+                    "kind": "cloze",
+                    "prompt": "“____ là đưa thông tin đã lưu trở lại nhận thức.”",
+                    "options": [],
+                    "left": [],
+                    "answer": "Retrieval",
+                    "explanation": "Retrieval là quá trình đưa thông tin đã được lưu trữ trở lại nhận thức.",
+                    "source_refs": [
+                      "05d4f718ca874552852d06206c1f9d83:2:0"
+                    ],
+                    "rubric": [],
+                    "difficulty": "applied",
+                    "difficulty_basis": "creator_request_not_measured"
+                  },
+                  {
+                    "kind": "matching",
+                    "prompt": "Hãy nối các chức năng của trí nhớ với định nghĩa tương ứng:",
+                    "options": [
+                      "Lưu giữ thông tin",
+                      "Đưa thông tin vào hệ thống"
+                    ],
+                    "left": [
+                      "Storage",
+                      "Encoding"
+                    ],
+                    "answer": [
+                      0,
+                      1
+                    ],
+                    "explanation": "Storage là quá trình lưu giữ thông tin đã được mã hóa, trong khi Encoding là quá trình đưa thông tin vào hệ thống trí nhớ.",
+                    "source_refs": [
+                      "05d4f718ca874552852d06206c1f9d83:2:0"
+                    ],
+                    "rubric": [],
+                    "difficulty": "applied",
+                    "difficulty_basis": "creator_request_not_measured"
+                  }
+                ],
+                "cards": [
+                  {
+                    "front": "Phân biệt Encoding, Storage và Retrieval.",
+                    "back": "Encoding: Đưa thông tin vào hệ thống. Storage: Lưu giữ thông tin. Retrieval: Đưa thông tin trở lại nhận thức.",
+                    "source_refs": [
+                      "05d4f718ca874552852d06206c1f9d83:2:0"
+                    ]
+                  },
+                  {
+                    "front": "Các loại encoding và ví dụ?",
+                    "back": "Semantic encoding (ý nghĩa), visual encoding (hình ảnh), acoustic encoding (âm thanh).",
+                    "source_refs": [
+                      "05d4f718ca874552852d06206c1f9d83:2:1"
+                    ]
+                  }
+                ],
+                "mindmap": [
+                  {
+                    "title": "Chức năng trí nhớ",
+                    "text": "Encoding (Đưa vào) -> Storage (Lưu giữ) -> Retrieval (Truy xuất)",
+                    "source_refs": [
+                      "05d4f718ca874552852d06206c1f9d83:2:0"
+                    ]
+                  },
+                  {
+                    "title": "Các kiểu Encoding",
+                    "text": "Semantic, Visual, Acoustic",
+                    "source_refs": [
+                      "05d4f718ca874552852d06206c1f9d83:2:1"
+                    ]
+                  },
+                  {
+                    "title": "Lưu ý Retrieval",
+                    "text": "Việc không nhớ ra ngay không chứng minh thông tin chưa được mã hóa.",
+                    "source_refs": [
+                      "05d4f718ca874552852d06206c1f9d83:2:2"
+                    ]
+                  }
+                ]
+              },
+              "completed": false,
+              "unlocked": true,
+              "generation": {
+                "job_id": "bfcc5102430849fbafc98c68dbd58d4b",
+                "provider": {
+                  "provider": "ollama_local",
+                  "model": "gemma4:12b-mlx",
+                  "reference_codec": "scoped-reference-aliases-v1",
+                  "model_choice_id": "local:gemma4:12b-mlx",
+                  "selection_revision": 1,
+                  "prompt_version": "20261020-scoped-reference-wire-v16",
+                  "schema_version": 17,
+                  "processor_version": "20261019-source-cloze-isolation-v5"
+                },
+                "source_id": "05d4f718ca874552852d06206c1f9d83",
+                "source_plan_id": "e3c64d6074c7420b944fc19f6877131c",
+                "extraction_revision": 2,
+                "source_refs": [
+                  "05d4f718ca874552852d06206c1f9d83:2:0",
+                  "05d4f718ca874552852d06206c1f9d83:2:1",
+                  "05d4f718ca874552852d06206c1f9d83:2:2"
+                ],
+                "content_language": "vi",
+                "generated_at": "2026-10-20T11:19:47.137517+00:00",
+                "stage_providers": {
+                  "reading": {
+                    "provider": "ollama_local",
+                    "model": "gemma4:12b-mlx",
+                    "reference_codec": "scoped-reference-aliases-v1",
+                    "model_choice_id": "local:gemma4:12b-mlx",
+                    "selection_revision": 1,
+                    "prompt_version": "20261020-scoped-reference-wire-v16",
+                    "schema_version": 17,
+                    "processor_version": "20261019-source-cloze-isolation-v5"
+                  },
+                  "mcq": {
+                    "provider": "ollama_local",
+                    "model": "gemma4:12b-mlx",
+                    "reference_codec": "scoped-reference-aliases-v1",
+                    "model_choice_id": "local:gemma4:12b-mlx",
+                    "selection_revision": 1,
+                    "prompt_version": "20261020-scoped-reference-wire-v16",
+                    "schema_version": 17,
+                    "processor_version": "20261019-source-cloze-isolation-v5"
+                  },
+                  "cloze": {
+                    "provider": "ollama_local",
+                    "model": "gemma4:12b-mlx",
+                    "reference_codec": "scoped-reference-aliases-v1",
+                    "model_choice_id": "local:gemma4:12b-mlx",
+                    "selection_revision": 1,
+                    "prompt_version": "20261020-scoped-reference-wire-v16",
+                    "schema_version": 17,
+                    "processor_version": "20261019-source-cloze-isolation-v5"
+                  },
+                  "matching": {
+                    "provider": "ollama_local",
+                    "model": "gemma4:12b-mlx",
+                    "reference_codec": "scoped-reference-aliases-v1",
+                    "model_choice_id": "local:gemma4:12b-mlx",
+                    "selection_revision": 1,
+                    "prompt_version": "20261020-scoped-reference-wire-v16",
+                    "schema_version": 17,
+                    "processor_version": "20261019-source-cloze-isolation-v5"
+                  },
+                  "short_answer": {
+                    "provider": "ollama_local",
+                    "model": "gemma4:12b-mlx",
+                    "reference_codec": "scoped-reference-aliases-v1",
+                    "model_choice_id": "local:gemma4:12b-mlx",
+                    "selection_revision": 1,
+                    "prompt_version": "20261020-scoped-reference-wire-v16",
+                    "schema_version": 17,
+                    "processor_version": "20261019-source-cloze-isolation-v5"
+                  },
+                  "mcq:2": {
+                    "provider": "ollama_local",
+                    "model": "gemma4:12b-mlx",
+                    "reference_codec": "scoped-reference-aliases-v1",
+                    "model_choice_id": "local:gemma4:12b-mlx",
+                    "selection_revision": 1,
+                    "prompt_version": "20261020-scoped-reference-wire-v16",
+                    "schema_version": 17,
+                    "processor_version": "20261019-source-cloze-isolation-v5"
+                  },
+                  "cloze:2": {
+                    "provider": "ollama_local",
+                    "model": "gemma4:12b-mlx",
+                    "reference_codec": "scoped-reference-aliases-v1",
+                    "model_choice_id": "local:gemma4:12b-mlx",
+                    "selection_revision": 1,
+                    "prompt_version": "20261020-scoped-reference-wire-v16",
+                    "schema_version": 17,
+                    "processor_version": "20261019-source-cloze-isolation-v5"
+                  },
+                  "matching:2": {
+                    "provider": "ollama_local",
+                    "model": "gemma4:12b-mlx",
+                    "reference_codec": "scoped-reference-aliases-v1",
+                    "model_choice_id": "local:gemma4:12b-mlx",
+                    "selection_revision": 1,
+                    "prompt_version": "20261020-scoped-reference-wire-v16",
+                    "schema_version": 17,
+                    "processor_version": "20261019-source-cloze-isolation-v5"
+                  }
+                },
+                "resumed_from_job_id": null,
+                "question_coverage": {
+                  "requested_count": 8,
+                  "generated_count": 7,
+                  "complete": false,
+                  "requested_types": [
+                    "mcq",
+                    "cloze",
+                    "matching",
+                    "ordering",
+                    "short_answer"
+                  ],
+                  "generated_types": [
+                    "mcq",
+                    "cloze",
+                    "matching",
+                    "short_answer"
+                  ],
+                  "uncreated": [
+                    {
+                      "stage": "ordering",
+                      "kind": "ordering",
+                      "reason": "Nguồn của bài chưa có các bước đánh số theo trình tự rõ. Không biến danh sách khái niệm thành câu sắp xếp.",
+                      "origin": "backend_source_gate"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      },
+      "published_question_count": 7,
+      "published_kinds": [
+        "mcq",
+        "cloze",
+        "matching",
+        "short_answer",
+        "mcq",
+        "cloze",
+        "matching"
+      ],
+      "wallet_after": {
+        "balance": 20,
+        "held": 0,
+        "available": 20,
+        "policy_version": "dev-proposal-20261015-v2",
+        "policy_proposed": true,
+        "cash_payments": false,
+        "enforcement_enabled": true
+      },
+      "session_id": "f3c949aa1ac741acb1f67b83ca848004",
+      "key_roundtrip_grades": [
+        {
+          "kind": "mcq",
+          "result": {
+            "correct": true,
+            "reference": "Encoding",
+            "explanation": "Encoding là quá trình đưa thông tin vào hệ thống trí nhớ, trong khi Storage là lưu giữ thông tin đã được mã hóa và Retrieval là đưa thông tin đã lưu trở lại nhận thức.",
+            "rubric": [],
+            "source_refs": [
+              "05d4f718ca874552852d06206c1f9d83:2:0"
+            ],
+            "grading": "fixed"
+          }
+        },
+        {
+          "kind": "cloze",
+          "result": {
+            "correct": true,
+            "reference": "Storage",
+            "explanation": "Storage là quá trình lưu giữ thông tin sau khi đã được mã hóa (encoding) trong hệ thống trí nhớ.",
+            "rubric": [],
+            "source_refs": [
+              "05d4f718ca874552852d06206c1f9d83:2:0"
+            ],
+            "grading": "fixed"
+          }
+        },
+        {
+          "kind": "matching",
+          "result": {
+            "correct": true,
+            "reference": [
+              0,
+              1
+            ],
+            "explanation": "Storage là quá trình lưu giữ thông tin đã được mã hóa, trong khi Retrieval là quá trình đưa thông tin đã lưu trở lại nhận thức.",
+            "rubric": [],
+            "source_refs": [
+              "05d4f718ca874552852d06206c1f9d83:2:0"
+            ],
+            "grading": "fixed"
+          }
+        },
+        {
+          "kind": "short_answer",
+          "result": {
+            "correct": null,
+            "reference": "Việc không nhớ ra ngay không tự chứng minh thông tin chưa từng được mã hóa vì quá trình mã hóa, lưu trữ và truy xuất là các chức năng khác nhau.",
+            "explanation": "Encoding là quá trình đưa thông tin vào hệ thống trí nhớ, trong khi việc nhớ lại thuộc về retrieval. Một thông tin có thể đã được mã hóa và lưu trữ (storage) nhưng việc truy xuất (retrieval) có thể gặp khó khăn tại thời điểm được hỏi.",
+            "rubric": [
+              "Nêu được sự khác biệt giữa encoding và retrieval.",
+              "Giải thích được việc không nhớ ra ngay không đồng nghĩa với việc chưa mã hóa."
+            ],
+            "source_refs": [
+              "05d4f718ca874552852d06206c1f9d83:2:2"
+            ],
+            "grading": "self_review"
+          }
+        },
+        {
+          "kind": "mcq",
+          "result": {
+            "correct": true,
+            "reference": "Encoding",
+            "explanation": "Encoding là quá trình đưa thông tin vào hệ thống trí nhớ. Storage là lưu giữ thông tin đã được mã hóa, còn Retrieval là đưa thông tin đã lưu trở lại nhận thức.",
+            "rubric": [],
+            "source_refs": [
+              "05d4f718ca874552852d06206c1f9d83:2:0"
+            ],
+            "grading": "fixed"
+          }
+        },
+        {
+          "kind": "cloze",
+          "result": {
+            "correct": true,
+            "reference": "Retrieval",
+            "explanation": "Retrieval là quá trình đưa thông tin đã được lưu trữ trở lại nhận thức.",
+            "rubric": [],
+            "source_refs": [
+              "05d4f718ca874552852d06206c1f9d83:2:0"
+            ],
+            "grading": "fixed"
+          }
+        },
+        {
+          "kind": "matching",
+          "result": {
+            "correct": true,
+            "reference": [
+              0,
+              1
+            ],
+            "explanation": "Storage là quá trình lưu giữ thông tin đã được mã hóa, trong khi Encoding là quá trình đưa thông tin vào hệ thống trí nhớ.",
+            "rubric": [],
+            "source_refs": [
+              "05d4f718ca874552852d06206c1f9d83:2:0"
+            ],
+            "grading": "fixed"
+          }
+        }
+      ],
+      "completed_session": {
+        "score": 6,
+        "fixed_total": 6,
+        "self_review_count": 1,
+        "course_revision": 2,
+        "session_id": "f3c949aa1ac741acb1f67b83ca848004",
+        "assisted_count": 0,
+        "assessment": "self_study_not_proctored",
+        "rewards": [
+          {
+            "amount": 1,
+            "requested": 1,
+            "capped": false,
+            "replayed": false,
+            "event_key": "practice:2026-10-20:e970022ff5db404192d705624faee51a:c291e7b9370094e52ea4bee8b84240da4e179983c7b3c5a7b9419afcbb80796b",
+            "policy_version": "dev-proposal-20261015-v2"
+          },
+          {
+            "amount": 1,
+            "requested": 1,
+            "capped": false,
+            "replayed": false,
+            "event_key": "mission:practice:2026-10-20",
+            "policy_version": "dev-proposal-20261015-v2"
+          },
+          {
+            "amount": 2,
+            "requested": 2,
+            "capped": false,
+            "replayed": false,
+            "event_key": "achievement:first_session",
+            "policy_version": "dev-proposal-20261015-v2"
+          },
+          {
+            "amount": 3,
+            "requested": 3,
+            "capped": false,
+            "replayed": false,
+            "event_key": "achievement:course_complete:e970022ff5db404192d705624faee51a",
+            "policy_version": "dev-proposal-20261015-v2"
+          }
+        ]
+      },
+      "roundtrip_limit": "Submitted generated keys only to test deterministic grading/storage. These results are never factual-quality scores.",
+      "outcome_captured": true
+    }
+  ],
+  "semantic_retries": 0,
+  "external_inference": 0,
+  "payments": 0,
+  "limits": {
+    "cases": 6,
+    "questions_per_case": 8,
+    "job_observation_seconds": 240,
+    "wall_seconds": 1500,
+    "proposed_qa_coin_per_case": 10
+  },
+  "human_reviewed": false,
+  "all_cases_observed": true,
+  "harness_errors": [
+    {
+      "at": "2026-10-20T11:19:47.513490+00:00",
+      "type": "KeyError",
+      "message": "'id'"
+    }
+  ],
+  "finished_observing_at": "2026-10-20T11:20:59.006784+00:00"
+}

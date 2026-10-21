@@ -1,0 +1,267 @@
+{
+  "purpose": "Gemma12B MLX local backend pipeline on self-authored source; not Huy performance or held-out quality",
+  "model": "local:gemma4:12b-mlx",
+  "passed": false,
+  "confirmed_proposed_app_coin": 0,
+  "monetary_payments": 0,
+  "runs": [
+    {
+      "path": "/courses/35926bc3d4744f6ba22826db7ebdd3dd/generate",
+      "job_id": "55825c81fdce47f1a3483600d6fcc41e",
+      "events": [
+        {
+          "elapsed_seconds": 0.011,
+          "status": "running",
+          "phase": "connecting",
+          "saved_stages": 0,
+          "preview_chars": 0
+        },
+        {
+          "elapsed_seconds": 50.251,
+          "status": "running",
+          "phase": "connecting",
+          "saved_stages": 1,
+          "preview_chars": 0
+        },
+        {
+          "elapsed_seconds": 65.008,
+          "status": "running",
+          "phase": "connecting",
+          "saved_stages": 2,
+          "preview_chars": 0
+        },
+        {
+          "elapsed_seconds": 76.411,
+          "status": "failed",
+          "phase": "failed",
+          "saved_stages": 2,
+          "preview_chars": 0
+        }
+      ],
+      "status": "failed",
+      "completed_seconds": 76.411,
+      "provider": {
+        "provider": "ollama_local",
+        "model": "gemma4:12b-mlx",
+        "model_choice_id": "local:gemma4:12b-mlx",
+        "selection_revision": 1,
+        "prompt_version": "20261017-unit-source-server-metadata-v6",
+        "schema_version": 13
+      },
+      "progress": {
+        "phase": "failed",
+        "requests": [
+          {
+            "index": 1,
+            "schema": "LessonReading",
+            "phase": "received",
+            "streaming": true,
+            "started_at": "2026-10-18T09:37:44.898483+00:00",
+            "first_chunk_ms": 7534.456,
+            "first_text_ms": null,
+            "elapsed_ms": 50201.434,
+            "chunks": 1502,
+            "characters": 3069,
+            "usage": {
+              "input_tokens": 2027,
+              "cached_input_tokens": 0,
+              "output_tokens": 1502,
+              "load_duration_ns": 9053500,
+              "prompt_eval_duration_ns": 4270087792,
+              "eval_duration_ns": 42771281792,
+              "total_duration_ns": 47058960333
+            },
+            "protocol_fallbacks": 1
+          },
+          {
+            "index": 2,
+            "schema": "McqDraft",
+            "phase": "received",
+            "streaming": true,
+            "started_at": "2026-10-18T09:38:35.103946+00:00",
+            "first_chunk_ms": 5407.701,
+            "first_text_ms": null,
+            "elapsed_ms": 14630.838,
+            "chunks": 249,
+            "characters": 665,
+            "usage": {
+              "input_tokens": 2064,
+              "cached_input_tokens": 0,
+              "output_tokens": 249,
+              "load_duration_ns": 4369583,
+              "prompt_eval_duration_ns": 5158452000,
+              "eval_duration_ns": 9429075750,
+              "total_duration_ns": 14594167000
+            },
+            "protocol_fallbacks": 1
+          },
+          {
+            "index": 3,
+            "schema": "ClozeDraft",
+            "phase": "failed",
+            "streaming": true,
+            "started_at": "2026-10-18T09:38:49.739505+00:00",
+            "first_chunk_ms": 3144.637,
+            "first_text_ms": null,
+            "elapsed_ms": null,
+            "chunks": 268,
+            "characters": 787,
+            "usage": {},
+            "protocol_fallbacks": 1
+          }
+        ],
+        "preview": null,
+        "planned_stages": 6,
+        "saved_stages": 2,
+        "reused_stages": 0,
+        "started_at": "2026-10-18T09:37:44.896939+00:00",
+        "completed_at": "2026-10-18T09:39:01.194985+00:00",
+        "elapsed_ms": 76298.052,
+        "version": 305,
+        "updated_at": "2026-10-18T09:39:01.195042+00:00"
+      },
+      "error": {
+        "message": "AI trả cấu trúc chưa hợp lệ ở question: Value error, Cloze/short answer uses a text response, not choice/matching payloads. Nguồn và phần đã lưu vẫn còn; chưa áp dụng đầu ra này. Có thể thử lại hoặc thu hẹp mục tiêu."
+      },
+      "partial": {
+        "reading": {
+          "title": "IPv4 và subnet /26",
+          "sections": [
+            {
+              "title": "Cấu trúc IPv4 và Prefix /26",
+              "text": "IPv4 có 32 bit, chia thành bốn octet (mỗi octet 8 bit). Prefix /26 nghĩa là 26 bit được dành cho network và còn lại 6 bit cho host. Một block /26 có 2^6 = 64 địa chỉ, trong đó có 62 địa chỉ host dùng được sau khi loại bỏ network và broadcast.",
+              "source_refs": [
+                "147955a9405c4edfaa7dc35216b4237f:2:0"
+              ]
+            },
+            {
+              "title": "Ví dụ thực hành với 192.168.1.70/26",
+              "text": "Với địa chỉ 192.168.1.70/26, block thuộc phạm vi 64–127. Cụ thể: Network là 192.168.1.64; Broadcast là 192.168.1.127; dải host dùng được là từ 192.168.1.65 đến 192.168.1.126.",
+              "source_refs": [
+                "147955a9405c4edfaa7dc35216b4237f:2:0"
+              ]
+            },
+            {
+              "title": "Quy trình 5 bước xác định Subnet",
+              "text": "Để xác định subnet, thực hiện 5 bước: 1. Đọc prefix và tính số bit host. 2. Tính kích thước block. 3. Xác định block chứa octet cuối. 4. Lấy đầu block làm network và cuối block làm broadcast. 5. Loại hai biên để lấy dải host dùng được.",
+              "source_refs": [
+                "147955a9405c4edfaa7dc35216b4237f:2:1",
+                "147955a9405c4edfaa7dc35216b4237f:2:2",
+                "147955a9405c4edfaa7dc35216b4237f:2:3",
+                "147955a9405c4edfaa7dc35216b4237f:2:4",
+                "147955a9405c4edfaa7dc35216b4237f:2:5"
+              ]
+            }
+          ],
+          "cards": [
+            {
+              "front": "Một block /26 có bao nhiêu địa chỉ và bao nhiêu địa chỉ host dùng được?",
+              "back": "Một block /26 có 2^6 = 64 địa chỉ, gồm 62 địa chỉ host dùng được sau khi bỏ network và broadcast.",
+              "source_refs": [
+                "147955a9405c4edfaa7dc35216b4237f:2:0"
+              ]
+            },
+            {
+              "front": "Nêu quy trình 5 bước để xác định subnet.",
+              "back": "1. Đọc prefix và tính số bit host. 2. Tính kích thước block. 3. Xác định block chứa octet cuối. 4. Lấy đầu block làm network và cuối block làm broadcast. 5. Loại hai biên để lấy dải host dùng được.",
+              "source_refs": [
+                "147955a9405c4edfaa7dc35216b4237f:2:1",
+                "147955a9405c4edfaa7dc35216b4237f:2:2",
+                "147955a9405c4edfaa7dc35216b4237f:2:3",
+                "147955a9405c4edfaa7dc35216b4237f:2:4",
+                "147955a9405c4edfaa7dc35216b4237f:2:5"
+              ]
+            }
+          ],
+          "mindmap": [
+            {
+              "title": "Cấu trúc IPv4 /26",
+              "text": "32 bit (4 octet), 26 bit network, 6 bit host.",
+              "source_refs": [
+                "147955a9405c4edfaa7dc35216b4237f:2:0"
+              ]
+            },
+            {
+              "title": "Tính toán Block",
+              "text": "64 địa chỉ/block, 62 địa chỉ host.",
+              "source_refs": [
+                "147955a9405c4edfaa7dc35216b4237f:2:0"
+              ]
+            },
+            {
+              "title": "Quy trình Subnet",
+              "text": "Đọc prefix -> Tính block -> Xác định block chứa -> Lấy Network/Broadcast -> Lấy dải Host.",
+              "source_refs": [
+                "147955a9405c4edfaa7dc35216b4237f:2:1",
+                "147955a9405c4edfaa7dc35216b4237f:2:2",
+                "147955a9405c4edfaa7dc35216b4237f:2:3",
+                "147955a9405c4edfaa7dc35216b4237f:2:4",
+                "147955a9405c4edfaa7dc35216b4237f:2:5"
+              ]
+            }
+          ]
+        },
+        "questions": {
+          "mcq": {
+            "reason": "",
+            "question": {
+              "kind": "mcq",
+              "prompt": "Trong cấu trúc địa chỉ IPv4 với prefix /26, số lượng địa chỉ host dùng được trong một block là bao nhiêu?",
+              "options": [
+                "64 địa chỉ",
+                "62 địa chỉ",
+                "32 địa chỉ"
+              ],
+              "left": [],
+              "answer": "62 địa chỉ",
+              "explanation": "Một block /26 có 2^6 = 64 địa chỉ, nhưng sau khi loại bỏ địa chỉ network và broadcast, còn lại 62 địa chỉ host dùng được.",
+              "source_refs": [
+                "147955a9405c4edfaa7dc35216b4237f:2:0"
+              ],
+              "rubric": [
+                "62 địa chỉ là đáp án đúng vì sau khi bỏ network và broadcast từ tổng số 64 địa chỉ của block /26."
+              ]
+            }
+          }
+        },
+        "stage_providers": {
+          "reading": {
+            "provider": "ollama_local",
+            "model": "gemma4:12b-mlx",
+            "model_choice_id": "local:gemma4:12b-mlx",
+            "selection_revision": 1,
+            "prompt_version": "20261017-unit-source-server-metadata-v6",
+            "schema_version": 13
+          },
+          "mcq": {
+            "provider": "ollama_local",
+            "model": "gemma4:12b-mlx",
+            "model_choice_id": "local:gemma4:12b-mlx",
+            "selection_revision": 1,
+            "prompt_version": "20261017-unit-source-server-metadata-v6",
+            "schema_version": 13
+          }
+        }
+      }
+    }
+  ],
+  "errors": [
+    {
+      "type": "RuntimeError",
+      "message": "Generation failed; partial stages retained, no automatic semantic retry."
+    }
+  ],
+  "source_id": "147955a9405c4edfaa7dc35216b4237f",
+  "source_revision": 2,
+  "course_id": "35926bc3d4744f6ba22826db7ebdd3dd",
+  "global_default_before": "kaggle:qwen3.8:27b",
+  "selection": {
+    "model_id": "local:gemma4:12b-mlx",
+    "revision": 1,
+    "provider": "ollama_local",
+    "model": "gemma4:12b-mlx",
+    "external": false
+  },
+  "resumed_from": "4e0fdec72c1e4cfc86bb8f9d55a4172d",
+  "recovery_mode": "new_job_same_course_no_valid_reading"
+}

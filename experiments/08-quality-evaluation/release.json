@@ -1,0 +1,66 @@
+{
+  "purpose": "Freeze a candidate solely for held-out assessment, not acceptance, public release, deployment or a quality-pass claim.",
+  "kind": "local_evaluation_candidate_not_accepted_release",
+  "frozen_at": "2026-10-21T06:35:32.260703+00:00",
+  "production_sha256": "58f9fdf652015a8e7b9ec5145dd911dfe7a518d6fabd79f4209f3343a61ec294",
+  "protocol_sha256": "f9c80bb55af1823e4ad12f37cd49e3cb764eab1d32fe6b3e5e56ab61cfe476c0",
+  "split_hashes": {
+    "dev.json": "e995b36a9de2802328b7ffd8d93e27aef3c6f4dfb0c7ca68f0291dc6bdb04b21",
+    "final.json": "b9217a5a2ec433b3f449ad470ff473a13a092aede141562105234b0d81997d98"
+  },
+  "reason": "Core backend behavior passed403tests and development improvement rounds are retained. Measure the fixed candidate on the reserved final split once; keep failures and no post-hoc tuning against its outputs.",
+  "backend_tests": 403,
+  "frontend_tests_retained": 71,
+  "protocol_tests": 9,
+  "sql_version": 18,
+  "versions": {
+    "lesson": "20261021-kind-compatible-chapter-focus-v26",
+    "completion": "20261021-missing-question-kind-focus-v12",
+    "correction": "20261021-question-inputs-without-old-solution-v4",
+    "processor": "20261021-polynomial-composition-proof-v13"
+  },
+  "model": {
+    "id": "gemma4:12b-mlx",
+    "digest": "ded7a27350032202d9e9b2a6071e8aa89959ab156771b5228f30863c741c4970",
+    "details": {
+      "parent_model": "",
+      "format": "safetensors",
+      "family": "",
+      "families": null,
+      "parameter_size": "",
+      "quantization_level": "",
+      "runner": "mlx"
+    },
+    "ollama_version": "0.40.3"
+  },
+  "runtime": {
+    "python": "3.12.14",
+    "machine": "arm64",
+    "system": "Darwin"
+  },
+  "limits": {
+    "cases": 6,
+    "generation_jobs_per_case": 1,
+    "requested_questions_per_case": 8,
+    "wall_seconds": 1500,
+    "external_inference": 0,
+    "payments": 0,
+    "automatic_semantic_retries": 0
+  },
+  "preflight_active": {
+    "jobs": 0,
+    "rooms": 0,
+    "parsing": 0
+  },
+  "private_backup": "study-before-final-candidate-20261021T063532Z.sqlite3",
+  "known_open_issues": [
+    "Some model outputs introduce unsupported facts or technical citation aliases.",
+    "Source coverage does not prove OCR/math/diagram accuracy.",
+    "Short-answer self-review is not a verified AI grade.",
+    "Agent-authored notes/labels are not instructor gold.",
+    "Independent user and source review results are still absent."
+  ],
+  "backend_accepted": false,
+  "independent_human_reviews": 0,
+  "evaluation_note": "Final held out from prompt/code selection; not unseen to dataset author or pretraining. If its outputs guide code changes, this split must become development and be replaced."
+}

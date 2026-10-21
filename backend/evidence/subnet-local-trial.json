@@ -1,0 +1,1401 @@
+{
+  "verified_at": "2026-10-14T17:42:31.793974+00:00",
+  "scope": "Self-authored subnet-dev.txt uploaded via browser; not Huy's school document, final benchmark, or independent user evaluation.",
+  "model": "qwen3.5:9b",
+  "provider": "ollama_local",
+  "runner": "mlx",
+  "source": {
+    "id": "c44feeece5c441089388b6ef88cd4b1d",
+    "metadata": {
+      "name": "subnet-dev.txt",
+      "sha256": "bb9046e1f07ff872b3a1eebbce6670c5270f8e3d4281166fb7559b62870390c0",
+      "bytes": 909,
+      "warnings": [],
+      "subject_suggestion": "Tài liệu kiểm thử tự soạn — IPv4 và subnet"
+    },
+    "original_sha256_now": "bb9046e1f07ff872b3a1eebbce6670c5270f8e3d4281166fb7559b62870390c0",
+    "original_text": "Tài liệu kiểm thử tự soạn — IPv4 và subnet\nIPv4 có 32 bit. Subnet mask phân chia địa chỉ thành phần network và phần host; cần biết cả IP và mask để xác định subnet.\nPrefix /26 dành 26 bit cho network và 6 bit cho host. Một block gồm 2^6 = 64 địa chỉ.\nVới 192.168.1.70/26, octet cuối 70 nằm trong block 64–127. Network là 192.168.1.64, broadcast là 192.168.1.127.\nHai biên network và broadcast không dùng làm địa chỉ host. Host dùng được từ 192.168.1.65 đến 192.168.1.126; tổng 64 − 2 = 62 host.\nQuy trình tự kiểm tra có thứ tự: (1) đọc prefix; (2) tính số bit host; (3) tìm block chứa IP; (4) xác định network và broadcast; (5) đếm host dùng được.\nĐây là nguồn phát triển để thử pipeline. Không phải tài liệu giảng viên, không dùng làm dữ liệu benchmark cuối.\n"
+  },
+  "extractions": [
+    {
+      "revision": 1,
+      "reviewed": false,
+      "fragments": [
+        {
+          "text": "Tài liệu kiểm thử tự soạn — IPv4 và subnet",
+          "locator": {
+            "type": "line",
+            "line": 1,
+            "character_start": 0
+          },
+          "id": "c44feeece5c441089388b6ef88cd4b1d:1:0",
+          "original_text": "Tài liệu kiểm thử tự soạn — IPv4 và subnet"
+        },
+        {
+          "text": "IPv4 có 32 bit. Subnet mask phân chia địa chỉ thành phần network và phần host; cần biết cả IP và mask để xác định subnet.",
+          "locator": {
+            "type": "line",
+            "line": 2,
+            "character_start": 0
+          },
+          "id": "c44feeece5c441089388b6ef88cd4b1d:1:1",
+          "original_text": "IPv4 có 32 bit. Subnet mask phân chia địa chỉ thành phần network và phần host; cần biết cả IP và mask để xác định subnet."
+        },
+        {
+          "text": "Prefix /26 dành 26 bit cho network và 6 bit cho host. Một block gồm 2^6 = 64 địa chỉ.",
+          "locator": {
+            "type": "line",
+            "line": 3,
+            "character_start": 0
+          },
+          "id": "c44feeece5c441089388b6ef88cd4b1d:1:2",
+          "original_text": "Prefix /26 dành 26 bit cho network và 6 bit cho host. Một block gồm 2^6 = 64 địa chỉ."
+        },
+        {
+          "text": "Với 192.168.1.70/26, octet cuối 70 nằm trong block 64–127. Network là 192.168.1.64, broadcast là 192.168.1.127.",
+          "locator": {
+            "type": "line",
+            "line": 4,
+            "character_start": 0
+          },
+          "id": "c44feeece5c441089388b6ef88cd4b1d:1:3",
+          "original_text": "Với 192.168.1.70/26, octet cuối 70 nằm trong block 64–127. Network là 192.168.1.64, broadcast là 192.168.1.127."
+        },
+        {
+          "text": "Hai biên network và broadcast không dùng làm địa chỉ host. Host dùng được từ 192.168.1.65 đến 192.168.1.126; tổng 64 − 2 = 62 host.",
+          "locator": {
+            "type": "line",
+            "line": 5,
+            "character_start": 0
+          },
+          "id": "c44feeece5c441089388b6ef88cd4b1d:1:4",
+          "original_text": "Hai biên network và broadcast không dùng làm địa chỉ host. Host dùng được từ 192.168.1.65 đến 192.168.1.126; tổng 64 − 2 = 62 host."
+        },
+        {
+          "text": "Quy trình tự kiểm tra có thứ tự: (1) đọc prefix; (2) tính số bit host; (3) tìm block chứa IP; (4) xác định network và broadcast; (5) đếm host dùng được.",
+          "locator": {
+            "type": "line",
+            "line": 6,
+            "character_start": 0
+          },
+          "id": "c44feeece5c441089388b6ef88cd4b1d:1:5",
+          "original_text": "Quy trình tự kiểm tra có thứ tự: (1) đọc prefix; (2) tính số bit host; (3) tìm block chứa IP; (4) xác định network và broadcast; (5) đếm host dùng được."
+        },
+        {
+          "text": "Đây là nguồn phát triển để thử pipeline. Không phải tài liệu giảng viên, không dùng làm dữ liệu benchmark cuối.",
+          "locator": {
+            "type": "line",
+            "line": 7,
+            "character_start": 0
+          },
+          "id": "c44feeece5c441089388b6ef88cd4b1d:1:6",
+          "original_text": "Đây là nguồn phát triển để thử pipeline. Không phải tài liệu giảng viên, không dùng làm dữ liệu benchmark cuối."
+        }
+      ]
+    },
+    {
+      "revision": 2,
+      "reviewed": true,
+      "fragments": [
+        {
+          "text": "Ghi chú kiểm thử đã đối chiếu — IPv4 và subnet",
+          "locator": {
+            "type": "line",
+            "line": 1,
+            "character_start": 0
+          },
+          "id": "c44feeece5c441089388b6ef88cd4b1d:2:0",
+          "original_text": "Tài liệu kiểm thử tự soạn — IPv4 và subnet",
+          "edited_by_user": true
+        },
+        {
+          "text": "IPv4 có 32 bit. Subnet mask phân chia địa chỉ thành phần network và phần host; cần biết cả IP và mask để xác định subnet.",
+          "locator": {
+            "type": "line",
+            "line": 2,
+            "character_start": 0
+          },
+          "id": "c44feeece5c441089388b6ef88cd4b1d:2:1",
+          "original_text": "IPv4 có 32 bit. Subnet mask phân chia địa chỉ thành phần network và phần host; cần biết cả IP và mask để xác định subnet.",
+          "edited_by_user": false
+        },
+        {
+          "text": "Prefix /26 dành 26 bit cho network và 6 bit cho host. Một block gồm 2^6 = 64 địa chỉ.",
+          "locator": {
+            "type": "line",
+            "line": 3,
+            "character_start": 0
+          },
+          "id": "c44feeece5c441089388b6ef88cd4b1d:2:2",
+          "original_text": "Prefix /26 dành 26 bit cho network và 6 bit cho host. Một block gồm 2^6 = 64 địa chỉ.",
+          "edited_by_user": false
+        },
+        {
+          "text": "Với 192.168.1.70/26, octet cuối 70 nằm trong block 64–127. Network là 192.168.1.64, broadcast là 192.168.1.127.",
+          "locator": {
+            "type": "line",
+            "line": 4,
+            "character_start": 0
+          },
+          "id": "c44feeece5c441089388b6ef88cd4b1d:2:3",
+          "original_text": "Với 192.168.1.70/26, octet cuối 70 nằm trong block 64–127. Network là 192.168.1.64, broadcast là 192.168.1.127.",
+          "edited_by_user": false
+        },
+        {
+          "text": "Hai biên network và broadcast không dùng làm địa chỉ host. Host dùng được từ 192.168.1.65 đến 192.168.1.126; tổng 64 − 2 = 62 host.",
+          "locator": {
+            "type": "line",
+            "line": 5,
+            "character_start": 0
+          },
+          "id": "c44feeece5c441089388b6ef88cd4b1d:2:4",
+          "original_text": "Hai biên network và broadcast không dùng làm địa chỉ host. Host dùng được từ 192.168.1.65 đến 192.168.1.126; tổng 64 − 2 = 62 host.",
+          "edited_by_user": false
+        },
+        {
+          "text": "Quy trình tự kiểm tra có thứ tự: (1) đọc prefix; (2) tính số bit host; (3) tìm block chứa IP; (4) xác định network và broadcast; (5) đếm host dùng được.",
+          "locator": {
+            "type": "line",
+            "line": 6,
+            "character_start": 0
+          },
+          "id": "c44feeece5c441089388b6ef88cd4b1d:2:5",
+          "original_text": "Quy trình tự kiểm tra có thứ tự: (1) đọc prefix; (2) tính số bit host; (3) tìm block chứa IP; (4) xác định network và broadcast; (5) đếm host dùng được.",
+          "edited_by_user": false
+        },
+        {
+          "text": "Đây là nguồn phát triển để thử pipeline. Không phải tài liệu giảng viên, không dùng làm dữ liệu benchmark cuối.",
+          "locator": {
+            "type": "line",
+            "line": 7,
+            "character_start": 0
+          },
+          "id": "c44feeece5c441089388b6ef88cd4b1d:2:6",
+          "original_text": "Đây là nguồn phát triển để thử pipeline. Không phải tài liệu giảng viên, không dùng làm dữ liệu benchmark cuối.",
+          "edited_by_user": false
+        }
+      ]
+    }
+  ],
+  "plans": [
+    {
+      "id": "4c2d4c46d8da4c2f87461dd3cd44561c",
+      "status": "approved",
+      "preferences": {
+        "source_id": "c44feeece5c441089388b6ef88cd4b1d",
+        "subject": "Mạng máy tính",
+        "goal": "Hiểu IP và subnet mask, giải ví dụ /26 và luyện các ý trong tài liệu.",
+        "instructions": "Chỉ tạo một bài ngắn từ các đoạn đã chọn. Ưu tiên ví dụ 192.168.1.70/26 và quy trình tự kiểm tra.",
+        "language": "vi",
+        "fragment_ids": [
+          "c44feeece5c441089388b6ef88cd4b1d:2:1",
+          "c44feeece5c441089388b6ef88cd4b1d:2:2",
+          "c44feeece5c441089388b6ef88cd4b1d:2:3",
+          "c44feeece5c441089388b6ef88cd4b1d:2:4",
+          "c44feeece5c441089388b6ef88cd4b1d:2:5"
+        ],
+        "unlock_policy": "locked",
+        "extraction_revision": 2
+      },
+      "outline": {
+        "title": "IPv4 và subnet · nguồn kiểm thử tự soạn",
+        "units": [
+          {
+            "title": "Địa chỉ IPv4 và subnet mask /26",
+            "objective": "Hiểu IPv4, network/host; giải ví dụ 192.168.1.70/26 và áp dụng quy trình 5 bước từ nguồn.",
+            "source_refs": [
+              "c44feeece5c441089388b6ef88cd4b1d:2:1",
+              "c44feeece5c441089388b6ef88cd4b1d:2:2",
+              "c44feeece5c441089388b6ef88cd4b1d:2:3",
+              "c44feeece5c441089388b6ef88cd4b1d:2:4",
+              "c44feeece5c441089388b6ef88cd4b1d:2:5"
+            ]
+          },
+          {
+            "title": "Quy trình tự kiểm tra",
+            "objective": "Áp dụng 5 bước để giải quyết bài toán subnet mask một cách có hệ thống.",
+            "source_refs": [
+              "c44feeece5c441089388b6ef88cd4b1d:2:5"
+            ]
+          }
+        ],
+        "version": 2
+      }
+    }
+  ],
+  "course_revisions": [
+    {
+      "course_id": "1b22ac289c664c3f84b3adb43508a7cf",
+      "revision": 1,
+      "content": {
+        "title": "IPv4 và subnet · nguồn kiểm thử tự soạn",
+        "unlock_policy": "locked",
+        "units": [
+          {
+            "title": "Địa chỉ IPv4 và subnet mask /26",
+            "objective": "Hiểu IPv4, network/host; giải ví dụ 192.168.1.70/26 và áp dụng quy trình 5 bước từ nguồn.",
+            "source_refs": [
+              "c44feeece5c441089388b6ef88cd4b1d:2:1",
+              "c44feeece5c441089388b6ef88cd4b1d:2:2",
+              "c44feeece5c441089388b6ef88cd4b1d:2:3",
+              "c44feeece5c441089388b6ef88cd4b1d:2:4",
+              "c44feeece5c441089388b6ef88cd4b1d:2:5"
+            ],
+            "id": "unit-1",
+            "data": null
+          },
+          {
+            "title": "Quy trình tự kiểm tra",
+            "objective": "Áp dụng 5 bước để giải quyết bài toán subnet mask một cách có hệ thống.",
+            "source_refs": [
+              "c44feeece5c441089388b6ef88cd4b1d:2:5"
+            ],
+            "id": "unit-2",
+            "data": null
+          }
+        ]
+      }
+    },
+    {
+      "course_id": "1b22ac289c664c3f84b3adb43508a7cf",
+      "revision": 2,
+      "content": {
+        "title": "IPv4 và subnet · nguồn kiểm thử tự soạn",
+        "unlock_policy": "locked",
+        "units": [
+          {
+            "title": "Địa chỉ IPv4 và subnet mask /26",
+            "objective": "Hiểu IPv4, network/host; giải ví dụ 192.168.1.70/26 và áp dụng quy trình 5 bước từ nguồn.",
+            "source_refs": [
+              "c44feeece5c441089388b6ef88cd4b1d:2:1",
+              "c44feeece5c441089388b6ef88cd4b1d:2:2",
+              "c44feeece5c441089388b6ef88cd4b1d:2:3",
+              "c44feeece5c441089388b6ef88cd4b1d:2:4",
+              "c44feeece5c441089388b6ef88cd4b1d:2:5"
+            ],
+            "id": "unit-1",
+            "data": {
+              "title": "Địa chỉ IPv4 và subnet mask /26",
+              "sections": [
+                {
+                  "title": "Cấu trúc IPv4 và Subnet Mask",
+                  "text": "IPv4 sử dụng 32 bit để biểu diễn địa chỉ. Subnet mask đóng vai trò phân chia địa chỉ này thành hai phần: phần network (mạng) và phần host (máy chủ). Để xác định chính xác subnet, người dùng cần nắm rõ cả địa chỉ IP và subnet mask.",
+                  "source_refs": [
+                    "c44feeece5c441089388b6ef88cd4b1d:2:1"
+                  ]
+                },
+                {
+                  "title": "Phân tích Prefix /26",
+                  "text": "Prefix /26 quy định 26 bit dành cho phần network và 6 bit còn lại cho phần host. Dựa trên số bit host, ta tính được kích thước của một block địa chỉ là 2^6 = 64 địa chỉ liên tiếp.",
+                  "source_refs": [
+                    "c44feeece5c441089388b6ef88cd4b1d:2:2"
+                  ]
+                },
+                {
+                  "title": "Ví dụ thực tế 192.168.1.70/26",
+                  "text": "Xét địa chỉ 192.168.1.70/26, octet cuối là 70 nằm trong khoảng block từ 64 đến 127. Do đó, địa chỉ network của subnet này là 192.168.1.64 và địa chỉ broadcast là 192.168.1.127.",
+                  "source_refs": [
+                    "c44feeece5c441089388b6ef88cd4b1d:2:3"
+                  ]
+                }
+              ],
+              "questions": [
+                {
+                  "kind": "mcq",
+                  "prompt": "Với địa chỉ IP 192.168.1.70/26, mạng con (network address) là gì?",
+                  "options": [
+                    "192.168.1.64",
+                    "192.168.1.127",
+                    "192.168.1.65",
+                    "192.168.1.126"
+                  ],
+                  "left": [],
+                  "answer": "192.168.1.64",
+                  "explanation": "Prefix /26 chia 26 bit cho network và 6 bit cho host, tạo ra các block có kích thước 64 địa chỉ (2^6). Octet cuối của IP là 70, nằm trong khoảng từ 64 đến 127. Do đó, địa chỉ mạng con là số đầu tiên của block này, tức là 192.168.1.64.",
+                  "source_refs": [
+                    "c44feeece5c441089388b6ef88cd4b1d:2:2",
+                    "c44feeece5c441089388b6ef88cd4b1d:2:3"
+                  ],
+                  "rubric": [
+                    "Xác định đúng kích thước block dựa trên prefix /26.",
+                    "Tìm số nguyên lớn nhất nhỏ hơn hoặc bằng octet cuối của IP trong cùng một block."
+                  ]
+                },
+                {
+                  "kind": "cloze",
+                  "prompt": "Với địa chỉ 192.168.1.70/26, số lượng host dùng được trong subnet là ____.",
+                  "options": [
+                    "64",
+                    "62",
+                    "63",
+                    "65"
+                  ],
+                  "left": [
+                    "Với địa chỉ 192.168.1.70/26, số lượng host dùng được trong subnet là ____."
+                  ],
+                  "answer": "62",
+                  "explanation": "Prefix /26 dành 6 bit cho host, tạo ra 2^6 = 64 địa chỉ. Hai biên network và broadcast không dùng làm host, nên số host dùng được là 64 - 2 = 62.",
+                  "source_refs": [
+                    "c44feeece5c441089388b6ef88cd4b1d:2:2",
+                    "c44feeece5c441089388b6ef88cd4b1d:2:4"
+                  ],
+                  "rubric": [
+                    "Đáp án đúng là 62.",
+                    "Giải thích phải nêu rõ phép trừ 2 cho network và broadcast."
+                  ]
+                },
+                {
+                  "kind": "matching",
+                  "prompt": "Điền từ thích hợp vào chỗ trống dựa trên quy trình tự kiểm tra subnet /26.",
+                  "options": [
+                    "tính số bit host",
+                    "đếm host dùng được"
+                  ],
+                  "left": [
+                    "(2) _____",
+                    "(5) _____"
+                  ],
+                  "answer": [
+                    0,
+                    1
+                  ],
+                  "explanation": "Theo quy trình 5 bước trong tài liệu: bước (2) là tính số bit host và bước (5) là đếm số host dùng được.",
+                  "source_refs": [
+                    "c44feeece5c441089388b6ef88cd4b1d:2:5"
+                  ],
+                  "rubric": [
+                    "Điền đúng thứ tự các bước trong quy trình.",
+                    "Không nhầm lẫn giữa tính bit host và đếm số host."
+                  ]
+                },
+                {
+                  "kind": "ordering",
+                  "prompt": "Sắp xếp các bước trong quy trình tự kiểm tra subnet mask /26 theo đúng thứ tự logic từ nguồn.",
+                  "options": [
+                    "Đếm số host dùng được (tổng 64 − 2 = 62).",
+                    "Tìm block chứa IP (octet cuối 70 nằm trong block 64–127).",
+                    "Xác định network và broadcast (Network: 192.168.1.64, Broadcast: 192.168.1.127).",
+                    "Tính số bit host (dành 6 bit cho host).",
+                    "Đọc prefix (/26 dành 26 bit cho network)."
+                  ],
+                  "left": [
+                    "Đếm số host dùng được (tổng 64 − 2 = 62).",
+                    "Tìm block chứa IP (octet cuối 70 nằm trong block 64–127).",
+                    "Xác định network và broadcast (Network: 192.168.1.64, Broadcast: 192.168.1.127).",
+                    "Tính số bit host (dành 6 bit cho host).",
+                    "Đọc prefix (/26 dành 26 bit cho network)."
+                  ],
+                  "answer": [
+                    4,
+                    3,
+                    2,
+                    1,
+                    0
+                  ],
+                  "explanation": "Theo nguồn, quy trình tự kiểm tra gồm: (1) đọc prefix; (2) tính số bit host; (3) tìm block chứa IP; (4) xác định network và broadcast; (5) đếm host dùng được.",
+                  "source_refs": [
+                    "c44feeece5c441089388b6ef88cd4b1d:2:5"
+                  ],
+                  "rubric": [
+                    "Bước 1 phải là đọc prefix /26.",
+                    "Bước 2 phải là tính số bit host (6 bit).",
+                    "Bước 3 phải là tìm block chứa IP (64–127).",
+                    "Bước 4 phải là xác định network và broadcast.",
+                    "Bước 5 phải là đếm host dùng được."
+                  ]
+                },
+                {
+                  "kind": "short_answer",
+                  "prompt": "Xác định số lượng địa chỉ host có thể sử dụng được trong subnet 192.168.1.70/26.",
+                  "options": [
+                    "64",
+                    "62",
+                    "60",
+                    "30"
+                  ],
+                  "left": [
+                    "64",
+                    "62",
+                    "60",
+                    "30"
+                  ],
+                  "answer": "62",
+                  "explanation": "Với prefix /26, có 6 bit dành cho host (32 - 26). Tổng số địa chỉ trong block là 2^6 = 64. Hai địa chỉ biên (network và broadcast) không dùng làm host, nên số host khả dụng là 64 - 2 = 62.",
+                  "source_refs": [
+                    "c44feeece5c441089388b6ef88cd4b1d:2:2",
+                    "c44feeece5c441089388b6ef88cd4b1d:2:4"
+                  ],
+                  "rubric": [
+                    "Tính đúng số bit host từ prefix.",
+                    "Áp dụng công thức 2^host_bits để tìm tổng địa chỉ block.",
+                    "Trừ đi 2 địa chỉ biên (network và broadcast) để ra kết quả cuối cùng."
+                  ]
+                }
+              ],
+              "cards": [
+                {
+                  "front": "IPv4 có bao nhiêu bit và Subnet mask dùng để làm gì?",
+                  "back": "IPv4 có 32 bit. Subnet mask phân chia địa chỉ thành phần network và phần host.",
+                  "source_refs": [
+                    "c44feeece5c441089388b6ef88cd4b1d:2:1"
+                  ]
+                },
+                {
+                  "front": "Với prefix /26, số bit host là bao nhiêu và kích thước block là gì?",
+                  "back": "Prefix /26 dành 26 bit cho network và 6 bit cho host. Một block gồm 2^6 = 64 địa chỉ.",
+                  "source_refs": [
+                    "c44feeece5c441089388b6ef88cd4b1d:2:2"
+                  ]
+                }
+              ],
+              "mindmap": [
+                {
+                  "title": "Quy trình tự kiểm tra",
+                  "text": "Quy trình gồm 5 bước: (1) đọc prefix; (2) tính số bit host; (3) tìm block chứa IP; (4) xác định network và broadcast; (5) đếm host dùng được.",
+                  "source_refs": [
+                    "c44feeece5c441089388b6ef88cd4b1d:2:5"
+                  ]
+                },
+                {
+                  "title": "Tính toán số lượng host",
+                  "text": "Hai biên network và broadcast không dùng làm địa chỉ host. Với block 64, số host dùng được là 64 - 2 = 62 (từ .65 đến .126).",
+                  "source_refs": [
+                    "c44feeece5c441089388b6ef88cd4b1d:2:4"
+                  ]
+                },
+                {
+                  "title": "Xác định Network và Broadcast",
+                  "text": "Với 192.168.1.70/26, block chứa IP là 64–127. Network là 192.168.1.64, broadcast là 192.168.1.127.",
+                  "source_refs": [
+                    "c44feeece5c441089388b6ef88cd4b1d:2:3"
+                  ]
+                }
+              ]
+            },
+            "completed": false,
+            "unlocked": true
+          },
+          {
+            "title": "Quy trình tự kiểm tra",
+            "objective": "Áp dụng 5 bước để giải quyết bài toán subnet mask một cách có hệ thống.",
+            "source_refs": [
+              "c44feeece5c441089388b6ef88cd4b1d:2:5"
+            ],
+            "id": "unit-2",
+            "data": null,
+            "completed": false,
+            "unlocked": false
+          }
+        ]
+      }
+    },
+    {
+      "course_id": "1b22ac289c664c3f84b3adb43508a7cf",
+      "revision": 3,
+      "content": {
+        "title": "IPv4 và subnet · nguồn kiểm thử tự soạn",
+        "unlock_policy": "locked",
+        "units": [
+          {
+            "title": "Địa chỉ IPv4 và subnet mask /26",
+            "objective": "Hiểu IPv4, network/host; giải ví dụ 192.168.1.70/26 và áp dụng quy trình 5 bước từ nguồn.",
+            "source_refs": [
+              "c44feeece5c441089388b6ef88cd4b1d:2:1",
+              "c44feeece5c441089388b6ef88cd4b1d:2:2",
+              "c44feeece5c441089388b6ef88cd4b1d:2:3",
+              "c44feeece5c441089388b6ef88cd4b1d:2:4",
+              "c44feeece5c441089388b6ef88cd4b1d:2:5"
+            ],
+            "id": "unit-1",
+            "data": {
+              "title": "Địa chỉ IPv4 và subnet mask /26",
+              "sections": [
+                {
+                  "title": "Cấu trúc IPv4 và Subnet Mask",
+                  "text": "IPv4 sử dụng 32 bit để biểu diễn địa chỉ. Subnet mask đóng vai trò phân chia địa chỉ này thành hai phần: phần network (mạng) và phần host (máy chủ). Để xác định chính xác subnet, người dùng cần nắm rõ cả địa chỉ IP và subnet mask.",
+                  "source_refs": [
+                    "c44feeece5c441089388b6ef88cd4b1d:2:1"
+                  ]
+                },
+                {
+                  "title": "Phân tích Prefix /26",
+                  "text": "Prefix /26 quy định 26 bit dành cho phần network và 6 bit còn lại cho phần host. Dựa trên số bit host, ta tính được kích thước của một block địa chỉ là 2^6 = 64 địa chỉ liên tiếp.",
+                  "source_refs": [
+                    "c44feeece5c441089388b6ef88cd4b1d:2:2"
+                  ]
+                },
+                {
+                  "title": "Ví dụ thực tế 192.168.1.70/26",
+                  "text": "Xét địa chỉ 192.168.1.70/26, octet cuối là 70 nằm trong khoảng block từ 64 đến 127. Do đó, địa chỉ network của subnet này là 192.168.1.64 và địa chỉ broadcast là 192.168.1.127.",
+                  "source_refs": [
+                    "c44feeece5c441089388b6ef88cd4b1d:2:3"
+                  ]
+                }
+              ],
+              "questions": [
+                {
+                  "kind": "mcq",
+                  "prompt": "Với địa chỉ IP 192.168.1.70/26, mạng con (network address) là gì?",
+                  "options": [
+                    "192.168.1.64",
+                    "192.168.1.127",
+                    "192.168.1.65",
+                    "192.168.1.126"
+                  ],
+                  "left": [],
+                  "answer": "192.168.1.64",
+                  "explanation": "Prefix /26 chia 26 bit cho network và 6 bit cho host, tạo ra các block có kích thước 64 địa chỉ (2^6). Octet cuối của IP là 70, nằm trong khoảng từ 64 đến 127. Do đó, địa chỉ mạng con là số đầu tiên của block này, tức là 192.168.1.64.",
+                  "source_refs": [
+                    "c44feeece5c441089388b6ef88cd4b1d:2:2",
+                    "c44feeece5c441089388b6ef88cd4b1d:2:3"
+                  ],
+                  "rubric": [
+                    "Xác định đúng kích thước block dựa trên prefix /26.",
+                    "Tìm số nguyên lớn nhất nhỏ hơn hoặc bằng octet cuối của IP trong cùng một block."
+                  ]
+                },
+                {
+                  "kind": "cloze",
+                  "prompt": "Với địa chỉ 192.168.1.70/26, số lượng host dùng được trong subnet là ____.",
+                  "options": [
+                    "64",
+                    "62",
+                    "63",
+                    "65"
+                  ],
+                  "left": [
+                    "Với địa chỉ 192.168.1.70/26, số lượng host dùng được trong subnet là ____."
+                  ],
+                  "answer": "62",
+                  "explanation": "Prefix /26 dành 6 bit cho host, tạo ra 2^6 = 64 địa chỉ. Hai biên network và broadcast không dùng làm host, nên số host dùng được là 64 - 2 = 62.",
+                  "source_refs": [
+                    "c44feeece5c441089388b6ef88cd4b1d:2:2",
+                    "c44feeece5c441089388b6ef88cd4b1d:2:4"
+                  ],
+                  "rubric": [
+                    "Đáp án đúng là 62.",
+                    "Giải thích phải nêu rõ phép trừ 2 cho network và broadcast."
+                  ]
+                },
+                {
+                  "kind": "matching",
+                  "prompt": "Ghép bước (2) và bước (5) với đúng thao tác trong quy trình tự kiểm tra subnet /26.",
+                  "options": [
+                    "tính số bit host",
+                    "đếm host dùng được"
+                  ],
+                  "left": [
+                    "(2) _____",
+                    "(5) _____"
+                  ],
+                  "answer": [
+                    0,
+                    1
+                  ],
+                  "explanation": "Theo quy trình 5 bước trong tài liệu: bước (2) là tính số bit host và bước (5) là đếm số host dùng được.",
+                  "source_refs": [
+                    "c44feeece5c441089388b6ef88cd4b1d:2:5"
+                  ],
+                  "rubric": [
+                    "Điền đúng thứ tự các bước trong quy trình.",
+                    "Không nhầm lẫn giữa tính bit host và đếm số host."
+                  ]
+                },
+                {
+                  "kind": "ordering",
+                  "prompt": "Sắp xếp các bước trong quy trình tự kiểm tra subnet mask /26 theo đúng thứ tự logic từ nguồn.",
+                  "options": [
+                    "Đếm số host dùng được (tổng 64 − 2 = 62).",
+                    "Tìm block chứa IP (octet cuối 70 nằm trong block 64–127).",
+                    "Xác định network và broadcast (Network: 192.168.1.64, Broadcast: 192.168.1.127).",
+                    "Tính số bit host (dành 6 bit cho host).",
+                    "Đọc prefix (/26 dành 26 bit cho network)."
+                  ],
+                  "left": [
+                    "Đếm số host dùng được (tổng 64 − 2 = 62).",
+                    "Tìm block chứa IP (octet cuối 70 nằm trong block 64–127).",
+                    "Xác định network và broadcast (Network: 192.168.1.64, Broadcast: 192.168.1.127).",
+                    "Tính số bit host (dành 6 bit cho host).",
+                    "Đọc prefix (/26 dành 26 bit cho network)."
+                  ],
+                  "answer": [
+                    4,
+                    3,
+                    2,
+                    1,
+                    0
+                  ],
+                  "explanation": "Theo nguồn, quy trình tự kiểm tra gồm: (1) đọc prefix; (2) tính số bit host; (3) tìm block chứa IP; (4) xác định network và broadcast; (5) đếm host dùng được.",
+                  "source_refs": [
+                    "c44feeece5c441089388b6ef88cd4b1d:2:5"
+                  ],
+                  "rubric": [
+                    "Bước 1 phải là đọc prefix /26.",
+                    "Bước 2 phải là tính số bit host (6 bit).",
+                    "Bước 3 phải là tìm block chứa IP (64–127).",
+                    "Bước 4 phải là xác định network và broadcast.",
+                    "Bước 5 phải là đếm host dùng được."
+                  ]
+                },
+                {
+                  "kind": "short_answer",
+                  "prompt": "Xác định số lượng địa chỉ host có thể sử dụng được trong subnet 192.168.1.70/26.",
+                  "options": [
+                    "64",
+                    "62",
+                    "60",
+                    "30"
+                  ],
+                  "left": [
+                    "64",
+                    "62",
+                    "60",
+                    "30"
+                  ],
+                  "answer": "62",
+                  "explanation": "Với prefix /26, có 6 bit dành cho host (32 - 26). Tổng số địa chỉ trong block là 2^6 = 64. Hai địa chỉ biên (network và broadcast) không dùng làm host, nên số host khả dụng là 64 - 2 = 62.",
+                  "source_refs": [
+                    "c44feeece5c441089388b6ef88cd4b1d:2:2",
+                    "c44feeece5c441089388b6ef88cd4b1d:2:4"
+                  ],
+                  "rubric": [
+                    "Tính đúng số bit host từ prefix.",
+                    "Áp dụng công thức 2^host_bits để tìm tổng địa chỉ block.",
+                    "Trừ đi 2 địa chỉ biên (network và broadcast) để ra kết quả cuối cùng."
+                  ]
+                }
+              ],
+              "cards": [
+                {
+                  "front": "IPv4 có bao nhiêu bit và Subnet mask dùng để làm gì?",
+                  "back": "IPv4 có 32 bit. Subnet mask phân chia địa chỉ thành phần network và phần host.",
+                  "source_refs": [
+                    "c44feeece5c441089388b6ef88cd4b1d:2:1"
+                  ]
+                },
+                {
+                  "front": "Với prefix /26, số bit host là bao nhiêu và kích thước block là gì?",
+                  "back": "Prefix /26 dành 26 bit cho network và 6 bit cho host. Một block gồm 2^6 = 64 địa chỉ.",
+                  "source_refs": [
+                    "c44feeece5c441089388b6ef88cd4b1d:2:2"
+                  ]
+                }
+              ],
+              "mindmap": [
+                {
+                  "title": "Quy trình tự kiểm tra",
+                  "text": "Quy trình gồm 5 bước: (1) đọc prefix; (2) tính số bit host; (3) tìm block chứa IP; (4) xác định network và broadcast; (5) đếm host dùng được.",
+                  "source_refs": [
+                    "c44feeece5c441089388b6ef88cd4b1d:2:5"
+                  ]
+                },
+                {
+                  "title": "Tính toán số lượng host",
+                  "text": "Hai biên network và broadcast không dùng làm địa chỉ host. Với block 64, số host dùng được là 64 - 2 = 62 (từ .65 đến .126).",
+                  "source_refs": [
+                    "c44feeece5c441089388b6ef88cd4b1d:2:4"
+                  ]
+                },
+                {
+                  "title": "Xác định Network và Broadcast",
+                  "text": "Với 192.168.1.70/26, block chứa IP là 64–127. Network là 192.168.1.64, broadcast là 192.168.1.127.",
+                  "source_refs": [
+                    "c44feeece5c441089388b6ef88cd4b1d:2:3"
+                  ]
+                }
+              ]
+            },
+            "completed": true,
+            "unlocked": true
+          },
+          {
+            "title": "Quy trình tự kiểm tra",
+            "objective": "Áp dụng 5 bước để giải quyết bài toán subnet mask một cách có hệ thống.",
+            "source_refs": [
+              "c44feeece5c441089388b6ef88cd4b1d:2:5"
+            ],
+            "id": "unit-2",
+            "data": null,
+            "completed": false,
+            "unlocked": true
+          }
+        ]
+      }
+    },
+    {
+      "course_id": "1b22ac289c664c3f84b3adb43508a7cf",
+      "revision": 4,
+      "content": {
+        "title": "IPv4 và subnet · nguồn kiểm thử tự soạn",
+        "unlock_policy": "locked",
+        "units": [
+          {
+            "title": "Địa chỉ IPv4 và subnet mask /26",
+            "objective": "Hiểu IPv4, network/host; giải ví dụ 192.168.1.70/26 và áp dụng quy trình 5 bước từ nguồn.",
+            "source_refs": [
+              "c44feeece5c441089388b6ef88cd4b1d:2:1",
+              "c44feeece5c441089388b6ef88cd4b1d:2:2",
+              "c44feeece5c441089388b6ef88cd4b1d:2:3",
+              "c44feeece5c441089388b6ef88cd4b1d:2:4",
+              "c44feeece5c441089388b6ef88cd4b1d:2:5"
+            ],
+            "id": "unit-1",
+            "data": {
+              "title": "Địa chỉ IPv4 và subnet mask /26",
+              "sections": [
+                {
+                  "title": "Cấu trúc IPv4 và Subnet Mask",
+                  "text": "IPv4 sử dụng 32 bit để biểu diễn địa chỉ. Subnet mask đóng vai trò phân chia địa chỉ này thành hai phần: phần network (mạng) và phần host (máy chủ). Để xác định chính xác subnet, người dùng cần nắm rõ cả địa chỉ IP và subnet mask.",
+                  "source_refs": [
+                    "c44feeece5c441089388b6ef88cd4b1d:2:1"
+                  ]
+                },
+                {
+                  "title": "Phân tích Prefix /26",
+                  "text": "Prefix /26 quy định 26 bit dành cho phần network và 6 bit còn lại cho phần host. Dựa trên số bit host, ta tính được kích thước của một block địa chỉ là 2^6 = 64 địa chỉ liên tiếp.",
+                  "source_refs": [
+                    "c44feeece5c441089388b6ef88cd4b1d:2:2"
+                  ]
+                },
+                {
+                  "title": "Ví dụ thực tế 192.168.1.70/26",
+                  "text": "Xét địa chỉ 192.168.1.70/26, octet cuối là 70 nằm trong khoảng block từ 64 đến 127. Do đó, địa chỉ network của subnet này là 192.168.1.64 và địa chỉ broadcast là 192.168.1.127.",
+                  "source_refs": [
+                    "c44feeece5c441089388b6ef88cd4b1d:2:3"
+                  ]
+                }
+              ],
+              "questions": [
+                {
+                  "kind": "mcq",
+                  "prompt": "Với địa chỉ IP 192.168.1.70/26, mạng con (network address) là gì?",
+                  "options": [
+                    "192.168.1.64",
+                    "192.168.1.127",
+                    "192.168.1.65",
+                    "192.168.1.126"
+                  ],
+                  "left": [],
+                  "answer": "192.168.1.64",
+                  "explanation": "Prefix /26 chia 26 bit cho network và 6 bit cho host, tạo ra các block có kích thước 64 địa chỉ (2^6). Octet cuối của IP là 70, nằm trong khoảng từ 64 đến 127. Do đó, địa chỉ mạng con là số đầu tiên của block này, tức là 192.168.1.64.",
+                  "source_refs": [
+                    "c44feeece5c441089388b6ef88cd4b1d:2:2",
+                    "c44feeece5c441089388b6ef88cd4b1d:2:3"
+                  ],
+                  "rubric": [
+                    "Xác định đúng kích thước block dựa trên prefix /26.",
+                    "Tìm số nguyên lớn nhất nhỏ hơn hoặc bằng octet cuối của IP trong cùng một block."
+                  ]
+                },
+                {
+                  "kind": "cloze",
+                  "prompt": "Với địa chỉ 192.168.1.70/26, số lượng host dùng được trong subnet là ____.",
+                  "options": [
+                    "64",
+                    "62",
+                    "63",
+                    "65"
+                  ],
+                  "left": [
+                    "Với địa chỉ 192.168.1.70/26, số lượng host dùng được trong subnet là ____."
+                  ],
+                  "answer": "62",
+                  "explanation": "Prefix /26 dành 6 bit cho host, tạo ra 2^6 = 64 địa chỉ. Hai biên network và broadcast không dùng làm host, nên số host dùng được là 64 - 2 = 62.",
+                  "source_refs": [
+                    "c44feeece5c441089388b6ef88cd4b1d:2:2",
+                    "c44feeece5c441089388b6ef88cd4b1d:2:4"
+                  ],
+                  "rubric": [
+                    "Đáp án đúng là 62.",
+                    "Giải thích phải nêu rõ phép trừ 2 cho network và broadcast."
+                  ]
+                },
+                {
+                  "kind": "matching",
+                  "prompt": "Ghép bước (2) và bước (5) với đúng thao tác trong quy trình tự kiểm tra subnet /26.",
+                  "options": [
+                    "tính số bit host",
+                    "đếm host dùng được"
+                  ],
+                  "left": [
+                    "(2) _____",
+                    "(5) _____"
+                  ],
+                  "answer": [
+                    0,
+                    1
+                  ],
+                  "explanation": "Theo quy trình 5 bước trong tài liệu: bước (2) là tính số bit host và bước (5) là đếm số host dùng được.",
+                  "source_refs": [
+                    "c44feeece5c441089388b6ef88cd4b1d:2:5"
+                  ],
+                  "rubric": [
+                    "Điền đúng thứ tự các bước trong quy trình.",
+                    "Không nhầm lẫn giữa tính bit host và đếm số host."
+                  ]
+                },
+                {
+                  "kind": "ordering",
+                  "prompt": "Sắp xếp các bước trong quy trình tự kiểm tra subnet mask /26 theo đúng thứ tự logic từ nguồn.",
+                  "options": [
+                    "Đếm số host dùng được (tổng 64 − 2 = 62).",
+                    "Tìm block chứa IP (octet cuối 70 nằm trong block 64–127).",
+                    "Xác định network và broadcast (Network: 192.168.1.64, Broadcast: 192.168.1.127).",
+                    "Tính số bit host (dành 6 bit cho host).",
+                    "Đọc prefix (/26 dành 26 bit cho network)."
+                  ],
+                  "left": [
+                    "Đếm số host dùng được (tổng 64 − 2 = 62).",
+                    "Tìm block chứa IP (octet cuối 70 nằm trong block 64–127).",
+                    "Xác định network và broadcast (Network: 192.168.1.64, Broadcast: 192.168.1.127).",
+                    "Tính số bit host (dành 6 bit cho host).",
+                    "Đọc prefix (/26 dành 26 bit cho network)."
+                  ],
+                  "answer": [
+                    4,
+                    3,
+                    2,
+                    1,
+                    0
+                  ],
+                  "explanation": "Theo nguồn, quy trình tự kiểm tra gồm: (1) đọc prefix; (2) tính số bit host; (3) tìm block chứa IP; (4) xác định network và broadcast; (5) đếm host dùng được.",
+                  "source_refs": [
+                    "c44feeece5c441089388b6ef88cd4b1d:2:5"
+                  ],
+                  "rubric": [
+                    "Bước 1 phải là đọc prefix /26.",
+                    "Bước 2 phải là tính số bit host (6 bit).",
+                    "Bước 3 phải là tìm block chứa IP (64–127).",
+                    "Bước 4 phải là xác định network và broadcast.",
+                    "Bước 5 phải là đếm host dùng được."
+                  ]
+                },
+                {
+                  "kind": "short_answer",
+                  "prompt": "Xác định số lượng địa chỉ host có thể sử dụng được trong subnet 192.168.1.70/26.",
+                  "options": [
+                    "64",
+                    "62",
+                    "60",
+                    "30"
+                  ],
+                  "left": [
+                    "64",
+                    "62",
+                    "60",
+                    "30"
+                  ],
+                  "answer": "62",
+                  "explanation": "Với prefix /26, có 6 bit dành cho host (32 - 26). Tổng số địa chỉ trong block là 2^6 = 64. Hai địa chỉ biên (network và broadcast) không dùng làm host, nên số host khả dụng là 64 - 2 = 62.",
+                  "source_refs": [
+                    "c44feeece5c441089388b6ef88cd4b1d:2:2",
+                    "c44feeece5c441089388b6ef88cd4b1d:2:4"
+                  ],
+                  "rubric": [
+                    "Tính đúng số bit host từ prefix.",
+                    "Áp dụng công thức 2^host_bits để tìm tổng địa chỉ block.",
+                    "Trừ đi 2 địa chỉ biên (network và broadcast) để ra kết quả cuối cùng."
+                  ]
+                }
+              ],
+              "cards": [
+                {
+                  "front": "IPv4 có bao nhiêu bit và Subnet mask dùng để làm gì?",
+                  "back": "IPv4 có 32 bit. Subnet mask phân chia địa chỉ thành phần network và phần host.",
+                  "source_refs": [
+                    "c44feeece5c441089388b6ef88cd4b1d:2:1"
+                  ]
+                },
+                {
+                  "front": "Với prefix /26, số bit host là bao nhiêu?",
+                  "back": "32−26=6.",
+                  "source_refs": [
+                    "c44feeece5c441089388b6ef88cd4b1d:2:2"
+                  ]
+                }
+              ],
+              "mindmap": [
+                {
+                  "title": "Quy trình tự kiểm tra",
+                  "text": "Quy trình gồm 5 bước: (1) đọc prefix; (2) tính số bit host; (3) tìm block chứa IP; (4) xác định network và broadcast; (5) đếm host dùng được.",
+                  "source_refs": [
+                    "c44feeece5c441089388b6ef88cd4b1d:2:5"
+                  ]
+                },
+                {
+                  "title": "Tính toán số lượng host",
+                  "text": "Hai biên network và broadcast không dùng làm địa chỉ host. Với block 64, số host dùng được là 64 - 2 = 62 (từ .65 đến .126).",
+                  "source_refs": [
+                    "c44feeece5c441089388b6ef88cd4b1d:2:4"
+                  ]
+                },
+                {
+                  "title": "Xác định Network và Broadcast",
+                  "text": "Với 192.168.1.70/26, block chứa IP là 64–127. Network là 192.168.1.64, broadcast là 192.168.1.127.",
+                  "source_refs": [
+                    "c44feeece5c441089388b6ef88cd4b1d:2:3"
+                  ]
+                }
+              ]
+            },
+            "completed": true,
+            "unlocked": true
+          },
+          {
+            "title": "Quy trình tự kiểm tra",
+            "objective": "Áp dụng 5 bước để giải quyết bài toán subnet mask một cách có hệ thống.",
+            "source_refs": [
+              "c44feeece5c441089388b6ef88cd4b1d:2:5"
+            ],
+            "id": "unit-2",
+            "data": null,
+            "completed": false,
+            "unlocked": true
+          }
+        ]
+      }
+    }
+  ],
+  "jobs": [
+    {
+      "id": "25209156cdb04a219ad50530cea40ebb",
+      "task": "outline",
+      "status": "succeeded",
+      "attempts": 1,
+      "created_at": "2026-10-14T16:28:58.250270+00:00",
+      "updated_at": "2026-10-14T16:29:16.477349+00:00",
+      "seconds": 18.227,
+      "resume_job_id": null,
+      "saved_reading": false,
+      "saved_question_types": [],
+      "error": null,
+      "chat_result": null
+    },
+    {
+      "id": "807923a79175487e9db16870626bd953",
+      "task": "lesson",
+      "status": "failed",
+      "attempts": 1,
+      "created_at": "2026-10-14T16:36:40.513162+00:00",
+      "updated_at": "2026-10-14T16:38:02.251628+00:00",
+      "seconds": 81.738,
+      "resume_job_id": null,
+      "saved_reading": false,
+      "saved_question_types": [],
+      "error": {
+        "message": "9 validation errors for Lesson\nquestions.0\n  Value error, MCQ must have distinct options and an answer from those options [type=value_error, input_value={'kind': 'mcq', 'prompt':...nh block chứa IP.']}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/value_error\nquestions.1.answer.str\n  Input should be a valid string [type=string_type, input_value=[{'match': 0, 'value': '6...tch': 2, 'value': '64'}], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.14/v/string_type\nquestions.1.answer.list[int].0\n  Input should be a valid integer [type=int_type, input_value={'match': 0, 'value': '6'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/int_type\nquestions.1.answer.list[int].1\n  Input shoul"
+      },
+      "chat_result": null
+    },
+    {
+      "id": "a3f015273e964f67985f80ab05904bec",
+      "task": "lesson",
+      "status": "failed",
+      "attempts": 1,
+      "created_at": "2026-10-14T16:41:12.233075+00:00",
+      "updated_at": "2026-10-14T16:41:59.296537+00:00",
+      "seconds": 47.063,
+      "resume_job_id": null,
+      "saved_reading": false,
+      "saved_question_types": [],
+      "error": {
+        "message": "AI trả cấu trúc chưa hợp lệ ở questions.1. Nguồn và phần đã lưu vẫn còn; chưa áp dụng đầu ra này. Có thể thử lại hoặc thu hẹp mục tiêu."
+      },
+      "chat_result": null
+    },
+    {
+      "id": "7cca16a689b04a9781513edee899cebc",
+      "task": "lesson",
+      "status": "failed",
+      "attempts": 1,
+      "created_at": "2026-10-14T17:02:17.377140+00:00",
+      "updated_at": "2026-10-14T17:03:28.181429+00:00",
+      "seconds": 70.804,
+      "resume_job_id": null,
+      "saved_reading": true,
+      "saved_question_types": [],
+      "error": {
+        "message": "AI trả cấu trúc chưa hợp lệ ở matching: Value error, Ordering/matching answer must be a permutation of option indices. Nguồn và phần đã lưu vẫn còn; chưa áp dụng đầu ra này. Có thể thử lại hoặc thu hẹp mục tiêu."
+      },
+      "chat_result": null
+    },
+    {
+      "id": "f6c39cc171a441b281575a51704d95ee",
+      "task": "lesson",
+      "status": "succeeded",
+      "attempts": 1,
+      "created_at": "2026-10-14T17:09:31.665937+00:00",
+      "updated_at": "2026-10-14T17:10:30.590375+00:00",
+      "seconds": 58.924,
+      "resume_job_id": "7cca16a689b04a9781513edee899cebc",
+      "saved_reading": true,
+      "saved_question_types": [
+        "mcq",
+        "cloze",
+        "matching",
+        "ordering",
+        "short_answer"
+      ],
+      "error": null,
+      "chat_result": null
+    },
+    {
+      "id": "21c5a30204134c8d972394e44c8f5d92",
+      "task": "correction",
+      "status": "succeeded",
+      "attempts": 1,
+      "created_at": "2026-10-14T17:16:23.513033+00:00",
+      "updated_at": "2026-10-14T17:16:35.761503+00:00",
+      "seconds": 12.248,
+      "resume_job_id": null,
+      "saved_reading": false,
+      "saved_question_types": [],
+      "error": null,
+      "chat_result": null
+    },
+    {
+      "id": "e4af5d90a42a44d3971b055eaba1b13d",
+      "task": "chat",
+      "status": "succeeded",
+      "attempts": 1,
+      "created_at": "2026-10-14T17:19:34.267542+00:00",
+      "updated_at": "2026-10-14T17:19:39.604976+00:00",
+      "seconds": 5.337,
+      "resume_job_id": null,
+      "saved_reading": false,
+      "saved_question_types": [],
+      "error": null,
+      "chat_result": {
+        "text": "Prefix /26 có nghĩa là dành 26 bit cho phần network. Vì IPv4 tổng cộng 32 bit, số bit còn lại cho host chính là 32 - 26 = 6 bit.",
+        "source_refs": [
+          "c44feeece5c441089388b6ef88cd4b1d:2:1",
+          "c44feeece5c441089388b6ef88cd4b1d:2:2"
+        ],
+        "needs_more_source": false
+      }
+    },
+    {
+      "id": "636db70fccde4bf0a051065d29f17ab1",
+      "task": "correction",
+      "status": "succeeded",
+      "attempts": 1,
+      "created_at": "2026-10-14T17:22:27.520667+00:00",
+      "updated_at": "2026-10-14T17:22:30.750622+00:00",
+      "seconds": 3.23,
+      "resume_job_id": null,
+      "saved_reading": false,
+      "saved_question_types": [],
+      "error": null,
+      "chat_result": null
+    },
+    {
+      "id": "985c1b6bf3d24d50881eb8ea105a67ed",
+      "task": "chat",
+      "status": "succeeded",
+      "attempts": 1,
+      "created_at": "2026-10-14T17:35:50.666769+00:00",
+      "updated_at": "2026-10-14T17:35:56.988032+00:00",
+      "seconds": 6.321,
+      "resume_job_id": null,
+      "saved_reading": false,
+      "saved_question_types": [],
+      "error": null,
+      "chat_result": {
+        "text": "Tài liệu hiện tại chỉ giải thích về địa chỉ IPv4, subnet mask và cách tính số host trong /26. Không có nội dung nào đề cập đến tháp nhu cầu Maslow hay môn Tâm lý.",
+        "source_refs": [],
+        "needs_more_source": true
+      }
+    }
+  ],
+  "attempts": [
+    {
+      "id": "4b8a323d03514fd98a4332c3f0cb24a4",
+      "revision": 2,
+      "status": "completed",
+      "result": {
+        "score": 0,
+        "fixed_total": 4,
+        "self_review_count": 1,
+        "course_revision": 2,
+        "session_id": "4b8a323d03514fd98a4332c3f0cb24a4"
+      },
+      "items": [
+        {
+          "kind": "mcq",
+          "prompt": "Với địa chỉ IP 192.168.1.70/26, mạng con (network address) là gì?",
+          "options": [
+            "192.168.1.64",
+            "192.168.1.127",
+            "192.168.1.65",
+            "192.168.1.126"
+          ],
+          "left": [],
+          "answer": "192.168.1.64",
+          "explanation": "Prefix /26 chia 26 bit cho network và 6 bit cho host, tạo ra các block có kích thước 64 địa chỉ (2^6). Octet cuối của IP là 70, nằm trong khoảng từ 64 đến 127. Do đó, địa chỉ mạng con là số đầu tiên của block này, tức là 192.168.1.64.",
+          "source_refs": [
+            "c44feeece5c441089388b6ef88cd4b1d:2:2",
+            "c44feeece5c441089388b6ef88cd4b1d:2:3"
+          ],
+          "rubric": [
+            "Xác định đúng kích thước block dựa trên prefix /26.",
+            "Tìm số nguyên lớn nhất nhỏ hơn hoặc bằng octet cuối của IP trong cùng một block."
+          ],
+          "id": "unit-1:q0"
+        },
+        {
+          "kind": "cloze",
+          "prompt": "Với địa chỉ 192.168.1.70/26, số lượng host dùng được trong subnet là ____.",
+          "options": [
+            "64",
+            "62",
+            "63",
+            "65"
+          ],
+          "left": [
+            "Với địa chỉ 192.168.1.70/26, số lượng host dùng được trong subnet là ____."
+          ],
+          "answer": "62",
+          "explanation": "Prefix /26 dành 6 bit cho host, tạo ra 2^6 = 64 địa chỉ. Hai biên network và broadcast không dùng làm host, nên số host dùng được là 64 - 2 = 62.",
+          "source_refs": [
+            "c44feeece5c441089388b6ef88cd4b1d:2:2",
+            "c44feeece5c441089388b6ef88cd4b1d:2:4"
+          ],
+          "rubric": [
+            "Đáp án đúng là 62.",
+            "Giải thích phải nêu rõ phép trừ 2 cho network và broadcast."
+          ],
+          "id": "unit-1:q1"
+        },
+        {
+          "kind": "matching",
+          "prompt": "Điền từ thích hợp vào chỗ trống dựa trên quy trình tự kiểm tra subnet /26.",
+          "options": [
+            "tính số bit host",
+            "đếm host dùng được"
+          ],
+          "left": [
+            "(2) _____",
+            "(5) _____"
+          ],
+          "answer": [
+            0,
+            1
+          ],
+          "explanation": "Theo quy trình 5 bước trong tài liệu: bước (2) là tính số bit host và bước (5) là đếm số host dùng được.",
+          "source_refs": [
+            "c44feeece5c441089388b6ef88cd4b1d:2:5"
+          ],
+          "rubric": [
+            "Điền đúng thứ tự các bước trong quy trình.",
+            "Không nhầm lẫn giữa tính bit host và đếm số host."
+          ],
+          "id": "unit-1:q2"
+        },
+        {
+          "kind": "ordering",
+          "prompt": "Sắp xếp các bước trong quy trình tự kiểm tra subnet mask /26 theo đúng thứ tự logic từ nguồn.",
+          "options": [
+            "Đếm số host dùng được (tổng 64 − 2 = 62).",
+            "Tìm block chứa IP (octet cuối 70 nằm trong block 64–127).",
+            "Xác định network và broadcast (Network: 192.168.1.64, Broadcast: 192.168.1.127).",
+            "Tính số bit host (dành 6 bit cho host).",
+            "Đọc prefix (/26 dành 26 bit cho network)."
+          ],
+          "left": [
+            "Đếm số host dùng được (tổng 64 − 2 = 62).",
+            "Tìm block chứa IP (octet cuối 70 nằm trong block 64–127).",
+            "Xác định network và broadcast (Network: 192.168.1.64, Broadcast: 192.168.1.127).",
+            "Tính số bit host (dành 6 bit cho host).",
+            "Đọc prefix (/26 dành 26 bit cho network)."
+          ],
+          "answer": [
+            4,
+            3,
+            2,
+            1,
+            0
+          ],
+          "explanation": "Theo nguồn, quy trình tự kiểm tra gồm: (1) đọc prefix; (2) tính số bit host; (3) tìm block chứa IP; (4) xác định network và broadcast; (5) đếm host dùng được.",
+          "source_refs": [
+            "c44feeece5c441089388b6ef88cd4b1d:2:5"
+          ],
+          "rubric": [
+            "Bước 1 phải là đọc prefix /26.",
+            "Bước 2 phải là tính số bit host (6 bit).",
+            "Bước 3 phải là tìm block chứa IP (64–127).",
+            "Bước 4 phải là xác định network và broadcast.",
+            "Bước 5 phải là đếm host dùng được."
+          ],
+          "id": "unit-1:q3"
+        },
+        {
+          "kind": "short_answer",
+          "prompt": "Xác định số lượng địa chỉ host có thể sử dụng được trong subnet 192.168.1.70/26.",
+          "options": [
+            "64",
+            "62",
+            "60",
+            "30"
+          ],
+          "left": [
+            "64",
+            "62",
+            "60",
+            "30"
+          ],
+          "answer": "62",
+          "explanation": "Với prefix /26, có 6 bit dành cho host (32 - 26). Tổng số địa chỉ trong block là 2^6 = 64. Hai địa chỉ biên (network và broadcast) không dùng làm host, nên số host khả dụng là 64 - 2 = 62.",
+          "source_refs": [
+            "c44feeece5c441089388b6ef88cd4b1d:2:2",
+            "c44feeece5c441089388b6ef88cd4b1d:2:4"
+          ],
+          "rubric": [
+            "Tính đúng số bit host từ prefix.",
+            "Áp dụng công thức 2^host_bits để tìm tổng địa chỉ block.",
+            "Trừ đi 2 địa chỉ biên (network và broadcast) để ra kết quả cuối cùng."
+          ],
+          "id": "unit-1:q4"
+        }
+      ]
+    }
+  ],
+  "corrections": [
+    {
+      "base_revision": 2,
+      "status": "applied",
+      "request": "Đề đang nói điền khuyết trong khi đây là dạng ghép cặp. Sửa cách diễn đạt, giữ quy trình và đáp án từ nguồn.",
+      "scope": {
+        "unit_id": "unit-1",
+        "target": "question",
+        "index": 2
+      },
+      "before": {
+        "kind": "matching",
+        "prompt": "Điền từ thích hợp vào chỗ trống dựa trên quy trình tự kiểm tra subnet /26.",
+        "options": [
+          "tính số bit host",
+          "đếm host dùng được"
+        ],
+        "left": [
+          "(2) _____",
+          "(5) _____"
+        ],
+        "answer": [
+          0,
+          1
+        ],
+        "explanation": "Theo quy trình 5 bước trong tài liệu: bước (2) là tính số bit host và bước (5) là đếm số host dùng được.",
+        "source_refs": [
+          "c44feeece5c441089388b6ef88cd4b1d:2:5"
+        ],
+        "rubric": [
+          "Điền đúng thứ tự các bước trong quy trình.",
+          "Không nhầm lẫn giữa tính bit host và đếm số host."
+        ]
+      },
+      "after": {
+        "kind": "matching",
+        "prompt": "Ghép bước (2) và bước (5) với đúng thao tác trong quy trình tự kiểm tra subnet /26.",
+        "options": [
+          "tính số bit host",
+          "đếm host dùng được"
+        ],
+        "left": [
+          "(2) _____",
+          "(5) _____"
+        ],
+        "answer": [
+          0,
+          1
+        ],
+        "explanation": "Theo quy trình 5 bước trong tài liệu: bước (2) là tính số bit host và bước (5) là đếm số host dùng được.",
+        "source_refs": [
+          "c44feeece5c441089388b6ef88cd4b1d:2:5"
+        ],
+        "rubric": [
+          "Điền đúng thứ tự các bước trong quy trình.",
+          "Không nhầm lẫn giữa tính bit host và đếm số host."
+        ]
+      }
+    },
+    {
+      "base_revision": 3,
+      "status": "discarded",
+      "request": "Rút gọn thẻ, giữ đúng nguồn: mặt trước hỏi số bit host và số địa chỉ của /26, mặt sau giải thích 32−26=6 và 2^6=64. Không thêm kiến thức ngoài tài liệu.",
+      "scope": {
+        "unit_id": "unit-1",
+        "target": "card",
+        "index": 1
+      },
+      "before": {
+        "front": "Với prefix /26, số bit host là bao nhiêu và kích thước block là gì?",
+        "back": "Prefix /26 dành 26 bit cho network và 6 bit cho host. Một block gồm 2^6 = 64 địa chỉ.",
+        "source_refs": [
+          "c44feeece5c441089388b6ef88cd4b1d:2:2"
+        ]
+      },
+      "after": {
+        "front": "Với prefix /26, số bit host là bao nhiêu và kích thước block là gì? Với 192.168.1.70/26, network và broadcast là gì? Số host dùng được là bao nhiêu?",
+        "back": "Prefix /26 dành 26 bit cho network và 6 bit cho host (32−26=6). Một block gồm 2^6 = 64 địa chỉ. Với IP 192.168.1.70/26, octet cuối 70 nằm trong block 64–127, nên network là 192.168.1.64 và broadcast là 192.168.1.127. Hai biên network và broadcast không dùng làm địa chỉ host, nên số host dùng được là 64 − 2 = 62.",
+        "source_refs": [
+          "c44feeece5c441089388b6ef88cd4b1d:2:2",
+          "c44feeece5c441089388b6ef88cd4b1d:2:3",
+          "c44feeece5c441089388b6ef88cd4b1d:2:4"
+        ]
+      }
+    },
+    {
+      "base_revision": 3,
+      "status": "applied",
+      "request": "Chỉ hỏi một ý trong thẻ: prefix /26 còn bao nhiêu bit host? Mặt sau giải thích ngắn 32−26=6. Không thêm câu hỏi hoặc ví dụ khác.",
+      "scope": {
+        "unit_id": "unit-1",
+        "target": "card",
+        "index": 1
+      },
+      "before": {
+        "front": "Với prefix /26, số bit host là bao nhiêu và kích thước block là gì?",
+        "back": "Prefix /26 dành 26 bit cho network và 6 bit cho host. Một block gồm 2^6 = 64 địa chỉ.",
+        "source_refs": [
+          "c44feeece5c441089388b6ef88cd4b1d:2:2"
+        ]
+      },
+      "after": {
+        "front": "Với prefix /26, số bit host là bao nhiêu?",
+        "back": "32−26=6.",
+        "source_refs": [
+          "c44feeece5c441089388b6ef88cd4b1d:2:2"
+        ]
+      }
+    }
+  ],
+  "chat": [
+    {
+      "role": "user",
+      "revision": 3,
+      "text": "Vì sao /26 còn 6 bit host? Chỉ cho mình một gợi ý ngắn từ tài liệu.",
+      "source_refs": []
+    },
+    {
+      "role": "assistant",
+      "revision": 3,
+      "text": "Prefix /26 có nghĩa là dành 26 bit cho phần network. Vì IPv4 tổng cộng 32 bit, số bit còn lại cho host chính là 32 - 26 = 6 bit.",
+      "source_refs": [
+        "c44feeece5c441089388b6ef88cd4b1d:2:1",
+        "c44feeece5c441089388b6ef88cd4b1d:2:2"
+      ]
+    },
+    {
+      "role": "user",
+      "revision": 4,
+      "text": "Nguồn này có giải thích tháp nhu cầu Maslow trong môn Tâm lý không? Nếu không có, hãy báo thiếu nguồn.",
+      "source_refs": []
+    },
+    {
+      "role": "assistant",
+      "revision": 4,
+      "text": "Tài liệu hiện tại chỉ giải thích về địa chỉ IPv4, subnet mask và cách tính số host trong /26. Không có nội dung nào đề cập đến tháp nhu cầu Maslow hay môn Tâm lý.",
+      "source_refs": []
+    }
+  ]
+}

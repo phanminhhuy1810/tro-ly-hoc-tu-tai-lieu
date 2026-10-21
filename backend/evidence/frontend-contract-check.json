@@ -1,0 +1,181 @@
+{
+  "purpose": "Current-source frontend request contract snapshot from an isolated app and explicit test adapter; no live-server, UI or model-quality acceptance.",
+  "openapi_file": "backend/frontend-openapi.json",
+  "openapi_sha256": "a9bdf963d3407a38a77d5d9e5c80c680240a78451e19a28bbc79bf746d0fe5f6",
+  "path_count": 132,
+  "operation_count": 145,
+  "schema_refs_resolve": 202,
+  "documented_operations": [
+    {
+      "method": "GET",
+      "path": "/api/source-library",
+      "present": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/sources/upload",
+      "present": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/sources/{source_id}/scope-review",
+      "present": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/sources/{source_id}/fragment-selection",
+      "present": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/sources/{source_id}/retry-extraction",
+      "present": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/plans/from-source-sections",
+      "present": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/courses/{course_id}/generate",
+      "present": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/jobs/{job_id}/events",
+      "present": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/jobs/{job_id}/cancel",
+      "present": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/courses/{course_id}/question-completion",
+      "present": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/courses/{course_id}/future-plan-preview",
+      "present": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/proposals/{proposal_id}/apply",
+      "present": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/help/threads/{thread_id}",
+      "present": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/help/threads/{thread_id}/actions",
+      "present": true
+    },
+    {
+      "method": "PUT",
+      "path": "/api/help/threads/{thread_id}/draft",
+      "present": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/rooms",
+      "present": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/rooms/{room_id}/answers",
+      "present": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/rooms/{room_id}/events",
+      "present": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/sources/{resource_id}/lifecycle",
+      "present": true
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/sources/{resource_id}",
+      "present": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/sources/{resource_id}/restore",
+      "present": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/courses/{resource_id}/lifecycle",
+      "present": true
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/courses/{resource_id}",
+      "present": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/courses/{resource_id}/restore",
+      "present": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/trash",
+      "present": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/ai/models",
+      "present": true
+    },
+    {
+      "method": "PUT",
+      "path": "/api/ai/selection",
+      "present": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/courses/{course_id}/chapter-context",
+      "present": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/courses/{course_id}/proposals",
+      "present": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/courses/{course_id}/units/{unit_id}/mindmap/{node_index}/help",
+      "present": true
+    }
+  ],
+  "all_passed": true,
+  "inference_calls": 0,
+  "mutations": 0,
+  "limit": "Many routes return dynamic DTOs without explicit response_model; use linked API/flow contracts and actual response fixtures, not empty OpenAPI response schemas.",
+  "future_unit_chapter_scope_optional": true,
+  "external_inference": 0,
+  "data_writes": 0,
+  "at": "2026-10-21T09:28:42.005477+00:00",
+  "wire_ai_version": 20,
+  "lesson_prompt_version": "20261021-kind-compatible-chapter-focus-v26",
+  "completion_prompt_version": "20261021-missing-question-kind-focus-v12",
+  "processor_version": "20261021-polynomial-composition-proof-v13",
+  "correction_resume_optional": true,
+  "manual_and_ai_resume_mutually_exclusive": true,
+  "correction_prompt_version": "20261021-question-inputs-without-old-solution-v4",
+  "backend_tests": 410,
+  "snapshot_mode": "isolated_app_openapi_no_lifespan_or_runtime_data",
+  "isolated_schema_database_created": true,
+  "runtime_user_data_touched": false,
+  "frontend_tests": 75,
+  "mindmap_node_context_present": true
+}

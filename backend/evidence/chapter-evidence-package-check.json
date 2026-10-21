@@ -1,0 +1,16 @@
+{
+  "purpose": "Known-secret, relative-link and hash/package check; not model quality, independent review, or arbitrary-secret detection.",
+  "at": "2026-10-21T09:31:30.749553+00:00",
+  "private_json_files_checked": 56,
+  "wrong_private_modes": [],
+  "known_private_value_matches": [],
+  "relative_markdown_links_checked": 666,
+  "missing_relative_markdown_targets": [],
+  "academic_source_sha256": "10477b780feb504d649ad458cc381ed05eca4f47bc162ea4a8fb6eeb70c3a66e",
+  "frozen_evaluation_sha256": {
+    "dev": "e995b36a9de2802328b7ffd8d93e27aef3c6f4dfb0c7ca68f0291dc6bdb04b21",
+    "final": "b9217a5a2ec433b3f449ad470ff473a13a092aede141562105234b0d81997d98"
+  },
+  "external_zip_updated": false,
+  "passed": true
+}

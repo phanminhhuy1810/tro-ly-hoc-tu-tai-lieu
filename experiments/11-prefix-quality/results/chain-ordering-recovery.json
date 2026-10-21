@@ -1,0 +1,672 @@
+{
+  "purpose": "Separate post-fix ordering completion on the original dev-v4 QA course; measured run is not overwritten or counted again.",
+  "at": "2026-10-21T00:23:03.978359+00:00",
+  "course_id": "ab9753473dab427a92130080e9b85698",
+  "unit_id": "unit-1",
+  "case_id": "calc-dev-chain",
+  "dev_raw_sha256": "67b4e5111f9e95695daa997a8f2c61b71c7cb0a2ff7d15ae742366267003bb40",
+  "before_source_gate": "backend_source_gate rejected ordering in v23",
+  "same_source_after_gate": true,
+  "same_source_replay_key": [
+    3,
+    2,
+    1,
+    0
+  ],
+  "same_source_replay_inference_calls": 0,
+  "limits": {
+    "completion_jobs": 1,
+    "seconds": 210,
+    "semantic_retries": 0
+  },
+  "external_inference": 0,
+  "payments": 0,
+  "independent_human_reviews": 0,
+  "checks": {
+    "old_lesson_not_regenerated": true,
+    "preview_appends_exactly_one_ordering": true,
+    "old_questions_and_reading_unchanged": true,
+    "old_attempt_snapshot_preserved": true,
+    "chapter_not_read_again": true,
+    "source_unchanged": true,
+    "original_measurement_retained": true
+  },
+  "completion_before": {
+    "course_id": "ab9753473dab427a92130080e9b85698",
+    "unit_id": "unit-1",
+    "base_revision": 2,
+    "requested_count": 8,
+    "existing_count": 4,
+    "missing": [
+      {
+        "stage": "ordering",
+        "kind": "ordering",
+        "reason": "Nguồn hiện có trình tự đánh số được nhận diện; có thể yêu cầu tạo và kiểm chứng riêng câu còn thiếu.",
+        "can_generate": true,
+        "origin": "backend_source_rechecked"
+      },
+      {
+        "stage": "mcq:2",
+        "kind": "mcq",
+        "reason": "Đã có câu hỏi kiểm tra bước tính đạo hàm hàm ngoài và quy trình 4 bước. Tuy nhiên, nguồn không cung cấp đủ dữ kiện hoặc tình huống mới để tạo thêm một câu hỏi MCQ khác về việc tính giá trị đạo hàm tại điểm cụ thể hoặc các lỗi sai khác ngoài việc bỏ sót hệ số 3 trong ví dụ cụ thể đã được hỏi.",
+        "can_generate": true,
+        "origin": "model_declined"
+      },
+      {
+        "stage": "cloze:2",
+        "kind": "cloze",
+        "reason": "Nguồn không đủ dữ kiện để tạo câu hỏi cloze mới ngoài các ý đã bị loại trừ hoặc trùng lặp với câu hỏi đã có (về việc tính đạo hàm hàm ngoài tại g(x) thay vì g'(x)).",
+        "can_generate": true,
+        "origin": "model_declined"
+      },
+      {
+        "stage": "matching:2",
+        "kind": "matching",
+        "reason": "Nguồn không cung cấp đủ dữ kiện để tạo câu hỏi dạng matching mới ngoài việc liệt kê quy trình 4 bước đã bị trùng lặp với câu hỏi mẫu.",
+        "can_generate": true,
+        "origin": "model_declined"
+      }
+    ],
+    "available_slots": 4,
+    "source_id": "2c10071173134975857b17534788440c",
+    "extraction_revision": 2,
+    "requires_preview": true,
+    "ai_called": false
+  },
+  "wallet_before": {
+    "balance": 27,
+    "held": 0,
+    "available": 27,
+    "policy_version": "dev-proposal-20261015-v2",
+    "policy_proposed": true,
+    "cash_payments": false,
+    "enforcement_enabled": true
+  },
+  "quote_amount": 2,
+  "job_id": "c1ea5b42969a487f8e8d825f5b004bbe",
+  "job": {
+    "id": "c1ea5b42969a487f8e8d825f5b004bbe",
+    "task": "question_completion",
+    "context": {
+      "course_id": "ab9753473dab427a92130080e9b85698",
+      "unit_id": "unit-1",
+      "expected_revision": 2
+    },
+    "status": "succeeded",
+    "attempts": 1,
+    "provider": {
+      "provider": "ollama_local",
+      "model": "gemma4:12b-mlx",
+      "reference_codec": "scoped-reference-aliases-v1",
+      "model_choice_id": "local:gemma4:12b-mlx",
+      "selection_revision": 1,
+      "prompt_version": "20261021-missing-question-math-steps-v10",
+      "schema_version": 19,
+      "processor_version": "20261021-math-argument-step-boundary-v12",
+      "chapter_evidence_version": "20261021-approved-chapter-support-v1"
+    },
+    "result": {
+      "proposal_id": "9e7e497ad7ff46998b6693fb4aa0743b",
+      "base_revision": 2,
+      "requires_apply": true,
+      "added_count": 1,
+      "question_coverage": {
+        "requested_count": 8,
+        "generated_count": 5,
+        "requested_types": [
+          "mcq",
+          "cloze",
+          "matching",
+          "ordering",
+          "short_answer"
+        ],
+        "generated_types": [
+          "mcq",
+          "cloze",
+          "matching",
+          "short_answer",
+          "ordering"
+        ],
+        "complete": false,
+        "uncreated": [
+          {
+            "stage": "mcq:2",
+            "kind": "mcq",
+            "reason": "Đã có câu hỏi kiểm tra bước tính đạo hàm hàm ngoài và quy trình 4 bước. Tuy nhiên, nguồn không cung cấp đủ dữ kiện hoặc tình huống mới để tạo thêm một câu hỏi MCQ khác về việc tính giá trị đạo hàm tại điểm cụ thể hoặc các lỗi sai khác ngoài việc bỏ sót hệ số 3 trong ví dụ cụ thể đã được hỏi.",
+            "origin": "model_declined"
+          },
+          {
+            "stage": "cloze:2",
+            "kind": "cloze",
+            "reason": "Nguồn không đủ dữ kiện để tạo câu hỏi cloze mới ngoài các ý đã bị loại trừ hoặc trùng lặp với câu hỏi đã có (về việc tính đạo hàm hàm ngoài tại g(x) thay vì g'(x)).",
+            "origin": "model_declined"
+          },
+          {
+            "stage": "matching:2",
+            "kind": "matching",
+            "reason": "Nguồn không cung cấp đủ dữ kiện để tạo câu hỏi dạng matching mới ngoài việc liệt kê quy trình 4 bước đã bị trùng lặp với câu hỏi mẫu.",
+            "origin": "model_declined"
+          }
+        ]
+      }
+    },
+    "partial": {
+      "chapter_context": {
+        "context_id": "9c215d97cf0ee137fcd8d735568820b4be2724d358e6d2007612d7dbe7934189",
+        "reader_version": "20261020-whole-approved-chapter-v1",
+        "status": "ready",
+        "scope": "whole_approved_plan_selection",
+        "extraction_revision": 2,
+        "total_fragments": 7,
+        "covered_fragments": 7,
+        "total_characters": 504,
+        "covered_characters": 504,
+        "total_parts": 1,
+        "read_parts": 1,
+        "total_stages": 1,
+        "saved_stages": 1,
+        "complete": true,
+        "coverage_is_not_semantic_accuracy": true
+      },
+      "evidence_scope": {
+        "version": "20261021-approved-chapter-support-v1",
+        "context_id": "9c215d97cf0ee137fcd8d735568820b4be2724d358e6d2007612d7dbe7934189",
+        "focus_source_refs": [
+          "2c10071173134975857b17534788440c:2:0",
+          "2c10071173134975857b17534788440c:2:1",
+          "2c10071173134975857b17534788440c:2:2",
+          "2c10071173134975857b17534788440c:2:3",
+          "2c10071173134975857b17534788440c:2:4",
+          "2c10071173134975857b17534788440c:2:5",
+          "2c10071173134975857b17534788440c:2:6"
+        ],
+        "support_source_refs": [],
+        "input_source_refs": [
+          "2c10071173134975857b17534788440c:2:0",
+          "2c10071173134975857b17534788440c:2:1",
+          "2c10071173134975857b17534788440c:2:2",
+          "2c10071173134975857b17534788440c:2:3",
+          "2c10071173134975857b17534788440c:2:4",
+          "2c10071173134975857b17534788440c:2:5",
+          "2c10071173134975857b17534788440c:2:6"
+        ],
+        "input_sha256": "549a27d59ad506b7d6bc1a3a940a5f43fb8ffb43c2dee673e61ee09e5b345a5d",
+        "query_sha256": "22afb45c155ed4984d8d939b6f31f1dd01efe41a3c9e6966a84f40ae858fafb2",
+        "added_support_refs": [],
+        "omitted": [],
+        "relevance_is_not_entailment": true,
+        "ai_calls": 0,
+        "sha256": "eea453d2100359b9d142f015f73a225a1061db00b0acf993b4e0414b0d5bc74e"
+      },
+      "questions": {
+        "ordering": {
+          "reason": "",
+          "question": {
+            "kind": "ordering",
+            "prompt": "Để tính đạo hàm của hàm hợp $h(x) = (3x+1)^4$ bằng cách áp dụng chain rule, hãy sắp xếp các bước thực hiện theo đúng quy trình chuẩn.",
+            "options": [
+              "Nhân hai kết quả để được đạo hàm hàm hợp.",
+              "Lấy đạo hàm hàm ngoài rồi thế hàm trong vào.",
+              "Xác định hàm trong và hàm ngoài.",
+              "Tính đạo hàm hàm trong."
+            ],
+            "left": [],
+            "answer": [
+              2,
+              1,
+              3,
+              0
+            ],
+            "explanation": "Quy trình chuẩn gồm 4 bước: (1) Xác định hàm trong/ngoài, (2) Đạo hàm hàm ngoài và thế hàm trong, (3) Tính đạo hàm hàm trong, và (4) Nhân hai kết quả lại với nhau.",
+            "source_refs": [
+              "2c10071173134975857b17534788440c:2:3",
+              "2c10071173134975857b17534788440c:2:4",
+              "2c10071173134975857b17534788440c:2:5",
+              "2c10071173134975857b17534788440c:2:6"
+            ],
+            "rubric": [],
+            "difficulty": "applied",
+            "difficulty_basis": "creator_request_not_measured"
+          }
+        }
+      },
+      "stage_providers": {
+        "ordering": {
+          "provider": "ollama_local",
+          "model": "gemma4:12b-mlx",
+          "reference_codec": "scoped-reference-aliases-v1",
+          "model_choice_id": "local:gemma4:12b-mlx",
+          "selection_revision": 1,
+          "prompt_version": "20261021-missing-question-math-steps-v10",
+          "schema_version": 19,
+          "processor_version": "20261021-math-argument-step-boundary-v12",
+          "chapter_evidence_version": "20261021-approved-chapter-support-v1"
+        }
+      },
+      "question_rejections": {},
+      "requested_stages": [
+        "ordering"
+      ]
+    },
+    "feedback_deferred": false,
+    "error": null,
+    "progress": {
+      "phase": "succeeded",
+      "requests": [
+        {
+          "index": 1,
+          "schema": "OrderingDraft",
+          "phase": "received",
+          "streaming": true,
+          "started_at": "2026-10-21T00:23:04.030455+00:00",
+          "first_chunk_ms": 9060.984,
+          "first_text_ms": null,
+          "elapsed_ms": 16078.763,
+          "chunks": 233,
+          "characters": 691,
+          "usage": {
+            "input_tokens": 2571,
+            "cached_input_tokens": 0,
+            "output_tokens": 233,
+            "load_duration_ns": 10360750,
+            "prompt_eval_duration_ns": 5286414292,
+            "eval_duration_ns": 7093954000,
+            "total_duration_ns": 12407696667,
+            "provider_finish_reason": "stop",
+            "question_empty_reason_normalized": 1,
+            "ordering_answer_derived": 1,
+            "ordering_step_labels_removed": 0,
+            "ordering_model_options_sha256": "ebc72ea0748b2dd3a6db313d9675dfc51e79f3ac86bb379b54d46cd32c4e03bd",
+            "ordering_answer_method": "explicit_scoped_source_steps_v2",
+            "reference_alias_count": 7,
+            "reference_alias_map_sha256": "345bf8c5da6cd69b754a3386594bc45b42bac58b6c46992fb98142c12bfa918c"
+          },
+          "protocol_fallbacks": 1
+        }
+      ],
+      "preview": null,
+      "planned_stages": 2,
+      "saved_stages": 2,
+      "reused_stages": 1,
+      "started_at": "2026-10-21T00:23:04.025841+00:00",
+      "completed_at": "2026-10-21T00:23:20.117415+00:00",
+      "chapter_context": {
+        "context_id": "9c215d97cf0ee137fcd8d735568820b4be2724d358e6d2007612d7dbe7934189",
+        "reader_version": "20261020-whole-approved-chapter-v1",
+        "status": "ready",
+        "scope": "whole_approved_plan_selection",
+        "extraction_revision": 2,
+        "total_fragments": 7,
+        "covered_fragments": 7,
+        "total_characters": 504,
+        "covered_characters": 504,
+        "total_parts": 1,
+        "read_parts": 1,
+        "total_stages": 1,
+        "saved_stages": 1,
+        "complete": true,
+        "coverage_is_not_semantic_accuracy": true
+      },
+      "elapsed_ms": 16091.577,
+      "version": 54,
+      "updated_at": "2026-10-21T00:23:20.117441+00:00"
+    }
+  },
+  "status": "succeeded",
+  "elapsed_seconds": 16.591,
+  "preview": {
+    "id": "9e7e497ad7ff46998b6693fb4aa0743b",
+    "course_id": "ab9753473dab427a92130080e9b85698",
+    "base_revision": 2,
+    "scope": {
+      "target": "question_completion",
+      "unit_id": "unit-1",
+      "stages": [
+        "ordering"
+      ]
+    },
+    "request": "Bổ sung riêng các câu còn thiếu; giữ nội dung và lịch sử đã học.",
+    "status": "preview",
+    "before": {
+      "questions": [
+        {
+          "kind": "mcq",
+          "prompt": "Khi tính đạo hàm của hàm hợp $h(x) = (3x+1)^4$ bằng cách áp dụng chain rule, bước nào sau đây mô tả đúng việc tính đạo hàm của hàm ngoài?",
+          "options": [
+            "Tính đạo hàm của $u^4$ tại giá trị $g'(x)$",
+            "Tính đạo hàm của $u^4$ tại giá trị $g(x)$",
+            "Tính đạo hàm của $u^4$ tại giá trị $x$"
+          ],
+          "left": [],
+          "answer": "Tính đạo hàm của $u^4$ tại giá trị $g(x)$",
+          "explanation": "Theo quy tắc chain rule, đạo hàm của hàm ngoài phải được tính tại giá trị của hàm trong $g(x)$, không phải tại $g'(x)$. Trong ví dụ $h(x)=(3x+1)^4$, hàm ngoài là $f(u)=u^4$ và hàm trong là $g(x)=3x+1$.",
+          "source_refs": [
+            "2c10071173134975857b17534788440c:2:0",
+            "2c10071173134975857b17534788440c:2:1"
+          ],
+          "rubric": [],
+          "difficulty": "applied",
+          "difficulty_basis": "creator_request_not_measured"
+        },
+        {
+          "kind": "cloze",
+          "prompt": "Khi áp dụng chain rule cho hàm hợp $h(x)=(3x+1)^4$, bước tính đạo hàm hàm ngoài yêu cầu ta phải tính đạo hàm của $u^4$ tại giá trị ____ thay vì tại $g'(x)$.",
+          "options": [],
+          "left": [],
+          "answer": "g(x)",
+          "explanation": "Theo quy tắc chain rule, đạo hàm của hàm ngoài phải được tính tại giá trị của hàm trong g(x). Việc nhầm lẫn tính tại g'(x) là một sai lầm phổ biến.",
+          "source_refs": [
+            "2c10071173134975857b17534788440c:2:0"
+          ],
+          "rubric": [],
+          "difficulty": "applied",
+          "difficulty_basis": "creator_request_not_measured"
+        },
+        {
+          "kind": "matching",
+          "prompt": "Ghép nối các bước trong quy trình áp dụng chain rule để tính đạo hàm của hàm hợp $h(x) = f(g(x))$ cho đúng thứ tự và nội dung.",
+          "options": [
+            "Đạo hàm hàm ngoài và thế hàm trong vào",
+            "Xác định hàm trong và hàm ngoài"
+          ],
+          "left": [
+            "Bước 1",
+            "Bước 2"
+          ],
+          "answer": [
+            1,
+            0
+          ],
+          "explanation": "Quy trình chuẩn gồm 4 bước: (1) Xác định hàm trong/ngoài, (2) Lấy đạo hàm hàm ngoài rồi thế hàm trong vào, (3) Tính đạo hàm hàm trong, (4) Nhân hai kết quả.",
+          "source_refs": [
+            "2c10071173134975857b17534788440c:2:3",
+            "2c10071173134975857b17534788440c:2:4",
+            "2c10071173134975857b17534788440c:2:5",
+            "2c10071173134975857b17534788440c:2:6"
+          ],
+          "rubric": [],
+          "difficulty": "applied",
+          "difficulty_basis": "creator_request_not_measured"
+        },
+        {
+          "kind": "short_answer",
+          "prompt": "Xét hàm hợp $h(x) = (3x+1)^4$. Hãy thực hiện đầy đủ quy trình 4 bước để tính đạo hàm $h'(x)$ và cho biết giá trị của $h'(0)$.",
+          "options": [],
+          "left": [],
+          "answer": "Bước 1: Hàm trong $g(x)=3x+1$, hàm ngoài $f(u)=u^4$. Bước 2: $f'(g(x)) = 4(3x+1)^3$. Bước 3: $g'(x)=3$. Bước 4: $h'(x)=12(3x+1)^3$. Giá trị $h'(0)=12$.",
+          "explanation": "Để tính đạo hàm hàm hợp, ta cần xác định hàm trong và ngoài, tính đạo hàm hàm ngoài tại $g(x)$, tính đạo hàm hàm trong, sau đó nhân kết quả. Lưu ý không được bỏ sót hệ số 3 khi nhân đạo hàm hàm trong.",
+          "source_refs": [
+            "2c10071173134975857b17534788440c:2:0",
+            "2c10071173134975857b17534788440c:2:1",
+            "2c10071173134975857b17534788440c:2:3",
+            "2c10071173134975857b17534788440c:2:4",
+            "2c10071173134975857b17534788440c:2:5",
+            "2c10071173134975857b17534788440c:2:6"
+          ],
+          "rubric": [
+            "Xác định đúng hàm trong và hàm ngoài.",
+            "Tính đúng đạo hàm hàm ngoài và hàm trong.",
+            "Nhân đúng kết quả để có $h'(x)$ và tính đúng giá trị tại $x=0$."
+          ],
+          "difficulty": "applied",
+          "difficulty_basis": "creator_request_not_measured"
+        }
+      ],
+      "question_coverage": {
+        "requested_count": 8,
+        "generated_count": 4,
+        "complete": false,
+        "requested_types": [
+          "mcq",
+          "cloze",
+          "matching",
+          "ordering",
+          "short_answer"
+        ],
+        "generated_types": [
+          "mcq",
+          "cloze",
+          "matching",
+          "short_answer"
+        ],
+        "uncreated": [
+          {
+            "stage": "ordering",
+            "kind": "ordering",
+            "reason": "Nguồn của bài chưa có các bước đánh số theo trình tự rõ. Không biến danh sách khái niệm thành câu sắp xếp.",
+            "origin": "backend_source_gate"
+          },
+          {
+            "stage": "mcq:2",
+            "kind": "mcq",
+            "reason": "Đã có câu hỏi kiểm tra bước tính đạo hàm hàm ngoài và quy trình 4 bước. Tuy nhiên, nguồn không cung cấp đủ dữ kiện hoặc tình huống mới để tạo thêm một câu hỏi MCQ khác về việc tính giá trị đạo hàm tại điểm cụ thể hoặc các lỗi sai khác ngoài việc bỏ sót hệ số 3 trong ví dụ cụ thể đã được hỏi.",
+            "origin": "model_declined"
+          },
+          {
+            "stage": "cloze:2",
+            "kind": "cloze",
+            "reason": "Nguồn không đủ dữ kiện để tạo câu hỏi cloze mới ngoài các ý đã bị loại trừ hoặc trùng lặp với câu hỏi đã có (về việc tính đạo hàm hàm ngoài tại g(x) thay vì g'(x)).",
+            "origin": "model_declined"
+          },
+          {
+            "stage": "matching:2",
+            "kind": "matching",
+            "reason": "Nguồn không cung cấp đủ dữ kiện để tạo câu hỏi dạng matching mới ngoài việc liệt kê quy trình 4 bước đã bị trùng lặp với câu hỏi mẫu.",
+            "origin": "model_declined"
+          }
+        ]
+      },
+      "source_refs": [
+        "2c10071173134975857b17534788440c:2:0",
+        "2c10071173134975857b17534788440c:2:1",
+        "2c10071173134975857b17534788440c:2:2",
+        "2c10071173134975857b17534788440c:2:3",
+        "2c10071173134975857b17534788440c:2:4",
+        "2c10071173134975857b17534788440c:2:5",
+        "2c10071173134975857b17534788440c:2:6"
+      ]
+    },
+    "after": {
+      "questions": [
+        {
+          "kind": "mcq",
+          "prompt": "Khi tính đạo hàm của hàm hợp $h(x) = (3x+1)^4$ bằng cách áp dụng chain rule, bước nào sau đây mô tả đúng việc tính đạo hàm của hàm ngoài?",
+          "options": [
+            "Tính đạo hàm của $u^4$ tại giá trị $g'(x)$",
+            "Tính đạo hàm của $u^4$ tại giá trị $g(x)$",
+            "Tính đạo hàm của $u^4$ tại giá trị $x$"
+          ],
+          "left": [],
+          "answer": "Tính đạo hàm của $u^4$ tại giá trị $g(x)$",
+          "explanation": "Theo quy tắc chain rule, đạo hàm của hàm ngoài phải được tính tại giá trị của hàm trong $g(x)$, không phải tại $g'(x)$. Trong ví dụ $h(x)=(3x+1)^4$, hàm ngoài là $f(u)=u^4$ và hàm trong là $g(x)=3x+1$.",
+          "source_refs": [
+            "2c10071173134975857b17534788440c:2:0",
+            "2c10071173134975857b17534788440c:2:1"
+          ],
+          "rubric": [],
+          "difficulty": "applied",
+          "difficulty_basis": "creator_request_not_measured"
+        },
+        {
+          "kind": "cloze",
+          "prompt": "Khi áp dụng chain rule cho hàm hợp $h(x)=(3x+1)^4$, bước tính đạo hàm hàm ngoài yêu cầu ta phải tính đạo hàm của $u^4$ tại giá trị ____ thay vì tại $g'(x)$.",
+          "options": [],
+          "left": [],
+          "answer": "g(x)",
+          "explanation": "Theo quy tắc chain rule, đạo hàm của hàm ngoài phải được tính tại giá trị của hàm trong g(x). Việc nhầm lẫn tính tại g'(x) là một sai lầm phổ biến.",
+          "source_refs": [
+            "2c10071173134975857b17534788440c:2:0"
+          ],
+          "rubric": [],
+          "difficulty": "applied",
+          "difficulty_basis": "creator_request_not_measured"
+        },
+        {
+          "kind": "matching",
+          "prompt": "Ghép nối các bước trong quy trình áp dụng chain rule để tính đạo hàm của hàm hợp $h(x) = f(g(x))$ cho đúng thứ tự và nội dung.",
+          "options": [
+            "Đạo hàm hàm ngoài và thế hàm trong vào",
+            "Xác định hàm trong và hàm ngoài"
+          ],
+          "left": [
+            "Bước 1",
+            "Bước 2"
+          ],
+          "answer": [
+            1,
+            0
+          ],
+          "explanation": "Quy trình chuẩn gồm 4 bước: (1) Xác định hàm trong/ngoài, (2) Lấy đạo hàm hàm ngoài rồi thế hàm trong vào, (3) Tính đạo hàm hàm trong, (4) Nhân hai kết quả.",
+          "source_refs": [
+            "2c10071173134975857b17534788440c:2:3",
+            "2c10071173134975857b17534788440c:2:4",
+            "2c10071173134975857b17534788440c:2:5",
+            "2c10071173134975857b17534788440c:2:6"
+          ],
+          "rubric": [],
+          "difficulty": "applied",
+          "difficulty_basis": "creator_request_not_measured"
+        },
+        {
+          "kind": "short_answer",
+          "prompt": "Xét hàm hợp $h(x) = (3x+1)^4$. Hãy thực hiện đầy đủ quy trình 4 bước để tính đạo hàm $h'(x)$ và cho biết giá trị của $h'(0)$.",
+          "options": [],
+          "left": [],
+          "answer": "Bước 1: Hàm trong $g(x)=3x+1$, hàm ngoài $f(u)=u^4$. Bước 2: $f'(g(x)) = 4(3x+1)^3$. Bước 3: $g'(x)=3$. Bước 4: $h'(x)=12(3x+1)^3$. Giá trị $h'(0)=12$.",
+          "explanation": "Để tính đạo hàm hàm hợp, ta cần xác định hàm trong và ngoài, tính đạo hàm hàm ngoài tại $g(x)$, tính đạo hàm hàm trong, sau đó nhân kết quả. Lưu ý không được bỏ sót hệ số 3 khi nhân đạo hàm hàm trong.",
+          "source_refs": [
+            "2c10071173134975857b17534788440c:2:0",
+            "2c10071173134975857b17534788440c:2:1",
+            "2c10071173134975857b17534788440c:2:3",
+            "2c10071173134975857b17534788440c:2:4",
+            "2c10071173134975857b17534788440c:2:5",
+            "2c10071173134975857b17534788440c:2:6"
+          ],
+          "rubric": [
+            "Xác định đúng hàm trong và hàm ngoài.",
+            "Tính đúng đạo hàm hàm ngoài và hàm trong.",
+            "Nhân đúng kết quả để có $h'(x)$ và tính đúng giá trị tại $x=0$."
+          ],
+          "difficulty": "applied",
+          "difficulty_basis": "creator_request_not_measured"
+        },
+        {
+          "kind": "ordering",
+          "prompt": "Để tính đạo hàm của hàm hợp $h(x) = (3x+1)^4$ bằng cách áp dụng chain rule, hãy sắp xếp các bước thực hiện theo đúng quy trình chuẩn.",
+          "options": [
+            "Nhân hai kết quả để được đạo hàm hàm hợp.",
+            "Lấy đạo hàm hàm ngoài rồi thế hàm trong vào.",
+            "Xác định hàm trong và hàm ngoài.",
+            "Tính đạo hàm hàm trong."
+          ],
+          "left": [],
+          "answer": [
+            2,
+            1,
+            3,
+            0
+          ],
+          "explanation": "Quy trình chuẩn gồm 4 bước: (1) Xác định hàm trong/ngoài, (2) Đạo hàm hàm ngoài và thế hàm trong, (3) Tính đạo hàm hàm trong, và (4) Nhân hai kết quả lại với nhau.",
+          "source_refs": [
+            "2c10071173134975857b17534788440c:2:3",
+            "2c10071173134975857b17534788440c:2:4",
+            "2c10071173134975857b17534788440c:2:5",
+            "2c10071173134975857b17534788440c:2:6"
+          ],
+          "rubric": [],
+          "difficulty": "applied",
+          "difficulty_basis": "creator_request_not_measured"
+        }
+      ],
+      "question_coverage": {
+        "requested_count": 8,
+        "generated_count": 5,
+        "requested_types": [
+          "mcq",
+          "cloze",
+          "matching",
+          "ordering",
+          "short_answer"
+        ],
+        "generated_types": [
+          "mcq",
+          "cloze",
+          "matching",
+          "short_answer",
+          "ordering"
+        ],
+        "complete": false,
+        "uncreated": [
+          {
+            "stage": "mcq:2",
+            "kind": "mcq",
+            "reason": "Đã có câu hỏi kiểm tra bước tính đạo hàm hàm ngoài và quy trình 4 bước. Tuy nhiên, nguồn không cung cấp đủ dữ kiện hoặc tình huống mới để tạo thêm một câu hỏi MCQ khác về việc tính giá trị đạo hàm tại điểm cụ thể hoặc các lỗi sai khác ngoài việc bỏ sót hệ số 3 trong ví dụ cụ thể đã được hỏi.",
+            "origin": "model_declined"
+          },
+          {
+            "stage": "cloze:2",
+            "kind": "cloze",
+            "reason": "Nguồn không đủ dữ kiện để tạo câu hỏi cloze mới ngoài các ý đã bị loại trừ hoặc trùng lặp với câu hỏi đã có (về việc tính đạo hàm hàm ngoài tại g(x) thay vì g'(x)).",
+            "origin": "model_declined"
+          },
+          {
+            "stage": "matching:2",
+            "kind": "matching",
+            "reason": "Nguồn không cung cấp đủ dữ kiện để tạo câu hỏi dạng matching mới ngoài việc liệt kê quy trình 4 bước đã bị trùng lặp với câu hỏi mẫu.",
+            "origin": "model_declined"
+          }
+        ]
+      },
+      "source_refs": [
+        "2c10071173134975857b17534788440c:2:0",
+        "2c10071173134975857b17534788440c:2:1",
+        "2c10071173134975857b17534788440c:2:2",
+        "2c10071173134975857b17534788440c:2:3",
+        "2c10071173134975857b17534788440c:2:4",
+        "2c10071173134975857b17534788440c:2:5",
+        "2c10071173134975857b17534788440c:2:6"
+      ],
+      "evidence_scope": {
+        "version": "20261021-approved-chapter-support-v1",
+        "context_id": "9c215d97cf0ee137fcd8d735568820b4be2724d358e6d2007612d7dbe7934189",
+        "focus_source_refs": [
+          "2c10071173134975857b17534788440c:2:0",
+          "2c10071173134975857b17534788440c:2:1",
+          "2c10071173134975857b17534788440c:2:2",
+          "2c10071173134975857b17534788440c:2:3",
+          "2c10071173134975857b17534788440c:2:4",
+          "2c10071173134975857b17534788440c:2:5",
+          "2c10071173134975857b17534788440c:2:6"
+        ],
+        "support_source_refs": [],
+        "input_source_refs": [
+          "2c10071173134975857b17534788440c:2:0",
+          "2c10071173134975857b17534788440c:2:1",
+          "2c10071173134975857b17534788440c:2:2",
+          "2c10071173134975857b17534788440c:2:3",
+          "2c10071173134975857b17534788440c:2:4",
+          "2c10071173134975857b17534788440c:2:5",
+          "2c10071173134975857b17534788440c:2:6"
+        ],
+        "input_sha256": "549a27d59ad506b7d6bc1a3a940a5f43fb8ffb43c2dee673e61ee09e5b345a5d",
+        "query_sha256": "22afb45c155ed4984d8d939b6f31f1dd01efe41a3c9e6966a84f40ae858fafb2",
+        "added_support_refs": [],
+        "omitted": [],
+        "relevance_is_not_entailment": true,
+        "ai_calls": 0,
+        "sha256": "eea453d2100359b9d142f015f73a225a1061db00b0acf993b4e0414b0d5bc74e"
+      }
+    }
+  },
+  "applied_revision": 3,
+  "wallet_after": {
+    "balance": 25,
+    "held": 0,
+    "available": 25,
+    "policy_version": "dev-proposal-20261015-v2",
+    "policy_proposed": true,
+    "cash_payments": false,
+    "enforcement_enabled": true
+  },
+  "completed_at": "2026-10-21T00:23:20.646691+00:00"
+}

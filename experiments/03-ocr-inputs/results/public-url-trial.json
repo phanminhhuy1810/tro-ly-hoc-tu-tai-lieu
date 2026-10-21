@@ -1,0 +1,48 @@
+{
+  "purpose": "real public URL transport/extraction trial; not model evaluation",
+  "url": "https://docs.python.org/3/library/fractions.html",
+  "title": "fractions — Rational numbers — Python 3.15.0 documentation",
+  "snapshot_sha256": "debbab1a94d64be7c79f3c57a204470b23bfe868169a1dcf7526596d741e1eff",
+  "bytes": 51868,
+  "text_characters": 7384,
+  "fragments": 48,
+  "first_fragments": [
+    {
+      "text": "fractions — Rational numbers ¶",
+      "locator": {
+        "type": "article",
+        "url": "https://docs.python.org/3/library/fractions.html",
+        "paragraph": 1,
+        "tag": "h1",
+        "heading": "fractions — Rational numbers ¶",
+        "element_id": "",
+        "character_start": 0
+      }
+    },
+    {
+      "text": "Source code: Lib/fractions.py",
+      "locator": {
+        "type": "article",
+        "url": "https://docs.python.org/3/library/fractions.html",
+        "paragraph": 2,
+        "tag": "p",
+        "heading": "fractions — Rational numbers ¶",
+        "element_id": "",
+        "character_start": 0
+      }
+    },
+    {
+      "text": "The fractions module provides support for rational number arithmetic.",
+      "locator": {
+        "type": "article",
+        "url": "https://docs.python.org/3/library/fractions.html",
+        "paragraph": 3,
+        "tag": "p",
+        "heading": "fractions — Rational numbers ¶",
+        "element_id": "",
+        "character_start": 0
+      }
+    }
+  ],
+  "excluded_navigation": true
+}

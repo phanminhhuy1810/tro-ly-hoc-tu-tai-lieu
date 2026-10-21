@@ -1,0 +1,412 @@
+{
+  "kind": "five independent script-controlled HTTP sessions; not five human users",
+  "started_at": "2026-10-16T17:37:14.382314+00:00",
+  "checks": [
+    {
+      "name": "open_question_private_and_duplicate_ack",
+      "session_count": 5,
+      "score_hidden_until_close": true,
+      "duplicate_ack_equal": true,
+      "outsider_status": 404,
+      "sse_event_index": 6,
+      "question_event_index": 6
+    },
+    {
+      "name": "deadline_and_reconnect",
+      "late_status": 409,
+      "late_detail": {
+        "detail": "Câu đã đóng/đổi hoặc bạn đã rời; chưa nhận đáp án mới."
+      },
+      "phase": "question_closed",
+      "accepted_retry_after_deadline": true,
+      "scoreboard": [
+        {
+          "member_id": "4773cace9971487f9319fae4523a9a6e",
+          "nickname": "QA 2",
+          "state": "joined",
+          "is_host": false,
+          "score": 1,
+          "answered_closed_questions": 1,
+          "connected": true,
+          "rank": 1
+        },
+        {
+          "member_id": "6ca77cc7b460446e95d95602135d715c",
+          "nickname": "QA Host",
+          "state": "joined",
+          "is_host": true,
+          "score": 1,
+          "answered_closed_questions": 1,
+          "connected": true,
+          "rank": 1
+        },
+        {
+          "member_id": "61a9ce1374234831a5d7e4a35805e269",
+          "nickname": "QA 1",
+          "state": "joined",
+          "is_host": false,
+          "score": 0,
+          "answered_closed_questions": 1,
+          "connected": true,
+          "rank": 3
+        },
+        {
+          "member_id": "f445cedbb98a4f6cbe5048dd7cf6c7de",
+          "nickname": "QA 3",
+          "state": "joined",
+          "is_host": false,
+          "score": 0,
+          "answered_closed_questions": 0,
+          "connected": true,
+          "rank": 3
+        },
+        {
+          "member_id": "80cbe551738044a5b4e160f4b870e93d",
+          "nickname": "QA 4",
+          "state": "joined",
+          "is_host": false,
+          "score": 0,
+          "answered_closed_questions": 0,
+          "connected": true,
+          "rank": 3
+        }
+      ]
+    },
+    {
+      "name": "finished_results_and_source_acl",
+      "results": {
+        "room_id": "8afc714a7d3246e2a941c7d6b2e4e3a2",
+        "phase": "finished",
+        "course_revision": 8,
+        "scoreboard": [
+          {
+            "member_id": "4773cace9971487f9319fae4523a9a6e",
+            "nickname": "QA 2",
+            "state": "joined",
+            "is_host": false,
+            "score": 2,
+            "answered_closed_questions": 2,
+            "connected": false,
+            "rank": 1
+          },
+          {
+            "member_id": "6ca77cc7b460446e95d95602135d715c",
+            "nickname": "QA Host",
+            "state": "joined",
+            "is_host": true,
+            "score": 2,
+            "answered_closed_questions": 2,
+            "connected": false,
+            "rank": 1
+          },
+          {
+            "member_id": "61a9ce1374234831a5d7e4a35805e269",
+            "nickname": "QA 1",
+            "state": "joined",
+            "is_host": false,
+            "score": 1,
+            "answered_closed_questions": 2,
+            "connected": false,
+            "rank": 3
+          },
+          {
+            "member_id": "f445cedbb98a4f6cbe5048dd7cf6c7de",
+            "nickname": "QA 3",
+            "state": "joined",
+            "is_host": false,
+            "score": 1,
+            "answered_closed_questions": 1,
+            "connected": false,
+            "rank": 3
+          },
+          {
+            "member_id": "80cbe551738044a5b4e160f4b870e93d",
+            "nickname": "QA 4",
+            "state": "joined",
+            "is_host": false,
+            "score": 1,
+            "answered_closed_questions": 1,
+            "connected": false,
+            "rank": 3
+          }
+        ],
+        "questions": [
+          {
+            "difficulty": null,
+            "difficulty_basis": null,
+            "id": "unit-1:q0",
+            "kind": "mcq",
+            "left": [],
+            "options": [
+              "IPv4 có 32 bit; prefix /26 dành 26 bit cho network.",
+              "IPv4 có 24 bit; prefix /26 dành 26 bit cho network.",
+              "IPv4 có 32 bit; prefix /26 dành 8 bit cho network.",
+              "IPv4 có 32 bit; prefix /26 dành 10 bit cho network."
+            ],
+            "prompt": "Theo nội dung nguồn, tổng số bit của địa chỉ IPv4 là bao nhiêu và prefix /26 dành bao nhiêu bit cho network?",
+            "question_revision_id": "0b3c505ebc194963b04cc66a8c2644b6:unit-1:ce791b4849168be5ad192a82",
+            "source_refs": [
+              "89035cb15fb34bc1b6c5b4e7cae3f82e:2:0",
+              "89035cb15fb34bc1b6c5b4e7cae3f82e:2:1"
+            ],
+            "unit_id": "unit-1",
+            "payload": {
+              "options": [
+                {
+                  "id": "option-0",
+                  "text": "IPv4 có 32 bit; prefix /26 dành 26 bit cho network."
+                },
+                {
+                  "id": "option-1",
+                  "text": "IPv4 có 24 bit; prefix /26 dành 26 bit cho network."
+                },
+                {
+                  "id": "option-2",
+                  "text": "IPv4 có 32 bit; prefix /26 dành 8 bit cho network."
+                },
+                {
+                  "id": "option-3",
+                  "text": "IPv4 có 32 bit; prefix /26 dành 10 bit cho network."
+                }
+              ],
+              "left": []
+            },
+            "solution": {
+              "answer": "IPv4 có 32 bit; prefix /26 dành 26 bit cho network.",
+              "explanation": "Nguồn xác nhận IPv4 sử dụng 32 bit và prefix /26 cụ thể được dùng để chỉ định 26 bit cho phần network.",
+              "source_refs": [
+                "89035cb15fb34bc1b6c5b4e7cae3f82e:2:0",
+                "89035cb15fb34bc1b6c5b4e7cae3f82e:2:1"
+              ]
+            },
+            "sources": [
+              {
+                "id": "89035cb15fb34bc1b6c5b4e7cae3f82e:2:0",
+                "locator": {
+                  "bounds": [
+                    0.04166666633736558,
+                    0.8521739124014983,
+                    0.4083333333333333,
+                    0.06086956659952791
+                  ],
+                  "bounds_coordinate_system": "normalized_bottom_left",
+                  "frame": 1,
+                  "image_height": 720,
+                  "image_orientation": "exif_normalized",
+                  "image_width": 1500,
+                  "ocr_engine": "macOS_Vision",
+                  "ocr_revision": 3,
+                  "type": "ocr_image"
+                },
+                "text": "Mạng máy tính: IPv4 và subnet mask"
+              },
+              {
+                "id": "89035cb15fb34bc1b6c5b4e7cae3f82e:2:1",
+                "locator": {
+                  "bounds": [
+                    0.04208931658279354,
+                    0.7458686522676001,
+                    0.5568201497395833,
+                    0.05465826458401146
+                  ],
+                  "bounds_coordinate_system": "normalized_bottom_left",
+                  "frame": 1,
+                  "image_height": 720,
+                  "image_orientation": "exif_normalized",
+                  "image_width": 1500,
+                  "ocr_engine": "macOS_Vision",
+                  "ocr_revision": 3,
+                  "type": "ocr_image"
+                },
+                "text": "IPv4 có 32 bit. Prefix /26 dành 26 bit cho network."
+              }
+            ],
+            "own_answer": "IPv4 có 32 bit; prefix /26 dành 26 bit cho network.",
+            "correct": true,
+            "points": 1
+          },
+          {
+            "difficulty": null,
+            "difficulty_basis": null,
+            "id": "unit-1:q2",
+            "kind": "matching",
+            "left": [
+              "IPv4 có 32 bit",
+              "Prefix /26 dành 26 bit cho network"
+            ],
+            "options": [
+              "IPv4 có 32 bit",
+              "Prefix /26 dành 26 bit cho network"
+            ],
+            "prompt": "Ghép các khái niệm với định nghĩa đúng dựa trên nội dung nguồn.",
+            "question_revision_id": "0b3c505ebc194963b04cc66a8c2644b6:unit-1:ccd14f32ff8d3531098f92af",
+            "source_refs": [
+              "89035cb15fb34bc1b6c5b4e7cae3f82e:2:0",
+              "89035cb15fb34bc1b6c5b4e7cae3f82e:2:1"
+            ],
+            "unit_id": "unit-1",
+            "payload": {
+              "options": [
+                {
+                  "id": "option-0",
+                  "text": "IPv4 có 32 bit"
+                },
+                {
+                  "id": "option-1",
+                  "text": "Prefix /26 dành 26 bit cho network"
+                }
+              ],
+              "left": [
+                {
+                  "id": "left-0",
+                  "text": "IPv4 có 32 bit"
+                },
+                {
+                  "id": "left-1",
+                  "text": "Prefix /26 dành 26 bit cho network"
+                }
+              ]
+            },
+            "solution": {
+              "answer": [
+                0,
+                1
+              ],
+              "explanation": "Theo nguồn, IPv4 có tổng cộng 32 bit. Prefix /26 cụ thể dành 26 bit để xác định mạng (network).",
+              "source_refs": [
+                "89035cb15fb34bc1b6c5b4e7cae3f82e:2:0",
+                "89035cb15fb34bc1b6c5b4e7cae3f82e:2:1"
+              ]
+            },
+            "sources": [
+              {
+                "id": "89035cb15fb34bc1b6c5b4e7cae3f82e:2:0",
+                "locator": {
+                  "bounds": [
+                    0.04166666633736558,
+                    0.8521739124014983,
+                    0.4083333333333333,
+                    0.06086956659952791
+                  ],
+                  "bounds_coordinate_system": "normalized_bottom_left",
+                  "frame": 1,
+                  "image_height": 720,
+                  "image_orientation": "exif_normalized",
+                  "image_width": 1500,
+                  "ocr_engine": "macOS_Vision",
+                  "ocr_revision": 3,
+                  "type": "ocr_image"
+                },
+                "text": "Mạng máy tính: IPv4 và subnet mask"
+              },
+              {
+                "id": "89035cb15fb34bc1b6c5b4e7cae3f82e:2:1",
+                "locator": {
+                  "bounds": [
+                    0.04208931658279354,
+                    0.7458686522676001,
+                    0.5568201497395833,
+                    0.05465826458401146
+                  ],
+                  "bounds_coordinate_system": "normalized_bottom_left",
+                  "frame": 1,
+                  "image_height": 720,
+                  "image_orientation": "exif_normalized",
+                  "image_width": 1500,
+                  "ocr_engine": "macOS_Vision",
+                  "ocr_revision": 3,
+                  "type": "ocr_image"
+                },
+                "text": "IPv4 có 32 bit. Prefix /26 dành 26 bit cho network."
+              }
+            ],
+            "own_answer": [
+              0,
+              1
+            ],
+            "correct": true,
+            "points": 1
+          }
+        ],
+        "policy": {
+          "ai_help": "after_room_only",
+          "coin_reward": 0,
+          "host_grace_seconds": 60,
+          "host_leave": "cancel_room",
+          "join_attempts_per_minute": 20,
+          "late_answer": "reject",
+          "max_players": 8,
+          "max_questions": 20,
+          "member_presence_seconds": 45,
+          "not_a_proctored_exam": true,
+          "points_per_correct": 1,
+          "proposed": true,
+          "reveal_seconds": 8,
+          "room_does_not_unlock_personal_units": true,
+          "room_ttl_seconds": 1800,
+          "speed_bonus": false,
+          "version": "room-proposal-20261017-v1"
+        },
+        "end_reason": "all_questions_closed"
+      },
+      "course_access_for_invitee": 404,
+      "original_access_for_invitee": 404
+    },
+    {
+      "name": "private_post_room_gemini_help",
+      "job": {
+        "id": "97fe648e456d4ce19d9817e4a1284132",
+        "status": "succeeded",
+        "attempts": 1,
+        "provider": {
+          "provider": "gemini_api",
+          "model": "gemini-2.5-flash",
+          "model_choice_id": "gemini:gemini-2.5-flash",
+          "selection_revision": 1,
+          "prompt_version": "20261015-context-v1",
+          "schema_version": 12
+        },
+        "result": {
+          "text": "IPv4 có 32 bit. Prefix /26 dành 26 bit cho network.",
+          "source_refs": [
+            "89035cb15fb34bc1b6c5b4e7cae3f82e:2:1"
+          ],
+          "needs_more_source": false
+        },
+        "partial": {},
+        "feedback_deferred": false,
+        "error": null
+      },
+      "coin_quote_amount": 1,
+      "job_hidden_from_host": 404,
+      "host_chat_history_empty": true
+    }
+  ],
+  "room_id": "8afc714a7d3246e2a941c7d6b2e4e3a2",
+  "source": {
+    "course_id": "0b3c505ebc194963b04cc66a8c2644b6",
+    "course_revision": 8,
+    "type": "existing self-authored networking development fixture, with previously generated questions; not a new AI content evaluation"
+  },
+  "policy": {
+    "version": "room-proposal-20261017-v1",
+    "proposed": true,
+    "max_players": 8,
+    "max_questions": 20,
+    "host_grace_seconds": 60,
+    "member_presence_seconds": 45,
+    "reveal_seconds": 8,
+    "room_ttl_seconds": 1800,
+    "join_attempts_per_minute": 20,
+    "points_per_correct": 1,
+    "speed_bonus": false,
+    "coin_reward": 0,
+    "host_leave": "cancel_room",
+    "late_answer": "reject",
+    "ai_help": "after_room_only",
+    "room_does_not_unlock_personal_units": true,
+    "not_a_proctored_exam": true
+  },
+  "status": "succeeded",
+  "finished_at": "2026-10-16T17:37:21.959373+00:00"
+}

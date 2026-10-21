@@ -1,0 +1,99 @@
+{
+  "purpose": "Load tested whole-chapter evidence support v21 and explicit future chapter scope without changing sources, historical results or default provider.",
+  "at": "2026-10-20T23:35:46.576454+00:00",
+  "old_pid": 81253,
+  "active_before": {
+    "jobs": 0,
+    "rooms": 0,
+    "parsing": 0
+  },
+  "backup": "study-before-chapter-support-20261020T233546Z.sqlite3",
+  "backend_tests": 355,
+  "lesson_prompt_version": "20261021-chapter-evidence-support-v21",
+  "completion_prompt_version": "20261021-missing-question-evidence-support-v8",
+  "processor_version": "20261021-chapter-subnet-claims-v10",
+  "chapter_evidence_version": "20261021-approved-chapter-support-v1",
+  "table_hashes_before": {
+    "courses": "f159bee04f21d5e007955f05fe7f326e28c1fd3b870ce17d4bca5ebe5f9435fb",
+    "course_revisions": "86d51b3de8e24dc9f6b97575c537d89242529bd460393dbf2af2bdfeb1f7582f",
+    "sources": "e4a2214bf55c69fc539d52b47d5f03994dd2e7d1871ecb4d1b3124b5384d233e",
+    "extraction_revisions": "f22077fe020d3d7bad80cdaf3edb867330b8d9c82b908165e6ea69946fd1cf50",
+    "jobs": "b58d782cf70950b71936bde9040f681f36ea4366fd0bfed551440e879677cc71",
+    "ai_preferences": "94a036649bb444d91b486f34db0772810be90b821ca8c80a325e56f2ceedec65",
+    "wallets": "22f4e2e664e32f393b17f89018b1847322fd156c60f20e6dcdcd4a535c1aef08",
+    "study_sessions": "85015ed612db2e88cfed0d06092b9bd2bbfe699d5f062cd93584472f5a49894c",
+    "answers": "b4e4a96915048146d2e858d5af6eb4f50413334aa365ec08d0fc0d3f6c30cde6",
+    "coin_ledger": "269b67a9ec6cd3ee7aa200b86e65499d706e9f893cd277072931f9bdd1fe2c26",
+    "chapter_contexts": "bbd7722c97d97c181a8f819780c4f6b05521d1ab791d7ec7e6e7130d02399f71",
+    "question_review_flags": "ff64bb58521de017795316d1cdfa28f8289c94434b8a4e3ddbd1f89e635bf740"
+  },
+  "unchanged_tables": {
+    "courses": true,
+    "course_revisions": true,
+    "sources": true,
+    "extraction_revisions": true,
+    "jobs": true,
+    "ai_preferences": true,
+    "wallets": true,
+    "study_sessions": true,
+    "answers": true,
+    "coin_ledger": true,
+    "chapter_contexts": true,
+    "question_review_flags": true
+  },
+  "sql_version": 18,
+  "active_jobs_after": 0,
+  "new_pid": 94275,
+  "health": {
+    "backend": true,
+    "provider_health_checked": false
+  },
+  "final_reload": {
+    "at": "2026-10-20T23:41:18.740788+00:00",
+    "old_pid": 94275,
+    "backend_tests": 356,
+    "lesson_prompt_version": "20261021-reading-evidence-fields-v22",
+    "completion_prompt_version": "20261021-missing-question-evidence-support-v8",
+    "active_before": {
+      "jobs": 0,
+      "rooms": 0,
+      "parsing": 0
+    },
+    "backup": "study-before-reading-fields-20261020T234118Z.sqlite3",
+    "table_hashes_before": {
+      "courses": "d3dd0774a28b6574886c63126346f399d35233bf600f98124868ff21fe953012",
+      "course_revisions": "4b04b297c04507a49ffe3e51d655592443f1e2328f8f30258e5df1978144bbb9",
+      "sources": "e0a62be1a699f8517936be58ea001ed1b4c09c1241e9b3e52758dd24298dc2b0",
+      "extraction_revisions": "9fb3a99344168ad80021c9a26168205a610302b8526d84f6aca6a8e1d080f05d",
+      "jobs": "8373e705033366c0e1ebb071f5ecaa8e4943e07af7399d0cc63216b0b5498fce",
+      "ai_preferences": "1d20bc907256760142a8a12dfedb27249573a18e5c4f0ff6b2a960239499741d",
+      "wallets": "8afac170d165f2e63ec68799c46d36866c1ef94e0117fe6b14311c2db095b2f8",
+      "study_sessions": "85015ed612db2e88cfed0d06092b9bd2bbfe699d5f062cd93584472f5a49894c",
+      "answers": "b4e4a96915048146d2e858d5af6eb4f50413334aa365ec08d0fc0d3f6c30cde6",
+      "coin_ledger": "9be0d226a3335762d4adc39178021343b581aea667785df959498104601b2abe",
+      "chapter_contexts": "307bfc9327d4797ac438a61aa3935af0831458f2379c64a5ce707cb46a1368cf",
+      "question_review_flags": "ff64bb58521de017795316d1cdfa28f8289c94434b8a4e3ddbd1f89e635bf740"
+    },
+    "unchanged_tables": {
+      "courses": true,
+      "course_revisions": true,
+      "sources": true,
+      "extraction_revisions": true,
+      "jobs": true,
+      "ai_preferences": true,
+      "wallets": true,
+      "study_sessions": true,
+      "answers": true,
+      "coin_ledger": true,
+      "chapter_contexts": true,
+      "question_review_flags": true
+    },
+    "sql_version": 18,
+    "active_jobs_after": 0,
+    "new_pid": 94555,
+    "health": {
+      "backend": true,
+      "provider_health_checked": false
+    }
+  }
+}

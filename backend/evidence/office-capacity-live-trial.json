@@ -1,0 +1,331 @@
+{
+  "purpose": "Functional localhost trial on self-authored development fixtures, not a held-out AI-quality benchmark",
+  "calls": [
+    {
+      "path": "/sources/d1cd3f1338b14bb4acc4fb7f6be5ae19/vision-review",
+      "job_id": "59d1e032c2f64185ac9b6c088e8be6e4",
+      "elapsed_seconds": 6.161,
+      "status": "succeeded",
+      "error": null,
+      "provider": {
+        "provider": "gemini_api",
+        "model": "gemini-2.5-flash",
+        "model_choice_id": "gemini:gemini-2.5-flash",
+        "selection_revision": 1,
+        "prompt_version": "20261015-vision-transcription-v1",
+        "schema_version": 13
+      },
+      "result": {
+        "source_proposal_id": "23ac059180c5416bac1f44613bbddfd6"
+      }
+    },
+    {
+      "path": "/courses/cd8ab45a7b944d5ab38a4d60050d0097/generate",
+      "job_id": "00aa390a7da14832991291430faeae7b",
+      "elapsed_seconds": 10.246,
+      "status": "succeeded",
+      "error": null,
+      "provider": {
+        "provider": "gemini_api",
+        "model": "gemini-2.5-flash",
+        "model_choice_id": "gemini:gemini-2.5-flash",
+        "selection_revision": 1,
+        "prompt_version": "20261017-unit-source-server-metadata-v6",
+        "schema_version": 13
+      },
+      "result": {
+        "course_id": "cd8ab45a7b944d5ab38a4d60050d0097",
+        "revision": 2
+      }
+    }
+  ],
+  "failures": [],
+  "limits": {
+    "upload_bytes_per_file": 52428800,
+    "extracted_characters_per_source": 1000000,
+    "fragments_per_source": 2000,
+    "files_per_collection": 20,
+    "native_pdf_pages": 1000,
+    "native_pptx_slides": 1000,
+    "ocr_pages_per_pass": 20,
+    "ai_outline_fragments_per_request": 16,
+    "long_outline_strategy": "source_sections_then_generate_each_unit",
+    "unlimited_reading_or_generation": false
+  },
+  "proposed_coin_confirmed": 2,
+  "vision_parent": {
+    "id": "23ac059180c5416bac1f44613bbddfd6",
+    "model": "gemini-2.5-flash",
+    "text": "Mạng máy tính: IPv4 và subnet mask\nIPv4 có 32 bit. Prefix /26 dành 26 bit cho network.\nPhần host còn 6 bit: 2^6 = 64 địa chỉ.\nSubnet của 192.168.1.70/26 nằm trong block 64 - 127.\nNetwork: 192.168.1.64. Broadcast: 192.168.1.127.\nHost dùng được: 192.168.1.65 đến 192.168.1.126.\nSố host dùng được: 64 - 2 = 62.",
+    "uncertain_spans": [],
+    "dimensions": {
+      "width": 1500,
+      "height": 720,
+      "scope": "embedded_image_crop",
+      "locator": {
+        "type": "office_image",
+        "paragraph": 5,
+        "heading": "Networking",
+        "office_order": 5,
+        "part": "word/document.xml",
+        "image_occurrence": 1,
+        "asset_id": "86979ed993f64e83cca6e42517068ff7"
+      },
+      "crop": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "rotation": 0.0
+    }
+  },
+  "office_manual_apply": {
+    "source_id": "d1cd3f1338b14bb4acc4fb7f6be5ae19",
+    "asset_id": "86979ed993f64e83cca6e42517068ff7",
+    "proposal_id": "a37b03fc9a8e41d5a4908e87f04b0966",
+    "before_revision": 1,
+    "after_revision": 2,
+    "still_requires_review": true,
+    "original_unchanged": true,
+    "old_revision_unchanged": true,
+    "native_text_and_other_images_unchanged": true,
+    "manual_text": "Mạng máy tính: IPv4 và subnet mask\nIPv4 có 32 bit. Prefix /26 dành 26 bit cho network.\nPhần host còn 6 bit: 2^6 = 64 địa chỉ.\nSubnet của 192.168.1.70/26 nằm trong block 64 - 127.\nNetwork: 192.168.1.64. Broadcast: 192.168.1.127.\nHost dùng được: 192.168.1.65 đến 192.168.1.126.\nSố host dùng được: 64 - 2 = 62."
+  },
+  "long_scope": {
+    "source_id": "00055136cfaa4d0ba7281e0ff0a9cadf",
+    "plan_id": "d50f0a916a34431892d7964a64eb6f44",
+    "course_id": "cd8ab45a7b944d5ab38a4d60050d0097",
+    "selected_fragments": 80,
+    "assigned_fragments": 80,
+    "units": 10,
+    "planning_method": "source_sections_not_ai",
+    "planning_ai_calls": 0,
+    "first_unit_refs": [
+      "00055136cfaa4d0ba7281e0ff0a9cadf:2:0",
+      "00055136cfaa4d0ba7281e0ff0a9cadf:2:1",
+      "00055136cfaa4d0ba7281e0ff0a9cadf:2:2",
+      "00055136cfaa4d0ba7281e0ff0a9cadf:2:3",
+      "00055136cfaa4d0ba7281e0ff0a9cadf:2:4",
+      "00055136cfaa4d0ba7281e0ff0a9cadf:2:5",
+      "00055136cfaa4d0ba7281e0ff0a9cadf:2:6",
+      "00055136cfaa4d0ba7281e0ff0a9cadf:2:7"
+    ],
+    "generation_job_id": "00aa390a7da14832991291430faeae7b"
+  },
+  "first_unit": {
+    "course_revision": 2,
+    "unit_id": "unit-1",
+    "source_refs": [
+      "00055136cfaa4d0ba7281e0ff0a9cadf:2:0",
+      "00055136cfaa4d0ba7281e0ff0a9cadf:2:1",
+      "00055136cfaa4d0ba7281e0ff0a9cadf:2:2",
+      "00055136cfaa4d0ba7281e0ff0a9cadf:2:3",
+      "00055136cfaa4d0ba7281e0ff0a9cadf:2:4",
+      "00055136cfaa4d0ba7281e0ff0a9cadf:2:5",
+      "00055136cfaa4d0ba7281e0ff0a9cadf:2:6",
+      "00055136cfaa4d0ba7281e0ff0a9cadf:2:7"
+    ],
+    "lesson": {
+      "title": "IPv4 Networking Basics",
+      "sections": [
+        {
+          "title": "IPv4 Address Structure",
+          "text": "An IPv4 address consists of 32 bits. These bits are divided into a network portion and a host portion. The length of the network portion is indicated by a prefix, such as /26.",
+          "source_refs": [
+            "00055136cfaa4d0ba7281e0ff0a9cadf:2:0",
+            "00055136cfaa4d0ba7281e0ff0a9cadf:2:6"
+          ]
+        },
+        {
+          "title": "Calculating Host Bits and Addresses",
+          "text": "The prefix determines the number of host bits. For example, a /26 prefix means that 26 bits are for the network, leaving 6 bits for hosts (32 - 26 = 6). A block with 6 host bits can accommodate 2^6 = 64 addresses.",
+          "source_refs": [
+            "00055136cfaa4d0ba7281e0ff0a9cadf:2:1",
+            "00055136cfaa4d0ba7281e0ff0a9cadf:2:2",
+            "00055136cfaa4d0ba7281e0ff0a9cadf:2:7"
+          ]
+        },
+        {
+          "title": "Network, Broadcast, and Usable Host Addresses",
+          "text": "Within a network block, specific addresses are reserved. For an address like 192.168.1.70/26, the network address is 192.168.1.64 and the broadcast address is 192.168.1.127. The usable host addresses range from 192.168.1.65 to 192.168.1.126, providing 62 usable addresses.",
+          "source_refs": [
+            "00055136cfaa4d0ba7281e0ff0a9cadf:2:3",
+            "00055136cfaa4d0ba7281e0ff0a9cadf:2:4",
+            "00055136cfaa4d0ba7281e0ff0a9cadf:2:5"
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "kind": "mcq",
+          "prompt": "How many bits does IPv4 have?",
+          "options": [
+            "32 bits",
+            "6 bits",
+            "64 bits",
+            "127 bits"
+          ],
+          "left": [],
+          "source_refs": [
+            "00055136cfaa4d0ba7281e0ff0a9cadf:2:0",
+            "00055136cfaa4d0ba7281e0ff0a9cadf:2:6"
+          ],
+          "difficulty": null,
+          "difficulty_basis": null,
+          "id": "unit-1:q0",
+          "unit_id": "unit-1",
+          "question_revision_id": "cd8ab45a7b944d5ab38a4d60050d0097:unit-1:2563a7d74f93c596579626be",
+          "payload": {
+            "options": [
+              {
+                "id": "option-0",
+                "text": "32 bits"
+              },
+              {
+                "id": "option-1",
+                "text": "6 bits"
+              },
+              {
+                "id": "option-2",
+                "text": "64 bits"
+              },
+              {
+                "id": "option-3",
+                "text": "127 bits"
+              }
+            ],
+            "left": []
+          }
+        }
+      ],
+      "cards": [
+        {
+          "front": "What is the total number of bits in an IPv4 address?",
+          "back": "An IPv4 address has 32 bits.",
+          "source_refs": [
+            "00055136cfaa4d0ba7281e0ff0a9cadf:2:0",
+            "00055136cfaa4d0ba7281e0ff0a9cadf:2:6"
+          ]
+        }
+      ],
+      "mindmap": [
+        {
+          "title": "IPv4 Address Structure",
+          "text": "IPv4 addresses are 32-bit identifiers. The prefix, like /26, defines the network portion, with the remaining bits for hosts.",
+          "source_refs": [
+            "00055136cfaa4d0ba7281e0ff0a9cadf:2:0",
+            "00055136cfaa4d0ba7281e0ff0a9cadf:2:1",
+            "00055136cfaa4d0ba7281e0ff0a9cadf:2:6",
+            "00055136cfaa4d0ba7281e0ff0a9cadf:2:7"
+          ]
+        },
+        {
+          "title": "Address Calculation",
+          "text": "A /26 prefix leaves 6 host bits, allowing for 64 total addresses in the block. This is calculated as 2 to the power of the number of host bits.",
+          "source_refs": [
+            "00055136cfaa4d0ba7281e0ff0a9cadf:2:1",
+            "00055136cfaa4d0ba7281e0ff0a9cadf:2:2",
+            "00055136cfaa4d0ba7281e0ff0a9cadf:2:7"
+          ]
+        },
+        {
+          "title": "Network Address Allocation",
+          "text": "For an address like 192.168.1.70/26, the network address is 192.168.1.64, the broadcast is 192.168.1.127, and there are 62 usable host addresses (192.168.1.65 to 192.168.1.126).",
+          "source_refs": [
+            "00055136cfaa4d0ba7281e0ff0a9cadf:2:3",
+            "00055136cfaa4d0ba7281e0ff0a9cadf:2:4",
+            "00055136cfaa4d0ba7281e0ff0a9cadf:2:5"
+          ]
+        }
+      ]
+    },
+    "other_units_not_generated": true
+  },
+  "provider_default_unchanged": true,
+  "grading_check": {
+    "expected_reference": "IPv4 has 32 bits",
+    "question_id": "unit-1:q0",
+    "saved_answer_key": "32 bits",
+    "feedback": {
+      "correct": true,
+      "reference": "32 bits",
+      "explanation": "IPv4 is specified to have 32 bits. This is a fundamental characteristic of the IPv4 addressing scheme.",
+      "rubric": [],
+      "source_refs": [
+        "00055136cfaa4d0ba7281e0ff0a9cadf:2:0",
+        "00055136cfaa4d0ba7281e0ff0a9cadf:2:6"
+      ],
+      "grading": "fixed"
+    },
+    "result": {
+      "score": 1,
+      "fixed_total": 1,
+      "self_review_count": 0,
+      "course_revision": 2,
+      "session_id": "a1eb032138924cc793855eb26f3f59b1",
+      "assisted_count": 0,
+      "assessment": "self_study_not_proctored",
+      "rewards": [
+        {
+          "amount": 1,
+          "requested": 1,
+          "capped": false,
+          "replayed": false,
+          "event_key": "practice:2026-10-18:cd8ab45a7b944d5ab38a4d60050d0097:c71287f95c7684fc129b95c340ad7f61a072eaec03f91c8559f79a1c45def6ca",
+          "policy_version": "dev-proposal-20261015-v2"
+        },
+        {
+          "amount": 1,
+          "requested": 1,
+          "capped": false,
+          "replayed": false,
+          "event_key": "mission:practice:2026-10-18",
+          "policy_version": "dev-proposal-20261015-v2"
+        },
+        {
+          "amount": 2,
+          "requested": 2,
+          "capped": false,
+          "replayed": false,
+          "event_key": "achievement:first_session",
+          "policy_version": "dev-proposal-20261015-v2"
+        }
+      ]
+    },
+    "ai_called_for_grading": false
+  },
+  "final_context_budget_check": {
+    "source_id": "a6d9924420bb4213a64da8eb6339c76a",
+    "plan_id": "c1feba7d47a94360bb1167860c0c51b7",
+    "strategy": {
+      "method": "source_sections_not_ai",
+      "selected_fragments": 4,
+      "source_json_characters": 9852,
+      "model_source_json_budget": 9000,
+      "ai_called": false
+    },
+    "per_unit_model_source_json_characters": [
+      7389,
+      2463
+    ],
+    "all_selected_excerpts_retained": true,
+    "ai_calls": 0
+  },
+  "final_limits": {
+    "upload_bytes_per_file": 52428800,
+    "extracted_characters_per_source": 1000000,
+    "fragments_per_source": 2000,
+    "files_per_collection": 20,
+    "native_pdf_pages": 1000,
+    "native_pptx_slides": 1000,
+    "ocr_pages_per_pass": 20,
+    "ocr_fragments_per_pass": 400,
+    "ocr_characters_per_pass": 120000,
+    "office_image_occurrences_in_inventory": 200,
+    "ai_outline_fragments_per_request": 16,
+    "model_source_json_characters_per_request": 9000,
+    "long_outline_strategy": "source_sections_then_generate_each_unit",
+    "unlimited_reading_or_generation": false
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "purpose": "Path-only frontend scripts/styles organization smoke on isolated app, no production runtime or inference.",
+  "at": "2026-10-21T10:17:04.475128+00:00",
+  "static_root": "frontend/",
+  "index_status": 200,
+  "assets": [
+    {
+      "path": "styles/styles.css?v=20261014-20",
+      "status": 200
+    },
+    {
+      "path": "styles/reference.css?v=20261014-20",
+      "status": 200
+    },
+    {
+      "path": "styles/study.css?v=20261014-20",
+      "status": 200
+    },
+    {
+      "path": "styles/palette.css?v=20261014-20",
+      "status": 200
+    },
+    {
+      "path": "styles/navigation.css?v=20261014-20",
+      "status": 200
+    },
+    {
+      "path": "styles/product.css?v=20261014-20",
+      "status": 200
+    },
+    {
+      "path": "styles/motion.css?v=20261016-8",
+      "status": 200
+    },
+    {
+      "path": "styles/live.css?v=20261019-4",
+      "status": 200
+    },
+    {
+      "path": "styles/studio.css?v=20261016-4",
+      "status": 200
+    },
+    {
+      "path": "styles/ui-polish.css?v=20261016-3",
+      "status": 200
+    },
+    {
+      "path": "styles/flashcard.css?v=20261016-3",
+      "status": 200
+    },
+    {
+      "path": "styles/studio-art.css?v=20261016-8",
+      "status": 200
+    },
+    {
+      "path": "styles/achievements.css?v=20261016-8",
+      "status": 200
+    },
+    {
+      "path": "styles/whiteboard.css?v=20261016-8",
+      "status": 200
+    },
+    {
+      "path": "assets/studio/folio-mark-v2.svg",
+      "status": 200
+    },
+    {
+      "path": "scripts/data.js?v=20261014-20",
+      "status": 200
+    },
+    {
+      "path": "scripts/reference-views.js?v=20261014-20",
+      "status": 200
+    },
+    {
+      "path": "scripts/study-views.js?v=20261014-20",
+      "status": 200
+    },
+    {
+      "path": "scripts/i18n.js?v=20261014-20",
+      "status": 200
+    },
+    {
+      "path": "scripts/practice-views.js?v=20261014-20",
+      "status": 200
+    },
+    {
+      "path": "scripts/studio-art.js?v=20261016-8",
+      "status": 200
+    },
+    {
+      "path": "scripts/studio-views.js?v=20261018-10",
+      "status": 200
+    },
+    {
+      "path": "scripts/flashcard-session.js?v=20261016-3",
+      "status": 200
+    },
+    {
+      "path": "scripts/flashcard-views.js?v=20261017-1",
+      "status": 200
+    },
+    {
+      "path": "scripts/live-providers.js?v=20261017-2",
+      "status": 200
+    },
+    {
+      "path": "scripts/product-views.js?v=20261016-9",
+      "status": 200
+    },
+    {
+      "path": "scripts/motion.js?v=20261016-8",
+      "status": 200
+    },
+    {
+      "path": "scripts/live-activity.js?v=20261018-9",
+      "status": 200
+    },
+    {
+      "path": "scripts/live-help.js?v=20261021-2",
+      "status": 200
+    },
+    {
+      "path": "scripts/live-jobs.js?v=20261017-1",
+      "status": 200
+    },
+    {
+      "path": "scripts/source-ocr-ui.js?v=20261018-3",
+      "status": 200
+    },
+    {
+      "path": "scripts/source-browser.js?v=20261018-1",
+      "status": 200
+    },
+    {
+      "path": "scripts/source-scope-review-ui.js?v=20261019-1",
+      "status": 200
+    },
+    {
+      "path": "scripts/question-completion-ui.js?v=20261020-2",
+      "status": 200
+    },
+    {
+      "path": "scripts/correction-state.js?v=20261021-1",
+      "status": 200
+    },
+    {
+      "path": "scripts/live-waiting.js?v=20261019-3",
+      "status": 200
+    },
+    {
+      "path": "scripts/live.js?v=20261021-15",
+      "status": 200
+    },
+    {
+      "path": "scripts/app.js?v=20261018-1",
+      "status": 200
+    }
+  ],
+  "asset_count": 38,
+  "css_dependencies": [
+    {
+      "stylesheet": "styles/palette.css?v=20261014-20",
+      "path": "/assets/fonts/BarlowCondensed-Bold.ttf",
+      "status": 200
+    },
+    {
+      "stylesheet": "styles/palette.css?v=20261014-20",
+      "path": "/assets/fonts/BarlowCondensed-SemiBold.ttf",
+      "status": 200
+    }
+  ],
+  "api_schema_unchanged": true,
+  "inference_calls": 0,
+  "production_runtime_touched": false,
+  "teacher_word_parent_and_project_identical": true,
+  "teacher_word_sha256": "10477b780feb504d649ad458cc381ed05eca4f47bc162ea4a8fb6eeb70c3a66e"
+}

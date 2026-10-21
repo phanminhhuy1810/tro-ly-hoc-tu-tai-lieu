@@ -1,0 +1,24 @@
+{
+  "purpose": "Replay exactly the failed real probe output with the final processor; no new AI call",
+  "processor_version": "20261019-source-cloze-isolation-v5",
+  "model_calls": 0,
+  "real_database_mutated": false,
+  "before_error": "AI chưa chọn được đáp án khớp duy nhất trong một câu nguồn rõ ràng; phần đã lưu còn nguyên.",
+  "result": {
+    "reason": "",
+    "question": {
+      "kind": "cloze",
+      "prompt": "“§Địachỉlogic •do ngườidùngấnđịnh •VD: ____”",
+      "options": [],
+      "left": [],
+      "answer": "địa chỉ IP (Internet Protocol)",
+      "explanation": "Địa chỉ logic là loại địa chỉ do người dùng ấn định, ví dụ điển hình là địa chỉ IP (Internet Protocol).",
+      "source_refs": [
+        "052156e88ce448c29c6569576cdb5eac:2:4"
+      ],
+      "rubric": []
+    }
+  },
+  "fixed_answer_graded": true,
+  "harness_note": "First offline replay passed fenced text directly to validator; corrected to use the same JSON fence removal as LocalAI. No model call or content changes."
+}

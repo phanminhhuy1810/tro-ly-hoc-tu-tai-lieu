@@ -1,0 +1,27 @@
+{
+  "purpose": "Gemma12B MLX local backend pipeline on self-authored source; not Huy performance or held-out quality",
+  "model": "local:gemma4:12b-mlx",
+  "passed": false,
+  "confirmed_proposed_app_coin": 0,
+  "monetary_payments": 0,
+  "runs": [],
+  "errors": [
+    {
+      "type": "HTTPStatusError",
+      "message": "Client error '409 Conflict' for url 'http://127.0.0.1:8770/api/courses/35926bc3d4744f6ba22826db7ebdd3dd/generate'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/409"
+    }
+  ],
+  "source_id": "147955a9405c4edfaa7dc35216b4237f",
+  "source_revision": 2,
+  "course_id": "35926bc3d4744f6ba22826db7ebdd3dd",
+  "global_default_before": "kaggle:qwen3.8:27b",
+  "selection": {
+    "model_id": "local:gemma4:12b-mlx",
+    "revision": 1,
+    "provider": "ollama_local",
+    "model": "gemma4:12b-mlx",
+    "external": false
+  },
+  "resumed_from": "4e0fdec72c1e4cfc86bb8f9d55a4172d",
+  "preflight_note": "No new model job accepted. Initial generation had zero saved reading, so resume_job_id was rejected. Recovery must start a new job on the same approved course."
+}

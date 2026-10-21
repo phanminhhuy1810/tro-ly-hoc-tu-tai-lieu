@@ -1,0 +1,594 @@
+{
+  "purpose": "Requirement-by-requirement backend readiness audit; test/symbol traceability is not product acceptance or a model-quality score.",
+  "at": "2026-10-21T06:46:13.348575+00:00",
+  "objective": "hoàn thiện back end",
+  "production_sha256": "58f9fdf652015a8e7b9ec5145dd911dfe7a518d6fabd79f4209f3343a61ec294",
+  "scope": "Existing25feature groups plus source/permission/Coin/reliability/evaluation invariants; desktop frontend design and public operation are not silently added.",
+  "backend_tests_current": 403,
+  "frontend_tests_retained": 71,
+  "sql_version": 18,
+  "traceability_paths_and_symbols_checked": true,
+  "backend_accepted": false,
+  "completion_proven": false,
+  "features": [
+    {
+      "id": "F01",
+      "requirement": "PDF/Word/PowerPoint/text/ảnh-scan/link công khai",
+      "status": "behavior_covered_quality_limited",
+      "implementation_files": [
+        "backend/study_backend/extract.py",
+        "backend/study_backend/office_inputs.py",
+        "backend/study_backend/public_urls.py"
+      ],
+      "evidence": [
+        {
+          "path": "backend/tests/test_inputs.py",
+          "symbols": [
+            "test_failed_read_keeps_original_and_manual_recovery_requires_review",
+            "test_article_snapshot_locator_review_and_retry_do_not_fetch_again"
+          ]
+        },
+        {
+          "path": "backend/tests/test_office_inputs.py",
+          "symbols": [
+            "test_word_occurrences_have_stable_distinct_locations_and_only_visible_crop"
+          ]
+        }
+      ],
+      "remaining_or_limit": "Có đường đọc và lỗi có bản gốc/locator. Scan/công thức/bảng/sơ đồ chưa được chứng minh đọc đúng tổng quát; không dùng test parser thay chất lượng OCR."
+    },
+    {
+      "id": "F02",
+      "requirement": "Đối chiếu gốc/bản trích/vị trí và sửa phần chưa rõ",
+      "status": "behavior_covered_quality_limited",
+      "implementation_files": [
+        "backend/study_backend/source_ocr.py",
+        "backend/study_backend/source_review.py"
+      ],
+      "evidence": [
+        {
+          "path": "backend/tests/test_source_ocr.py",
+          "symbols": [
+            "test_cancel_and_restart_keep_checkpoint_and_resume_only_unfinished_item",
+            "test_stale_results_rebase_without_rereading_and_skip_new_manual_scope"
+          ]
+        },
+        {
+          "path": "experiments/10-source-support/results/page24-review-audit.json"
+        }
+      ],
+      "remaining_or_limit": "Manual/vision/native có preview/revision. Bản chữ PDF33trang của phép thử cũ vẫn thiếu bảng24, không giả là đã thay toàn nguồn."
+    },
+    {
+      "id": "F03",
+      "requirement": "Lộ trình có thể sửa mục tiêu/thứ tự/trọng tâm",
+      "status": "behavior_covered_semantics_pending",
+      "implementation_files": [
+        "backend/study_backend/app.py",
+        "backend/study_backend/revisions.py"
+      ],
+      "evidence": [
+        {
+          "path": "backend/tests/test_source_capacity.py",
+          "symbols": [
+            "test_all_80_excerpts_enter_free_roadmap_and_approval_does_not_generate",
+            "test_editing_long_roadmap_cannot_silently_drop_selected_tail_excerpts"
+          ]
+        },
+        {
+          "path": "backend/tests/test_revisions.py",
+          "symbols": [
+            "test_future_preferences_and_sources_do_not_change_generated_lesson_or_original_plan"
+          ]
+        }
+      ],
+      "remaining_or_limit": "Đủ refs/preview không chứng minh phân chia hay về sư phạm. Source-section strategy có nhãn không-AI; giao diện diff còn bàn giao."
+    },
+    {
+      "id": "F04",
+      "requirement": "Sinh từng phần và tiếp tục phần lỗi",
+      "status": "behavior_covered",
+      "implementation_files": [
+        "backend/study_backend/jobs.py",
+        "backend/study_backend/chapter_context.py",
+        "backend/study_backend/question_completion.py"
+      ],
+      "evidence": [
+        {
+          "path": "backend/tests/test_chapter_context.py",
+          "symbols": [
+            "test_all_selected_chapter_and_tail_read_before_any_question_without_sending_excluded_text",
+            "test_bounded_continuations_keep_revision_and_reuse_context_for_next_unit"
+          ]
+        },
+        {
+          "path": "backend/tests/test_runtime_recovery.py",
+          "symbols": [
+            "test_sigkill_releases_lock_keeps_checkpoints_and_refunds_before_explicit_resume"
+          ]
+        }
+      ],
+      "remaining_or_limit": "Giới hạn một process local; không tự sinh lại sau reconnect. Chưa phải worker phân tán hoặc bảo đảm provider luôn sẵn."
+    },
+    {
+      "id": "F05",
+      "requirement": "Ba mode dùng chung nguồn/khóa/tiến trình",
+      "status": "behavior_covered_frontend_deferred",
+      "implementation_files": [
+        "backend/study_backend/setup.py",
+        "backend/study_backend/learning.py"
+      ],
+      "evidence": [
+        {
+          "path": "backend/tests/test_setup.py",
+          "symbols": [
+            "test_selected_types_counts_notes_and_mode_previews_share_one_source_and_course"
+          ]
+        },
+        {
+          "path": "backend/tests/test_learning.py",
+          "symbols": [
+            "test_draft_resume_is_ungraded_private_and_rejects_stale_tab"
+          ]
+        }
+      ],
+      "remaining_or_limit": "Backend không tạo mode thứ tư. Nghiệm thu bố cục/flow mới thuộc frontend đã được Huy hoãn."
+    },
+    {
+      "id": "F06",
+      "requirement": "Bài đọc/ví dụ dựa trên toàn chương và đối chiếu nguồn",
+      "status": "quality_pending",
+      "implementation_files": [
+        "backend/study_backend/chapter_context.py",
+        "backend/study_backend/chapter_evidence.py",
+        "backend/study_backend/app.py"
+      ],
+      "evidence": [
+        {
+          "path": "backend/tests/test_chapter_context.py",
+          "symbols": [
+            "test_all_selected_chapter_and_tail_read_before_any_question_without_sending_excluded_text"
+          ]
+        },
+        {
+          "path": "experiments/12-chapter-question-focus/results/dev-v5-summary.json"
+        }
+      ],
+      "remaining_or_limit": "Đọc đủ chữ/refs không chứng minh bài đọc và ví dụ đúng. Final đang đo trên candidate cố định; human source review chưa có."
+    },
+    {
+      "id": "F07",
+      "requirement": "Năm dạng câu, chấm cố định bằng chương trình",
+      "status": "behavior_covered_quality_pending",
+      "implementation_files": [
+        "backend/study_backend/models.py",
+        "backend/study_backend/generation_contract.py",
+        "backend/study_backend/learning.py"
+      ],
+      "evidence": [
+        {
+          "path": "backend/tests/test_learning.py",
+          "symbols": [
+            "test_payload_ids_grade_regardless_of_matching_display_order"
+          ]
+        },
+        {
+          "path": "backend/tests/test_generation_contract.py",
+          "symbols": [
+            "test_domain_guards_still_reject_bad_blanks_keys_and_equivalent_choices"
+          ]
+        }
+      ],
+      "remaining_or_limit": "Không ép ordering khi thiếu trình tự. Chấm đúng key lưu không chứng minh key AI đúng; tự luận là tham khảo/rubric tự đối chiếu và nhận xét dự kiến."
+    },
+    {
+      "id": "F08",
+      "requirement": "Thẻ cá nhân/sửa/nhớ/chưa nhớ/lưu câu khó",
+      "status": "behavior_covered",
+      "implementation_files": [
+        "backend/study_backend/learning.py"
+      ],
+      "evidence": [
+        {
+          "path": "backend/tests/test_learning.py",
+          "symbols": [
+            "test_save_question_personal_card_once_and_edit_does_not_change_course",
+            "test_generated_card_memory_survives_unrelated_question_revision"
+          ]
+        }
+      ],
+      "remaining_or_limit": "CRUD/state server đã có; chất lượng nội dung thẻ AI cần đối chiếu riêng. Thuật toán ôn giãn cách không được chọn."
+    },
+    {
+      "id": "F09",
+      "requirement": "Trợ giúp theo câu/đoạn và chat riêng",
+      "status": "behavior_covered_quality_pending",
+      "implementation_files": [
+        "backend/study_backend/inline_help.py",
+        "backend/study_backend/app.py"
+      ],
+      "evidence": [
+        {
+          "path": "backend/tests/test_inline_help.py",
+          "symbols": [
+            "test_ai_followup_gets_pinned_question_student_answer_and_history_with_separate_receipt",
+            "test_response_in_flight_remains_on_original_question_after_moving_to_next"
+          ]
+        },
+        {
+          "path": "experiments/13-chapter-corrections/results/operant-manual-recovery.json"
+        }
+      ],
+      "remaining_or_limit": "Hint/reveal/explain đã lưu không gọi AI; hỏi mới có quote/context. Chất lượng giải thích AI chưa đạt từ một số ca, không lấy cache làm bằng chứng lời giải đúng."
+    },
+    {
+      "id": "F10",
+      "requirement": "Sửa tay/AI có phạm vi, preview/apply/revert/lịch sử",
+      "status": "behavior_covered_quality_pending",
+      "implementation_files": [
+        "backend/study_backend/correction_prompt.py",
+        "backend/study_backend/correction_context.py",
+        "backend/study_backend/revisions.py"
+      ],
+      "evidence": [
+        {
+          "path": "backend/tests/test_correction_context.py",
+          "symbols": [
+            "test_manual_is_available_with_zero_coin_and_removed_model_and_does_not_read_chapter",
+            "test_cache_reused_scoped_apply_preserves_other_content_old_provider_and_attempt"
+          ]
+        },
+        {
+          "path": "backend/tests/test_revisions.py",
+          "symbols": [
+            "test_revert_creates_new_revision_after_preview_and_preserves_pinned_attempt"
+          ]
+        },
+        {
+          "path": "experiments/13-chapter-corrections/results/operant-correction-inputs-v4.json"
+        }
+      ],
+      "remaining_or_limit": "Cả hai preview AI ca Tâm lý chưa đạt và chưa áp dụng. Recovery tay riêng QA đã thử, không gán thành AI tự sửa thành công."
+    },
+    {
+      "id": "F11",
+      "requirement": "Resume và ôn phần sai/thẻ chưa nhớ",
+      "status": "behavior_covered",
+      "implementation_files": [
+        "backend/study_backend/learning.py"
+      ],
+      "evidence": [
+        {
+          "path": "backend/tests/test_learning.py",
+          "symbols": [
+            "test_weak_practice_is_from_real_history_and_correct_retry_clears_it",
+            "test_draft_resume_is_ungraded_private_and_rejects_stale_tab"
+          ]
+        }
+      ],
+      "remaining_or_limit": "Dựa trên lịch sử thật, không trộn fixture vào tiến trình cá nhân; không đánh giá đây là thuật toán thích nghi học tập đã chứng minh."
+    },
+    {
+      "id": "F12",
+      "requirement": "Nhiệm vụ/chuỗi/thành tựu/điểm danh",
+      "status": "behavior_covered_policy_proposed",
+      "implementation_files": [
+        "backend/study_backend/activity.py"
+      ],
+      "evidence": [
+        {
+          "path": "backend/tests/test_activity.py",
+          "symbols": [
+            "test_local_day_streak_real_dates_and_utc_reward_day_are_separate",
+            "test_heartbeat_is_bounded_no_idle_credit_no_double_tab_or_replay_and_no_study_day"
+          ]
+        },
+        {
+          "path": "backend/tests/test_check_in.py",
+          "symbols": [
+            "test_replay_concurrency_and_other_owner_do_not_double_count_or_leak"
+          ]
+        }
+      ],
+      "remaining_or_limit": "Policy thưởng là cấu hình đề xuất. Điểm danh hiện0Coin và không tự thành ngày học; chưa có user trial về tính dễ dùng."
+    },
+    {
+      "id": "F13",
+      "requirement": "Khóa/mở tự do, mở bài sau lượt luyện không ép điểm",
+      "status": "behavior_covered",
+      "implementation_files": [
+        "backend/study_backend/learning.py",
+        "backend/study_backend/app.py"
+      ],
+      "evidence": [
+        {
+          "path": "backend/tests/test_activity.py",
+          "symbols": [
+            "test_empty_dashboard_partial_round_no_activity_and_zero_score_unlock_does_not_require_missions"
+          ]
+        }
+      ],
+      "remaining_or_limit": "Nhiệm vụ/Coin không thêm cửa khóa. Không dùng điểm tự luận chưa kiểm chứng để chặn bài."
+    },
+    {
+      "id": "F14",
+      "requirement": "Private/share/community với quyền và tiến trình riêng",
+      "status": "behavior_covered_frontend_deferred",
+      "implementation_files": [
+        "backend/study_backend/community.py"
+      ],
+      "evidence": [
+        {
+          "path": "backend/tests/test_community.py",
+          "symbols": [
+            "test_each_learner_has_own_progress_history_notebook_cards_and_chat",
+            "test_original_sharing_and_invite_revocation_are_separate_from_kept_private_history",
+            "test_real_reward_policy_caps_peers_and_relike_cannot_remint_tomorrow"
+          ]
+        }
+      ],
+      "remaining_or_limit": "Test nhiều profile và trial script không phải người dùng độc lập. Một số màn cộng đồng/quyền còn cần frontend nối."
+    },
+    {
+      "id": "F15",
+      "requirement": "Phòng đố vui/bảng điểm/version/deadline",
+      "status": "behavior_covered_frontend_trial_pending",
+      "implementation_files": [
+        "backend/study_backend/rooms.py"
+      ],
+      "evidence": [
+        {
+          "path": "backend/tests/test_rooms.py",
+          "symbols": [
+            "test_four_fixed_types_score_by_program_and_results_do_not_change_personal_progress_or_coin",
+            "test_server_deadline_rejects_late_answers_and_automatic_transitions_do_not_restart_the_room",
+            "test_reconnect_after_restart_keeps_question_deadline_and_own_answer"
+          ]
+        }
+      ],
+      "remaining_or_limit": "Bank chỉ dùng câu cố định hợp lệ. UI phòng/chơi3–5người/máy độc lập chưa nghiệm thu;0đánh giá public load."
+    },
+    {
+      "id": "F16",
+      "requirement": "Chọn provider/model được server hỗ trợ",
+      "status": "behavior_covered_availability_variable",
+      "implementation_files": [
+        "backend/study_backend/providers.py",
+        "backend/study_backend/ai.py",
+        "backend/study_backend/gemini.py"
+      ],
+      "evidence": [
+        {
+          "path": "backend/tests/test_providers.py",
+          "symbols": [
+            "test_unknown_disabled_unavailable_and_unconfirmed_external_choices_do_not_change_preference",
+            "test_old_quote_cannot_authorize_new_model_and_failure_refunds_without_fallback",
+            "test_partial_retry_keeps_stage_provenance_when_switching_models"
+          ]
+        }
+      ],
+      "remaining_or_limit": "Từng có local/Kaggle/Gemini trial, không đồng nghĩa quota/endpoint hiện luôn hoạt động. Không đổi mặc định hoặc mở provider ngoài máy trong phép đo hiện tại."
+    },
+    {
+      "id": "F17",
+      "requirement": "Hỏi phần nhu cầu còn thiếu, tự nhập và gợi ý",
+      "status": "behavior_covered_semantics_pending",
+      "implementation_files": [
+        "backend/study_backend/setup.py"
+      ],
+      "evidence": [
+        {
+          "path": "backend/tests/test_setup.py",
+          "symbols": [
+            "test_clarification_only_asks_missing_fields_and_does_not_apply_unknown_defaults"
+          ]
+        }
+      ],
+      "remaining_or_limit": "Clarify được điều khiển bằng chương trình, subject suggestion là suy luận AI có thể sửa. Không gắn mặc định chưa xác nhận thành ý người học."
+    },
+    {
+      "id": "F18",
+      "requirement": "Phạm vi/độ khó/số câu/lưu ý và nhận diện khác nguồn",
+      "status": "incomplete_backend",
+      "implementation_files": [
+        "backend/study_backend/setup.py",
+        "backend/study_backend/question_generation.py"
+      ],
+      "evidence": [
+        {
+          "path": "backend/tests/test_setup.py",
+          "symbols": [
+            "test_selected_types_counts_notes_and_mode_previews_share_one_source_and_course"
+          ]
+        },
+        {
+          "path": "evaluation/backend-notes-gap.json"
+        }
+      ],
+      "remaining_or_limit": "Đã lưu/dùng scope/types/counts/teacher_notes/user_notes, nhưng chưa có conflict-review/decision riêng khi notes khác nguồn. Probe isolated: nguồn32bit và note64bit vẫn approve200,0AI. Không tính lưu được notes là yêu cầu này hoàn tất."
+    },
+    {
+      "id": "F19",
+      "requirement": "Duyệt mục tiêu/phân bổ/ngôn ngữ trước sinh",
+      "status": "behavior_covered_frontend_deferred",
+      "implementation_files": [
+        "backend/study_backend/setup.py",
+        "backend/study_backend/revisions.py"
+      ],
+      "evidence": [
+        {
+          "path": "backend/tests/test_setup.py",
+          "symbols": [
+            "test_selected_types_counts_notes_and_mode_previews_share_one_source_and_course"
+          ]
+        },
+        {
+          "path": "backend/tests/test_source_bindings.py",
+          "symbols": [
+            "test_source_change_after_preview_rejects_apply_without_approving_any_plan"
+          ]
+        }
+      ],
+      "remaining_or_limit": "Counts là mục tiêu không phải câu đã tạo. Diff/đổi nguồn còn điểm nối frontend; notes-conflict thuộc gapF18."
+    },
+    {
+      "id": "F20",
+      "requirement": "Luyện/kiểm tra nhiều phần, loại/số câu và phần yếu",
+      "status": "behavior_covered",
+      "implementation_files": [
+        "backend/study_backend/learning.py",
+        "backend/study_backend/app.py"
+      ],
+      "evidence": [
+        {
+          "path": "backend/tests/test_learning.py",
+          "symbols": [
+            "test_multi_unit_practice_respects_unlock_and_type_count",
+            "test_exam_hides_feedback_until_complete_and_blocks_editor_help_ai"
+          ]
+        }
+      ],
+      "remaining_or_limit": "Chỉ dùng bank đã có/đúng quyền; bài test giấu phản hồi đến cuối, tự luận không thành điểm đã xác nhận."
+    },
+    {
+      "id": "F21",
+      "requirement": "AI đề xuất môn/cách học, người dùng đổi được",
+      "status": "behavior_covered_semantics_pending",
+      "implementation_files": [
+        "backend/study_backend/setup.py"
+      ],
+      "evidence": [
+        {
+          "path": "backend/tests/test_setup.py",
+          "symbols": [
+            "test_subject_suggestion_is_editable_private_and_invalidated_by_source_revision"
+          ]
+        }
+      ],
+      "remaining_or_limit": "Gợi ý từ mẫu source≤16đoạn có nhãn scope_limited, không gọi đó là đọc đủ chương hoặc môn đã xác nhận."
+    },
+    {
+      "id": "F22",
+      "requirement": "Mindmap và hỏi đúng ý đang chọn",
+      "status": "behavior_covered_runtime_trial_pending",
+      "implementation_files": [
+        "backend/study_backend/inline_help.py",
+        "preview/live-help.js",
+        "preview/live.js"
+      ],
+      "evidence": [
+        {
+          "path": "backend/tests/test_mindmap_context.py"
+        },
+        {
+          "path": "preview/tests/live-help-mindmap.test.cjs"
+        },
+        {
+          "path": "backend/evidence/mindmap-context-backend-tests.txt"
+        },
+        {
+          "path": "backend/evidence/mindmap-context-frontend-tests.txt"
+        }
+      ],
+      "remaining_or_limit": "Node/text/refs/revision and separate thread/cache/draft covered by seven backend and four frontend tests; full410/75pass. New route runtime QA pending. Graph/hierarchy and design acceptance remain frontend work. Initial frozen candidate fingerprint above describes pre-mindmap code."
+    },
+    {
+      "id": "F23",
+      "requirement": "Sổ tay riêng/nhãn/version/lưu từ chat",
+      "status": "behavior_covered",
+      "implementation_files": [
+        "backend/study_backend/learning.py",
+        "backend/study_backend/inline_help.py"
+      ],
+      "evidence": [
+        {
+          "path": "backend/tests/test_learning.py",
+          "symbols": [
+            "test_notebook_ownership_revision_refs_soft_delete_restore",
+            "test_save_chat_note_uses_server_message_and_ai_label_once"
+          ]
+        },
+        {
+          "path": "backend/tests/test_inline_help.py",
+          "symbols": [
+            "test_save_help_note_uses_server_message_and_does_not_duplicate_or_cross_thread"
+          ]
+        }
+      ],
+      "remaining_or_limit": "Nội dung AI vẫn có nhãn, không tự trở thành nguồn chuẩn. Có soft-delete/restore và chặn đọc chéo."
+    },
+    {
+      "id": "F24",
+      "requirement": "Coin quote/reserve/spend/refund/caps/reward",
+      "status": "behavior_covered_policy_proposed",
+      "implementation_files": [
+        "backend/study_backend/economy.py",
+        "backend/study_backend/activity.py",
+        "backend/study_backend/community.py"
+      ],
+      "evidence": [
+        {
+          "path": "backend/tests/test_economy.py",
+          "symbols": [
+            "test_quote_is_before_ai_and_confirmed_replay_spends_once",
+            "test_concurrent_hold_prevents_overspend_cancel_releases_and_no_late_output",
+            "test_zero_coin_blocks_only_new_ai_cached_source_answers_and_manual_edit_are_free"
+          ]
+        }
+      ],
+      "remaining_or_limit": "Giá/cap còn là đề xuất; Coin không tăng quota provider. Không checkout/API purchase/billing thật."
+    },
+    {
+      "id": "F25",
+      "requirement": "Ngôn ngữ nội dung Việt–Anh và giữ nguyên thuật ngữ",
+      "status": "behavior_covered_quality_limited",
+      "implementation_files": [
+        "backend/study_backend/language.py",
+        "backend/study_backend/setup.py"
+      ],
+      "evidence": [
+        {
+          "path": "backend/tests/test_language.py",
+          "symbols": [
+            "test_original_terms_and_quotes_are_preserved_without_translating_source",
+            "test_vietnamese_question_or_option_is_not_accepted_as_english"
+          ]
+        }
+      ],
+      "remaining_or_limit": "UI và content language riêng; nguồn gốc giữ nguyên. Validator chữ không chứng minh dịch đúng nghĩa mọi thuật ngữ, cần reviewer thật."
+    }
+  ],
+  "open_backend_work": [
+    "F18 source-versus-notes conflict review/decision before generating.",
+    "F22 a source/revision-pinned mindmap-node help context.",
+    "Remaining source/model quality evidence and the reserved final assessment."
+  ],
+  "external_dependencies": [
+    "Actual3–5participant trial/source-review results, currently absent.",
+    "Frontend binding/diff/rooms/trash usability acceptance, explicitly deferred by Huy."
+  ],
+  "excluded": [
+    "Public auth/multi-worker deployment",
+    "Real payments/provider purchase",
+    "Voice/teach-back/calendar/export/SRS not selected"
+  ],
+  "assessment": {
+    "candidate_file": "experiments/08-quality-evaluation/release.json",
+    "run": "experiments/08-quality-evaluation/results/final-v1-candidate.json",
+    "state": "running",
+    "outputs_not_used_to_select_changes": true
+  },
+  "no_progress_classification": "Previous goal turn made progress: changed correction behavior, added tests, recorded paired model failures and completed manual QA recovery; no recurring blocker claim.",
+  "frontend_handoff_checkpoint": {
+    "at": "2026-10-21T09:31:06.213746+00:00",
+    "entrypoint": "FRONTEND-START.md",
+    "backend_tests": 410,
+    "frontend_tests": 75,
+    "backend_accepted": false,
+    "runtime_new_mindmap_trial": false,
+    "live_port_8770_at_checkpoint": false,
+    "independent_human_participants": 0,
+    "independent_human_results": 0,
+    "basis": "Huy answered group has not tried; current test evidence and isolated OpenAPI checked. Original candidate fingerprint above retained."
+  }
+}

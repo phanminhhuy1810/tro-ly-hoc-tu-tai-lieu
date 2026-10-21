@@ -1,0 +1,460 @@
+{
+  "started_at": "2026-10-16T22:49:52.422764+00:00",
+  "purpose": "Real HTTP/native stream smoke test, self-authored IPv4 source; two script profiles, not a human trial or quality benchmark",
+  "runs": [
+    {
+      "model_choice": "gemini:gemini-2.5-flash",
+      "same_source_same_prompt_empty_history": true,
+      "job_id": "d7c6a3721e0c48aabfa0e3859ba7c8de",
+      "events": [
+        {
+          "seconds": 0.032,
+          "status": "running",
+          "phase": "connecting",
+          "version": 3,
+          "preview_characters": 0
+        },
+        {
+          "seconds": 1.055,
+          "status": "running",
+          "phase": "receiving",
+          "version": 4,
+          "preview_characters": 15
+        },
+        {
+          "seconds": 1.569,
+          "status": "running",
+          "phase": "receiving",
+          "version": 5,
+          "preview_characters": 187
+        },
+        {
+          "seconds": 1.824,
+          "status": "running",
+          "phase": "receiving",
+          "version": 7,
+          "preview_characters": 535
+        },
+        {
+          "seconds": 2.852,
+          "status": "succeeded",
+          "phase": "succeeded",
+          "version": 10,
+          "preview_characters": 0
+        }
+      ],
+      "first_visible_seconds": 1.055,
+      "reconnect_same_job": true,
+      "status": "succeeded",
+      "completed_seconds": 2.853,
+      "provider": {
+        "provider": "gemini_api",
+        "model": "gemini-2.5-flash",
+        "model_choice_id": "gemini:gemini-2.5-flash",
+        "selection_revision": 1,
+        "prompt_version": "20261017-pinned-source-context-v2",
+        "schema_version": 13
+      },
+      "progress": {
+        "phase": "succeeded",
+        "requests": [
+          {
+            "index": 1,
+            "schema": "ChatReply",
+            "phase": "received",
+            "streaming": true,
+            "started_at": "2026-10-16T22:49:53.129624+00:00",
+            "first_chunk_ms": 1027.965,
+            "first_text_ms": 1028.029,
+            "elapsed_ms": 2710.1,
+            "chunks": 5,
+            "characters": 583,
+            "usage": {
+              "input_tokens": 602,
+              "output_tokens": 179,
+              "total_tokens": 781
+            }
+          }
+        ],
+        "preview": null,
+        "planned_stages": null,
+        "saved_stages": 0,
+        "reused_stages": 0,
+        "started_at": "2026-10-16T22:49:53.129048+00:00",
+        "completed_at": "2026-10-16T22:49:55.844435+00:00",
+        "elapsed_ms": 2715.392,
+        "version": 10,
+        "updated_at": "2026-10-16T22:49:55.844466+00:00"
+      },
+      "error": null,
+      "preview_before_completion": true,
+      "reply": {
+        "text": "Địa chỉ IPv4 sử dụng tổng cộng 32 bit. Các bit này được chia thành bốn phần bằng nhau, mỗi phần được gọi là một octet. Mỗi octet bao gồm 8 bit. Điều này có nghĩa là 4 octet nhân với 8 bit mỗi octet sẽ bằng 32 bit tổng cộng, tạo nên độ dài của địa chỉ IPv4. Để dễ đọc và dễ hiểu hơn, địa chỉ IPv4 thường được biểu diễn dưới dạng thập phân có dấu chấm. Trong cách biểu diễn này, mỗi octet 8 bit được chuyển đổi thành một số thập phân, và các số thập phân này được ngăn cách bởi dấu chấm. Ví dụ, một địa chỉ IPv4 có thể được viết là 192.168.1.70.",
+        "source_refs": [],
+        "needs_more_source": false
+      },
+      "one_saved_user_and_answer": true
+    },
+    {
+      "model_choice": "local:qwen3.5:9b",
+      "same_source_same_prompt_empty_history": true,
+      "job_id": "01e04a00f88a4eada08e444e2cb4756d",
+      "events": [
+        {
+          "seconds": 0.025,
+          "status": "running",
+          "phase": "connecting",
+          "version": 3,
+          "preview_characters": 0
+        },
+        {
+          "seconds": 4.587,
+          "status": "running",
+          "phase": "connecting",
+          "version": 4,
+          "preview_characters": 0
+        },
+        {
+          "seconds": 5.605,
+          "status": "running",
+          "phase": "connecting",
+          "version": 4,
+          "preview_characters": 0
+        },
+        {
+          "seconds": 5.86,
+          "status": "running",
+          "phase": "receiving",
+          "version": 5,
+          "preview_characters": 0
+        },
+        {
+          "seconds": 6.114,
+          "status": "running",
+          "phase": "receiving",
+          "version": 7,
+          "preview_characters": 27
+        },
+        {
+          "seconds": 6.368,
+          "status": "running",
+          "phase": "receiving",
+          "version": 8,
+          "preview_characters": 38
+        },
+        {
+          "seconds": 6.623,
+          "status": "running",
+          "phase": "receiving",
+          "version": 9,
+          "preview_characters": 50
+        },
+        {
+          "seconds": 6.876,
+          "status": "running",
+          "phase": "receiving",
+          "version": 11,
+          "preview_characters": 95
+        },
+        {
+          "seconds": 7.131,
+          "status": "running",
+          "phase": "receiving",
+          "version": 12,
+          "preview_characters": 115
+        },
+        {
+          "seconds": 7.385,
+          "status": "running",
+          "phase": "receiving",
+          "version": 14,
+          "preview_characters": 139
+        },
+        {
+          "seconds": 7.64,
+          "status": "running",
+          "phase": "receiving",
+          "version": 16,
+          "preview_characters": 180
+        },
+        {
+          "seconds": 7.895,
+          "status": "running",
+          "phase": "receiving",
+          "version": 17,
+          "preview_characters": 216
+        },
+        {
+          "seconds": 8.151,
+          "status": "running",
+          "phase": "receiving",
+          "version": 18,
+          "preview_characters": 241
+        },
+        {
+          "seconds": 8.406,
+          "status": "running",
+          "phase": "receiving",
+          "version": 20,
+          "preview_characters": 265
+        },
+        {
+          "seconds": 8.66,
+          "status": "running",
+          "phase": "receiving",
+          "version": 21,
+          "preview_characters": 284
+        },
+        {
+          "seconds": 8.915,
+          "status": "running",
+          "phase": "receiving",
+          "version": 23,
+          "preview_characters": 313
+        },
+        {
+          "seconds": 9.169,
+          "status": "running",
+          "phase": "receiving",
+          "version": 24,
+          "preview_characters": 336
+        },
+        {
+          "seconds": 9.425,
+          "status": "running",
+          "phase": "receiving",
+          "version": 25,
+          "preview_characters": 351
+        },
+        {
+          "seconds": 9.68,
+          "status": "running",
+          "phase": "receiving",
+          "version": 27,
+          "preview_characters": 352
+        },
+        {
+          "seconds": 9.935,
+          "status": "running",
+          "phase": "receiving",
+          "version": 28,
+          "preview_characters": 352
+        },
+        {
+          "seconds": 10.19,
+          "status": "running",
+          "phase": "receiving",
+          "version": 30,
+          "preview_characters": 352
+        },
+        {
+          "seconds": 10.446,
+          "status": "running",
+          "phase": "receiving",
+          "version": 31,
+          "preview_characters": 352
+        },
+        {
+          "seconds": 10.705,
+          "status": "running",
+          "phase": "receiving",
+          "version": 33,
+          "preview_characters": 352
+        },
+        {
+          "seconds": 10.961,
+          "status": "running",
+          "phase": "receiving",
+          "version": 34,
+          "preview_characters": 352
+        },
+        {
+          "seconds": 11.214,
+          "status": "running",
+          "phase": "receiving",
+          "version": 36,
+          "preview_characters": 352
+        },
+        {
+          "seconds": 11.469,
+          "status": "running",
+          "phase": "receiving",
+          "version": 37,
+          "preview_characters": 352
+        },
+        {
+          "seconds": 11.725,
+          "status": "running",
+          "phase": "receiving",
+          "version": 38,
+          "preview_characters": 352
+        },
+        {
+          "seconds": 11.982,
+          "status": "running",
+          "phase": "receiving",
+          "version": 39,
+          "preview_characters": 352
+        },
+        {
+          "seconds": 12.237,
+          "status": "running",
+          "phase": "receiving",
+          "version": 41,
+          "preview_characters": 352
+        },
+        {
+          "seconds": 12.499,
+          "status": "succeeded",
+          "phase": "succeeded",
+          "version": 44,
+          "preview_characters": 0
+        }
+      ],
+      "first_visible_seconds": 6.114,
+      "reconnect_same_job": true,
+      "status": "succeeded",
+      "completed_seconds": 12.5,
+      "provider": {
+        "provider": "ollama_local",
+        "model": "qwen3.5:9b",
+        "model_choice_id": "local:qwen3.5:9b",
+        "selection_revision": 1,
+        "prompt_version": "20261017-pinned-source-context-v2",
+        "schema_version": 13
+      },
+      "progress": {
+        "phase": "succeeded",
+        "requests": [
+          {
+            "index": 1,
+            "schema": "ChatReply",
+            "phase": "received",
+            "streaming": true,
+            "started_at": "2026-10-16T22:49:56.362515+00:00",
+            "first_chunk_ms": 5766.139,
+            "first_text_ms": 5905.029,
+            "elapsed_ms": 12468.528,
+            "chunks": 230,
+            "characters": 553,
+            "usage": {
+              "input_tokens": 732,
+              "cached_input_tokens": 0,
+              "output_tokens": 253,
+              "load_duration_ns": 12193709,
+              "prompt_eval_duration_ns": 1121949000,
+              "eval_duration_ns": 6768674416,
+              "total_duration_ns": 7907805084
+            },
+            "protocol_fallbacks": 1
+          }
+        ],
+        "preview": null,
+        "planned_stages": null,
+        "saved_stages": 0,
+        "reused_stages": 0,
+        "started_at": "2026-10-16T22:49:56.362144+00:00",
+        "completed_at": "2026-10-16T22:50:08.838314+00:00",
+        "elapsed_ms": 12476.175,
+        "version": 44,
+        "updated_at": "2026-10-16T22:50:08.838353+00:00"
+      },
+      "error": null,
+      "preview_before_completion": true,
+      "reply": {
+        "text": "Địa chỉ IPv4 sử dụng độ dài 32 bit. Để biểu diễn 32 bit này, địa chỉ được chia thành bốn octet, mỗi octet có độ dài 8 bit (vì 4 nhân 8 bằng 32). Cách viết phổ biến là dùng dấu chấm ngăn cách các giá trị thập phân của từng octet. Ví dụ cụ thể từ nguồn là 192.168.1.70, trong đó mỗi con số đại diện cho một octet và tổng hợp lại tạo thành địa chỉ 32 bit.",
+        "source_refs": [
+          "155c026611864de2ba468ffd07844189:2:0",
+          "155c026611864de2ba468ffd07844189:2:1",
+          "155c026611864de2ba468ffd07844189:2:2"
+        ],
+        "needs_more_source": false
+      },
+      "one_saved_user_and_answer": true
+    },
+    {
+      "model_choice": "local:qwen3.5:9b",
+      "purpose": "Cancel after first visible draft",
+      "job_id": "4d85d9bbc2fd486fb05db3432970632e",
+      "events": [
+        {
+          "seconds": 0.029,
+          "status": "running",
+          "phase": "connecting",
+          "version": 3,
+          "preview_characters": 0
+        },
+        {
+          "seconds": 0.284,
+          "status": "running",
+          "phase": "connecting",
+          "version": 4,
+          "preview_characters": 0
+        },
+        {
+          "seconds": 1.556,
+          "status": "running",
+          "phase": "receiving",
+          "version": 6,
+          "preview_characters": 3
+        },
+        {
+          "seconds": 1.813,
+          "status": "cancelled",
+          "phase": "cancelled",
+          "version": 8,
+          "preview_characters": 0
+        }
+      ],
+      "first_visible_seconds": 1.556,
+      "reconnect_same_job": true,
+      "status": "cancelled",
+      "completed_seconds": 1.814,
+      "provider": {
+        "provider": "ollama_local",
+        "model": "qwen3.5:9b",
+        "model_choice_id": "local:qwen3.5:9b",
+        "selection_revision": 1,
+        "prompt_version": "20261017-pinned-source-context-v2",
+        "schema_version": 13
+      },
+      "progress": {
+        "phase": "cancelled",
+        "requests": [
+          {
+            "index": 1,
+            "schema": "ChatReply",
+            "phase": "cancelled",
+            "streaming": true,
+            "started_at": "2026-10-16T22:50:08.877260+00:00",
+            "first_chunk_ms": 1351.348,
+            "first_text_ms": 1465.447,
+            "elapsed_ms": null,
+            "chunks": 5,
+            "characters": 14,
+            "usage": {},
+            "protocol_fallbacks": 1
+          }
+        ],
+        "preview": null,
+        "planned_stages": null,
+        "saved_stages": 0,
+        "reused_stages": 0,
+        "started_at": "2026-10-16T22:50:08.876834+00:00",
+        "completed_at": "2026-10-16T22:50:10.429609+00:00",
+        "elapsed_ms": 1552.779,
+        "version": 8,
+        "updated_at": "2026-10-16T22:50:10.429629+00:00"
+      },
+      "error": null,
+      "preview_before_completion": true,
+      "cancel_sent": true,
+      "wallet_unchanged_no_late_answer": true
+    }
+  ],
+  "confirmed_coin": 3,
+  "course_id": "550b93e99f0c4d1b884f72345e60c01c",
+  "passed": true,
+  "course_returned_private": true,
+  "finished_at": "2026-10-16T22:50:11.206029+00:00"
+}

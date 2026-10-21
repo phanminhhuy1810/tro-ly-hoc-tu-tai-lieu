@@ -1,0 +1,14 @@
+{
+  "backup": "backend/runtime/study-before-source-library-20261018T152118Z.sqlite3",
+  "schema_before": 15,
+  "schema_after": 16,
+  "protected_unchanged": {
+    "sources": true,
+    "extractions": true,
+    "course_revisions": true,
+    "study_sessions": true,
+    "answers": true,
+    "help_threads": true
+  },
+  "all_passed": true
+}

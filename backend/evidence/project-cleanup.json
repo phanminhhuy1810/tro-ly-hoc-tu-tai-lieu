@@ -1,0 +1,957 @@
+{
+  "purpose": "User-authorized TDTT folder cleanup, consolidated backend/product handoff and path-only code folder organization; application logic, raw evidence and user data preserved.",
+  "at": "2026-10-21T10:09:12.759729+00:00",
+  "archive": ".archive/cleanup-2026-10-21.zip",
+  "archive_sha256": "35265e7bea66310027206bfc7daed626812780962d5e2f176bcb23a325ea7390",
+  "archive_verified_before_unlink": true,
+  "live_runtime_files_archived": false,
+  "archive_local_history_only": true,
+  "removed": [
+    {
+      "scope": "project",
+      "path": "FRONTEND-START.md",
+      "sha256": "0b6d878d3e15828d4333bb256e1bc8068b482f04b382518e3e03eed1e762ff07"
+    },
+    {
+      "scope": "project",
+      "path": "HANDOFF-CHECK.md",
+      "sha256": "7954f41199af30c01195c71336258a3ee99ef95cb211905c04a899db83ade51c"
+    },
+    {
+      "scope": "project",
+      "path": "PROMPT-START.md",
+      "sha256": "0730a681a3b0813b5ea9eb1a9255ad4aa8e51f2bc4d80d0af6fa80b80838c5cd"
+    },
+    {
+      "scope": "project",
+      "path": "backend/API.md",
+      "sha256": "f0882eb8f5e64f3da82a6b9aa1ee6e4b20db1545dd45350120352af339aa545d"
+    },
+    {
+      "scope": "project",
+      "path": "backend/README.md",
+      "sha256": "1d4f79ea05bf3cb06b0ab45239bfd0596cf08b0208b96a30e9d78e9bb7b63293"
+    },
+    {
+      "scope": "project",
+      "path": "backend/evidence/README.md",
+      "sha256": "24126b9f8479cb0f26e7cbd7b065d2320c5df4062528fd4eba182fe36c212e04"
+    },
+    {
+      "scope": "project",
+      "path": "docs/01-PRODUCT-BRIEF.md",
+      "sha256": "841972490fb7d8767ed14d8b2d78cf6526d023c83c5a116f81f8786245483b59"
+    },
+    {
+      "scope": "project",
+      "path": "docs/02-USER-FLOW.md",
+      "sha256": "f43383038d7133bba52b6b38ebab56cc7724b3f91d7519961098117e70705562"
+    },
+    {
+      "scope": "project",
+      "path": "docs/03-DESIGN-BRIEF.md",
+      "sha256": "e41742a75561eb5e9d70390c88eff07d949c2dcc1f5c671912f3222c860c1e0f"
+    },
+    {
+      "scope": "project",
+      "path": "docs/04-BUILD-PLAN.md",
+      "sha256": "0671794a4d3afae37cd04ec0d449995a6f288879c4d55f4d5f638b02ccae9ce4"
+    },
+    {
+      "scope": "project",
+      "path": "docs/05-ACCEPTANCE-EVAL.md",
+      "sha256": "ceaafb1b35d15018efe0f1736b658dc5630b1dad94a470834e225647aa8d75bd"
+    },
+    {
+      "scope": "project",
+      "path": "docs/06-DATA-AI-CONTRACTS.md",
+      "sha256": "bff2dd81f0511a54eaeb13d6a5ab2af11fc104c03eca13a08608492e56a7a77d"
+    },
+    {
+      "scope": "project",
+      "path": "docs/07-DECISIONS-STATUS.md",
+      "sha256": "15b27725b8457d34e80f046d0d7e13c8bdab0800474fd8b1c8f28ae81c66d2de"
+    },
+    {
+      "scope": "project",
+      "path": "docs/08-MODEL-GUIDE.md",
+      "sha256": "96a397f830c0d0140ff930b2e7540f8476150add1a9ddc69b8de9d25e4fd2465"
+    },
+    {
+      "scope": "project",
+      "path": "docs/09-PAGE-MAP.md",
+      "sha256": "f0876d7610dc4b6b3f6a9d7e8bc9f2c4266f42cbbd07727c22ad8713eba3de3a"
+    },
+    {
+      "scope": "project",
+      "path": "docs/10-BACKEND-COVERAGE.md",
+      "sha256": "b416328e90e235e22cfd5e8284a45b6718a13d143394d49da63eb08983a2a5c4"
+    },
+    {
+      "scope": "project",
+      "path": "docs/11-INLINE-HELP-FRONTEND-HANDOFF.md",
+      "sha256": "327c1c21972000257ab50db18502623de759e0364d6366c55a9f344acf8791b0"
+    },
+    {
+      "scope": "project",
+      "path": "docs/12-FLASHCARD-UX-REFERENCE.md",
+      "sha256": "db47943e03ceebf78fb9f223caabcea8f86b214e80ec5714ffcdb8f751fa5386"
+    },
+    {
+      "scope": "project",
+      "path": "docs/13-UI-MOTION-REVIEW.md",
+      "sha256": "5e01197cc91effb9bf08a303c8cf904f84642965a97605504c4b191c99b515e3"
+    },
+    {
+      "scope": "project",
+      "path": "docs/14-NETWORK-MODEL-TRIAL.md",
+      "sha256": "aff3632ebd517c5f551c9a19f730d5ac931b04cae3ef0c66531a8442717b6bd7"
+    },
+    {
+      "scope": "project",
+      "path": "docs/15-PROVIDER-SELECTION.md",
+      "sha256": "2d46af758d9fd1bd52fba2aed135374e3106cd7337966c80933ac5f922918a37"
+    },
+    {
+      "scope": "project",
+      "path": "docs/16-QUIZ-ROOM-BACKEND.md",
+      "sha256": "9fe749f07cbaa6ee25bb87e7e9f44be4c011dfb3a2d2d9f080dec39e9e0d6c40"
+    },
+    {
+      "scope": "project",
+      "path": "docs/17-UNIT-SOURCE-BINDINGS.md",
+      "sha256": "91aa68c92a8a3d3d23466c248a586aaeb6501958b62d25e649eed97d2e318106"
+    },
+    {
+      "scope": "project",
+      "path": "docs/18-STREAMING-JOB-RECOVERY.md",
+      "sha256": "a35668ca32a27cdc221301ef113eac4ee960e21876fc85f22c607dbe65432862"
+    },
+    {
+      "scope": "project",
+      "path": "docs/19-PDF-VISUAL-RECOVERY.md",
+      "sha256": "ec558a2599c6218ab9ef2f4e6feaa92862ccd597af6f74eaac55d4853abeba8a"
+    },
+    {
+      "scope": "project",
+      "path": "docs/20-LARGE-OFFICE-SOURCES.md",
+      "sha256": "f42f9af960652aa1ca32c4af42ade1e74f0cfcfef727471a1a29f0ce4cd64ed6"
+    },
+    {
+      "scope": "project",
+      "path": "docs/21-NATIVE-OCR-CONTINUATION.md",
+      "sha256": "b59416c9a57e4bef06096c796f2524047c7b7df2e61460e9daa114ead507386d"
+    },
+    {
+      "scope": "project",
+      "path": "docs/22-GEMMA-LOCAL-TRIAL.md",
+      "sha256": "19c2d08d315222ad42bc575b995533595412ba75d6f99a519bd56772aade3998"
+    },
+    {
+      "scope": "project",
+      "path": "docs/23-QUESTION-GENERATION-CONTRACT.md",
+      "sha256": "d2a794a1b7f3f00be75fa013b706afc2ff3bdd597b5687b8d204ac160986bcc6"
+    },
+    {
+      "scope": "project",
+      "path": "docs/24-SOURCE-LIBRARY-SELECTION.md",
+      "sha256": "a2112ca62525146e57c850241eb9fce54079d6f78746ea00858583ece955815b"
+    },
+    {
+      "scope": "project",
+      "path": "docs/25-CHECK-IN-WAITING-CLOZE.md",
+      "sha256": "1db2e1842f583356ea46d86882a0349e71aa99527f20b30cb461b1f2444dc8ab"
+    },
+    {
+      "scope": "project",
+      "path": "docs/26-SOURCE-SCOPE-CLOZE-RECOVERY.md",
+      "sha256": "dbeeddf39de26c36f3d7decf880609a1b50eb5358255c7ca005aa03c761ac5b2"
+    },
+    {
+      "scope": "project",
+      "path": "docs/27-MISSING-QUESTION-COMPLETION.md",
+      "sha256": "3af7f6648c97fbfeecefc6bd2fdf8bb7efe6f35a8d15411e2da5212d82833a09"
+    },
+    {
+      "scope": "project",
+      "path": "docs/28-RUNTIME-RECOVERY.md",
+      "sha256": "e6297f7b7326117558a2e0b9aae71e23e04d8dfd6265664cd91acd6cedd578b4"
+    },
+    {
+      "scope": "project",
+      "path": "docs/29-RESOURCE-LIFECYCLE.md",
+      "sha256": "5b965ea472bf09feebcd62fa74be6793611aa43ac8f9970fa0720dd49ee8ec16"
+    },
+    {
+      "scope": "project",
+      "path": "docs/30-SCOPED-REFERENCE-WIRE.md",
+      "sha256": "ea29e0fe7870a024800ad736f31d9650e39f352d2620f95b0c5102def0e6515b"
+    },
+    {
+      "scope": "project",
+      "path": "docs/31-BACKEND-FRONTEND-HANDOFF.md",
+      "sha256": "b8f427e56d674d823f03f0b227fdc2e7a9e489953cfe0a0fd252f6065c199475"
+    },
+    {
+      "scope": "project",
+      "path": "docs/32-QUALITY-EVALUATION.md",
+      "sha256": "756a2608988d69d83fea8c219090244d4b4d6686bd495cf65a3f3041c21e10ee"
+    },
+    {
+      "scope": "project",
+      "path": "docs/33-CHAPTER-FIRST-GENERATION.md",
+      "sha256": "153484de66f2e6f92ddc3f9d7ad2117f87cd879d254cbf674fa2c8d70d7126cf"
+    },
+    {
+      "scope": "project",
+      "path": "docs/34-CHAPTER-SOURCE-SUPPORT.md",
+      "sha256": "e207291b5b7299a7e33b59b63a63e7105c28bb5bab7d7868f9cd26dd34cb85ea"
+    },
+    {
+      "scope": "project",
+      "path": "docs/35-PREFIX-ARITHMETIC-QUALITY.md",
+      "sha256": "3445eeccbef49607da48d973091df580d665ac150506023f3f864edc3fabdb8c"
+    },
+    {
+      "scope": "project",
+      "path": "docs/36-CHAPTER-QUESTION-FOCUS.md",
+      "sha256": "6a7d457959c6d9646b804ba6232ec96115d399587953d02cbfc799e87a882b93"
+    },
+    {
+      "scope": "project",
+      "path": "docs/37-POLYNOMIAL-MCQ-PROOF.md",
+      "sha256": "f0672b45ad5678774905eacc71f5369d492834462a2b8aebdfb4cf9140bf2f8b"
+    },
+    {
+      "scope": "project",
+      "path": "docs/38-CHAPTER-SCOPED-CORRECTIONS.md",
+      "sha256": "f03c2455e3b68caf6ccfc8f39a692bccda107b88dd9adf82cf2e42588b4fc3d2"
+    },
+    {
+      "scope": "project",
+      "path": "docs/39-QUESTION-CORRECTION-INPUTS.md",
+      "sha256": "4abbdd514a625339de085a6a9526e5a51f821a3620ce8510f1558a67c6a7c406"
+    },
+    {
+      "scope": "project",
+      "path": "docs/40-BACKEND-READINESS-AUDIT.md",
+      "sha256": "f38120550d06190eecb6e8bcf36f16287de36a2f2d72e88ff84d18626aaa9d88"
+    },
+    {
+      "scope": "project",
+      "path": "docs/41-MINDMAP-NODE-CONTEXT.md",
+      "sha256": "88f58bea28e4b4268a6b08d4b5630e32cfaf497c2b9a14966edc4311f97321b8"
+    },
+    {
+      "scope": "project",
+      "path": "docs/WORK-LOG.md",
+      "sha256": "3c9376dc5252480b7d6ee940eea8fca7c2f7ea8587a498b794c8c32aefbf7a18"
+    },
+    {
+      "scope": "project",
+      "path": "evaluation/QUALITY-REVIEW.md",
+      "sha256": "083e9ba5f72257589cebc11d4e55947a95c6234182ed22768e4dcf9934d23221"
+    },
+    {
+      "scope": "project",
+      "path": "evaluation/human-trial/CHECKLIST.md",
+      "sha256": "ce8c0373c40c59054494deb242091f80aaeb89d2ecd429ce53252f1e4133ce97"
+    },
+    {
+      "scope": "project",
+      "path": "evaluation/human-trial/FACILITATOR.md",
+      "sha256": "ea8a6e0752daf70696b6a6d435938df3559a8206a5d7b6bbf843887d39c1f0a5"
+    },
+    {
+      "scope": "project",
+      "path": "experiments/01-source-reading/README.md",
+      "sha256": "7bdcdd0c9dffff8aa8e253dfaefd8ee88a44b66c647615a81f8510b4f31c9994"
+    },
+    {
+      "scope": "project",
+      "path": "experiments/02-local-ai/README.md",
+      "sha256": "43388a91991755e03ec29ce87f3021b034ed3c2b964c0937de10e4d0a90bea20"
+    },
+    {
+      "scope": "project",
+      "path": "experiments/03-ocr-inputs/README.md",
+      "sha256": "1cf056bad39aeb955d126a6147d69f063123ceb281e9b297ba0f79cc7dff57e2"
+    },
+    {
+      "scope": "project",
+      "path": "experiments/04-network-kaggle/README.md",
+      "sha256": "00f390e1acb00dced04fa2534f0d9c892d0779d6c42846df88d41e1daa127167"
+    },
+    {
+      "scope": "project",
+      "path": "experiments/05-office-inputs/README.md",
+      "sha256": "ca7992d9938c4efec6d7eb892b0d667a85fa2482307bd5e92fddf90afdeb5a11"
+    },
+    {
+      "scope": "project",
+      "path": "experiments/06-ocr-continuation/README.md",
+      "sha256": "ce8f4e82460b5b390ad86b4325cb71bb439a154f4dcb07bd512c665bfcf0406d"
+    },
+    {
+      "scope": "project",
+      "path": "experiments/07-gemma-local/README.md",
+      "sha256": "9281ba279ad1f609f2db2029d5a5b8d0154baa41a7a9ec865574febb301bd9da"
+    },
+    {
+      "scope": "project",
+      "path": "experiments/08-quality-evaluation/README.md",
+      "sha256": "686b3112975ae5b8649b4c0a4b0c6fc2f0d21ace2235416e8814dcb43d02838d"
+    },
+    {
+      "scope": "project",
+      "path": "experiments/09-chapter-first/README.md",
+      "sha256": "69df5cf91c53894631668a722dde48b4d4a588fb3ef4dda4de35ab15ffead593"
+    },
+    {
+      "scope": "project",
+      "path": "experiments/10-source-support/README.md",
+      "sha256": "5ff25f14131e2d16f2c409566e1e6aaf8e22c169698ad9e7c4a34430a6df1ca5"
+    },
+    {
+      "scope": "project",
+      "path": "experiments/11-prefix-quality/README.md",
+      "sha256": "4646e2c9cb2b641720f60fdf5c63ae669dab3f825ea38a34aaae8b06c9495051"
+    },
+    {
+      "scope": "project",
+      "path": "experiments/12-chapter-question-focus/README.md",
+      "sha256": "f9b7db7e2a6e7d7eb2395d457493de9ed626c531cabe2a385ea63bb3908c9935"
+    },
+    {
+      "scope": "project",
+      "path": "experiments/13-chapter-corrections/README.md",
+      "sha256": "6abb73913af084d33e805b52c9dddd74136bfdb12edf438e687817c27eb83f54"
+    },
+    {
+      "scope": "project",
+      "path": "handoff-packages/.DS_Store",
+      "sha256": "d65165279105ca6773180500688df4bdc69a2c7b771752f0a46ef120b7fd8ec3"
+    },
+    {
+      "scope": "project",
+      "path": "handoff-packages/AI-STUDY-CONTINUE-TEXT-STYLE-2026-10-14.zip",
+      "sha256": "0de56cba1730294005b57e823edd2a6545f1a1c8543d993fcf0673e4f8a484c0"
+    },
+    {
+      "scope": "project",
+      "path": "handoff-packages/AI-STUDY-GEMINI-UIUX-NO-IMAGES-2026-10-15.zip",
+      "sha256": "b139efe14de3b98acd137ca0e1b4919e81124ed7a879ce0a8bbe03cb9c791c8d"
+    },
+    {
+      "scope": "project",
+      "path": "preview/README.md",
+      "sha256": "98c1dca61a314efbfcfda69ad5d1898e2b666aff4fe4d76aec9c0b67802fcfef"
+    },
+    {
+      "scope": "project",
+      "path": "preview/assets/fox-celebrate-prompt.md",
+      "sha256": "ecd0e2f4a39a7c49bb5877e284fc630e4776e5343e01ab0a8d325fd8a6384330"
+    },
+    {
+      "scope": "project",
+      "path": "preview/assets/fox-prompt.md",
+      "sha256": "7e667e543f69c28a0f97e0f29be42fdaa9b495687ee57c9bc5a53945ec1cd530"
+    },
+    {
+      "scope": "project",
+      "path": "preview/assets/scenes/README.md",
+      "sha256": "b107e28564d9ef6217c12289f0101cb31504b454a9b25585c4479e5d960b36f8"
+    },
+    {
+      "scope": "project",
+      "path": "preview/assets/studio/PROMPTS.md",
+      "sha256": "443c01d1c3f9b02daa06f77a9d6be91cd661fcc48e3ceaf1c69958c54c5935bf"
+    },
+    {
+      "scope": "project",
+      "path": "preview/assets/studio/folio-mark-v1.svg",
+      "sha256": "fe2f4d263b4b3c16c8ba2358d41563318829827b0baf21d84766e202f7a0a150"
+    },
+    {
+      "scope": "project",
+      "path": "preview/assets/studio/nep-mark-v1.svg",
+      "sha256": "9f48aab8f6b6f141327f76e3a67a2bcd6c3cdcefd243ef8a21865a9e32b64f6d"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/lesson-desktop.jpg",
+      "sha256": "74b9578e1e58c789446850ea60ff0de318db249d95ba24892c23367b50f397eb"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/lesson-mobile.jpg",
+      "sha256": "d19e581f8ce46dd23bf37e472f519e1e588a23191a98478afb9ac05e76a6cb5d"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/library-desktop.jpg",
+      "sha256": "94e85d69d3d9e0aaf04c2b1f873b1bcc4b18017d4a948d78830bf44ca94318be"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/nep-home-desktop.jpg",
+      "sha256": "0110613e30208e76b4ba3c290c0d7580de1522f764435bdede028239a710aeab"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/setup-desktop.jpg",
+      "sha256": "ed30c03ee6f723bc4c0193cbccbcfa4027c267bfa0d41033adbde25ce41ac69e"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v2-library-desktop.jpg",
+      "sha256": "7d9f56644de151440cc26ec150620194bc9aca2f9fd753a62411acb4ee53b191"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v2-setup-desktop.jpg",
+      "sha256": "c640efcce0ce86a39cadbaae0f66a484bf53025163310a71c3ccdc9f4c5ffab5"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v3-chat-desktop.jpg",
+      "sha256": "54a39439e519195c6b494f92b80ddfbe78a3459d84c4fa2daa3247c358ba547d"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v3-chat-mobile.jpg",
+      "sha256": "fa28283fc5ab32f57894dc92a586e5fa77053d61aa1d513e2472be4ff248beda"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v3-lesson-desktop.jpg",
+      "sha256": "8670464c25cbb517aaf3c45a1beb882cf945be89de1d79fe3656e3ce2c05fe41"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v3-lesson-mobile.jpg",
+      "sha256": "af183f1e13e55b9f027499b0fe714df005ec16a2343b811794a07f5134cc3ea8"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v3-library-desktop.jpg",
+      "sha256": "7aa72e00588e1fa6db68ff4bf417e46a718d3761c2119f4245f9c72ef0a14d61"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v3-library-mobile.jpg",
+      "sha256": "e0467aee4320aa09f46aa268b7104f93ac1c5b11c4e345ea8fa8b7f79dc50a54"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v3-setup-desktop.jpg",
+      "sha256": "badcfdcb2c2276b2751520d1341170e430d6e98059d5b0ea528e337489bfb84d"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v3-setup-mobile.jpg",
+      "sha256": "304c2a8452adb0c7a95242615e8f8f667426bc44950b167cca779e265c9d1347"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v4-chat-desktop.jpg",
+      "sha256": "8e41c178fba36deb439f77d682d33cbc6f739ec9ef8e214ecfea444e19b66412"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v4-chat-mobile.jpg",
+      "sha256": "3df17f04de425cf2a719835229e1949873ef3bb423d6832edb98138d1a6ca742"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v4-lesson-desktop.jpg",
+      "sha256": "45d5ac4510926dabbbd64a5a9d58927fea9bba2f9ffbc0838e5fdf16dc7fb7c6"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v4-lesson-mobile.jpg",
+      "sha256": "6f20a413bd249dd56b0d40b0017b73d0bad3710156929e76f303d8fcea50ac2f"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v4-library-desktop.jpg",
+      "sha256": "a9d894fbbab88d1413a7f0ee12f0fda455a070e72c9b9748aee7708530ff8118"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v4-library-mobile.jpg",
+      "sha256": "1af2beb0b4df360d98658f5e7ef5a1ee66777e8a6a4d899eced4faf37169888b"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v4-setup-desktop.jpg",
+      "sha256": "c6b0c871fd7c1610c26cdc6d7eee6dfeb3585d0b562e73709ab5565be308d8ed"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v4-setup-mobile.jpg",
+      "sha256": "3ce5fe36b82cd93aeaad779526997fba4691ecd2bf04592552907abc397508ab"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v5-chat-desktop.jpg",
+      "sha256": "bfadc402fe0c9b0b297a788eb8a85370364aa90c82c3e889ee34dd20ee16a71e"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v5-chat-mobile.jpg",
+      "sha256": "85087940d12c832bf9823bd6d909699c5bd1c1f677f4aa6f86cc3ecb20b6c045"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v5-lesson-desktop.jpg",
+      "sha256": "c33f3ebe90ffb2ac53cd23428fcb22fd8b87c91ee29db59b675c1ea9cc68116b"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v5-lesson-mobile.jpg",
+      "sha256": "2c26f298586aafd79e1911bd4bb4dc541ec70031bcf7fa0464af566a54b66181"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v5-library-desktop.jpg",
+      "sha256": "91f4eb8fc9bcdaae3626d35c13a84684260b6916c0da4245107b8672fbceeb75"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v5-setup-desktop.jpg",
+      "sha256": "627e0f1764aabc6f23de535902a543938ccdd6226577274d4747d058ab2cb265"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v6-chat-desktop.jpg",
+      "sha256": "31ad3bd0c5903b62310160e181366df236a0433d77ac9ab923b05f73c7117009"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v6-home-desktop.jpg",
+      "sha256": "7707805ee24c7f77c790e0de8e87444ac21716c03efcee0264b178f0f92e93ba"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v6-home-mobile.jpg",
+      "sha256": "e489ce4d98b65fefd0a3a52b389c9d0639a6720b1090de7cb19a37b1d4334bb4"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v6-lesson-desktop.jpg",
+      "sha256": "7167a70bd8ad5e0a502197da7f33fbe21bc63934f6e5f06719ea250c654c08bc"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v6-library-desktop.jpg",
+      "sha256": "2d293b7b18e8c95b8bbd1903335acc86087427d79691dbefaf19df1fa7d41578"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v6-modes-desktop.jpg",
+      "sha256": "71f94196d67c6accda6c64ed4bd16547cc1454e0da28fcd0741519075d6d7207"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v6-modes-mobile.jpg",
+      "sha256": "381f319b4d30e6d345c5a28f4a3c4efde8b86c09cd48f4af57b094fa5ac63875"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v6-preferences-desktop.jpg",
+      "sha256": "19058a7996f5b319a8ea0d7cc603f99d8e9c4ee69d7098314eb8cb61fe72fa31"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v6-review-desktop.jpg",
+      "sha256": "055b65afb6b83cabfa5b5e574513d6f4ff0314488968d68f475a3058abceae90"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v6-review-mobile.jpg",
+      "sha256": "41d08838cd8a59ccc041975a787347d0f0abf6b5142207292f8982920b653c2f"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v7-chat-desktop.jpg",
+      "sha256": "6e7066fafa114782149b646088553c8dde52ba471ddb9214139cbcaf487bfb63"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v7-home-desktop.jpg",
+      "sha256": "e7ffc22d4fd4eea8a544de571e1802f22db70264b703b0b3f2feb7182d263980"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v7-home-mobile.jpg",
+      "sha256": "4526bef96bb38c244aafda1e67b1335f3c1499bfea952a3f7fb9af3545a6622d"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v7-lesson-desktop.jpg",
+      "sha256": "1d3c69b703b568f08a7688a04e88949f8cfc22ddc4778aa1ac76fc96356f54b3"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v7-lesson-mobile.jpg",
+      "sha256": "985def26769c658a09c3721040099d35df9d0eb40e5c31d4012100e9e56e2423"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v7-lesson-preview.jpg",
+      "sha256": "c540e3db55029aa3e32c0a2cf15416fa51e7254978fe3b7c89c06e0508c82b01"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v7-library-desktop.jpg",
+      "sha256": "11d330b910cbf4f31a7071f6f1af14ec5be4a6060051a7497c9ea8e1ce333e3d"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v7-modes-desktop.jpg",
+      "sha256": "423781241d65a248a9e0f2a9b733d2586a1846e406244bff83df0349fc947987"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v7-modes-mobile.jpg",
+      "sha256": "94b423925f1c8e65c76e8a968b843e61f2f25d894c2acf8dc56f07de2d78d107"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v7-review-mobile.jpg",
+      "sha256": "1bf7e67d6d0fe4d588acafe8a07d63201bc9559ae4fcd0c705cd0cadd9bb4c3b"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v8-home-desktop.jpg",
+      "sha256": "45dd10e3d949ab523740443c41c003e0074e02a556db42ef0518a3e3446b8f1f"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v8-lesson-mobile.jpg",
+      "sha256": "433cfd7e55cd271a9245d78ba65ef3a5acbd0867bea1997d259a5a81ec166ce6"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v8-library-desktop.jpg",
+      "sha256": "457cc47937b994e86b88fe5bdbc02d4dd210996ebe6baa9a42ce80e8443e86f9"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v9-chat-full.jpg",
+      "sha256": "9b0aa41f7670cbbc29749073908365adce864b78252c1129d804b0875a16e9b7"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v9-course-desktop.jpg",
+      "sha256": "af563ec3f72c467530893f51907267ac634ade2c22b08a22aacf3f2ba01a88dd"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v9-dashboard-tooltip.jpg",
+      "sha256": "8a7a7ce2fb31c4c4238e223b513e4b34e6670385528e4e2e4578b73a685212dc"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v9-enhanced-home.jpg",
+      "sha256": "18bb4c5546197564603c3b9b4f02e59c2cc4e1ee65d6d6896071ccbe3700edb8"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v9-five-types-mobile.jpg",
+      "sha256": "d66d0655d11724ecdc718905fd564c6ba6df1f7aa4d15699985b854caa5c2451"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v9-home-desktop.jpg",
+      "sha256": "cacc3ffceafd0b0ee954744c19a89611200bef117b40f04934abc6f858af32f4"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v9-home-mobile.jpg",
+      "sha256": "7e58f7c5a3ffc96c00575dd1e8344bd0da780dde1ffd376bd2c8d29de6e94204"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v9-motion-ordering.jpg",
+      "sha256": "c807e5d2065a55ae6f2f2f507e141d7da0669e5bf9049e48aed4d22dbfb13704"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v9-motion-selection.jpg",
+      "sha256": "29d8515607fb64e2bca8a8158a5986496985cdac89feee0be4a6f71ed608745d"
+    },
+    {
+      "scope": "project",
+      "path": "preview/screenshots/v9-source-review.jpg",
+      "sha256": "923d0b848b4b70d131d3f487209ac203eb6c6a88a5fd7fffa6736987d317c02b"
+    },
+    {
+      "scope": "project",
+      "path": "sources/ASSIGNMENT-EXTRACTED.txt",
+      "sha256": "8ed5150cb3475750a595adad83f8cbbb17bab264c106b863e53334bb3fbc4346"
+    },
+    {
+      "scope": "project",
+      "path": "sources/FEATURE-BOARD.json",
+      "sha256": "460ccb241c277da1085118946091e15590976ffccf7d01ac675e15e52f26907c"
+    },
+    {
+      "scope": "project",
+      "path": "sources/README.md",
+      "sha256": "0353438f6846dc6d92fa9c072d88325830fd87f7fc7c37846247280be01c3efc"
+    },
+    {
+      "scope": "project",
+      "path": "sources/assignment-assets/image1.png",
+      "sha256": "5ab10eb0f41394b3f80a5fa6fc3899e65645a18ae4de504285ffb7a402a1b52e"
+    },
+    {
+      "scope": "tdtt_sibling",
+      "path": "OPTION-1-TOM-TAT-TINH-NANG.md",
+      "sha256": "8fdb86a7730931182bf0d7f40a8d5cc146a7096667e736090d66ad2020cdc849"
+    },
+    {
+      "scope": "tdtt_sibling",
+      "path": "BAO-CAO-SO-SANH-3-PHUONG-AN.md",
+      "sha256": "67d8e4f0aecc7f17afb15401751d0bb7e5cf245a2a173f77a450ce73ec28d18c"
+    },
+    {
+      "scope": "tdtt_sibling",
+      "path": "SO-SANH-6-NHANH-DO-AN.md",
+      "sha256": "a79ad5bf9440601da1df0133c378e6546795711af9c5249c0eb447978653df59"
+    },
+    {
+      "scope": "tdtt_sibling",
+      "path": "OPTION-1-LUONG-SU-DUNG.md",
+      "sha256": "292c5b592b6b587e8455efed6516caf9b190ad3128878fedeb57301c8721fee6"
+    },
+    {
+      "scope": "tdtt_sibling",
+      "path": "OPTION-1-DANH-MUC-TINH-NANG.md",
+      "sha256": "02dbcb8ea7bf3b4ac3add3ac2e3128741b70bb322e9762d06b2bcb216275e621"
+    },
+    {
+      "scope": "tdtt_sibling",
+      "path": "OPTION-1-KE-HOACH-SAN-PHAM.md",
+      "sha256": "7edfb4df0854268696e4fc28de7f7fc959b1fbcc1476ac1c51d78e9bdf294aaa"
+    }
+  ],
+  "removed_project_files": 140,
+  "removed_project_markdown": 70,
+  "removed_sibling_markdown": 6,
+  "removed_old_screenshots": 62,
+  "removed_generated_cache_files": 115,
+  "kept_core_documents": [
+    "BACKEND-REVIEW.md",
+    "PRODUCT-FLOW-UI.md"
+  ],
+  "kept_support_markdown": [
+    "README.md",
+    "AGENTS.md",
+    "preview/assets/fonts/SOURCES.md"
+  ],
+  "academic_word_sha256": "10477b780feb504d649ad458cc381ed05eca4f47bc162ea4a8fb6eeb70c3a66e",
+  "raw_benchmark_files_moved_or_deleted": false,
+  "backend_feature_code_changed": false,
+  "runtime_user_data_changed": false,
+  "verification": {
+    "status": "passed",
+    "at": "2026-10-21T10:20:14.616249+00:00",
+    "protected_hashes": {
+      "project_files": {
+        "baseline_files": 562,
+        "unchanged_files": 541,
+        "verified_path_only_edits": [
+          "backend/scripts/summarize_coin_trial.py",
+          "backend/scripts/summarize_inline_browser_trial.py",
+          "backend/study_backend/app.py",
+          "experiments/03-ocr-inputs/probe.py",
+          "frontend/index.html",
+          "frontend/styles/palette.css",
+          "frontend/tests/achievements.test.cjs",
+          "frontend/tests/correction-live-flow.test.cjs",
+          "frontend/tests/correction-state.test.cjs",
+          "frontend/tests/flashcard-session.test.cjs",
+          "frontend/tests/flashcard-ui.test.cjs",
+          "frontend/tests/live-help-mindmap.test.cjs",
+          "frontend/tests/live-jobs.test.cjs",
+          "frontend/tests/live-providers.test.cjs",
+          "frontend/tests/live-waiting.test.cjs",
+          "frontend/tests/motion.test.cjs",
+          "frontend/tests/practice.test.cjs",
+          "frontend/tests/question-completion-ui.test.cjs",
+          "frontend/tests/source-browser.test.cjs",
+          "frontend/tests/source-scope-review-ui.test.cjs"
+        ],
+        "removed_generated_files": [
+          ".DS_Store"
+        ],
+        "missing_files": [],
+        "unexpected_changed_files": []
+      },
+      "runtime_files": {
+        "baseline_files": 736,
+        "unchanged_files": 736,
+        "verified_path_only_edits": [],
+        "removed_generated_files": [],
+        "missing_files": [],
+        "unexpected_changed_files": []
+      }
+    },
+    "exact_path_only_diff_check_passed": true,
+    "archives": [
+      {
+        "path": ".archive/cleanup-2026-10-21.zip",
+        "entries_verified": 151,
+        "sha256": "35265e7bea66310027206bfc7daed626812780962d5e2f176bcb23a325ea7390",
+        "crc_and_entry_hashes_passed": true
+      },
+      {
+        "path": ".archive/tdtt-extras-and-layout-2026-10-21.zip",
+        "entries_verified": 27,
+        "sha256": "cfe0e2ab7f60bbe630dec1108578665cefbea58b2aaa657ae36992fe1422478a",
+        "crc_and_entry_hashes_passed": true
+      },
+      {
+        "path": ".archive/frontend-layout-2026-10-21.zip",
+        "entries_verified": 16,
+        "sha256": "6908cd84f339d78b32f7329bdc81a14e0a240e473c06618a29422b8ea94569eb",
+        "crc_and_entry_hashes_passed": true
+      }
+    ],
+    "fixed_source_and_evaluation_hashes": {
+      "sources/2026_Project_Virtual_Assistant_Academic.docx": "10477b780feb504d649ad458cc381ed05eca4f47bc162ea4a8fb6eeb70c3a66e",
+      "experiments/08-quality-evaluation/dev.json": "e995b36a9de2802328b7ffd8d93e27aef3c6f4dfb0c7ca68f0291dc6bdb04b21",
+      "experiments/08-quality-evaluation/final.json": "b9217a5a2ec433b3f449ad470ff473a13a092aede141562105234b0d81997d98",
+      "experiments/08-quality-evaluation/results/final-v1-candidate.json": "e1d9f077d2b500b2be47cc8b22e9e0a033b25804ae7844687ccd3e5a24115153"
+    },
+    "teacher_word_parent_copy_identical": true,
+    "tests": {
+      "report": "backend/evidence/project-cleanup-tests.txt",
+      "backend_passed": 410,
+      "backend_seconds": 50.582,
+      "frontend_passed": 75,
+      "failed": 0
+    },
+    "static_and_api_smoke": "backend/evidence/project-layout-smoke.json",
+    "inference_calls": 0,
+    "final_cache_files_removed": 99
+  },
+  "removed_tdtt_extra_files": 23,
+  "tdtt_extra_archive": ".archive/tdtt-extras-and-layout-2026-10-21.zip",
+  "layout": {
+    "directory_rename": {
+      "from": "preview/",
+      "to": "frontend/"
+    },
+    "live_path_edits": [
+      "backend/study_backend/app.py",
+      "experiments/03-ocr-inputs/probe.py",
+      "backend/scripts/summarize_inline_browser_trial.py",
+      "backend/scripts/summarize_coin_trial.py"
+    ],
+    "added_entrypoints": [
+      "run.sh",
+      "check.sh"
+    ],
+    "backend_business_logic_changed": false,
+    "runtime_database_or_model_selection_changed": false,
+    "historical_evidence_paths": "Frozen raw keeps preview/...; current JS is frontend/scripts/..., CSS frontend/styles/..., assets frontend/assets/....",
+    "frontend_subfolders": {
+      "scripts": 23,
+      "styles": 14
+    },
+    "frontend_path_only_edited_files": [
+      "frontend/index.html",
+      "frontend/palette.css",
+      "frontend/tests/achievements.test.cjs",
+      "frontend/tests/correction-live-flow.test.cjs",
+      "frontend/tests/correction-state.test.cjs",
+      "frontend/tests/flashcard-session.test.cjs",
+      "frontend/tests/flashcard-ui.test.cjs",
+      "frontend/tests/live-help-mindmap.test.cjs",
+      "frontend/tests/live-jobs.test.cjs",
+      "frontend/tests/live-providers.test.cjs",
+      "frontend/tests/live-waiting.test.cjs",
+      "frontend/tests/motion.test.cjs",
+      "frontend/tests/practice.test.cjs",
+      "frontend/tests/question-completion-ui.test.cjs",
+      "frontend/tests/source-browser.test.cjs",
+      "frontend/tests/source-scope-review-ui.test.cjs"
+    ]
+  },
+  "tdtt_current_top_level": [
+    "2026_Project_Virtual_Assistant_Academic.docx",
+    "AI-STUDY-HANDOFF"
+  ],
+  "verification_staging": "Removed with backup archive metadata at explicit user request on 2026-10-21. Earlier preservation verification remains recorded in this report.",
+  "archive_retained": false,
+  "archive_removal": {
+    "at": "2026-10-21T10:23:59.127509+00:00",
+    "reason": "Huy explicitly requested deletion of unnecessary backup ZIPs; Claude will read current source tree.",
+    "zip_files_deleted": 3,
+    "backup_metadata_and_scratch_files_deleted": 8,
+    "bytes_removed": 17999321,
+    "deleted_files": [
+      {
+        "path": ".archive/INDEX.json",
+        "bytes": 59616,
+        "sha256": "4abcea0dcb3999b0fc5193276e9701fe444203207454db288d964cb69fdf0f0b"
+      },
+      {
+        "path": ".archive/cleanup-2026-10-21.zip",
+        "bytes": 12077912,
+        "sha256": "35265e7bea66310027206bfc7daed626812780962d5e2f176bcb23a325ea7390"
+      },
+      {
+        "path": ".archive/cleanup-verification-2026-10-21/api-appendix.txt",
+        "bytes": 10687,
+        "sha256": "dc628929b0265cfcabc80e03a07984c91cca85f9579453a393d258d32dcdda0b"
+      },
+      {
+        "path": ".archive/cleanup-verification-2026-10-21/apply_cleanup.py",
+        "bytes": 3936,
+        "sha256": "8f4293b9b7b1791da444268c51278ad6d103c4c91d16810f153eb4caf6c281a1"
+      },
+      {
+        "path": ".archive/cleanup-verification-2026-10-21/benchmark-appendix.txt",
+        "bytes": 19854,
+        "sha256": "054e94491dcb96af0a3366b51293c7a0d12daca82661d6d5607cd39e1e1d893e"
+      },
+      {
+        "path": ".archive/cleanup-verification-2026-10-21/cleanup-plan.json",
+        "bytes": 6900,
+        "sha256": "216160f16528ff78f03c70a8f75707752cc05adea1316ae17df2854701666e79"
+      },
+      {
+        "path": ".archive/cleanup-verification-2026-10-21/protected-after.json",
+        "bytes": 650,
+        "sha256": "11a2f0f93a7ee61cd7ae1127e80c92a346f5463717e86d8ef0152de6953a63e2"
+      },
+      {
+        "path": ".archive/cleanup-verification-2026-10-21/protected-before.json",
+        "bytes": 171278,
+        "sha256": "faa4f89553d3a9467451f5ab97fef4db04f9c132e7625cabf047787010cf7363"
+      },
+      {
+        "path": ".archive/cleanup-verification-2026-10-21/tdtt-extras-report.json",
+        "bytes": 7974,
+        "sha256": "917d189a03c87e23d20a51241b8069eff60dc8783e7412a117a35b208d79387b"
+      },
+      {
+        "path": ".archive/frontend-layout-2026-10-21.zip",
+        "bytes": 32034,
+        "sha256": "6908cd84f339d78b32f7329bdc81a14e0a240e473c06618a29422b8ea94569eb"
+      },
+      {
+        "path": ".archive/tdtt-extras-and-layout-2026-10-21.zip",
+        "bytes": 5608480,
+        "sha256": "cfe0e2ab7f60bbe630dec1108578665cefbea58b2aaa657ae36992fe1422478a"
+      }
+    ],
+    "archive_directory_removed": true,
+    "active_code_or_runtime_data_deleted": false
+  }
+}

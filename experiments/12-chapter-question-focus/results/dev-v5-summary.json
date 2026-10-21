@@ -1,0 +1,114 @@
+{
+  "purpose": "Development workflow/quality review, not an independent factual accuracy score or release.",
+  "at": "2026-10-21T05:07:52.601562+00:00",
+  "raw_run_sha256": "763de34447c8d07cdc74334143af6767716d5a560d30f1cd68d952a5f2669b2e",
+  "run_id": "dev-v5-chapter-focus",
+  "production_sha256": "4445b6ad08bbb79c0faaf00ba77f1f525e623b7860a156fcdc5ccdc12869e04c",
+  "protocol_sha256": "f9c80bb55af1823e4ad12f37cd49e3cb764eab1d32fe6b3e5e56ab61cfe476c0",
+  "cases": [
+    {
+      "case_id": "net-dev-prefix",
+      "job_status": "succeeded",
+      "published_questions": 7,
+      "saved_partial_questions": 0,
+      "chapter_complete": true,
+      "elapsed_ms": 177607.611,
+      "review_path": "experiments/12-chapter-question-focus/results/cases/net-dev-prefix.json",
+      "review_sha256": "e7e765987525e609c533797b3676985a6a2e9bc207f7a552e2622e34e92af1f5",
+      "job_error": null
+    },
+    {
+      "case_id": "calc-dev-ftc",
+      "job_status": "succeeded",
+      "published_questions": 6,
+      "saved_partial_questions": 0,
+      "chapter_complete": true,
+      "elapsed_ms": 162052.041,
+      "review_path": "experiments/12-chapter-question-focus/results/cases/calc-dev-ftc.json",
+      "review_sha256": "6b03a010738913a143cb358004deaaf66ffdecf6f71ef856039a272c95277e37",
+      "job_error": null
+    },
+    {
+      "case_id": "psy-dev-operant",
+      "job_status": "succeeded",
+      "published_questions": 7,
+      "saved_partial_questions": 0,
+      "chapter_complete": true,
+      "elapsed_ms": 162409.398,
+      "review_path": "experiments/12-chapter-question-focus/results/cases/psy-dev-operant.json",
+      "review_sha256": "613bb2828cd63641c0a359070d1de674cd5d7247df501e8cab029de137a74110",
+      "job_error": null
+    },
+    {
+      "case_id": "net-dev-ipv6",
+      "job_status": "succeeded",
+      "published_questions": 6,
+      "saved_partial_questions": 0,
+      "chapter_complete": true,
+      "elapsed_ms": 147178.809,
+      "review_path": "experiments/12-chapter-question-focus/results/cases/net-dev-ipv6.json",
+      "review_sha256": "eeef38dfab42d37998f0b07e30d8f5cee009130c0fef2e586c4d2b0285d716db",
+      "job_error": null
+    },
+    {
+      "case_id": "calc-dev-chain",
+      "job_status": "failed",
+      "published_questions": 0,
+      "saved_partial_questions": 4,
+      "chapter_complete": true,
+      "elapsed_ms": 119334.298,
+      "review_path": "experiments/12-chapter-question-focus/results/cases/calc-dev-chain.json",
+      "review_sha256": "88ca713374a57303d2a3756f8bf0b5220bb86aaae87c5f3073e6613bf328dbe2",
+      "job_error": {
+        "message": "AI trả cấu trúc chưa hợp lệ ở JSON: Invalid JSON: invalid escape at line 5 column 184. Nguồn và phần đã lưu vẫn còn; chưa áp dụng đầu ra này. Có thể thử lại hoặc thu hẹp mục tiêu."
+      }
+    },
+    {
+      "case_id": "psy-dev-memory",
+      "job_status": "succeeded",
+      "published_questions": 6,
+      "saved_partial_questions": 0,
+      "chapter_complete": true,
+      "elapsed_ms": 120586.001,
+      "review_path": "experiments/12-chapter-question-focus/results/cases/psy-dev-memory.json",
+      "review_sha256": "8c7f035b5c8c6216e724a5b372157eff00f69b7291b62c4bb71776a79added81",
+      "job_error": null
+    }
+  ],
+  "target_questions": 48,
+  "semantic_retries": 0,
+  "external_inference": 0,
+  "independent_human_reviews": 0,
+  "factual_accuracy_score": null,
+  "release_ready": false,
+  "published_lessons": 5,
+  "published_questions": 32,
+  "published_kind_counts": {
+    "mcq": 10,
+    "cloze": 9,
+    "matching": 5,
+    "ordering": 3,
+    "short_answer": 5
+  },
+  "published_review": {
+    "supported_in_checked_scope": 22,
+    "needs_review": 10
+  },
+  "unpublished_partial_review": {
+    "needs_review": 1,
+    "supported_in_checked_scope": 3
+  },
+  "missing_published_target_reasons": {
+    "model_declined": 7,
+    "failed_case_unpublished_targets": 8,
+    "backend_source_gate": 1
+  },
+  "all_cases_reviewed": true,
+  "all_chapters_complete": true,
+  "before": {
+    "run_id": "dev-v4-chapter",
+    "published_lessons": 5,
+    "published_questions": 30,
+    "limit": "Different generated outputs; not a same-question causal accuracy comparison."
+  }
+}

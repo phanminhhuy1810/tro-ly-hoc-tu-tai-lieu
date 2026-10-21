@@ -1,0 +1,291 @@
+{
+  "purpose": "real HTTP/Qwen9B revision/future-plan/short-feedback development trial; not human benchmark",
+  "checks": {
+    "revert_preview_does_not_apply_and_can_discard": true,
+    "rubric_feedback_does_not_change_old_fixed_score": true,
+    "future_edit_preserves_generated_lesson": true,
+    "two_selected_types_and_one_card": true,
+    "old_attempt_revision_unchanged": true
+  },
+  "jobs": [
+    {
+      "id": "50b5454864e543d9a27ba1150b26e7e1",
+      "status": "succeeded",
+      "provider": {
+        "provider": "ollama_local",
+        "model": "qwen3.5:9b",
+        "prompt_version": "20261015-context-v1",
+        "schema_version": 7
+      },
+      "error": null,
+      "elapsed_seconds": 12.105
+    },
+    {
+      "id": "53daf7758e744c17b1962efb5c0ec732",
+      "status": "succeeded",
+      "provider": {
+        "provider": "ollama_local",
+        "model": "qwen3.5:9b",
+        "prompt_version": "20261015-unit-objective-sequence-v3",
+        "schema_version": 7
+      },
+      "error": null,
+      "elapsed_seconds": 33.217
+    }
+  ],
+  "course_id": "0b3c505ebc194963b04cc66a8c2644b6",
+  "base_revision": 3,
+  "feedback": {
+    "id": "1e1356ee51ff419ea461aa52f7e5a08e",
+    "item_id": "unit-1:q4",
+    "course_revision": 2,
+    "criteria": [
+      {
+        "criterion_id": "criterion-0",
+        "status": "missing",
+        "comment": "Học sinh chưa xác nhận IPv4 có 32 bit. Đáp án ghi 'Chưa hiểu'. Nguồn [89035cb15fb34bc1b6c5b4e7cae3f82e:2:1] khẳng định IPv4 có 32 bit."
+      },
+      {
+        "criterion_id": "criterion-1",
+        "status": "missing",
+        "comment": "Học sinh chưa xác nhận prefix /26 dành 26 bit cho network. Đáp án ghi 'Chưa hiểu'. Nguồn [89035cb15fb34bc1b6c5b4e7cae3f82e:2:1] khẳng định điều này."
+      }
+    ],
+    "feedback": "Học sinh chưa trả lời đúng yêu cầu. Cần xác nhận IPv4 có 32 bit và prefix /26 dành 26 bit cho network theo nguồn.",
+    "source_refs": [
+      "89035cb15fb34bc1b6c5b4e7cae3f82e:2:1"
+    ],
+    "uncertainties": [],
+    "reference_may_be_wrong": false,
+    "status": "provisional_model_feedback",
+    "verified_score": false,
+    "estimated_score": null,
+    "rubric": [
+      {
+        "id": "criterion-0",
+        "text": "Câu trả lời phải xác nhận IPv4 có 32 bit."
+      },
+      {
+        "id": "criterion-1",
+        "text": "Câu trả lời phải xác nhận prefix /26 dành 26 bit cho network."
+      }
+    ],
+    "warning": "Nhận xét AI cần đối chiếu; không phải điểm được giảng viên xác nhận.",
+    "provider": {
+      "provider": "ollama_local",
+      "model": "qwen3.5:9b",
+      "prompt_version": "20261015-context-v1",
+      "schema_version": 7
+    }
+  },
+  "new_revision": 5,
+  "new_unit": {
+    "title": "Host bits and block size",
+    "objective": "Understand from the source that 6 host bits create 64 addresses.",
+    "source_refs": [
+      "89035cb15fb34bc1b6c5b4e7cae3f82e:2:2"
+    ],
+    "id": "unit-2",
+    "data": {
+      "title": "Host bits and block size",
+      "sections": [
+        {
+          "title": "Host Bits Calculation",
+          "text": "The remaining host portion consists of 6 bits. Using the formula 2^6, this results in a total of 64 addresses.",
+          "source_refs": [
+            "89035cb15fb34bc1b6c5b4e7cae3f82e:2:2"
+          ]
+        },
+        {
+          "title": "Address Count Example",
+          "text": "When 6 bits are allocated for the host, the calculation is 2 raised to the power of 6, which equals 64 possible addresses.",
+          "source_refs": [
+            "89035cb15fb34bc1b6c5b4e7cae3f82e:2:2"
+          ]
+        },
+        {
+          "title": "Block Size Definition",
+          "text": "A block size is determined by the number of host bits. In this case, 6 host bits create a block containing 64 addresses.",
+          "source_refs": [
+            "89035cb15fb34bc1b6c5b4e7cae3f82e:2:2"
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "kind": "mcq",
+          "prompt": "Nếu phần host còn 6 bit, số địa chỉ được tạo ra là bao nhiêu?",
+          "options": [
+            "32 địa chỉ",
+            "64 địa chỉ",
+            "128 địa chỉ",
+            "256 địa chỉ"
+          ],
+          "left": [],
+          "answer": "64 địa chỉ",
+          "explanation": "Theo nguồn, phần host còn 6 bit và công thức tính là 2^6 = 64 địa chỉ.",
+          "source_refs": [
+            "89035cb15fb34bc1b6c5b4e7cae3f82e:2:2"
+          ],
+          "rubric": [
+            "Kiểm tra kiến thức về số lượng địa chỉ dựa trên số bit phần host.",
+            "Đảm bảo học viên hiểu mối quan hệ giữa 6 bit và kết quả 64."
+          ],
+          "difficulty": "basic",
+          "difficulty_basis": null
+        },
+        {
+          "kind": "cloze",
+          "prompt": "Nếu phần host còn 6 bit, số địa chỉ được tạo ra là ____.",
+          "options": [
+            "32",
+            "64",
+            "128",
+            "256"
+          ],
+          "left": [
+            "Nếu phần host còn 6 bit, số địa chỉ được tạo ra là ____."
+          ],
+          "answer": "64",
+          "explanation": "Theo nguồn, khi phần host còn 6 bit, phép tính 2^6 bằng 64 địa chỉ.",
+          "source_refs": [
+            "89035cb15fb34bc1b6c5b4e7cae3f82e:2:2"
+          ],
+          "rubric": [
+            "Đáp án đúng là 64 dựa trên công thức 2^6.",
+            "Giải thích phải đề cập đến phép tính 2^6."
+          ],
+          "difficulty": null,
+          "difficulty_basis": null
+        }
+      ],
+      "cards": [
+        {
+          "front": "How many addresses are created by 6 host bits?",
+          "back": "6 host bits create 64 addresses (calculated as 2^6 = 64).",
+          "source_refs": [
+            "89035cb15fb34bc1b6c5b4e7cae3f82e:2:2"
+          ]
+        }
+      ],
+      "mindmap": [
+        {
+          "title": "Host Bits Concept",
+          "text": "The host portion of an address determines the number of available addresses within a block.",
+          "source_refs": [
+            "89035cb15fb34bc1b6c5b4e7cae3f82e:2:2"
+          ]
+        },
+        {
+          "title": "Calculation Method",
+          "text": "To find the number of addresses, raise 2 to the power of the number of host bits (e.g., 2^6).",
+          "source_refs": [
+            "89035cb15fb34bc1b6c5b4e7cae3f82e:2:2"
+          ]
+        },
+        {
+          "title": "Result for 6 Bits",
+          "text": "Allocating 6 bits to the host results in exactly 64 addresses.",
+          "source_refs": [
+            "89035cb15fb34bc1b6c5b4e7cae3f82e:2:2"
+          ]
+        }
+      ]
+    },
+    "completed": false,
+    "unlocked": true,
+    "generation": {
+      "job_id": "53daf7758e744c17b1962efb5c0ec732",
+      "provider": {
+        "provider": "ollama_local",
+        "model": "qwen3.5:9b",
+        "prompt_version": "20261015-unit-objective-sequence-v3",
+        "schema_version": 7
+      },
+      "extraction_revision": 2,
+      "source_refs": [
+        "89035cb15fb34bc1b6c5b4e7cae3f82e:2:2"
+      ],
+      "content_language": "en",
+      "generated_at": "2026-10-14T22:25:10.934116+00:00"
+    }
+  },
+  "passed": true,
+  "language_review": {
+    "status": "english_questions_reviewed_on_self_authored_case",
+    "reading_and_card_english": true,
+    "two_question_prompts_english": false,
+    "note": "Functional checks passed but question prompts remained Vietnamese. Targeted question corrections pending.",
+    "correction_jobs": [
+      {
+        "id": "06b617dbf4734506b6342a37a4a8df55",
+        "status": "succeeded",
+        "error": null,
+        "provider": {
+          "provider": "ollama_local",
+          "model": "qwen3.5:9b",
+          "prompt_version": "20261015-context-v1",
+          "schema_version": 8
+        }
+      },
+      {
+        "id": "824dfff149b34a78a517f820a8ba7bff",
+        "status": "succeeded",
+        "error": null,
+        "provider": {
+          "provider": "ollama_local",
+          "model": "qwen3.5:9b",
+          "prompt_version": "20261015-context-v1",
+          "schema_version": 8
+        }
+      }
+    ],
+    "corrected_revision": 8,
+    "corrected_questions": [
+      {
+        "kind": "mcq",
+        "prompt": "If the host portion has 6 bits remaining, how many addresses are created?",
+        "options": [
+          "32 addresses",
+          "64 addresses",
+          "128 addresses",
+          "256 addresses"
+        ],
+        "left": [],
+        "answer": "64 addresses",
+        "explanation": "According to the source, the host portion has 6 bits remaining, and the calculation formula is 2^6 = 64 addresses.",
+        "source_refs": [
+          "89035cb15fb34bc1b6c5b4e7cae3f82e:2:2"
+        ],
+        "rubric": [
+          "Check knowledge of the number of addresses based on the host portion bit count.",
+          "Ensure learners understand the relationship between 6 bits and the result of 64."
+        ],
+        "difficulty": "basic",
+        "difficulty_basis": null
+      },
+      {
+        "kind": "cloze",
+        "prompt": "If the host portion has 6 bits remaining, the number of addresses created is ____.",
+        "options": [],
+        "left": [],
+        "answer": "64",
+        "explanation": "According to the source, when the host portion has 6 bits remaining, the calculation 2^6 equals 64 addresses.",
+        "source_refs": [
+          "89035cb15fb34bc1b6c5b4e7cae3f82e:2:2"
+        ],
+        "rubric": [
+          "The correct answer is 64 based on the formula 2^6.",
+          "The explanation must mention the calculation 2^6."
+        ],
+        "difficulty": null,
+        "difficulty_basis": null
+      }
+    ],
+    "reading_and_cards_preserved": true,
+    "first_lesson_preserved": true,
+    "cloze_payload_fixed_by_manual_scoped_preview": true,
+    "meaning_matches_source_six_bits_sixty_four": true,
+    "general_language_quality_not_proven": true
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "purpose": "Gemma12B MLX local backend pipeline on self-authored source; not Huy performance or held-out quality",
+  "model": "local:gemma4:12b-mlx",
+  "passed": false,
+  "confirmed_proposed_app_coin": 0,
+  "monetary_payments": 0,
+  "runs": [
+    {
+      "path": "/courses/35926bc3d4744f6ba22826db7ebdd3dd/generate",
+      "job_id": "4e0fdec72c1e4cfc86bb8f9d55a4172d",
+      "events": [
+        {
+          "elapsed_seconds": 0.015,
+          "status": "running",
+          "phase": "connecting",
+          "saved_stages": null,
+          "preview_chars": 0
+        },
+        {
+          "elapsed_seconds": 50.576,
+          "status": "failed",
+          "phase": "failed",
+          "saved_stages": null,
+          "preview_chars": 0
+        }
+      ],
+      "status": "failed",
+      "completed_seconds": 50.576,
+      "provider": {
+        "provider": "ollama_local",
+        "model": "gemma4:12b-mlx",
+        "model_choice_id": "local:gemma4:12b-mlx",
+        "selection_revision": 1,
+        "prompt_version": "20261017-unit-source-server-metadata-v6",
+        "schema_version": 13
+      },
+      "progress": {
+        "phase": "failed",
+        "requests": [
+          {
+            "index": 1,
+            "schema": "LessonReading",
+            "phase": "failed",
+            "streaming": true,
+            "started_at": "2026-10-18T09:29:30.105955+00:00",
+            "first_chunk_ms": 6281.012,
+            "first_text_ms": null,
+            "elapsed_ms": null,
+            "chunks": 1511,
+            "characters": 3082,
+            "usage": {},
+            "protocol_fallbacks": 1
+          }
+        ],
+        "preview": null,
+        "planned_stages": 6,
+        "saved_stages": 0,
+        "reused_stages": 0,
+        "started_at": "2026-10-18T09:29:30.103681+00:00",
+        "completed_at": "2026-10-18T09:30:20.452322+00:00",
+        "elapsed_ms": 50348.647,
+        "version": 235,
+        "updated_at": "2026-10-18T09:30:20.452350+00:00"
+      },
+      "error": {
+        "message": "AI trả cấu trúc chưa hợp lệ ở JSON: Invalid JSON: trailing comma at line 26 column 7. Nguồn và phần đã lưu vẫn còn; chưa áp dụng đầu ra này. Có thể thử lại hoặc thu hẹp mục tiêu."
+      },
+      "partial": {}
+    }
+  ],
+  "errors": [
+    {
+      "type": "RuntimeError",
+      "message": "Generation failed; partial stages retained, no automatic semantic retry."
+    }
+  ],
+  "global_default_before": "kaggle:qwen3.8:27b",
+  "selection": {
+    "model_id": "local:gemma4:12b-mlx",
+    "revision": 1,
+    "provider": "ollama_local",
+    "model": "gemma4:12b-mlx",
+    "external": false
+  },
+  "source_id": "147955a9405c4edfaa7dc35216b4237f",
+  "source_revision": 2,
+  "course_id": "35926bc3d4744f6ba22826db7ebdd3dd"
+}

@@ -1,0 +1,57 @@
+/* A quiet white board behind the work, with solid paper under long passages. */
+:root {
+  --board-line: #a6bbc51c;
+  --board-grid: linear-gradient(var(--board-line) 1px, transparent 1px), linear-gradient(90deg, var(--board-line) 1px, transparent 1px);
+}
+.live-inline-content,
+.fc-help,
+.studio-live #live-answer,
+.question-card,
+.product-assist,
+.live-chat-dialog,
+.live-chat-dialog.full {
+  background-color: #fdfefd;
+  background-image: var(--board-grid);
+  background-size: 24px 24px;
+  background-position: -1px -1px;
+}
+.live-inline-content,
+.fc-help { border-color: #dfe6e2; box-shadow: 0 3px 0 #e7ece67a; }
+.live-inline-content>header { padding-bottom: 12px; border-bottom: 1px solid #e3e9e4; }
+.live-inline-message { border-top: 0; padding: 15px 0; }
+.live-inline-message + .live-inline-message { border-top: 1px solid #e2e8e3; }
+.live-inline-message.user { background: #f0f4ebeb; border: 1px solid #e0e7da; border-radius: 14px; padding: 12px 16px; }
+.live-inline-content textarea,
+.fc-help textarea { background: #fff; }
+.fc-help-reply { background: #fffffff0; border: 1px solid #e4e9e0; }
+.studio-live #live-answer { border: 1px solid #e2e8e2; padding: 24px; border-radius: 19px; }
+.studio-live #live-answer .live-option { background: #fff; }
+.studio-live #live-answer .live-option:has(input:checked) { background: #edf2e6; }
+.product-assist .assist-header,
+.live-chat-head { background: #fffffff5; }
+.product-assist .chat-form,
+.live-chat-dialog form { background: #fff; }
+.product-assist .chat-suggestions button { background: #fff; }
+.studio-welcome {
+  min-height: 150px;
+  padding: 18px 0 25px;
+  background: #fffefa;
+  border: 0;
+  border-bottom: 1px solid #e7eadd;
+  border-radius: 0;
+  gap: 18px;
+  overflow: visible;
+}
+.studio-welcome h1 { font-size: 40px; margin: 0 0 13px; letter-spacing: -.7px; }
+.studio-welcome p { font-size: 15px; color: #63705e; }
+.studio-brand strong { font-family: Georgia, "Times New Roman", serif!important; font-size: 32px!important; font-weight: 700!important; letter-spacing: -1.5px; }
+.studio-brand small { font-size: 11px!important; margin-top: 5px; white-space: nowrap; }
+.studio-brand-dot { display: none; }
+.studio-card-shortcut { margin-bottom: 13px; }
+@media (max-width: 760px) {
+  .studio-welcome { padding: 9px 0 23px; min-height: 120px; gap: 8px; }
+  .studio-welcome h1 { font-size: 32px; }
+  .studio-welcome p { font-size: 14px; }
+  .studio-live #live-answer { padding: 17px; }
+  .studio-live .live-lesson { padding: 0; border: 0; background: transparent; }
+}

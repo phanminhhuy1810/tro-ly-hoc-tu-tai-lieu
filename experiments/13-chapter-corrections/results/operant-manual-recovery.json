@@ -1,0 +1,330 @@
+{
+  "purpose": "Manual recovery of one QA question with source crosscheck, not model quality, independent human review or a change to Huy course.",
+  "at": "2026-10-21T06:26:55.780857+00:00",
+  "course_id": "9a849bac6ffa42c4a54981900123de09",
+  "case_id": "psy-dev-operant",
+  "reference_author": "Codex-assisted source crosscheck",
+  "model_inference_calls": 0,
+  "external_inference": 0,
+  "automatic_semantic_retries": 0,
+  "independent_human_reviews": 0,
+  "baseline_sha256": "f506dfb05ef47d5f9edb3b294dc3a5ffedf222685523bf834523bae89affdac4",
+  "paired_sha256": "5428f35ed0e362fc92b2a8cc5ef344a0fb3b8248bf69fd23d4513c900c223aba",
+  "checks": {
+    "only_selected_question_changed": true,
+    "other_lesson_content_unchanged": true,
+    "other_units_unchanged": true,
+    "initial_provenance_unchanged": true,
+    "creator_metadata_kept": true,
+    "cached_reply_uses_corrected_reference": true,
+    "inline_explanation_no_ai": true,
+    "draft_kept_without_submit": true,
+    "old_attempt_unchanged": true,
+    "source_unchanged": true,
+    "both_model_outputs_retained": true,
+    "raw_development_measurement_retained": true,
+    "zero_coin_change": true,
+    "no_new_ai_job": true,
+    "old_flags_preserved": true
+  },
+  "before_revision": 2,
+  "before_question": {
+    "kind": "short_answer",
+    "prompt": "Một học sinh thường xuyên làm ồn trong lớp. Giáo viên yêu cầu học sinh đó phải ngồi yên và nếu làm tốt, học sinh sẽ được giữ lại quyền sử dụng máy tính vào cuối giờ. Sau đó, hành vi làm ồn của học sinh giảm hẳn. Hãy áp dụng quy trình 4 bước để phân loại tình huống này.",
+    "options": [],
+    "left": [],
+    "answer": "1. Hành vi mục tiêu: Làm ồn trong lớp. 2. Tần suất hành vi: Giảm. 3. Hậu quả: Loại bỏ kích thích (quyền sử dụng máy tính). 4. Kết luận: Negative punishment.",
+    "explanation": "Áp dụng quy trình phân loại: Xác định hành vi làm ồn (Bước 1), nhận thấy hành vi giảm (Bước 2), xác định việc thu hồi quyền sử dụng máy tính là loại bỏ kích thích (Bước 3), và kết hợp để xác định là negative punishment (Bước 4).",
+    "source_refs": [
+      "22f107d3ced44c5ebafc8543b6b52f72:2:3",
+      "22f107d3ced44c5ebafc8543b6b52f72:2:4",
+      "22f107d3ced44c5ebafc8543b6b52f72:2:5",
+      "22f107d3ced44c5ebafc8543b6b52f72:2:6",
+      "22f107d3ced44c5ebafc8543b6b52f72:2:7"
+    ],
+    "rubric": [
+      "Xác định đúng hành vi mục tiêu là làm ồn.",
+      "Xác định đúng hành vi giảm.",
+      "Xác định đúng việc thu hồi quyền là loại bỏ kích thích.",
+      "Kết luận đúng là negative punishment."
+    ],
+    "difficulty": "applied",
+    "difficulty_basis": "creator_request_not_measured"
+  },
+  "manual_replacement": {
+    "kind": "short_answer",
+    "prompt": "Một học sinh thường xuyên làm ồn trong lớp. Giáo viên yêu cầu học sinh đó phải ngồi yên và nếu làm tốt, học sinh sẽ được giữ lại quyền sử dụng máy tính vào cuối giờ. Sau đó, hành vi làm ồn của học sinh giảm hẳn. Hãy áp dụng quy trình 4 bước để phân loại tình huống này.",
+    "options": [],
+    "left": [],
+    "answer": "Chưa đủ dữ kiện để kết luận là negative punishment. Bước1: xét hành vi làm ồn. Bước2: hành vi đó giảm. Bước3: đề chỉ nói giữ quyền dùng máy tính khi ngồi yên, không nói quyền bị thu hồi vì làm ồn. Bước4: cần làm rõ hậu quả thêm/loại bỏ kích thích và quan hệ phụ thuộc với hành vi đang xét trước khi phân loại.",
+    "explanation": "Theo nguồn, phân loại cần xác định cả chiều thay đổi hành vi và việc thêm hay loại bỏ kích thích. Đề cho biết làm ồn giảm nhưng không nêu việc thu hồi quyền. Không được tự thay “giữ quyền” thành “thu hồi quyền” để kết luận negative punishment.",
+    "source_refs": [
+      "22f107d3ced44c5ebafc8543b6b52f72:2:0",
+      "22f107d3ced44c5ebafc8543b6b52f72:2:1",
+      "22f107d3ced44c5ebafc8543b6b52f72:2:4",
+      "22f107d3ced44c5ebafc8543b6b52f72:2:5",
+      "22f107d3ced44c5ebafc8543b6b52f72:2:6",
+      "22f107d3ced44c5ebafc8543b6b52f72:2:7"
+    ],
+    "rubric": [
+      "Xác định hành vi đang xét là làm ồn và chiều thay đổi là giảm.",
+      "Nhận ra giữ quyền không đồng nghĩa kích thích đã bị loại bỏ; không thêm tình tiết ngoài đề.",
+      "Nêu dữ kiện còn thiếu về hậu quả và quan hệ phụ thuộc trước khi kết luận loại hậu quả."
+    ],
+    "difficulty": "applied",
+    "difficulty_basis": "creator_request_not_measured"
+  },
+  "wallet_before": {
+    "balance": 23,
+    "held": 0,
+    "available": 23,
+    "policy_version": "dev-proposal-20261015-v2",
+    "policy_proposed": true,
+    "cash_payments": false,
+    "enforcement_enabled": true
+  },
+  "proposal_id": "ad04fec7a1a64e659a79597c7f4ef9a6",
+  "preview": {
+    "id": "ad04fec7a1a64e659a79597c7f4ef9a6",
+    "course_id": "9a849bac6ffa42c4a54981900123de09",
+    "base_revision": 2,
+    "scope": {
+      "unit_id": "unit-1",
+      "target": "question",
+      "index": 4
+    },
+    "request": "Sửa tay sau đối chiếu nguồn: giữ đề và thừa nhận dữ kiện còn thiếu, không tự đổi giữ quyền thành thu hồi. Đây là tham khảo do Codex biên soạn, chưa là nhãn người độc lập.",
+    "status": "preview",
+    "before": {
+      "kind": "short_answer",
+      "prompt": "Một học sinh thường xuyên làm ồn trong lớp. Giáo viên yêu cầu học sinh đó phải ngồi yên và nếu làm tốt, học sinh sẽ được giữ lại quyền sử dụng máy tính vào cuối giờ. Sau đó, hành vi làm ồn của học sinh giảm hẳn. Hãy áp dụng quy trình 4 bước để phân loại tình huống này.",
+      "options": [],
+      "left": [],
+      "answer": "1. Hành vi mục tiêu: Làm ồn trong lớp. 2. Tần suất hành vi: Giảm. 3. Hậu quả: Loại bỏ kích thích (quyền sử dụng máy tính). 4. Kết luận: Negative punishment.",
+      "explanation": "Áp dụng quy trình phân loại: Xác định hành vi làm ồn (Bước 1), nhận thấy hành vi giảm (Bước 2), xác định việc thu hồi quyền sử dụng máy tính là loại bỏ kích thích (Bước 3), và kết hợp để xác định là negative punishment (Bước 4).",
+      "source_refs": [
+        "22f107d3ced44c5ebafc8543b6b52f72:2:3",
+        "22f107d3ced44c5ebafc8543b6b52f72:2:4",
+        "22f107d3ced44c5ebafc8543b6b52f72:2:5",
+        "22f107d3ced44c5ebafc8543b6b52f72:2:6",
+        "22f107d3ced44c5ebafc8543b6b52f72:2:7"
+      ],
+      "rubric": [
+        "Xác định đúng hành vi mục tiêu là làm ồn.",
+        "Xác định đúng hành vi giảm.",
+        "Xác định đúng việc thu hồi quyền là loại bỏ kích thích.",
+        "Kết luận đúng là negative punishment."
+      ],
+      "difficulty": "applied",
+      "difficulty_basis": "creator_request_not_measured"
+    },
+    "after": {
+      "kind": "short_answer",
+      "prompt": "Một học sinh thường xuyên làm ồn trong lớp. Giáo viên yêu cầu học sinh đó phải ngồi yên và nếu làm tốt, học sinh sẽ được giữ lại quyền sử dụng máy tính vào cuối giờ. Sau đó, hành vi làm ồn của học sinh giảm hẳn. Hãy áp dụng quy trình 4 bước để phân loại tình huống này.",
+      "options": [],
+      "left": [],
+      "answer": "Chưa đủ dữ kiện để kết luận là negative punishment. Bước1: xét hành vi làm ồn. Bước2: hành vi đó giảm. Bước3: đề chỉ nói giữ quyền dùng máy tính khi ngồi yên, không nói quyền bị thu hồi vì làm ồn. Bước4: cần làm rõ hậu quả thêm/loại bỏ kích thích và quan hệ phụ thuộc với hành vi đang xét trước khi phân loại.",
+      "explanation": "Theo nguồn, phân loại cần xác định cả chiều thay đổi hành vi và việc thêm hay loại bỏ kích thích. Đề cho biết làm ồn giảm nhưng không nêu việc thu hồi quyền. Không được tự thay “giữ quyền” thành “thu hồi quyền” để kết luận negative punishment.",
+      "source_refs": [
+        "22f107d3ced44c5ebafc8543b6b52f72:2:0",
+        "22f107d3ced44c5ebafc8543b6b52f72:2:1",
+        "22f107d3ced44c5ebafc8543b6b52f72:2:4",
+        "22f107d3ced44c5ebafc8543b6b52f72:2:5",
+        "22f107d3ced44c5ebafc8543b6b52f72:2:6",
+        "22f107d3ced44c5ebafc8543b6b52f72:2:7"
+      ],
+      "rubric": [
+        "Xác định hành vi đang xét là làm ồn và chiều thay đổi là giảm.",
+        "Nhận ra giữ quyền không đồng nghĩa kích thích đã bị loại bỏ; không thêm tình tiết ngoài đề.",
+        "Nêu dữ kiện còn thiếu về hậu quả và quan hệ phụ thuộc trước khi kết luận loại hậu quả."
+      ],
+      "difficulty": "applied",
+      "difficulty_basis": "creator_request_not_measured"
+    }
+  },
+  "applied_revision": 3,
+  "new_session_id": "7f8f77d4415e45ac9de9bb36f1635ad4",
+  "new_item_id": "unit-1:q4",
+  "thread_id": "ba0614790f6749b8a4b43f978ebf02c1",
+  "cached_explanation": {
+    "reply": {
+      "source_refs": [
+        "22f107d3ced44c5ebafc8543b6b52f72:2:0",
+        "22f107d3ced44c5ebafc8543b6b52f72:2:1",
+        "22f107d3ced44c5ebafc8543b6b52f72:2:4",
+        "22f107d3ced44c5ebafc8543b6b52f72:2:5",
+        "22f107d3ced44c5ebafc8543b6b52f72:2:6",
+        "22f107d3ced44c5ebafc8543b6b52f72:2:7"
+      ],
+      "ai_generated": false,
+      "action": "explain",
+      "reference_warning": null,
+      "step": 0,
+      "reference": "Chưa đủ dữ kiện để kết luận là negative punishment. Bước1: xét hành vi làm ồn. Bước2: hành vi đó giảm. Bước3: đề chỉ nói giữ quyền dùng máy tính khi ngồi yên, không nói quyền bị thu hồi vì làm ồn. Bước4: cần làm rõ hậu quả thêm/loại bỏ kích thích và quan hệ phụ thuộc với hành vi đang xét trước khi phân loại.",
+      "text": "Theo nguồn, phân loại cần xác định cả chiều thay đổi hành vi và việc thêm hay loại bỏ kích thích. Đề cho biết làm ồn giảm nhưng không nêu việc thu hồi quyền. Không được tự thay “giữ quyền” thành “thu hồi quyền” để kết luận negative punishment.",
+      "rubric": [
+        "Xác định hành vi đang xét là làm ồn và chiều thay đổi là giảm.",
+        "Nhận ra giữ quyền không đồng nghĩa kích thích đã bị loại bỏ; không thêm tình tiết ngoài đề.",
+        "Nêu dữ kiện còn thiếu về hậu quả và quan hệ phụ thuộc trước khi kết luận loại hậu quả."
+      ]
+    },
+    "ai_called": false,
+    "cached": false,
+    "thread_id": "ba0614790f6749b8a4b43f978ebf02c1"
+  },
+  "help_thread_after": {
+    "id": "ba0614790f6749b8a4b43f978ebf02c1",
+    "course_id": "9a849bac6ffa42c4a54981900123de09",
+    "revision": 3,
+    "context": {
+      "kind": "question",
+      "unit_id": "unit-1",
+      "unit_title": "QA psy-dev-operant — Củng cố và trừng phạt.txt · Phần 1",
+      "question": {
+        "difficulty": "applied",
+        "difficulty_basis": "creator_request_not_measured",
+        "id": "unit-1:q4",
+        "kind": "short_answer",
+        "left": [],
+        "options": [],
+        "prompt": "Một học sinh thường xuyên làm ồn trong lớp. Giáo viên yêu cầu học sinh đó phải ngồi yên và nếu làm tốt, học sinh sẽ được giữ lại quyền sử dụng máy tính vào cuối giờ. Sau đó, hành vi làm ồn của học sinh giảm hẳn. Hãy áp dụng quy trình 4 bước để phân loại tình huống này.",
+        "question_revision_id": "9a849bac6ffa42c4a54981900123de09:unit-1:459901b01c5f094701a9b8a9",
+        "source_refs": [
+          "22f107d3ced44c5ebafc8543b6b52f72:2:0",
+          "22f107d3ced44c5ebafc8543b6b52f72:2:1",
+          "22f107d3ced44c5ebafc8543b6b52f72:2:4",
+          "22f107d3ced44c5ebafc8543b6b52f72:2:5",
+          "22f107d3ced44c5ebafc8543b6b52f72:2:6",
+          "22f107d3ced44c5ebafc8543b6b52f72:2:7"
+        ],
+        "unit_id": "unit-1",
+        "payload": {
+          "options": [],
+          "left": []
+        }
+      },
+      "session_id": "7f8f77d4415e45ac9de9bb36f1635ad4"
+    },
+    "student": {
+      "session_status": "open",
+      "submitted": false,
+      "answer": null,
+      "answer_display": null,
+      "draft": "Tôi chưa thấy đề nói thu hồi quyền; cần làm rõ hậu quả.",
+      "draft_display": "Tôi chưa thấy đề nói thu hồi quyền; cần làm rõ hậu quả.",
+      "feedback": null
+    },
+    "reference_warning": null,
+    "messages": [
+      {
+        "id": "c0311a4bfecf4ff29a1ba49fc381539e",
+        "role": "assistant",
+        "action": "explain",
+        "content": {
+          "action": "explain",
+          "ai_generated": false,
+          "reference": "Chưa đủ dữ kiện để kết luận là negative punishment. Bước1: xét hành vi làm ồn. Bước2: hành vi đó giảm. Bước3: đề chỉ nói giữ quyền dùng máy tính khi ngồi yên, không nói quyền bị thu hồi vì làm ồn. Bước4: cần làm rõ hậu quả thêm/loại bỏ kích thích và quan hệ phụ thuộc với hành vi đang xét trước khi phân loại.",
+          "reference_warning": null,
+          "rubric": [
+            "Xác định hành vi đang xét là làm ồn và chiều thay đổi là giảm.",
+            "Nhận ra giữ quyền không đồng nghĩa kích thích đã bị loại bỏ; không thêm tình tiết ngoài đề.",
+            "Nêu dữ kiện còn thiếu về hậu quả và quan hệ phụ thuộc trước khi kết luận loại hậu quả."
+          ],
+          "source_refs": [
+            "22f107d3ced44c5ebafc8543b6b52f72:2:0",
+            "22f107d3ced44c5ebafc8543b6b52f72:2:1",
+            "22f107d3ced44c5ebafc8543b6b52f72:2:4",
+            "22f107d3ced44c5ebafc8543b6b52f72:2:5",
+            "22f107d3ced44c5ebafc8543b6b52f72:2:6",
+            "22f107d3ced44c5ebafc8543b6b52f72:2:7"
+          ],
+          "step": 0,
+          "text": "Theo nguồn, phân loại cần xác định cả chiều thay đổi hành vi và việc thêm hay loại bỏ kích thích. Đề cho biết làm ồn giảm nhưng không nêu việc thu hồi quyền. Không được tự thay “giữ quyền” thành “thu hồi quyền” để kết luận negative punishment."
+        },
+        "created_at": "2026-10-21T06:26:55.848436+00:00"
+      }
+    ],
+    "source_excerpts": [
+      {
+        "id": "22f107d3ced44c5ebafc8543b6b52f72:2:0",
+        "locator": {
+          "character_start": 0,
+          "line": 1,
+          "type": "line"
+        },
+        "text": "Trong operant conditioning, reinforcement chỉ hậu quả làm tăng khả năng hành vi được lặp lại; punishment chỉ hậu quả làm giảm khả năng đó. Positive nghĩa là thêm một kích thích, negative nghĩa là loại bỏ một kích thích; chúng không có nghĩa là tốt và xấu."
+      },
+      {
+        "id": "22f107d3ced44c5ebafc8543b6b52f72:2:1",
+        "locator": {
+          "character_start": 0,
+          "line": 2,
+          "type": "line"
+        },
+        "text": "Positive reinforcement là thêm kích thích để tăng hành vi. Negative reinforcement là loại bỏ kích thích để tăng hành vi. Positive punishment là thêm kích thích để giảm hành vi. Negative punishment là loại bỏ kích thích để giảm hành vi."
+      },
+      {
+        "id": "22f107d3ced44c5ebafc8543b6b52f72:2:4",
+        "locator": {
+          "character_start": 0,
+          "line": 5,
+          "type": "line"
+        },
+        "text": "1. Xác định hành vi mục tiêu cần xét."
+      },
+      {
+        "id": "22f107d3ced44c5ebafc8543b6b52f72:2:5",
+        "locator": {
+          "character_start": 0,
+          "line": 6,
+          "type": "line"
+        },
+        "text": "2. Xác định dữ kiện nói hành vi tăng hay giảm."
+      },
+      {
+        "id": "22f107d3ced44c5ebafc8543b6b52f72:2:6",
+        "locator": {
+          "character_start": 0,
+          "line": 7,
+          "type": "line"
+        },
+        "text": "3. Xác định hậu quả thêm hay loại bỏ kích thích."
+      },
+      {
+        "id": "22f107d3ced44c5ebafc8543b6b52f72:2:7",
+        "locator": {
+          "character_start": 0,
+          "line": 8,
+          "type": "line"
+        },
+        "text": "4. Kết hợp hai chiều để gọi tên loại hậu quả."
+      }
+    ],
+    "draft": {
+      "text": "",
+      "version": 0
+    },
+    "pending_jobs": []
+  },
+  "wallet_after": {
+    "balance": 23,
+    "held": 0,
+    "available": 23,
+    "policy_version": "dev-proposal-20261015-v2",
+    "policy_proposed": true,
+    "cash_payments": false,
+    "enforcement_enabled": true
+  },
+  "flag_evidence": {
+    "method": "readonly comparison with pre-v4-trial SQLite backup",
+    "rows": 2,
+    "unchanged": true,
+    "at": "2026-10-21T06:28:55.350428+00:00"
+  },
+  "source_review": {
+    "reviewer": "Codex-assisted source crosscheck, not independent human/instructor review",
+    "status": "supported_in_checked_scope",
+    "program_proven": false,
+    "note": "Reference keeps the original stem, identifies the decrease and explicitly distinguishes maintaining computer access from removing a stimulus. It states missing causal/add-remove facts rather than inventing them. Citations include the source definitions and procedure. This is a manual QA reference, not a successful model correction."
+  }
+}

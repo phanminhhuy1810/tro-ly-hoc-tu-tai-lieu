@@ -1,0 +1,262 @@
+{
+  "version": "three-subject-notes-v1",
+  "split": "final",
+  "cases": [
+    {
+      "id": "net-final-subnet",
+      "split": "final",
+      "subject": "Mạng máy tính",
+      "title": "Phân tích một subnet /27",
+      "goal": "Tính mask, số bit host, hai biên và dải host hợp lệ từ IPv4/prefix; không nhầm tổng địa chỉ với host.",
+      "text": "Với IPv4/prefix /27, còn 5 bit host và có 32 địa chỉ trong khối. Trong ví dụ subnet thông thường này có 30 địa chỉ host dùng được khi loại network và broadcast. Mask của /27 là 255.255.255.224.\nĐịa chỉ 172.16.8.203/27 thuộc khối 192–223 của octet cuối. Network là 172.16.8.192; broadcast là 172.16.8.223. Dải host dùng được là 172.16.8.193 đến 172.16.8.222. Địa chỉ .203 là một host trong khối này.\nQuy trình xác định dải host:\n1. Tính số bit host từ prefix đã cho.\n2. Tính số địa chỉ trong một khối.\n3. Xác định khối chứa địa chỉ IP.\n4. Ghi network và broadcast ở hai biên khối.\n5. Loại hai biên để ghi dải host dùng được.",
+      "expected_facts": {
+        "oracle": "ipv4",
+        "input": "172.16.8.203/27"
+      },
+      "references": [
+        "https://www.rfc-editor.org/rfc/rfc4632.html#section-3.1"
+      ],
+      "expected_source_ordering": true,
+      "question_types": [
+        "mcq",
+        "cloze",
+        "matching",
+        "ordering",
+        "short_answer"
+      ],
+      "question_count": 8,
+      "card_count": 2,
+      "language": "vi",
+      "difficulty": "applied",
+      "terms_to_keep": [],
+      "source_kind": "original_agent_authored_evaluation_notes_not_book_excerpt",
+      "label_status": "computational_or_source_crosschecked_agent_labels_need_independent_review"
+    },
+    {
+      "id": "calc-final-parts",
+      "split": "final",
+      "subject": "Vi tích phân",
+      "title": "Tích phân từng phần",
+      "goal": "Chọn u và dv, giữ dấu trừ trong integration by parts và áp dụng đúng hai cận của ví dụ.",
+      "text": "Công thức integration by parts là integral(u dv)=u*v-integral(v du). Dấu giữa hai phần là dấu trừ. Với tích phân xác định, tích u*v cũng phải được tính tại hai cận.\nVí dụ integral từ 0 đến 1 của x*exp(x) dx: chọn u=x, dv=exp(x)dx, nên du=dx và v=exp(x). Một nguyên hàm là (x-1)*exp(x). Giá trị tại cận 1 là 0, tại cận 0 là -1; tích phân bằng 1. Đạo hàm của (x-1)*exp(x) bằng x*exp(x).\nQuy trình giải ví dụ:\n1. Chọn u=x và dv=exp(x)dx.\n2. Tính du=dx và v=exp(x).\n3. Thế vào công thức từng phần có dấu trừ.\n4. Rút gọn một nguyên hàm thành (x-1)*exp(x).\n5. Lấy giá trị ở cận 1 trừ giá trị ở cận 0.",
+      "expected_facts": {
+        "oracle": "parts_exp",
+        "bounds": [
+          0,
+          1
+        ],
+        "result": 1,
+        "antiderivative": "(x-1)*exp(x)",
+        "upper_value": 0,
+        "lower_value": -1
+      },
+      "references": [
+        "https://openstax.org/books/calculus-volume-2/pages/3-1-integration-by-parts"
+      ],
+      "expected_source_ordering": true,
+      "question_types": [
+        "mcq",
+        "cloze",
+        "matching",
+        "ordering",
+        "short_answer"
+      ],
+      "question_count": 8,
+      "card_count": 2,
+      "language": "vi",
+      "difficulty": "applied",
+      "terms_to_keep": [
+        "integration by parts"
+      ],
+      "source_kind": "original_agent_authored_evaluation_notes_not_book_excerpt",
+      "label_status": "computational_or_source_crosschecked_agent_labels_need_independent_review"
+    },
+    {
+      "id": "psy-final-classical",
+      "split": "final",
+      "subject": "Tâm lý đại cương",
+      "title": "Kích thích và phản ứng có điều kiện",
+      "goal": "Phân biệt NS, UCS, UCR, CS, CR trước và sau học trong ví dụ âm thanh và thức ăn.",
+      "text": "Trong ví dụ classical conditioning, thức ăn tự gây tiết nước bọt: thức ăn là unconditioned stimulus (UCS), tiết nước bọt do thức ăn là unconditioned response (UCR). Trước học, âm thanh chưa gắn với thức ăn là neutral stimulus (NS) và chưa gây tiết nước bọt.\nSau khi âm thanh được ghép với thức ăn nhiều lần, âm thanh riêng có thể gây tiết nước bọt. Âm thanh lúc này là conditioned stimulus (CS); tiết nước bọt do âm thanh là conditioned response (CR). Thức ăn không biến thành CS trong ví dụ này.\nTrình tự trong ví dụ:\n1. Quan sát thức ăn gây tiết nước bọt và âm thanh riêng chưa gây phản ứng đó.\n2. Phát âm thanh ngay trước khi cho thức ăn trong nhiều lượt ghép.\n3. Thử phát âm thanh riêng sau khi học và quan sát phản ứng tiết nước bọt.",
+      "expected_facts": {
+        "oracle": "concept_table",
+        "relations": {
+          "UCS": "food",
+          "UCR": "salivation_to_food",
+          "NS": "sound_before_pairing",
+          "CS": "sound_after_pairing",
+          "CR": "salivation_to_sound"
+        }
+      },
+      "references": [
+        "https://openstax.org/books/psychology-2e/pages/6-2-classical-conditioning"
+      ],
+      "expected_source_ordering": true,
+      "question_types": [
+        "mcq",
+        "cloze",
+        "matching",
+        "ordering",
+        "short_answer"
+      ],
+      "question_count": 8,
+      "card_count": 2,
+      "language": "vi",
+      "difficulty": "applied",
+      "terms_to_keep": [
+        "NS",
+        "UCS",
+        "UCR",
+        "CS",
+        "CR"
+      ],
+      "source_kind": "original_agent_authored_evaluation_notes_not_book_excerpt",
+      "label_status": "computational_or_source_crosschecked_agent_labels_need_independent_review"
+    },
+    {
+      "id": "net-final-routing",
+      "split": "final",
+      "subject": "Mạng máy tính",
+      "title": "Chọn tuyến theo longest prefix match",
+      "goal": "Chọn tuyến khớp có prefix dài nhất, phân biệt đường mặc định và tuyến cụ thể trong bảng đã cho.",
+      "text": "Khi nhiều prefix cùng khớp địa chỉ đích, longest prefix match chọn prefix có nhiều bit mạng nhất. Không chọn tuyến chỉ vì prefix ngắn hơn bao phủ nhiều địa chỉ hơn. Tuyến mặc định IPv4 0.0.0.0/0 chỉ được chọn khi không có tuyến khớp cụ thể hơn trong bảng.\nBảng ví dụ có 10.0.0.0/8 qua A, 10.1.0.0/16 qua B, 10.1.2.0/24 qua C và 0.0.0.0/0 qua D. Đích 10.1.2.99 chọn C; 10.1.9.5 chọn B; 10.9.0.4 chọn A; 192.0.2.9 chọn D. Không xét metric khác trong ví dụ này.\nQuy trình chọn tuyến trong bảng ví dụ:\n1. Liệt kê các prefix trong bảng chứa địa chỉ đích.\n2. So sánh độ dài prefix của các tuyến đã khớp.\n3. Chọn tuyến khớp có prefix dài nhất.\n4. Đọc next hop tương ứng của tuyến vừa chọn.",
+      "expected_facts": {
+        "oracle": "longest_prefix",
+        "routes": [
+          [
+            "10.0.0.0/8",
+            "A"
+          ],
+          [
+            "10.1.0.0/16",
+            "B"
+          ],
+          [
+            "10.1.2.0/24",
+            "C"
+          ],
+          [
+            "0.0.0.0/0",
+            "D"
+          ]
+        ],
+        "destinations": {
+          "10.1.2.99": "C",
+          "10.1.9.5": "B",
+          "10.9.0.4": "A",
+          "192.0.2.9": "D"
+        }
+      },
+      "references": [
+        "https://www.rfc-editor.org/rfc/rfc4632.html#section-5.1"
+      ],
+      "expected_source_ordering": true,
+      "question_types": [
+        "mcq",
+        "cloze",
+        "matching",
+        "ordering",
+        "short_answer"
+      ],
+      "question_count": 8,
+      "card_count": 2,
+      "language": "vi",
+      "difficulty": "applied",
+      "terms_to_keep": [
+        "longest prefix match",
+        "next hop"
+      ],
+      "source_kind": "original_agent_authored_evaluation_notes_not_book_excerpt",
+      "label_status": "computational_or_source_crosschecked_agent_labels_need_independent_review"
+    },
+    {
+      "id": "calc-final-partial",
+      "split": "final",
+      "subject": "Vi tích phân",
+      "title": "Đạo hàm riêng tại một điểm",
+      "goal": "Giữ biến còn lại như hằng số khi lấy đạo hàm riêng; phân biệt hai đạo hàm và thế điểm sau khi đạo hàm.",
+      "text": "Với f(x,y)=x^2*y+3*y^2, đạo hàm riêng theo x coi y là hằng số, nên f_x=2*x*y. Đạo hàm riêng theo y coi x là hằng số, nên f_y=x^2+6*y.\nTại (x,y)=(2,1), f_x=4 và f_y=10. Không thay cả hai biến bằng số trước khi lấy đạo hàm, vì làm vậy biến biểu thức thành hằng số và mất thông tin biến thiên. Hai đạo hàm riêng không mặc nhiên bằng nhau.\nQuy trình tính f_x tại (2,1):\n1. Chọn x là biến lấy đạo hàm và giữ y như hằng số.\n2. Lấy đạo hàm từng hạng để được f_x=2*x*y.\n3. Thay x=2 và y=1 vào biểu thức đạo hàm.\n4. Tính kết quả số f_x(2,1)=4.",
+      "expected_facts": {
+        "oracle": "partial_polynomial",
+        "terms": [
+          [
+            1,
+            2,
+            1
+          ],
+          [
+            3,
+            0,
+            2
+          ]
+        ],
+        "point": [
+          2,
+          1
+        ],
+        "dx": 4,
+        "dy": 10,
+        "dx_expression": "2*x*y",
+        "dy_expression": "x^2+6*y"
+      },
+      "references": [
+        "https://openstax.org/books/calculus-volume-3/pages/4-3-partial-derivatives"
+      ],
+      "expected_source_ordering": true,
+      "question_types": [
+        "mcq",
+        "cloze",
+        "matching",
+        "ordering",
+        "short_answer"
+      ],
+      "question_count": 8,
+      "card_count": 2,
+      "language": "vi",
+      "difficulty": "applied",
+      "terms_to_keep": [
+        "partial derivative"
+      ],
+      "source_kind": "original_agent_authored_evaluation_notes_not_book_excerpt",
+      "label_status": "computational_or_source_crosschecked_agent_labels_need_independent_review"
+    },
+    {
+      "id": "psy-final-interference",
+      "split": "final",
+      "subject": "Tâm lý đại cương",
+      "title": "Hai hướng nhiễu trí nhớ",
+      "goal": "Phân biệt proactive và retroactive interference theo hướng tác động giữa thông tin cũ và mới.",
+      "text": "Proactive interference xảy ra khi thông tin cũ gây khó nhớ thông tin mới. Retroactive interference xảy ra khi thông tin mới gây khó nhớ thông tin cũ. Cả hai liên quan đến khó truy hồi; không có nghĩa mọi dấu vết trí nhớ bị xóa vĩnh viễn.\nVí dụ giả định: đã quen mã tủ cũ rồi tiếp tục nhớ nhầm mã cũ khi cần mã tủ mới là proactive interference. Sau khi học số máy lẻ mới, khó nhớ lại số máy lẻ cũ là retroactive interference. Hướng cũ→mới và mới→cũ khác nhau.\nRetrieval là đưa thông tin đã lưu trở lại nhận thức. Một lần không nhớ ra chưa đủ để kết luận thông tin chưa từng được lưu. Đoạn này phân loại các hiện tượng, không quy định một quy trình thao tác hoặc thứ tự bắt buộc giữa hai loại nhiễu.",
+      "expected_facts": {
+        "oracle": "concept_table",
+        "relations": {
+          "proactive interference": "old_hinders_new",
+          "retroactive interference": "new_hinders_old",
+          "retrieval": "return_to_awareness"
+        }
+      },
+      "references": [
+        "https://openstax.org/books/psychology-2e/pages/8-3-problems-with-memory"
+      ],
+      "expected_source_ordering": false,
+      "question_types": [
+        "mcq",
+        "cloze",
+        "matching",
+        "ordering",
+        "short_answer"
+      ],
+      "question_count": 8,
+      "card_count": 2,
+      "language": "vi",
+      "difficulty": "applied",
+      "terms_to_keep": [
+        "proactive interference",
+        "retroactive interference",
+        "retrieval"
+      ],
+      "source_kind": "original_agent_authored_evaluation_notes_not_book_excerpt",
+      "label_status": "computational_or_source_crosschecked_agent_labels_need_independent_review"
+    }
+  ]
+}

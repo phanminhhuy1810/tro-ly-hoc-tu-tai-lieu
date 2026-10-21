@@ -1,0 +1,41 @@
+{
+  "purpose": "Load whole-chapter pipeline v19/schema19/processor-v8/SQL18 after337 backend tests; no active work; preserve existing content and preferences.",
+  "backup": "study-before-chapter-context-20261020T164629Z.sqlite3",
+  "active_jobs_before": 0,
+  "active_rooms_before": 0,
+  "parsing_sources_before": 0,
+  "table_hashes_before": {
+    "courses": "daf545f543fd7ea11e6d87948423d10556ff6c8bbd5005406b0b77091bbbaba3",
+    "course_revisions": "e9317b42282ee25e70981df0791a1315b89778a9cac254242878b2c6f010ec06",
+    "sources": "be4970760688f27af627b7e88c9b361824d94fb6da8f142f1dfb6507284f100c",
+    "extraction_revisions": "ccdf9c642c53001c79aef0db1c768c780c9a0b27451146e6dccc42747a788675",
+    "jobs": "6de7d96262d904f59a617291d0641807845b372deebad86d92d1b37ad40b0712",
+    "ai_preferences": "d61980b6c2ab00cc0ad89039a040c5951abe8b766ce09f63791a1766a0ebb6a3",
+    "wallets": "4a8070f4e2e6480ed667671d17c29573b8ad3f6f634498b212a9f1a6aed24f0f",
+    "study_sessions": "32c50246ed7eb62b387f27d8fabe0e9aae52943f3ec08f078607b43416c57aa0",
+    "answers": "131815f3c434e6766e634e97f8a76354b4d820e7584086e10df5bce3c9f7c3a1",
+    "coin_ledger": "76a3408343fa6eddb212d75bcbe66df151a63fe4fc3f38b09d526be69a34f779"
+  },
+  "old_pid": 77476,
+  "created_at": "2026-10-20T16:46:29.702547+00:00",
+  "unchanged_tables": {
+    "courses": true,
+    "course_revisions": true,
+    "sources": true,
+    "extraction_revisions": true,
+    "jobs": true,
+    "ai_preferences": true,
+    "wallets": true,
+    "study_sessions": true,
+    "answers": true,
+    "coin_ledger": true
+  },
+  "sql_version": 18,
+  "active_jobs_after": 0,
+  "health": {
+    "backend": true,
+    "provider_health_checked": false
+  },
+  "chapter_endpoint_loaded": true,
+  "new_pid": 80127
+}

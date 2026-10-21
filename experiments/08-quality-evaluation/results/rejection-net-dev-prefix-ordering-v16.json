@@ -1,0 +1,37 @@
+{
+  "purpose": "One bounded dev reproduction, not raw from the original failed request or final evaluation.",
+  "case_id": "net-dev-prefix",
+  "kind": "ordering",
+  "baseline_job_id": "0a17a39590764c9f93c07c3f4518c906",
+  "production_sha256": "2bde55f1fb4c7dc4add9927766747ae42a3701cd8229e07519d75f5fe7b1faa3",
+  "started_at": "2026-10-20T11:21:12.374191+00:00",
+  "model": "gemma4:12b-mlx",
+  "source_ids": [
+    "d3d343e5cc954975affd3a51f61b9ccc:2:0",
+    "d3d343e5cc954975affd3a51f61b9ccc:2:1",
+    "d3d343e5cc954975affd3a51f61b9ccc:2:2",
+    "d3d343e5cc954975affd3a51f61b9ccc:2:3",
+    "d3d343e5cc954975affd3a51f61b9ccc:2:4",
+    "d3d343e5cc954975affd3a51f61b9ccc:2:5",
+    "d3d343e5cc954975affd3a51f61b9ccc:2:6",
+    "d3d343e5cc954975affd3a51f61b9ccc:2:7"
+  ],
+  "instruction": "Tạo đúng một bài theo mục tiêu đã duyệt: {\"preferences\": {\"subject\": \"Mạng máy tính\", \"goal\": \"Phân biệt prefix, số địa chỉ, network, broadcast và host dùng được trong ví dụ /25.\", \"instructions\": \"\", \"language\": \"vi\", \"chapter_priorities\": [], \"difficulty\": \"applied\", \"question_types\": [\"mcq\", \"cloze\", \"matching\", \"ordering\", \"short_answer\"], \"question_count\": 8, \"card_count\": 2, \"target_language\": \"\", \"terms_to_keep\": [], \"teacher_notes\": \"\", \"user_notes\": \"\"}, \"unit\": {\"title\": \"QA net-dev-prefix — IPv4 và subnet /25.txt · Phần 1\", \"objective\": \"Học Phần 1 trong QA net-dev-prefix — IPv4 và subnet /25.txt; đối chiếu nguồn và luyện nội dung của phần này.\"}} Viết nội dung bằng tiếng Việt, giữ thuật ngữ gốc và từ đang học.  Mọi source_refs chỉ được chép ID của các đoạn trong danh sách Nguồn của request này; không dùng ID tài liệu, plan hoặc bài làm trích dẫn. \nChỉ tạo MỘT câu dạng ordering. Trả object có question và reason theo schema. Dùng các bước CÓ THỨ TỰ ĐÁNH SỐ RÕ TRONG NGUỒN. Mỗi option GIỮ NGUYÊN CỤM TỪ MÔ TẢ BƯỚC GỐC (bỏ số bước để không lộ đáp án); có thể trích trong ngoặc kép và kèm bản dịch. Không chỉ diễn giải lại hoặc đổi tên bước. Trộn thứ tự các options. KHÔNG trả trường answer; backend tính đáp án từ vị trí các bước được trích trong nguồn. source_refs phải bao gồm các bước đã chọn. Nếu không đối chiếu được từng bước hoặc thiếu thứ tự thì question=null, reason nói rõ. Câu hỏi chỉ kiểm tra mục tiêu RIÊNG CỦA BÀI NÀY: Học Phần 1 trong QA net-dev-prefix — IPv4 và subnet /25.txt; đối chiếu nguồn và luyện nội dung của phần này.. Mục tiêu toàn khóa chỉ là bối cảnh; không buộc câu của bài đầu giải toàn bộ khóa. Có thể hỏi khái niệm, giá trị hoặc quan hệ được nêu trong các đoạn nguồn của bài. Mỗi explanation tối đa 70 từ. Nếu không đủ nguồn cho dạng này, question=null và reason nói rõ phần thiếu; không bịa để đủ dạng. Viết ngôn ngữ đã chọn. question chỉ có các trường kind, prompt, options, explanation, source_refs; không thêm id/type/index hay trường của dạng khác, kể cả mảng rỗng.\nChỉ tránh trùng NGUYÊN VĂN trường prompt với các câu sau: [\"Trong ví dụ 10.12.7.201/25, địa chỉ nào là network?\", \"“Một subnet /25 có 128 địa chỉ; trong subnet thông thường này có ____ địa chỉ host dùng được khi bỏ hai biên.”\", \"Trong ví dụ 10.12.7.201/25, hãy nối các thành phần tương ứng với giá trị của chúng:\"]. ĐƯỢC dùng cùng kiến thức hoặc cùng quy trình cho những dạng câu khác nhau (ví dụ ghép cặp và sắp xếp). Danh sách này không loại trừ dạng câu đang yêu cầu hoặc các bước trong nguồn.",
+  "semantic_retries": 0,
+  "course_mutated": false,
+  "status": "failed",
+  "error_type": "ValueError",
+  "error": "Nguồn trích chưa có quy trình đánh số để kiểm chứng thứ tự.",
+  "raw": "```json\n{\n  \"question\": {\n    \"kind\": \"ordering\",\n    \"prompt\": \"Hãy sắp xếp các bước đúng để tìm hai biên từ một IPv4/prefix:\",\n    \"options\": [\n      \"Lấy đầu khối làm network và cuối khối làm broadcast.\",\n      \"Đọc prefix để xác định số bit host.\",\n      \"Bỏ hai biên để lấy dải host dùng được.\",\n      \"Tính kích thước khối địa chỉ từ số bit host.\",\n      \"Tìm khối chứa địa chỉ đã cho.\"\n    ],\n    \"explanation\": \"Quy trình gồm 5 bước: xác định số bit host từ prefix, tính kích thước khối, tìm khối chứa địa chỉ, xác định network/broadcast và cuối cùng là loại bỏ hai biên để tìm dải host.\",\n    \"source_refs\": [\n      \"R4\",\n      \"R5\",\n      \"R6\",\n      \"R7\",\n      \"R8\"\n    ]\n  },\n  \"reason\": \"\"\n}\n```",
+  "protocol_fallbacks": 1,
+  "usage": {
+    "input_tokens": 2354,
+    "cached_input_tokens": 127,
+    "output_tokens": 224,
+    "load_duration_ns": 4800167,
+    "prompt_eval_duration_ns": 6152814875,
+    "eval_duration_ns": 6268702209,
+    "total_duration_ns": 12429853958
+  },
+  "elapsed_seconds": 12.492
+}

@@ -1,0 +1,46 @@
+✔ pending badges remain inspectable and display actual progress without treating the target as an earned record (4.384417ms)
+✔ earned details use the backend record date and retain the achievement after an inactive period (28.050416ms)
+✔ course achievement actions point to the exact available course and escape imported titles (0.891041ms)
+✔ native dialog cancellation restores the opener and route changes remove stale details (1.077833ms)
+✔ static milestones are computed from local actions and never invent earned dates or server rewards (0.765041ms)
+✔ starts with independent pinned snapshots, and exposes the browser API without CommonJS (2.510834ms)
+✔ requires a visible answer and a boolean self report, then advances with the next front hidden (0.591917ms)
+✔ a completed round counts each card once and reports recall separately from an accuracy score (1.073ms)
+✔ JSON resume preserves the exact card, side, results and once-shuffled order (0.657792ms)
+✔ resume rejects stale content, version, membership and duplicate IDs; memory updates are not content edits (0.411166ms)
+✔ corrupt or structurally tampered stored sessions cannot resume as another review position (0.767458ms)
+✔ an empty deck is a completed empty round, and invalid inputs fail instead of silently dropping cards (0.459625ms)
+✔ a failed initial API load stays visible without a render-triggered request loop (5.411084ms)
+✔ recall cannot be written before reveal; repeated marks write once and advance only after the server resolves (5.023125ms)
+✔ an API revision conflict keeps the revealed card and pending recall unrecorded (2.817791ms)
+✔ round selection, revealed side and progress are stored separately for each signed-in owner (4.862208ms)
+✔ an old owner's pending memory response cannot advance a newly signed-in owner's round (3.564417ms)
+✔ entering and changing an embedded unit always renders that unit rather than a previously browsed deck (2.093375ms)
+✔ observe ignores stale snapshots and never submits model work (2.796792ms)
+✔ SSE disconnect falls back to reading the same job without recreating it (4.847334ms)
+✔ without EventSource, completed state is recovered by authenticated GET (1.60975ms)
+✔ session expiry closes observation and preserves the job handle (1.840208ms)
+✔ deferred feedback is not treated as a successful answer (0.191584ms)
+✔ observation timeout keeps a handle and sends no retry/cancel request (10.999458ms)
+✔ explicit provider consent survives unrelated renders and catalogue refresh (3.7575ms)
+✔ changing provider or re-entering settings requires fresh explicit consent (1.389292ms)
+✔ confirmed save reports the committed model and sends the current revision (1.351042ms)
+✔ current Flashcards animate real flips, card advances and summary once; background renders do not replay them (3.911125ms)
+✔ native data-fc, data-live, inline, Coin, text/icon buttons, links and disclosures get feedback without synthetic actions (12.649292ms)
+✔ motion off and reduced-motion cancel running Web Animations and prevent new movement (1.75225ms)
+✔ open sections survive a same-context background render without replaying the disclosure entrance (1.284333ms)
+✔ checkbox and select feedback keeps native values and does not dispatch duplicate input (0.635542ms)
+✔ MCQ IDs and normalized numeric answers reject distractors and partial answers (4.213334ms)
+✔ Matching uses pair IDs, rejects duplicate targets and survives display reordering (0.964375ms)
+✔ Ordering requires a complete permutation and the order supported by source §5 (1.176166ms)
+✔ Short answers are ungraded; self review does not inflate the fixed-answer score (1.421833ms)
+✔ Legacy two-question scope and stored attempt snapshots remain independent of later edits (0.932084ms)
+✔ Saving a question creates one personal card; editing it preserves fixtures and attempt history (1.179041ms)
+ℹ tests 38
+ℹ suites 0
+ℹ pass 38
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 93.9965

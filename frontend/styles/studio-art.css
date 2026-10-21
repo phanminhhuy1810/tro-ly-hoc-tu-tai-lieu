@@ -1,0 +1,57 @@
+/* A brief page turn on request; the resting illustration stays still. */
+.studio-art-toggle {
+  flex:none;
+  display:grid;
+  place-items:center;
+  position:relative;
+  width:178px;
+  height:132px;
+  padding:0;
+  border:0;
+  border-radius:20px;
+  background:transparent;
+  color:#526A46;
+  cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+}
+.studio-art-toggle .folio-desk-art { display:block; width:100%; height:100%; overflow:visible; }
+.studio-art-toggle:hover { background:#ffffff35; }
+.studio-art-toggle:focus-visible { outline:2px solid #7F9469; outline-offset:4px; }
+.folio-art-page { transform-box:fill-box; transform-origin:9% 90%; transform:scaleX(.02); opacity:0; }
+.folio-art-ribbon { transform-box:fill-box; transform-origin:20% 8%; }
+.folio-art-pencil { transform-box:view-box; transform-origin:69px 128px; transform:rotate(-31deg); }
+.studio-art-toggle.is-playing .folio-art-page { animation:folio-page-turn 1.2s cubic-bezier(.36,.07,.29,.97) both; }
+.studio-art-toggle.is-playing .folio-art-ribbon { animation:folio-ribbon-settle 1.2s ease-in-out both; }
+.studio-art-toggle.is-playing .folio-art-pencil { animation:folio-pencil-roll 1.2s ease-in-out both; }
+.studio-art-toggle.is-playing .folio-art-underline { animation:folio-ink-mark 1.2s ease both; }
+@keyframes folio-page-turn {
+  0%,100% { transform:translateX(0) scaleX(.02); opacity:0; }
+  9% { opacity:1; }
+  42% { transform:translate(-1px,-5px) scaleX(1); opacity:1; }
+  75% { transform:translate(-2px,-3px) scaleX(-.8); opacity:.85; }
+  91% { transform:translateX(-3px) scaleX(-.98); opacity:0; }
+}
+@keyframes folio-ribbon-settle {
+  0%,100% { transform:rotate(0); }
+  28% { transform:rotate(6deg); }
+  60% { transform:rotate(-4deg); }
+  83% { transform:rotate(2deg); }
+}
+@keyframes folio-pencil-roll {
+  0%,100% { transform:rotate(-31deg); }
+  22%,65% { transform:translate(0,2px) rotate(-27deg); }
+  84% { transform:translate(0,-1px) rotate(-32deg); }
+}
+@keyframes folio-ink-mark {
+  0%,20% { opacity:.35; }
+  52%,100% { opacity:1; }
+}
+@media(max-width:760px) {
+  .studio-art-toggle { width:113px; height:83px; border-radius:12px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .studio-art-toggle .folio-desk-art * { animation:none!important; transition:none!important; }
+  .studio-art-toggle .folio-art-page { transform:scaleX(.02); opacity:0; }
+}
+html[data-motion="off"] .studio-art-toggle .folio-desk-art * { animation:none!important; transition:none!important; }
+html[data-motion="off"] .studio-art-toggle .folio-art-page { transform:scaleX(.02); opacity:0; }

@@ -1,0 +1,102 @@
+/Users/phanminhhuy/Documents/learning resources/Hk4/TDTT/AI-STUDY-HANDOFF/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+======================================================================
+FAIL: test_five_distinct_cards_qualify_even_not_remembered_toggle_cannot_farm_and_zero_coin_still_works (test_activity.ActivityTests.test_five_distinct_cards_qualify_even_not_remembered_toggle_cannot_farm_and_zero_coin_still_works)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/phanminhhuy/Documents/learning resources/Hk4/TDTT/AI-STUDY-HANDOFF/backend/tests/test_activity.py", line 86, in test_five_distinct_cards_qualify_even_not_remembered_toggle_cannot_farm_and_zero_coin_still_works
+    self.assertEqual(self.provider.calls, 7)  # No AI calls for review or rewards.
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 8 != 7
+
+======================================================================
+FAIL: test_partial_retry_keeps_stage_provenance_when_switching_models (test_providers.ProviderTests.test_partial_retry_keeps_stage_provenance_when_switching_models)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/phanminhhuy/Documents/learning resources/Hk4/TDTT/AI-STUDY-HANDOFF/backend/tests/test_providers.py", line 142, in test_partial_retry_keeps_stage_provenance_when_switching_models
+    self.assertEqual(origins['reading']['model'], 'model-a')
+AssertionError: 'model-b' != 'model-a'
+- model-b
+?       ^
++ model-a
+?       ^
+
+
+======================================================================
+FAIL: test_bad_mcq_key_does_not_stop_other_types_or_get_repaired (test_question_stage_recovery.QuestionStageRecoveryTests.test_bad_mcq_key_does_not_stop_other_types_or_get_repaired)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/phanminhhuy/Documents/learning resources/Hk4/TDTT/AI-STUDY-HANDOFF/backend/tests/test_question_stage_recovery.py", line 43, in test_bad_mcq_key_does_not_stop_other_types_or_get_repaired
+    self.assertEqual(self.provider.calls-calls,6)
+AssertionError: 7 != 6
+
+======================================================================
+FAIL: test_connection_failure_still_stops_and_explicit_resume_reuses_reading_and_mcq (test_question_stage_recovery.QuestionStageRecoveryTests.test_connection_failure_still_stops_and_explicit_resume_reuses_reading_and_mcq)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/phanminhhuy/Documents/learning resources/Hk4/TDTT/AI-STUDY-HANDOFF/backend/tests/test_question_stage_recovery.py", line 129, in test_connection_failure_still_stops_and_explicit_resume_reuses_reading_and_mcq
+    self.assertEqual(after['progress']['reused_stages'],2)
+AssertionError: 3 != 2
+
+======================================================================
+FAIL: test_duplicate_prompt_is_excluded_but_not_retried_or_published (test_question_stage_recovery.QuestionStageRecoveryTests.test_duplicate_prompt_is_excluded_but_not_retried_or_published)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/phanminhhuy/Documents/learning resources/Hk4/TDTT/AI-STUDY-HANDOFF/backend/tests/test_question_stage_recovery.py", line 60, in test_duplicate_prompt_is_excluded_but_not_retried_or_published
+    self.assertEqual(self.provider.calls-calls,6)
+AssertionError: 7 != 6
+
+======================================================================
+FAIL: test_rejected_cloze_continues_once_records_reason_and_remaining_questions_are_practicable (test_question_stage_recovery.QuestionStageRecoveryTests.test_rejected_cloze_continues_once_records_reason_and_remaining_questions_are_practicable)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/phanminhhuy/Documents/learning resources/Hk4/TDTT/AI-STUDY-HANDOFF/backend/tests/test_question_stage_recovery.py", line 85, in test_rejected_cloze_continues_once_records_reason_and_remaining_questions_are_practicable
+    self.assertEqual(self.provider.calls-calls,6)  # reading + each requested kind once
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 7 != 6
+
+======================================================================
+FAIL: test_unproved_ordering_isolated_without_repeating_generation_or_losing_other_types (test_question_stage_recovery.QuestionStageRecoveryTests.test_unproved_ordering_isolated_without_repeating_generation_or_losing_other_types)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/phanminhhuy/Documents/learning resources/Hk4/TDTT/AI-STUDY-HANDOFF/backend/tests/test_question_stage_recovery.py", line 144, in test_unproved_ordering_isolated_without_repeating_generation_or_losing_other_types
+    self.assertEqual(self.provider.calls-calls,6)
+AssertionError: 7 != 6
+
+======================================================================
+FAIL: test_ordering_is_not_generated_from_a_bare_list_of_concepts (test_setup.SetupTests.test_ordering_is_not_generated_from_a_bare_list_of_concepts)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/phanminhhuy/Documents/learning resources/Hk4/TDTT/AI-STUDY-HANDOFF/backend/tests/test_setup.py", line 13, in test_ordering_is_not_generated_from_a_bare_list_of_concepts
+    self.assertEqual(self.provider.calls-calls,2)  # reading + cloze, no invented ordering
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 3 != 2
+
+======================================================================
+FAIL: test_new_material_only_changes_selected_draft_and_each_generation_uses_its_sources (test_source_bindings.SourceBindingTests.test_new_material_only_changes_selected_draft_and_each_generation_uses_its_sources)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/phanminhhuy/Documents/learning resources/Hk4/TDTT/AI-STUDY-HANDOFF/backend/tests/test_source_bindings.py", line 91, in test_new_material_only_changes_selected_draft_and_each_generation_uses_its_sources
+    self.assertTrue(all('"language": "en"' in call['instruction'] for call in self.received[start:]))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_backfill_restart_and_vacuum_keep_source_data_and_stable_pagination (test_source_library.SourceLibraryTests.test_backfill_restart_and_vacuum_keep_source_data_and_stable_pagination)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/phanminhhuy/Documents/learning resources/Hk4/TDTT/AI-STUDY-HANDOFF/backend/tests/test_source_library.py", line 111, in test_backfill_restart_and_vacuum_keep_source_data_and_stable_pagination
+    self.assertEqual(db.execute('select max(version) from schema_versions').fetchone()[0],17)
+AssertionError: 18 != 17
+
+======================================================================
+FAIL: test_lesson_reports_actual_planned_and_saved_counts_instead_of_fixed_five (test_streaming.JobStreamingTests.test_lesson_reports_actual_planned_and_saved_counts_instead_of_fixed_five)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/phanminhhuy/Documents/learning resources/Hk4/TDTT/AI-STUDY-HANDOFF/backend/tests/test_streaming.py", line 317, in test_lesson_reports_actual_planned_and_saved_counts_instead_of_fixed_five
+    self.assertEqual(value['progress']['planned_stages'], 2)
+AssertionError: 3 != 2
+
+----------------------------------------------------------------------
+Ran 334 tests in 37.810s
+
+FAILED (failures=11)

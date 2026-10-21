@@ -1,0 +1,40 @@
+{
+  "purpose": "Load scoped sequence validation after safe backup. No active AI job/room; no inference in deploy probe.",
+  "backup": "study-before-sequence-context-20261020T113142Z.sqlite3",
+  "active_jobs_before": 0,
+  "active_rooms_before": 0,
+  "table_hashes_before": {
+    "courses": "9869b02c251dab6ff067bf059557ab8370cc962d0f818954f2f2e20bf360157e",
+    "course_revisions": "720e0dfdee89e0d9a81581d8047a36429079baebf631071b27c07bacff90934f",
+    "sources": "299c54a611a191d2839ee7301eebfde98961881d820358aea0e7a8dfe4f470f1",
+    "extraction_revisions": "1b557b0269de64fda723f82579d383dc0d0e52ca39288e889a777065665ac5d6",
+    "jobs": "0d95ad450836a5d904818bde66ee1798e3d80668b3f45bdf476d7acc8774f12f",
+    "ai_preferences": "b58838686d525f5a3f9420e8562c4dbbb7527433e1388690a1440f291d4562c2",
+    "wallets": "4994d13b20d04fe4d50ca339b99e36fc8640a59deb1cf2ec017cfe998c85a75e",
+    "study_sessions": "0ac718981000642860ce807be1a177e92711677d0e24b43cecaf7b709a911b7e",
+    "answers": "c3265f9c36faf4a34777f5fb18457c3615361bc8696e8f699b0c4cba490f26c2",
+    "coin_ledger": "616e80db99608ec3e447e00f1fe3309b013ba070005418d9ec5a2c3978ba9ab0"
+  },
+  "production_version": "lesson-v17/completion-v4/processor-v6",
+  "sql_version": 17,
+  "unchanged_tables": {
+    "courses": true,
+    "course_revisions": true,
+    "sources": true,
+    "extraction_revisions": true,
+    "jobs": true,
+    "ai_preferences": true,
+    "wallets": true,
+    "study_sessions": true,
+    "answers": true,
+    "coin_ledger": true
+  },
+  "active_jobs_after": 0,
+  "active_rooms_after": 0,
+  "preserved_user_ip_revision": 2,
+  "health": {
+    "backend": true,
+    "provider_health_checked": false
+  },
+  "all_passed": true
+}

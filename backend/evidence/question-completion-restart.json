@@ -1,0 +1,23 @@
+{
+  "backup": "study-before-question-completion-20261019T120547Z.sqlite3",
+  "before_counts": {
+    "courses": 14,
+    "course_revisions": 37,
+    "ai_preferences": 14,
+    "sources": 197,
+    "jobs": 107
+  },
+  "before_preferences_sha256": "1ab8eb2f4a3d3b5fd1ff615e732a12bbcf5df6a3174d35728e29b1ab09d16e5b",
+  "active_jobs_before": 0,
+  "active_rooms_before": 0,
+  "after_counts": {
+    "courses": 14,
+    "course_revisions": 37,
+    "ai_preferences": 14,
+    "sources": 197,
+    "jobs": 107
+  },
+  "counts_preserved": true,
+  "preferences_preserved": true,
+  "http_status": 200
+}

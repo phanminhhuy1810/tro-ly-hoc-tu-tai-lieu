@@ -1,0 +1,97 @@
+{
+  "purpose": "Codex-assisted source/oracle review; not independent human or instructor labels.",
+  "reviewed_at": "2026-10-21T05:05:58.114064+00:00",
+  "case_id": "psy-dev-memory",
+  "run_id": "dev-v5-chapter-focus",
+  "production_sha256": "4445b6ad08bbb79c0faaf00ba77f1f525e623b7860a156fcdc5ccdc12869e04c",
+  "source_sha256": "b115ab111d1f37bf943ea209551a363bde1c96a07e06199967bf45c868c4e619",
+  "oracle": {
+    "verification": "agent_source_crosscheck_only_needs_independent_review",
+    "limit": "A deterministic computation cannot establish these psychology labels; no automatic factual pass."
+  },
+  "reading_review": "Reading/cards/mindmap distinguish encoding,storage,retrieval and semantic/visual/acoustic encoding; they no longer add the unsupported claim that these functions operate independently. Review remains source-based Codex assistance, not psychology truth proved by code.",
+  "scope": "published",
+  "independent_human_reviews": 0,
+  "factual_accuracy_score": null,
+  "questions": [
+    {
+      "question_index": 0,
+      "kind": "mcq",
+      "question_sha256": "76298dad2fd747ce5830cd9d2d774701c5430466067feb8fda6560aa57dcb8e4",
+      "status": "supported_in_checked_scope",
+      "note": "The three described actions supply initial meaning-association, retention over time and recall on request; one option matches the source distinctions.",
+      "source_refs": [
+        "4548f7de842e4c8c8318597a747acf11:2:0",
+        "4548f7de842e4c8c8318597a747acf11:2:2"
+      ]
+    },
+    {
+      "question_index": 1,
+      "kind": "cloze",
+      "question_sha256": "7b0aed232b459507cd9f15ee8d755e55c46b7b73a4c43ae9b3146ca006b74577",
+      "status": "needs_review",
+      "note": "Visual-encoding answer is supported by the image-shape scenario, but explanation exposes the R2 transport label.",
+      "source_refs": [
+        "4548f7de842e4c8c8318597a747acf11:2:1"
+      ]
+    },
+    {
+      "question_index": 2,
+      "kind": "matching",
+      "question_sha256": "293edfba48ce9adb18098e674a560629045e5da0c88038f7a9fada24791d26da",
+      "status": "supported_in_checked_scope",
+      "note": "The first-time meaning association and later recall are explicitly distinguished and map to encoding/retrieval using the cited definitions/examples.",
+      "source_refs": [
+        "4548f7de842e4c8c8318597a747acf11:2:0",
+        "4548f7de842e4c8c8318597a747acf11:2:2"
+      ]
+    },
+    {
+      "question_index": 3,
+      "kind": "short_answer",
+      "question_sha256": "c71e969b41cd30adb19e0f88f377317243a87bb96c00aedfde709a7552e2dd8f",
+      "status": "supported_in_checked_scope",
+      "note": "Attention to pronunciation versus retaining information over time matches acoustic encoding/storage; reference and self-review rubric are supported.",
+      "source_refs": [
+        "4548f7de842e4c8c8318597a747acf11:2:1",
+        "4548f7de842e4c8c8318597a747acf11:2:2"
+      ]
+    },
+    {
+      "question_index": 4,
+      "kind": "mcq",
+      "question_sha256": "db01e3e1db98a056e69b26ef3ec747dd38d566e719d5602f704e36c63eb65219",
+      "status": "needs_review",
+      "note": "Acoustic-encoding key is supported and distinct from first MCQ objective, but explanation exposes the R2 transport label.",
+      "source_refs": [
+        "4548f7de842e4c8c8318597a747acf11:2:1"
+      ]
+    },
+    {
+      "question_index": 5,
+      "kind": "cloze",
+      "question_sha256": "a955d2b89845c285dd50f62638929914fcc360cb7b4f8b25b6f03d6c6e1eea07",
+      "status": "supported_in_checked_scope",
+      "note": "Retrieval for recalling a previously learned definition is explicitly supported; no claim that failure to recall proves failure to encode.",
+      "source_refs": [
+        "4548f7de842e4c8c8318597a747acf11:2:0",
+        "4548f7de842e4c8c8318597a747acf11:2:2"
+      ]
+    }
+  ],
+  "uncreated": [
+    {
+      "stage": "ordering",
+      "kind": "ordering",
+      "reason": "Nguồn của bài chưa có các bước đánh số theo trình tự rõ. Không biến danh sách khái niệm thành câu sắp xếp.",
+      "origin": "backend_source_gate"
+    },
+    {
+      "stage": "matching:2",
+      "kind": "matching",
+      "reason": "Đã có câu hỏi dạng matching với nội dung tương tự (phân loại hành động cụ thể với chức năng trí nhớ). Trong nguồn không còn ý nghĩa nào khác về sự khác biệt giữa encoding, storage và retrieval để tạo thêm một câu matching mới mà không bị trùng lặp nội dung.",
+      "origin": "model_declined"
+    }
+  ],
+  "job_error": null
+}

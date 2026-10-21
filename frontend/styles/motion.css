@@ -1,0 +1,110 @@
+/* One restrained motion rhythm: fast control feedback, brief view changes. */
+:root{--motion-quick:150ms;--motion-ease:cubic-bezier(.2,.75,.25,1)}
+button,a,input,select,textarea{transition:background-color var(--motion-quick),border-color var(--motion-quick),color var(--motion-quick),box-shadow var(--motion-quick),transform var(--motion-quick) var(--motion-ease)}
+button:not(:disabled):active{transform:scale(.98)}
+.motion-nav-ready{position:relative;isolation:isolate}
+.motion-nav-highlight{position:absolute;pointer-events:none;border-radius:8px;background:#edf2e5;transform-origin:top left;z-index:0}
+.product-sidebar .ref-sidebar-nav.motion-nav-ready button{position:relative;z-index:1}
+.product-sidebar .ref-sidebar-nav.motion-nav-ready button.active{background:transparent}
+.product-sidebar .ref-sidebar-nav.motion-nav-ready button:not(.active):hover{background:#f4f6f0}
+.personal-course,.community-course,.ref-mode,.course-arrow,.small-topic-icon,.path-circle,.product-launcher,.course-art{transition:transform 180ms var(--motion-ease),box-shadow 180ms var(--motion-ease),border-color var(--motion-quick),background-color var(--motion-quick)}
+.answer-selection{display:grid;place-items:center;width:21px;height:21px;flex-shrink:0;margin-left:auto;border-radius:50%;background:#dce8ca;color:#6d8750}
+.answer-selection svg{width:12px;height:12px;stroke-width:2}
+.answer .letter{transition:background-color var(--motion-quick),color var(--motion-quick)}
+.motion-exit-copy{pointer-events:none!important;transform-origin:center center}
+.product-assist{transform-origin:top left}
+.motion-options{display:flex;gap:3px;border:1px solid #e2e8d7;border-radius:8px;padding:3px;flex-shrink:0}
+.motion-options button{font-size:10px;padding:7px 9px;color:#9ba78d;border-radius:5px}
+.motion-options button.selected{background:#eaf1df;color:#78915d}
+/* Both faces stay mounted; only the active face is exposed to assistive tech. */
+.study-flashcard,.study-flashcard.is-back{display:block;position:relative;perspective:1100px;padding:0;min-height:300px;height:300px;border:0;border-radius:0;background:transparent;box-shadow:none;overflow:visible;transform:none}
+.study-flashcard>.flashcard-rotator{display:block;position:relative;width:100%;height:100%;text-transform:none;letter-spacing:normal;font-size:inherit;color:inherit;transform-style:preserve-3d;transform:rotateY(0deg)}
+.flashcard-rotator.is-flipped{transform:rotateY(180deg)}
+.flashcard-face{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:35px;padding:27px 45px;border:1px solid #eedda5;border-radius:17px;background:#fff8df;box-shadow:0 5px 0 #f2e7c4;color:#776b40;backface-visibility:hidden;-webkit-backface-visibility:hidden;pointer-events:none}
+.flashcard-back{transform:rotateY(180deg);background:#eef5e5;border-color:#dce7ca;box-shadow:0 5px 0 #e0eacd;color:#5b7045}
+.flashcard-face>span{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:#b09b64}
+.flashcard-face strong{font-size:23px;font-weight:500;line-height:1.7;max-width:510px}
+.flashcard-face small{font-size:10px;color:#b3a16f}
+.flashcard-back>span,.flashcard-back small{color:#97a780}
+.study-flashcard:not(:disabled):active{transform:none}
+#dialog[open]{animation:motion-dialog-in 190ms var(--motion-ease)}
+#dialog::backdrop{animation:motion-backdrop-in 160ms ease-out}
+.timeline-tooltip:not([hidden]),.toast:not([hidden]){animation:motion-tooltip-in 120ms ease-out}
+@keyframes motion-dialog-in{from{opacity:0;transform:translateY(9px) scale(.99)}to{opacity:1;transform:none}}
+@keyframes motion-backdrop-in{from{opacity:0}to{opacity:1}}
+@keyframes motion-section-in{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+@keyframes motion-tooltip-in{from{opacity:0;transform:translateY(3px)}to{opacity:1;transform:none}}
+@media(hover:hover) and (pointer:fine){
+ .personal-course:hover,.community-course:hover{transform:translateY(-3px);box-shadow:0 8px 20px #64734e0d}
+ .personal-cover:hover .course-art,.community-cover:hover .course-art{transform:translateY(-2px)}
+ .ref-mode:hover{transform:translateY(-2px)}
+ .course-arrow:hover{transform:translateX(2px)}
+ .path-circle:hover{transform:translateY(-2px)}
+ .product-launcher:hover{transform:translateY(-2px);box-shadow:0 5px 17px #47513924}
+}
+@media(max-width:760px){
+ .study-flashcard,.study-flashcard.is-back{height:260px;min-height:260px}
+ .flashcard-face{padding:25px 20px;gap:28px}
+ .flashcard-face strong{font-size:19px}
+}
+html[data-motion="off"] *,html[data-motion="off"] *::before,html[data-motion="off"] *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+html[data-motion="off"] button:not(:disabled):active,html[data-motion="off"] .personal-course:hover,html[data-motion="off"] .community-course:hover,html[data-motion="off"] .ref-mode:hover,html[data-motion="off"] .course-arrow:hover,html[data-motion="off"] .path-circle:hover,html[data-motion="off"] .product-launcher:hover,html[data-motion="off"] .course-art{transform:none}
+/* Keep the static back face readable when transitions are disabled. */
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+.motion-tab-ready{position:relative;isolation:isolate}
+.motion-tab-highlight{position:absolute;background:var(--motion-tab-fill,#292a2d);border-radius:9px;transform-origin:top left;pointer-events:none;z-index:0}
+.motion-tab-ready button{position:relative;z-index:1}
+.academic-learn .lesson-tabs.motion-tab-ready button.active,.product-assist .assist-switch.motion-tab-ready button.active{background:transparent}
+.assist-switch.motion-tab-ready{--motion-tab-fill:#c6cef4}
+.motion-ink-ready{position:relative;isolation:isolate;overflow:hidden}
+.motion-press-wave{position:absolute;pointer-events:none;width:90px;height:90px;border-radius:50%;background:currentColor;opacity:0;transform:translate(-50%,-50%) scale(.1)}
+.course-ring{position:relative;background:transparent}
+.motion-ring-svg{position:absolute;inset:0;width:100%;height:100%;transform:rotate(-90deg)}
+.motion-ring-svg circle{fill:none;stroke-width:3}
+.motion-ring-track{stroke:#ecf0e5}
+.motion-ring-value{stroke:#a4bb8b;stroke-linecap:round}
+.course-ring>span{position:relative;z-index:1}
+.map-trunk{transform-origin:top center}
+@media(hover:hover) and (pointer:fine){.map-node:hover{transform:translateY(-2px);box-shadow:0 5px 14px #746b840c}}
+.map-node{transition:transform 180ms var(--motion-ease),box-shadow 180ms var(--motion-ease),border-color 150ms}
+html[data-motion="off"] .map-node:hover{transform:none}
+
+.flashcard-face strong{white-space:pre-line;font-size:19px;line-height:1.65;max-height:205px;overflow-y:auto;scrollbar-width:thin;pointer-events:auto}
+.flashcard-face{gap:20px}.flashcard-face>span,.flashcard-face small{font-size:11px;color:#75643e}.flashcard-back>span,.flashcard-back small{color:#5c7146}
+.motion-options button{font-size:12px;color:#60734e}
+@media(max-width:760px){.flashcard-face strong{font-size:17px;max-height:170px}.flashcard-face{gap:15px}}
+
+/* Current controls participate even when they use data-live/data-fc/inline help
+   rather than the older data-action classes. The waveform is event-driven. */
+#app :is(button,a[href],[role="button"],summary),
+#dialog :is(button,a[href],[role="button"],summary) {
+  -webkit-tap-highlight-color:transparent;
+  touch-action:manipulation;
+}
+#app summary,#dialog summary {
+  cursor:pointer;
+  transition:color 140ms ease,background-color 140ms ease,transform 140ms var(--motion-ease);
+}
+#app :is(button,a[href])>svg,#dialog :is(button,a[href])>svg {
+  transition:transform 150ms var(--motion-ease);
+}
+@media(hover:hover) and (pointer:fine){
+  #app button:not(:disabled):not(.primary,.secondary,.mode-button,.path-circle,.answer,.fc-card,.fc-deck-tile,.study-flashcard):hover,
+  #dialog button:not(:disabled):not(.primary,.secondary):hover { transform:translateY(-1px); }
+  #app :is(button,a[href]):not(:disabled):not(.fc-card):hover>svg,
+  #dialog :is(button,a[href]):not(:disabled):hover>svg { transform:translateY(-1px); }
+  #app summary:hover,#dialog summary:hover { color:#405a32;transform:translateX(2px); }
+}
+#app button:not(:disabled):not(.primary,.secondary,.mode-button,.path-circle,.answer,.fc-card,.fc-deck-tile,.study-flashcard):active,
+#dialog button:not(:disabled):not(.primary,.secondary):active { transform:translateY(1px) scale(.985); }
+/* The new card renderer replaces its DOM while saving/receiving help. Disable
+   its old class-based replay: motion.js now animates only an actual flip, new
+   card, or round result. Content remains immediately readable with motion off. */
+html .fc-shell .fc-card,html .fc-shell .fc-card.is-flipped,
+html .fc-shell .fc-card.is-next,html .fc-shell .fc-study.is-next .fc-card { animation:none; }
+html[data-motion="off"] :is(#app,#dialog) :is(button,a[href],[role="button"],summary):is(:hover,:active),
+html[data-motion="off"] :is(#app,#dialog) :is(button,a[href])>svg { transform:none!important; }
+@media(prefers-reduced-motion:reduce){
+  :is(#app,#dialog) :is(button,a[href],[role="button"],summary):is(:hover,:active),
+  :is(#app,#dialog) :is(button,a[href])>svg { transform:none!important; }
+}

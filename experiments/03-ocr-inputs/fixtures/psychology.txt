@@ -1,0 +1,5 @@
+Tâm lý học đại cương: trí nhớ
+Trí nhớ gồm mã hóa, lưu trữ và truy hồi thông tin.
+Mã hóa là biến đổi thông tin để có thể lưu trữ.
+Truy hồi là lấy lại thông tin đã được lưu.
+Ví dụ: tự nhắc lại kiến thức sau khi đọc.

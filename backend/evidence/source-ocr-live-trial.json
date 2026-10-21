@@ -1,0 +1,91 @@
+{
+  "kind": "self_authored_development_native_ocr_not_ai_benchmark",
+  "started_at": "2026-10-18T04:32:34Z",
+  "passed": true,
+  "failures": [],
+  "runs": [
+    {
+      "kind": "pdf",
+      "source_id": "3e2e297b69bd498b9c69a58df89e8297",
+      "initial_fragments": 67,
+      "manual_page": 24,
+      "cancelled_job": "31cb643240c048a0bece0500d3af4bc5",
+      "checkpoint_items_reused": [
+        "page:21",
+        "page:22"
+      ],
+      "batch_ids": [
+        "5b44fe09f95b4dccaaf001b518dd7a1d",
+        "3ec2d5c71db94f369ba69dac87b23323"
+      ],
+      "resume_job": "6ec361e8480049289416fc3c2c946f41",
+      "final_revision": 4,
+      "final_counts": {
+        "pending": 0,
+        "protected": 1,
+        "unsupported": 0,
+        "text_available_unverified": 46,
+        "native_text": 0,
+        "no_text_detected": 0
+      },
+      "original_sha256": "654c3fdd276586ebde7dc72e94cf5548a505596356c8445a62b070e659d0752a",
+      "old_revision_and_manual_text_unchanged": true,
+      "reviewed": false,
+      "pdf_flow_seconds_through_two_passes": 30.695,
+      "counts_after_first_apply": {
+        "pending": 6,
+        "protected": 1,
+        "unsupported": 0,
+        "text_available_unverified": 40,
+        "native_text": 0,
+        "no_text_detected": 0
+      }
+    },
+    {
+      "kind": "image",
+      "source_id": "e881e48ecc00414c941bc3e846cf4df8",
+      "batch_id": "184e09542929446d950a25766f423081",
+      "job_id": "b092383ab74948b28758dce680ff76eb",
+      "elapsed_seconds": 1.853,
+      "completed_items": 2,
+      "no_text_detected": 1,
+      "final_counts": {
+        "pending": 25,
+        "protected": 0,
+        "unsupported": 0,
+        "text_available_unverified": 21,
+        "native_text": 0,
+        "no_text_detected": 1
+      },
+      "reviewed": false
+    },
+    {
+      "kind": "office",
+      "source_id": "648d60312aa84b7a92ffe6f024ab60bc",
+      "batch_id": "17e4521519ea4417812f1a1e5044640c",
+      "job_id": "f2114fb650a94113b20c2fa31fa4557b",
+      "elapsed_seconds": 4.338,
+      "completed_items": 3,
+      "no_text_detected": 0,
+      "final_counts": {
+        "pending": 0,
+        "protected": 0,
+        "unsupported": 0,
+        "text_available_unverified": 23,
+        "native_text": 0,
+        "no_text_detected": 0
+      },
+      "reviewed": false
+    }
+  ],
+  "ai_requests_expected": 0,
+  "coin_wallet_unchanged": true,
+  "ai_usage_rows_added": 0,
+  "native_provider": "macOS_Vision",
+  "notes": [
+    "OCR recognition quality is not fully verified.",
+    "Frame47 is a known synthetic white frame; the product only reports no text detected.",
+    "The cancelled in-flight page can be retried; already completed pages are retained."
+  ],
+  "elapsed_seconds": 36.934
+}

@@ -1,0 +1,32 @@
+{
+  "purpose": "Assistant review of two self-authored IPv4 QA outputs, not expert/held-out evaluation; grading against generated keys alone is NOT factual validation",
+  "oracle": {
+    "network": "192.168.1.64",
+    "broadcast": "192.168.1.127",
+    "first_host": "192.168.1.65",
+    "last_host": "192.168.1.126",
+    "usable_hosts": 62
+  },
+  "checks": {
+    "qwen9b_cloze62": true,
+    "qwen9b_ordering_source_positions": true,
+    "qwen_mcq_step5": true,
+    "qwen_matching_steps3and4": true,
+    "qwen_short_host_range": true,
+    "qwen_chat_hosts": true,
+    "gemini_cloze62": true,
+    "gemini_ordering_source_positions": true,
+    "gemini_mcq_step1": true,
+    "gemini_matching_host_bits_and_block_size": true,
+    "gemini_short_host_count": true
+  },
+  "findings": [
+    "Qwen ordering exposed source step numbers. Kept original revision2 and its attempt; scoped preview/apply fixed display in revision3 with0 AI calls.",
+    "Qwen matching repeats the same wording on both sides and is too easy; factually aligned but weak exercise design.",
+    "Gemini generated all5 kinds; later chat hit429. Retain failed chat and released Coin hold; no retry/fallback.",
+    "Gemma remains4/5 in latest real trial, with duplicate-scope decline retained. No further Gemma qualification call in this turn.",
+    "Processor-v2 label normalization and persisted validation audit were added after the inference trials; tested with real SQLite reporter/test transports, not claimed as a new Gemma/Gemini inference run."
+  ],
+  "known_facts_checked": true,
+  "exercise_design_complete": false
+}

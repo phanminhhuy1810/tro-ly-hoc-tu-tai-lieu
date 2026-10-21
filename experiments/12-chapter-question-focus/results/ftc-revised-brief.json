@@ -1,0 +1,55 @@
+{
+  "purpose": "single_adapter_diagnostic_not_end_to_end_or_historical_raw",
+  "case_id": "calc-dev-ftc",
+  "model": "gemma4:12b-mlx",
+  "started_at": "2026-10-21T01:03:28.807184+00:00",
+  "elapsed_seconds": 20.425,
+  "first_chunk_ms": 3460.309,
+  "source_input_sha256": "0661a868ca07217c26bb7cc7c23bf21a3298c4c058efd09b6022c336d399fac4",
+  "source_fragments": 7,
+  "source_characters": 551,
+  "phase": "revised",
+  "instruction_exactly_matches_captured_template": false,
+  "instruction_sha256": "a48a075a8d8e370a0696991a34f20aec4a91fa226fddd44c9b8064c61d75e940",
+  "brief_prompt_version": "20261021-compact-readable-formulas-v2",
+  "schema_sha256": "0afe489655d7d092857a50968851138f134746fdf688f6a270d6a417f504527f",
+  "posts": [
+    {
+      "num_predict": 4500,
+      "format": true,
+      "payload_sha256": "c0bfaad1cbcf0e2d1c06f4625f5fb0386f88828a1e136d9b7dacca2a7ab32211"
+    },
+    {
+      "num_predict": 4500,
+      "format": false,
+      "payload_sha256": "bd03edb45fc8861352f19a18f52809f4e7dbd5cca3e94c4a54226026b7660664"
+    }
+  ],
+  "usage": {
+    "input_tokens": 1474,
+    "cached_input_tokens": 0,
+    "output_tokens": 532,
+    "load_duration_ns": 4276625,
+    "prompt_eval_duration_ns": 3206723750,
+    "eval_duration_ns": 17155921250,
+    "total_duration_ns": 20369152250,
+    "provider_finish_reason": "stop",
+    "reference_alias_count": 7,
+    "reference_alias_map_sha256": "76bf2c761672d85b34f84994d77c5a53f0bdeb3fc9e0fc6b2f884cf9cf5fb867"
+  },
+  "error": null,
+  "raw_characters": 1522,
+  "raw_sha256": "0921e1a0215c06e5075930b14f0fd93a89834ab2f2d75184fcd5659e3cebafda",
+  "offline_exact_raw_validation": {
+    "valid": true
+  },
+  "adapter_accepted": true,
+  "raw_private": true,
+  "published": false,
+  "semantic_calls": 1,
+  "protocol_fallbacks": 1,
+  "app_active_jobs_after": 0,
+  "external_inference": false,
+  "automatic_semantic_retry": false,
+  "historical_failure_finish_reason_remains_unknown": true
+}

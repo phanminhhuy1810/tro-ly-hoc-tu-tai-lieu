@@ -1,0 +1,53 @@
+{
+  "kind": "Real native Vision process with deliberately shortened one-second deadline; production deadline remains forty seconds",
+  "selected_pages": [
+    24,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "seconds": 1.014,
+  "recovered_pages": [
+    24,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "characters": 1319,
+  "warnings": [
+    "OCR dừng trước khi hoàn tất; đã giữ các trang đọc xong. Trang chưa đọc cần chọn riêng hoặc chia nguồn, không tự thử lại.",
+    "Trang 7 chưa hoàn tất OCR trong lượt này.",
+    "Trang 8 chưa hoàn tất OCR trong lượt này.",
+    "Trang 9 chưa hoàn tất OCR trong lượt này.",
+    "Trang 10 chưa hoàn tất OCR trong lượt này.",
+    "Trang 11 chưa hoàn tất OCR trong lượt này.",
+    "Trang 12 chưa hoàn tất OCR trong lượt này.",
+    "Trang 13 chưa hoàn tất OCR trong lượt này.",
+    "Trang 14 chưa hoàn tất OCR trong lượt này.",
+    "Trang 15 chưa hoàn tất OCR trong lượt này.",
+    "Trang 16 chưa hoàn tất OCR trong lượt này.",
+    "Trang 17 chưa hoàn tất OCR trong lượt này.",
+    "Trang 18 chưa hoàn tất OCR trong lượt này.",
+    "Trang 19 chưa hoàn tất OCR trong lượt này."
+  ],
+  "partial_preserved": true
+}

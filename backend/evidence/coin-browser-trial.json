@@ -1,0 +1,92 @@
+{
+  "verified_at": "2026-10-15T08:21:58.177320+00:00",
+  "scope": "Real browser/local Qwen 9B on exact self-authored subnet fixture; UI and read-only DB observations; not independent human/quality evaluation",
+  "job_id": "ceeae2a1e92e4a43ae851565eb7f306b",
+  "status": "succeeded",
+  "provider": {
+    "provider": "ollama_local",
+    "model": "qwen3.5:9b",
+    "prompt_version": "20261015-context-v1",
+    "schema_version": 10
+  },
+  "source_sha256": "bb9046e1f07ff872b3a1eebbce6670c5270f8e3d4281166fb7559b62870390c0",
+  "browser_observations": {
+    "before_confirm_ai_usage_count": 0,
+    "cancel_kept_draft": true,
+    "compact_to_full_kept_draft": true,
+    "wallet_before": 20,
+    "wallet_after_ai_saved": 19,
+    "confirmation_required": true
+  },
+  "quote": {
+    "created_at": "2026-10-15T07:57:35.643470+00:00",
+    "amount": 1,
+    "status": "used",
+    "policy": {
+      "cards_per_round": 5,
+      "cash_payments": false,
+      "daily_community_cap": 4,
+      "daily_reward_cap": 12,
+      "default_timezone": "Asia/Ho_Chi_Minh",
+      "initial_coin": 20,
+      "initial_quota": {
+        "lesson": 1,
+        "outline": 1,
+        "subject_analysis": 3
+      },
+      "partial_failure_policy": "release_all; keep usable partial data without charging the failed job",
+      "prices": {
+        "chat": 1,
+        "correction": 2,
+        "outline": 3,
+        "short_feedback": 1,
+        "source_vision": 2,
+        "subject_analysis": 1
+      },
+      "proposed": true,
+      "quote_ttl_seconds": 600,
+      "rewarded_practice_rounds_per_utc_day": 3,
+      "rewards": {
+        "card_round": 1,
+        "community_positive": 2,
+        "course_complete": 3,
+        "daily_card_mission": 1,
+        "daily_practice_mission": 1,
+        "first_session": 2,
+        "five_units": 2,
+        "practice": 1,
+        "study_day_3": 2,
+        "study_day_7": 3,
+        "weak_mission": 1
+      },
+      "version": "dev-proposal-20261015-v1"
+    }
+  },
+  "reservation": {
+    "amount": 1,
+    "status": "committed"
+  },
+  "debit_rows_for_job": [
+    {
+      "amount": -1,
+      "created_at": "2026-10-15T07:58:40.832294+00:00"
+    }
+  ],
+  "chat_saved_in_job_window": [
+    {
+      "role": "assistant",
+      "content": "Block /26 có 64 địa chỉ vì dành 6 bit cho host (2^6 = 64). Tuy nhiên, hai địa chỉ biên là network và broadcast không dùng làm host. Do đó, số host dùng được là 64 - 2 = 62.",
+      "refs_json": "[\"c44feeece5c441089388b6ef88cd4b1d:2:2\", \"c44feeece5c441089388b6ef88cd4b1d:2:4\"]",
+      "revision": 4,
+      "created_at": "2026-10-15T07:58:40.831810+00:00"
+    }
+  ],
+  "seconds": 10.557,
+  "screenshots": [
+    "preview/screenshots/local-coin-confirmation.png",
+    "preview/screenshots/local-coin-ledger.png"
+  ],
+  "cash_payment": false,
+  "passed": true,
+  "wallet_now_including_later_activity": 22
+}

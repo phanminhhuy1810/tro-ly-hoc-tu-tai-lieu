@@ -1,0 +1,51 @@
+{
+  "purpose": "Load v23/completion-v9/processor-v11 after360backend tests; preserve sources, historical questions/results, Coin and provider preferences.",
+  "at": "2026-10-20T23:56:30.238950+00:00",
+  "old_pid": 94555,
+  "active_before": {
+    "jobs": 0,
+    "rooms": 0,
+    "parsing": 0
+  },
+  "backup": "study-before-prefix-bits-20261020T235630Z.sqlite3",
+  "table_hashes_before": {
+    "courses": "51906084c33006e8944127c4c801b67bd4f471e5aac1c3672c2f4a39ab81e7f4",
+    "course_revisions": "460af1782724afb6a31d29f07d887ee5c7859069d74df92976d9c6e46afd8ed5",
+    "sources": "e0a62be1a699f8517936be58ea001ed1b4c09c1241e9b3e52758dd24298dc2b0",
+    "extraction_revisions": "9fb3a99344168ad80021c9a26168205a610302b8526d84f6aca6a8e1d080f05d",
+    "jobs": "555bdc4b163285d2cbedfdcd6b14100f030f91d595da11978baa34b39504f045",
+    "ai_preferences": "1d20bc907256760142a8a12dfedb27249573a18e5c4f0ff6b2a960239499741d",
+    "wallets": "c6c4aad83723e2fbcfa683aab8ee3decbd1813be184695243a9929dbc08fe70a",
+    "study_sessions": "7fac45ece8b62693286b023a25fcab38d276028a9f11c15686e1086bad6c9785",
+    "answers": "2a7d15a9d6350154bab173fe837188244b0a1253d6854c009d19b1cbd474a771",
+    "coin_ledger": "871bbd87628ed4b45c886043009801d8a53121338ab58ed1f6d42ef8c89fd67a",
+    "chapter_contexts": "307bfc9327d4797ac438a61aa3935af0831458f2379c64a5ce707cb46a1368cf",
+    "question_review_flags": "4744d41ebb293880d7356d86b7887e96ac5c44d2b8980caaaa2383ee83a26027"
+  },
+  "backend_tests": 360,
+  "protocol_tests": 9,
+  "lesson_prompt_version": "20261021-prefix-bit-arithmetic-v23",
+  "completion_prompt_version": "20261021-missing-question-prefix-bit-v9",
+  "processor_version": "20261021-prefix-bit-arithmetic-v11",
+  "unchanged_tables": {
+    "courses": true,
+    "course_revisions": true,
+    "sources": true,
+    "extraction_revisions": true,
+    "jobs": true,
+    "ai_preferences": true,
+    "wallets": true,
+    "study_sessions": true,
+    "answers": true,
+    "coin_ledger": true,
+    "chapter_contexts": true,
+    "question_review_flags": true
+  },
+  "sql_version": 18,
+  "active_jobs_after": 0,
+  "new_pid": 95314,
+  "health": {
+    "backend": true,
+    "provider_health_checked": false
+  }
+}

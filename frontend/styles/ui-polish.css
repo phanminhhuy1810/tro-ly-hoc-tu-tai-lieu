@@ -1,0 +1,372 @@
+/* Shared controls for the current study UI. Load after product/live/motion CSS. */
+:root {
+  --studio-paper: #fffefa;
+  --studio-ink: #29332b;
+  --studio-muted: #687166;
+  --studio-line: #e3e7dc;
+  --studio-sage: #eaf0df;
+  --studio-sage-strong: #617653;
+  --studio-butter: #f9e487;
+  --studio-butter-hover: #ffe997;
+  --studio-gold-line: #e3c95d;
+  --studio-gold-base: #d6bd51;
+  --studio-press: 120ms;
+  --studio-ease: cubic-bezier(.2, .75, .3, 1);
+}
+
+/* Depth belongs to things you can press; labels and navigation stay quieter. */
+.primary,
+.product-head .primary,
+.product-resume .primary,
+.academic-learn .lesson-bottom .primary,
+.live-page .primary {
+  --control-face: var(--studio-butter);
+  --control-hover: var(--studio-butter-hover);
+  --control-line: var(--studio-gold-line);
+  --control-base: var(--studio-gold-base);
+  --control-depth: 4px;
+  min-height: 44px;
+  padding: 11px 20px;
+  border: 1px solid var(--control-line);
+  border-radius: 999px;
+  background: var(--control-face);
+  color: var(--studio-ink);
+  box-shadow: 0 var(--control-depth) 0 var(--control-base), inset 0 1px 0 #fff7c6;
+  font-size: 14px;
+  font-weight: 650;
+  line-height: 1.4;
+  text-decoration: none;
+  transform: none;
+  transition: transform var(--studio-press) var(--studio-ease),
+    box-shadow var(--studio-press) var(--studio-ease),
+    background-color 150ms ease, border-color 150ms ease;
+}
+
+.secondary,
+.live-page .secondary,
+.mode-button,
+.live-mode-select > button,
+.flashcard-controls button,
+.card-memory-controls button {
+  --control-face: #fffefa;
+  --control-hover: #f5f7ef;
+  --control-line: #dce2d4;
+  --control-base: #e2e6dc;
+  --control-depth: 2px;
+  min-height: 42px;
+  padding: 10px 16px;
+  border: 1px solid var(--control-line);
+  border-radius: 14px;
+  background: var(--control-face);
+  color: var(--studio-ink);
+  box-shadow: 0 var(--control-depth) 0 var(--control-base), inset 0 1px 0 #fff;
+  font-size: 13px;
+  font-weight: 550;
+  line-height: 1.45;
+  transform: none;
+  transition: transform var(--studio-press) var(--studio-ease),
+    box-shadow var(--studio-press) var(--studio-ease),
+    background-color 150ms ease, border-color 150ms ease;
+}
+
+.mode-button,
+.live-mode-select > button { --control-depth: 3px; }
+
+:is(.primary, .secondary, .mode-button, .live-mode-select > button,
+  .flashcard-controls button, .card-memory-controls button):not(:disabled):not([aria-disabled="true"]):not([aria-busy="true"]):active {
+  transform: translateY(calc(var(--control-depth, 3px) - 1px));
+  box-shadow: 0 1px 0 var(--control-base, #dce1d4), inset 0 1px 0 #fff7;
+}
+
+.secondary.selected,
+.mode-button.selected,
+.mode-button[aria-pressed="true"],
+.live-mode-select > button[aria-pressed="true"] {
+  --control-face: #eaf1df;
+  --control-hover: #e4edd7;
+  --control-line: #aabd92;
+  --control-base: #b3c49e;
+  background: var(--control-face);
+  border-color: var(--control-line);
+  color: #3f5135;
+  box-shadow: 0 var(--control-depth, 3px) 0 var(--control-base);
+}
+
+:is(.primary, .secondary, .mode-button, .live-mode-select > button,
+  .flashcard-controls button, .card-memory-controls button):is(:disabled, [aria-disabled="true"]) {
+  opacity: .5;
+  cursor: not-allowed;
+  transform: none;
+  filter: saturate(.65);
+}
+
+:is(.primary, .secondary, .mode-button)[aria-busy="true"] {
+  cursor: progress;
+  transform: none;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex="0"]:focus-visible {
+  outline: 3px solid #687e53;
+  outline-offset: 4px;
+}
+
+/* Tabs are a single choice, rather than a row of competing primary actions. */
+.content-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px;
+  padding: 5px;
+  border: 1px solid #e5e8df;
+  border-radius: 16px;
+  background: #f4f5ef;
+}
+
+.content-tabs > button {
+  min-height: 40px;
+  padding: 9px 16px;
+  border: 1px solid transparent;
+  border-radius: 11px;
+  color: #667060;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.4;
+  box-shadow: none;
+}
+
+.content-tabs > button:is(.active, .selected, [aria-selected="true"], [aria-pressed="true"]) {
+  background: #fffefa;
+  border-color: #dfe4d6;
+  color: #29332b;
+  box-shadow: 0 2px 0 #dde3d4;
+  font-weight: 650;
+}
+
+.course-mode-row button {
+  min-height: 46px;
+  border-radius: 14px;
+  border: 1px solid #dce2d3;
+  background: #fffefa;
+  color: #46583c;
+  box-shadow: 0 3px 0 #e1e7d8;
+  font-size: 13px;
+}
+
+/* Keep the approved tree, with compact medal-like nodes. */
+.path-circle {
+  background: #dce9c5;
+  color: #50683d;
+  outline-color: #f0f4e8;
+  box-shadow: 0 5px 0 #aabc8d, inset 0 2px 0 #f4fae9;
+}
+
+.path-circle.gold {
+  background: #fae58b;
+  color: #65551e;
+  box-shadow: 0 5px 0 #d9bf56, inset 0 2px 0 #fff4bd;
+}
+
+.path-circle.coral {
+  background: #f2ccc1;
+  color: #8c5c50;
+  box-shadow: 0 5px 0 #d5a99a, inset 0 2px 0 #ffe8df;
+}
+
+.path-circle.locked {
+  background: #e9ece5;
+  color: #8c9487;
+  box-shadow: 0 4px 0 #cdd4c5;
+}
+
+.path-circle:not(.locked):active {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 #aabc8d;
+}
+
+.path-circle.gold:active { box-shadow: 0 2px 0 #d9bf56; }
+.path-circle.coral:active { box-shadow: 0 2px 0 #d5a99a; }
+
+/* Fixed sizes avoid the answer list jumping when a choice is selected. */
+.answer,
+.academic-learn .answer {
+  border: 1px solid #dfe4d8;
+  border-radius: 15px;
+  background: #fffefa;
+  color: #29332b;
+  box-shadow: 0 3px 0 #e6e9e0;
+  padding: 14px 16px;
+}
+
+.answer.selected,
+.academic-learn .answer.selected {
+  border-color: #8fa774;
+  background: #eef3e5;
+  color: #33432b;
+  box-shadow: 0 3px 0 #becfaa, inset 0 0 0 1px #8fa774;
+  padding: 14px 16px;
+}
+
+.answer.selected .letter,
+.academic-learn .answer.selected .letter {
+  background: #617653;
+  border-color: #617653;
+  color: #fff;
+}
+
+.answer.correct,
+.academic-learn .answer.correct {
+  background: #edf5e8;
+  border-color: #99b880;
+  color: #34582c;
+  box-shadow: 0 3px 0 #c1d5b1;
+}
+
+.answer.incorrect,
+.academic-learn .answer.incorrect {
+  background: #fff2ed;
+  border-color: #dca494;
+  color: #8b4b3a;
+  box-shadow: 0 3px 0 #edcbbf;
+}
+
+.answer:not(:disabled):active { transform: translateY(2px); }
+.answer:disabled { filter: none; }
+
+:is(.live-page, .studio-home, .ref-setup-page, .note-editor, .room-entry-grid) :is(input, textarea, select):not([type="checkbox"]):not([type="radio"]):not([type="file"]):not([type="range"]) {
+  border-color: #dce2d3;
+  border-radius: 12px;
+  background: #fffefa;
+  color: #29332b;
+  box-shadow: inset 0 2px 0 #f1f3ec;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+:is(.live-page, .studio-home, .ref-setup-page, .note-editor) :is(input, textarea)::placeholder {
+  color: #78816f;
+  opacity: 1;
+}
+
+input[type="checkbox"], input[type="radio"] { accent-color: #617653; }
+
+/* Home additions are opt-in so the study, setup and statistics grids keep their layouts. */
+.studio-home { color: var(--studio-ink); }
+.studio-home :is(h1, h2, h3) {
+  font-family: inherit;
+  text-transform: none;
+  letter-spacing: -.035em;
+  color: var(--studio-ink);
+}
+.studio-home h1 { line-height: 1.16; font-weight: 700; }
+.studio-home h2 { line-height: 1.35; font-weight: 650; }
+.studio-home p { color: var(--studio-muted); }
+.studio-home :is(.muted, small) { color: #697461; }
+
+.studio-welcome {
+  border: 1px solid #e5e7db;
+  border-radius: 23px;
+  background: #f5f6ec;
+  overflow: hidden;
+}
+
+.studio-sidebar {
+  background: #f8f9f1;
+  border-right-color: #e4e8db;
+}
+
+.studio-sidebar .ref-sidebar-nav button {
+  color: #616e58;
+  border: 1px solid transparent;
+  font-size: 13px;
+  border-radius: 11px;
+}
+
+.studio-sidebar .ref-sidebar-nav button.active {
+  background: #e5edda;
+  color: #35472c;
+  border-color: #d7e2c7;
+  font-weight: 650;
+}
+
+.studio-sidebar .motion-nav-highlight {
+  background: #e5edda;
+  box-shadow: inset 0 0 0 1px #d7e2c7;
+  border-radius: 11px;
+}
+
+.studio-sidebar .ref-sidebar-nav.motion-nav-ready button.active {
+  background: transparent;
+  border-color: transparent;
+}
+
+.studio-section-head .text-button { color: #617653; font-size: 13px; }
+
+.studio-resume {
+  border: 1px solid #dde5d2;
+  border-radius: 18px;
+  background: #f8faef;
+}
+
+.studio-mode-picker .mode-button {
+  text-align: left;
+  justify-content: flex-start;
+  border-radius: 16px;
+}
+
+.studio-mode-picker .mode-button strong { color: #34442d; }
+.studio-mode-picker .mode-button small { color: #697461; line-height: 1.6; }
+
+@media (hover: hover) and (pointer: fine) {
+  .primary:not(:disabled):not([aria-disabled="true"]):not([aria-busy="true"]):hover,
+  .product-head .primary:not(:disabled):hover,
+  .product-resume .primary:not(:disabled):hover,
+  .academic-learn .lesson-bottom .primary:not(:disabled):hover,
+  .live-page .primary:not(:disabled):hover {
+    background: var(--control-hover);
+    border-color: #d5b743;
+    color: var(--studio-ink);
+  }
+  :is(.secondary, .mode-button, .live-mode-select > button, .flashcard-controls button,
+    .card-memory-controls button):not(:disabled):not([aria-disabled="true"]):not([aria-busy="true"]):hover {
+    background: var(--control-hover, #f5f7ef);
+    border-color: #afbd9e;
+  }
+  .content-tabs > button:not(:disabled):hover { color: #34462c; }
+  .course-mode-row button:not(:disabled):hover { background: #f4f7ed; border-color: #b5c4a1; }
+  .answer:not(:disabled):not(.selected):hover { background: #f7f9f1; border-color: #bccca9; }
+}
+
+@media (max-width: 760px) {
+  .primary,
+  .product-head .primary,
+  .product-resume .primary,
+  .academic-learn .lesson-bottom .primary,
+  .live-page .primary { min-height: 44px; font-size: 13px; padding: 11px 16px; }
+  .secondary, .live-page .secondary, .mode-button { min-height: 42px; }
+  .content-tabs { gap: 4px; }
+  .content-tabs > button { padding: 9px 12px; font-size: 12px; }
+  .course-mode-row button { font-size: 12px; }
+  .studio-welcome { border-radius: 18px; }
+}
+
+/* Motion preferences retain depth and selection without any physical travel. */
+@media (prefers-reduced-motion: reduce) {
+  :is(.primary, .secondary, .mode-button, .path-circle, .answer,
+    .live-mode-select > button, .course-mode-row button,
+    .flashcard-controls button, .card-memory-controls button) {
+    animation: none !important;
+    transition: none !important;
+  }
+  :is(.primary, .secondary, .mode-button, .path-circle, .answer,
+    .live-mode-select > button, .course-mode-row button,
+    .flashcard-controls button, .card-memory-controls button):is(:active, :hover) { transform: none !important; }
+}
+
+html[data-motion="off"] :is(.primary, .secondary, .mode-button, .path-circle, .answer,
+  .live-mode-select > button, .course-mode-row button,
+  .flashcard-controls button, .card-memory-controls button):is(:active, :hover) { transform: none !important; }

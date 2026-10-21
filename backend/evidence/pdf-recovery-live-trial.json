@@ -1,0 +1,1444 @@
+{
+  "started_at": "2026-10-17T02:36:10.645098+00:00",
+  "scope": "Developer trial on previously inspected networking PDF; not held-out, three-subject evaluation or independent human review",
+  "requests": [
+    {
+      "page": 24,
+      "job_id": "a3e32ee7fb544d78a2ea2bee920c506d",
+      "status": "succeeded",
+      "seconds": 5.663,
+      "provider": {
+        "provider": "gemini_api",
+        "model": "gemini-2.5-flash",
+        "model_choice_id": "gemini:gemini-2.5-flash",
+        "selection_revision": 1,
+        "prompt_version": "20261015-vision-transcription-v1",
+        "schema_version": 13
+      },
+      "error": null,
+      "proposal": {
+        "id": "37e4ad1e686d4437979337fd646134b1",
+        "owner_id": "faae2f42357f43ba972e3ae46dc2e694",
+        "source_id": "d18f8b89f9834272a362dea33d7075d5",
+        "base_revision": 1,
+        "page": 24,
+        "page_kind": "page",
+        "status": "preview",
+        "created_at": "2026-10-17T02:36:18.630233+00:00",
+        "text": "Địa chỉ IP Classless\n\nGiá trị các subnetmask:\n\n| 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 | = |\n|---|---|---|---|---|---|---|---|---|\n| 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |\n| 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 128 |\n| 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 192 |\n| 1 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 224 |\n| 1 | 1 | 1 | 1 | 0 | 0 | 0 | 0 | 240 |\n| 1 | 1 | 1 | 1 | 1 | 0 | 0 | 0 | 248 |\n| 1 | 1 | 1 | 1 | 1 | 1 | 0 | 0 | 252 |\n| 1 | 1 | 1 | 1 | 1 | 1 | 1 | 0 | 254 |\n| 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 255 |\n\nKhoa Công nghệ thông tin - Đại học Khoa học tự nhiên TP Hồ Chí Minh",
+        "uncertain_spans": [],
+        "model": "gemini-2.5-flash",
+        "dimensions": {
+          "width": 1800,
+          "height": 1350
+        },
+        "transcription_prompt_version": "20261017-layout-transcription-v2",
+        "before": [
+          {
+            "text": "ĐịachỉIP Classless\nqGiátrịcácsubnetmask:\n24Khoa Công nghệ thông tin -Đại học Khoa học tự nhiên TP Hồ Chí Minh",
+            "locator": {
+              "type": "page",
+              "page": 24,
+              "page_index_base": 1,
+              "visual_review": {
+                "raster_regions": [
+                  [
+                    0.175,
+                    0.12356,
+                    0.575,
+                    0.58756
+                  ]
+                ],
+                "bounds_coordinate_system": "normalized_bottom_left",
+                "raster_ocr": "added_unverified"
+              },
+              "character_start": 0
+            },
+            "id": "d18f8b89f9834272a362dea33d7075d5:1:29",
+            "original_text": "ĐịachỉIP Classless\nqGiátrịcácsubnetmask:\n24Khoa Công nghệ thông tin -Đại học Khoa học tự nhiên TP Hồ Chí Minh"
+          },
+          {
+            "text": "Địa chỉ IP Classless\ncdio™\nOIGia trị các subnetmask:\n128 64\n32\n16\n2\n1\n1\n1\n=\n=\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n128\n192\n224\n240\n248\n252\n254\n255\nKhoa Công nghệ thông tin - Đại học Khoa học tự nhiên TP Hồ Chí Minh\n24\nI₽.HO CHIMINH",
+            "locator": {
+              "type": "ocr_page",
+              "page_index_base": 1,
+              "bounds_coordinate_system": "normalized_bottom_left",
+              "image_width": 1800,
+              "page": 24,
+              "image_height": 1350,
+              "location_scope": "full_page",
+              "layout_unverified": true,
+              "ocr_observations": [
+                {
+                  "text": "Địa chỉ IP Classless",
+                  "bounds": [
+                    0.03298043360349204,
+                    0.863093198547563,
+                    0.4877882554796007,
+                    0.07654197410300922
+                  ],
+                  "recognizer_score": 1
+                },
+                {
+                  "text": "cdio™",
+                  "bounds": [
+                    0.8822674420367259,
+                    0.8817829454549957,
+                    0.10029069688585068,
+                    0.04651162889268656
+                  ],
+                  "recognizer_score": 1
+                },
+                {
+                  "text": "OIGia trị các subnetmask:",
+                  "bounds": [
+                    0.03749999949074079,
+                    0.7333333334182099,
+                    0.4416666666666667,
+                    0.061111111111111116
+                  ],
+                  "recognizer_score": 0.5
+                },
+                {
+                  "text": "128 64",
+                  "bounds": [
+                    0.1771946057125303,
+                    0.677491019251174,
+                    0.08456427680121528,
+                    0.026800908689145753
+                  ],
+                  "recognizer_score": 0.5
+                },
+                {
+                  "text": "32",
+                  "bounds": [
+                    0.2921511630876644,
+                    0.6782945739902462,
+                    0.027616278330485078,
+                    0.02519379792390042
+                  ],
+                  "recognizer_score": 1
+                },
+                {
+                  "text": "16",
+                  "bounds": [
+                    0.3488372096038345,
+                    0.6782945739849975,
+                    0.027616278330485022,
+                    0.025193797923900307
+                  ],
+                  "recognizer_score": 1
+                },
+                {
+                  "text": "2",
+                  "bounds": [
+                    0.5305232560000279,
+                    0.6802325583034277,
+                    0.013081394831339521,
+                    0.021317829555935308
+                  ],
+                  "recognizer_score": 1
+                },
+                {
+                  "text": "1",
+                  "bounds": [
+                    0.19040697691814804,
+                    0.5213178295857275,
+                    0.013081394831339521,
+                    0.021317829555935308
+                  ],
+                  "recognizer_score": 1
+                },
+                {
+                  "text": "1",
+                  "bounds": [
+                    0.1904069765482979,
+                    0.4670542636942545,
+                    0.011627907223171668,
+                    0.021317829555935308
+                  ],
+                  "recognizer_score": 1
+                },
+                {
+                  "text": "1",
+                  "bounds": [
+                    0.19040697656283279,
+                    0.41085271387085065,
+                    0.01162790722317164,
+                    0.023255813033492556
+                  ],
+                  "recognizer_score": 1
+                },
+                {
+                  "text": "=",
+                  "bounds": [
+                    0.6468023256092312,
+                    0.5213178297436483,
+                    0.014534883499145446,
+                    0.019379844665527335
+                  ],
+                  "recognizer_score": 1
+                },
+                {
+                  "text": "=",
+                  "bounds": [
+                    0.646802325471757,
+                    0.4670542638214138,
+                    0.01598837216695148,
+                    0.019379844665527335
+                  ],
+                  "recognizer_score": 0.30000001192092896
+                },
+                {
+                  "text": "1",
+                  "bounds": [
+                    0.19040697707811696,
+                    0.30232558214604444,
+                    0.011627906163533541,
+                    0.023255813033492556
+                  ],
+                  "recognizer_score": 1
+                },
+                {
+                  "text": "1",
+                  "bounds": [
+                    0.19040697656283279,
+                    0.2480620161964321,
+                    0.01162790722317164,
+                    0.023255813033492556
+                  ],
+                  "recognizer_score": 1
+                },
+                {
+                  "text": "1",
+                  "bounds": [
+                    0.1904069765482979,
+                    0.19186046577007543,
+                    0.011627907223171668,
+                    0.023255813033492556
+                  ],
+                  "recognizer_score": 1
+                },
+                {
+                  "text": "1",
+                  "bounds": [
+                    0.19040697655867994,
+                    0.13759689985091694,
+                    0.011627907223171668,
+                    0.023255813033492445
+                  ],
+                  "recognizer_score": 1
+                },
+                {
+                  "text": "1",
+                  "bounds": [
+                    0.2427325583256093,
+                    0.4670542637297843,
+                    0.013081394831339521,
+                    0.021317829555935308
+                  ],
+                  "recognizer_score": 1
+                },
+                {
+                  "text": "1",
+                  "bounds": [
+                    0.2427325583256093,
+                    0.41085271387085065,
+                    0.013081394831339521,
+                    0.023255813033492556
+                  ],
+                  "recognizer_score": 1
+                },
+                {
+                  "text": "1",
+                  "bounds": [
+                    0.2427325583256093,
+                    0.3565891479793779,
+                    0.013081394831339521,
+                    0.023255813033492445
+                  ],
+                  "recognizer_score": 1
+                },
+                {
+                  "text": "1",
+                  "bounds": [
+                    0.2427325579540288,
+                    0.30232558149833355,
+                    0.011627907223171668,
+                    0.02131782955593542
+                  ],
+                  "recognizer_score": 1
+                },
+                {
+                  "text": "1",
+                  "bounds": [
+                    0.24273255850980302,
+                    0.24806201625457158,
+                    0.011627906163533541,
+                    0.023255813033492445
+                  ],
+                  "recognizer_score": 1
+                },
+                {
+                  "text": "1",
+                  "bounds": [
+                    0.2427325583256093,
+                    0.1918604657423899,
+                    0.013081394831339521,
+                    0.023255813033492556
+                  ],
+                  "recognizer_score": 1
+                },
+                {
+                  "text": "1",
+                  "bounds": [
+                    0.2427325583256093,
+                    0.13759689985091694,
+                    0.013081394831339521,
+                    0.023255813033492445
+                  ],
+                  "recognizer_score": 1
+                },
+                {
+                  "text": "1",
+                  "bounds": [
+                    0.2979651163415125,
+                    0.410852713832091,
+                    0.014534883499145557,
+                    0.023255813033492445
+                  ],
+                  "recognizer_score": 1
+                },
+                {
+                  "text": "1",
+                  "bounds": [
+                    0.3008720928273677,
+                    0.35658914794061813,
+                    0.01162790722317164,
+                    0.023255813033492445
+                  ],
+                  "recognizer_score": 1
+                },
+                {
+                  "text": "1",
+                  "bounds": [
+                    0.2979651163415125,
+                    0.30232558204914517,
+                    0.014534883499145557,
+                    0.023255813033492445
+                  ],
+                  "recognizer_score": 1
+                },
+                {
+                  "text": "1",
+                  "bounds": [
+                    0.2994186048493496,
+                    0.24806201615767232,
+                    0.013081394831339521,
+                    0.023255813033492445
+                  ],
+                  "recognizer_score": 1
+                },
+                {
+                  "text": "1",
+                  "bounds": [
+                    0.2994186048493496,
+                    0.19186046577007543,
+                    0.013081394831339521,
+                    0.023255813033492556
+                  ],
+                  "recognizer_score": 1
+                },
+                {
+                  "text": "1",
+                  "bounds": [
+                    0.3008720928273677,
+                    0.13759689987860246,
+                    0.01162790722317164,
+                    0.023255813033492556
+                  ],
+                  "recognizer_score": 1
+                },
+                {
+                  "text": "1",
+                  "bounds": [
+                    0.3590116276965537,
+                    0.3565891479793779,
+                    0.01162790722317164,
+                    0.023255813033492445
+                  ],
+                  "recognizer_score": 1
+                },
+                {
+                  "text": "1",
+                  "bounds": [
+                    0.3575581397209582,
+                    0.30038759741401866,
+                    0.013081394831339521,
+                    0.02519379792390053
+                  ],
+                  "recognizer_score": 1
+                },
+                {
+                  "text": "1",
+                  "bounds": [
+                    0.3575581397209582,
+                    0.2461240315225458,
+                    0.013081394831339521,
+                    0.02519379792390053
+                  ],
+                  "recognizer_score": 1
+                },
+                {
+                  "text": "1",
+                  "bounds": [
+                    0.3575581397209582,
+                    0.1918604657423899,
+                    0.013081394831339521,
+                    0.023255813033492556
+                  ],
+                  "recognizer_score": 1
+                },
+                {
+                  "text": "1",
+                  "bounds": [
+                    0.3590116277110885,
+                    0.13759689987860246,
+                    0.011627907223171696,
+                    0.023255813033492556
+                  ],
+                  "recognizer_score": 1
+                },
+                {
+                  "text": "1",
+                  "bounds": [
+                    0.4156976742372514,
+                    0.30038759741401866,
+                    0.01162790722317164,
+                    0.02519379792390053
+                  ],
+                  "recognizer_score": 1
+                },
+                {
+                  "text": "1",
+                  "bounds": [
+                    0.4156976742372514,
+                    0.2480620161964321,
+                    0.01162790722317164,
+                    0.023255813033492556
+                  ],
+                  "recognizer_score": 1
+                },
+                {
+                  "text": "1",
+                  "bounds": [
+                    0.41569767422271653,
+                    0.19186046577007543,
+                    0.01162790722317164,
+                    0.023255813033492556
+                  ],
+                  "recognizer_score": 1
+                },
+                {
+                  "text": "1",
+                  "bounds": [
+                    0.41569767422271653,
+                    0.13759689987860246,
+                    0.01162790722317164,
+                    0.023255813033492556
+                  ],
+                  "recognizer_score": 1
+                },
+                {
+                  "text": "1",
+                  "bounds": [
+                    0.4738372091209723,
+                    0.2480620161964321,
+                    0.011627907223171696,
+                    0.023255813033492556
+                  ],
+                  "recognizer_score": 1
+                },
+                {
+                  "text": "1",
+                  "bounds": [
+                    0.47383720910643734,
+                    0.19186046577007543,
+                    0.011627907223171696,
+                    0.023255813033492556
+                  ],
+                  "recognizer_score": 1
+                },
+                {
+                  "text": "1",
+                  "bounds": [
+                    0.47383720910643734,
+                    0.13759689987860246,
+                    0.011627907223171696,
+                    0.023255813033492556
+                  ],
+                  "recognizer_score": 1
+                },
+                {
+                  "text": "1",
+                  "bounds": [
+                    0.5319767441501272,
+                    0.19186046577007543,
+                    0.010174418555365716,
+                    0.023255813033492556
+                  ],
+                  "recognizer_score": 1
+                },
+                {
+                  "text": "1",
+                  "bounds": [
+                    0.5319767441501272,
+                    0.13759689987860246,
+                    0.010174418555365716,
+                    0.023255813033492556
+                  ],
+                  "recognizer_score": 1
+                },
+                {
+                  "text": "1",
+                  "bounds": [
+                    0.5901162790338481,
+                    0.13759689987860246,
+                    0.010174418555365605,
+                    0.023255813033492556
+                  ],
+                  "recognizer_score": 1
+                },
+                {
+                  "text": "128",
+                  "bounds": [
+                    0.6889534882531613,
+                    0.5232558140757269,
+                    0.04215116288926868,
+                    0.027131782814308503
+                  ],
+                  "recognizer_score": 1
+                },
+                {
+                  "text": "192",
+                  "bounds": [
+                    0.6904069766101136,
+                    0.4651162793615796,
+                    0.04215116288926868,
+                    0.02713178281430839
+                  ],
+                  "recognizer_score": 1
+                },
+                {
+                  "text": "224",
+                  "bounds": [
+                    0.690406976622226,
+                    0.4108527134915382,
+                    0.04215116288926868,
+                    0.02519379792390042
+                  ],
+                  "recognizer_score": 1
+                },
+                {
+                  "text": "240",
+                  "bounds": [
+                    0.6904069767700827,
+                    0.3546511631020033,
+                    0.04069767422146264,
+                    0.02519379792390042
+                  ],
+                  "recognizer_score": 1
+                },
+                {
+                  "text": "248",
+                  "bounds": [
+                    0.690406976622226,
+                    0.2984496125277969,
+                    0.04215116288926868,
+                    0.027131782814308503
+                  ],
+                  "recognizer_score": 1
+                },
+                {
+                  "text": "252",
+                  "bounds": [
+                    0.6904069766252543,
+                    0.24612403112999048,
+                    0.04215116288926868,
+                    0.027131782814308503
+                  ],
+                  "recognizer_score": 1
+                },
+                {
+                  "text": "254",
+                  "bounds": [
+                    0.6904069768838541,
+                    0.18798449646106274,
+                    0.04215116288926868,
+                    0.027131782814308503
+                  ],
+                  "recognizer_score": 1
+                },
+                {
+                  "text": "255",
+                  "bounds": [
+                    0.690406976622226,
+                    0.1337209305458018,
+                    0.04215116288926868,
+                    0.02519379792390042
+                  ],
+                  "recognizer_score": 0.30000001192092896
+                },
+                {
+                  "text": "Khoa Công nghệ thông tin - Đại học Khoa học tự nhiên TP Hồ Chí Minh",
+                  "bounds": [
+                    0.22383721081466193,
+                    0.028888888892788955,
+                    0.5261627875434028,
+                    0.02537467673972804
+                  ],
+                  "recognizer_score": 1
+                },
+                {
+                  "text": "24",
+                  "bounds": [
+                    0.9593023258829042,
+                    0.03294573677569501,
+                    0.027616278330485078,
+                    0.02519379792390053
+                  ],
+                  "recognizer_score": 1
+                },
+                {
+                  "text": "I₽.HO CHIMINH",
+                  "bounds": [
+                    0.02449605252165563,
+                    0.006706558619097969,
+                    0.05996328989664715,
+                    0.01288264521846072
+                  ],
+                  "recognizer_score": 0.30000001192092896
+                }
+              ],
+              "ocr_engine": "macOS_Vision",
+              "ocr_revision": 3,
+              "image_orientation": "exif_normalized",
+              "extraction_method": "ocr_supplement",
+              "character_start": 0
+            },
+            "needs_review": true,
+            "recognizer_score": 0.30000001192092896,
+            "provenance": {
+              "kind": "ocr_supplement",
+              "reason": "mixed_page"
+            },
+            "id": "d18f8b89f9834272a362dea33d7075d5:1:30",
+            "original_text": "Địa chỉ IP Classless\ncdio™\nOIGia trị các subnetmask:\n128 64\n32\n16\n2\n1\n1\n1\n=\n=\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n128\n192\n224\n240\n248\n252\n254\n255\nKhoa Công nghệ thông tin - Đại học Khoa học tự nhiên TP Hồ Chí Minh\n24\nI₽.HO CHIMINH"
+          }
+        ],
+        "requires_review": true,
+        "warning": "AI có thể chép sai cả khi không báo phần chưa chắc. Chỉ dùng bản đã đối chiếu và xác nhận để tạo bài."
+      }
+    },
+    {
+      "page": 32,
+      "job_id": "f2c0411e011c4f59b94866c3bb64fa03",
+      "status": "succeeded",
+      "seconds": 4.055,
+      "provider": {
+        "provider": "gemini_api",
+        "model": "gemini-2.5-flash",
+        "model_choice_id": "gemini:gemini-2.5-flash",
+        "selection_revision": 2,
+        "prompt_version": "20261015-vision-transcription-v1",
+        "schema_version": 13
+      },
+      "error": null,
+      "proposal": {
+        "id": "98da003460e04a619674154bf14ab928",
+        "owner_id": "faae2f42357f43ba972e3ae46dc2e694",
+        "source_id": "d18f8b89f9834272a362dea33d7075d5",
+        "base_revision": 2,
+        "page": 32,
+        "page_kind": "page",
+        "status": "preview",
+        "created_at": "2026-10-17T02:39:07.599245+00:00",
+        "text": "Chia subnet – Ví dụ 2\n\n192.168.1.0\n\n2 bit\n\n192.168.1.0\n\n192.168.1.64\n\n192.168.1.128\n\n192.168.1.192\n\n1 bit\n\n192.168.1.128\n\n192.168.1.160\n\nKhoa Công nghệ thông tin - Đại học Khoa học tự nhiên TP Hồ Chí Minh",
+        "uncertain_spans": [],
+        "model": "gemini-2.5-flash",
+        "dimensions": {
+          "width": 1800,
+          "height": 1350
+        },
+        "transcription_prompt_version": "20261017-layout-transcription-v2",
+        "before": [
+          {
+            "text": "Chia subnet –Vídụ2\n192.168.1.0\n192.168.1.0 192.168.1.64 192.168.1.128 192.168.1.192\n192.168.1.128 192.168.1.160\n2 bit\n1 bit\n192.168.1.0 192.168.1.64\n192.168.1.128 192.168.1.160\n192.168.1.192\n32Khoa Công nghệ thông tin -Đại học Khoa học tự nhiên TP Hồ Chí Minh",
+            "locator": {
+              "type": "page",
+              "page": 32,
+              "page_index_base": 1,
+              "visual_review": {
+                "vector_paths": 57
+              },
+              "character_start": 0
+            },
+            "id": "d18f8b89f9834272a362dea33d7075d5:2:51",
+            "original_text": "Chia subnet –Vídụ2\n192.168.1.0\n192.168.1.0 192.168.1.64 192.168.1.128 192.168.1.192\n192.168.1.128 192.168.1.160\n2 bit\n1 bit\n192.168.1.0 192.168.1.64\n192.168.1.128 192.168.1.160\n192.168.1.192\n32Khoa Công nghệ thông tin -Đại học Khoa học tự nhiên TP Hồ Chí Minh"
+          }
+        ],
+        "requires_review": true,
+        "warning": "AI có thể chép sai cả khi không báo phần chưa chắc. Chỉ dùng bản đã đối chiếu và xác nhận để tạo bài."
+      },
+      "proposal_after_guard": {
+        "status": "preview",
+        "layout_warnings": [
+          "Trang có nét vẽ/sơ đồ nhưng bản AI chưa mô tả rõ liên kết. Chép được nhãn chưa chứng minh đọc đúng mũi tên; giữ bản cũ hoặc bổ sung sau khi đối chiếu."
+        ],
+        "visual_review": {
+          "vector_paths": 57
+        },
+        "warning": "AI có thể chép sai cả khi không báo phần chưa chắc. Chỉ dùng bản đã đối chiếu và xác nhận để tạo bài. Trang có nét vẽ/sơ đồ nhưng bản AI chưa mô tả rõ liên kết. Chép được nhãn chưa chứng minh đọc đúng mũi tên; giữ bản cũ hoặc bổ sung sau khi đối chiếu."
+      }
+    }
+  ],
+  "confirmed_coin": 4,
+  "source_sha256": "9037fecd5131c299809b7aa4776b782c2939b2c47c792d7ee09a5cfa6c795404",
+  "before_fix_timeout": {
+    "seconds": 41.90990774997044,
+    "ocr_pages": [],
+    "warnings": [
+      "Trang 1 có vùng ảnh lớn; chữ trích từ PDF có thể bỏ sót nội dung trong ảnh. Cần đối chiếu cả bảng/công thức.",
+      "Trang 3 có nhiều nét vẽ; bản chữ không giữ được mũi tên, quan hệ hoặc bố cục sơ đồ. Đối chiếu trang gốc.",
+      "Trang 4 có nhiều nét vẽ; bản chữ không giữ được mũi tên, quan hệ hoặc bố cục sơ đồ. Đối chiếu trang gốc.",
+      "Trang 10 có vùng ảnh lớn; chữ trích từ PDF có thể bỏ sót nội dung trong ảnh. Cần đối chiếu cả bảng/công thức.",
+      "Trang 11 có vùng ảnh lớn; chữ trích từ PDF có thể bỏ sót nội dung trong ảnh. Cần đối chiếu cả bảng/công thức.",
+      "Trang 13 có vùng ảnh lớn; chữ trích từ PDF có thể bỏ sót nội dung trong ảnh. Cần đối chiếu cả bảng/công thức.",
+      "Trang 18 có vùng ảnh lớn; chữ trích từ PDF có thể bỏ sót nội dung trong ảnh. Cần đối chiếu cả bảng/công thức.",
+      "Trang 22 có vùng ảnh lớn; chữ trích từ PDF có thể bỏ sót nội dung trong ảnh. Cần đối chiếu cả bảng/công thức.",
+      "Trang 22 có nhiều nét vẽ; bản chữ không giữ được mũi tên, quan hệ hoặc bố cục sơ đồ. Đối chiếu trang gốc.",
+      "Trang 23 có nhiều nét vẽ; bản chữ không giữ được mũi tên, quan hệ hoặc bố cục sơ đồ. Đối chiếu trang gốc.",
+      "Trang 24 có vùng ảnh lớn; chữ trích từ PDF có thể bỏ sót nội dung trong ảnh. Cần đối chiếu cả bảng/công thức.",
+      "Trang 28 có vùng ảnh lớn; chữ trích từ PDF có thể bỏ sót nội dung trong ảnh. Cần đối chiếu cả bảng/công thức.",
+      "Trang 28 có nhiều nét vẽ; bản chữ không giữ được mũi tên, quan hệ hoặc bố cục sơ đồ. Đối chiếu trang gốc.",
+      "Trang 32 có nhiều nét vẽ; bản chữ không giữ được mũi tên, quan hệ hoặc bố cục sơ đồ. Đối chiếu trang gốc.",
+      "OCR quá thời gian 40 giây; file gốc vẫn còn để chia nguồn/thử lại.",
+      "PDF: chữ/công thức/sơ đồ cần đối chiếu trang gốc; trích được chữ chưa chứng minh bố cục đúng."
+    ]
+  },
+  "native_after": {
+    "seconds": 39.75669866701355,
+    "ocr_pages": [
+      1,
+      10,
+      11,
+      13,
+      18,
+      22,
+      24,
+      28
+    ],
+    "page24": [
+      {
+        "text": "ĐịachỉIP Classless\nqGiátrịcácsubnetmask:\n24Khoa Công nghệ thông tin -Đại học Khoa học tự nhiên TP Hồ Chí Minh",
+        "locator": {
+          "type": "page",
+          "page": 24,
+          "page_index_base": 1,
+          "visual_review": {
+            "raster_regions": [
+              [
+                0.175,
+                0.12356,
+                0.575,
+                0.58756
+              ]
+            ],
+            "bounds_coordinate_system": "normalized_bottom_left",
+            "raster_ocr": "added_unverified"
+          },
+          "character_start": 0
+        }
+      },
+      {
+        "text": "Địa chỉ IP Classless\ncdio™\nOIGia trị các subnetmask:\n128 64\n32\n16\n2\n1\n1\n1\n=\n=\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n128\n192\n224\n240\n248\n252\n254\n255\nKhoa Công nghệ thông tin - Đại học Khoa học tự nhiên TP Hồ Chí Minh\n24\nI₽.HO CHIMINH",
+        "locator": {
+          "page_index_base": 1,
+          "type": "ocr_page",
+          "image_width": 1800,
+          "page": 24,
+          "bounds_coordinate_system": "normalized_bottom_left",
+          "image_height": 1350,
+          "location_scope": "full_page",
+          "layout_unverified": true,
+          "ocr_observations": [
+            {
+              "text": "Địa chỉ IP Classless",
+              "bounds": [
+                0.03298043360349204,
+                0.863093198547563,
+                0.4877882554796007,
+                0.07654197410300922
+              ],
+              "recognizer_score": 1
+            },
+            {
+              "text": "cdio™",
+              "bounds": [
+                0.8822674420367259,
+                0.8817829454549957,
+                0.10029069688585068,
+                0.04651162889268656
+              ],
+              "recognizer_score": 1
+            },
+            {
+              "text": "OIGia trị các subnetmask:",
+              "bounds": [
+                0.03749999949074079,
+                0.7333333334182099,
+                0.4416666666666667,
+                0.061111111111111116
+              ],
+              "recognizer_score": 0.5
+            },
+            {
+              "text": "128 64",
+              "bounds": [
+                0.1771946057125303,
+                0.677491019251174,
+                0.08456427680121528,
+                0.026800908689145753
+              ],
+              "recognizer_score": 0.5
+            },
+            {
+              "text": "32",
+              "bounds": [
+                0.2921511630876644,
+                0.6782945739902462,
+                0.027616278330485078,
+                0.02519379792390042
+              ],
+              "recognizer_score": 1
+            },
+            {
+              "text": "16",
+              "bounds": [
+                0.3488372096038345,
+                0.6782945739849975,
+                0.027616278330485022,
+                0.025193797923900307
+              ],
+              "recognizer_score": 1
+            },
+            {
+              "text": "2",
+              "bounds": [
+                0.5305232560000279,
+                0.6802325583034277,
+                0.013081394831339521,
+                0.021317829555935308
+              ],
+              "recognizer_score": 1
+            },
+            {
+              "text": "1",
+              "bounds": [
+                0.19040697691814804,
+                0.5213178295857275,
+                0.013081394831339521,
+                0.021317829555935308
+              ],
+              "recognizer_score": 1
+            },
+            {
+              "text": "1",
+              "bounds": [
+                0.1904069765482979,
+                0.4670542636942545,
+                0.011627907223171668,
+                0.021317829555935308
+              ],
+              "recognizer_score": 1
+            },
+            {
+              "text": "1",
+              "bounds": [
+                0.19040697656283279,
+                0.41085271387085065,
+                0.01162790722317164,
+                0.023255813033492556
+              ],
+              "recognizer_score": 1
+            },
+            {
+              "text": "=",
+              "bounds": [
+                0.6468023256092312,
+                0.5213178297436483,
+                0.014534883499145446,
+                0.019379844665527335
+              ],
+              "recognizer_score": 1
+            },
+            {
+              "text": "=",
+              "bounds": [
+                0.646802325471757,
+                0.4670542638214138,
+                0.01598837216695148,
+                0.019379844665527335
+              ],
+              "recognizer_score": 0.30000001192092896
+            },
+            {
+              "text": "1",
+              "bounds": [
+                0.19040697707811696,
+                0.30232558214604444,
+                0.011627906163533541,
+                0.023255813033492556
+              ],
+              "recognizer_score": 1
+            },
+            {
+              "text": "1",
+              "bounds": [
+                0.19040697656283279,
+                0.2480620161964321,
+                0.01162790722317164,
+                0.023255813033492556
+              ],
+              "recognizer_score": 1
+            },
+            {
+              "text": "1",
+              "bounds": [
+                0.1904069765482979,
+                0.19186046577007543,
+                0.011627907223171668,
+                0.023255813033492556
+              ],
+              "recognizer_score": 1
+            },
+            {
+              "text": "1",
+              "bounds": [
+                0.19040697655867994,
+                0.13759689985091694,
+                0.011627907223171668,
+                0.023255813033492445
+              ],
+              "recognizer_score": 1
+            },
+            {
+              "text": "1",
+              "bounds": [
+                0.2427325583256093,
+                0.4670542637297843,
+                0.013081394831339521,
+                0.021317829555935308
+              ],
+              "recognizer_score": 1
+            },
+            {
+              "text": "1",
+              "bounds": [
+                0.2427325583256093,
+                0.41085271387085065,
+                0.013081394831339521,
+                0.023255813033492556
+              ],
+              "recognizer_score": 1
+            },
+            {
+              "text": "1",
+              "bounds": [
+                0.2427325583256093,
+                0.3565891479793779,
+                0.013081394831339521,
+                0.023255813033492445
+              ],
+              "recognizer_score": 1
+            },
+            {
+              "text": "1",
+              "bounds": [
+                0.2427325579540288,
+                0.30232558149833355,
+                0.011627907223171668,
+                0.02131782955593542
+              ],
+              "recognizer_score": 1
+            },
+            {
+              "text": "1",
+              "bounds": [
+                0.24273255850980302,
+                0.24806201625457158,
+                0.011627906163533541,
+                0.023255813033492445
+              ],
+              "recognizer_score": 1
+            },
+            {
+              "text": "1",
+              "bounds": [
+                0.2427325583256093,
+                0.1918604657423899,
+                0.013081394831339521,
+                0.023255813033492556
+              ],
+              "recognizer_score": 1
+            },
+            {
+              "text": "1",
+              "bounds": [
+                0.2427325583256093,
+                0.13759689985091694,
+                0.013081394831339521,
+                0.023255813033492445
+              ],
+              "recognizer_score": 1
+            },
+            {
+              "text": "1",
+              "bounds": [
+                0.2979651163415125,
+                0.410852713832091,
+                0.014534883499145557,
+                0.023255813033492445
+              ],
+              "recognizer_score": 1
+            },
+            {
+              "text": "1",
+              "bounds": [
+                0.3008720928273677,
+                0.35658914794061813,
+                0.01162790722317164,
+                0.023255813033492445
+              ],
+              "recognizer_score": 1
+            },
+            {
+              "text": "1",
+              "bounds": [
+                0.2979651163415125,
+                0.30232558204914517,
+                0.014534883499145557,
+                0.023255813033492445
+              ],
+              "recognizer_score": 1
+            },
+            {
+              "text": "1",
+              "bounds": [
+                0.2994186048493496,
+                0.24806201615767232,
+                0.013081394831339521,
+                0.023255813033492445
+              ],
+              "recognizer_score": 1
+            },
+            {
+              "text": "1",
+              "bounds": [
+                0.2994186048493496,
+                0.19186046577007543,
+                0.013081394831339521,
+                0.023255813033492556
+              ],
+              "recognizer_score": 1
+            },
+            {
+              "text": "1",
+              "bounds": [
+                0.3008720928273677,
+                0.13759689987860246,
+                0.01162790722317164,
+                0.023255813033492556
+              ],
+              "recognizer_score": 1
+            },
+            {
+              "text": "1",
+              "bounds": [
+                0.3590116276965537,
+                0.3565891479793779,
+                0.01162790722317164,
+                0.023255813033492445
+              ],
+              "recognizer_score": 1
+            },
+            {
+              "text": "1",
+              "bounds": [
+                0.3575581397209582,
+                0.30038759741401866,
+                0.013081394831339521,
+                0.02519379792390053
+              ],
+              "recognizer_score": 1
+            },
+            {
+              "text": "1",
+              "bounds": [
+                0.3575581397209582,
+                0.2461240315225458,
+                0.013081394831339521,
+                0.02519379792390053
+              ],
+              "recognizer_score": 1
+            },
+            {
+              "text": "1",
+              "bounds": [
+                0.3575581397209582,
+                0.1918604657423899,
+                0.013081394831339521,
+                0.023255813033492556
+              ],
+              "recognizer_score": 1
+            },
+            {
+              "text": "1",
+              "bounds": [
+                0.3590116277110885,
+                0.13759689987860246,
+                0.011627907223171696,
+                0.023255813033492556
+              ],
+              "recognizer_score": 1
+            },
+            {
+              "text": "1",
+              "bounds": [
+                0.4156976742372514,
+                0.30038759741401866,
+                0.01162790722317164,
+                0.02519379792390053
+              ],
+              "recognizer_score": 1
+            },
+            {
+              "text": "1",
+              "bounds": [
+                0.4156976742372514,
+                0.2480620161964321,
+                0.01162790722317164,
+                0.023255813033492556
+              ],
+              "recognizer_score": 1
+            },
+            {
+              "text": "1",
+              "bounds": [
+                0.41569767422271653,
+                0.19186046577007543,
+                0.01162790722317164,
+                0.023255813033492556
+              ],
+              "recognizer_score": 1
+            },
+            {
+              "text": "1",
+              "bounds": [
+                0.41569767422271653,
+                0.13759689987860246,
+                0.01162790722317164,
+                0.023255813033492556
+              ],
+              "recognizer_score": 1
+            },
+            {
+              "text": "1",
+              "bounds": [
+                0.4738372091209723,
+                0.2480620161964321,
+                0.011627907223171696,
+                0.023255813033492556
+              ],
+              "recognizer_score": 1
+            },
+            {
+              "text": "1",
+              "bounds": [
+                0.47383720910643734,
+                0.19186046577007543,
+                0.011627907223171696,
+                0.023255813033492556
+              ],
+              "recognizer_score": 1
+            },
+            {
+              "text": "1",
+              "bounds": [
+                0.47383720910643734,
+                0.13759689987860246,
+                0.011627907223171696,
+                0.023255813033492556
+              ],
+              "recognizer_score": 1
+            },
+            {
+              "text": "1",
+              "bounds": [
+                0.5319767441501272,
+                0.19186046577007543,
+                0.010174418555365716,
+                0.023255813033492556
+              ],
+              "recognizer_score": 1
+            },
+            {
+              "text": "1",
+              "bounds": [
+                0.5319767441501272,
+                0.13759689987860246,
+                0.010174418555365716,
+                0.023255813033492556
+              ],
+              "recognizer_score": 1
+            },
+            {
+              "text": "1",
+              "bounds": [
+                0.5901162790338481,
+                0.13759689987860246,
+                0.010174418555365605,
+                0.023255813033492556
+              ],
+              "recognizer_score": 1
+            },
+            {
+              "text": "128",
+              "bounds": [
+                0.6889534882531613,
+                0.5232558140757269,
+                0.04215116288926868,
+                0.027131782814308503
+              ],
+              "recognizer_score": 1
+            },
+            {
+              "text": "192",
+              "bounds": [
+                0.6904069766101136,
+                0.4651162793615796,
+                0.04215116288926868,
+                0.02713178281430839
+              ],
+              "recognizer_score": 1
+            },
+            {
+              "text": "224",
+              "bounds": [
+                0.690406976622226,
+                0.4108527134915382,
+                0.04215116288926868,
+                0.02519379792390042
+              ],
+              "recognizer_score": 1
+            },
+            {
+              "text": "240",
+              "bounds": [
+                0.6904069767700827,
+                0.3546511631020033,
+                0.04069767422146264,
+                0.02519379792390042
+              ],
+              "recognizer_score": 1
+            },
+            {
+              "text": "248",
+              "bounds": [
+                0.690406976622226,
+                0.2984496125277969,
+                0.04215116288926868,
+                0.027131782814308503
+              ],
+              "recognizer_score": 1
+            },
+            {
+              "text": "252",
+              "bounds": [
+                0.6904069766252543,
+                0.24612403112999048,
+                0.04215116288926868,
+                0.027131782814308503
+              ],
+              "recognizer_score": 1
+            },
+            {
+              "text": "254",
+              "bounds": [
+                0.6904069768838541,
+                0.18798449646106274,
+                0.04215116288926868,
+                0.027131782814308503
+              ],
+              "recognizer_score": 1
+            },
+            {
+              "text": "255",
+              "bounds": [
+                0.690406976622226,
+                0.1337209305458018,
+                0.04215116288926868,
+                0.02519379792390042
+              ],
+              "recognizer_score": 0.30000001192092896
+            },
+            {
+              "text": "Khoa Công nghệ thông tin - Đại học Khoa học tự nhiên TP Hồ Chí Minh",
+              "bounds": [
+                0.22383721081466193,
+                0.028888888892788955,
+                0.5261627875434028,
+                0.02537467673972804
+              ],
+              "recognizer_score": 1
+            },
+            {
+              "text": "24",
+              "bounds": [
+                0.9593023258829042,
+                0.03294573677569501,
+                0.027616278330485078,
+                0.02519379792390053
+              ],
+              "recognizer_score": 1
+            },
+            {
+              "text": "I₽.HO CHIMINH",
+              "bounds": [
+                0.02449605252165563,
+                0.006706558619097969,
+                0.05996328989664715,
+                0.01288264521846072
+              ],
+              "recognizer_score": 0.30000001192092896
+            }
+          ],
+          "ocr_engine": "macOS_Vision",
+          "ocr_revision": 3,
+          "image_orientation": "exif_normalized",
+          "extraction_method": "ocr_supplement",
+          "character_start": 0
+        },
+        "needs_review": true,
+        "recognizer_score": 0.30000001192092896,
+        "provenance": {
+          "kind": "ocr_supplement",
+          "reason": "mixed_page"
+        }
+      }
+    ],
+    "warnings": [
+      "Trang 1 có vùng ảnh lớn; chữ trích từ PDF có thể bỏ sót nội dung trong ảnh. Cần đối chiếu cả bảng/công thức.",
+      "Trang 3 có nhiều nét vẽ; bản chữ không giữ được mũi tên, quan hệ hoặc bố cục sơ đồ. Đối chiếu trang gốc.",
+      "Trang 4 có nhiều nét vẽ; bản chữ không giữ được mũi tên, quan hệ hoặc bố cục sơ đồ. Đối chiếu trang gốc.",
+      "Trang 10 có vùng ảnh lớn; chữ trích từ PDF có thể bỏ sót nội dung trong ảnh. Cần đối chiếu cả bảng/công thức.",
+      "Trang 11 có vùng ảnh lớn; chữ trích từ PDF có thể bỏ sót nội dung trong ảnh. Cần đối chiếu cả bảng/công thức.",
+      "Trang 13 có vùng ảnh lớn; chữ trích từ PDF có thể bỏ sót nội dung trong ảnh. Cần đối chiếu cả bảng/công thức.",
+      "Trang 18 có vùng ảnh lớn; chữ trích từ PDF có thể bỏ sót nội dung trong ảnh. Cần đối chiếu cả bảng/công thức.",
+      "Trang 22 có vùng ảnh lớn; chữ trích từ PDF có thể bỏ sót nội dung trong ảnh. Cần đối chiếu cả bảng/công thức.",
+      "Trang 22 có nhiều nét vẽ; bản chữ không giữ được mũi tên, quan hệ hoặc bố cục sơ đồ. Đối chiếu trang gốc.",
+      "Trang 23 có nhiều nét vẽ; bản chữ không giữ được mũi tên, quan hệ hoặc bố cục sơ đồ. Đối chiếu trang gốc.",
+      "Trang 24 có vùng ảnh lớn; chữ trích từ PDF có thể bỏ sót nội dung trong ảnh. Cần đối chiếu cả bảng/công thức.",
+      "Trang 28 có vùng ảnh lớn; chữ trích từ PDF có thể bỏ sót nội dung trong ảnh. Cần đối chiếu cả bảng/công thức.",
+      "Trang 28 có nhiều nét vẽ; bản chữ không giữ được mũi tên, quan hệ hoặc bố cục sơ đồ. Đối chiếu trang gốc.",
+      "Trang 32 có nhiều nét vẽ; bản chữ không giữ được mũi tên, quan hệ hoặc bố cục sơ đồ. Đối chiếu trang gốc.",
+      "OCR nhận dạng chữ, chưa chứng minh công thức/bảng/sơ đồ đúng. Đối chiếu ảnh và sửa bản trích trước khi tạo.",
+      "PDF: chữ/công thức/sơ đồ cần đối chiếu trang gốc; trích được chữ chưa chứng minh bố cục đúng."
+    ]
+  },
+  "source_id": "d18f8b89f9834272a362dea33d7075d5",
+  "upload_seconds": 1.601,
+  "extraction_revision": 1,
+  "reviewed": false,
+  "trial_error": "AssertionError: ",
+  "page24_review": {
+    "reviewer": "Agent visual comparison of original raster plus deterministic bit/decimal check, not independent human review",
+    "rows": [
+      [
+        "00000000",
+        0
+      ],
+      [
+        "10000000",
+        128
+      ],
+      [
+        "11000000",
+        192
+      ],
+      [
+        "11100000",
+        224
+      ],
+      [
+        "11110000",
+        240
+      ],
+      [
+        "11111000",
+        248
+      ],
+      [
+        "11111100",
+        252
+      ],
+      [
+        "11111110",
+        254
+      ],
+      [
+        "11111111",
+        255
+      ]
+    ],
+    "correct_rows": 9,
+    "expected_rows": 9,
+    "applied_revision": 2,
+    "reviewed_all_pages": false,
+    "other_pages_unchanged": true,
+    "old_revision_preserved": true,
+    "original_unchanged": true,
+    "source_unchanged_until_apply": true
+  },
+  "explicit_resumes": [
+    {
+      "at": "2026-10-17T02:39:03.968585+00:00",
+      "base_revision": 2,
+      "reason": "Continue only the unaccepted second-page request after the initial two-Coin budget gate; no model retry."
+    }
+  ],
+  "source_unchanged_during_resume": true,
+  "generation_finished": true,
+  "all_proposals_left_unapplied": false,
+  "page32_review": {
+    "reviewer": "Agent comparison with original page raster, not an independent human",
+    "retained_labels": true,
+    "preserved_parent_child_relationships": false,
+    "uncertainty_list_failed_to_flag_loss": true,
+    "applied": false,
+    "proposal_discarded": true,
+    "new_guard_visible_without_regeneration": true,
+    "source_unchanged_after_discard": true
+  },
+  "page24_pipeline_passed": true,
+  "diagram_case_passed": false,
+  "all_ocr_quality_complete": false,
+  "trial_error_explanation": "Initial two-Coin cap stopped the second quote (vision costs two proposed app Coin/page). Explicit resume continued page32 once after scoped page24 apply; no model retry or duplicate upload.",
+  "completed_at": "2026-10-17T02:44:47.358992+00:00",
+  "final_probe": {
+    "source_revision": 2,
+    "reviewed_all_pages": false,
+    "active_jobs": 0,
+    "active_rooms": 0
+  }
+}
