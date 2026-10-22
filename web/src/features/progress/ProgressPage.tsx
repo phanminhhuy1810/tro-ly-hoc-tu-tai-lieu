@@ -1,13 +1,16 @@
-import { useState } from 'react';
+import { useEffect, useRef, type CSSProperties, type ReactNode } from 'react';
 import { api, ensureSession } from '../../api/client';
 import type { Wallet } from '../../api/types';
 import { hrefFor } from '../../app/router';
 import { useApp, useLoad } from '../../app/store';
+import { CountUp } from '../../components/CountUp';
+import { Flame } from '../../components/Flame';
 import { Icon, type IconName } from '../../components/Icon';
-import { Spot, type Glyph, type Tone } from '../../components/Spot';
+import { PageHeader } from '../../components/PageHeader';
+import { Spot } from '../../components/Spot';
 import { LoadingRows, ProblemNotice } from '../../components/StateViews';
 import { describeError } from '../../lib/copy';
-import { activityLevel, recentWeeks, studyMinutes, type Dashboard, type Missions } from './activity';
+import { activityLevel, describeDay, monthLabels, recentWeeks, studyMinutes, type Dashboard, type Missions } from './activity';
 
 interface Achievements {
   earned: { code: string; earned_at: string }[];
@@ -18,76 +21,169 @@ interface CheckIn {
   current_streak: number;
   total_days: number;
   week: { date: string; checked: boolean }[];
-  newly_checked?: boolean;
-}
-interface Ledger {
-  ledger: { amount: number; reason: string; category: string | null; created_at: string }[];
 }
 
-const ACHIEVEMENTS: Record<string, { title: string; icon: IconName }> = {
-  first_session: { title: 'Lượt luyện đầu tiên', icon: 'star' },
-  study_day_3: { title: 'Học 3 ngày liền', icon: 'fire' },
-  study_day_7: { title: 'Học 7 ngày liền', icon: 'fire' },
-  five_units: { title: 'Xong 5 bài', icon: 'bookOpen' },
-  course_complete: { title: 'Hoàn thành một khóa', icon: 'trophy' },
-};
-const CATEGORY: Record<string, string> = {
-  onboarding: 'Coin khởi đầu',
-  ai_spend: 'Hỏi/tạo bằng AI',
-  learning: 'Học và ôn',
-  mission: 'Nhiệm vụ ngày',
-  achievement: 'Thành tựu',
-  community: 'Cộng đồng',
-};
-const WEEKDAYS = ['T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'CN'];
+const ACHIEVEMENTS: { code: string; title: string; how: string; icon: IconName; tone: string }[] = [
+  { code: 'first_session', title: 'Lượt luyện đầu tiên', how: 'Nộp một lượt luyện bất kỳ.', icon: 'star', tone: 'butter' },
+  { code: 'study_day_3', title: '3 ngày không nghỉ', how: 'Có ngày học trọn vẹn 3 ngày liền.', icon: 'fire', tone: 'peach' },
+  { code: 'study_day_7', title: 'Tuần lửa', how: 'Có ngày học trọn vẹn 7 ngày liền.', icon: 'fire', tone: 'pink' },
+  { code: 'five_units', title: 'Năm bài xong', how: 'Hoàn thành 5 bài học.', icon: 'bookOpen', tone: 'sky' },
+  { code: 'course_complete', title: 'Về đích một khóa', how: 'Học xong mọi bài của một khóa.', icon: 'trophy', tone: 'mint' },
+];
+const WEEKDAYS = ['T2', '', 'T4', '', 'T6', '', 'CN'];
+const WEEK_SHORT = ['T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'CN'];
+const LEVEL_NAME = ['Chưa học', 'Có mở bài hoặc ôn thẻ', 'Nộp 1 lượt', 'Nộp từ 2 lượt'];
 
-function Stat({ glyph, tone, value, label }: { glyph: Glyph; tone: Tone; value: string; label: string }) {
-  return (
-    <div className="stat">
-      <Spot glyph={glyph} tone={tone} size={70} />
-      <div>
-        <p className="stat__value">{value}</p>
-        <p className="meta">{label}</p>
-      </div>
-    </div>
+function day(iso: string) {
+  return new Intl.DateTimeFormat('vi-VN', { day: 'numeric', month: 'numeric', year: 'numeric' }).format(new Date(iso));
+}
+
+function Tile({ icon, color, value, label, hint, href }: { icon: IconName; color: string; value: ReactNode; label: string; hint?: string; href?: string }) {
+  const body = (
+    <>
+      <span className="tile__icon">
+        <Icon name={icon} size={24} />
+      </span>
+      <span className="tile__text">
+        <span className="tile__value">{value}</span>
+        <span className="tile__label">{label}</span>
+        {hint && (
+          <span className="tile__hint">
+            {hint} <Icon name="arrowRight" size={14} />
+          </span>
+        )}
+      </span>
+    </>
+  );
+  return href ? (
+    <a className={`tile tile--${color}`} href={href}>
+      {body}
+    </a>
+  ) : (
+    <div className={`tile tile--${color}`}>{body}</div>
   );
 }
 
-/** Tiến độ: what the server recorded — rounds, card reviews, estimated study time — plus missions and Coin. */
+/** The flame card: today's check-in happens by itself when you study, so this only shows and cheers. */
+function StreakCard({ checkIn }: { checkIn: CheckIn }) {
+  const lit = checkIn.checked_today;
+  const today = new Date();
+  const todayIso = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+  return (
+    <section className={lit ? 'streak-card is-lit' : 'streak-card'} aria-label="Chuỗi ngày học">
+      <div className="streak-card__flame">
+        <Flame size={112} lit={lit || checkIn.current_streak > 0} />
+      </div>
+      <div className="streak-card__text">
+        <p className="streak-card__count">
+          <span>
+            <CountUp value={checkIn.current_streak} />
+          </span>{' '}
+          ngày liền
+        </p>
+        <p className="streak-card__note">
+          {lit
+            ? 'Hôm nay đã điểm danh — tự động khi bạn học. Giữ lửa ngày mai nhé!'
+            : checkIn.current_streak > 0
+              ? 'Học một chút hôm nay (đọc bài, ôn vài thẻ) là lửa cháy tiếp.'
+              : 'Học một chút là tự điểm danh — mở bài hoặc ôn vài thẻ để nhóm lửa.'}
+        </p>
+        <ol className="streak-week" aria-label="Tuần này">
+          {checkIn.week.map((d, i) => (
+            <li key={d.date} className={`${d.checked ? 'is-on' : ''} ${d.date === todayIso ? 'is-today' : ''}`.trim() || undefined}>
+              <span className="streak-week__dot">{d.checked ? <Flame size={20} still /> : null}</span>
+              <span className="streak-week__day">{WEEK_SHORT[i]}</span>
+            </li>
+          ))}
+        </ol>
+        {!lit && (
+          <a className="btn btn--primary btn--sm streak-card__go" href="#/">
+            Học tiếp để giữ lửa <Icon name="arrowRight" size={16} />
+          </a>
+        )}
+      </div>
+      <p className="streak-card__total">
+        Tổng <strong>{checkIn.total_days}</strong> ngày đã điểm danh
+      </p>
+    </section>
+  );
+}
+
+/** Contribution-style graph after codex-resets.com: chunky rounded cells, months on top, a springy hover. */
+function ActivityGraph({ dashboard }: { dashboard: Dashboard }) {
+  const weeks = recentWeeks(dashboard.timeline, 26);
+  const months = monthLabels(weeks);
+  const scroller = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    // Newest weeks are on the right; start there on narrow screens.
+    scroller.current?.scrollTo({ left: scroller.current.scrollWidth });
+  }, []);
+  return (
+    <section className="graph-card" aria-labelledby="graph-title">
+      <div className="graph-card__head">
+        <h2 id="graph-title" className="title-m">
+          Lịch học nửa năm qua
+        </h2>
+        <ul className="graph-legend" aria-label="Chú thích">
+          {LEVEL_NAME.map((name, level) => (
+            <li key={level}>
+              <span className={`graph-cell level-${level}`} aria-hidden="true" /> {name}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className="graph-scroll" ref={scroller}>
+        <div className="graph" style={{ '--weeks': weeks.length } as CSSProperties}>
+          <span className="graph__corner" aria-hidden="true" />
+          {months.map((label, w) => (
+            <span key={`m${w}`} className="graph__month" style={{ gridColumn: w + 2 }}>
+              {label}
+            </span>
+          ))}
+          {WEEKDAYS.map((label, d) => (
+            <span key={`d${d}`} className="graph__weekday" style={{ gridRow: d + 2 }}>
+              {label}
+            </span>
+          ))}
+          {weeks.map((week, w) =>
+            week.map((value, d) =>
+              value ? (
+                <span
+                  key={`${w}-${d}`}
+                  className={`graph-cell level-${activityLevel(value)}`}
+                  style={{ gridColumn: w + 2, gridRow: d + 2, '--w': w } as CSSProperties}
+                  title={describeDay(value)}
+                  tabIndex={-1}
+                />
+              ) : null,
+            ),
+          )}
+        </div>
+      </div>
+      <p className="meta">Thời gian học là ước tính từ lúc trang học đang mở; ngày “trọn vẹn” là ngày bạn nộp một lượt luyện hoặc ôn đủ 5 thẻ.</p>
+    </section>
+  );
+}
+
+/** Tiến độ: streak, numbers, the study calendar, today's missions, each course and achievements. */
 export function ProgressPage() {
-  const { toast, wallet, refreshWallet } = useApp();
+  const { wallet } = useApp();
   const state = useLoad(async () => {
     await ensureSession();
-    const [dashboard, missions, achievements, checkIn, ledger, walletNow] = await Promise.all([
+    const [dashboard, missions, achievements, checkIn, walletNow] = await Promise.all([
       api<Dashboard>('/dashboard'),
       api<Missions>('/missions'),
       api<Achievements>('/achievements'),
       api<CheckIn>('/activity/check-in'),
-      api<Ledger>('/wallet/history'),
       api<Wallet>('/wallet'),
     ]);
-    return { dashboard, missions, achievements, checkIn, ledger, walletNow };
+    return { dashboard, missions, achievements, checkIn, walletNow };
   }, []);
-  const [checking, setChecking] = useState(false);
-
-  const checkIn = async () => {
-    setChecking(true);
-    try {
-      const value = await api<CheckIn>('/activity/check-in', { body: {} });
-      toast(value.newly_checked ? `Đã điểm danh · chuỗi ${value.current_streak} ngày` : 'Hôm nay bạn đã điểm danh rồi');
-      refreshWallet();
-      state.reload();
-    } catch (error) {
-      toast(describeError(error).title);
-    } finally {
-      setChecking(false);
-    }
-  };
 
   if (state.loading && !state.data) {
     return (
       <div className="page">
-        <LoadingRows rows={3} label="Đang tổng hợp tiến độ…" />
+        <LoadingRows rows={3} label="Đang gom lại hành trình của bạn…" />
       </div>
     );
   }
@@ -99,37 +195,44 @@ export function ProgressPage() {
     );
   }
 
-  const { dashboard, missions, achievements, checkIn: today, ledger, walletNow } = state.data;
+  const { dashboard, missions, achievements, checkIn, walletNow } = state.data;
   const done = dashboard.learning_progress.reduce((n, c) => n + c.completed, 0);
   const minutes = studyMinutes(dashboard.timeline);
-  const weeks = recentWeeks(dashboard.timeline, 18);
-  const earned = new Set(achievements.earned.map((a) => a.code));
+  const earnedAt = (code: string) => achievements.earned.find((a) => a.code === code || a.code.startsWith(code + ':'))?.earned_at;
+  const missionsDone = missions.daily.filter((m) => m.completed).length;
 
   return (
     <div className="page progress-page">
-      <header className="page-head">
-        <div>
-          <p className="eyebrow">Ghi nhận từ các lượt học trên máy chủ</p>
-          <h1 className="page-title">Tiến độ</h1>
+      <PageHeader
+        title="Tiến độ"
+        tone="peach"
+        note="Bạn đã đi được bao xa — mỗi ngày học một chút là lửa lại cháy thêm một ngày."
+        art={<Spot glyph="chart" tone="coral" size={92} badge />}
+      />
+
+      <div className="progress-hero">
+        <StreakCard checkIn={checkIn} />
+        <div className="tiles" aria-label="Con số chính">
+          <Tile icon="bookOpen" color="butter" value={<CountUp value={done} />} label="Bài đã học xong" />
+          <Tile icon="clock" color="pink" value={minutes >= 60 ? `${Math.floor(minutes / 60)}g ${minutes % 60}p` : `${minutes}p`} label="Thời gian học năm nay" />
+          <Tile icon="calendar" color="sky" value={<CountUp value={dashboard.weekly_streak.active_days} />} label="Ngày học trọn vẹn" />
+          <Tile icon="coin" color="mint" value={<CountUp value={(walletNow ?? wallet)?.available ?? 0} />} label="Coin đang có" hint="Xem lịch sử" href={hrefFor({ name: 'settings', section: 'coin' })} />
         </div>
-        <button type="button" className={today.checked_today ? 'btn btn--secondary' : 'btn btn--primary'} disabled={today.checked_today || checking} aria-busy={checking} onClick={() => void checkIn()}>
-          <Icon name={today.checked_today ? 'check' : 'calendar'} size={18} /> {today.checked_today ? 'Đã điểm danh hôm nay' : 'Điểm danh hôm nay'}
-        </button>
-      </header>
+      </div>
 
-      <section className="stats" aria-label="Tổng quan">
-        <Stat glyph="book" tone="sky" value={`${done} bài`} label="đã hoàn thành" />
-        <Stat glyph="chart" tone="butter" value={minutes >= 60 ? `${Math.floor(minutes / 60)} giờ ${minutes % 60} phút` : `${minutes} phút`} label="học trong năm (ước tính)" />
-        <Stat glyph="flag" tone="coral" value={`${dashboard.weekly_streak.current} ngày`} label={`chuỗi học liên tiếp · dài nhất ${dashboard.weekly_streak.longest}`} />
-        <Stat glyph="cards" tone="sage" value={`${(walletNow ?? wallet)?.available ?? 0} Coin`} label="hiện có · dùng để hỏi Kẹp" />
-      </section>
+      <ActivityGraph dashboard={dashboard} />
 
-      <div className="progress-grid">
+      <div className="progress-pair">
         <section className="panel-card">
-          <h2 className="title-m">Nhiệm vụ hôm nay</h2>
+          <div className="panel-card__head">
+            <h2 className="title-m">Nhiệm vụ hôm nay</h2>
+            <span className={missionsDone === missions.daily.length ? 'tag tag--sage' : 'tag'}>
+              {missionsDone}/{missions.daily.length}
+            </span>
+          </div>
           <ul className="missions">
-            {missions.daily.map((m) => (
-              <li key={m.code} className={m.completed ? 'mission is-done' : 'mission'}>
+            {missions.daily.map((m, i) => (
+              <li key={m.code} className={m.completed ? 'mission is-done' : 'mission'} style={{ '--i': i } as CSSProperties}>
                 <span className="mission__icon">
                   <Icon name={m.completed ? 'check' : m.code === 'cards' ? 'layers' : m.code === 'weak' ? 'flag' : 'star'} size={18} />
                 </span>
@@ -151,78 +254,49 @@ export function ProgressPage() {
         </section>
 
         <section className="panel-card">
-          <h2 className="title-m">Hoạt động 18 tuần gần đây</h2>
-          <div className="heatmap" role="img" aria-label="Lịch hoạt động: ô càng đậm là ngày học càng nhiều">
-            <div className="heatmap__days">
-              {WEEKDAYS.map((d) => (
-                <span key={d}>{d}</span>
-              ))}
-            </div>
-            <div className="heatmap__grid">
-              {weeks.map((week, w) => (
-                <div key={w} className="heatmap__week">
-                  {week.map((day, d) => (
-                    <span key={d} className={`heatmap__cell level-${day ? activityLevel(day) : 'none'}`} title={day ? `${day.date}: ${day.rounds} lượt, ${day.card_reviews} thẻ, ${Math.round(day.seconds / 60)} phút` : ''} />
-                  ))}
-                </div>
-              ))}
-            </div>
-          </div>
-          <p className="meta">
-            Điểm danh: {today.total_days} ngày · chuỗi {today.current_streak} ngày. Thời gian là ước tính từ lúc trang học đang mở.
-          </p>
-        </section>
-
-        <section className="panel-card">
-          <h2 className="title-m">Theo khóa</h2>
+          <h2 className="title-m">Từng khóa</h2>
           {dashboard.learning_progress.length === 0 && <p className="meta">Chưa có khóa nào.</p>}
           <ul className="course-progress">
             {dashboard.learning_progress.map((c) => (
               <li key={c.course_id}>
                 <a href={hrefFor({ name: 'course', courseId: c.course_id })}>
-                  <strong>{c.title}</strong>
-                  <span className="meta">
-                    {c.completed}/{c.total} bài · {c.percent}%
+                  <span className="course-progress__top">
+                    <strong>{c.title}</strong>
+                    <span className="course-progress__pct">{c.percent}%</span>
                   </span>
                   <span className="progress-bar" aria-hidden="true">
                     <span style={{ width: `${c.percent}%` }} />
+                  </span>
+                  <span className="meta">
+                    {c.completed}/{c.total} bài
                   </span>
                 </a>
               </li>
             ))}
           </ul>
         </section>
-
-        <section className="panel-card">
-          <h2 className="title-m">Thành tựu</h2>
-          <ul className="badges">
-            {Object.entries(ACHIEVEMENTS).map(([code, a]) => (
-              <li key={code} className={earned.has(code) ? 'badge is-earned' : 'badge'}>
-                <span className="badge__icon">
-                  <Icon name={a.icon} size={22} />
-                </span>
-                <span>{a.title}</span>
-              </li>
-            ))}
-          </ul>
-        </section>
-
-        <section className="panel-card panel-card--wide">
-          <h2 className="title-m">Coin gần đây</h2>
-          <p className="meta">Coin là điểm thưởng trong app để dùng lượt hỏi/tạo bằng AI; không nạp tiền thật.</p>
-          <ul className="ledger">
-            {ledger.ledger.slice(0, 12).map((row, i) => (
-              <li key={i}>
-                <span className={row.amount >= 0 ? 'ledger__amount is-plus' : 'ledger__amount'}>
-                  {row.amount >= 0 ? `+${row.amount}` : row.amount}
-                </span>
-                <span>{CATEGORY[row.category ?? ''] ?? row.reason}</span>
-                <span className="meta">{new Intl.DateTimeFormat('vi-VN', { day: 'numeric', month: 'numeric', hour: '2-digit', minute: '2-digit' }).format(new Date(row.created_at))}</span>
-              </li>
-            ))}
-          </ul>
-        </section>
       </div>
+
+      <section className="achievements" aria-labelledby="achievements-title">
+        <h2 id="achievements-title" className="title-m">
+          Thành tựu
+        </h2>
+        <ul className="achievement-grid">
+          {ACHIEVEMENTS.map((a, i) => {
+            const at = earnedAt(a.code);
+            return (
+              <li key={a.code} className={`achievement achievement--${a.tone}${at ? ' is-earned' : ''}`} style={{ '--i': i } as CSSProperties}>
+                <span className="achievement__icon">
+                  <Icon name={at ? a.icon : 'lock'} size={26} />
+                </span>
+                <strong>{a.title}</strong>
+                <span className="achievement__how">{a.how}</span>
+                <span className={at ? 'tag tag--sage' : 'tag'}>{at ? `Đạt ngày ${day(at)}` : 'Chưa đạt'}</span>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
     </div>
   );
 }

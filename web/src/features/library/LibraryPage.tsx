@@ -4,6 +4,7 @@ import type { Course, Lifecycle, SourceSummary } from '../../api/types';
 import { hrefFor, navigate } from '../../app/router';
 import { useApp, useLoad } from '../../app/store';
 import { Icon } from '../../components/Icon';
+import { PageHeader } from '../../components/PageHeader';
 import { Spot } from '../../components/Spot';
 import { EmptyState, LoadingRows, ProblemNotice } from '../../components/StateViews';
 import { describeError } from '../../lib/copy';
@@ -169,15 +170,17 @@ export function LibraryPage() {
 
   return (
     <div className="page library">
-      <header className="page-head">
-        <div>
-          <p className="eyebrow">Khóa học, tài liệu và thùng rác</p>
-          <h1 className="page-title">Thư viện</h1>
-        </div>
-        <a className="btn btn--primary" href={hrefFor({ name: 'create' })}>
-          <Icon name="plus" size={18} /> Tạo khóa mới
-        </a>
-      </header>
+      <PageHeader
+        title="Thư viện"
+        tone="sky"
+        note="Khóa đang học, tài liệu đã tải lên và cả những thứ lỡ xóa — đều ở đây, tìm lại được."
+        art={<Spot glyph="book" tone="sky" size={88} badge />}
+        actions={
+          <a className="btn btn--primary" href={hrefFor({ name: 'create' })}>
+            <Icon name="plus" size={18} /> Tạo khóa mới
+          </a>
+        }
+      />
 
       <div className="library__bar">
         <div className="segmented segmented--fit" role="radiogroup" aria-label="Mục">
@@ -203,7 +206,7 @@ export function LibraryPage() {
       {state.data && tab === 'courses' && (
         courses.length === 0 ? (
           <EmptyState
-            art={<Spot glyph="book" tone="sky" size={110} />}
+            art={<Spot glyph="book" tone="sky" size={110} badge />}
             title={query ? 'Không có khóa trùng tên' : 'Chưa có khóa nào'}
             body="Tải slide, giáo trình hoặc ghi chú — Kẹp đọc hết rồi đề xuất lộ trình để bạn sửa trước khi tạo."
             action={
@@ -251,7 +254,7 @@ export function LibraryPage() {
 
       {state.data && tab === 'sources' && (
         sources.length === 0 ? (
-          <EmptyState art={<Spot glyph="papers" tone="butter" size={110} />} title={query ? 'Không có tài liệu trùng tên' : 'Chưa có tài liệu'} body="Tài liệu bạn tải lên khi tạo khóa sẽ nằm ở đây để dùng lại." />
+          <EmptyState art={<Spot glyph="papers" tone="butter" size={110} badge />} title={query ? 'Không có tài liệu trùng tên' : 'Chưa có tài liệu'} body="Tài liệu bạn tải lên khi tạo khóa sẽ nằm ở đây để dùng lại." />
         ) : (
           <ul className="library-list">
             {sources.map((source) => (
@@ -288,7 +291,7 @@ export function LibraryPage() {
 
       {state.data && tab === 'trash' && (
         trash.length === 0 ? (
-          <EmptyState art={<Spot glyph="cards" tone="sage" size={110} />} title="Thùng rác trống" body="Khóa hoặc tài liệu bạn xóa sẽ nằm ở đây và khôi phục được; không có gì bị xóa vĩnh viễn." />
+          <EmptyState art={<Spot glyph="cards" tone="sage" size={110} badge />} title="Thùng rác trống" body="Khóa hoặc tài liệu bạn xóa sẽ nằm ở đây và khôi phục được; không có gì bị xóa vĩnh viễn." />
         ) : (
           <ul className="library-list">
             {trash.map((item) => (

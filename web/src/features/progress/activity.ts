@@ -54,3 +54,37 @@ export function recentWeeks(timeline: DayActivity[], count: number, today = new 
   }
   return weeks;
 }
+
+/** “Thg 6” above the first week column of each month, like a contribution graph. */
+export function monthLabels(weeks: (DayActivity | null)[][]): string[] {
+  let previous = -1;
+  const labels = weeks.map((week) => {
+    const first = week.find(Boolean);
+    if (!first) return '';
+    const month = Number(first.date.slice(5, 7));
+    if (month === previous) return '';
+    previous = month;
+    return `Thg ${month}`;
+  });
+  // A label needs about three columns: drop one the next month would run into (usually a partial first month).
+  let next = Infinity;
+  for (let w = labels.length - 1; w >= 0; w -= 1) {
+    if (!labels[w]) continue;
+    if (next - w < 3) labels[w] = '';
+    else next = w;
+  }
+  return labels;
+}
+
+const WEEKDAY_NAME = ['Chủ nhật', 'Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7'];
+
+/** Tooltip for one day of the graph, in plain words. */
+export function describeDay(day: DayActivity): string {
+  const [year, month, date] = day.date.split('-').map(Number);
+  const head = `${WEEKDAY_NAME[new Date(year, month - 1, date).getDay()]}, ${date}/${month}`;
+  const parts: string[] = [];
+  if (day.rounds) parts.push(`${day.rounds} lượt luyện`);
+  if (day.card_reviews) parts.push(`${day.card_reviews} thẻ`);
+  if (day.seconds >= 60) parts.push(`${Math.round(day.seconds / 60)} phút`);
+  return parts.length ? `${head}: ${parts.join(' · ')}` : `${head}: chưa học`;
+}

@@ -13,7 +13,7 @@ export type Route =
   | { name: 'library' }
   | { name: 'notebook' }
   | { name: 'progress' }
-  | { name: 'settings' }
+  | { name: 'settings'; section?: 'coin' }
   | { name: 'community'; courseId?: string; code?: string }
   | { name: 'share'; courseId: string }
   | { name: 'rooms'; code?: string; courseId?: string }
@@ -33,7 +33,7 @@ export function parseRoute(hash: string): Route {
   if (parts[0] === 'thu-vien') return { name: 'library' };
   if (parts[0] === 'so-tay') return { name: 'notebook' };
   if (parts[0] === 'tien-do') return { name: 'progress' };
-  if (parts[0] === 'cai-dat') return { name: 'settings' };
+  if (parts[0] === 'cai-dat') return { name: 'settings', section: parts[1] === 'coin' ? 'coin' : undefined };
   if (parts[0] === 'cong-dong' && parts[1] === 'ma') return { name: 'community', code: parts[2] };
   if (parts[0] === 'cong-dong') return { name: 'community', courseId: parts[1] };
   if (parts[0] === 'chia-se' && parts[1]) return { name: 'share', courseId: parts[1] };
@@ -66,7 +66,7 @@ export function hrefFor(route: Route): string {
     case 'progress':
       return '#/tien-do';
     case 'settings':
-      return '#/cai-dat';
+      return route.section ? `#/cai-dat/${route.section}` : '#/cai-dat';
     case 'community':
       if (route.code) return `#/cong-dong/ma/${encodeURIComponent(route.code)}`;
       return `#/cong-dong${route.courseId ? `/${encodeURIComponent(route.courseId)}` : ''}`;
@@ -102,7 +102,7 @@ export function navigate(route: Route) {
 type ViewTransition = { ready?: Promise<unknown>; finished?: Promise<unknown> };
 type TransitionDocument = Document & { startViewTransition?: (update: () => void) => ViewTransition | undefined };
 
-function motionAllowed() {
+export function motionAllowed() {
   return document.documentElement.dataset.motion !== 'off' && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 }
 

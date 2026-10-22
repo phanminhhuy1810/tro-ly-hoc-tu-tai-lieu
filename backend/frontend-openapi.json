@@ -2260,6 +2260,53 @@
         }
       }
     },
+    "/api/notebook/{note_id}/color": {
+      "put": {
+        "summary": "Color Note",
+        "operationId": "color_note_api_notebook__note_id__color_put",
+        "parameters": [
+          {
+            "name": "note_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Note Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NoteColorBody"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/notebook/{note_id}/restore": {
       "post": {
         "summary": "Restore Note",
@@ -5274,6 +5321,56 @@
         }
       }
     },
+    "/api/tutor-style": {
+      "get": {
+        "summary": "Read Style",
+        "operationId": "read_style_api_tutor_style_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "Write Style",
+        "operationId": "write_style_api_tutor_style_put",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TutorStyleEdit"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/sources/{source_id}/blueprint": {
       "post": {
         "summary": "Start",
@@ -7705,6 +7802,26 @@
               }
             ],
             "title": "Course Id"
+          },
+          "color": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "white",
+                  "butter",
+                  "peach",
+                  "pink",
+                  "lilac",
+                  "sky",
+                  "mint"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Color"
           }
         },
         "additionalProperties": false,
@@ -7713,6 +7830,29 @@
           "body"
         ],
         "title": "NoteBody"
+      },
+      "NoteColorBody": {
+        "properties": {
+          "color": {
+            "type": "string",
+            "enum": [
+              "white",
+              "butter",
+              "peach",
+              "pink",
+              "lilac",
+              "sky",
+              "mint"
+            ],
+            "title": "Color"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "color"
+        ],
+        "title": "NoteColorBody"
       },
       "NoteEdit": {
         "properties": {
@@ -7746,6 +7886,26 @@
               }
             ],
             "title": "Course Id"
+          },
+          "color": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "white",
+                  "butter",
+                  "peach",
+                  "pink",
+                  "lilac",
+                  "sky",
+                  "mint"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Color"
           },
           "expected_version": {
             "type": "integer",
@@ -8771,6 +8931,33 @@
           "text"
         ],
         "title": "TranscriptionRequest"
+      },
+      "TutorStyleEdit": {
+        "properties": {
+          "persona": {
+            "type": "string",
+            "maxLength": 300,
+            "title": "Persona"
+          },
+          "emphasis": {
+            "type": "string",
+            "maxLength": 300,
+            "title": "Emphasis"
+          },
+          "expected_version": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Expected Version"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "persona",
+          "emphasis",
+          "expected_version"
+        ],
+        "title": "TutorStyleEdit"
       },
       "URLSource": {
         "properties": {

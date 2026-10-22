@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { api } from '../../api/client';
-import { coverFor, parsePreset, Spot } from '../../components/Spot';
+import { EmojiTile } from '../../components/EmojiTile';
+import { courseCover, parseCover, type Cover } from '../../lib/topicIcons';
 
 export interface CoverInfo {
   kind: 'auto' | 'preset' | 'upload';
@@ -37,7 +38,12 @@ export function useCovers(): Record<string, CoverInfo> {
   return covers;
 }
 
-/** Uploaded image, chosen preset, or a preset picked from the course title. */
+/** The icon and colour a course shows: the creator's pick, else one from the title. */
+export function coverOf(info: CoverInfo | undefined, title: string): Cover {
+  return (info?.kind === 'preset' && parseCover(info.preset)) || courseCover(title);
+}
+
+/** Uploaded image, or a subject icon on a pastel tile (picked by the creator or from the title). */
 export function CourseCover({ courseId, title, size = 56 }: { courseId: string; title: string; size?: number }) {
   const info = useCovers()[courseId];
   if (info?.kind === 'upload') {
@@ -51,6 +57,6 @@ export function CourseCover({ courseId, title, size = 56 }: { courseId: string; 
       />
     );
   }
-  const { glyph, tone } = (info?.kind === 'preset' && parsePreset(info.preset)) || coverFor(title);
-  return <Spot glyph={glyph} tone={tone} size={size} />;
+  const { icon, tone } = coverOf(info, title);
+  return <EmojiTile icon={icon} tone={tone} size={size} />;
 }

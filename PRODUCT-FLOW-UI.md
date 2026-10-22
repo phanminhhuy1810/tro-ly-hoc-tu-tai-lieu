@@ -32,7 +32,7 @@ Huy chọn **dựng lại frontend** (hướng A) bằng Vite + React + TypeScri
 - **Tạo khóa**: trước khi tạo, AI đọc hết tài liệu rồi đề xuất chương/bài, phần nên tập trung, cách ôn, quy tắc khi soạn bài, ngôn ngữ (Việt giữ thuật ngữ Anh/Anh/theo tài liệu) và thuật ngữ giữ nguyên. Người học sửa được tất cả (đổi tên, chuyển, gộp, tách, bỏ bài có báo phần bị bỏ) rồi mới tạo khóa. Từng bài vẫn tạo khi mở trên lộ trình, sau khi AI đọc toàn bộ phạm vi.
 - **AI nhớ ngữ cảnh của khóa**: mỗi khóa có “Kẹp nhớ gì về bạn” gồm ghi chú người học tự viết, mục tiêu/quy tắc của khóa, câu làm sai gần đây và tóm tắt AI viết sau khi đọc toàn bộ tài liệu; mọi câu hỏi trong khóa đều kèm phần nhớ này.
 - **Màu (đang thử, 22/10)**: Huy không thích nền kem, thử nền trắng + khung kem thì thấy “còn xấu hơn”, rồi nhờ tìm cặp màu hợp theo 3 ảnh TAITOR. Bảng màu hiện dùng màu đo trực tiếp từ ảnh, chia theo tỉ lệ 60-30-10: nền xám-xanh rất nhạt `#f2f4f6` có lưới caro, thẻ và ô lựa chọn trắng, khung nhóm màu sage `#e2ecd3`/`#cedfbc`; nút chính xanh dương `#3b6fe8` (chữ trắng đạt 4,5:1); điểm nhấn vàng bơ, periwinkle (bong bóng Kẹp) và lavender (bong bóng người học); mục đang chọn ở thanh bên là viên thuốc đen như thanh điều hướng trong ảnh. Đổi trong `web/src/styles/tokens.css`.
-- **Ảnh**: model văn bản trên máy không vẽ được ảnh. Ảnh bìa dùng bộ hình vẽ sẵn (tự chọn theo tên khóa, đổi được) hoặc ảnh người tạo tải lên; sơ đồ ý chính do app vẽ từ ý AI viết. Tạo ảnh bằng AI cần tải thêm model ảnh — chưa làm khi Huy chưa đồng ý tải.
+- **Ảnh**: model văn bản trên máy không vẽ được ảnh. Ảnh bìa dùng biểu tượng làm sẵn trên ô màu (tự chọn theo tên khóa, đổi được; xem mục chiều 22/10) hoặc ảnh người tạo tải lên. Sơ đồ ý chính do app vẽ từ các ý AI viết. Tạo ảnh bằng AI cần tải thêm model ảnh, chưa làm khi Huy chưa đồng ý tải.
 
 Trạng thái: các mục trên đã có trong `web/` và đã thử trên **bản sao dữ liệu** với AI cục bộ; chưa thử với người dùng khác. Lỗi chữ dính trong PDF (“Địachỉlogic”) đã sửa ở khâu đọc tài liệu mới; bài tạo từ bản đọc cũ chỉ được sửa phần hiển thị.
 
@@ -52,6 +52,31 @@ Huy giao “tự quyết định hết, hoàn thiện đi”. Các lựa chọn 
 - Ghi chú/lời giải cũ trong Sổ tay còn chữ dính từ bản đọc PDF cũ được sửa phần hiển thị như trong bài học.
 
 Đã thử từng màn trên bản sao dữ liệu ở khổ laptop và điện thoại (375 px), gồm tạo Bài 2 và chat chung bằng Gemma 4 12B; chưa thử với người dùng khác.
+
+### Góp ý giao diện chiều 22/10/2026
+
+Huy chốt trực tiếp:
+
+- **Linh vật Kẹp là con mèo** theo phác thảo Huy gửi: mèo cam hơi “láo”, đeo kính kiểu mọt sách, có tô màu. Đủ 5 biểu cảm (chào, gợi ý, suy nghĩ, vui, lỗi). Logo và favicon đổi sang mặt mèo (giữ quy tắc logo là linh vật). Tên gọi vẫn là “Kẹp”.
+- **Ảnh bìa khóa là ô màu pastel + biểu tượng** (hướng A trong 3 hướng đưa ra; không dùng ảnh do AI vẽ). App tự chọn theo tên khóa: đúng môn trước, môn rộng sau. Các khóa cùng môn khác màu nhau. Người tạo đổi biểu tượng (≈60 cái) và 8 màu như Notion, hoặc tải ảnh lên. Ảnh bìa đã lưu theo kiểu cũ vẫn đọc được.
+- **Mỗi bài trên lộ trình có biểu tượng riêng**, chọn theo tên bài và không trùng trong khóa. Trạng thái xong/khóa/chưa tạo hiện bằng huy hiệu nhỏ ở góc. Biểu tượng bài cũng có ở đầu trang học và trên thẻ flashcard.
+- **Sổ tay**: chọn màu cho từng ghi chú. Ô viết mới gọn một dòng, bấm vào mới mở; nút màu là chấm màu đậm có dấu tick; nút “Dán vào sổ” chỉ hiện khi đã viết.
+- **Điểm danh tự động** khi có học (nộp lượt luyện, ôn thẻ, hoặc thời gian học), không còn nút bấm. Lịch sử Coin chuyển vào Cài đặt, chỉ mở khi người dùng bấm.
+- **Tiến độ**: khung lửa chuỗi ngày, 4 ô số liệu và lịch học kiểu codex-resets (ô vuông bo tròn, rê chuột thì nảy). Nhãn tháng bị đè nhau đã sửa. Ngọn lửa và icon được vẽ lại sau khi Huy chê “ảnh gen xấu”.
+- **Tiêu đề trang** đặt trong khung bo tròn, có một câu giới thiệu tự nhiên, bỏ dòng chữ nhỏ viết hoa kiểu template.
+- **Phần trang trí rải quanh lộ trình** (cây, nấm, lều…): đã dựng bản xem thử, Huy thấy “rối mắt”, nên không làm.
+
+Claude tự quyết, chờ Huy xem lại:
+
+- **Chat với Kẹp**: Kẹp có ảnh đại diện cạnh bong bóng trắng; người học dùng bong bóng xanh; có chấm “đang gõ”; ô nhập là một viên bo tròn chứa nút gửi. Chat chung mở lần đầu có lời chào và 3 câu gợi ý; bấm gợi ý chỉ điền vào ô, chưa gửi nên chưa tốn Coin.
+- **Flashcard**: thẻ kiểu index card có dòng kẻ, đặt trên chồng thẻ. Trước khi lật chỉ có nút “Lật xem đáp án”. Đánh dấu Nhớ/Chưa nhớ thì thẻ trượt sang phải/trái rồi thẻ sau nổi lên.
+- **Chuyển động**: danh sách hiện lần lượt, nút và chip nảy nhẹ, thanh tiến độ chạy đầy, số đếm tăng dần. “Tắt chuyển động” và chế độ giảm chuyển động của máy làm mọi hiệu ứng thành tức thì.
+- **“Kẹp dạy bạn theo kiểu nào?”** (Cài đặt): người học đặt một lần vai của Kẹp (“Bạn sẽ là…”) và điều cần “Luôn nhấn mạnh…”, có gợi ý bấm nhanh. Phần này đi vào mọi câu chat và trợ giúp ở mọi khóa, cùng ghi nhớ riêng của từng khóa. Kẹp vẫn chỉ trả lời theo nguồn. **Chưa áp vào lúc AI soạn bài**: đổi prompt tạo bài cần đo lại chất lượng trước.
+
+Còn chờ Huy:
+
+- **Bộ hình 3D Fluent** (Microsoft, giấy phép MIT, khoảng 70 ảnh, ~3 MB) để thay emoji của máy: đã có bản xem thử, chưa tải vì Huy chưa đồng ý tải.
+- Emoji hiện vẫn vẽ bằng font của máy, nên trên Windows/Android trông khác macOS.
 
 ## 1. Sản phẩm giải quyết việc gì?
 

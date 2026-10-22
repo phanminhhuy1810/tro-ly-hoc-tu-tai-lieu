@@ -1,23 +1,47 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
 import { api, ApiError, ensureSession } from '../../api/client';
-import type { Note } from '../../api/types';
+import type { Note, NoteColor } from '../../api/types';
 import { useApp, useLoad } from '../../app/store';
 import { Icon } from '../../components/Icon';
+import { PageHeader } from '../../components/PageHeader';
 import { RichText } from '../../components/RichText';
 import { Spot } from '../../components/Spot';
 import { EmptyState, LoadingRows, ProblemNotice } from '../../components/StateViews';
 import { describeError } from '../../lib/copy';
 import { fold, makeTextFix, stripRefLabels } from '../../lib/text';
+import { NOTE_COLORS, noteColor } from './noteColors';
 
-const LABEL: Record<string, string> = { ai: 'Kẹp giải thích', user: 'Của bạn', teacher: 'Giáo viên' };
+const LABEL: Record<string, string> = { ai: 'Kẹp giải thích', user: 'Bạn viết', teacher: 'Giáo viên' };
 
 function when(iso: string) {
-  return new Intl.DateTimeFormat('vi-VN', { day: 'numeric', month: 'numeric', year: 'numeric', hour: '2-digit', minute: '2-digit' }).format(new Date(iso));
+  return new Intl.DateTimeFormat('vi-VN', { day: 'numeric', month: 'numeric', hour: '2-digit', minute: '2-digit' }).format(new Date(iso));
+}
+
+function ColorDots({ value, label, onPick }: { value: NoteColor | null; label: string; onPick: (color: NoteColor) => void }) {
+  return (
+    <div className="color-dots" role="radiogroup" aria-label={label}>
+      {NOTE_COLORS.map((color) => (
+        <button
+          key={color.value}
+          type="button"
+          role="radio"
+          aria-checked={value === color.value}
+          aria-label={color.name}
+          title={color.name}
+          className={`color-dot color-dot--${color.value}`}
+          onClick={() => onPick(color.value)}
+        >
+          {value === color.value && <Icon name="check" size={14} />}
+        </button>
+      ))}
+    </div>
+  );
 }
 
 /**
- * Sổ tay: notes the learner writes and answers saved from Kẹp ("Lưu vào sổ
- * tay"). Edits keep versions on the server; deleting can be undone.
+ * Sổ tay: sticky notes the learner writes and answers saved from Kẹp
+ * (“Lưu vào sổ tay”). Each note keeps the colour the learner gives it; edits
+ * keep versions on the server and deleting can be undone.
  */
 export function NotebookPage() {
   const { toast } = useApp();
@@ -26,18 +50,36 @@ export function NotebookPage() {
     return api<Note[]>('/notebook');
   }, []);
   const [draft, setDraft] = useState('');
+  const [draftColor, setDraftColor] = useState<NoteColor>('butter');
+  const [composing, setComposing] = useState(false);
+  const composer = useRef<HTMLElement>(null);
+  const writing = composing || draft.length > 0;
   const [editing, setEditing] = useState<{ id: string; body: string } | null>(null);
+  const [palette, setPalette] = useState<string | null>(null);
+  const [colors, setColors] = useState<Record<string, NoteColor>>({});
   const [query, setQuery] = useState('');
   const [label, setLabel] = useState<'all' | 'ai' | 'user'>('all');
+  const [colorFilter, setColorFilter] = useState<NoteColor | null>(null);
   const [deleted, setDeleted] = useState<Note | null>(null);
   const [busy, setBusy] = useState(false);
+
+  // Like a note app: one line until you write, folds back when you click away with nothing written.
+  useEffect(() => {
+    if (!writing) return;
+    const away = (event: PointerEvent) => {
+      if (!draft.trim() && !composer.current?.contains(event.target as Node)) setComposing(false);
+    };
+    document.addEventListener('pointerdown', away);
+    return () => document.removeEventListener('pointerdown', away);
+  }, [writing, draft]);
 
   const add = async () => {
     setBusy(true);
     try {
-      await api('/notebook', { body: { body: draft.trim(), label: 'user', source_refs: [] } });
+      await api('/notebook', { body: { body: draft.trim(), label: 'user', source_refs: [], color: draftColor } });
       setDraft('');
-      toast('Đã thêm vào sổ tay');
+      setComposing(false);
+      toast('Đã dán thêm một ghi chú');
       state.reload();
     } catch (error) {
       toast(describeError(error).title);
@@ -56,6 +98,22 @@ export function NotebookPage() {
     } catch (error) {
       toast(error instanceof ApiError && error.status === 409 ? 'Ghi chú vừa đổi ở nơi khác — đã tải lại' : describeError(error).title);
       if (error instanceof ApiError && error.status === 409) state.reload();
+    }
+  };
+
+  // The colour changes on screen at once; the server keeps it, and a failure puts the old one back.
+  const recolor = async (note: Note, color: NoteColor) => {
+    setPalette(null);
+    setColors((all) => ({ ...all, [note.id]: color }));
+    try {
+      await api(`/notebook/${note.id}/color`, { method: 'PUT', body: { color } });
+    } catch (error) {
+      setColors((all) => {
+        const next = { ...all };
+        delete next[note.id];
+        return next;
+      });
+      toast(describeError(error).title);
     }
   };
 
@@ -83,35 +141,74 @@ export function NotebookPage() {
   const q = fold(query.trim());
   // Answers saved before the PDF reader fix can hold glued slide text; repair it for display from the notebook's own words.
   const fix = useMemo(() => makeTextFix((state.data ?? []).map((n) => n.body)), [state.data]);
-  const notes = (state.data ?? []).filter((n) => (label === 'all' || (label === 'ai' ? n.label === 'ai' : n.label !== 'ai')) && (!q || fold(n.body).includes(q)));
+  const all = (state.data ?? []).map((note) => (colors[note.id] ? { ...note, color: colors[note.id] } : note));
+  const notes = all.filter(
+    (n) =>
+      (label === 'all' || (label === 'ai' ? n.label === 'ai' : n.label !== 'ai')) &&
+      (!colorFilter || noteColor(n) === colorFilter) &&
+      (!q || fold(n.body).includes(q)),
+  );
 
   return (
     <div className="page notebook">
-      <header className="page-head">
-        <div>
-          <p className="eyebrow">Ghi chú của bạn và lời giải đã lưu</p>
-          <h1 className="page-title">Sổ tay</h1>
-        </div>
-      </header>
+      <PageHeader
+        title="Sổ tay"
+        tone="butter"
+        note="Ghi nhanh mẹo nhớ, công thức — và những lời giải hay của Kẹp. Tô màu để tự xếp theo ý bạn."
+        art={<Spot glyph="pencil" tone="butter" size={92} badge />}
+      />
 
-      <section className="note-new">
-        <textarea className="field" rows={3} maxLength={10000} value={draft} placeholder="Ghi nhanh một ý, công thức hay mẹo nhớ…" onChange={(e) => setDraft(e.target.value)} aria-label="Ghi chú mới" />
-        <button type="button" className="btn btn--primary" disabled={!draft.trim() || busy} aria-busy={busy} onClick={() => void add()}>
-          <Icon name="plus" size={18} /> Thêm ghi chú
-        </button>
+      <section ref={composer} className={`note-new note--${draftColor}${writing ? ' is-open' : ''}`} aria-label="Viết ghi chú mới">
+        <span className="note__tape" aria-hidden="true" />
+        <textarea
+          className="note-new__field"
+          rows={writing ? 3 : 1}
+          maxLength={10000}
+          value={draft}
+          placeholder="Ghi nhanh một ý, công thức hay mẹo nhớ…"
+          aria-label="Ghi chú mới"
+          onFocus={() => setComposing(true)}
+          onChange={(e) => setDraft(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === 'Escape' && !draft.trim()) {
+              setComposing(false);
+              e.currentTarget.blur();
+            }
+          }}
+        />
+        {writing && (
+          <div className="note-new__bar">
+            <ColorDots value={draftColor} label="Màu cho ghi chú mới" onPick={setDraftColor} />
+            <div className="note-new__actions">
+              {draft.trim() ? (
+                <button type="button" className="btn btn--primary btn--sm note-new__save" disabled={busy} aria-busy={busy} onClick={() => void add()}>
+                  <Icon name="plus" size={16} /> Dán vào sổ
+                </button>
+              ) : (
+                <button type="button" className="btn btn--ghost btn--sm" onClick={() => setComposing(false)}>
+                  Đóng
+                </button>
+              )}
+            </div>
+          </div>
+        )}
       </section>
 
-      <div className="library__bar">
+      <div className="library__bar notebook__bar">
         <div className="segmented segmented--fit" role="radiogroup" aria-label="Loại ghi chú">
           <button type="button" role="radio" aria-checked={label === 'all'} onClick={() => setLabel('all')}>
             Tất cả
           </button>
           <button type="button" role="radio" aria-checked={label === 'user'} onClick={() => setLabel('user')}>
-            Của bạn
+            Bạn viết
           </button>
           <button type="button" role="radio" aria-checked={label === 'ai'} onClick={() => setLabel('ai')}>
             Kẹp giải thích
           </button>
+        </div>
+        <div className="notebook__colors">
+          <span className="meta">Lọc màu</span>
+          <ColorDots value={colorFilter} label="Lọc theo màu" onPick={(color) => setColorFilter((current) => (current === color ? null : color))} />
         </div>
         <label className="search">
           <Icon name="search" size={18} />
@@ -122,7 +219,7 @@ export function NotebookPage() {
       {deleted && (
         <div className="notice notice--butter undo-bar" role="status">
           <Icon name="trash" />
-          <p className="notice__body">Đã xóa một ghi chú.</p>
+          <p className="notice__body">Đã gỡ một ghi chú khỏi sổ.</p>
           <button type="button" className="btn btn--secondary btn--sm" onClick={() => void undo()}>
             Hoàn tác
           </button>
@@ -133,18 +230,22 @@ export function NotebookPage() {
       {state.error != null && <ProblemNotice problem={describeError(state.error)} onRetry={state.reload} />}
       {state.data && notes.length === 0 && (
         <EmptyState
-          art={<Spot glyph="pencil" tone="butter" size={110} />}
-          title={state.data.length ? 'Không có ghi chú phù hợp' : 'Sổ tay đang trống'}
+          art={<Spot glyph="pencil" tone="butter" size={110} badge />}
+          title={state.data.length ? 'Không có ghi chú khớp bộ lọc' : 'Sổ tay đang trống'}
           body="Khi Kẹp giải thích hay, bấm “Lưu vào sổ tay” ngay dưới câu trả lời. Bạn cũng có thể tự ghi ở ô phía trên."
         />
       )}
       <div className="notes">
-        {notes.map((note) => (
-          <article key={note.id} className={`note note--${note.label}`}>
+        {notes.map((note, index) => (
+          <article key={note.id} className={`note note--${noteColor(note)}`} style={{ '--i': Math.min(index, 12) } as CSSProperties}>
+            <span className="note__tape" aria-hidden="true" />
             <header className="note__head">
-              <span className={note.label === 'ai' ? 'tag tag--sage' : note.label === 'teacher' ? 'tag tag--butter' : 'tag'}>{LABEL[note.label] ?? note.label}</span>
+              <span className="note__label">{LABEL[note.label] ?? note.label}</span>
               <span className="meta">{when(note.updated_at)}</span>
               <span className="note__tools">
+                <button type="button" className="icon-btn" aria-label="Đổi màu ghi chú" aria-expanded={palette === note.id} onClick={() => setPalette((open) => (open === note.id ? null : note.id))}>
+                  <span className={`color-dot color-dot--${noteColor(note)} color-dot--sm`} aria-hidden="true" />
+                </button>
                 <button type="button" className="icon-btn" aria-label="Sửa ghi chú" onClick={() => setEditing({ id: note.id, body: note.body })}>
                   <Icon name="edit" size={17} />
                 </button>
@@ -153,6 +254,11 @@ export function NotebookPage() {
                 </button>
               </span>
             </header>
+            {palette === note.id && (
+              <div className="note__palette enter">
+                <ColorDots value={noteColor(note)} label="Màu ghi chú" onPick={(color) => void recolor(note, color)} />
+              </div>
+            )}
             {editing?.id === note.id ? (
               <div className="note__edit">
                 <textarea className="field" rows={6} maxLength={10000} value={editing.body} onChange={(e) => setEditing({ id: note.id, body: e.target.value })} />

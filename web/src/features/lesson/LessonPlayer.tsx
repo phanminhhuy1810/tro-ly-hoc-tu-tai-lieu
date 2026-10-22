@@ -4,6 +4,7 @@ import type { GradeResult, Question, SourceFragment, Unit } from '../../api/type
 import { hrefFor } from '../../app/router';
 import { useApp } from '../../app/store';
 import { useStudyPulse } from '../../app/usePulse';
+import { EmojiTile } from '../../components/EmojiTile';
 import { Icon } from '../../components/Icon';
 import { Mascot } from '../../components/Mascot';
 import { EmptyState, LoadingRows, ProblemNotice } from '../../components/StateViews';
@@ -11,6 +12,8 @@ import { draftFrom, emptyDraft, type Draft } from '../../lib/answers';
 import { describeError } from '../../lib/copy';
 import type { Phase } from '../../lib/lessonFlow';
 import { makeTextFix } from '../../lib/text';
+import { lessonIcons } from '../../lib/topicIcons';
+import { coverOf, useCovers } from '../course/covers';
 import { HelpPanel } from './HelpPanel';
 import { LearnChat } from './LearnChat';
 import { CheckStep, ResultStep } from './Steps';
@@ -93,6 +96,7 @@ export function LessonPlayer({ courseId, unitId, weak }: { courseId: string; uni
   const [drafts, setDrafts] = useState<Record<string, Draft>>({});
   const [fragments, setFragments] = useState<Map<string, SourceFragment>>(new Map());
   const timers = useRef<Record<string, number>>({});
+  const covers = useCovers();
 
   const questions = useMemo(() => new Map((data?.session?.questions ?? []).map((q) => [q.id, q])), [data?.session]);
   // Study time and "đã đọc" for Tiến độ: the lesson's unit, or one unit for a mistake review across lessons
@@ -253,6 +257,11 @@ export function LessonPlayer({ courseId, unitId, weak }: { courseId: string; uni
             <span>Lộ trình</span>
           </a>
           <div className="lesson-top__title">
+            {weak || unitIndex === null || unitIndex < 0 ? (
+              <EmojiTile icon="flag" tone="coral" size={44} />
+            ) : (
+              <EmojiTile icon={lessonIcons(course.content.units.map((u) => u.title))[unitIndex]} tone={coverOf(covers[course.id], course.content.title).tone} size={44} />
+            )}
             <span className="eyebrow">{weak ? 'Ôn câu sai' : `Bài ${(unitIndex ?? 0) + 1} · ${course.content.title}`}</span>
             <strong>{weak ? `${order.length} câu cần ôn` : fix(unit!.title)}</strong>
           </div>

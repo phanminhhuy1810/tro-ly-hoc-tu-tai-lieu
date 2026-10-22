@@ -1,0 +1,108 @@
+/* Motion layer, loaded last: lists arrive one item after another, buttons and
+   chips spring, rows and icons lift on hover, progress bars fill as they appear.
+   “Tắt chuyển động” in Cài đặt, or the system's reduce-motion setting, turns
+   every animation and transition into an instant change (bottom of this file). */
+
+/* Lists ease in one after another. */
+:is(.course-list ul, .library-list, .community-list, .modes, .models, .toc ol, .card-list ul, .chat-pick, .ledger) > * {
+  animation: rise-in 460ms var(--ease-out) backwards;
+}
+:is(.course-list ul, .library-list, .community-list, .modes, .models, .toc ol, .card-list ul, .chat-pick, .ledger) > :nth-child(2) {
+  animation-delay: 45ms;
+}
+:is(.course-list ul, .library-list, .community-list, .modes, .models, .toc ol, .card-list ul, .chat-pick, .ledger) > :nth-child(3) {
+  animation-delay: 90ms;
+}
+:is(.course-list ul, .library-list, .community-list, .modes, .models, .toc ol, .card-list ul, .chat-pick, .ledger) > :nth-child(4) {
+  animation-delay: 135ms;
+}
+:is(.course-list ul, .library-list, .community-list, .modes, .models, .toc ol, .card-list ul, .chat-pick, .ledger) > :nth-child(5) {
+  animation-delay: 180ms;
+}
+:is(.course-list ul, .library-list, .community-list, .modes, .models, .toc ol, .card-list ul, .chat-pick, .ledger) > :nth-child(n + 6) {
+  animation-delay: 225ms;
+}
+
+/* Buttons and chips: a small lift on hover, a squash when pressed. */
+.btn {
+  transition:
+    transform 240ms var(--ease-pop),
+    box-shadow 160ms var(--ease-out),
+    background-color var(--dur-2) var(--ease-out),
+    border-color var(--dur-2) var(--ease-out);
+}
+.btn:hover:not(:disabled) {
+  transform: translateY(-1.5px);
+}
+.btn:active:not(:disabled) {
+  transform: translateY(1.5px) scale(0.98);
+  transition-duration: 90ms;
+}
+.chip {
+  transition:
+    transform 220ms var(--ease-pop),
+    background-color var(--dur-2) var(--ease-out),
+    border-color var(--dur-2) var(--ease-out),
+    color var(--dur-2);
+}
+.chip:hover:not(:disabled) {
+  transform: translateY(-1.5px);
+}
+.chip:active:not(:disabled) {
+  transform: scale(0.96);
+}
+
+/* Navigation and small icon buttons: the icon wiggles, the row nudges. */
+.nav__item {
+  transition:
+    background-color var(--dur-2) var(--ease-out),
+    color var(--dur-2),
+    transform 240ms var(--ease-pop);
+}
+.nav__item:hover:not([aria-current='page']) {
+  transform: translateX(3px);
+}
+.nav__item svg,
+.icon-btn svg {
+  transition: transform 260ms var(--ease-pop);
+}
+.nav__item:hover svg {
+  transform: rotate(-8deg) scale(1.12);
+}
+.icon-btn:hover svg {
+  transform: rotate(-6deg) scale(1.12);
+}
+
+/* Progress bars fill from the left when they first show. */
+.progress-bar > span {
+  transform-origin: left center;
+  animation: bar-fill 900ms var(--ease-out) 120ms backwards;
+}
+@keyframes bar-fill {
+  from {
+    transform: scaleX(0);
+  }
+}
+
+/* Panels on the main pages rise in softly. */
+.page > :is(.panel-card, .graph-card, .progress-pair, .achievements, .settings-pair, .course-grid, .together-grid) {
+  animation: rise-in 520ms var(--ease-out) 80ms backwards;
+}
+
+/* No motion: everything lands at once. */
+@media (prefers-reduced-motion: reduce) {
+  :root:not([data-motion='on']) *,
+  :root:not([data-motion='on']) *::before,
+  :root:not([data-motion='on']) *::after {
+    animation-duration: 1ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 1ms !important;
+  }
+}
+:root[data-motion='off'] *,
+:root[data-motion='off'] *::before,
+:root[data-motion='off'] *::after {
+  animation-duration: 1ms !important;
+  animation-delay: 0ms !important;
+  transition-duration: 1ms !important;
+}

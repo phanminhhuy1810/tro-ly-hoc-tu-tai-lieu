@@ -7,23 +7,30 @@ const INK = '#23262b';
 export type BrandOption = 'kep' | 'bubble' | 'path';
 
 export const BRAND_OPTIONS: { id: BrandOption; name: string; note: string }[] = [
-  { id: 'kep', name: 'Kẹp', note: 'Mặt nhân vật Kẹp trên nền vàng — logo cũng là linh vật, nhận ra ngay ở cỡ favicon.' },
+  { id: 'kep', name: 'Kẹp', note: 'Mặt mèo Kẹp đeo kính trên nền vàng — logo cũng là linh vật, nhận ra ngay ở cỡ favicon.' },
   { id: 'bubble', name: 'Bóng nói + sách', note: 'Gia sư AI trò chuyện về tài liệu của bạn; nói rõ công dụng nhưng ít cá tính hơn.' },
   { id: 'path', name: 'Lộ trình', note: 'Con đường có các chặng và ngôi sao đích — nhấn vào cảm giác đi tiếp từng bài.' },
 ];
 
 function Kep() {
+  // The cat's face: ears, nerd glasses, the half-lidded look, on butter.
   return (
     <>
       <rect x="3" y="3" width="58" height="58" rx="18" fill="#f7dd72" stroke={INK} strokeWidth="3" />
-      <path d="M20 13h17l9 9v26a4 4 0 0 1-4 4H20a4 4 0 0 1-4-4V17a4 4 0 0 1 4-4z" fill="#fff" stroke={INK} strokeWidth="2.8" strokeLinejoin="round" />
-      <path d="M37 13v6a3 3 0 0 0 3 3h6" fill="#e3edd4" stroke={INK} strokeWidth="2.8" strokeLinejoin="round" />
-      <path d="M21 9.5h6.5v14l-3.25-2.5L21 23.5z" fill="#92b06c" stroke={INK} strokeWidth="2.4" strokeLinejoin="round" />
-      <circle cx="26" cy="35.5" r="2.7" fill={INK} />
-      <circle cx="36.5" cy="35.5" r="2.7" fill={INK} />
-      <path d="M27.5 41.5q3.75 4 7.5 0" stroke={INK} strokeWidth="2.6" fill="none" strokeLinecap="round" />
-      <ellipse cx="22.3" cy="40.6" rx="2.6" ry="1.6" fill="#e2896d" opacity=".55" />
-      <ellipse cx="40.2" cy="40.6" rx="2.6" ry="1.6" fill="#e2896d" opacity=".55" />
+      <path d="M13 49V25L18.5 9L27 18.5Q32 17 37 18.5L45.5 9L51 25V49Q51 55 45 55H19Q13 55 13 49Z" fill="#ffcf94" stroke={INK} strokeWidth="2.8" strokeLinejoin="round" />
+      <path d="M16.5 21l2.6-7 4 5.2zM40.9 19.2l4-5.2 2.6 7z" fill="#f59bb0" />
+      <path d="M28.5 21.5v3.5M32 21v4M35.5 21.5v3.5" stroke="#e98d3c" strokeWidth="2" strokeLinecap="round" />
+      <rect x="15.5" y="28.5" width="14" height="11" rx="3.5" fill="rgba(255,255,255,.55)" />
+      <rect x="34.5" y="28.5" width="14" height="11" rx="3.5" fill="rgba(255,255,255,.55)" />
+      <path d="M19 33h7.5M37.5 33h7.5" stroke={INK} strokeWidth="2.2" strokeLinecap="round" />
+      <circle cx="23" cy="35" r="1.9" fill={INK} />
+      <circle cx="41" cy="35" r="1.9" fill={INK} />
+      <rect x="15.5" y="28.5" width="14" height="11" rx="3.5" fill="none" stroke={INK} strokeWidth="2.4" />
+      <rect x="34.5" y="28.5" width="14" height="11" rx="3.5" fill="none" stroke={INK} strokeWidth="2.4" />
+      <path d="M29.5 33q2.5-2 5 0" stroke={INK} strokeWidth="2.2" fill="none" strokeLinecap="round" />
+      <path d="M30 42h4l-2 2.4z" fill="#f59bb0" stroke={INK} strokeWidth="1.4" strokeLinejoin="round" />
+      <path d="M28.5 46.5q1.8 1.5 3.5-.4q2.5 1.8 5-1.2" stroke={INK} strokeWidth="2" fill="none" strokeLinecap="round" />
+      <path d="M13 43.5l-6-1M13 47l-5.5 1.2M51 43.5l6-1M51 47l5.5 1.2" stroke={INK} strokeWidth="1.8" strokeLinecap="round" />
     </>
   );
 }

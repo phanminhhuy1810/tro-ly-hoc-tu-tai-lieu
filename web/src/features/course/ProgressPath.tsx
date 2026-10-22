@@ -2,20 +2,22 @@ import { useEffect, useMemo, useRef } from 'react';
 import { Icon, type IconName } from '../../components/Icon';
 import { Mascot } from '../../components/Mascot';
 import { chapterGroups, type PathNode } from '../../lib/path';
+import { emojiOf, lessonIcons } from '../../lib/topicIcons';
 
 // Duolingo-style path: chunky 3D lesson buttons on a gentle zigzag, a banner
 // per chapter, a speech bubble on the one lesson to do next, Kẹp standing
-// beside it, and a review chest at the end. Titles live in the popover and in
-// the table of contents, so the path itself stays calm.
+// beside it, and a review chest at the end. Each lesson wears its own subject
+// icon; a small corner badge says done, locked or not made yet. Titles live in
+// the popover and in the table of contents, so the path itself stays calm.
 
 const OFFSETS = [0, -58, -88, -58, 0, 58, 88, 58];
 const TONES = ['sage', 'sky', 'coral'] as const;
 
-function iconFor(node: PathNode): IconName {
+function badgeFor(node: PathNode): IconName | null {
   if (node.state === 'done') return 'check';
   if (node.state === 'locked') return 'lock';
   if (node.state === 'not_generated') return 'sparkle';
-  return node.isCurrent ? 'star' : 'bookOpen';
+  return null;
 }
 
 function meta(node: PathNode): string {
@@ -125,6 +127,7 @@ export function ProgressPath({
   onReview: (node: PathNode | null) => void;
 }) {
   const groups = useMemo(() => chapterGroups(nodes), [nodes]);
+  const icons = useMemo(() => lessonIcons(nodes.map((node) => node.unit.title)), [nodes]);
   let step = 0;
 
   return (
@@ -173,7 +176,14 @@ export function ProgressPath({
                         title={node.unit.title}
                         onClick={() => onSelect(open ? null : node.unit.id)}
                       >
-                        <Icon name={iconFor(node)} size={node.isCurrent ? 34 : 30} />
+                        <span className="path-node__emoji" aria-hidden="true">
+                          {emojiOf(icons[node.index])}
+                        </span>
+                        {badgeFor(node) && (
+                          <span className={`path-node__badge path-node__badge--${node.state}`} aria-hidden="true">
+                            <Icon name={badgeFor(node)!} size={14} />
+                          </span>
+                        )}
                       </button>
                     </div>
                     {node.isCurrent && (

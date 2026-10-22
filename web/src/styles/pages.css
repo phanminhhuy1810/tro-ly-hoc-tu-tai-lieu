@@ -6,6 +6,101 @@
   gap: 16px;
   margin-bottom: 26px;
 }
+.page-banner {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 26px;
+  padding: 22px 26px;
+  border-radius: 28px;
+  background: var(--banner-bg);
+  border: 1.5px solid var(--banner-edge);
+  overflow: hidden;
+  animation: banner-in 520ms var(--ease-pop) backwards;
+}
+/* A soft disc behind the illustration, like the reference panels. */
+.page-banner::after {
+  content: '';
+  position: absolute;
+  right: -40px;
+  top: -60px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: var(--banner-glow);
+  pointer-events: none;
+}
+.page-banner__text {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+.page-banner__note {
+  max-width: 560px;
+  color: var(--ink-2);
+  font-size: 15.5px;
+  line-height: 1.5;
+}
+.page-banner__actions {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.page-banner__art {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  animation: art-float 4.5s ease-in-out infinite;
+}
+.page-banner--sage {
+  --banner-bg: #e6efd8;
+  --banner-edge: #cedfbc;
+  --banner-glow: rgba(255, 255, 255, 0.55);
+}
+.page-banner--sky {
+  --banner-bg: #e3ebff;
+  --banner-edge: #c5d3fb;
+  --banner-glow: rgba(255, 255, 255, 0.6);
+}
+.page-banner--butter {
+  --banner-bg: #fff4c7;
+  --banner-edge: #f1dc86;
+  --banner-glow: rgba(255, 255, 255, 0.6);
+}
+.page-banner--peach {
+  --banner-bg: #ffe6d4;
+  --banner-edge: #f4c3a0;
+  --banner-glow: rgba(255, 255, 255, 0.55);
+}
+.page-banner--lilac {
+  --banner-bg: #eee6fb;
+  --banner-edge: #d5c8ee;
+  --banner-glow: rgba(255, 255, 255, 0.6);
+}
+.page-banner--mint {
+  --banner-bg: #ddf2e3;
+  --banner-edge: #b4e0c0;
+  --banner-glow: rgba(255, 255, 255, 0.55);
+}
+@keyframes banner-in {
+  from {
+    opacity: 0;
+    transform: translateY(-14px) scale(0.985);
+  }
+}
+@keyframes art-float {
+  50% {
+    transform: translateY(-6px) rotate(-3deg);
+  }
+}
+
 .section-head {
   display: flex;
   align-items: baseline;
@@ -133,13 +228,34 @@
 }
 
 /* Course ------------------------------------------------------------------ */
+/* The course title sits in the same rounded banner as the other pages. */
 .course-head {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 22px;
   margin-bottom: 28px;
+  padding: 22px 26px;
+  border-radius: 28px;
+  background: var(--banner-bg);
+  border: 1.5px solid var(--banner-edge);
+  overflow: hidden;
+  animation: banner-in 520ms var(--ease-pop) backwards;
+}
+.course-head::after {
+  content: '';
+  position: absolute;
+  right: -50px;
+  bottom: -90px;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: var(--banner-glow);
+  pointer-events: none;
 }
 .course-head__text {
+  position: relative;
+  z-index: 1;
   display: grid;
   gap: 6px;
   min-width: 0;
@@ -249,9 +365,15 @@
   gap: 14px;
   padding: 16px 20px;
   border-radius: 20px;
+  border: 2px solid var(--ink);
   background: var(--tone-banner);
   color: #fff;
-  box-shadow: 0 4px 0 rgba(35, 38, 43, 0.22);
+  box-shadow: 4px 4px 0 var(--ink);
+  transition: transform 260ms var(--ease-pop), box-shadow 200ms var(--ease-out);
+}
+.path-banner:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--ink);
 }
 .path-banner__eyebrow {
   font-size: 12.5px;
@@ -318,73 +440,146 @@
   stroke-linecap: round;
   transition: stroke-dasharray var(--dur-3) var(--ease-out);
 }
+/* Nodes are stickers: ink outline, an ink 3D base, the chapter's colour on the face. */
 .path-node {
   position: relative;
   display: grid;
   place-items: center;
-  width: 74px;
-  height: 68px;
-  border: 0;
+  width: 76px;
+  height: 70px;
+  border: 2.5px solid var(--ink);
   border-radius: 50%;
   background: var(--tone);
   color: #fff;
-  box-shadow: 0 8px 0 var(--tone-dark);
+  box-shadow: 0 7px 0 var(--ink);
   cursor: pointer;
   transform: translateY(-4px);
   transition:
-    transform var(--dur-1) var(--ease-out),
-    box-shadow var(--dur-1) var(--ease-out),
+    transform 280ms var(--ease-pop),
+    box-shadow 200ms var(--ease-out),
     filter var(--dur-2);
 }
+.path-node__emoji {
+  font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif;
+  font-size: 32px;
+  line-height: 1;
+  filter: drop-shadow(0 2px 0 rgba(35, 38, 43, 0.22));
+  transition: transform 300ms var(--ease-pop);
+}
+.path-node:hover .path-node__emoji {
+  transform: rotate(-10deg) scale(1.12);
+}
+.path-node.is-current .path-node__emoji {
+  font-size: 36px;
+}
+.path-node--locked .path-node__emoji {
+  filter: grayscale(1);
+  opacity: 0.5;
+}
+/* Done, locked or not made yet: a small sticker on the corner of the lesson. */
+.path-node__badge {
+  position: absolute;
+  right: -7px;
+  bottom: -5px;
+  display: grid;
+  place-items: center;
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  border: 2px solid var(--ink);
+  background: #fff;
+  color: var(--ink-2);
+}
+.path-node__badge--done {
+  background: var(--sage-400);
+  color: #fff;
+}
+.path-node__badge--not_generated {
+  background: var(--butter-300);
+  color: var(--ink);
+}
 .path-node:hover {
-  filter: brightness(1.05);
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 13px 0 var(--ink);
 }
 .path-node:active,
 .path-node[aria-expanded='true'] {
-  transform: translateY(2px);
-  box-shadow: 0 2px 0 var(--tone-dark);
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 var(--ink);
 }
 .path-node--ready {
-  background: var(--surface);
+  background: #fff;
   color: var(--tone-dark);
   box-shadow:
-    inset 0 0 0 3px var(--tone),
-    0 8px 0 var(--line-strong);
+    inset 0 0 0 5px var(--tone),
+    0 7px 0 var(--ink);
+}
+.path-node--ready:hover {
+  box-shadow:
+    inset 0 0 0 5px var(--tone),
+    0 13px 0 var(--ink);
 }
 .path-node--ready:active,
 .path-node--ready[aria-expanded='true'] {
   box-shadow:
-    inset 0 0 0 3px var(--tone),
-    0 2px 0 var(--line-strong);
+    inset 0 0 0 5px var(--tone),
+    0 1px 0 var(--ink);
 }
 .path-node--not_generated {
-  background: var(--surface);
+  background-color: #fff;
+  background-image: repeating-linear-gradient(45deg, transparent 0 7px, color-mix(in srgb, var(--tone) 22%, transparent) 7px 14px);
   color: var(--ink-2);
-  box-shadow:
-    inset 0 0 0 3px var(--line-strong),
-    0 8px 0 var(--line);
-  background-image: repeating-linear-gradient(45deg, transparent 0 7px, rgba(35, 38, 43, 0.04) 7px 14px);
 }
+/* Locked lessons keep their chapter's colour, just softer, and wiggle when poked. */
 .path-node--locked {
-  background: var(--surface-3);
-  color: #a9a597;
-  box-shadow: 0 8px 0 #d3cec0;
+  background: color-mix(in srgb, var(--tone) 45%, #fff);
+  color: var(--tone-dark);
+}
+.path-node--locked:hover {
+  animation: lock-wiggle 460ms ease-in-out;
+}
+@keyframes lock-wiggle {
+  0%,
+  100% {
+    transform: translateY(-4px) rotate(0);
+  }
+  25% {
+    transform: translateY(-6px) rotate(-9deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(7deg);
+  }
+  75% {
+    transform: translateY(-5px) rotate(-4deg);
+  }
 }
 .path-node.is-current {
   background: var(--butter-300);
   color: var(--ink);
-  box-shadow: 0 8px 0 var(--butter-700);
-}
-.path-node.is-current:active,
-.path-node.is-current[aria-expanded='true'] {
-  box-shadow: 0 2px 0 var(--butter-700);
 }
 .path-node.is-current.path-node--not_generated {
-  background: var(--butter-50);
-  background-image: repeating-linear-gradient(45deg, transparent 0 7px, rgba(179, 140, 29, 0.1) 7px 14px);
-  box-shadow:
-    inset 0 0 0 3px var(--butter-500),
-    0 8px 0 var(--butter-700);
+  background-color: var(--butter-50);
+  background-image: repeating-linear-gradient(45deg, transparent 0 7px, rgba(179, 140, 29, 0.14) 7px 14px);
+}
+/* A soft halo keeps telling you where to go next. */
+.path-node.is-current::after {
+  content: '';
+  position: absolute;
+  inset: -9px;
+  border-radius: 50%;
+  border: 3px solid var(--butter-500);
+  pointer-events: none;
+  animation: node-halo 1.9s ease-out infinite;
+}
+@keyframes node-halo {
+  from {
+    opacity: 0.85;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 0;
+    transform: scale(1.32);
+  }
 }
 .path-node.is-generating {
   animation: pulse-ring 1.6s ease-out infinite;
@@ -399,12 +594,12 @@
   padding: 8px 14px;
   border-radius: 12px;
   background: var(--surface);
-  border: 2px solid var(--line-strong);
-  color: var(--tone-dark);
+  border: 2px solid var(--ink);
+  color: var(--ink);
   font-weight: 900;
   font-size: 14px;
   letter-spacing: 0.04em;
-  box-shadow: 0 3px 0 var(--line-strong);
+  box-shadow: 3px 3px 0 var(--ink);
   animation: bob 1.8s ease-in-out infinite;
 }
 .path-bubble::after {
@@ -415,8 +610,8 @@
   width: 12px;
   height: 12px;
   background: var(--surface);
-  border-right: 2px solid var(--line-strong);
-  border-bottom: 2px solid var(--line-strong);
+  border-right: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
   transform: translateX(-50%) rotate(45deg);
 }
 .path-bubble.is-busy {
@@ -640,49 +835,114 @@
 }
 .cover-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(84px, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(66px, 1fr));
+  gap: 8px;
+  max-height: min(380px, 52vh);
+  overflow-y: auto;
+  padding: 4px;
 }
 .cover-choice {
   display: grid;
   place-items: center;
-  padding: 6px;
-  border-radius: 18px;
-  border: 1.5px solid var(--line);
-  background: var(--surface);
+  padding: 5px;
+  border-radius: 20px;
+  border: 2px solid transparent;
+  background: transparent;
   cursor: pointer;
   transition:
-    transform var(--dur-1) var(--ease-out),
+    transform 240ms var(--ease-pop),
     border-color var(--dur-2);
 }
 .cover-choice:hover {
-  border-color: var(--sage-400);
-  transform: translateY(-2px);
+  transform: translateY(-3px) rotate(-4deg);
+}
+.cover-choice.is-current {
+  border-color: var(--ink);
+}
+.cover-tones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.cover-tone {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 2px solid rgba(35, 38, 43, 0.12);
+  background: linear-gradient(140deg, var(--tile-a), var(--tile-b));
+  cursor: pointer;
+  transition: transform 240ms var(--ease-pop);
+}
+.cover-tone:hover {
+  transform: scale(1.12);
+}
+.cover-tone[aria-checked='true'] {
+  border-color: var(--ink);
+  box-shadow: inset 0 0 0 3px #fff;
 }
 .cover-actions {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
 }
-.tone-dot {
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  border: 1.5px solid var(--ink);
-  vertical-align: -1px;
+
+/* Subject icon on a pastel tile (covers, lessons). The emoji font is pinned so it stays in colour. */
+.emoji-tile {
+  --tile: 56px;
+  flex: none;
+  display: inline-grid;
+  place-items: center;
+  width: var(--tile);
+  height: var(--tile);
+  border-radius: calc(var(--tile) * 0.3);
+  background: linear-gradient(140deg, var(--tile-a), var(--tile-b));
+  box-shadow:
+    inset 0 0 0 1.5px rgba(35, 38, 43, 0.07),
+    inset 0 -3px 0 rgba(35, 38, 43, 0.05);
+  font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif;
+  font-size: calc(var(--tile) * 0.52);
+  line-height: 1;
+  transition: transform 280ms var(--ease-pop);
 }
-.tone-dot--sage {
-  background: #e3edd4;
+.emoji-tile__glyph {
+  transform: translateY(1px);
+  filter: drop-shadow(0 3px 2px rgba(35, 38, 43, 0.18));
 }
-.tone-dot--butter {
-  background: #fcf0b8;
+:is(a, button):hover > .emoji-tile,
+:is(a, button):hover > * > .emoji-tile {
+  transform: rotate(-6deg) scale(1.06);
 }
-.tone-dot--coral {
-  background: #f8dccf;
+.emoji-tile--sky {
+  --tile-a: #e3ecff;
+  --tile-b: #b8cfff;
 }
-.tone-dot--sky {
-  background: #dfe8f5;
+.emoji-tile--butter {
+  --tile-a: #fff3c4;
+  --tile-b: #ffd77e;
+}
+.emoji-tile--pink {
+  --tile-a: #ffe4ec;
+  --tile-b: #ffbcd0;
+}
+.emoji-tile--mint {
+  --tile-a: #dcf5e4;
+  --tile-b: #a6e0bb;
+}
+.emoji-tile--lilac {
+  --tile-a: #efe7fd;
+  --tile-b: #cbb6f4;
+}
+.emoji-tile--peach {
+  --tile-a: #ffeadc;
+  --tile-b: #ffc39c;
+}
+.emoji-tile--coral {
+  --tile-a: #ffe1da;
+  --tile-b: #ffa591;
+}
+.emoji-tile--sage {
+  --tile-a: #edf4e2;
+  --tile-b: #c3dba2;
 }
 
 @media (max-width: 1080px) {
@@ -694,6 +954,20 @@
   }
 }
 @media (max-width: 640px) {
+  .page-banner {
+    grid-template-columns: minmax(0, 1fr) auto;
+    padding: 18px;
+    border-radius: 22px;
+  }
+  .page-banner__actions {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-content: flex-start;
+  }
+  .page-banner__art svg {
+    width: 64px;
+    height: 64px;
+  }
   .job-card {
     flex-wrap: wrap;
     gap: 12px;

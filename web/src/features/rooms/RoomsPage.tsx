@@ -4,6 +4,8 @@ import type { Course, RoomBank, RoomCreated, RoomSnapshot, RoomSummary } from '.
 import { hrefFor, navigate } from '../../app/router';
 import { useLoad } from '../../app/store';
 import { Icon } from '../../components/Icon';
+import { PageHeader } from '../../components/PageHeader';
+import { EmojiTile } from '../../components/EmojiTile';
 import { Spot } from '../../components/Spot';
 import { LoadingRows, ProblemNotice } from '../../components/StateViews';
 import { describeError } from '../../lib/copy';
@@ -143,7 +145,7 @@ function CreateCard({ courses, initialCourse }: { courses: Course[]; initialCour
   return (
     <section className="panel-card room-create" aria-labelledby="room-create-title">
       <div className="room-create__head">
-        <Spot glyph="pencil" tone="butter" size={64} />
+        <EmojiTile icon="trophy" tone="peach" size={60} />
         <div>
           <h2 id="room-create-title" className="title-m">
             Tạo phòng đố vui
@@ -254,13 +256,14 @@ export function RoomsPage({ code, courseId }: { code?: string; courseId?: string
 
   return (
     <div className="page together">
-      <header className="page-head">
-        <div>
-          <p className="eyebrow">Học cùng người khác</p>
-          <h1 className="page-title">Cùng học</h1>
-        </div>
+      <PageHeader
+        title="Cùng học"
+        tone="mint"
+        note="Học với bạn bè: vào khóa người khác chia sẻ, hoặc mở phòng đố vui thi xem ai nhớ bài hơn."
+        art={<Spot glyph="globe" tone="sage" size={88} badge />}
+      >
         <TogetherTabs active="rooms" />
-      </header>
+      </PageHeader>
 
       {/* Coming from a course's “Phòng đố vui” card means hosting: on narrow screens the create card goes first. */}
       <div className={courseId ? 'together-grid together-grid--rooms together-grid--create-first' : 'together-grid together-grid--rooms'}>

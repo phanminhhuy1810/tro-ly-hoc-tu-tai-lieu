@@ -1,6 +1,6 @@
-// Small ink-sketch spot illustrations on a soft starburst, after the TAITOR
-// reference: tiny, purposeful, one hand. Course covers use them as presets
-// (picked from the course title, or chosen by the creator), never generated images.
+// Small ink-sketch spot illustrations after the TAITOR reference: tiny,
+// purposeful, one hand. Page banners and empty states use them; course covers
+// moved to subject icons on pastel tiles (lib/topicIcons).
 
 const INK = '#23262b';
 
@@ -22,8 +22,7 @@ export const GLYPHS = [
   'flag',
 ] as const;
 export type Glyph = (typeof GLYPHS)[number];
-export const TONE_NAMES = ['sage', 'butter', 'coral', 'sky'] as const;
-export type Tone = (typeof TONE_NAMES)[number];
+export type Tone = 'sage' | 'butter' | 'coral' | 'sky';
 
 const TONES: Record<Tone, string> = {
   sage: '#e3edd4',
@@ -171,36 +170,19 @@ function GlyphPaths({ glyph }: { glyph: Glyph }) {
   }
 }
 
-export function Spot({ glyph, tone = 'sage', size = 72, label }: { glyph: Glyph; tone?: Tone; size?: number; label?: string }) {
+/** `badge` sets the drawing on a white sticker disc (ink rim, hard shadow) for the page banners. */
+export function Spot({ glyph, tone = 'sage', size = 72, label, badge = false }: { glyph: Glyph; tone?: Tone; size?: number; label?: string; badge?: boolean }) {
   return (
     <svg width={size} height={size} viewBox="0 0 80 80" role={label ? 'img' : undefined} aria-label={label} aria-hidden={label ? undefined : true}>
-      <polygon points={starburst(40, 40, 37, 32)} fill={TONES[tone]} />
+      {badge ? (
+        <>
+          <circle cx="43" cy="43" r="34.5" fill={INK} />
+          <circle cx="40" cy="40" r="34.5" fill="#fff" stroke={INK} strokeWidth="2.5" />
+        </>
+      ) : (
+        <polygon points={starburst(40, 40, 37, 32)} fill={TONES[tone]} />
+      )}
       <GlyphPaths glyph={glyph} />
     </svg>
   );
-}
-
-const KEYWORDS: [RegExp, Glyph, Tone][] = [
-  [/(ip\b|ipv|subnet|mạng|network|tcp|router|lan\b|giao thức|tầng)/, 'network', 'sage'],
-  [/(lập trình|code|python|java|thuật toán|algorithm|cấu trúc dữ liệu|web|sql)/, 'code', 'sky'],
-  [/(tích phân|đạo hàm|giới hạn|calculus|integral|derivative|hàm số|toán|đại số|xác suất)/, 'calculus', 'butter'],
-  [/(thống kê|kinh tế|tài chính|kế toán|marketing|statistic|econom)/, 'chart', 'butter'],
-  [/(vật lý|physics|lượng tử|điện|cơ học)/, 'atom', 'sky'],
-  [/(hóa|chemistry|sinh học|biology|tế bào)/, 'flask', 'sage'],
-  [/(tâm lý|psychology|nhận thức|trí nhớ|hành vi|củng cố)/, 'psychology', 'coral'],
-  [/(thần kinh|não|neuro)/, 'brain', 'coral'],
-  [/(tiếng anh|english|ngôn ngữ|language|địa lý|lịch sử|history)/, 'globe', 'sky'],
-  [/(luật|pháp luật|law|triết|chính trị)/, 'scale', 'coral'],
-  [/(viết|văn|writing|essay)/, 'pencil', 'butter'],
-];
-
-export function coverFor(title: string): { glyph: Glyph; tone: Tone } {
-  const t = title.toLowerCase();
-  const hit = KEYWORDS.find(([pattern]) => pattern.test(t));
-  return hit ? { glyph: hit[1], tone: hit[2] } : { glyph: 'book', tone: 'sky' };
-}
-
-export function parsePreset(preset: string | null | undefined): { glyph: Glyph; tone: Tone } | null {
-  const [glyph, tone] = (preset ?? '').split('-');
-  return (GLYPHS as readonly string[]).includes(glyph) && (TONE_NAMES as readonly string[]).includes(tone) ? { glyph: glyph as Glyph, tone: tone as Tone } : null;
 }

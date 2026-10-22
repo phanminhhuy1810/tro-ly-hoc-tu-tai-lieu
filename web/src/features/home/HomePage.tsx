@@ -5,6 +5,7 @@ import { hrefFor } from '../../app/router';
 import { useApp, useLoad } from '../../app/store';
 import { Icon } from '../../components/Icon';
 import { Mascot } from '../../components/Mascot';
+import { PageHeader } from '../../components/PageHeader';
 import { Spot } from '../../components/Spot';
 import { CourseCover } from '../course/covers';
 import { EmptyState, LoadingRows, ProblemNotice } from '../../components/StateViews';
@@ -16,6 +17,14 @@ const CREATE_HREF = hrefFor({ name: 'create' });
 
 function today() {
   return new Intl.DateTimeFormat('vi-VN', { weekday: 'long', day: 'numeric', month: 'long' }).format(new Date());
+}
+
+function greeting() {
+  const hour = new Date().getHours();
+  if (hour < 11) return 'Chào buổi sáng';
+  if (hour < 14) return 'Chào buổi trưa';
+  if (hour < 18) return 'Chào buổi chiều';
+  return 'Chào buổi tối';
 }
 
 interface Next {
@@ -83,22 +92,24 @@ export function HomePage() {
 
   return (
     <div className="page home">
-      <header className="page-head">
-        <div>
-          <p className="eyebrow">{today()}</p>
-          <h1 className="page-title">Học tiếp</h1>
-        </div>
-        <a className="btn btn--secondary" href={CREATE_HREF}>
-          <Icon name="plus" size={18} /> Tạo khóa từ tài liệu
-        </a>
-      </header>
+      <PageHeader
+        title="Học tiếp"
+        tone="sage"
+        note={`${greeting()}! Hôm nay là ${today()} — học một chút là lửa lại cháy thêm một ngày.`}
+        art={<Mascot mood="hello" size={86} />}
+        actions={
+          <a className="btn btn--secondary" href={CREATE_HREF}>
+            <Icon name="plus" size={18} /> Tạo khóa từ tài liệu
+          </a>
+        }
+      />
 
       {state.loading && !state.data && <LoadingRows rows={3} label="Đang mở các khóa đã lưu…" />}
       {state.error != null && <ProblemNotice problem={describeError(state.error)} onRetry={state.reload} />}
 
       {state.data && state.data.courses.length === 0 && (
         <EmptyState
-          art={<Spot glyph="papers" tone="butter" size={120} />}
+          art={<Spot glyph="papers" tone="butter" size={120} badge />}
           title="Chưa có khóa nào"
           body="Chọn slide, giáo trình hoặc ghi chú của bạn — mình đọc rồi đề xuất lộ trình để bạn duyệt trước khi tạo bài."
           action={

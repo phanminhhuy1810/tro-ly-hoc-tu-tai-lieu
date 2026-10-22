@@ -14,6 +14,8 @@ class CoverTests(SliceFixture):
     def test_preset_then_upload_then_reset(self):
         self.assertEqual(self.client.get('/api/covers').json(), {})
         self.assertEqual(self.client.put(self.base + '/cover', json={'preset': '../etc-sage'}).status_code, 422)
+        self.assertEqual(self.client.put(self.base + '/cover', json={'preset': 'rocket-purple'}).status_code, 422)
+        self.assertEqual(self.client.put(self.base + '/cover', json={'preset': 'rocket-lilac'}).json()['preset'], 'rocket-lilac')
         chosen = self.client.put(self.base + '/cover', json={'preset': 'network-sky'}).json()
         self.assertEqual((chosen['kind'], chosen['preset']), ('preset', 'network-sky'))
         self.assertEqual(self.client.get('/api/covers').json()[self.value['id']]['preset'], 'network-sky')

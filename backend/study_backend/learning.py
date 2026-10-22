@@ -3,6 +3,7 @@ import hashlib
 import json
 import uuid
 from datetime import datetime, timezone
+from typing import Literal
 
 from fastapi import Depends, HTTPException
 from pydantic import Field, StrictInt, StrictStr
@@ -100,11 +101,20 @@ class FromQuestion(Model):
     item_id: str
 
 
+# A note's colour is how the learner files it on screen, not content: it has no version history.
+NoteColor = Literal["white", "butter", "peach", "pink", "lilac", "sky", "mint"]
+
+
 class NoteBody(Model):
     body: str = Field(min_length=1, max_length=10000)
     label: str = Field(default="user", pattern="^(user|teacher)$")
     source_refs: list[str] = Field(default_factory=list, max_length=20)
     course_id: str | None = None
+    color: NoteColor | None = None
+
+
+class NoteColorBody(Model):
+    color: NoteColor
 
 
 class NoteEdit(NoteBody):
@@ -217,7 +227,11 @@ class LearningStore:
         row = self.owned(db, "notebook_entries", note_id, owner)
         if db.execute("SELECT 1 FROM notebook_deleted WHERE entry_id=?", (note_id,)).fetchone():
             raise HTTPException(404, "Ghi chú đã được xóa khỏi sổ tay.")
-        return {"id": row["id"], "body": row["body"], "label": row["label"], "source_refs": json.loads(row["refs_json"]), "version": row["version"], "updated_at": row["updated_at"]}
+        style = db.execute("SELECT color FROM notebook_styles WHERE entry_id=?", (note_id,)).fetchone()
+        return {"id": row["id"], "body": row["body"], "label": row["label"], "source_refs": json.loads(row["refs_json"]), "version": row["version"], "updated_at": row["updated_at"], "color": style[0] if style else None}
+
+    def style_note(self, db, note_id, color):
+        db.execute("INSERT INTO notebook_styles VALUES (?,?,?) ON CONFLICT(entry_id) DO UPDATE SET color=excluded.color,updated_at=excluded.updated_at", (note_id, color, now()))
 
 
 def register_learning(app, store, user, activity=None):
@@ -311,6 +325,8 @@ def register_learning(app, store, user, activity=None):
             store.refs(db, owner, body.source_refs, body.course_id)
             note_id = uuid.uuid4().hex
             db.execute("INSERT INTO notebook_entries VALUES (?,?,?,?,?,?,?,?)", (note_id, owner, body.body, body.label, packed(body.source_refs), now(), now(), 1))
+            if body.color:
+                store.style_note(db, note_id, body.color)
             return store.note_value(db, owner, note_id)
 
     @app.put("/api/notebook/{note_id}")
@@ -322,6 +338,15 @@ def register_learning(app, store, user, activity=None):
             store.refs(db, owner, body.source_refs, body.course_id)
             db.execute("INSERT INTO notebook_versions VALUES (?,?,?,?)", (note_id, previous["version"], packed(previous), now()))
             db.execute("UPDATE notebook_entries SET body=?,label=?,refs_json=?,version=version+1,updated_at=? WHERE id=?", (body.body, body.label, packed(body.source_refs), now(), note_id))
+            if body.color:
+                store.style_note(db, note_id, body.color)
+            return store.note_value(db, owner, note_id)
+
+    @app.put("/api/notebook/{note_id}/color")
+    def color_note(note_id: str, body: NoteColorBody, owner=Depends(user)):
+        with database.connection(write=True) as db:
+            store.note_value(db, owner, note_id)
+            store.style_note(db, note_id, body.color)
             return store.note_value(db, owner, note_id)
 
     @app.delete("/api/notebook/{note_id}")

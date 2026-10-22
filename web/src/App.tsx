@@ -54,7 +54,7 @@ export function App() {
         {route.name === 'library' && <LibraryPage />}
         {route.name === 'notebook' && <NotebookPage />}
         {route.name === 'progress' && <ProgressPage />}
-        {route.name === 'settings' && <SettingsPage />}
+        {route.name === 'settings' && <SettingsPage key={route.section ?? ''} section={route.section} />}
         {route.name === 'community' &&
           (route.courseId ? <CommunityCoursePage key={route.courseId} courseId={route.courseId} /> : <CommunityPage key={route.code ?? ''} code={route.code} />)}
         {route.name === 'share' && <SharePage key={route.courseId} courseId={route.courseId} />}

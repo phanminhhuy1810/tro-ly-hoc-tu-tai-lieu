@@ -93,13 +93,17 @@ class Activity:
                 'week': [{'date': (monday + timedelta(days=i)).isoformat(),
                           'completed': monday + timedelta(days=i) in date_set} for i in range(7)]}
 
+    def attend(self, db, owner, source):
+        """Studying is today's check-in (Vietnam day); opening a page is not. Idempotent per day."""
+        zone = ZoneInfo('Asia/Ho_Chi_Minh')
+        today = self.economy.now().astimezone(zone).date()
+        return self.event(db, owner, 'check-in:' + today.isoformat(), 'daily_check_in',
+                          data={'date': today.isoformat(), 'timezone': str(zone), 'source': source})
+
     def check_in(self, db, owner, submit=False):
         zone = ZoneInfo('Asia/Ho_Chi_Minh')
         today = self.economy.now().astimezone(zone).date()
-        added = False
-        if submit:
-            added = self.event(db, owner, 'check-in:' + today.isoformat(), 'daily_check_in',
-                               data={'date': today.isoformat(), 'timezone': str(zone)})
+        added = self.attend(db, owner, 'button') if submit else False
         dates = {datetime.fromisoformat(event['data']['date']).date()
                  for event in self.events(db, owner) if event['kind'] == 'daily_check_in'}
         cursor = today if today in dates else today - timedelta(days=1)
@@ -142,6 +146,7 @@ class Activity:
                 'questions': len(items), 'exercise': scope.get('exercise', 'practice')}
         if not self.event(db, owner, 'session:' + session['id'], 'practice_completed', session['course_id'], scope.get('unit_id'), data):
             return []
+        self.attend(db, owner, 'practice')
         day = self.economy.now().date().isoformat()
         # Repeating the same bank today does not remint a round reward, even if
         # a caller uses a fresh session id. Other banks have a separate daily cap.
@@ -162,6 +167,7 @@ class Activity:
         added = self.event(db, owner, f'card:{day}:{card["id"]}', 'card_reviewed', card.get('course_id'), card.get('unit_id'), {'card_id': card['id']})
         if not added:
             return []
+        self.attend(db, owner, 'cards')
         count = db.execute("SELECT count(*) FROM activity_events WHERE owner_id=? AND kind='card_reviewed' AND event_key LIKE ?", (owner, f'card:{day}:%')).fetchone()[0]
         if count < self.economy.policy['cards_per_round']:
             return []
@@ -196,6 +202,7 @@ class Activity:
                    (owner, lease, body.course_id, body.unit_id, body.mode, sequence, current.isoformat()))
         if seconds:
             self.event(db, owner, f'pulse:{lease}:{sequence}', 'study_time', body.course_id, body.unit_id, {'seconds': seconds, 'mode': body.mode})
+            self.attend(db, owner, 'study_time')
         if body.mode == 'learn':
             self.event(db, owner, f'read:{body.course_id}:{body.expected_revision}:{body.unit_id}', 'reading_viewed', body.course_id, body.unit_id, {'revision': body.expected_revision})
         return {'lease_id': lease, 'sequence': sequence, 'credited_seconds': seconds, 'estimate_only': True, 'study_day_qualified': False}

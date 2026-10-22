@@ -276,6 +276,8 @@ export interface StudyCard {
   memory?: { remembered: boolean | null; version: number; updated_at?: string } | null;
 }
 
+export type NoteColor = 'white' | 'butter' | 'peach' | 'pink' | 'lilac' | 'sky' | 'mint';
+
 export interface Note {
   id: string;
   body: string;
@@ -283,6 +285,8 @@ export interface Note {
   source_refs: string[];
   version: number;
   updated_at: string;
+  /** Chosen by the learner; null until then (see noteColor for the default). */
+  color: NoteColor | null;
 }
 
 export interface HistoryEntry {

@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 import { api, ApiError } from '../../api/client';
 import { useApp } from '../../app/store';
+import { EmojiTile } from '../../components/EmojiTile';
 import { Icon } from '../../components/Icon';
-import { GLYPHS, Spot, TONE_NAMES, type Tone } from '../../components/Spot';
 import { describeError } from '../../lib/copy';
-import { invalidateCovers } from './covers';
+import { nameOf, PICKER_ICONS, TILE_TONES, TONE_LABEL, type TileTone } from '../../lib/topicIcons';
+import { coverOf, invalidateCovers, useCovers } from './covers';
 
 const MAX_SIDE = 640;
 
@@ -32,17 +33,22 @@ async function uploadCover(courseId: string, blob: Blob) {
   }
 }
 
-export function CoverPicker({ courseId, open, onClose }: { courseId: string; open: boolean; onClose: () => void }) {
+/** Pick the course's icon and colour (Notion-style), upload an image, or go back to the automatic one. */
+export function CoverPicker({ courseId, title, open, onClose }: { courseId: string; title: string; open: boolean; onClose: () => void }) {
   const { toast } = useApp();
   const dialog = useRef<HTMLDialogElement>(null);
   const file = useRef<HTMLInputElement>(null);
-  const [tone, setTone] = useState<Tone>('sage');
+  const current = coverOf(useCovers()[courseId], title);
+  const [tone, setTone] = useState<TileTone>(current.tone);
   const [busy, setBusy] = useState(false);
 
   useEffect(() => {
     const el = dialog.current;
     if (!el) return;
-    if (open && !el.open) el.showModal();
+    if (open && !el.open) {
+      setTone(current.tone);
+      el.showModal();
+    }
     if (!open && el.open) el.close();
   }, [open]);
 
@@ -109,17 +115,32 @@ export function CoverPicker({ courseId, open, onClose }: { courseId: string; ope
             <Icon name="x" />
           </button>
         </div>
-        <div className="segmented" role="radiogroup" aria-label="Màu nền">
-          {TONE_NAMES.map((name) => (
-            <button key={name} type="button" role="radio" aria-checked={tone === name} onClick={() => setTone(name)}>
-              <span className={`tone-dot tone-dot--${name}`} /> {{ sage: 'Xanh lá', butter: 'Vàng', coral: 'Cam', sky: 'Xanh dương' }[name]}
-            </button>
+        <div className="cover-tones" role="radiogroup" aria-label="Màu nền">
+          {TILE_TONES.map((name) => (
+            <button
+              key={name}
+              type="button"
+              role="radio"
+              aria-checked={tone === name}
+              aria-label={TONE_LABEL[name]}
+              title={TONE_LABEL[name]}
+              className={`cover-tone emoji-tile--${name}`}
+              onClick={() => setTone(name)}
+            />
           ))}
         </div>
         <div className="cover-grid">
-          {GLYPHS.map((glyph) => (
-            <button key={glyph} type="button" className="cover-choice" disabled={busy} onClick={() => void pick(`${glyph}-${tone}`)} aria-label={`Hình ${glyph}`}>
-              <Spot glyph={glyph} tone={tone} size={68} />
+          {PICKER_ICONS.map((icon) => (
+            <button
+              key={icon}
+              type="button"
+              className={icon === current.icon && tone === current.tone ? 'cover-choice is-current' : 'cover-choice'}
+              disabled={busy}
+              onClick={() => void pick(`${icon}-${tone}`)}
+              aria-label={nameOf(icon)}
+              title={nameOf(icon)}
+            >
+              <EmojiTile icon={icon} tone={tone} size={54} />
             </button>
           ))}
         </div>
@@ -132,10 +153,7 @@ export function CoverPicker({ courseId, open, onClose }: { courseId: string; ope
             Tự chọn theo tên khóa
           </button>
         </div>
-        <p className="meta">
-          Ảnh tải lên được thu nhỏ còn tối đa 640 px trước khi lưu. Model AI trên máy hiện chỉ viết chữ, chưa vẽ ảnh — muốn AI tự vẽ ảnh bìa cần cài thêm model
-          ảnh.
-        </p>
+        <p className="meta">Chọn màu rồi bấm một biểu tượng. Ảnh tải lên được thu nhỏ còn tối đa 640 px trước khi lưu.</p>
       </div>
     </dialog>
   );

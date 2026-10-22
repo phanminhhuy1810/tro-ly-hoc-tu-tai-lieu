@@ -4,6 +4,7 @@ import type { Course, HistoryEntry, PracticeSession, QuestionKind } from '../../
 import { hrefFor, navigate } from '../../app/router';
 import { useLoad } from '../../app/store';
 import { Icon } from '../../components/Icon';
+import { PageHeader } from '../../components/PageHeader';
 import { Mascot } from '../../components/Mascot';
 import { Spot } from '../../components/Spot';
 import { EmptyState, LoadingRows, ProblemNotice } from '../../components/StateViews';
@@ -102,19 +103,21 @@ export function PracticePage({ courseId }: { courseId: string }) {
       <a className="back" href={hrefFor({ name: 'course', courseId: course.id })}>
         <Icon name="arrowLeft" size={18} /> Lộ trình
       </a>
-      <header className="page-head">
-        <div>
-          <p className="eyebrow">Ôn luyện · {course.content.title}</p>
-          <h1 className="page-title">Luyện theo phạm vi</h1>
-        </div>
-        <a className="btn btn--secondary" href={hrefFor({ name: 'lesson', courseId: course.id, unitId: 'tat-ca', mode: 'weak' })}>
-          <Icon name="flag" size={18} /> Ôn câu sai
-        </a>
-      </header>
+      <PageHeader
+        title="Ôn luyện"
+        tone="sky"
+        note={`${course.content.title} — chọn bài và dạng câu, luyện có Kẹp gợi ý hoặc tự kiểm tra.`}
+        art={<Spot glyph="flag" tone="coral" size={84} badge />}
+        actions={
+          <a className="btn btn--secondary" href={hrefFor({ name: 'lesson', courseId: course.id, unitId: 'tat-ca', mode: 'weak' })}>
+            <Icon name="flag" size={18} /> Ôn câu sai
+          </a>
+        }
+      />
 
       {units.length === 0 ? (
         <EmptyState
-          art={<Spot glyph="flag" tone="coral" size={110} />}
+          art={<Spot glyph="flag" tone="coral" size={110} badge />}
           title="Chưa có bài nào để luyện"
           body="Tạo và học bài đầu tiên trên lộ trình; câu hỏi của bài sẽ có ở đây."
           action={

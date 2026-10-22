@@ -5,6 +5,7 @@ import type { AiStart } from '../../api/jobs';
 import type { CoinQuote, GradeResult, RoomPlayer, RoomResultQuestion, RoomResults, RoomSnapshot } from '../../api/types';
 import { hrefFor, navigate } from '../../app/router';
 import { useApp, useLoad } from '../../app/store';
+import { BotBubble, MyBubble, TypingBubble } from '../../components/ChatBubbles';
 import { CoinConfirm } from '../../components/CoinConfirm';
 import { Icon } from '../../components/Icon';
 import { Mascot } from '../../components/Mascot';
@@ -295,23 +296,15 @@ function RoomHelp({ roomId, questionId }: { roomId: string; questionId: string }
       {messages === null && !problem && <div className="skeleton" style={{ height: 44 }} />}
       {messages?.map((message) =>
         message.role === 'user' ? (
-          <div key={message.id} className="bubble bubble--me">
-            {message.text}
-          </div>
+          <MyBubble key={message.id}>{message.text}</MyBubble>
         ) : (
-          <div key={message.id} className="bubble bubble--bot">
-            <span className="bubble__who">Kẹp · trợ lý AI</span>
+          <BotBubble key={message.id}>
             <RichText text={stripRefLabels(message.text)} />
             {message.needs_more_source && <p className="meta">Nguồn của câu chưa đủ để trả lời chắc chắn.</p>}
-          </div>
+          </BotBubble>
         ),
       )}
-      {pending && (
-        <div className="bubble bubble--bot bubble--pending" role="status">
-          <Mascot mood="think" size={36} bob />
-          <span>Kẹp đang đọc câu và nguồn…</span>
-        </div>
-      )}
+      {pending && <TypingBubble text="Kẹp đang đọc câu và nguồn" />}
       {quote && (
         <CoinConfirm
           quote={quote.quote}

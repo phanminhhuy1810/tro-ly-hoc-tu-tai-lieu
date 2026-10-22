@@ -6,6 +6,7 @@ import type { CoinQuote, Job, SourceDoc } from '../../api/types';
 import { useApp } from '../../app/store';
 import { CoinConfirm } from '../../components/CoinConfirm';
 import { Icon } from '../../components/Icon';
+import { PageHeader } from '../../components/PageHeader';
 import { Mascot } from '../../components/Mascot';
 import { Spot } from '../../components/Spot';
 import { LoadingRows, ProblemNotice } from '../../components/StateViews';
@@ -484,17 +485,19 @@ export function CreatePage() {
   const at = STEPS.findIndex(([s]) => s === step);
   return (
     <div className="page create">
-      <header className="page-head">
-        <div>
-          <p className="eyebrow">Khóa học mới từ tài liệu của bạn</p>
-          <h1 className="page-title">Tạo khóa mới</h1>
-        </div>
-        {source && (
-          <button type="button" className="btn btn--ghost" onClick={restart}>
-            <Icon name="refresh" size={16} /> Chọn tài liệu khác
-          </button>
-        )}
-      </header>
+      <PageHeader
+        title="Tạo khóa mới"
+        tone="butter"
+        note="Đưa slide, giáo trình hay ghi chú vào đây — Kẹp đọc hết rồi gợi ý lộ trình để bạn sửa trước khi học."
+        art={<Spot glyph="papers" tone="butter" size={84} badge />}
+        actions={
+          source && (
+            <button type="button" className="btn btn--secondary" onClick={restart}>
+              <Icon name="refresh" size={16} /> Chọn tài liệu khác
+            </button>
+          )
+        }
+      />
       <ol className="create-steps" aria-label="Các bước tạo khóa">
         {STEPS.map(([value, label], i) => (
           <li key={value} className={i < at ? 'is-done' : i === at ? 'is-current' : ''} aria-current={i === at ? 'step' : undefined}>

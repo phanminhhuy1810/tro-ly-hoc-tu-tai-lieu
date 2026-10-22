@@ -13,6 +13,7 @@ import './styles/chat.css';
 import './styles/states.css';
 import './styles/create.css';
 import './styles/screens.css';
+import './styles/motion.css';
 import './styles/together.css';
 
 upgradeLegacyLink();

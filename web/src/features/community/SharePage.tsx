@@ -4,6 +4,8 @@ import type { Course, CourseReport, PublicationPreview, PublicationState, Visibi
 import { hrefFor } from '../../app/router';
 import { useApp, useLoad } from '../../app/store';
 import { Icon, type IconName } from '../../components/Icon';
+import { PageHeader } from '../../components/PageHeader';
+import { Spot } from '../../components/Spot';
 import { LoadingRows, ProblemNotice } from '../../components/StateViews';
 import { appLink, copyText } from '../../lib/clipboard';
 import { materialLabel, ratingText, VISIBILITY } from '../../lib/community';
@@ -167,12 +169,12 @@ export function SharePage({ courseId }: { courseId: string }) {
   return (
     <div className="page share-page">
       {back}
-      <header className="page-head">
-        <div>
-          <p className="eyebrow">{course.content.title}</p>
-          <h1 className="page-title">Chia sẻ khóa</h1>
-        </div>
-      </header>
+      <PageHeader
+        title="Chia sẻ khóa"
+        tone="mint"
+        note={`“${course.content.title}” — chọn ai được vào học, xem trước rồi mới áp dụng.`}
+        art={<Spot glyph="globe" tone="sage" size={84} badge />}
+      />
 
       <div className="together-grid">
         <div className="share-main">

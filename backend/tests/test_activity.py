@@ -86,6 +86,24 @@ class ActivityTests(SliceFixture):
         self.assertTrue(next(m for m in self.client.get('/api/missions').json()['daily'] if m['code'] == 'cards')['completed'])
         self.assertEqual(self.provider.calls, calls_before_review)  # No AI calls for review or rewards.
 
+    def test_studying_checks_in_automatically_but_opening_or_a_first_beat_does_not(self):
+        status = '/api/activity/check-in'
+        body = {'course_id': self.course_value['id'], 'unit_id': 'unit-1', 'expected_revision': 2, 'mode': 'learn'}
+        first = self.client.post('/api/activity/ping', json=body).json()
+        self.assertFalse(self.client.get(status).json()['checked_today'])
+        self.clock += timedelta(seconds=20)
+        self.client.post('/api/activity/ping', json={**body, 'lease_id': first['lease_id'], 'expected_sequence': 0}).raise_for_status()
+        state = self.client.get(status).json()
+        self.assertTrue(state['checked_today'])
+        self.assertEqual((state['total_days'], state['coin_awarded']), (1, 0))
+        self.clock += timedelta(days=1)
+        self.assertFalse(self.client.get(status).json()['checked_today'])
+        self.complete_round()
+        state = self.client.get(status).json()
+        self.assertTrue(state['checked_today'])
+        self.assertEqual(state['current_streak'], 2)
+        self.assertFalse(self.client.post(status, json={}).json()['newly_checked'])
+
     def test_heartbeat_is_bounded_no_idle_credit_no_double_tab_or_replay_and_no_study_day(self):
         body = {'course_id': self.course_value['id'], 'unit_id': 'unit-1', 'expected_revision': 2, 'mode': 'learn'}
         first = self.client.post('/api/activity/ping', json=body).json()

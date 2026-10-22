@@ -620,6 +620,16 @@ Các thay đổi đi kèm frontend mới `web/` (React). Đã thử trên bản 
 - Kiểm thử mới: `test_creator_reads_current_sharing_and_viewer_sees_only_own_relation`, `test_own_result_is_revealed_with_the_solution_not_while_the_question_is_open`. [Snapshot API](backend/frontend-openapi.json) được tạo lại từ app hiện tại (132 → 140 đường dẫn, gồm cả ghi nhớ khóa, lộ trình toàn tài liệu và ảnh bìa của đợt trước).
 - Đã thử trên bản sao dữ liệu với 2 người dùng (2 trình duyệt) và Gemma 4 12B cho phần hỏi sau phòng; chưa thử phòng 3–5 người thật.
 
+### Góp ý giao diện chiều 22/10/2026 — phần backend
+
+- **Điểm danh tự động** (`activity.py`): nộp lượt luyện, ôn thẻ hoặc có giây học hợp lệ (`pulse`) sẽ ghi sự kiện `check-in:<ngày>` theo giờ Việt Nam, kèm nguồn (`practice`/`cards`/`study_time`). Mỗi ngày chỉ một lần (INSERT OR IGNORE). Chỉ mở trang, hoặc nhịp pulse đầu chưa có giây, thì không tính. `POST` điểm danh tay vẫn còn cho tương thích nhưng `web/` không dùng nữa.
+- **Schema 20 — màu ghi chú**: bảng `notebook_styles` (một màu cho mỗi ghi chú, 7 màu cố định). Màu được nhận lúc tạo/sửa ghi chú; có thêm `PUT /api/notebook/{id}/color`. Chỉ chủ ghi chú đổi được; người khác hoặc ghi chú đã xóa trả 404. Màu giữ qua xóa/khôi phục.
+- **Schema 21 — phong cách Kẹp**: bảng `tutor_styles` (mỗi người học một dòng: `persona`, `emphasis` tối đa 300 ký tự, có version). `GET/PUT /api/tutor-style`; sửa từ tab cũ trả 409. `memory_for_ai` thêm `tutor_style`, nên chat chung và trợ giúp tại chỗ ở mọi khóa đều nhận. `MEMORY_RULE` nói rõ chỉ đổi vai/điểm nhấn, vẫn chỉ dựa trên nguồn. Prompt tạo bài chưa đổi.
+- **Ảnh bìa**: preset nhận thêm các màu `pink|mint|lilac|peach` (tổng 8). Danh sách biểu tượng do `web/` giữ; server chỉ kiểm dạng `tên-màu`.
+- [Snapshot API](backend/frontend-openapi.json) tạo lại từ app hiện tại: 140 → 142 đường dẫn.
+- Kiểm thử mới/sửa: `test_studying_checks_in_automatically_but_opening_or_a_first_beat_does_not`, `test_note_colour_is_owner_only_kept_through_delete_and_limited_to_the_palette`, `test_tutor_style_is_one_per_learner_and_joins_every_chat_and_help_prompt`, phần màu mới trong `test_covers`. `test_source_library` nâng lên schema 21.
+- Đã thử trên bản sao dữ liệu (cổng QA riêng, chưa gọi AI cho phần này): đổi màu ghi chú, mở lịch sử Coin, chọn ảnh bìa, lưu phong cách Kẹp. Chưa thử với người dùng khác.
+
 ## Phụ lục API: toàn bộ điểm nối trong snapshot hiện hành
 
 Danh mục sinh từ [backend/frontend-openapi.json](backend/frontend-openapi.json):132 paths/145 operations. Bảng giúp tìm route, không thay DTO/quy tắc phân quyền trong code. Nhiều response chưa có `response_model` tường minh; response schema trống không có nghĩa API không trả dữ liệu. Snapshot được tạo bằng app cô lập, không phải probe toàn bộ route trên runtime thật.

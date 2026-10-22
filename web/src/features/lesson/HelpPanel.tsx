@@ -4,6 +4,7 @@ import { askAi, settleAi, type AiOutcome } from '../../api/consent';
 import type { AiStart } from '../../api/jobs';
 import type { CoinQuote, HelpMessage, HelpThread } from '../../api/types';
 import { useApp } from '../../app/store';
+import { BotBubble, MyBubble, TypingBubble } from '../../components/ChatBubbles';
 import { CoinConfirm } from '../../components/CoinConfirm';
 import { Icon } from '../../components/Icon';
 import { Mascot } from '../../components/Mascot';
@@ -47,13 +48,12 @@ function Bubble({ message, onSimpler, onDetail, onSave, busy }: { message: HelpM
   const fix = useTextFix();
   if (message.role === 'user') {
     const text = message.action === 'ask' ? message.content.text : ACTION_LABEL[message.action] ?? message.action;
-    return <div className="bubble bubble--me">{text}</div>;
+    return <MyBubble>{text}</MyBubble>;
   }
   const ref = referenceText(message);
   const ai = message.content.ai_generated;
   return (
-    <div className="bubble bubble--bot">
-      <span className="bubble__who">{ai ? 'Kẹp · trợ lý AI' : message.action === 'hint' ? 'Gợi ý có sẵn · không tốn Coin' : 'Lời giải đã lưu'}</span>
+    <BotBubble mood={ai ? 'hello' : 'hint'} who={ai ? 'Kẹp' : message.action === 'hint' ? 'Gợi ý có sẵn · không tốn Coin' : 'Lời giải đã lưu'}>
       {message.content.text && <RichText text={stripRefLabels(message.content.text)} fix={fix} />}
       {ref && message.action !== 'hint' && (
         <p className="bubble__ref">
@@ -74,7 +74,7 @@ function Bubble({ message, onSimpler, onDetail, onSave, busy }: { message: HelpM
           </button>
         </div>
       )}
-    </div>
+    </BotBubble>
   );
 }
 
@@ -250,11 +250,8 @@ export function HelpPanel({ target, answered = false, onClose }: { target: HelpT
         ))}
         {pending && (
           <>
-            {pending.message && <div className="bubble bubble--me">{pending.message}</div>}
-            <div className="bubble bubble--bot bubble--pending" role="status">
-              <Mascot mood="think" size={40} bob />
-              <span>Đang soạn câu trả lời…</span>
-            </div>
+            {pending.message && <MyBubble>{pending.message}</MyBubble>}
+            <TypingBubble />
           </>
         )}
         {quote && (

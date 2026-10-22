@@ -5,7 +5,7 @@ import { hrefFor, navigate } from '../../app/router';
 import { useApp, useLoad } from '../../app/store';
 import { CoinConfirm } from '../../components/CoinConfirm';
 import { Icon } from '../../components/Icon';
-import { Spot } from '../../components/Spot';
+import { EmojiTile } from '../../components/EmojiTile';
 import { LoadingRows, ProblemNotice } from '../../components/StateViews';
 import { describeError } from '../../lib/copy';
 import { chapterGroups, courseSummary, pathNodes, type PathNode } from '../../lib/path';
@@ -115,7 +115,7 @@ export function CoursePage({ courseId }: { courseId: string }) {
       <a className="back" href="#/">
         <Icon name="arrowLeft" size={18} /> Học tiếp
       </a>
-      <header className="course-head">
+      <header className="course-head page-banner--sky">
         <button type="button" className="course-cover" disabled={!creator} onClick={() => setCoverOpen(true)} aria-label="Đổi ảnh bìa">
           <CourseCover courseId={course.id} title={course.content.title} size={96} />
           {creator && (
@@ -194,7 +194,7 @@ export function CoursePage({ courseId }: { courseId: string }) {
           <section className="modes" aria-label="Cách học khác">
             <h2 className="title-m">Cách học khác</h2>
             <a className="mode-card" href={hrefFor({ name: 'cards', courseId: course.id })}>
-              <Spot glyph="cards" tone="butter" size={52} />
+              <EmojiTile icon="cards" tone="butter" size={50} />
               <span>
                 <strong>Flashcard</strong>
                 <span className="meta">{cards.length ? `${cards.length} thẻ · ${unknownCards} chưa nhớ` : 'Thẻ có sau khi tạo bài'}</span>
@@ -202,7 +202,7 @@ export function CoursePage({ courseId }: { courseId: string }) {
               <Icon name="arrowRight" size={18} />
             </a>
             <a className="mode-card" href={hrefFor({ name: 'practice', courseId: course.id })}>
-              <Spot glyph="chart" tone="sky" size={52} />
+              <EmojiTile icon="target" tone="sky" size={50} />
               <span>
                 <strong>Ôn luyện</strong>
                 <span className="meta">Luyện hoặc kiểm tra theo phạm vi bài</span>
@@ -211,7 +211,7 @@ export function CoursePage({ courseId }: { courseId: string }) {
             </a>
             {studied ? (
               <a className="mode-card" href={hrefFor({ name: 'lesson', courseId: course.id, unitId: 'tat-ca', mode: 'weak' })}>
-                <Spot glyph="flag" tone="coral" size={52} />
+                <EmojiTile icon="flag" tone="coral" size={50} />
                 <span>
                   <strong>Ôn câu sai</strong>
                   <span className="meta">Từ các bài đã luyện</span>
@@ -220,7 +220,7 @@ export function CoursePage({ courseId }: { courseId: string }) {
               </a>
             ) : (
               <div className="mode-card mode-card--muted">
-                <Spot glyph="flag" tone="coral" size={52} />
+                <EmojiTile icon="flag" tone="coral" size={50} />
                 <span>
                   <strong>Ôn câu sai</strong>
                   <span className="meta">Có sau khi bạn luyện xong bài đầu tiên.</span>
@@ -232,7 +232,7 @@ export function CoursePage({ courseId }: { courseId: string }) {
           <section className="modes" aria-label="Cùng học">
             <h2 className="title-m">Cùng học</h2>
             <a className="mode-card" href={hrefFor({ name: 'rooms', courseId: course.id })}>
-              <Spot glyph="pencil" tone="butter" size={52} />
+              <EmojiTile icon="trophy" tone="peach" size={50} />
               <span>
                 <strong>Phòng đố vui</strong>
                 <span className="meta">Thi cùng bạn bè bằng bộ câu của khóa</span>
@@ -241,7 +241,7 @@ export function CoursePage({ courseId }: { courseId: string }) {
             </a>
             {creator && (
               <a className="mode-card" href={hrefFor({ name: 'share', courseId: course.id })}>
-                <Spot glyph="globe" tone="sage" size={52} />
+                <EmojiTile icon="people" tone="mint" size={50} />
                 <span>
                   <strong>Chia sẻ khóa</strong>
                   <span className="meta">Giữ riêng, gửi mã mời hoặc đăng công khai</span>
@@ -253,7 +253,7 @@ export function CoursePage({ courseId }: { courseId: string }) {
         </aside>
       </div>
 
-      {creator && <CoverPicker courseId={course.id} open={coverOpen} onClose={() => setCoverOpen(false)} />}
+      {creator && <CoverPicker courseId={course.id} title={course.content.title} open={coverOpen} onClose={() => setCoverOpen(false)} />}
 
       <dialog
         ref={dialog}

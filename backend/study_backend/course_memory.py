@@ -5,6 +5,8 @@ the learner's own notes ("explain with everyday examples", "I mix up /26 and
 /27"), the goal and rules confirmed when the course was planned, the questions
 the learner recently got wrong and the overview the AI wrote after reading the
 whole approved scope. Notes are per learner; nothing here changes the course.
+The learner's tutor style ("be a patient tutor", "always stress the formulas")
+is set once in Cài đặt and joins the memory of every course.
 """
 import json
 from datetime import datetime, timezone
@@ -15,14 +17,23 @@ from pydantic import Field
 from .models import Model
 
 MAX_NOTES = 1500
+MAX_STYLE = 300
 MAX_STRUGGLES = 5
 MEMORY_RULE = ('course_memory là ghi nhớ của khóa: ghi chú người học tự viết, mục tiêu/quy tắc khi tạo khóa, các câu gần đây làm sai và tổng quan khóa. '
                'Dùng nó để điều chỉnh cách giải thích (ví dụ nhắc lại chỗ hay nhầm, theo cách học người học muốn); '
-               'không coi là nguồn kiến thức và không ghi nó vào source_refs. ')
+               'không coi là nguồn kiến thức và không ghi nó vào source_refs. '
+               'tutor_style (nếu có) là vai và điều người học muốn được nhấn mạnh: nói theo vai đó và nhấn mạnh điều đó, '
+               'nhưng vẫn chỉ dựa trên nguồn và giữ mọi quy tắc ở trên. ')
 
 
 class MemoryEdit(Model):
     notes: str = Field(max_length=MAX_NOTES)
+    expected_version: int = Field(ge=0)
+
+
+class TutorStyleEdit(Model):
+    persona: str = Field(max_length=MAX_STYLE)
+    emphasis: str = Field(max_length=MAX_STYLE)
     expected_version: int = Field(ge=0)
 
 
@@ -33,6 +44,11 @@ def stamp():
 def saved_notes(db, owner, course_id):
     row = db.execute('SELECT notes,version,updated_at FROM course_memory WHERE owner_id=? AND course_id=?', (owner, course_id)).fetchone()
     return {'notes': row['notes'], 'version': row['version'], 'updated_at': row['updated_at']} if row else {'notes': '', 'version': 0, 'updated_at': None}
+
+
+def tutor_style(db, owner):
+    row = db.execute('SELECT persona,emphasis,version,updated_at FROM tutor_styles WHERE owner_id=?', (owner,)).fetchone()
+    return dict(row) if row else {'persona': '', 'emphasis': '', 'version': 0, 'updated_at': None}
 
 
 def struggles(db, owner, course_id, limit=MAX_STRUGGLES):
@@ -67,6 +83,7 @@ def memory_for_ai(db, owner, course, overview=None):
         'terms_to_keep': prefs.get('terms_to_keep') or None,
         'recent_mistakes': [s['prompt'] for s in struggles(db, owner, course['id'])] or None,
         'course_overview': overview,
+        'tutor_style': {k: v for k, v in tutor_style(db, owner).items() if k in ('persona', 'emphasis') and v} or None,
     }
     value = {k: v for k, v in value.items() if v}
     return value or None
@@ -84,6 +101,22 @@ def register_course_memory(app, database, course_snapshot, user, overview):
                     'struggles': struggles(db, owner, course_id),
                     'course': {k: prefs.get(k) for k in keys},
                     'overview': overview(db, owner, course)}
+
+    @app.get('/api/tutor-style')
+    def read_style(owner=Depends(user)):
+        with database.connection() as db:
+            return {**tutor_style(db, owner), 'max_length': MAX_STYLE}
+
+    @app.put('/api/tutor-style')
+    def write_style(body: TutorStyleEdit, owner=Depends(user)):
+        with database.connection(write=True) as db:
+            current = tutor_style(db, owner)
+            if current['version'] != body.expected_version:
+                raise HTTPException(409, 'Phong cách của Kẹp vừa được sửa ở cửa sổ khác; tải lại trước khi lưu.')
+            db.execute('INSERT INTO tutor_styles VALUES (?,?,?,?,?) ON CONFLICT(owner_id) DO UPDATE SET '
+                       'persona=excluded.persona,emphasis=excluded.emphasis,version=excluded.version,updated_at=excluded.updated_at',
+                       (owner, body.persona.strip(), body.emphasis.strip(), current['version'] + 1, stamp()))
+            return {**tutor_style(db, owner), 'max_length': MAX_STYLE}
 
     @app.put('/api/courses/{course_id}/memory')
     def write_memory(course_id: str, body: MemoryEdit, owner=Depends(user)):

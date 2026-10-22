@@ -396,6 +396,15 @@ CREATE TABLE IF NOT EXISTS course_covers (
     kind TEXT NOT NULL, preset TEXT, image BLOB, mime TEXT, updated_at TEXT NOT NULL
 );
 INSERT OR IGNORE INTO schema_versions VALUES (19);
+CREATE TABLE IF NOT EXISTS notebook_styles (
+    entry_id TEXT PRIMARY KEY REFERENCES notebook_entries(id), color TEXT NOT NULL, updated_at TEXT NOT NULL
+);
+INSERT OR IGNORE INTO schema_versions VALUES (20);
+CREATE TABLE IF NOT EXISTS tutor_styles (
+    owner_id TEXT PRIMARY KEY REFERENCES users(id), persona TEXT NOT NULL, emphasis TEXT NOT NULL,
+    version INTEGER NOT NULL, updated_at TEXT NOT NULL
+);
+INSERT OR IGNORE INTO schema_versions VALUES (21);
 """
 
 

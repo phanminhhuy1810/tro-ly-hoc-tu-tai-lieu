@@ -179,6 +179,20 @@ class LearningTests(SliceFixture):
         self.assertEqual(self.client.get('/api/notebook').json(), [])
         self.assertEqual(self.client.post(f"/api/notebook/{note['id']}/restore").json()["body"], "Bản đã sửa")
 
+    def test_note_colour_is_owner_only_kept_through_delete_and_limited_to_the_palette(self):
+        note = self.client.post('/api/notebook', json={"body": "Mẹo nhớ subnet", "color": "mint"}).json()
+        self.assertEqual(note["color"], "mint")
+        changed = self.client.put(f"/api/notebook/{note['id']}/color", json={"color": "pink"}).json()
+        self.assertEqual((changed["color"], changed["version"], changed["body"]), ("pink", 1, "Mẹo nhớ subnet"))
+        self.assertEqual(self.client.put(f"/api/notebook/{note['id']}/color", json={"color": "#ff0000"}).status_code, 422)
+        self.assertIsNone(self.client.post('/api/notebook', json={"body": "Không chọn màu"}).json()["color"])
+        with TestClient(self.app, base_url="http://127.0.0.1") as outsider:
+            outsider.post('/api/session')
+            self.assertEqual(outsider.put(f"/api/notebook/{note['id']}/color", json={"color": "sky"}).status_code, 404)
+        self.client.delete('/api/notebook/' + note["id"]).raise_for_status()
+        self.assertEqual(self.client.put(f"/api/notebook/{note['id']}/color", json={"color": "sky"}).status_code, 404)
+        self.assertEqual(self.client.post(f"/api/notebook/{note['id']}/restore").json()["color"], "pink")
+
     def test_save_chat_note_uses_server_message_and_ai_label_once(self):
         course = self.course()
         self.job(self.client.post(f"/api/courses/{course['id']}/chat", json={"unit_id": "unit-1", "message": "Hint"}))

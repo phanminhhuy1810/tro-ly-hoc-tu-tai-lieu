@@ -1,8 +1,8 @@
-"""Course cover: one of the drawn presets or a small image the creator uploads.
+"""Course cover: a preset subject icon and colour, or a small image the creator uploads.
 
-No image model is involved: the local text models cannot draw. The image is
-kept in SQLite next to the course (small, re-encoded by the browser before
-upload) so a backup of the database keeps it.
+No image model is involved. A preset is `icon-tone` (the web app owns the
+icon list and draws it); the image is kept in SQLite next to the course
+(small, re-encoded by the browser before upload) so a backup keeps it.
 """
 import re
 from datetime import datetime, timezone
@@ -14,7 +14,7 @@ from .models import Model
 
 MAX_IMAGE_BYTES = 1_500_000
 IMAGE_TYPES = {'image/png': b'\x89PNG\r\n\x1a\n', 'image/jpeg': b'\xff\xd8\xff', 'image/webp': b'RIFF'}
-PRESET = re.compile(r'^[a-z]{2,20}-(sage|butter|coral|sky)$')
+PRESET = re.compile(r'^[a-z]{2,20}-(sage|butter|coral|sky|pink|mint|lilac|peach)$')
 
 
 class PresetCover(Model):

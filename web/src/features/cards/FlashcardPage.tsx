@@ -1,14 +1,17 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { api, ApiError, ensureSession } from '../../api/client';
 import type { Course, StudyCard } from '../../api/types';
-import { hrefFor } from '../../app/router';
+import { hrefFor, motionAllowed } from '../../app/router';
 import { useApp, useLoad } from '../../app/store';
 import { useStudyPulse } from '../../app/usePulse';
+import { EmojiTile } from '../../components/EmojiTile';
 import { Icon } from '../../components/Icon';
 import { Mascot } from '../../components/Mascot';
 import { RichText } from '../../components/RichText';
 import { EmptyState, LoadingRows, ProblemNotice } from '../../components/StateViews';
 import { describeError } from '../../lib/copy';
+import { emojiOf, lessonIcons } from '../../lib/topicIcons';
+import { coverOf, useCovers } from '../course/covers';
 import { deckOrder, memoryOf, type CardMemory, type DeckFilter } from './deck';
 
 interface Loaded {
@@ -76,9 +79,13 @@ export function FlashcardPage({ courseId }: { courseId: string }) {
   // This round's marks; the deck order stays fixed until the learner reloads or changes the filter.
   const [local, setLocal] = useState<Record<string, CardMemory>>({});
   const [busy, setBusy] = useState(false);
+  // The marked card slides off (right: remembered, left: not yet) while the server records it.
+  const [leaving, setLeaving] = useState<'left' | 'right' | null>(null);
 
   const cards = useMemo(() => state.data?.cards ?? [], [state.data]);
   const course = state.data?.course;
+  const covers = useCovers();
+  const icons = useMemo(() => lessonIcons(course?.content.units.map((u) => u.title) ?? []), [course]);
   const order = useMemo(() => deckOrder(cards, filter), [cards, filter]);
   const current = order[position];
 
@@ -109,6 +116,8 @@ export function FlashcardPage({ courseId }: { courseId: string }) {
     async (remembered: boolean) => {
       if (!current || !course || busy) return;
       setBusy(true);
+      setLeaving(remembered ? 'right' : 'left');
+      const slide = new Promise((resolve) => window.setTimeout(resolve, motionAllowed() ? 300 : 0));
       try {
         const result = await api<{ version: number; rewards?: { amount: number; replayed?: boolean }[] }>(`/cards/${encodeURIComponent(current.id)}/memory`, {
           method: 'PUT',
@@ -120,6 +129,7 @@ export function FlashcardPage({ courseId }: { courseId: string }) {
           toast(`+${coin} Coin — ôn đủ thẻ hôm nay`);
           refreshWallet();
         }
+        await slide;
         setFlipped(false);
         setPosition((p) => p + 1);
       } catch (error) {
@@ -128,6 +138,7 @@ export function FlashcardPage({ courseId }: { courseId: string }) {
           state.reload();
         } else toast(describeError(error).title);
       } finally {
+        setLeaving(null);
         setBusy(false);
       }
     },
@@ -195,6 +206,7 @@ export function FlashcardPage({ courseId }: { courseId: string }) {
           <span>Lộ trình</span>
         </a>
         <div className="lesson-top__title">
+          <EmojiTile {...coverOf(covers[course.id], course.content.title)} size={44} />
           <span className="eyebrow">Flashcard · {course.content.title}</span>
           <strong>
             {remembered}/{cards.length} thẻ đã nhớ
@@ -285,32 +297,64 @@ export function FlashcardPage({ courseId }: { courseId: string }) {
           ) : (
             current && (
               <>
-                <button
-                  type="button"
-                  className={`flashcard${flipped ? ' is-flipped' : ''}`}
-                  aria-label={flipped ? 'Mặt sau của thẻ, bấm để lật lại' : 'Mặt trước của thẻ, bấm để xem đáp án'}
-                  onClick={() => setFlipped((f) => !f)}
-                  key={current.id}
-                >
-                  <span className="flashcard__inner">
-                    <span className="flashcard__face flashcard__face--front">
-                      <span className="eyebrow">{current.kind === 'personal' ? 'Thẻ của bạn' : 'Thẻ của bài'}</span>
-                      <span className="flashcard__text">{current.front}</span>
-                      <span className="meta">Bấm để lật</span>
+                <div className="deck__stage">
+                  {order.length - position > 2 && <span className="deck__under deck__under--far" aria-hidden="true" />}
+                  {order.length - position > 1 && <span className="deck__under" aria-hidden="true" />}
+                  <button
+                    type="button"
+                    className={`flashcard${flipped ? ' is-flipped' : ''}${leaving ? ` is-leaving-${leaving}` : ''}`}
+                    aria-label={flipped ? 'Mặt sau của thẻ, bấm để lật lại' : 'Mặt trước của thẻ, bấm để xem đáp án'}
+                    onClick={() => setFlipped((f) => !f)}
+                    key={current.id}
+                  >
+                    <span className="flashcard__inner">
+                      <span className="flashcard__face flashcard__face--front">
+                        <span className="flashcard__top">
+                          <span className="flashcard__tag">
+                            {(() => {
+                              const index = course.content.units.findIndex((u) => u.id === current.unit_id);
+                              return index >= 0 ? `${emojiOf(icons[index])} ` : '';
+                            })()}
+                            {current.kind === 'personal' ? 'Thẻ của bạn' : 'Thẻ của bài'}
+                          </span>
+                          <span className="flashcard__count">
+                            {position + 1}/{order.length}
+                          </span>
+                        </span>
+                        <span className="flashcard__text">{current.front}</span>
+                        <span className="flashcard__flip">
+                          <Icon name="refresh" size={15} /> Bấm để lật
+                        </span>
+                      </span>
+                      <span className="flashcard__face flashcard__face--back">
+                        <span className="flashcard__top">
+                          <span className="flashcard__tag flashcard__tag--answer">
+                            <Icon name="check" size={14} /> Đáp án
+                          </span>
+                          <span className="flashcard__count">
+                            {position + 1}/{order.length}
+                          </span>
+                        </span>
+                        <RichText className="flashcard__answer" text={current.back} />
+                      </span>
                     </span>
-                    <span className="flashcard__face flashcard__face--back">
-                      <span className="eyebrow">Đáp án</span>
-                      <RichText className="flashcard__answer" text={current.back} />
-                    </span>
-                  </span>
-                </button>
+                  </button>
+                </div>
                 <div className="deck__actions">
-                  <button type="button" className="btn btn--danger btn--lg" disabled={!flipped || busy} onClick={() => void mark(false)}>
-                    <Icon name="refresh" size={18} /> Chưa nhớ
-                  </button>
-                  <button type="button" className="btn btn--primary btn--lg" disabled={!flipped || busy} onClick={() => void mark(true)}>
-                    <Icon name="check" size={18} /> Nhớ rồi
-                  </button>
+                  {flipped ? (
+                    <>
+                      <button type="button" className="btn btn--danger btn--lg deck__answer" disabled={busy} onClick={() => void mark(false)}>
+                        <Icon name="refresh" size={18} /> Chưa nhớ
+                      </button>
+                      <button type="button" className="btn btn--primary btn--lg deck__answer" disabled={busy} onClick={() => void mark(true)}>
+                        <Icon name="check" size={18} /> Nhớ rồi
+                      </button>
+                    </>
+                  ) : (
+                    <button type="button" className="btn btn--secondary btn--lg deck__answer" onClick={() => setFlipped(true)}>
+                      <Icon name="refresh" size={18} /> Lật xem đáp án
+                    </button>
+                  )}
                 </div>
                 <p className="meta deck__hint">{flipped ? 'Tự đánh giá — không có điểm, chỉ để chọn thẻ cần ôn lại.' : 'Thử nhớ đáp án trước khi lật.'}</p>
               </>

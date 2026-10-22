@@ -105,7 +105,7 @@ export function StatesPage() {
 
       <Frame title="Chưa có khóa nào">
         <EmptyState
-          art={<Spot glyph="papers" tone="butter" size={110} />}
+          art={<Spot glyph="papers" tone="butter" size={110} badge />}
           title="Chưa có khóa nào"
           body="Chọn slide, giáo trình hoặc ghi chú của bạn — mình đọc rồi đề xuất lộ trình để bạn duyệt trước khi tạo bài."
           action={<button className="btn btn--primary btn--lg">Chọn tài liệu</button>}

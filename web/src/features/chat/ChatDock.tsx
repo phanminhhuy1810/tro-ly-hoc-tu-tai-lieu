@@ -4,6 +4,7 @@ import { acceptShownPrice } from '../../api/consent';
 import { observeJob, startAi, type AiStart } from '../../api/jobs';
 import type { ChatMessage, CoinQuote, Course } from '../../api/types';
 import { useApp, type ChatContext } from '../../app/store';
+import { BotBubble, MyBubble, TypingBubble } from '../../components/ChatBubbles';
 import { CoinConfirm } from '../../components/CoinConfirm';
 import { Icon } from '../../components/Icon';
 import { Mascot } from '../../components/Mascot';
@@ -13,6 +14,13 @@ import { describeError, describeJobFailure, type Problem } from '../../lib/copy'
 import { stripRefLabels } from '../../lib/text';
 
 const draftKey = (courseId: string) => `folio.chat.draft.${courseId}`;
+
+// Starters fill the box rather than send, so nothing is spent until the learner presses Gửi.
+const STARTERS = [
+  { label: 'Tóm tắt bài này', text: 'Tóm tắt giúp mình các ý chính của bài này.' },
+  { label: 'Giải thích một thuật ngữ', text: 'Giải thích giúp mình thuật ngữ: ' },
+  { label: 'Cho ví dụ dễ hiểu', text: 'Cho mình một ví dụ cụ thể, dễ hình dung về nội dung bài này.' },
+];
 
 function loadDraft(courseId: string) {
   try {
@@ -150,6 +158,15 @@ export function ChatDock() {
     setPending(false);
   };
 
+  const start = (text: string) => {
+    setDraft(text);
+    if (courseId) keepDraft(courseId, text);
+    window.requestAnimationFrame(() => {
+      input.current?.focus();
+      input.current?.setSelectionRange(text.length, text.length);
+    });
+  };
+
   const send = async () => {
     const message = draft.trim();
     if (!context || !message) return;
@@ -185,7 +202,9 @@ export function ChatDock() {
     <section className={`chat chat--${chatSize}`} role="dialog" aria-modal={chatSize === 'large'} aria-label="Hỏi chung">
       <header className="chat__head">
         <div className="chat__who">
-          <Mascot mood="hello" size={36} />
+          <span className="chat__avatar" aria-hidden="true">
+            <Mascot mood="hello" size={36} />
+          </span>
           <div>
             <p className="chat__title">Hỏi chung</p>
             <p className="meta">{context ? `Về: ${context.unitTitle}` : 'Chưa chọn bài'}</p>
@@ -227,20 +246,31 @@ export function ChatDock() {
             {loadProblem && <ProblemNotice problem={loadProblem} onRetry={loadHistory} compact />}
             {messages === null && !loadProblem && <div className="skeleton" style={{ height: 60 }} />}
             {messages && messages.length === 0 && (
-              <p className="chat__hint">Hỏi thuật ngữ hoặc chuyện chung của bài, ví dụ “broadcast là gì?”. Câu đang làm có nút trợ giúp riêng ngay trong bài.</p>
-            )}
-            {messages?.map((m) => (
-              <div key={m.id} className={`bubble ${m.role === 'user' ? 'bubble--me' : 'bubble--bot'}`}>
-                {m.role === 'assistant' && <span className="bubble__who">Trợ lý AI</span>}
-                {m.role === 'assistant' ? <RichText text={stripRefLabels(m.text)} /> : <p>{m.text}</p>}
+              <div className="chat-welcome">
+                <Mascot mood="hello" size={68} bob />
+                <p className="chat-welcome__title">Chào bạn, mình là Kẹp!</p>
+                <p className="chat-welcome__text">Hỏi thuật ngữ hay ý chung của bài, mình trả lời theo tài liệu của bạn. Câu đang làm thì có nút hỏi riêng ngay trong bài.</p>
+                <div className="chat-welcome__starters">
+                  {STARTERS.map((item) => (
+                    <button key={item.label} type="button" className="chip" onClick={() => start(item.text)}>
+                      {item.label}
+                    </button>
+                  ))}
+                </div>
               </div>
-            ))}
-            {pending && (
-              <div className="bubble bubble--bot bubble--pending" role="status">
-                <Mascot mood="think" size={40} bob />
-                <span>Đang soạn câu trả lời…</span>
-              </div>
             )}
+            {messages?.map((m) =>
+              m.role === 'assistant' ? (
+                <BotBubble key={m.id}>
+                  <RichText text={stripRefLabels(m.text)} />
+                </BotBubble>
+              ) : (
+                <MyBubble key={m.id}>
+                  <p>{m.text}</p>
+                </MyBubble>
+              ),
+            )}
+            {pending && <TypingBubble />}
             {quote && (
               <CoinConfirm
                 quote={quote.quote}
@@ -277,8 +307,8 @@ export function ChatDock() {
           >
             <textarea
               ref={input}
-              className="field"
-              rows={chatSize === 'large' ? 3 : 2}
+              className="chat__input"
+              rows={chatSize === 'large' ? 2 : 1}
               value={draft}
               placeholder="Hỏi một thuật ngữ hoặc ý bạn muốn rõ hơn…"
               aria-label="Tin nhắn"
@@ -293,9 +323,9 @@ export function ChatDock() {
                 }
               }}
             />
-            <button type="submit" className="btn btn--primary btn--sm" disabled={pending || !draft.trim()} aria-label={price > 0 ? `Gửi, ${price} Coin` : 'Gửi'}>
+            <button type="submit" className="btn btn--primary chat__send" disabled={pending || !draft.trim()} aria-label={price > 0 ? `Gửi, ${price} Coin` : 'Gửi'}>
               {price > 0 && <span className="price">{price} Coin</span>}
-              <Icon name="send" size={16} />
+              <Icon name="send" size={18} />
             </button>
           </form>
         </>

@@ -4,6 +4,7 @@ import type { CommunityCourse, Course } from '../../api/types';
 import { hrefFor, navigate } from '../../app/router';
 import { useApp, useLoad } from '../../app/store';
 import { Icon } from '../../components/Icon';
+import { PageHeader } from '../../components/PageHeader';
 import { Spot } from '../../components/Spot';
 import { EmptyState, LoadingRows, ProblemNotice } from '../../components/StateViews';
 import { creatorLabel, ratingText } from '../../lib/community';
@@ -78,13 +79,14 @@ export function CommunityPage({ code }: { code?: string }) {
 
   return (
     <div className="page together">
-      <header className="page-head">
-        <div>
-          <p className="eyebrow">Học cùng người khác</p>
-          <h1 className="page-title">Cùng học</h1>
-        </div>
+      <PageHeader
+        title="Cùng học"
+        tone="mint"
+        note="Học với bạn bè: vào khóa người khác chia sẻ, hoặc mở phòng đố vui thi xem ai nhớ bài hơn."
+        art={<Spot glyph="globe" tone="sage" size={88} badge />}
+      >
         <TogetherTabs active="community" />
-      </header>
+      </PageHeader>
 
       <div className="together-grid">
         <section aria-labelledby="community-title">
@@ -106,7 +108,7 @@ export function CommunityPage({ code }: { code?: string }) {
           {state.data &&
             (items.length === 0 ? (
               <EmptyState
-                art={<Spot glyph="globe" tone="sky" size={110} />}
+                art={<Spot glyph="globe" tone="sky" size={110} badge />}
                 title={query ? 'Không có khóa trùng tên' : 'Chưa có khóa công khai'}
                 body="Khi bạn hoặc người khác đăng khóa công khai, khóa sẽ hiện ở đây để xem trước và tham gia."
                 action={
