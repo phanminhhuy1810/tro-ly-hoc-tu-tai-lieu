@@ -89,7 +89,7 @@
   display: grid;
   gap: 10px;
   border-radius: var(--radius-xl);
-  background: var(--surface-2);
+  background: var(--sage-100);
 }
 .course-row {
   display: grid;

@@ -6,7 +6,7 @@
   flex-direction: column;
   gap: 22px;
   padding: 22px 16px 18px;
-  background: var(--paper);
+  background: var(--surface);
   border-right: 1px solid var(--line);
 }
 
@@ -55,10 +55,10 @@
   background: var(--surface-2);
   color: var(--ink);
 }
+/* The current page is a solid ink pill, like the reference's top navigation. */
 .nav__item[aria-current='page'] {
-  background: var(--sage-100);
-  color: var(--sage-800);
-  box-shadow: inset 0 0 0 1px var(--sage-200);
+  background: var(--ink);
+  color: #fff;
 }
 .nav__legacy {
   margin-left: auto;
@@ -149,7 +149,7 @@
   padding: 3px;
   gap: 3px;
   border-radius: 12px;
-  background: var(--surface-2);
+  background: var(--surface-3);
 }
 .segmented button {
   flex: 1;

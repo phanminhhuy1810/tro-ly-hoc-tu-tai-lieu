@@ -28,17 +28,17 @@
   flex: none;
 }
 .btn--primary {
-  background: var(--butter-300);
-  border-color: var(--butter-500);
-  color: var(--ink);
-  box-shadow: 0 3px 0 var(--butter-700);
+  background: var(--blue-500);
+  border-color: var(--blue-600);
+  color: #fff;
+  box-shadow: 0 3px 0 var(--blue-700);
 }
 .btn--primary:hover:not(:disabled) {
-  background: var(--butter-400);
+  background: var(--blue-600);
 }
 .btn--primary:active:not(:disabled) {
   transform: translateY(2px);
-  box-shadow: 0 1px 0 var(--butter-700);
+  box-shadow: 0 1px 0 var(--blue-700);
 }
 .btn--secondary {
   background: var(--control);

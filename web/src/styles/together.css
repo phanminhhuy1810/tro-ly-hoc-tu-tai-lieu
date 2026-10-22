@@ -5,7 +5,7 @@
   gap: 4px;
   padding: 4px;
   border-radius: 14px;
-  background: var(--surface-2);
+  background: var(--surface-3);
 }
 .together-tabs a {
   display: inline-flex;

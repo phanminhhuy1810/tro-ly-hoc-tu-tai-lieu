@@ -1,7 +1,8 @@
 /* One source of truth for colour, type, radius and motion.
-   Palette: white squared page, cream section frames and choice boxes, white
-   inputs and buttons, ink, sage for structure/selection, butter for the one
-   primary action per screen, coral only for mistakes. No purple. */
+   Palette after the TAITOR references Huy picked (measured from the images),
+   kept to 60-30-10: a cool off-white squared page; white cards with sage
+   panels to group sections; one strong blue for the main action, with soft
+   butter, periwinkle and lilac as small accents. Coral only for mistakes. */
 
 @font-face {
   font-family: 'Nunito';
@@ -23,32 +24,47 @@
 }
 
 :root {
-  /* Page = white; sections, cards and answer options = cream; fields and buttons stay white. */
-  --paper: #ffffff;
-  --surface: #fff8eb;
-  --surface-2: #f8eedb;
-  --surface-3: #efe3c9;
+  /* 60%: page and cards. */
+  --paper: #f2f4f6;
+  --surface: #ffffff;
+  --surface-2: #f3f5f9;
+  --surface-3: #e6eaf1;
   --control: #ffffff;
   --ink: #23262b;
   --ink-2: #4a4f57;
-  --ink-3: #767b83;
-  --line: #eee2c9;
-  --line-strong: #dccdae;
+  --ink-3: #636975;
+  --line: #e3e7ee;
+  --line-strong: #cdd4df;
 
-  --sage-50: #f2f6eb;
-  --sage-100: #e3edd4;
-  --sage-200: #cadcb2;
+  /* 30%: sage panels group sections (reference panel #cedfbc). */
+  --sage-50: #f1f6ea;
+  --sage-100: #e2ecd3;
+  --sage-200: #cedfbc;
   --sage-400: #92b06c;
   --sage-600: #5f803e;
   --sage-800: #3a5125;
 
-  --butter-50: #fff9df;
-  --butter-100: #fcf0b8;
-  --butter-300: #f7dd72;
-  --butter-400: #f0cf52;
-  --butter-500: #e3bd38;
-  --butter-700: #b38c1d;
-  --butter-900: #6b5110;
+  /* 10%: the main action is blue; white text passes 4.5:1 on --blue-500. */
+  --blue-50: #eef3ff;
+  --blue-100: #dde7ff;
+  --blue-300: #afc0fd;
+  --blue-500: #3b6fe8;
+  --blue-600: #2f5fd4;
+  --blue-700: #264db0;
+  --blue-800: #1d3c8a;
+
+  --lilac-50: #f6f2fc;
+  --lilac-100: #ece4f8;
+  --lilac-300: #c5b5e3;
+  --lilac-700: #5a4a85;
+
+  --butter-50: #fffbe8;
+  --butter-100: #fbf2c6;
+  --butter-300: #f4e28e;
+  --butter-400: #eed772;
+  --butter-500: #dfc458;
+  --butter-700: #b0962c;
+  --butter-900: #6b5a12;
 
   --coral-50: #fdf1ec;
   --coral-100: #f8dccf;
@@ -79,8 +95,8 @@
   --ease-pop: cubic-bezier(0.34, 1.56, 0.64, 1);
 
   /* Squared paper (caro) behind every screen, after the TAITOR whiteboard. */
-  --grid-line: rgba(122, 155, 203, 0.17);
-  --grid-size: 28px;
+  --grid-line: rgba(118, 135, 190, 0.16);
+  --grid-size: 30px;
   --grid:
     linear-gradient(var(--grid-line) 1px, transparent 1px),
     linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);

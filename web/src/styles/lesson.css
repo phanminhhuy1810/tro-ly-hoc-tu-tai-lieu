@@ -18,7 +18,7 @@
   column-gap: 18px;
   margin: 0 -28px 22px;
   padding: 12px 28px 14px;
-  background: rgba(255, 255, 255, 0.88);
+  background: rgba(242, 244, 246, 0.88);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
@@ -202,8 +202,8 @@
   line-height: 1.62;
 }
 .msg--tutor .msg__body {
-  background: var(--surface);
-  border: 1px solid var(--line);
+  background: var(--blue-50);
+  border: 1px solid var(--blue-100);
   border-bottom-left-radius: 8px;
   box-shadow: var(--shadow-1);
 }
@@ -216,8 +216,8 @@
   padding-left: 80px;
 }
 .msg--me .msg__body {
-  background: var(--sage-100);
-  border: 1px solid var(--sage-200);
+  background: var(--lilac-100);
+  border: 1px solid var(--lilac-300);
   border-bottom-right-radius: 8px;
 }
 .msg__action {
@@ -273,7 +273,8 @@
   font-weight: 900;
 }
 .btn--primary .price {
-  background: rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.22);
+  color: #fff;
 }
 
 .typing {
@@ -328,7 +329,7 @@
   position: absolute;
   inset: -18px -24px 0;
   z-index: -1;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), var(--paper) 42%);
+  background: linear-gradient(to bottom, rgba(242, 244, 246, 0), var(--paper) 42%);
   pointer-events: none;
 }
 
@@ -641,13 +642,13 @@
   flex: 1;
 }
 .option.is-chosen {
-  border-color: var(--sage-600);
-  background: var(--sage-50);
-  box-shadow: 0 2px 0 var(--sage-200);
+  border-color: var(--blue-500);
+  background: var(--blue-50);
+  box-shadow: 0 2px 0 var(--blue-100);
 }
 .option.is-chosen .option__key {
-  background: var(--sage-600);
-  border-color: var(--sage-600);
+  background: var(--blue-500);
+  border-color: var(--blue-500);
   color: #fff;
   animation: pop var(--dur-2) var(--ease-pop);
 }
@@ -1050,13 +1051,13 @@
 }
 .bubble--me {
   justify-self: end;
-  background: var(--sage-100);
+  background: var(--lilac-100);
   border-bottom-right-radius: 6px;
 }
 .bubble--bot {
   justify-self: start;
-  background: var(--surface);
-  border: 1px solid var(--line);
+  background: var(--blue-50);
+  border: 1px solid var(--blue-100);
   border-bottom-left-radius: 6px;
 }
 .bubble__who {
