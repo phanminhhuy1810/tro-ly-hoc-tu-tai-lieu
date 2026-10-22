@@ -12,7 +12,6 @@ import { draftFrom, emptyDraft, type Draft } from '../../lib/answers';
 import { describeError } from '../../lib/copy';
 import type { Phase } from '../../lib/lessonFlow';
 import { makeTextFix } from '../../lib/text';
-import { lessonIcons } from '../../lib/topicIcons';
 import { coverOf, useCovers } from '../course/covers';
 import { HelpPanel } from './HelpPanel';
 import { LearnChat } from './LearnChat';
@@ -260,7 +259,7 @@ export function LessonPlayer({ courseId, unitId, weak }: { courseId: string; uni
             {weak || unitIndex === null || unitIndex < 0 ? (
               <EmojiTile icon="flag" tone="coral" size={44} />
             ) : (
-              <EmojiTile icon={lessonIcons(course.content.units.map((u) => u.title))[unitIndex]} tone={coverOf(covers[course.id], course.content.title).tone} size={44} />
+              <EmojiTile {...coverOf(covers[course.id], course.content.title)} size={44} />
             )}
             <span className="eyebrow">{weak ? 'Ôn câu sai' : `Bài ${(unitIndex ?? 0) + 1} · ${course.content.title}`}</span>
             <strong>{weak ? `${order.length} câu cần ôn` : fix(unit!.title)}</strong>

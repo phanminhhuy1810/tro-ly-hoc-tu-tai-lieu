@@ -1,4 +1,4 @@
-// Subject icons for course covers and lessons: a 3D picture from Microsoft's
+// Subject icons for course covers: a 3D picture from Microsoft's
 // Fluent Emoji set (web/public/art/<key>.webp, MIT) on a pastel tile, picked
 // from the title or chosen by the creator. Nothing is generated per course; the
 // set is curated so every cover stays on topic.
@@ -152,58 +152,4 @@ export function courseCover(title: string): Cover {
   const h = hash(t);
   if (hit) return { icon: hit[1], tone: TONE_FAMILY[hit[2]][h % 3] };
   return { icon: COURSE_FALLBACK[h % COURSE_FALLBACK.length], tone: TILE_TONES[h % TILE_TONES.length] };
-}
-
-const LESSON_RULES: [RegExp, TopicIcon][] = [
-  [/(giới thiệu|tổng quan|mở đầu|nhập môn|overview|introduction)/, 'compass'],
-  [/(ôn tập|tổng kết|tóm tắt|kết luận|review|summary)/, 'trophy'],
-  [/(bài tập|luyện tập|ví dụ|exercise|practice|example)/, 'writing'],
-  [/(subnet|mask|chia mạng|cidr|vlsm)/, 'abacus'],
-  [/(classful|phân loại|phân lớp|lớp [a-e]\b)/, 'cards'],
-  [/(địa chỉ|address|ipv4|ipv6|\bip\b)/, 'network'],
-  [/(broadcast|multicast|quảng bá)/, 'megaphone'],
-  [/(định tuyến|routing|router)/, 'satellite'],
-  [/(tcp|udp|gói tin|packet|segment)/, 'package'],
-  [/(giao thức|protocol|bắt tay|handshake)/, 'handshake'],
-  [/(dns|tên miền|domain)/, 'search'],
-  [/(wifi|không dây|wireless)/, 'signal'],
-  [/(ethernet|cáp|cable|tầng vật l[ýí])/, 'plug'],
-  [/(bảo mật|tấn công|mật mã|security|attack)/, 'lock'],
-  [/(máy chủ|server)/, 'desktop'],
-  [/(tích phân|nguyên hàm|integral)/, 'ruler'],
-  [/(đạo hàm|vi phân|derivative)/, 'calculus'],
-  [/(giới hạn|liên tục|limit)/, 'target'],
-  [/(diện tích|thể tích|hình học|area|volume)/, 'ruler'],
-  [/(xác suất|probability)/, 'dice'],
-  [/(cơ sở dữ liệu|database|sql)/, 'cabinet'],
-  [/(thống kê|dữ liệu|statistic|data)/, 'chart'],
-  [/(công thức|phương trình|formula|equation)/, 'numbers'],
-  [/(hàm số|đồ thị|function|graph)/, 'calculus'],
-  [/(trí nhớ|ghi nhớ|memory)/, 'psychology'],
-  [/(cảm xúc|động lực|emotion|motivation)/, 'heart'],
-  [/(nhận thức|tư duy|cognition|thinking)/, 'bulb'],
-  [/(học tập|củng cố|learning|conditioning)/, 'graduation'],
-  [/(xã hội|nhóm|social|group)/, 'people'],
-  [/(phát triển|trưởng thành|development)/, 'leaf'],
-  [/(lịch sử|history)/, 'scroll'],
-  [/(thuật toán|algorithm)/, 'gear'],
-  [/(lập trình|vòng lặp|câu lệnh|code)/, 'code'],
-  [/(định nghĩa|khái niệm|definition|concept)/, 'book'],
-];
-const LESSON_POOL: TopicIcon[] = ['bulb', 'target', 'puzzle', 'rocket', 'books', 'search', 'star', 'compass', 'graduation', 'flag'];
-
-/**
- * One icon per lesson, in order: the best match for each title that the
- * course has not used yet, so the path reads at a glance. Same titles, same icons.
- */
-export function lessonIcons(titles: string[]): TopicIcon[] {
-  const used = new Set<TopicIcon>();
-  return titles.map((title, index) => {
-    const t = plain(title);
-    const matches = LESSON_RULES.filter(([pattern]) => pattern.test(t)).map(([, icon]) => icon);
-    const pool = LESSON_POOL.map((_, i) => LESSON_POOL[(index + i) % LESSON_POOL.length]);
-    const icon = [...matches, ...pool].find((candidate) => !used.has(candidate)) ?? matches[0] ?? pool[0];
-    used.add(icon);
-    return icon;
-  });
 }

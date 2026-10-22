@@ -1,39 +1,57 @@
-import { useEffect, useMemo, useRef } from 'react';
-import { Icon, type IconName } from '../../components/Icon';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { Icon } from '../../components/Icon';
 import { Mascot, type Pose } from '../../components/Mascot';
 import { chapterGroups, type PathNode } from '../../lib/path';
-import { Art } from '../../components/Art';
-import { lessonIcons } from '../../lib/topicIcons';
 
-// Duolingo-style path: chunky 3D lesson buttons on a gentle zigzag, a banner
-// per chapter, a speech bubble on the one lesson to do next, Kẹp standing
-// beside it, and a review chest at the end. Each lesson wears its own subject
-// icon; a small corner badge says done, locked or not made yet. Titles live in
-// the popover and in the table of contents, so the path itself stays calm.
+// Duolingo-style path. Each chapter has its own bright colour and a sticky
+// banner with a "Mục tiêu" guide (like Duolingo's Guidebook). Lessons are round
+// 3D pebbles with a plain white sign (star to learn, tick when done, lock
+// ahead); a speech bubble and Kẹp mark the lesson to do next. Each chapter also
+// has a flashcard stop halfway and a trophy for chapter review at the end, and
+// one ready-made cat keeps it company. A floating button brings you back to the
+// current lesson. Titles live in the popover, the guide and the table of contents.
 
 const OFFSETS = [0, -58, -88, -58, 0, 58, 88, 58];
-const TONES = ['sage', 'sky', 'coral'] as const;
+const THEMES = ['green', 'blue', 'orange', 'purple'] as const;
 const AWAKE: Pose[] = ['book', 'mug', 'laptop', 'flag'];
 
-/**
- * Now and then a cat keeps the path company: beside every third lesson (the
- * 2nd, 5th, 8th…), on the empty side of the bend. Cats by a locked lesson
- * sleep; the others read, sip coffee, type or wave a flag, picked from the
- * course title so a course always shows the same cats.
- */
-function sideCat(step: number, node: PathNode, courseTitle: string): Pose | null {
-  if (step % 3 !== 1 || node.isCurrent) return null;
-  if (node.state === 'locked') return 'sleep';
-  let h = 0;
-  for (const ch of courseTitle) h = (h * 31 + ch.codePointAt(0)!) >>> 0;
-  return AWAKE[(h + node.index) % AWAKE.length];
+type Glyph = 'star' | 'check' | 'lock' | 'sparkle' | 'cards' | 'trophy';
+
+/** Plain white signs drawn for the pebbles (currentColor, so locked ones turn grey). */
+function NodeGlyph({ kind, size = 34 }: { kind: Glyph; size?: number }) {
+  return (
+    <svg className="path-glyph" width={size} height={size} viewBox="0 0 40 40" aria-hidden="true">
+      {kind === 'star' && <path d="M20 4.5l4.6 9.6 10.5 1.4-7.7 7.3 1.9 10.4L20 28.2l-9.3 5 1.9-10.4-7.7-7.3 10.5-1.4z" fill="currentColor" stroke="currentColor" strokeWidth="2.5" strokeLinejoin="round" />}
+      {kind === 'check' && <path d="M8.5 21l7.5 7.5L32 12.5" fill="none" stroke="currentColor" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" />}
+      {kind === 'lock' && (
+        <g fill="currentColor">
+          <path d="M13 17v-4a7 7 0 0 1 14 0v4" fill="none" stroke="currentColor" strokeWidth="4.5" strokeLinecap="round" />
+          <rect x="8.5" y="16" width="23" height="18" rx="5" />
+        </g>
+      )}
+      {kind === 'sparkle' && <path d="M20 4l4.2 11.8L36 20l-11.8 4.2L20 36l-4.2-11.8L4 20l11.8-4.2z" fill="currentColor" strokeLinejoin="round" />}
+      {kind === 'cards' && (
+        <g fill="currentColor">
+          <rect x="6" y="11" width="20" height="24" rx="4" transform="rotate(-10 16 23)" opacity=".7" />
+          <rect x="14" y="7" width="20" height="25" rx="4" transform="rotate(8 24 19.5)" />
+        </g>
+      )}
+      {kind === 'trophy' && (
+        <g fill="currentColor">
+          <path d="M11 6h18v8a9 9 0 0 1-18 0z" />
+          <path d="M11 9H6.5q0 7 6 7.5M29 9h4.5q0 7-6 7.5" fill="none" stroke="currentColor" strokeWidth="3.2" strokeLinecap="round" />
+          <path d="M17.5 22.5h5v5h-5zM12 34q0-5 8-5t8 5z" />
+        </g>
+      )}
+    </svg>
+  );
 }
 
-function badgeFor(node: PathNode): IconName | null {
+function glyphFor(node: PathNode, generating: boolean): Glyph {
+  if (generating || node.state === 'not_generated') return 'sparkle';
   if (node.state === 'done') return 'check';
   if (node.state === 'locked') return 'lock';
-  if (node.state === 'not_generated') return 'sparkle';
-  return null;
+  return 'star';
 }
 
 function meta(node: PathNode): string {
@@ -116,18 +134,84 @@ function Popover({
   );
 }
 
+/** The chapter's "guidebook": every lesson with its goal; picking one opens it on the path. */
+function Guide({ nodes, onPick, onClose }: { nodes: PathNode[]; onPick: (node: PathNode) => void; onClose: () => void }) {
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const onKey = (event: KeyboardEvent) => event.key === 'Escape' && onClose();
+    const onDown = (event: MouseEvent) => {
+      if (ref.current && !ref.current.contains(event.target as Node) && !(event.target as Element).closest?.('.path-banner__guide')) onClose();
+    };
+    document.addEventListener('keydown', onKey);
+    document.addEventListener('mousedown', onDown);
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.removeEventListener('mousedown', onDown);
+    };
+  }, [onClose]);
+  return (
+    <div className="path-guide enter" ref={ref} role="dialog" aria-label="Mục tiêu của chương">
+      <ol>
+        {nodes.map((node) => (
+          <li key={node.unit.id}>
+            <button type="button" className={`path-guide__item is-${node.state}`} onClick={() => onPick(node)}>
+              <span className="path-guide__mark" aria-hidden="true">
+                <NodeGlyph kind={glyphFor(node, false)} size={16} />
+              </span>
+              <span>
+                <strong>
+                  Bài {node.index + 1}. {node.unit.title}
+                </strong>
+                {node.unit.objective && <span className="meta">{node.unit.objective}</span>}
+              </span>
+            </button>
+          </li>
+        ))}
+      </ol>
+    </div>
+  );
+}
+
+type Step = { kind: 'lesson'; node: PathNode } | { kind: 'cards' } | { kind: 'trophy' };
+
+/** A chapter's stops: its lessons, a flashcard stop after the middle one (3+ lessons), and the trophy at the end. */
+function chapterSteps(nodes: PathNode[]): Step[] {
+  const steps: Step[] = [];
+  const middle = nodes.length >= 3 ? Math.ceil(nodes.length / 2) - 1 : -1;
+  nodes.forEach((node, i) => {
+    steps.push({ kind: 'lesson', node });
+    if (i === middle) steps.push({ kind: 'cards' });
+  });
+  steps.push({ kind: 'trophy' });
+  return steps;
+}
+
+/** One cat per chapter, beside a lesson near the middle that is not the current one (Kẹp already stands there). */
+function chapterCat(steps: Step[], courseTitle: string, chapter: number): { at: number; pose: Pose } | null {
+  const lessons = steps.flatMap((step, i) => (step.kind === 'lesson' ? [{ node: step.node, i }] : []));
+  const spot = lessons.slice(1).find((l) => !l.node.isCurrent) ?? lessons.find((l) => !l.node.isCurrent);
+  if (!spot) return null;
+  if (spot.node.state === 'locked') return { at: spot.i, pose: 'sleep' };
+  let h = 0;
+  for (const ch of courseTitle) h = (h * 31 + ch.codePointAt(0)!) >>> 0;
+  return { at: spot.i, pose: AWAKE[(h + chapter) % AWAKE.length] };
+}
+
 export function ProgressPath({
   nodes,
   courseTitle,
   generatingUnitId,
   readFraction,
   reviewable,
+  cardCount,
   justUnlocked,
   selected,
   onSelect,
   onOpen,
   onGenerate,
   onReview,
+  onCards,
+  onPractice,
 }: {
   nodes: PathNode[];
   courseTitle: string;
@@ -135,49 +219,104 @@ export function ProgressPath({
   /** Share of the current lesson already read on this device (0–1). */
   readFraction: (node: PathNode) => number;
   reviewable: boolean;
+  cardCount: number;
   justUnlocked?: string | null;
   selected: string | null;
   onSelect: (unitId: string | null) => void;
   onOpen: (node: PathNode) => void;
   onGenerate: (node: PathNode) => void;
   onReview: (node: PathNode | null) => void;
+  onCards: () => void;
+  onPractice: () => void;
 }) {
   const groups = useMemo(() => chapterGroups(nodes), [nodes]);
-  const icons = useMemo(() => lessonIcons(nodes.map((node) => node.unit.title)), [nodes]);
-  let step = 0;
+  const [guide, setGuide] = useState<number | null>(null);
+  const [away, setAway] = useState<'up' | 'down' | null>(null);
+  const current = useRef<HTMLButtonElement | null>(null);
 
+  // Show the "back to your lesson" button while the current lesson is off screen.
+  const watch = useCallback((el: HTMLButtonElement | null) => {
+    current.current = el;
+  }, []);
+  useEffect(() => {
+    const el = current.current;
+    if (!el || typeof IntersectionObserver === 'undefined') return;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) setAway(null);
+      else setAway(entry.boundingClientRect.top < 0 ? 'up' : 'down');
+    });
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [nodes]);
+
+  let step = 0;
   return (
     <div className="path">
       {groups.map((group, g) => {
-        const tone = TONES[g % TONES.length];
+        const theme = THEMES[g % THEMES.length];
         const done = group.nodes.filter((n) => n.state === 'done').length;
+        const steps = chapterSteps(group.nodes);
+        const cat = chapterCat(steps, courseTitle, g);
         return (
-          <section key={g} className={`path-chapter path-chapter--${tone}`} aria-label={group.title || courseTitle}>
+          <section key={g} className={`path-chapter path-chapter--${theme}`} aria-label={group.title || courseTitle}>
             <header className="path-banner">
               <div>
-                <p className="path-banner__eyebrow">{groups.length > 1 ? `Chương ${g + 1}` : 'Lộ trình'} · {done}/{group.nodes.length} bài</p>
+                <p className="path-banner__eyebrow">
+                  {groups.length > 1 ? `Chương ${g + 1}` : 'Lộ trình'} · {done}/{group.nodes.length} bài
+                </p>
                 <h3 className="path-banner__title">{group.title || courseTitle}</h3>
               </div>
-              <span className="path-banner__badge" aria-hidden="true">
-                <Icon name={done === group.nodes.length ? 'check' : 'bookOpen'} size={22} />
-              </span>
+              <button type="button" className="path-banner__guide" aria-expanded={guide === g} onClick={() => setGuide(guide === g ? null : g)}>
+                <Icon name="bookOpen" size={18} /> Mục tiêu
+              </button>
+              {guide === g && (
+                <Guide
+                  nodes={group.nodes}
+                  onClose={() => setGuide(null)}
+                  onPick={(node) => {
+                    setGuide(null);
+                    onSelect(node.unit.id);
+                    document.getElementById(`path-${node.unit.id}`)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                  }}
+                />
+              )}
             </header>
             <ol className="path-track">
-              {group.nodes.map((node) => {
+              {steps.map((item, i) => {
                 const offset = OFFSETS[step % OFFSETS.length];
-                const mascotSide = offset > 0 ? 'left' : 'right';
-                const cat = sideCat(step, node, courseTitle);
+                const side = offset > 0 ? 'left' : 'right';
                 step += 1;
+                if (item.kind !== 'lesson') {
+                  const open = item.kind === 'cards' ? cardCount > 0 : done > 0;
+                  const label = item.kind === 'cards' ? 'Ôn thẻ của chương' : 'Ôn tập chương';
+                  return (
+                    <li key={`${item.kind}-${g}`} className="path-step path-step--special" style={{ transform: `translateX(${offset}px)` }}>
+                      <button
+                        type="button"
+                        className={`path-special path-special--${item.kind}${open ? '' : ' is-locked'}`}
+                        disabled={!open}
+                        onClick={item.kind === 'cards' ? onCards : onPractice}
+                        aria-label={open ? label : `${label} — mở sau khi học xong một bài`}
+                        title={label}
+                      >
+                        <NodeGlyph kind={open ? item.kind : 'lock'} />
+                      </button>
+                      <span className="path-special__label">{item.kind === 'cards' ? 'Ôn thẻ' : 'Ôn chương'}</span>
+                    </li>
+                  );
+                }
+                const node = item.node;
                 const generating = generatingUnitId === node.unit.id;
                 const read = node.isCurrent && node.state === 'ready' ? readFraction(node) : 0;
                 const bubble = generating ? 'ĐANG TẠO…' : node.isCurrent ? (node.state === 'not_generated' ? 'TẠO BÀI' : read > 0 ? 'HỌC TIẾP' : 'BẮT ĐẦU') : null;
                 const open = selected === node.unit.id;
                 return (
-                  <li key={node.unit.id} className={open ? 'path-step is-open' : 'path-step'} style={{ transform: `translateX(${offset}px)` }}>
+                  <li key={node.unit.id} id={`path-${node.unit.id}`} className={open ? 'path-step is-open' : 'path-step'} style={{ transform: `translateX(${offset}px)` }}>
                     {bubble && <span className={`path-bubble${generating ? ' is-busy' : ''}`}>{bubble}</span>}
                     <div className="path-node-wrap">
                       {(node.isCurrent || generating) && <Ring fraction={generating ? 0.25 : read} />}
                       <button
+                        ref={node.isCurrent ? watch : undefined}
                         type="button"
                         className={[
                           'path-node',
@@ -193,22 +332,17 @@ export function ProgressPath({
                         title={node.unit.title}
                         onClick={() => onSelect(open ? null : node.unit.id)}
                       >
-                        <Art name={icons[node.index]} size={node.isCurrent ? 46 : 42} className="path-node__art" />
-                        {badgeFor(node) && (
-                          <span className={`path-node__badge path-node__badge--${node.state}`} aria-hidden="true">
-                            <Icon name={badgeFor(node)!} size={14} />
-                          </span>
-                        )}
+                        <NodeGlyph kind={glyphFor(node, generating)} size={node.isCurrent ? 38 : 34} />
                       </button>
                     </div>
-                    {cat && (
-                      <span className={`path-cat path-cat--${mascotSide}`} aria-hidden="true">
-                        <Mascot pose={cat} size={84} pettable />
+                    {cat?.at === i && (
+                      <span className={`path-cat path-cat--${side}`} aria-hidden="true">
+                        <Mascot pose={cat.pose} size={112} pettable />
                       </span>
                     )}
                     {node.isCurrent && (
-                      <span className={`path-mascot path-mascot--${mascotSide}`} aria-hidden="true">
-                        <Mascot mood={node.state === 'not_generated' ? 'hint' : 'hello'} size={92} bob pettable />
+                      <span className={`path-mascot path-mascot--${side}`} aria-hidden="true">
+                        <Mascot mood={node.state === 'not_generated' ? 'hint' : 'hello'} size={104} bob pettable />
                       </span>
                     )}
                     {open && (
@@ -247,6 +381,12 @@ export function ProgressPath({
         </button>
         <span className="meta">{reviewable ? 'Ôn câu sai' : 'Ôn tập mở sau bài đầu tiên'}</span>
       </div>
+      {away && (
+        <button type="button" className="path-jump" aria-label="Về bài đang học" title="Về bài đang học" onClick={() => current.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })}>
+          <Icon name={away === 'up' ? 'up' : 'down'} size={22} />
+        </button>
+      )}
     </div>
   );
 }
+

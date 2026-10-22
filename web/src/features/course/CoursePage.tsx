@@ -156,6 +156,9 @@ export function CoursePage({ courseId }: { courseId: string }) {
               return sections ? Math.min(1, (readUpTo(course.id, node.unit.id, course.revision) + 1) / sections) : 0;
             }}
             reviewable={studied}
+            cardCount={cards.length}
+            onCards={() => navigate({ name: 'cards', courseId: course.id })}
+            onPractice={() => navigate({ name: 'practice', courseId: course.id })}
             justUnlocked={fresh}
             selected={selected}
             onSelect={setSelected}

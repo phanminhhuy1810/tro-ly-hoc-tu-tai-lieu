@@ -10,8 +10,6 @@ import { Mascot } from '../../components/Mascot';
 import { RichText } from '../../components/RichText';
 import { EmptyState, LoadingRows, ProblemNotice } from '../../components/StateViews';
 import { describeError } from '../../lib/copy';
-import { Art } from '../../components/Art';
-import { lessonIcons } from '../../lib/topicIcons';
 import { coverOf, useCovers } from '../course/covers';
 import { deckOrder, memoryOf, type CardMemory, type DeckFilter } from './deck';
 
@@ -86,7 +84,6 @@ export function FlashcardPage({ courseId }: { courseId: string }) {
   const cards = useMemo(() => state.data?.cards ?? [], [state.data]);
   const course = state.data?.course;
   const covers = useCovers();
-  const icons = useMemo(() => lessonIcons(course?.content.units.map((u) => u.title) ?? []), [course]);
   const order = useMemo(() => deckOrder(cards, filter), [cards, filter]);
   const current = order[position];
 
@@ -312,10 +309,6 @@ export function FlashcardPage({ courseId }: { courseId: string }) {
                       <span className="flashcard__face flashcard__face--front">
                         <span className="flashcard__top">
                           <span className="flashcard__tag">
-                            {(() => {
-                              const index = course.content.units.findIndex((u) => u.id === current.unit_id);
-                              return index >= 0 ? <Art name={icons[index]} size={18} /> : null;
-                            })()}
                             {current.kind === 'personal' ? 'Thẻ của bạn' : 'Thẻ của bài'}
                           </span>
                           <span className="flashcard__count">

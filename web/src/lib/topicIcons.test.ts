@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { courseCover, lessonIcons, parseCover, PICKER_ICONS } from './topicIcons';
+import { courseCover, parseCover, PICKER_ICONS } from './topicIcons';
 
 describe('subject icons', () => {
   it('picks the specific subject before the broad one', () => {
@@ -25,12 +25,5 @@ describe('subject icons', () => {
     expect(parseCover('rocket-lilac')).toEqual({ icon: 'rocket', tone: 'lilac' });
     for (const bad of ['rocket-purple', 'constructor-sky', '../etc-sky', '', null]) expect(parseCover(bad)).toBeNull();
     expect(PICKER_ICONS).not.toContain('brain');
-  });
-
-  it('gives each lesson of a course its own icon, matching the title when it can', () => {
-    const icons = lessonIcons(['Giới thiệu địa chỉ IP', 'Phân loại Classful', 'Chia subnet với mask /26', 'Địa chỉ broadcast', 'Ôn tập chương']);
-    expect(icons).toEqual(['compass', 'cards', 'abacus', 'network', 'trophy']);
-    expect(lessonIcons(['Bài 1', 'Bài 2', 'Bài 3'])).toEqual(lessonIcons(['Bài 1', 'Bài 2', 'Bài 3']));
-    expect(new Set(lessonIcons(['Bài 1', 'Bài 2', 'Bài 3'])).size).toBe(3);
   });
 });
