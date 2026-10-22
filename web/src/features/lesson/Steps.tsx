@@ -442,7 +442,7 @@ export function ResultStep({
   const back = hrefFor({ name: 'course', courseId: course.id });
   return (
     <article className="step step--result">
-      <Mascot mood="happy" size={112} />
+      <Mascot mood="happy" size={112} pettable />
       <p className="eyebrow">{weak ? 'Xong lượt ôn' : unitIndex !== null ? `Xong bài ${unitIndex + 1}` : 'Xong'}</p>
       {problem && <ProblemNotice problem={problem} compact />}
       {!result && !problem && <div className="skeleton" style={{ height: 40, width: 260 }} />}

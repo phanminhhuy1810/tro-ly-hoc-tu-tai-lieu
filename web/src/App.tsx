@@ -88,7 +88,7 @@ export function App() {
           {route.name === 'states' && <StatesPage />}
           {route.name === 'missing' && (
             <EmptyState
-              art={<Mascot mood="oops" size={110} />}
+              art={<Mascot mood="surprised" size={110} pettable />}
               title="Không có trang này"
               body="Đường dẫn có thể đã cũ."
               action={

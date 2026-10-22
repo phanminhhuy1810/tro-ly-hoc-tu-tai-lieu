@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef } from 'react';
 import { Icon, type IconName } from '../../components/Icon';
-import { Mascot } from '../../components/Mascot';
+import { Mascot, type Pose } from '../../components/Mascot';
 import { chapterGroups, type PathNode } from '../../lib/path';
 import { Art } from '../../components/Art';
 import { lessonIcons } from '../../lib/topicIcons';
@@ -13,6 +13,21 @@ import { lessonIcons } from '../../lib/topicIcons';
 
 const OFFSETS = [0, -58, -88, -58, 0, 58, 88, 58];
 const TONES = ['sage', 'sky', 'coral'] as const;
+const AWAKE: Pose[] = ['book', 'mug', 'laptop', 'flag'];
+
+/**
+ * Now and then a cat keeps the path company: beside every third lesson (the
+ * 2nd, 5th, 8th…), on the empty side of the bend. Cats by a locked lesson
+ * sleep; the others read, sip coffee, type or wave a flag, picked from the
+ * course title so a course always shows the same cats.
+ */
+function sideCat(step: number, node: PathNode, courseTitle: string): Pose | null {
+  if (step % 3 !== 1 || node.isCurrent) return null;
+  if (node.state === 'locked') return 'sleep';
+  let h = 0;
+  for (const ch of courseTitle) h = (h * 31 + ch.codePointAt(0)!) >>> 0;
+  return AWAKE[(h + node.index) % AWAKE.length];
+}
 
 function badgeFor(node: PathNode): IconName | null {
   if (node.state === 'done') return 'check';
@@ -151,6 +166,7 @@ export function ProgressPath({
               {group.nodes.map((node) => {
                 const offset = OFFSETS[step % OFFSETS.length];
                 const mascotSide = offset > 0 ? 'left' : 'right';
+                const cat = sideCat(step, node, courseTitle);
                 step += 1;
                 const generating = generatingUnitId === node.unit.id;
                 const read = node.isCurrent && node.state === 'ready' ? readFraction(node) : 0;
@@ -185,9 +201,14 @@ export function ProgressPath({
                         )}
                       </button>
                     </div>
+                    {cat && (
+                      <span className={`path-cat path-cat--${mascotSide}`} aria-hidden="true">
+                        <Mascot pose={cat} size={84} pettable />
+                      </span>
+                    )}
                     {node.isCurrent && (
                       <span className={`path-mascot path-mascot--${mascotSide}`} aria-hidden="true">
-                        <Mascot mood={node.state === 'not_generated' ? 'hint' : 'hello'} size={92} bob />
+                        <Mascot mood={node.state === 'not_generated' ? 'hint' : 'hello'} size={92} bob pettable />
                       </span>
                     )}
                     {open && (

@@ -622,6 +622,57 @@
 .path-mascot--left {
   right: calc(50% + 78px);
 }
+/* Cats along the path: still, apart from a little steam, flag or snore. */
+.path-cat {
+  position: absolute;
+  top: 14px;
+  pointer-events: none;
+  animation: pop 560ms var(--ease-pop) 220ms backwards;
+}
+.path-cat--right {
+  left: calc(50% + 92px);
+}
+.path-cat--left {
+  right: calc(50% + 92px);
+}
+.mascot__steam {
+  animation: steam 2.6s ease-in-out infinite;
+}
+.mascot__flag {
+  transform-box: fill-box;
+  transform-origin: 0 50%;
+  animation: flag-wave 2.2s ease-in-out infinite;
+}
+.mascot__zzz {
+  animation: snore 2.8s ease-in-out infinite;
+}
+@keyframes steam {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: translateY(2px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+}
+@keyframes flag-wave {
+  50% {
+    transform: skewY(-8deg) scaleX(0.9);
+  }
+}
+@keyframes snore {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: translate(0, 2px);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(2px, -3px);
+  }
+}
 .path-pop {
   position: absolute;
   top: calc(100% + 6px);
@@ -996,6 +1047,16 @@
   }
   .path-mascot {
     display: none;
+  }
+  .path-cat svg {
+    width: 64px;
+    height: 64px;
+  }
+  .path-cat--right {
+    left: calc(50% + 64px);
+  }
+  .path-cat--left {
+    right: calc(50% + 64px);
   }
   .path-step {
     transform: none !important;

@@ -4,7 +4,7 @@ import type { Course, ResumeEntry } from '../../api/types';
 import { hrefFor } from '../../app/router';
 import { useApp, useLoad } from '../../app/store';
 import { Icon } from '../../components/Icon';
-import { Mascot } from '../../components/Mascot';
+import { Mascot, type Mood } from '../../components/Mascot';
 import { PageHeader } from '../../components/PageHeader';
 import { ArtBadge } from '../../components/Art';
 import { CourseCover } from '../course/covers';
@@ -17,6 +17,16 @@ const CREATE_HREF = hrefFor({ name: 'create' });
 
 function today() {
   return new Intl.DateTimeFormat('vi-VN', { weekday: 'long', day: 'numeric', month: 'long' }).format(new Date());
+}
+
+/** Kẹp's face on Học tiếp follows the clock: bright in the morning, cheeky in the afternoon, asleep late at night. */
+function homeCat(): { mood?: Mood; pose?: 'sleep' } {
+  const hour = new Date().getHours();
+  if (hour >= 23 || hour < 5) return { pose: 'sleep' };
+  if (hour < 11) return { mood: 'happy' };
+  if (hour < 14) return { mood: 'hello' };
+  if (hour < 18) return { mood: 'smug' };
+  return { mood: 'wink' };
 }
 
 function greeting() {
@@ -96,7 +106,7 @@ export function HomePage() {
         title="Học tiếp"
         tone="sage"
         note={`${greeting()}! Hôm nay là ${today()} — học một chút là lửa lại cháy thêm một ngày.`}
-        art={<Mascot mood="hello" size={86} />}
+        art={<Mascot {...homeCat()} size={86} pettable />}
         actions={
           <a className="btn btn--secondary" href={CREATE_HREF}>
             <Icon name="plus" size={18} /> Tạo khóa từ tài liệu
@@ -122,7 +132,7 @@ export function HomePage() {
 
       {next && (
         <section className="resume enter" aria-label="Bài đang học">
-          <Mascot mood="hello" size={92} />
+          <Mascot mood="hello" size={92} pettable />
           <div className="resume__body">
             <p className="eyebrow">{next.course.content.title}</p>
             <h2 className="display-title">

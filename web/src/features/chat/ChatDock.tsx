@@ -247,7 +247,7 @@ export function ChatDock() {
             {messages === null && !loadProblem && <div className="skeleton" style={{ height: 60 }} />}
             {messages && messages.length === 0 && (
               <div className="chat-welcome">
-                <Mascot mood="hello" size={68} bob />
+                <Mascot mood="wink" size={68} bob pettable />
                 <p className="chat-welcome__title">Chào bạn, mình là Kẹp!</p>
                 <p className="chat-welcome__text">Hỏi thuật ngữ hay ý chung của bài, mình trả lời theo tài liệu của bạn. Câu đang làm thì có nút hỏi riêng ngay trong bài.</p>
                 <div className="chat-welcome__starters">

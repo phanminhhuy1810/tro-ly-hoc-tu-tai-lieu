@@ -262,7 +262,7 @@ export function FlashcardPage({ courseId }: { courseId: string }) {
 
           {order.length === 0 ? (
             <EmptyState
-              art={<Mascot mood="happy" size={110} />}
+              art={<Mascot mood="love" size={110} pettable />}
               title="Bạn đã nhớ hết các thẻ"
               body="Chọn “Tất cả” để ôn lại từ đầu, hoặc thêm thẻ mới."
               action={
@@ -273,7 +273,7 @@ export function FlashcardPage({ courseId }: { courseId: string }) {
             />
           ) : finished ? (
             <section className="deck__done enter">
-              <Mascot mood="happy" size={110} />
+              <Mascot mood="love" size={110} pettable />
               <p className="display-title">Xong một vòng {order.length} thẻ!</p>
               <p className="body-l">
                 Lượt này bạn đánh dấu nhớ {marks.filter((m) => m.remembered).length}, chưa nhớ {marks.filter((m) => !m.remembered).length}. Ôn đủ 5 thẻ khác

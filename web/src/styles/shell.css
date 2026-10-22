@@ -203,6 +203,111 @@
 .mascot--happy .mascot__extra {
   animation: pop var(--dur-3) var(--ease-pop) both;
 }
+/* A little life: each cat blinks, swishes its tail and breathes on its own beat
+   (--mascot-delay). The logo uses the same drawing without the .mascot class, so it stays still. */
+.mascot .mascot__eyes {
+  transform-box: view-box;
+  transform-origin: 60px 47px;
+  animation: mascot-blink 5.4s infinite;
+  animation-delay: var(--mascot-delay, 0s);
+}
+.mascot .mascot__tail {
+  transform-box: view-box;
+  transform-origin: 46px 100px;
+  animation: mascot-tail 3.6s ease-in-out infinite;
+  animation-delay: var(--mascot-delay, 0s);
+}
+.mascot .mascot__breath {
+  transform-box: view-box;
+  transform-origin: 60px 105px;
+  animation: mascot-breathe 4.2s ease-in-out infinite;
+  animation-delay: var(--mascot-delay, 0s);
+}
+@keyframes mascot-blink {
+  0%,
+  92%,
+  100% {
+    transform: scaleY(1);
+  }
+  94% {
+    transform: scaleY(0.1);
+  }
+}
+@keyframes mascot-tail {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(-8deg);
+  }
+}
+@keyframes mascot-breathe {
+  50% {
+    transform: scale(1.01, 1.025);
+  }
+}
+.mascot__hearts {
+  animation: mascot-float 1.6s ease-out infinite;
+}
+.mascot__tear {
+  animation: mascot-tear 1.8s ease-in infinite;
+}
+@keyframes mascot-float {
+  from {
+    opacity: 0.4;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-6px);
+  }
+}
+@keyframes mascot-tear {
+  from {
+    opacity: 0;
+    transform: translateY(-2px);
+  }
+  30% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+/* Tap a pettable cat: it hops and pulls a face (two names so a second tap restarts the hop). */
+.mascot.is-pettable {
+  cursor: pointer;
+  pointer-events: auto;
+}
+.mascot.is-petted-a .mascot__body,
+.mascot.is-petted-b .mascot__body {
+  transform-box: view-box;
+  transform-origin: 60px 105px;
+}
+.mascot.is-petted-a .mascot__body {
+  animation: mascot-hop-a 620ms var(--ease-pop);
+}
+.mascot.is-petted-b .mascot__body {
+  animation: mascot-hop-b 620ms var(--ease-pop);
+}
+@keyframes mascot-hop-a {
+  30% {
+    transform: translateY(-14px) rotate(-4deg);
+  }
+  65% {
+    transform: translateY(0) scale(1.05, 0.95);
+  }
+}
+@keyframes mascot-hop-b {
+  30% {
+    transform: translateY(-14px) rotate(4deg);
+  }
+  65% {
+    transform: translateY(0) scale(1.05, 0.95);
+  }
+}
 
 /* Phones and narrow tablets: the sidebar turns into a bottom tab bar. Home and
    Thư viện keep their own "Tạo khóa" button, lessons show Coin in their top bar. */

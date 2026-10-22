@@ -2,7 +2,7 @@ import type { CoinQuote } from '../../api/types';
 import { BRAND_OPTIONS, BrandMark } from '../../components/Brand';
 import { CoinConfirm } from '../../components/CoinConfirm';
 import { Icon } from '../../components/Icon';
-import { Mascot, type Mood } from '../../components/Mascot';
+import { Mascot, type Mood, type Pose } from '../../components/Mascot';
 import { ArtBadge } from '../../components/Art';
 import { EmptyState, LoadingRows, ProblemNotice } from '../../components/StateViews';
 import { describeError, describeJobFailure } from '../../lib/copy';
@@ -39,6 +39,11 @@ export function StatesPage() {
     ['think', 'Đang làm'],
     ['happy', 'Hoàn thành'],
     ['oops', 'Có lỗi'],
+    ['wink', 'Nháy mắt'],
+    ['love', 'Thích quá'],
+    ['surprised', 'Ngạc nhiên'],
+    ['sad', 'Buồn'],
+    ['smug', 'Láo láo'],
   ];
   return (
     <div className="page states">
@@ -72,11 +77,30 @@ export function StatesPage() {
         </div>
       </Frame>
 
-      <Frame title="Nhân vật “Kẹp” — chỉ xuất hiện ở các chỗ này">
+      <Frame title="Nhân vật “Kẹp” — bấm vào mèo để nó nhảy và đổi mặt">
         <div className="mood-row">
           {moods.map(([mood, label]) => (
             <figure key={mood}>
-              <Mascot mood={mood} size={92} />
+              <Mascot mood={mood} size={92} pettable />
+              <figcaption className="meta">{label}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </Frame>
+
+      <Frame title="Mèo dọc lộ trình — làm sẵn, khóa nào cũng có">
+        <div className="mood-row">
+          {(
+            [
+              ['book', 'Đọc sách'],
+              ['mug', 'Ôm cốc cà phê'],
+              ['laptop', 'Ngồi laptop'],
+              ['flag', 'Cầm cờ'],
+              ['sleep', 'Ngủ chờ bài sau'],
+            ] as [Pose, string][]
+          ).map(([pose, label]) => (
+            <figure key={pose}>
+              <Mascot pose={pose} size={92} pettable />
               <figcaption className="meta">{label}</figcaption>
             </figure>
           ))}
