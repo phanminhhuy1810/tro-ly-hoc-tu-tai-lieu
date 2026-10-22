@@ -8,8 +8,8 @@ from fastapi import Depends, HTTPException
 
 POLICY = {
     'version':'dev-proposal-20261015-v2', 'proposed':True, 'cash_payments':False,
-    'initial_coin':20, 'initial_quota':{'outline':1,'lesson':1,'subject_analysis':3},
-    'prices':{'outline':3,'chat':1,'inline_help':1,'correction':2,'source_vision':2,'subject_analysis':1,'short_feedback':1},
+    'initial_coin':20, 'initial_quota':{'outline':1,'lesson':1,'subject_analysis':3,'blueprint':1},
+    'prices':{'outline':3,'chat':1,'inline_help':1,'correction':2,'source_vision':2,'subject_analysis':1,'short_feedback':1,'blueprint':3},
     'quote_ttl_seconds':600, 'daily_reward_cap':12, 'daily_community_cap':4,
     'rewarded_practice_rounds_per_utc_day':3, 'cards_per_round':5,
     'default_timezone':'Asia/Ho_Chi_Minh',

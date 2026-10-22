@@ -108,7 +108,7 @@ class SourceLibraryTests(unittest.TestCase):
             before=db.execute('select sequence,source_id from source_library_entries order by sequence').fetchall()
             db.execute('VACUUM')
             after=db.execute('select sequence,source_id from source_library_entries order by sequence').fetchall()
-            self.assertEqual(db.execute('select max(version) from schema_versions').fetchone()[0],18)
+            self.assertEqual(db.execute('select max(version) from schema_versions').fetchone()[0],19)
         self.assertEqual(before,after)
         ids=[i['id'] for i in first['items']];page=first
         while page['next_cursor']:

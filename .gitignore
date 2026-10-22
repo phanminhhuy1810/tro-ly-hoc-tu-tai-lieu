@@ -6,3 +6,5 @@ backend/runtime/
 .env.*
 !.env.example
 .DS_Store
+node_modules/
+web/dist/

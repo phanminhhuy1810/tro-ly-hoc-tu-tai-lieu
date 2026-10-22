@@ -597,6 +597,19 @@ Code, asset, kiểm thử và nhận xét do AI hỗ trợ không tự là bằn
 
 Việc dọn không hoàn tất F18, không bổ sung nghiệm thu AI/OCR, không tạo lại benchmark hoặc thay lựa chọn provider. Các hạn chế ở mục 1 và kết quả lịch sử ở mục 22 vẫn áp dụng.
 
+## 24. Nhật ký thay đổi backend — 22/10/2026
+
+Các thay đổi đi kèm frontend mới `web/` (React). Đã thử trên bản sao dữ liệu với Gemma 4 12B qua Ollama; chưa đo chất lượng có hệ thống.
+
+- **Phục vụ giao diện**: `/` trả `web/dist` khi đã build, bản cũ ở `/legacy/`; chưa build thì `/` vẫn là bản cũ.
+- **PDF mất dấu cách** (`pdf_text.py`): trang có token dài chứa chữ có dấu thì đọc thêm bằng `extraction_mode="layout"` và chỉ tách token khi nó đúng bằng chuỗi từ mà lượt layout tìm thấy trên cùng trang; bullet Wingdings (`§`, `q`, `Ø`…) đầu dòng thành `•`. Chỉ ảnh hưởng tài liệu đọc mới hoặc đọc lại; bản trích cũ giữ nguyên.
+- **Schema 19**: `course_memory`, `source_blueprints`, `course_covers`. `OutlineUnit` thêm `chapter` (mặc định rỗng) để nhóm bài theo chương.
+- **Ghi nhớ của khóa** (`course_memory.py`): `GET/PUT /api/courses/{id}/memory` (ghi chú theo người học, có version). Chat chung và trợ giúp tại chỗ nhận `course_memory`: ghi chú, mục tiêu/quy tắc khi tạo khóa, tối đa 5 câu làm sai gần đây và tóm tắt/ý chính của bản đọc toàn chương. Phần nhớ không được dùng làm nguồn hay `source_refs`.
+- **Gia sư phần đọc**: trợ giúp trên đoạn đọc (không phải câu hỏi, không phải mindmap) gửi AI mọi trích đoạn của bài và nội dung các phần đã giảng; được dùng ví dụ minh họa nếu ghi rõ là minh họa. Prompt version `inline_help` đổi thành `20261022-lesson-tutor-memory-v3`.
+- **Lộ trình từ toàn bộ tài liệu** (`blueprint.py`): `POST /api/sources/{id}/blueprint` đọc phạm vi theo từng phần vừa một request (tối đa 12 phần, 2 phần mỗi job, lưu phần đã đọc để job sau đọc tiếp với `resume_job_id`), rồi một request tổng hợp chương/bài theo **số thứ tự chủ đề**; server tự đổi về trích đoạn, đảm bảo mỗi trích đoạn thuộc đúng một bài, tách bài quá 8 đoạn hoặc vượt budget. Gợi ý gồm môn, mục tiêu, tóm tắt, phần nên tập trung, cách ôn, quy tắc, ngôn ngữ và thuật ngữ. Danh sách/chuỗi dài quá giới hạn được cắt thay vì làm hỏng cả lượt (model MLX không ép được khuôn JSON). `POST /api/plans/from-blueprint` tạo phác thảo `ai_blueprint` từ lộ trình người học đã sửa: mọi trích đoạn trong phạm vi phải thuộc một bài hoặc nằm trong `excluded_fragment_ids`. Giá đề xuất 3 Coin, lượt đầu miễn phí như `outline`.
+- **Ảnh bìa** (`covers.py`): `GET /api/covers`, `PUT|DELETE /api/courses/{id}/cover`, `POST .../cover/upload` (PNG/JPEG/WebP ≤ 1,5 MB, kiểm tra magic bytes, chỉ người tạo), `GET .../cover/image`.
+- Kiểm thử mới: `test_pdf_text`, `test_course_memory`, `test_blueprint`, `test_covers`; `test_source_library` cập nhật schema 19.
+
 ## Phụ lục API: toàn bộ điểm nối trong snapshot hiện hành
 
 Danh mục sinh từ [backend/frontend-openapi.json](backend/frontend-openapi.json):132 paths/145 operations. Bảng giúp tìm route, không thay DTO/quy tắc phân quyền trong code. Nhiều response chưa có `response_model` tường minh; response schema trống không có nghĩa API không trả dữ liệu. Snapshot được tạo bằng app cô lập, không phải probe toàn bộ route trên runtime thật.

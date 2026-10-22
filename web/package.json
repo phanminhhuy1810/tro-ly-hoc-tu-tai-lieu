@@ -1,0 +1,26 @@
+{
+  "name": "folio-web",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Frontend mới (lát cắt desktop) cho trợ lý học từ tài liệu. Backend Python phục vụ bản build ở web/dist.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.1.2",
+    "typescript": "5.9.3",
+    "vite": "8.3.5",
+    "vitest": "5.0.5"
+  }
+}

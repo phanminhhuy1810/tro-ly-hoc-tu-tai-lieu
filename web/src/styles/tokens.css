@@ -1,0 +1,101 @@
+/* One source of truth for colour, type, radius and motion.
+   Palette: warm paper, ink, sage for structure/selection, butter for the one
+   primary action per screen, coral only for mistakes. No purple. */
+
+@font-face {
+  font-family: 'Nunito';
+  src: url('/fonts/Nunito-Variable.ttf') format('truetype');
+  font-weight: 200 1000;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Barlow Condensed';
+  src: url('/fonts/BarlowCondensed-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Barlow Condensed';
+  src: url('/fonts/BarlowCondensed-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+}
+
+:root {
+  --paper: #fbf9f4;
+  --surface: #ffffff;
+  --surface-2: #f4f2ec;
+  --surface-3: #ebe8df;
+  --ink: #23262b;
+  --ink-2: #4a4f57;
+  --ink-3: #767b83;
+  --line: #e6e2d7;
+  --line-strong: #d4cfc1;
+
+  --sage-50: #f2f6eb;
+  --sage-100: #e3edd4;
+  --sage-200: #cadcb2;
+  --sage-400: #92b06c;
+  --sage-600: #5f803e;
+  --sage-800: #3a5125;
+
+  --butter-50: #fff9df;
+  --butter-100: #fcf0b8;
+  --butter-300: #f7dd72;
+  --butter-400: #f0cf52;
+  --butter-500: #e3bd38;
+  --butter-700: #b38c1d;
+  --butter-900: #6b5110;
+
+  --coral-50: #fdf1ec;
+  --coral-100: #f8dccf;
+  --coral-400: #e2896d;
+  --coral-600: #b5563a;
+  --coral-800: #78341f;
+
+  --sky-50: #eef3fa;
+  --sky-400: #7a9bcb;
+  --sky-700: #3d5d8c;
+
+  --radius-sm: 10px;
+  --radius: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+
+  --shadow-1: 0 1px 2px rgba(35, 38, 43, 0.06);
+  --shadow-2: 0 10px 30px -16px rgba(35, 38, 43, 0.22);
+  --shadow-3: 0 24px 60px -24px rgba(35, 38, 43, 0.3);
+
+  --font-body: 'Nunito', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Barlow Condensed', 'Nunito', ui-sans-serif, sans-serif;
+
+  --dur-1: 120ms;
+  --dur-2: 200ms;
+  --dur-3: 320ms;
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-pop: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Squared paper (caro) behind every screen, after the TAITOR whiteboard. */
+  --grid-line: rgba(122, 155, 203, 0.17);
+  --grid-size: 28px;
+  --grid:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+
+  --sidebar-w: 236px;
+  --help-w: 440px;
+  --reading-w: 720px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root:not([data-motion='on']) {
+    --dur-1: 1ms;
+    --dur-2: 1ms;
+    --dur-3: 1ms;
+  }
+}
+:root[data-motion='off'] {
+  --dur-1: 1ms;
+  --dur-2: 1ms;
+  --dur-3: 1ms;
+}

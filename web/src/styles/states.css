@@ -1,0 +1,48 @@
+.states .demo-frame {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 26px;
+}
+.demo-frame__body {
+  padding: 22px;
+  border-radius: var(--radius-xl);
+  background: var(--surface-2);
+}
+.brand-compare {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+.brand-sample {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+  padding: 22px;
+  border-radius: var(--radius-lg);
+  border: 1.5px solid var(--line);
+  background: var(--surface);
+}
+.brand-sample.is-current {
+  border-color: var(--sage-600);
+  box-shadow: 0 0 0 3px var(--sage-100);
+}
+.brand-sample__marks {
+  display: flex;
+  align-items: flex-end;
+  gap: 18px;
+}
+.brand-sample figcaption {
+  display: grid;
+  gap: 4px;
+}
+.mood-row {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+.mood-row figure {
+  margin: 0;
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+}

@@ -5,6 +5,7 @@ from pathlib import Path
 import re
 from .ocr import IMAGE_TYPES, recognize
 from .pdf_content import MAX_PDF_PAGES, MAX_OCR_PAGES, visual_signals
+from .pdf_text import repair_page_text
 
 from .source_limits import MAX_BYTES, MAX_FRAGMENTS, MAX_TEXT
 from .sequences import numbered_sequences
@@ -73,7 +74,7 @@ def extract(filename: str, data: bytes, ocr=True):
             raise ValueError("PDF có mật khẩu; chưa hỗ trợ mở khóa.")
         missing, mixed = set(), set()
         for i, page in enumerate(doc.pages[:MAX_PDF_PAGES], 1):
-            text = page.extract_text() or ""
+            text = repair_page_text(page.extract_text() or "", lambda: page.extract_text(extraction_mode="layout"))
             signals = visual_signals(page)
             if not text.strip():
                 warnings.append(f"Trang {i} chưa có chữ trích được; có thể là scan, cần OCR.")

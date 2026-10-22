@@ -27,13 +27,13 @@ Terminal khác:
 ./run.sh
 ```
 
-Mở `http://127.0.0.1:8770/`. Lựa chọn model theo profile và cách nạp cấu hình server riêng được giải thích trong bản backend. Không chạy hai backend cùng DB. `run-kaggle.sh` chỉ nạp cấu hình riêng đã có, không bật phiên Kaggle.
+Mở `http://127.0.0.1:8770/` để dùng giao diện mới (`web/`, React + TypeScript; lần đầu `./run.sh` tự `npm ci` và build nếu máy có Node). Bản cũ vẫn ở `http://127.0.0.1:8770/legacy/` cho các màn chưa làm lại. Khi sửa giao diện, chạy thêm `cd web && npm run dev` rồi mở `http://127.0.0.1:5173/` để thấy thay đổi ngay; sau đó `npm run build` để `./run.sh` phục vụ bản mới. Lựa chọn model theo profile và cách nạp cấu hình server riêng được giải thích trong bản backend. Không chạy hai backend cùng DB. `run-kaggle.sh` chỉ nạp cấu hình riêng đã có, không bật phiên Kaggle.
 
 ```sh
 ./check.sh
 ```
 
-Sau khi dọn và đổi tên thư mục: **410 kiểm thử backend và 75 kiểm thử frontend đạt**; xem [kết quả](backend/evidence/project-cleanup-tests.txt). Đủ API để frontend tiếp nhận, **chưa nghiệm thu toàn backend**: F18 (lưu ý mâu thuẫn nguồn), chất lượng AI/OCR, QA mindmap trên runtime và thử người dùng còn mở. Nhóm chưa thử, 0 người độc lập. Số test không thể hiện độ chính xác AI.
+Ngày 22/10/2026 (sau khi thêm frontend `web/`, ghi nhớ khóa, lộ trình AI đọc toàn bộ tài liệu và ảnh bìa): **428 kiểm thử backend, 75 kiểm thử frontend cũ và 45 kiểm thử `web/` đạt**. Mốc trước đó (sau khi dọn thư mục): 410 backend và 75 frontend; xem [kết quả](backend/evidence/project-cleanup-tests.txt). Đủ API để frontend tiếp nhận, **chưa nghiệm thu toàn backend**: F18 (lưu ý mâu thuẫn nguồn), chất lượng AI/OCR, QA mindmap trên runtime và thử người dùng còn mở. Nhóm chưa thử, 0 người độc lập. Số test không thể hiện độ chính xác AI.
 
 ## Thư mục nào để làm gì?
 

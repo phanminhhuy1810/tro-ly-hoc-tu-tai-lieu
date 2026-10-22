@@ -18,6 +18,23 @@ Huy cho biết sau khoảng hai tuần sửa với ChatGPT/Codex vẫn thấy UI
 - Model picker phải dễ hiểu về việc phù hợp, tốc độ/chất lượng có căn cứ, readiness, dữ liệu và chi phí. Huy cân nhắc OpenRouter và muốn nghiên cứu nguồn miễn phí/giá rẻ; hiện chỉ cho phép phân tích/đề xuất, chưa cho phép mua, bật billing, gọi trả phí hay đổi mặc định.
 - Khảo sát flow Gizmo trực tiếp khi có quyền truy cập. Đánh giá REA và UI UX Pro Max theo tính phù hợp; không xem số star là bảo đảm hoặc suy REA lấy được backend riêng của Gizmo.
 
+## Quyết định và phản hồi của Huy — 22/10/2026
+
+Huy chọn **dựng lại frontend** (hướng A) bằng Vite + React + TypeScript trong `web/`; bản cũ vẫn mở ở `/legacy/` cho tới khi mọi màn được làm lại. Sau khi xem lát cắt đầu, Huy góp ý và chốt thêm:
+
+- **Nền caro mặc định, bỏ lựa chọn nền** (chấm/kẻ dòng/trơn). Lưới caro mờ nằm sau mọi màn như bảng trắng TAITOR.
+- **Logo**: Huy chưa ưng logo cũ. Đề xuất 3 phương án vẽ cùng nét với Kẹp (mặt Kẹp trên nền vàng, bóng nói + sách, lộ trình + ngôi sao); đang dùng tạm “Kẹp”, xem so sánh ở `#/mau-trang-thai`. Tên “Folio” vẫn là tên tạm.
+- **Học hiểu trước, luyện tập sau.** Vào bài là học kiến thức dạng hội thoại cuộn dọc với gia sư Kẹp: Kẹp giảng từng phần, người học hỏi liên tục ở ô dưới cùng tới khi hiểu rồi bấm “Hiểu rồi” để sang phần sau; cuối bài có sơ đồ ý chính rồi mới vào luyện tập. Khi luyện tập, câu hỏi bên trái và khung chat hỏi về câu đó luôn mở bên phải. Không còn chèn câu kiểm tra giữa các phần đọc.
+- Gia sư trong phần học đọc **toàn bộ nguồn của bài** (không chỉ một đoạn) và được dùng ví dụ đời thường để minh họa, nhưng phải ghi rõ “Ví dụ minh họa” và không gán ví dụ đó cho tài liệu.
+- Khung chat chung lớn hơn (khung nhỏ ~460×700, phóng to gần toàn màn hình). Trong bài học không hiện nút chat chung vì đã có chat riêng.
+- Mở bài có **chuyển cảnh trang mới rơi từ trên xuống**; các trang khác chuyển mờ nhẹ; tôn trọng chế độ giảm chuyển động.
+- **Cây tiến trình kiểu Duolingo**: nút tròn 3D lượn zigzag, băng tên chương, bong bóng “BẮT ĐẦU/HỌC TIẾP/TẠO BÀI” trên bài cần làm, Kẹp đứng cạnh, rương “Ôn câu sai” cuối đường; tên bài nằm trong khung bật lên và mục lục bên phải.
+- **Tạo khóa**: trước khi tạo, AI đọc hết tài liệu rồi đề xuất chương/bài, phần nên tập trung, cách ôn, quy tắc khi soạn bài, ngôn ngữ (Việt giữ thuật ngữ Anh/Anh/theo tài liệu) và thuật ngữ giữ nguyên. Người học sửa được tất cả (đổi tên, chuyển, gộp, tách, bỏ bài có báo phần bị bỏ) rồi mới tạo khóa. Từng bài vẫn tạo khi mở trên lộ trình, sau khi AI đọc toàn bộ phạm vi.
+- **AI nhớ ngữ cảnh của khóa**: mỗi khóa có “Kẹp nhớ gì về bạn” gồm ghi chú người học tự viết, mục tiêu/quy tắc của khóa, câu làm sai gần đây và tóm tắt AI viết sau khi đọc toàn bộ tài liệu; mọi câu hỏi trong khóa đều kèm phần nhớ này.
+- **Ảnh**: model văn bản trên máy không vẽ được ảnh. Ảnh bìa dùng bộ hình vẽ sẵn (tự chọn theo tên khóa, đổi được) hoặc ảnh người tạo tải lên; sơ đồ ý chính do app vẽ từ ý AI viết. Tạo ảnh bằng AI cần tải thêm model ảnh — chưa làm khi Huy chưa đồng ý tải.
+
+Trạng thái: các mục trên đã có trong `web/` và đã thử trên **bản sao dữ liệu** với AI cục bộ; chưa thử với người dùng khác. Lỗi chữ dính trong PDF (“Địachỉlogic”) đã sửa ở khâu đọc tài liệu mới; bài tạo từ bản đọc cũ chỉ được sửa phần hiển thị.
+
 ## 1. Sản phẩm giải quyết việc gì?
 
 Người học có slide, giáo trình, ghi chú hoặc ảnh tài liệu nhưng khó biến chúng thành một quá trình học rõ ràng. Ứng dụng giúp họ kiểm tra phần đã đọc, xác nhận mục tiêu, duyệt lộ trình rồi học và luyện trên cùng nguồn. Khi nội dung sai hoặc lệch nhu cầu, người học có cách đối chiếu và sửa có phạm vi.

@@ -38,7 +38,7 @@ class JobManager:
         if key and (len(key) > 128 or not key.strip()):
             raise HTTPException(422, "Idempotency-Key cần 1–128 ký tự.")
         digest = hashlib.sha256(json.dumps(payload, sort_keys=True, ensure_ascii=False, separators=(",", ":")).encode()).hexdigest()
-        version = {"lesson": "20261021-kind-compatible-chapter-focus-v26", "inline_help": "20261015-pinned-inline-help-v2", "correction": "20261015-scoped-ordering-v2", "outline": "20261015-confirmed-preferences-v2", "source_vision": "20261015-vision-transcription-v1", "subject_analysis": "20261015-subject-inference-v1"}.get(task, "20261017-pinned-source-context-v2")
+        version = {"lesson": "20261022-unit-scoped-course-preferences-v27", "inline_help": "20261022-lesson-tutor-memory-v3", "chat": "20261022-course-memory-v3", "blueprint": "20261022-whole-document-blueprint-v1", "correction": "20261015-scoped-ordering-v2", "outline": "20261015-confirmed-preferences-v2", "source_vision": "20261015-vision-transcription-v1", "subject_analysis": "20261015-subject-inference-v1"}.get(task, "20261017-pinned-source-context-v2")
         model_id = None
         metadata = self.provider_metadata
         native = task == 'source_ocr'

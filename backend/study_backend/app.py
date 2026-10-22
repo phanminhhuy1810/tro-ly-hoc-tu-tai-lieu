@@ -44,6 +44,9 @@ from .activity import Activity, register_activity
 from .ordering import verify_ordering
 from .question_quality import verify_mcq_options
 from .inline_help import register_inline_help
+from .course_memory import MEMORY_RULE, memory_for_ai, register_course_memory
+from .blueprint import register_blueprint
+from .covers import register_covers
 from .models import Card, ChatReply, Lesson, LessonReading, Model, Outline, Question, QUESTION_DRAFTS, grade
 from .generation_contract import QuestionRejected
 from .question_generation import question_prompt, question_stages, lesson_instruction, reject_duplicate_prompt, content_preferences
@@ -424,7 +427,7 @@ def create_app(db_path=None, storage_path=None, provider=None, extractor=None, a
                 validate_refs(body.outline, {f["id"] for f in approved_fragments(db, plan, owner)})
             except ValueError as exc:
                 raise HTTPException(422, str(exc)) from exc
-            if previous.get('method') == 'source_sections_not_ai':
+            if previous.get('method') in {'source_sections_not_ai', 'ai_blueprint'}:
                 expected = set(json.loads(plan['preferences_json'])['fragment_ids'])
                 assigned = {r for unit in body.outline.units for r in unit.source_refs}
                 if assigned != expected:
@@ -1103,6 +1106,20 @@ def create_app(db_path=None, storage_path=None, provider=None, extractor=None, a
                     db.execute("UPDATE plans SET status='discarded' WHERE id=? AND status='proposal_preview'", (candidate_plan,))
         return {"status": "discarded"}
 
+    def course_overview(db, owner, course):
+        """Summary and key ideas the AI wrote after reading the creator's whole approved scope."""
+        try:
+            plan = course_plan(db, course, owner)
+            binding = chapters.binding(plan, course['creator_id'], approved_fragments(db, plan, course['creator_id']))
+            root = chapters.stored(db, binding).get(binding['manifest']['root'])
+        except (HTTPException, ValueError, KeyError):
+            return None
+        return {'summary': root['brief']['summary'], 'key_ideas': root['brief']['key_ideas'][:6]} if root else None
+
+    def ai_memory(db, owner, course_id):
+        course = course_snapshot(db, course_id, owner)
+        return memory_for_ai(db, owner, course, course_overview(db, owner, course))
+
     @app.post("/api/courses/{course_id}/chat")
     async def chat(course_id: str, body: ChatRequest, background: BackgroundTasks, request: Request, owner=Depends(user)):
         payload = {**body.model_dump(), "course_id": course_id}
@@ -1149,6 +1166,7 @@ def create_app(db_path=None, storage_path=None, provider=None, extractor=None, a
             if refs is not None and not set(refs) <= set(unit['source_refs']):
                 raise HTTPException(422, 'Nguồn thẻ không thuộc bài/phiên bản đang hỏi; chọn đúng ngữ cảnh nguồn.')
             fragments = approved_fragments(db, plan, course["creator_id"], refs or unit['source_refs'])
+            memory = ai_memory(db, owner, course_id)
         previous = jobs.cached(owner, identity, active=False)
         if previous:
             return previous
@@ -1161,7 +1179,7 @@ def create_app(db_path=None, storage_path=None, provider=None, extractor=None, a
             db.execute("INSERT INTO chat_messages VALUES (?,?,?,?,?,?,?,?)", (new_id(), owner, course_id, course["revision"], "user", body.message, "[]", now()))
 
         async def work(job_id):
-            instruction = "Hỏi về bài đang học, ưu tiên gợi ý từng bước. Trả lời theo nguồn và course_revision của ngữ cảnh đã chốt; nếu đang hỏi câu/thẻ từ lượt cũ thì dùng bản cũ, không trộn nguồn mới. Lịch sử có nhãn revision chỉ là ngữ cảnh trò chuyện. Nếu yêu cầu khác phạm vi nguồn, needs_more_source=true và nói rõ phần thiếu; không cố bảo vệ đáp án cũ bị sai. Không tự sửa khóa học; gợi ý người học dùng Sửa nội dung để xem trước. " + dump({"language": json.loads(plan["preferences_json"])["language"], "course_revision": course["revision"], "source_id": plan['source_id'], "extraction_revision": json.loads(plan['preferences_json'])['extraction_revision'], "unit": unit["title"], "object_context": object_context, "history": history, "question": body.message})
+            instruction = "Hỏi về bài đang học, ưu tiên gợi ý từng bước. Trả lời theo nguồn và course_revision của ngữ cảnh đã chốt; nếu đang hỏi câu/thẻ từ lượt cũ thì dùng bản cũ, không trộn nguồn mới. Lịch sử có nhãn revision chỉ là ngữ cảnh trò chuyện. Nếu yêu cầu khác phạm vi nguồn, needs_more_source=true và nói rõ phần thiếu; không cố bảo vệ đáp án cũ bị sai. Không tự sửa khóa học; gợi ý người học dùng Sửa nội dung để xem trước. " + (MEMORY_RULE if memory else "") + dump({"language": json.loads(plan["preferences_json"])["language"], "course_revision": course["revision"], "source_id": plan['source_id'], "extraction_revision": json.loads(plan['preferences_json'])['extraction_revision'], "unit": unit["title"], "object_context": object_context, "history": history, "question": body.message, **({"course_memory": memory} if memory else {})})
             reply = await generate_checked(ChatReply, instruction, fragments)
             with database.connection(write=True) as db:
                 jobs.check(db, job_id)
@@ -1421,11 +1439,18 @@ def create_app(db_path=None, storage_path=None, provider=None, extractor=None, a
     register_economy(app, economy, database, user)
     register_activity(app, activity, user)
     register_community(app, community, database, course_snapshot, owned, user, economy)
-    register_inline_help(app, database, jobs, owned, user, course_snapshot, course_plan, unit_from, approved_fragments, active_test, generate_checked)
+    register_inline_help(app, database, jobs, owned, user, course_snapshot, course_plan, unit_from, approved_fragments, active_test, generate_checked, ai_memory)
+    register_course_memory(app, database, course_snapshot, user, course_overview)
+    register_blueprint(app, database, jobs, source_snapshot, user, generate_checked)
+    register_covers(app, database, course_snapshot, owned, community.ids, user)
     register_providers(app, ai, database, user)
     register_rooms(app, rooms, database, user, course_snapshot, course_plan, approved_fragments, unit_from, owned, active_test, jobs, generate_checked)
     register_lifecycle(app,database,jobs,rooms,storage,user)
-    app.mount("/", StaticFiles(directory=ROOT / "frontend", html=True), name="frontend")
+    # The rebuilt interface (web/, built into web/dist) is served at "/" once built;
+    # the previous interface stays reachable at /legacy/ until every screen is rebuilt.
+    web = ROOT / "web" / "dist"
+    app.mount("/legacy", StaticFiles(directory=ROOT / "frontend", html=True), name="legacy")
+    app.mount("/", StaticFiles(directory=web if (web / "index.html").is_file() else ROOT / "frontend", html=True), name="frontend")
     return app
 
 

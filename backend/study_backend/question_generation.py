@@ -21,6 +21,8 @@ def content_preferences(prefs):
 def lesson_instruction(prefs,unit):
     return ('Tạo đúng một bài theo mục tiêu đã duyệt: '+dump({'preferences':content_preferences(prefs),
             'unit':{key:unit[key] for key in ('title','objective')}})+language_instruction(prefs)+
+            ' preferences là của cả khóa: mục tiêu, ưu tiên, quy tắc và ghi chú chỉ áp dụng cho phần có trong bài này. '
+            'Nội dung bài bám title/objective của unit và các đoạn trọng tâm của bài; không giảng trước chủ đề thuộc bài khác chỉ vì nó nằm trong mục tiêu chung của khóa. '
             ' Mọi source_refs chỉ được chép ID của các đoạn trong danh sách Nguồn của request này; không dùng ID tài liệu, plan hoặc bài làm trích dẫn. ')
 
 def question_stages(prefs):

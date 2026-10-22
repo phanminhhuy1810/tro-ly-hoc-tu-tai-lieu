@@ -379,6 +379,23 @@ CREATE TABLE IF NOT EXISTS chapter_contexts (
 );
 CREATE INDEX IF NOT EXISTS chapter_context_plan ON chapter_contexts(owner_id,plan_id);
 INSERT OR IGNORE INTO schema_versions VALUES (18);
+CREATE TABLE IF NOT EXISTS course_memory (
+    owner_id TEXT NOT NULL REFERENCES users(id), course_id TEXT NOT NULL REFERENCES courses(id),
+    notes TEXT NOT NULL, version INTEGER NOT NULL, updated_at TEXT NOT NULL,
+    PRIMARY KEY(owner_id, course_id)
+);
+CREATE TABLE IF NOT EXISTS source_blueprints (
+    id TEXT PRIMARY KEY, owner_id TEXT NOT NULL REFERENCES users(id),
+    source_id TEXT NOT NULL REFERENCES sources(id), extraction_revision INTEGER NOT NULL,
+    scope_sha256 TEXT NOT NULL, status TEXT NOT NULL, content_json TEXT NOT NULL,
+    created_at TEXT NOT NULL, updated_at TEXT NOT NULL
+);
+CREATE INDEX IF NOT EXISTS source_blueprint_scope ON source_blueprints(owner_id,source_id,extraction_revision,scope_sha256);
+CREATE TABLE IF NOT EXISTS course_covers (
+    course_id TEXT PRIMARY KEY REFERENCES courses(id), owner_id TEXT NOT NULL REFERENCES users(id),
+    kind TEXT NOT NULL, preset TEXT, image BLOB, mime TEXT, updated_at TEXT NOT NULL
+);
+INSERT OR IGNORE INTO schema_versions VALUES (19);
 """
 
 

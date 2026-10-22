@@ -6,9 +6,18 @@ from typing import Literal
 
 from fastapi import BackgroundTasks, Depends, HTTPException, Request
 from pydantic import Field
+from .course_memory import MEMORY_RULE
 from .language import language_instruction, validate_language
 from .learning import public_question
 from .models import ChatReply, Model
+
+# Reading-section help is tutoring: the learner keeps asking until the lesson
+# makes sense, so the tutor sees the whole lesson and may illustrate.
+TUTOR_RULES = ('Đây là phần HỌC HIỂU và bạn là gia sư kiên nhẫn. lesson.sections là nội dung bài đã giảng; nguồn gồm mọi trích đoạn của bài; '
+               'pinned_context.section là phần người học đang hỏi. Trả lời đúng điều được hỏi trước, từng bước, ngắn gọn, dễ hiểu. '
+               'Được dùng so sánh hoặc ví dụ đời thường để minh họa: mở đầu đoạn đó bằng "Ví dụ minh họa:" và không gán nó cho tài liệu. '
+               'Kiến thức khẳng định là của bài phải dựa trên nguồn và ghi source_refs. Nếu câu hỏi cần kiến thức ngoài tài liệu, vẫn giải thích phần tài liệu có, '
+               'nói rõ phần nào nằm ngoài tài liệu và đặt needs_more_source=true. ')
 
 
 def dump(value):
@@ -51,7 +60,7 @@ class SaveHelpNote(Model):
 
 
 def register_inline_help(app, database, jobs, owned, user, course_snapshot, course_plan,
-                         unit_from, approved_fragments, active_test, generate_checked):
+                         unit_from, approved_fragments, active_test, generate_checked, memory=None):
     def thread(db, thread_id, owner, require_access=True):
         row = owned(db, 'help_threads', thread_id, owner)
         if active_test(db, owner, row['course_id']):
@@ -103,6 +112,18 @@ def register_inline_help(app, database, jobs, owned, user, course_snapshot, cour
         if session['status'] == 'open':
             db.execute('INSERT OR IGNORE INTO assistance_events VALUES (?,?,?,?)', (session['id'], context['question']['id'], 'inline:' + kind, stamp()))
             db.execute('UPDATE answers SET assisted=1 WHERE session_id=? AND item_id=?', (session['id'], context['question']['id']))
+
+    def lesson_scope(db, owner, row, context):
+        """Every source of the unit plus what was taught, for help on a reading section."""
+        try:
+            course = course_snapshot(db, row['course_id'], owner, row['course_revision'])
+            unit = unit_from(course, context['unit_id'], ready=True)
+            plan = course_plan(db, course, owner, unit)
+            fragments = approved_fragments(db, plan, course['creator_id'], unit['source_refs'])
+        except HTTPException:
+            return context['fragments'], None
+        taught = [{'index': i, 'title': s['title'], 'text': s['text']} for i, s in enumerate(unit['data']['sections'])]
+        return fragments, {'unit_title': unit['title'], 'objective': unit.get('objective'), 'sections': taught}
 
     def messages(db, thread_id):
         return [{'id': r['id'], 'role': r['role'], 'action': r['action'], 'content': json.loads(r['content_json']), 'created_at': r['created_at']}
@@ -269,6 +290,10 @@ def register_inline_help(app, database, jobs, owned, user, course_snapshot, cour
             current_student = student(db, owner, context)
             reference_warning = warning(db, row, context)
             history = context_history(messages(db, thread_id))
+            # Mindmap nodes stay pinned to their own excerpts; reading sections tutor on the whole lesson.
+            teaching = context['kind'] == 'section'
+            fragments, lesson = lesson_scope(db, owner, row, context) if teaching else (context['fragments'], None)
+            course_memory = memory(db, owner, row['course_id']) if memory else None
         prompts = {'hint': 'Gợi ý bước đầu cho đúng đoạn này, chưa nói hết lời giải.',
                    'explain': 'Giải thích đúng phần đang chọn theo nguồn.',
                    'simpler': 'Giải thích lại bằng cách dễ hiểu cho sinh viên, có ví dụ nhỏ. Không đổi chủ đề.',
@@ -289,13 +314,22 @@ def register_inline_help(app, database, jobs, owned, user, course_snapshot, cour
 
         async def work(job_id):
             selected = {k: v for k, v in context.items() if k not in {'fragments', 'preferences'}}
-            instruction = ('Bạn đang hỗ trợ TRỰC TIẾP một câu hỏi hoặc đoạn đọc đã xác định. Không hỏi lại môn/phần nào khi context đã có. '
-                           'Chỉ dùng đúng snapshot và nguồn của nó. Đáp án tham khảo có thể sai: nếu reference_warning có giá trị, nêu đang cần đối chiếu và không cố bảo vệ đáp án. '
-                           'Nếu người học hỏi về lựa chọn của mình, nêu rõ answer_display hoặc draft_display đang chọn và đối chiếu với nguồn. Draft là nháp chưa nộp, không tự coi là đã chấm. '
-                           'Không tự chấm điểm hay đổi bài. Nếu thiếu nguồn thì needs_more_source=true. Trả text, source_refs, needs_more_source. '
-                           + dump({'pinned_context': selected, 'student': current_student, 'reference_warning': reference_warning,
-                                   'thread_history': history, 'request': message}) + language_instruction(context['preferences']))
-            reply = await generate_checked(ChatReply, instruction, context['fragments'])
+            if teaching:
+                rules = ('Bạn đang hỗ trợ TRỰC TIẾP một đoạn đọc đã xác định. Không hỏi lại môn/phần nào khi context đã có. '
+                         + TUTOR_RULES + 'Trả text, source_refs, needs_more_source. ')
+            else:
+                rules = ('Bạn đang hỗ trợ TRỰC TIẾP một câu hỏi hoặc đoạn đọc đã xác định. Không hỏi lại môn/phần nào khi context đã có. '
+                         'Chỉ dùng đúng snapshot và nguồn của nó. Đáp án tham khảo có thể sai: nếu reference_warning có giá trị, nêu đang cần đối chiếu và không cố bảo vệ đáp án. '
+                         'Nếu người học hỏi về lựa chọn của mình, nêu rõ answer_display hoặc draft_display đang chọn và đối chiếu với nguồn. Draft là nháp chưa nộp, không tự coi là đã chấm. '
+                         'Không tự chấm điểm hay đổi bài. Nếu thiếu nguồn thì needs_more_source=true. Trả text, source_refs, needs_more_source. ')
+            details = {'pinned_context': selected, 'student': current_student, 'reference_warning': reference_warning,
+                       'thread_history': history, 'request': message}
+            if lesson:
+                details['lesson'] = lesson
+            if course_memory:
+                details['course_memory'] = course_memory
+            instruction = rules + (MEMORY_RULE if course_memory else '') + dump(details) + language_instruction(context['preferences'])
+            reply = await generate_checked(ChatReply, instruction, fragments)
             validate_language(reply, context['preferences'])
             with database.connection(write=True) as db:
                 jobs.check(db, job_id)
