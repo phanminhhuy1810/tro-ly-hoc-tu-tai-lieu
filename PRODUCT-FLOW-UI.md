@@ -71,6 +71,9 @@ Claude tự quyết, chờ Huy xem lại:
 - **Chat với Kẹp**: Kẹp có ảnh đại diện cạnh bong bóng trắng; người học dùng bong bóng xanh; có chấm “đang gõ”; ô nhập là một viên bo tròn chứa nút gửi. Chat chung mở lần đầu có lời chào và 3 câu gợi ý; bấm gợi ý chỉ điền vào ô, chưa gửi nên chưa tốn Coin.
 - **Flashcard**: thẻ kiểu index card có dòng kẻ, đặt trên chồng thẻ. Trước khi lật chỉ có nút “Lật xem đáp án”. Đánh dấu Nhớ/Chưa nhớ thì thẻ trượt sang phải/trái rồi thẻ sau nổi lên.
 - **Chuyển động**: danh sách hiện lần lượt, nút và chip nảy nhẹ, thanh tiến độ chạy đầy, số đếm tăng dần. “Tắt chuyển động” và chế độ giảm chuyển động của máy làm mọi hiệu ứng thành tức thì.
+- **Sơ đồ ý chính** cuối phần Học hiểu: vẽ lại bằng HTML thay vì khung SVG cố định. Trước đây chữ trong ô bị co còn khoảng 7–8 px trên cột bài học và dòng cuối bị cắt. Giờ ý chính nằm giữa, các ý xếp 2 cột (điện thoại 1 cột) nối bằng đường chấm, mỗi ô tự cao theo nội dung.
+- **Tải trang**: các màn ít dùng (Tạo khóa, Thư viện, Sổ tay, Tiến độ, Cài đặt, Cùng học, Phòng, Trang mẫu) tách thành phần tải riêng và được nạp sẵn khi máy rảnh. File JS chính giảm từ 515 KB xuống 363 KB.
+- Lời AI bỏ thêm nhãn nguồn viết không ngoặc sau từ chỉ nguồn (“theo tài liệu R1” → “theo tài liệu”), nhưng giữ tên như “router R1”.
 - **“Kẹp dạy bạn theo kiểu nào?”** (Cài đặt): người học đặt một lần vai của Kẹp (“Bạn sẽ là…”) và điều cần “Luôn nhấn mạnh…”, có gợi ý bấm nhanh. Phần này đi vào mọi câu chat và trợ giúp ở mọi khóa, cùng ghi nhớ riêng của từng khóa. Kẹp vẫn chỉ trả lời theo nguồn. **Chưa áp vào lúc AI soạn bài**: đổi prompt tạo bài cần đo lại chất lượng trước.
 
 

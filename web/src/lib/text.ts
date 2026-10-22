@@ -83,7 +83,12 @@ export function makeTextFix(texts: Iterable<string>): (text: string) => string {
  * label means nothing to a learner, so AI-written text drops it on display.
  */
 export function stripRefLabels(text: string): string {
-  return text.replace(/[ \t]?\[R\d+(?:\s*[,;]\s*R\d+)*\]/g, '');
+  return (
+    text
+      .replace(/[ \t]?\[R\d+(?:\s*[,;]\s*R\d+)*\]/g, '')
+      // Unbracketed labels only after a word that names a source (“theo tài liệu R1”), so a router called R1 stays.
+      .replace(/(tài liệu|nguồn|trích đoạn|đoạn trích|đoạn)\s+R\d+(?:\s*(?:,|;|\/|và)\s*R\d+)*/giu, '$1')
+  );
 }
 
 /** Search key without accents or case: “Địa chỉ” and “dia chi” match. */

@@ -57,6 +57,11 @@ describe('stripRefLabels', () => {
   it('keeps other bracketed text', () => {
     expect(stripRefLabels('Tập [R] và đoạn [Ref 2]')).toBe('Tập [R] và đoạn [Ref 2]');
   });
+
+  it('drops labels written without brackets after a source word, but keeps router names', () => {
+    expect(stripRefLabels('Theo tài liệu R1, /26 có 64 địa chỉ (xem nguồn R2 và R3).')).toBe('Theo tài liệu, /26 có 64 địa chỉ (xem nguồn).');
+    expect(stripRefLabels('Router R1 nối với R2 qua cổng G0/0.')).toBe('Router R1 nối với R2 qua cổng G0/0.');
+  });
 });
 
 describe('fold', () => {

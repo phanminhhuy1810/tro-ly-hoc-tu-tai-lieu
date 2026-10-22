@@ -1193,61 +1193,94 @@
 
 /* Mindmap ---------------------------------------------------------------- */
 .mindmap {
-  width: 100%;
-  height: auto;
-  margin: 6px 0;
-}
-.mindmap__link {
-  fill: none;
-  stroke: var(--ink-2);
-  stroke-width: 2.4;
-  stroke-linecap: round;
-  stroke-dasharray: 1 7;
-}
-.mindmap__center rect {
-  fill: var(--butter-300);
-  stroke: var(--ink);
-  stroke-width: 2.6;
-}
-.mindmap__center-text {
   display: grid;
-  place-items: center;
-  height: 100%;
+  justify-items: center;
+  gap: 20px;
+  margin: 8px 0;
+}
+.mindmap__center {
+  position: relative;
+  z-index: 1;
+  max-width: min(420px, 100%);
+  padding: 14px 22px;
+  border-radius: 22px;
+  border: 2.5px solid var(--ink);
+  background: var(--butter-300);
+  box-shadow: 3px 3px 0 var(--ink);
   text-align: center;
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 22px;
-  line-height: 1.1;
-  color: var(--ink);
-  overflow: hidden;
+  line-height: 1.15;
+  animation: pop 420ms var(--ease-pop) backwards;
 }
-.mindmap__node {
-  animation: pop var(--dur-3) var(--ease-pop) both;
-  transform-box: fill-box;
-  transform-origin: center;
+/* Ideas in two columns; a dotted spine runs down from the centre between them. */
+.mindmap__ideas {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 30px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
-.mindmap__node rect {
-  stroke: var(--ink);
-  stroke-width: 2;
+.mindmap__ideas::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: -20px;
+  bottom: 24px;
+  border-left: 2.5px dotted var(--ink-2);
+  transform: translateX(-50%);
 }
 .mindmap__idea {
+  position: relative;
   display: grid;
-  gap: 3px;
-  height: 100%;
-  overflow: hidden;
+  align-content: start;
+  gap: 4px;
+  padding: 12px 14px;
+  border-radius: 18px;
+  border: 2px solid var(--ink);
+  background: var(--tone);
   color: var(--ink);
-  font-size: 14.5px;
-  line-height: 1.35;
+  font-size: 15px;
+  line-height: 1.45;
+  animation: rise-in 460ms var(--ease-out) backwards;
+  animation-delay: calc(120ms + var(--i, 0) * 70ms);
+}
+.mindmap__idea::after {
+  content: '';
+  position: absolute;
+  top: 26px;
+  width: 16px;
+  border-top: 2.5px dotted var(--ink-2);
+}
+.mindmap__idea:nth-child(odd)::after {
+  right: -17px;
+}
+.mindmap__idea:nth-child(even)::after {
+  left: -17px;
 }
 .mindmap__idea strong {
   font-size: 15.5px;
 }
 .mindmap__idea span {
   color: var(--ink-2);
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+}
+@media (max-width: 640px) {
+  .mindmap__ideas {
+    grid-template-columns: minmax(0, 1fr);
+    padding-left: 24px;
+  }
+  .mindmap__ideas::before {
+    left: 8px;
+    transform: none;
+  }
+  .mindmap__idea:nth-child(n)::after {
+    left: -17px;
+    right: auto;
+  }
 }
 
 @media (max-width: 1080px) {
