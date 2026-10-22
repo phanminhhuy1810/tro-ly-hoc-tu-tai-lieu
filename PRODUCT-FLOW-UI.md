@@ -35,6 +35,23 @@ Huy chọn **dựng lại frontend** (hướng A) bằng Vite + React + TypeScri
 
 Trạng thái: các mục trên đã có trong `web/` và đã thử trên **bản sao dữ liệu** với AI cục bộ; chưa thử với người dùng khác. Lỗi chữ dính trong PDF (“Địachỉlogic”) đã sửa ở khâu đọc tài liệu mới; bài tạo từ bản đọc cũ chỉ được sửa phần hiển thị.
 
+### Hoàn thiện các màn còn lại — Claude tự quyết theo ủy quyền của Huy (22/10/2026)
+
+Huy giao “tự quyết định hết, hoàn thiện đi”. Các lựa chọn dưới đây do Claude đưa ra, **chờ Huy xem lại**, không phải Huy đã chốt từng điểm:
+
+- Làm lại trong `web/` mọi màn còn ở bản cũ: **Flashcard** (`#/the/…`), **Ôn luyện** (`#/on-luyen/…`), **Thư viện** (`#/thu-vien`: khóa, tài liệu, thùng rác), **Sổ tay** (`#/so-tay`), **Tiến độ** (`#/tien-do`: dashboard, nhiệm vụ, thành tựu, Coin, điểm danh) và **Cài đặt** (`#/cai-dat`: chọn model, chuyển động, giá Coin). Sidebar chỉ còn mục của giao diện mới; `/legacy/` giữ phòng đố vui và chia sẻ cộng đồng, có lối vào từ Cài đặt.
+- Flashcard chỉ có tự đánh giá Nhớ rồi/Chưa nhớ và vòng “Chưa nhớ trước”; **không** thêm lịch giãn cách (quy tắc 15).
+- Ôn luyện có hai kiểu như backend: **Luyện tập** (chấm từng câu, chat Kẹp bên phải như trong bài) và **Kiểm tra** (lưu đáp án, đổi được trước khi nộp, không trợ giúp, xem lại từng câu sau khi nộp).
+- Thùng rác không xóa vĩnh viễn; tài liệu còn khóa dùng thì báo đúng tên khóa thay vì cho bấm.
+- Điện thoại/tablet dọc (≤ 860 px): sidebar thành thanh điều hướng đáy; nút chat chung chỉ còn hình Kẹp.
+- Trang chủ thêm một dải nhỏ “hôm nay” (chuỗi ngày học, nhiệm vụ hôm nay, Coin) dẫn tới Tiến độ; không lặp cả dashboard.
+- Chat chung ghi giá trên nút gửi như chat trong bài; bấm gửi là đồng ý mức đã hiện. Giá cao hơn hoặc thiếu Coin vẫn hỏi lại.
+- Lời AI hiển thị định dạng nhẹ (đoạn, gạch đầu dòng, bước, chữ đậm, `mã`) và bỏ nhãn nguồn kỹ thuật “[R1]” nếu model lỡ chèn.
+- Không tải model tạo ảnh (chưa được Huy đồng ý tải model lớn); ảnh bìa vẫn là bộ hình vẽ sẵn hoặc ảnh tải lên.
+- Ghi chú/lời giải cũ trong Sổ tay còn chữ dính từ bản đọc PDF cũ được sửa phần hiển thị như trong bài học.
+
+Đã thử từng màn trên bản sao dữ liệu ở khổ laptop và điện thoại (375 px), gồm tạo Bài 2 và chat chung bằng Gemma 4 12B; chưa thử với người dùng khác.
+
 ## 1. Sản phẩm giải quyết việc gì?
 
 Người học có slide, giáo trình, ghi chú hoặc ảnh tài liệu nhưng khó biến chúng thành một quá trình học rõ ràng. Ứng dụng giúp họ kiểm tra phần đã đọc, xác nhận mục tiêu, duyệt lộ trình rồi học và luyện trên cùng nguồn. Khi nội dung sai hoặc lệch nhu cầu, người học có cách đối chiếu và sửa có phạm vi.
@@ -219,6 +236,8 @@ Khi nguồn không đủ tạo một dạng hoặc model từ chối/lỗi, hi�
 
 Không tự thêm lịch đến hạn hoặc thuật toán ôn giãn cách chỉ vì sản phẩm tham khảo có. Phạm vi hiện tại là tự nhớ/lật/đánh dấu và ôn lại phần chưa nhớ.
 
+**Trạng thái `web/` (22/10/2026):** `#/the/<khóa>` ôn từng thẻ, lật bằng chạm hoặc Space, Nhớ rồi/Chưa nhớ (→/←) lưu ngay qua API, lọc Chưa nhớ/Tất cả, tổng kết vòng; tab Danh sách để thêm/sửa/xóa thẻ riêng, thẻ của bài chỉ đọc. Chat chung kèm thẻ đang xem. Vòng ôn hiện tại không lưu lại khi tải trang; dấu nhớ của từng thẻ thì đã lưu.
+
 ## 9. Luồng Ôn luyện
 
 **Xem phạm vi/tiến trình luyện → chọn một hoặc nhiều bài/chương, dạng/mức/số câu → chọn kiểu lượt → làm → xem kết quả → ôn tiếp.**
@@ -228,6 +247,8 @@ Không tự thêm lịch đến hạn hoặc thuật toán ôn giãn cách chỉ
 - **Ôn nhanh phần yếu:** dùng câu sai/thẻ chưa nhớ và lịch sử thật. Chưa có lịch sử thì gợi ý lượt luyện đầu, không tạo dữ liệu yếu giả.
 
 Kết quả dẫn tới làm lại câu sai, xem bài/nguồn, lưu thẻ hoặc chọn phần khác. Giữ cùng question bank và lịch sử với lượt ôn ngay trong Học; không tạo hai hồ sơ tiến trình tách rời.
+
+**Trạng thái `web/` (22/10/2026):** `#/on-luyen/<khóa>` chọn bài đã tạo, dạng câu, số câu và kiểu lượt; lượt đang dở được mời làm tiếp; lịch sử lượt nằm cạnh. Ôn phần yếu vẫn đi qua rương “Ôn câu sai” trên lộ trình. Chưa có chọn mức độ khó vì câu hỏi chưa gắn mức.
 
 ## 10. Hai trải nghiệm chatbot
 
@@ -284,6 +305,8 @@ Nhiệm vụ ngày/chuỗi nhiệm vụ hướng dẫn việc tiếp theo, ví d
 **Điểm danh hằng ngày khác chuỗi ngày học.** Backend có điểm danh theo ngày Việt Nam, gọi lặp không sinh lượt mới. Policy hiện tại điểm danh0 Coin, không tự tính là ngày học. Không hiển thị phần thưởng chưa được cấu hình/xác nhận.
 
 Điểm bài làm, chuỗi ngày và Coin là ba dữ liệu riêng, cần nhãn khác nhau. Mức thưởng/caps vẫn là đề xuất, không quảng bá như chính sách thương mại đã chốt.
+
+**Trạng thái `web/` (22/10/2026):** `#/tien-do` có số bài xong, thời gian học ước tính (nhịp 25 giây khi trang học đang mở), chuỗi ngày, Coin, nhiệm vụ hôm nay, lịch hoạt động 18 tuần (rê chuột xem ngày), tiến độ theo khóa, thành tựu, lịch sử Coin và nút điểm danh. `#/so-tay` thêm/sửa/xóa có hoàn tác, lọc theo nhãn và tìm. Thành tựu chưa bấm vào để xem điều kiện chi tiết.
 
 ## 13. Coin và lựa chọn nguồn AI
 

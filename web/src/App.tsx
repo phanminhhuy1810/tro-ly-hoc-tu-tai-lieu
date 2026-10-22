@@ -1,25 +1,34 @@
 import { useEffect } from 'react';
-import { useRoute } from './app/router';
+import { isFocus, useRoute } from './app/router';
 import { useApp } from './app/store';
 import { Icon } from './components/Icon';
 import { Mascot } from './components/Mascot';
 import { EmptyState } from './components/StateViews';
+import { FlashcardPage } from './features/cards/FlashcardPage';
 import { ChatDock } from './features/chat/ChatDock';
 import { CoursePage } from './features/course/CoursePage';
 import { CreatePage } from './features/create/CreatePage';
 import { HomePage } from './features/home/HomePage';
 import { LessonPlayer } from './features/lesson/LessonPlayer';
+import { LibraryPage } from './features/library/LibraryPage';
+import { NotebookPage } from './features/notebook/NotebookPage';
+import { PracticePage } from './features/practice/PracticePage';
+import { PracticeRunner } from './features/practice/PracticeRunner';
 import { StatesPage } from './features/preview/StatesPage';
+import { ProgressPage } from './features/progress/ProgressPage';
+import { SettingsPage } from './features/settings/SettingsPage';
 import { Sidebar } from './features/shell/Sidebar';
+
+const NO_CONTEXT = new Set(['home', 'states', 'create', 'library', 'notebook', 'progress', 'settings']);
 
 export function App() {
   const route = useRoute();
   const { toasts, setChatContext, refreshWallet } = useApp();
-  const focus = route.name === 'lesson';
+  const focus = isFocus(route);
 
   useEffect(refreshWallet, [refreshWallet]);
   useEffect(() => {
-    if (route.name === 'home' || route.name === 'states' || route.name === 'create') setChatContext(null);
+    if (NO_CONTEXT.has(route.name)) setChatContext(null);
   }, [route.name, setChatContext]);
 
   return (
@@ -29,7 +38,18 @@ export function App() {
         {route.name === 'home' && <HomePage />}
         {route.name === 'course' && <CoursePage key={route.courseId} courseId={route.courseId} />}
         {route.name === 'lesson' && <LessonPlayer key={`${route.courseId}/${route.unitId}/${route.mode}`} courseId={route.courseId} unitId={route.unitId} weak={route.mode === 'weak'} />}
+        {route.name === 'cards' && <FlashcardPage key={route.courseId} courseId={route.courseId} />}
+        {route.name === 'practice' &&
+          (route.sessionId ? (
+            <PracticeRunner key={route.sessionId} courseId={route.courseId} sessionId={route.sessionId} />
+          ) : (
+            <PracticePage key={route.courseId} courseId={route.courseId} />
+          ))}
         {route.name === 'create' && <CreatePage />}
+        {route.name === 'library' && <LibraryPage />}
+        {route.name === 'notebook' && <NotebookPage />}
+        {route.name === 'progress' && <ProgressPage />}
+        {route.name === 'settings' && <SettingsPage />}
         {route.name === 'states' && <StatesPage />}
         {route.name === 'missing' && (
           <EmptyState
@@ -44,8 +64,8 @@ export function App() {
           />
         )}
       </div>
-      {/* Lessons have their own tutor chat (learning) and question chat (practice). */}
-      {!focus && <ChatDock />}
+      {/* Lessons and practice rounds have their own chat beside the content; a deck keeps the general chat. */}
+      {(!focus || route.name === 'cards') && <ChatDock />}
       <div className="toasts" aria-live="polite">
         {toasts.map((t) => (
           <div key={t.id} className="toast">

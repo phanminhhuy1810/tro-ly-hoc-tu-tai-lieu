@@ -4,7 +4,8 @@
   margin-bottom: 26px;
 }
 .demo-frame__body {
-  padding: 22px;
+  min-width: 0;
+  padding: clamp(12px, 3vw, 22px);
   border-radius: var(--radius-xl);
   background: var(--surface-2);
 }
@@ -28,6 +29,7 @@
 }
 .brand-sample__marks {
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-end;
   gap: 18px;
 }

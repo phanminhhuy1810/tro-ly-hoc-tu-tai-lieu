@@ -11,6 +11,7 @@ import './styles/lesson.css';
 import './styles/chat.css';
 import './styles/states.css';
 import './styles/create.css';
+import './styles/screens.css';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

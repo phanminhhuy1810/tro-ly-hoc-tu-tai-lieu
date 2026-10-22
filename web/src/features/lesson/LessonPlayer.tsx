@@ -3,6 +3,7 @@ import { api } from '../../api/client';
 import type { GradeResult, Question, SourceFragment, Unit } from '../../api/types';
 import { hrefFor } from '../../app/router';
 import { useApp } from '../../app/store';
+import { useStudyPulse } from '../../app/usePulse';
 import { Icon } from '../../components/Icon';
 import { Mascot } from '../../components/Mascot';
 import { EmptyState, LoadingRows, ProblemNotice } from '../../components/StateViews';
@@ -94,6 +95,10 @@ export function LessonPlayer({ courseId, unitId, weak }: { courseId: string; uni
   const timers = useRef<Record<string, number>>({});
 
   const questions = useMemo(() => new Map((data?.session?.questions ?? []).map((q) => [q.id, q])), [data?.session]);
+  // Study time and "đã đọc" for Tiến độ: the lesson's unit, or one unit for a mistake review across lessons
+  // (time is credited only while course, unit and mode stay put).
+  const pulseUnit = data?.unit?.id ?? data?.session?.questions[0]?.unit_id;
+  useStudyPulse(data && pulseUnit && phase !== 'result' ? { courseId: data.course.id, unitId: pulseUnit, revision: data.course.revision, mode: phase === 'learn' ? 'learn' : 'practice' } : null);
   const fix = useMemo(() => makeTextFix(unitTexts(data ? (data.unit ? [data.unit] : data.units) : [])), [data]);
 
   // Position and drafts once per loaded session.

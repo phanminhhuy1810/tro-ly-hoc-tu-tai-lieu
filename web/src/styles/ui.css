@@ -33,10 +33,10 @@
   color: var(--ink);
   box-shadow: 0 3px 0 var(--butter-700);
 }
-.btn--primary:hover {
+.btn--primary:hover:not(:disabled) {
   background: var(--butter-400);
 }
-.btn--primary:active {
+.btn--primary:active:not(:disabled) {
   transform: translateY(2px);
   box-shadow: 0 1px 0 var(--butter-700);
 }
@@ -46,10 +46,10 @@
   color: var(--ink);
   box-shadow: 0 2px 0 var(--line-strong);
 }
-.btn--secondary:hover {
+.btn--secondary:hover:not(:disabled) {
   background: var(--surface-2);
 }
-.btn--secondary:active {
+.btn--secondary:active:not(:disabled) {
   transform: translateY(1.5px);
   box-shadow: 0 0.5px 0 var(--line-strong);
 }
@@ -60,7 +60,7 @@
   color: var(--ink-2);
   font-weight: 700;
 }
-.btn--ghost:hover {
+.btn--ghost:hover:not(:disabled) {
   background: var(--surface-2);
   color: var(--ink);
 }
@@ -83,6 +83,11 @@
 }
 .btn--block {
   width: 100%;
+}
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+  box-shadow: none;
 }
 .btn[aria-busy='true'] {
   cursor: progress;

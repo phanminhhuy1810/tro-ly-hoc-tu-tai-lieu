@@ -17,8 +17,6 @@ import { MemoryCard } from './MemoryCard';
 import { ProgressPath } from './ProgressPath';
 import { useGeneration } from './useGeneration';
 
-const LEGACY = '/legacy/';
-
 const STATE_ICON = { done: 'check', ready: 'bookOpen', not_generated: 'sparkle', locked: 'lock' } as const;
 
 export function CoursePage({ courseId }: { courseId: string }) {
@@ -195,15 +193,21 @@ export function CoursePage({ courseId }: { courseId: string }) {
 
           <section className="modes" aria-label="Cách học khác">
             <h2 className="title-m">Cách học khác</h2>
-            <a className="mode-card" href={LEGACY + '#library'}>
+            <a className="mode-card" href={hrefFor({ name: 'cards', courseId: course.id })}>
               <Spot glyph="cards" tone="butter" size={52} />
               <span>
                 <strong>Flashcard</strong>
-                <span className="meta">
-                  {cards.length} thẻ{cards.length ? ` · ${unknownCards} chưa nhớ` : ''}
-                </span>
+                <span className="meta">{cards.length ? `${cards.length} thẻ · ${unknownCards} chưa nhớ` : 'Thẻ có sau khi tạo bài'}</span>
               </span>
-              <span className="tag">bản cũ</span>
+              <Icon name="arrowRight" size={18} />
+            </a>
+            <a className="mode-card" href={hrefFor({ name: 'practice', courseId: course.id })}>
+              <Spot glyph="chart" tone="sky" size={52} />
+              <span>
+                <strong>Ôn luyện</strong>
+                <span className="meta">Luyện hoặc kiểm tra theo phạm vi bài</span>
+              </span>
+              <Icon name="arrowRight" size={18} />
             </a>
             {studied ? (
               <a className="mode-card" href={hrefFor({ name: 'lesson', courseId: course.id, unitId: 'tat-ca', mode: 'weak' })}>

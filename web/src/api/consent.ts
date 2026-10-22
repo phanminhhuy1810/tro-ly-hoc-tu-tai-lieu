@@ -28,7 +28,10 @@ export async function settleAi<T>(start: AiStart<T>, watch: Watch = {}): Promise
  * back to the screen to decide; nothing is held before that.
  */
 export async function askAi<T>(path: string, body: unknown, shownPrice: number, watch: Watch = {}): Promise<AiOutcome<T>> {
-  let start = await startAi<T>(path, body);
-  if (start.kind === 'quote' && !start.quote.insufficient_coin && start.quote.amount <= shownPrice) start = await start.confirm();
-  return settleAi(start, watch);
+  return settleAi(await acceptShownPrice(await startAi<T>(path, body), shownPrice), watch);
+}
+
+/** The pressed button showed `shownPrice`: accept a payable quote up to that, leave anything else to the screen. */
+export async function acceptShownPrice<T>(start: AiStart<T>, shownPrice: number): Promise<AiStart<T>> {
+  return start.kind === 'quote' && !start.quote.insufficient_coin && start.quote.amount <= shownPrice ? start.confirm() : start;
 }

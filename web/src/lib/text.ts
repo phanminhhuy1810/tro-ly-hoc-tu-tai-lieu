@@ -18,14 +18,15 @@ export function vocabularyFrom(texts: Iterable<string>): Set<string> {
   return words;
 }
 
-function segment(token: string, vocabulary: Set<string>): string[] | null {
+function segment(token: string, vocabulary: Set<string>, minPiece = 1): string[] | null {
   const best: (string[] | null)[] = Array(token.length + 1).fill(null);
   best[0] = [];
   for (let start = 0; start < token.length; start += 1) {
     const before = best[start];
     if (!before) continue;
-    for (let end = start + 1; end <= token.length && end - start <= 16; end += 1) {
+    for (let end = start + minPiece; end <= token.length && end - start <= 16; end += 1) {
       const piece = token.slice(start, end);
+      if (piece === token) continue;
       if (!vocabulary.has(piece) && !/^\d+$/.test(piece)) continue;
       const current = best[end];
       if (!current || before.length + 1 < current.length) best[end] = [...before, piece];
@@ -41,8 +42,10 @@ export function respace(text: string, vocabulary: Set<string>): string {
     // Vietnamese syllables are short; long ASCII words (English terms) are never touched.
     if (!/[^\x00-\x7f]/.test(token)) return token;
     const lower = token.toLowerCase();
-    if (lower.length !== token.length || vocabulary.has(lower)) return token;
-    const pieces = segment(lower, vocabulary);
+    if (lower.length !== token.length) return token;
+    // Text that quotes the slide (a saved answer, say) puts the glued run itself in the
+    // vocabulary; then only split it into known words of two letters or more.
+    const pieces = segment(lower, vocabulary, vocabulary.has(lower) ? 2 : 1);
     if (!pieces || pieces.length < 2) return token;
     let at = 0;
     return pieces
@@ -72,4 +75,13 @@ export function tidyBullets(text: string): string {
 export function makeTextFix(texts: Iterable<string>): (text: string) => string {
   const vocabulary = vocabularyFrom(texts);
   return (text) => tidyBullets(respace(text, vocabulary));
+}
+
+/**
+ * Requests label source excerpts R1, R2… so the model can cite them in
+ * source_refs. Some local models still write "[R1]" into the answer; that
+ * label means nothing to a learner, so AI-written text drops it on display.
+ */
+export function stripRefLabels(text: string): string {
+  return text.replace(/[ \t]?\[R\d+(?:\s*[,;]\s*R\d+)*\]/g, '');
 }

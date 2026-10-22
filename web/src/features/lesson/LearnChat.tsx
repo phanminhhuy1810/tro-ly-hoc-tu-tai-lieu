@@ -9,6 +9,7 @@ import { Mindmap } from '../../components/Mindmap';
 import { RichText } from '../../components/RichText';
 import { ProblemNotice } from '../../components/StateViews';
 import { describeError, formatElapsed, locatorLabel } from '../../lib/copy';
+import { stripRefLabels } from '../../lib/text';
 import { threadFor } from './help';
 import { useTextFix } from './textFix';
 import { useSectionChat, type Pending, type TutorAction } from './useSectionChat';
@@ -132,7 +133,7 @@ function Thread({ messages, onSave }: { messages: HelpMessage[]; onSave: (id: st
           </LearnerMessage>
         ) : (
           <TutorMessage key={message.id} mood="hint">
-            {message.content.text && <RichText text={message.content.text} fix={fix} />}
+            {message.content.text && <RichText text={stripRefLabels(message.content.text)} fix={fix} />}
             {message.content.needs_more_source && <p className="meta">Nguồn của phần này chưa đủ để trả lời chắc chắn — đối chiếu tài liệu gốc nhé.</p>}
             <div className="msg__tools">
               <button type="button" className="link link--quiet" onClick={() => onSave(message.id)}>
@@ -396,7 +397,7 @@ export function LearnChat({
             ref={input}
             rows={1}
             value={draft}
-            placeholder="Hỏi Kẹp bất cứ điều gì về phần này…"
+            placeholder="Hỏi Kẹp về phần này…"
             aria-label="Câu hỏi cho Kẹp"
             onChange={(event) => {
               keepDraft(event.target.value);
@@ -411,7 +412,7 @@ export function LearnChat({
             }}
           />
           <button type="submit" className="btn btn--primary composer__send" disabled={!draft.trim() || busy} aria-busy={busy}>
-            {busy ? 'Đang trả lời…' : 'Gửi'} {!busy && <Price amount={chat.price} />}
+            <span className="composer__send-label">{busy ? 'Đang trả lời…' : 'Gửi'}</span> {!busy && <Price amount={chat.price} />}
             <Icon name="send" size={16} />
           </button>
         </div>

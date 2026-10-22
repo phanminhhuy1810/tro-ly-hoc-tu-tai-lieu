@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { makeTextFix, respace, tidyBullets, vocabularyFrom } from './text';
+import { makeTextFix, respace, stripRefLabels, tidyBullets, vocabularyFrom } from './text';
 
 // Real case: a cloze prompt quoted from a slide whose PDF text lost its spaces.
 const PROMPT = '“§Địachỉlogic •do ngườidùngấnđịnh •VD: ____”';
@@ -10,6 +10,13 @@ describe('respace', () => {
     const words = vocabularyFrom(LESSON);
     expect(respace('Địachỉlogic', words)).toBe('Địa chỉ logic');
     expect(respace('ngườidùngấnđịnh', words)).toBe('người dùng ấn định');
+  });
+
+  it('still splits a glued run that the same text quotes', () => {
+    const words = vocabularyFrom([PROMPT, ...LESSON]);
+    expect(respace('Địachỉlogic', words)).toBe('Địa chỉ logic');
+    // A real word the text uses is only split into pieces of two letters or more.
+    expect(respace('chương', vocabularyFrom(['chương trình', 'ngôn ngữ C', 'hương vị']))).toBe('chương');
   });
 
   it('keeps case, English terms and words it cannot fully explain', () => {
@@ -34,5 +41,20 @@ describe('tidyBullets', () => {
 describe('makeTextFix', () => {
   it('repairs the reported cloze prompt for display', () => {
     expect(makeTextFix(LESSON)(PROMPT)).toBe('“Địa chỉ logic • do người dùng ấn định • VD: ____”');
+  });
+
+  it('repairs a saved answer that quotes the broken prompt', () => {
+    const note = `${PROMPT}\n\n1. **Địa chỉ logic**: Do người dùng ấn định.`;
+    expect(makeTextFix([note])(note).split('\n')[0]).toBe('“Địa chỉ logic • do người dùng ấn định • VD: ____”');
+  });
+});
+
+describe('stripRefLabels', () => {
+  it('drops source labels a model wrote into its answer', () => {
+    expect(stripRefLabels('HostID = 1. [R1] Ví dụ: theo [R2, R3] thì')).toBe('HostID = 1. Ví dụ: theo thì');
+  });
+
+  it('keeps other bracketed text', () => {
+    expect(stripRefLabels('Tập [R] và đoạn [Ref 2]')).toBe('Tập [R] và đoạn [Ref 2]');
   });
 });

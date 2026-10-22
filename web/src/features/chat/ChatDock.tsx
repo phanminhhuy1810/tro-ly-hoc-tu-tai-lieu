@@ -1,13 +1,16 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { api } from '../../api/client';
+import { acceptShownPrice } from '../../api/consent';
 import { observeJob, startAi, type AiStart } from '../../api/jobs';
 import type { ChatMessage, CoinQuote, Course } from '../../api/types';
 import { useApp, type ChatContext } from '../../app/store';
 import { CoinConfirm } from '../../components/CoinConfirm';
 import { Icon } from '../../components/Icon';
 import { Mascot } from '../../components/Mascot';
+import { RichText } from '../../components/RichText';
 import { ProblemNotice } from '../../components/StateViews';
 import { describeError, describeJobFailure, type Problem } from '../../lib/copy';
+import { stripRefLabels } from '../../lib/text';
 
 const draftKey = (courseId: string) => `folio.chat.draft.${courseId}`;
 
@@ -65,7 +68,8 @@ function ContextPicker({ onPick }: { onPick: (ctx: ChatContext) => void }) {
  * to expand. Size changes never reset history or the draft.
  */
 export function ChatDock() {
-  const { chatSize, setChatSize, chatContext, refreshWallet } = useApp();
+  const { chatSize, setChatSize, chatContext, refreshWallet, priceOf } = useApp();
+  const price = priceOf('chat');
   const [picked, setPicked] = useState<ChatContext | null>(null);
   const context = chatContext ?? picked;
   const [messages, setMessages] = useState<ChatMessage[] | null>(null);
@@ -98,9 +102,10 @@ export function ChatDock() {
     void loadHistory();
   }, [open, courseId, loadHistory]);
 
+  const attachable = context?.question ?? context?.card;
   useEffect(() => {
-    if (!context?.question) setAttach(false);
-  }, [context?.question?.itemId]);
+    if (!attachable) setAttach(false);
+  }, [context?.question?.itemId, context?.card?.id]);
 
   useEffect(() => {
     list.current?.scrollTo({ top: list.current.scrollHeight });
@@ -155,9 +160,12 @@ export function ChatDock() {
     if (attach && context.question) {
       body.session_id = context.question.sessionId;
       body.item_id = context.question.itemId;
+    } else if (attach && context.card) {
+      body.card_id = context.card.id;
     }
     try {
-      await settle(await startAi(`/courses/${context.courseId}/chat`, body));
+      // The send button shows the price, so pressing it accepts a quote up to that amount.
+      await settle(await acceptShownPrice(await startAi(`/courses/${context.courseId}/chat`, body), price));
     } catch (error) {
       setPending(false);
       setProblem(describeError(error));
@@ -224,7 +232,7 @@ export function ChatDock() {
             {messages?.map((m) => (
               <div key={m.id} className={`bubble ${m.role === 'user' ? 'bubble--me' : 'bubble--bot'}`}>
                 {m.role === 'assistant' && <span className="bubble__who">Trợ lý AI</span>}
-                <p>{m.text}</p>
+                {m.role === 'assistant' ? <RichText text={stripRefLabels(m.text)} /> : <p>{m.text}</p>}
               </div>
             ))}
             {pending && (
@@ -253,10 +261,10 @@ export function ChatDock() {
             )}
             {problem && <ProblemNotice problem={problem} onRetry={send} compact />}
           </div>
-          {context.question && (
+          {attachable && (
             <div className="chat__attach">
               <button type="button" className="chip" aria-pressed={attach} onClick={() => setAttach((v) => !v)}>
-                <Icon name={attach ? 'check' : 'plus'} size={15} /> {attach ? `Đã gắn ${context.question.label}` : `Gắn ${context.question.label}`}
+                <Icon name={attach ? 'check' : 'plus'} size={15} /> {attach ? `Đã gắn ${attachable.label}` : `Gắn ${attachable.label}`}
               </button>
             </div>
           )}
@@ -285,7 +293,8 @@ export function ChatDock() {
                 }
               }}
             />
-            <button type="submit" className="btn btn--primary btn--sm" disabled={pending || !draft.trim()} aria-label="Gửi">
+            <button type="submit" className="btn btn--primary btn--sm" disabled={pending || !draft.trim()} aria-label={price > 0 ? `Gửi, ${price} Coin` : 'Gửi'}>
+              {price > 0 && <span className="price">{price} Coin</span>}
               <Icon name="send" size={16} />
             </button>
           </form>
@@ -302,7 +311,7 @@ export function ChatDock() {
             <p className="eyebrow">Bạn đang học</p>
             <p className="title-m">{context?.courseTitle ?? '—'}</p>
             <p className="meta">{context?.unitTitle}</p>
-            {context?.question && <p className="tag tag--butter">{context.question.label}</p>}
+            {attachable && <p className="tag tag--butter">{attachable.label}</p>}
             <button type="button" className="btn btn--secondary btn--sm" onClick={() => setChatSize('small')}>
               <Icon name="arrowLeft" size={16} /> Quay lại bài
             </button>

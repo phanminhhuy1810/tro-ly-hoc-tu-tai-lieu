@@ -46,6 +46,42 @@
   color: var(--ink-2);
 }
 
+.today-strip {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  margin: -16px 0 30px;
+  padding: 12px 18px;
+  border-radius: var(--radius-lg);
+  background: var(--butter-50);
+  border: 1px solid var(--butter-300);
+  color: var(--ink-2);
+  font-size: 14.5px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.today-strip__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.today-strip__item strong {
+  color: var(--ink);
+  font-weight: 900;
+}
+.today-strip__more {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: auto;
+  color: var(--sage-800);
+  font-weight: 800;
+}
+.today-strip:hover .today-strip__more {
+  text-decoration: underline;
+}
+
 .course-list ul {
   list-style: none;
   margin: 0;
@@ -658,6 +694,39 @@
   }
 }
 @media (max-width: 640px) {
+  .job-card {
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 14px;
+  }
+  .resume {
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 14px 16px;
+    padding: 20px;
+  }
+  .resume > .mascot {
+    align-self: start;
+    width: 60px;
+    height: 60px;
+  }
+  .resume > :last-child {
+    grid-column: 1 / -1;
+    justify-self: stretch;
+  }
+  .course-list ul {
+    padding: 10px;
+  }
+  .course-row {
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 12px 14px;
+    padding: 14px;
+  }
+  .course-row__title {
+    font-size: 19px;
+  }
+  .course-row__cta {
+    grid-column: 1 / -1;
+  }
   .path-mascot {
     display: none;
   }
@@ -719,6 +788,7 @@ a.mode-card:hover {
 }
 .job-card__body {
   flex: 1;
+  min-width: 0;
   display: grid;
   gap: 8px;
 }

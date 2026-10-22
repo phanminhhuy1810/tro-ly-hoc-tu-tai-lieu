@@ -1,6 +1,6 @@
 # Trợ lý học từ tài liệu
 
-Đề tài đã chốt: web giúp sinh viên biến tài liệu thành khóa học với **Học – Flashcard – Ôn luyện**. Ưu tiên giao diện desktop; tên/logo hiện tại chưa chốt. Cập nhật 21/10/2026.
+Đề tài đã chốt: web giúp sinh viên biến tài liệu thành khóa học với **Học – Flashcard – Ôn luyện**. Ưu tiên giao diện desktop (điện thoại dùng được với thanh điều hướng đáy); tên/logo hiện tại chưa chốt. Cập nhật 22/10/2026.
 
 ## Chỉ cần đọc hai tài liệu
 
@@ -27,13 +27,13 @@ Terminal khác:
 ./run.sh
 ```
 
-Mở `http://127.0.0.1:8770/` để dùng giao diện mới (`web/`, React + TypeScript; lần đầu `./run.sh` tự `npm ci` và build nếu máy có Node). Bản cũ vẫn ở `http://127.0.0.1:8770/legacy/` cho các màn chưa làm lại. Khi sửa giao diện, chạy thêm `cd web && npm run dev` rồi mở `http://127.0.0.1:5173/` để thấy thay đổi ngay; sau đó `npm run build` để `./run.sh` phục vụ bản mới. Lựa chọn model theo profile và cách nạp cấu hình server riêng được giải thích trong bản backend. Không chạy hai backend cùng DB. `run-kaggle.sh` chỉ nạp cấu hình riêng đã có, không bật phiên Kaggle.
+Mở `http://127.0.0.1:8770/` để dùng giao diện mới (`web/`, React + TypeScript; lần đầu `./run.sh` tự `npm ci` và build nếu máy có Node). Mọi màn học đã làm lại trong `web/`; bản cũ ở `http://127.0.0.1:8770/legacy/` chỉ còn dùng cho phòng đố vui và chia sẻ cộng đồng. Khi sửa giao diện, chạy thêm `cd web && npm run dev` rồi mở `http://127.0.0.1:5173/` để thấy thay đổi ngay; sau đó `npm run build` để `./run.sh` phục vụ bản mới. Lựa chọn model theo profile và cách nạp cấu hình server riêng được giải thích trong bản backend. Không chạy hai backend cùng DB. `run-kaggle.sh` chỉ nạp cấu hình riêng đã có, không bật phiên Kaggle.
 
 ```sh
 ./check.sh
 ```
 
-Ngày 22/10/2026 (sau khi thêm frontend `web/`, ghi nhớ khóa, lộ trình AI đọc toàn bộ tài liệu và ảnh bìa): **428 kiểm thử backend, 75 kiểm thử frontend cũ và 45 kiểm thử `web/` đạt**. Mốc trước đó (sau khi dọn thư mục): 410 backend và 75 frontend; xem [kết quả](backend/evidence/project-cleanup-tests.txt). Đủ API để frontend tiếp nhận, **chưa nghiệm thu toàn backend**: F18 (lưu ý mâu thuẫn nguồn), chất lượng AI/OCR, QA mindmap trên runtime và thử người dùng còn mở. Nhóm chưa thử, 0 người độc lập. Số test không thể hiện độ chính xác AI.
+Ngày 22/10/2026 (sau khi làm lại đủ các màn trong `web/`: Flashcard, Ôn luyện, Thư viện, Sổ tay, Tiến độ, Cài đặt): **428 kiểm thử backend, 75 kiểm thử frontend cũ và 58 kiểm thử `web/` đạt**. Mốc trước đó (sau khi dọn thư mục): 410 backend và 75 frontend; xem [kết quả](backend/evidence/project-cleanup-tests.txt). Đủ API để frontend tiếp nhận, **chưa nghiệm thu toàn backend**: F18 (lưu ý mâu thuẫn nguồn), chất lượng AI/OCR, QA mindmap trên runtime và thử người dùng còn mở. Nhóm chưa thử, 0 người độc lập. Số test không thể hiện độ chính xác AI.
 
 ## Thư mục nào để làm gì?
 
@@ -51,7 +51,16 @@ TDTT/
     │   ├── scripts/                         # công cụ QA/thử luồng
     │   ├── evidence/                        # kết quả đã chạy
     │   └── runtime/                         # dữ liệu và cấu hình riêng
-    ├── frontend/                            # giao diện (trước tên preview)
+    ├── web/                                 # giao diện mới (Vite + React + TypeScript)
+    │   └── src/
+    │       ├── app/                         # điều hướng hash, store, nhịp học
+    │       ├── api/                         # gọi backend, kiểu dữ liệu
+    │       ├── features/                    # từng màn: home, course, lesson, cards,
+    │       │                                #   practice, library, notebook, progress,
+    │       │                                #   settings, create, chat
+    │       ├── components/, lib/            # thành phần dùng chung, hàm thuần có test
+    │       └── styles/                      # CSS theo nhóm màn
+    ├── frontend/                            # giao diện cũ, phục vụ ở /legacy/
     │   ├── index.html                       # điểm vào, thứ tự nạp JS/CSS
     │   ├── scripts/                         # JavaScript: màn hình và tương tác
     │   ├── styles/                          # CSS: bố cục, màu, motion
@@ -63,21 +72,21 @@ TDTT/
     └── sources/                             # Word của thầy trong bộ nộp
 ```
 
-Backend chia module theo chức năng, bảng chỉ đường nằm trong bản backend. Giao diện dùng JS ở `frontend/scripts/`, CSS ở `frontend/styles/`; các lớp CSS hiện tại vẫn nạp theo thứ tự trong `index.html`. Không mở `.venv/` hoặc `runtime/` để tìm code giao diện.
+Backend chia module theo chức năng, bảng chỉ đường nằm trong bản backend. Giao diện mới nằm trong `web/src/`: bắt đầu ở `App.tsx` (chọn màn theo route) và `app/router.ts` (địa chỉ `#/khoa/…`, `#/hoc/…`, `#/the/…`, `#/on-luyen/…`, `#/thu-vien`, `#/so-tay`, `#/tien-do`, `#/cai-dat`); mỗi màn là một thư mục trong `features/`. Không mở `.venv/` hoặc `runtime/` để tìm code giao diện.
 
-Muốn lần code giao diện: bắt đầu ở `scripts/app.js` (điều hướng), `scripts/live.js` (nối API); các file `*-views.js` dựng màn hình, `live-help.js` xử lý trợ giúp, `source-*.js` xử lý nguồn. Những file view cũ còn được nạp hoặc tham chiếu cần được kiểm tra khi thiết kế lại, không xóa theo tên.
+Giao diện cũ (`frontend/`) bắt đầu ở `scripts/app.js` (điều hướng), `scripts/live.js` (nối API); các file `*-views.js` dựng màn hình. Phòng đố vui và chia sẻ cộng đồng vẫn dùng bản này; không xóa theo tên khi chưa làm lại hai màn đó.
 
 Các phần giữ lại:
 
 - `backend/study_backend/`, `backend/tests/`: code và kiểm thử; [snapshot API](backend/frontend-openapi.json).
-- `frontend/`: frontend hiện tại/asset/tests; một số route còn mẫu, cần làm lại/nối theo bản flow.
+- `web/`: giao diện mới cùng kiểm thử (`npm test`). `frontend/`: giao diện cũ ở `/legacy/`, asset/font và kiểm thử cũ.
 - `experiments/`, `evaluation/`, `backend/evidence/`: benchmark/probe đã chạy, dữ liệu thử, raw kết quả và cả lỗi. Giữ nguyên đường dẫn vì một số regression đọc các output này.
 - `sources/`: Word gốc. Font và giấy phép ở `frontend/assets/fonts/`; [nguồn font](frontend/assets/fonts/SOURCES.md).
 - `backend/runtime/`: DB, tài liệu người dùng và cấu hình bí mật chỉ trên máy; không gửi cho AI/dịch vụ bên ngoài, không thuộc gói review công khai.
 
 ## Giải thích ngắn cho người mới đọc code
 
-**Frontend** là phần Huy thấy và bấm trên trình duyệt. HTML tạo cấu trúc trang, CSS quyết định hình thức/chuyển động, JavaScript xử lý nút bấm và lấy dữ liệu. Ba phần nằm trong `frontend/`.
+**Frontend** là phần Huy thấy và bấm trên trình duyệt. HTML tạo cấu trúc trang, CSS quyết định hình thức/chuyển động, JavaScript xử lý nút bấm và lấy dữ liệu. Bản mới viết bằng React + TypeScript trong `web/` (TypeScript là JavaScript có kiểu, giúp bắt lỗi trước khi chạy); `npm run build` gói thành `web/dist` để backend phục vụ.
 
 **Backend** là chương trình Python chạy phía sau web: nhận file, đọc nguồn, quản lý khóa học, chấm câu có đáp án cố định, lưu tiến trình, kiểm tra quyền/Coin và gọi AI khi cần. Code chính ở `backend/study_backend/`; các file được chia theo việc như đọc tài liệu, tạo câu hỏi, trợ giúp, hoạt động và dữ liệu.
 

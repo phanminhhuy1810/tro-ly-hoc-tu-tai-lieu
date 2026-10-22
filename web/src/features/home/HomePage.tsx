@@ -10,8 +10,9 @@ import { CourseCover } from '../course/covers';
 import { EmptyState, LoadingRows, ProblemNotice } from '../../components/StateViews';
 import { describeError } from '../../lib/copy';
 import { courseSummary, pathNodes } from '../../lib/path';
+import type { Dashboard, Missions } from '../progress/activity';
 
-const LEGACY_NEW = hrefFor({ name: 'create' });
+const CREATE_HREF = hrefFor({ name: 'create' });
 
 function today() {
   return new Intl.DateTimeFormat('vi-VN', { weekday: 'long', day: 'numeric', month: 'long' }).format(new Date());
@@ -64,11 +65,17 @@ function nextStep(courses: Course[], resume: ResumeEntry[]): Next | null {
 }
 
 export function HomePage() {
-  const { refreshWallet } = useApp();
+  const { refreshWallet, wallet } = useApp();
   const state = useLoad(async () => {
     await ensureSession();
     const [courses, resume] = await Promise.all([api<Course[]>('/courses'), api<ResumeEntry[]>('/resume')]);
     return { courses, resume };
+  }, []);
+  // Streak and missions are a nudge, not the page: if they fail to load the strip just stays hidden.
+  const pulse = useLoad(async () => {
+    await ensureSession();
+    const [dashboard, missions] = await Promise.all([api<Dashboard>('/dashboard'), api<Missions>('/missions')]);
+    return { streak: dashboard.weekly_streak.current, done: missions.daily.filter((m) => m.completed).length, total: missions.daily.length };
   }, []);
   useEffect(refreshWallet, [refreshWallet]);
 
@@ -81,7 +88,7 @@ export function HomePage() {
           <p className="eyebrow">{today()}</p>
           <h1 className="page-title">Học tiếp</h1>
         </div>
-        <a className="btn btn--secondary" href={LEGACY_NEW}>
+        <a className="btn btn--secondary" href={CREATE_HREF}>
           <Icon name="plus" size={18} /> Tạo khóa từ tài liệu
         </a>
       </header>
@@ -95,7 +102,7 @@ export function HomePage() {
           title="Chưa có khóa nào"
           body="Chọn slide, giáo trình hoặc ghi chú của bạn — mình đọc rồi đề xuất lộ trình để bạn duyệt trước khi tạo bài."
           action={
-            <a className="btn btn--primary btn--lg" href={LEGACY_NEW}>
+            <a className="btn btn--primary btn--lg" href={CREATE_HREF}>
               Chọn tài liệu
             </a>
           }
@@ -116,6 +123,28 @@ export function HomePage() {
             {next.action} <Icon name="arrowRight" size={18} />
           </a>
         </section>
+      )}
+
+      {pulse.data && state.data && state.data.courses.length > 0 && (
+        <a className="today-strip enter" href={hrefFor({ name: 'progress' })}>
+          <span className="today-strip__item">
+            <Icon name="fire" size={18} /> <strong>{pulse.data.streak}</strong> ngày học liên tiếp
+          </span>
+          <span className="today-strip__item">
+            <Icon name="flag" size={18} /> Nhiệm vụ hôm nay{' '}
+            <strong>
+              {pulse.data.done}/{pulse.data.total}
+            </strong>
+          </span>
+          {wallet && (
+            <span className="today-strip__item">
+              <Icon name="coin" size={18} /> <strong>{wallet.available}</strong> Coin
+            </span>
+          )}
+          <span className="today-strip__more">
+            Xem tiến độ <Icon name="arrowRight" size={16} />
+          </span>
+        </a>
       )}
 
       {state.data && state.data.courses.length > 0 && (

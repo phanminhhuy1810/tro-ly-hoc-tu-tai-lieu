@@ -12,6 +12,8 @@ export interface ChatContext {
   unitTitle: string;
   /** Present while a check question is on screen; the learner chooses whether to attach it. */
   question?: { sessionId: string; itemId: string; label: string; returnTo: string };
+  /** Present while a flashcard is on screen. */
+  card?: { id: string; label: string };
 }
 
 interface Toast {

@@ -1,13 +1,15 @@
 import { Fragment, type ReactNode } from 'react';
 
 // AI answers arrive as plain text with light Markdown habits (paragraphs,
-// "- " bullets, "1." steps, **bold**). Render just those, as text nodes only:
-// nothing is injected as HTML.
+// "- " bullets, "1." steps, **bold**, `code`). Render just those, as text
+// nodes only: nothing is injected as HTML.
 
 function inline(text: string): ReactNode[] {
-  return text.split(/(\*\*[^*]+\*\*)/g).map((part, i) =>
-    part.startsWith('**') && part.endsWith('**') && part.length > 4 ? <strong key={i}>{part.slice(2, -2)}</strong> : <Fragment key={i}>{part}</Fragment>,
-  );
+  return text.split(/(\*\*[^*]+\*\*|`[^`\n]+`)/g).map((part, i) => {
+    if (part.startsWith('**') && part.endsWith('**') && part.length > 4) return <strong key={i}>{part.slice(2, -2)}</strong>;
+    if (part.startsWith('`') && part.endsWith('`') && part.length > 2) return <code key={i}>{part.slice(1, -1)}</code>;
+    return <Fragment key={i}>{part}</Fragment>;
+  });
 }
 
 export function RichText({ text, fix = (t: string) => t, className }: { text: string; fix?: (text: string) => string; className?: string }) {

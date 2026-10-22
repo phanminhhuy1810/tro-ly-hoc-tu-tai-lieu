@@ -10,6 +10,7 @@ import { Mascot } from '../../components/Mascot';
 import { RichText } from '../../components/RichText';
 import { ProblemNotice } from '../../components/StateViews';
 import { describeError, describeJobFailure, locatorLabel, type Problem } from '../../lib/copy';
+import { stripRefLabels } from '../../lib/text';
 import { readThread, threadFor, type HelpTarget } from './help';
 import { useTextFix } from './textFix';
 
@@ -53,7 +54,7 @@ function Bubble({ message, onSimpler, onDetail, onSave, busy }: { message: HelpM
   return (
     <div className="bubble bubble--bot">
       <span className="bubble__who">{ai ? 'Kẹp · trợ lý AI' : message.action === 'hint' ? 'Gợi ý có sẵn · không tốn Coin' : 'Lời giải đã lưu'}</span>
-      {message.content.text && <RichText text={message.content.text} fix={fix} />}
+      {message.content.text && <RichText text={stripRefLabels(message.content.text)} fix={fix} />}
       {ref && message.action !== 'hint' && (
         <p className="bubble__ref">
           <strong>Đáp án tham khảo:</strong> {fix(ref)}

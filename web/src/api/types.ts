@@ -266,8 +266,76 @@ export interface StudyCard {
   front: string;
   back: string;
   kind: 'generated' | 'personal';
+  course_id?: string | null;
+  course_revision?: number;
   unit_id?: string;
-  memory?: { remembered: boolean } | null;
+  version: number;
+  source_refs?: string[];
+  origin?: { kind: string; session_id?: string; item_id?: string };
+  /** remembered: null = not reviewed yet. */
+  memory?: { remembered: boolean | null; version: number; updated_at?: string } | null;
+}
+
+export interface Note {
+  id: string;
+  body: string;
+  label: 'user' | 'teacher' | 'ai' | string;
+  source_refs: string[];
+  version: number;
+  updated_at: string;
+}
+
+export interface HistoryEntry {
+  id: string;
+  revision: number;
+  status: 'open' | 'completed' | 'cancelled';
+  result: (SessionResult & { course_revision?: number }) | null;
+  created_at: string;
+}
+
+export interface SourceSummary {
+  id: string;
+  metadata: { name: string; kind: string; bytes: number };
+  status: string;
+  created_at: string;
+  revision: number;
+  reviewed: boolean;
+  warning_count: number;
+}
+
+export interface Lifecycle {
+  type: 'course' | 'source';
+  id: string;
+  title: string;
+  revision: number;
+  lifecycle_version: number;
+  deleted_at: string | null;
+  blockers: { type: string; id: string; reason: string }[];
+  can_delete: boolean;
+  can_restore: boolean;
+  effects: { jobs_to_cancel: number; sessions_to_cancel: number; rooms_to_cancel: number; sharing_revoked: boolean };
+}
+
+export interface AiModel {
+  id: string;
+  label: string;
+  external: boolean;
+  configured: boolean;
+  enabled: boolean;
+  selectable: boolean;
+  ready: boolean;
+  data_destination: 'this_machine' | 'external_provider';
+  model?: string;
+  provider?: string;
+  last_request_status?: string;
+  last_error_code?: string | null;
+}
+
+export interface AiCatalog {
+  default_model_id: string;
+  selected_model_id: string;
+  selection_revision: number;
+  models: AiModel[];
 }
 
 export interface RewardEvent {

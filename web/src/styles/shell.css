@@ -154,6 +154,7 @@
 .segmented button {
   flex: 1;
   min-height: 34px;
+  padding: 0 12px;
   border: 0;
   border-radius: 9px;
   background: transparent;
@@ -201,4 +202,66 @@
 }
 .mascot--happy .mascot__extra {
   animation: pop var(--dur-3) var(--ease-pop) both;
+}
+
+/* Phones and narrow tablets: the sidebar turns into a bottom tab bar. Home and
+   Thư viện keep their own "Tạo khóa" button, lessons show Coin in their top bar. */
+@media (max-width: 860px) {
+  .app {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .main {
+    padding: 22px 16px calc(96px + env(safe-area-inset-bottom));
+  }
+  .sidebar {
+    position: fixed;
+    inset: auto 0 0 0;
+    z-index: 45;
+    height: auto;
+    flex-direction: row;
+    gap: 0;
+    padding: 6px 6px calc(6px + env(safe-area-inset-bottom));
+    border-right: 0;
+    border-top: 1px solid var(--line);
+    box-shadow: 0 -6px 18px rgba(35, 38, 43, 0.06);
+  }
+  .sidebar .brand,
+  .sidebar__bottom {
+    display: none;
+  }
+  .nav {
+    flex: 1;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(0, 1fr);
+    gap: 2px;
+  }
+  .nav__item {
+    flex-direction: column;
+    justify-content: center;
+    gap: 3px;
+    min-height: 52px;
+    padding: 4px 2px;
+    font-size: 11.5px;
+    text-align: center;
+  }
+  .app:not(.app--focus) .chat-launcher {
+    right: 16px;
+    bottom: calc(80px + env(safe-area-inset-bottom));
+  }
+  .chat-launcher {
+    padding: 4px;
+  }
+  .chat-launcher__label {
+    display: none;
+  }
+  .app:not(.app--focus) .chat--small {
+    right: 12px;
+    bottom: calc(76px + env(safe-area-inset-bottom));
+    width: calc(100vw - 24px);
+    height: min(640px, calc(100vh - 100px));
+  }
+  .page-head {
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
 }
