@@ -23,7 +23,7 @@ MEMORY_RULE = ('course_memory là ghi nhớ của khóa: ghi chú người học
                'Dùng nó để điều chỉnh cách giải thích (ví dụ nhắc lại chỗ hay nhầm, theo cách học người học muốn); '
                'không coi là nguồn kiến thức và không ghi nó vào source_refs. '
                'tutor_style (nếu có) là vai và điều người học muốn được nhấn mạnh: nói theo vai đó và nhấn mạnh điều đó, '
-               'nhưng vẫn chỉ dựa trên nguồn và giữ mọi quy tắc ở trên. ')
+               'nhưng kiến thức nói là của bài vẫn phải dựa trên nguồn và giữ mọi quy tắc ở trên. ')
 
 
 class MemoryEdit(Model):

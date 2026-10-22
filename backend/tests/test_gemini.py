@@ -68,6 +68,22 @@ class GeminiTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(len(requests), 1)
         self.assertNotIn('fixture-key', json.dumps(ai.metadata()))
 
+    async def test_chat_may_converse_while_generation_stays_source_only(self):
+        sent = []
+        def handler(request):
+            sent.append(json.loads(request.content))
+            if 'uncertain_spans' in json.dumps(sent[-1]['generationConfig']['responseJsonSchema']):
+                return self.response({'text': 'IPv4 has 32 bits.', 'uncertain_spans': []})
+            return self.response({'text': 'Mình là Kẹp.', 'source_refs': [], 'needs_more_source': False})
+        ai = self.adapter()
+        await self.exercise(handler, lambda: ai.generate(ChatReply, 'bạn là ai', []))
+        await self.exercise(handler, lambda: ai.transcribe_image(b'fixture-image'))
+        chat, vision = (value['systemInstruction']['parts'][0]['text'] for value in sent)
+        self.assertIn('Kẹp', chat)
+        self.assertNotIn('Chỉ dùng nguồn', chat)
+        self.assertIn('Chỉ dùng nguồn', vision)
+        self.assertGreater(sent[0]['generationConfig']['temperature'], sent[1]['generationConfig']['temperature'])
+
     async def test_quota_auth_error_timeout_and_redirect_never_retry_or_echo_body(self):
         for status in [400, 401, 403, 404, 429, 500, 302]:
             calls = []

@@ -58,6 +58,7 @@ from . import question_focus
 from . import subnet_reasoning
 from . import chapter_evidence
 from . import correction_context, correction_prompt
+from . import chat_prompt
 from .gemini import ProviderError
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -1179,7 +1180,8 @@ def create_app(db_path=None, storage_path=None, provider=None, extractor=None, a
             db.execute("INSERT INTO chat_messages VALUES (?,?,?,?,?,?,?,?)", (new_id(), owner, course_id, course["revision"], "user", body.message, "[]", now()))
 
         async def work(job_id):
-            instruction = "Hỏi về bài đang học, ưu tiên gợi ý từng bước. Trả lời theo nguồn và course_revision của ngữ cảnh đã chốt; nếu đang hỏi câu/thẻ từ lượt cũ thì dùng bản cũ, không trộn nguồn mới. Lịch sử có nhãn revision chỉ là ngữ cảnh trò chuyện. Nếu yêu cầu khác phạm vi nguồn, needs_more_source=true và nói rõ phần thiếu; không cố bảo vệ đáp án cũ bị sai. Không tự sửa khóa học; gợi ý người học dùng Sửa nội dung để xem trước. " + (MEMORY_RULE if memory else "") + dump({"language": json.loads(plan["preferences_json"])["language"], "course_revision": course["revision"], "source_id": plan['source_id'], "extraction_revision": json.loads(plan['preferences_json'])['extraction_revision'], "unit": unit["title"], "object_context": object_context, "history": history, "question": body.message, **({"course_memory": memory} if memory else {})})
+            # The latest message is repeated last so a long history cannot bury it.
+            instruction = chat_prompt.COURSE_CHAT + (MEMORY_RULE if memory else "") + dump({"assistant": chat_prompt.assistant(identity["provenance"]), "language": json.loads(plan["preferences_json"])["language"], "course_revision": course["revision"], "source_id": plan['source_id'], "extraction_revision": json.loads(plan['preferences_json'])['extraction_revision'], "unit": unit["title"], "object_context": object_context, "history": history, "question": body.message, **({"course_memory": memory} if memory else {})}) + "\nTin nhắn mới nhất cần trả lời: " + body.message
             reply = await generate_checked(ChatReply, instruction, fragments)
             with database.connection(write=True) as db:
                 jobs.check(db, job_id)

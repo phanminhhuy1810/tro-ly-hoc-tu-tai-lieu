@@ -212,6 +212,18 @@ class LearningTests(SliceFixture):
         self.assertNotIn(q["id"], {x["id"] for x in new["questions"]})
         self.assertIn(q["id"], {x["id"] for x in self.client.get(f"/api/sessions/{old['id']}").json()["questions"]})
 
+    def test_chat_knows_who_answers_and_puts_the_new_message_last(self):
+        # Without this Gemini answered "bạn là ai" and "model gì" with the same canned
+        # "theo nguồn…" line: the prompt never said who it was or what it runs on.
+        course = self.course(); base = f"/api/courses/{course['id']}/chat"
+        self.job(self.client.post(base, json={"unit_id": "unit-1", "message": "bạn là ai"}))
+        self.job(self.client.post(base, json={"unit_id": "unit-1", "message": "model bạn đang dùng là gì"}))
+        prompt = self.provider.instructions[-1]
+        self.assertIn('"name": "Kẹp"', prompt)
+        self.assertIn('"model": "unreported_test_adapter"', prompt)
+        self.assertIn('"content": "bạn là ai"', prompt)
+        self.assertTrue(prompt.endswith("model bạn đang dùng là gì"))
+
     def test_chat_receives_question_answer_context_and_rejects_foreign_context(self):
         course = self.course(); session = self.begin(course); q = session["questions"][0]
         self.client.post(f"/api/sessions/{session['id']}/answers", json={"item_id": q["id"], "answer": "option-1"}).raise_for_status()
