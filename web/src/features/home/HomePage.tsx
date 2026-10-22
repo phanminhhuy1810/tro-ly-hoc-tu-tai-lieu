@@ -6,7 +6,7 @@ import { useApp, useLoad } from '../../app/store';
 import { Icon } from '../../components/Icon';
 import { Mascot } from '../../components/Mascot';
 import { PageHeader } from '../../components/PageHeader';
-import { Spot } from '../../components/Spot';
+import { ArtBadge } from '../../components/Art';
 import { CourseCover } from '../course/covers';
 import { EmptyState, LoadingRows, ProblemNotice } from '../../components/StateViews';
 import { describeError } from '../../lib/copy';
@@ -109,7 +109,7 @@ export function HomePage() {
 
       {state.data && state.data.courses.length === 0 && (
         <EmptyState
-          art={<Spot glyph="papers" tone="butter" size={120} badge />}
+          art={<ArtBadge name="sparkles" size={120} />}
           title="Chưa có khóa nào"
           body="Chọn slide, giáo trình hoặc ghi chú của bạn — mình đọc rồi đề xuất lộ trình để bạn duyệt trước khi tạo bài."
           action={

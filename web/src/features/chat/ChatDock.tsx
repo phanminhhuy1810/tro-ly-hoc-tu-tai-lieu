@@ -203,7 +203,7 @@ export function ChatDock() {
       <header className="chat__head">
         <div className="chat__who">
           <span className="chat__avatar" aria-hidden="true">
-            <Mascot mood="hello" size={36} />
+            <Mascot mood="hello" size={40} face />
           </span>
           <div>
             <p className="chat__title">Hỏi chung</p>

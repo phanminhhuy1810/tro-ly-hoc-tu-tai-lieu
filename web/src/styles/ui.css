@@ -337,3 +337,24 @@ textarea.field {
   justify-content: flex-end;
   flex-wrap: wrap;
 }
+
+/* 3D pictures (web/public/art) and the white sticker disc they sit on in banners and empty states. */
+.art {
+  flex: none;
+  object-fit: contain;
+  user-select: none;
+}
+.art-badge {
+  --badge: 88px;
+  display: inline-grid;
+  place-items: center;
+  width: var(--badge);
+  height: var(--badge);
+  border-radius: 50%;
+  background: #fff;
+  border: 2.5px solid var(--ink);
+  box-shadow: 3px 3px 0 var(--ink);
+}
+.art-badge .art {
+  filter: drop-shadow(0 4px 3px rgba(35, 38, 43, 0.18));
+}

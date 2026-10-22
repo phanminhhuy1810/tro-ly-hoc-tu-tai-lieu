@@ -6,7 +6,7 @@ export function BotBubble({ who, mood = 'hello', children }: { who?: ReactNode; 
   return (
     <div className="chat-row">
       <span className="chat-avatar" aria-hidden="true">
-        <Mascot mood={mood} size={30} />
+        <Mascot mood={mood} size={34} face />
       </span>
       <div className="bubble bubble--bot">
         {who && <span className="bubble__who">{who}</span>}
@@ -30,7 +30,7 @@ export function TypingBubble({ text = 'Kẹp đang soạn câu trả lời' }: {
   return (
     <div className="chat-row" role="status">
       <span className="chat-avatar chat-avatar--busy" aria-hidden="true">
-        <Mascot mood="think" size={30} />
+        <Mascot mood="think" size={34} face />
       </span>
       <div className="bubble bubble--bot bubble--typing">
         <span className="typing__dots" aria-hidden="true">

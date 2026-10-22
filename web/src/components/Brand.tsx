@@ -2,35 +2,34 @@
 // (thick ink outline, flat sage/butter). "kep" is the one in use; the others
 // stay here so they can be compared on the states page before choosing.
 
+import { useId } from 'react';
+import { CatDrawing } from './Mascot';
+
 const INK = '#23262b';
 
 export type BrandOption = 'kep' | 'bubble' | 'path';
 
 export const BRAND_OPTIONS: { id: BrandOption; name: string; note: string }[] = [
-  { id: 'kep', name: 'Kẹp', note: 'Mặt mèo Kẹp đeo kính trên nền vàng — logo cũng là linh vật, nhận ra ngay ở cỡ favicon.' },
+  { id: 'kep', name: 'Kẹp', note: 'Đầu mèo Kẹp (vẽ theo phác thảo của Huy) trên nền vàng — logo cũng là linh vật.' },
   { id: 'bubble', name: 'Bóng nói + sách', note: 'Gia sư AI trò chuyện về tài liệu của bạn; nói rõ công dụng nhưng ít cá tính hơn.' },
   { id: 'path', name: 'Lộ trình', note: 'Con đường có các chặng và ngôi sao đích — nhấn vào cảm giác đi tiếp từng bài.' },
 ];
 
 function Kep() {
-  // The cat's face: ears, nerd glasses, the half-lidded look, on butter.
+  // The head of Huy's cat drawing on butter, so the logo is the mascot.
+  const clip = useId();
   return (
     <>
-      <rect x="3" y="3" width="58" height="58" rx="18" fill="#f7dd72" stroke={INK} strokeWidth="3" />
-      <path d="M13 49V25L18.5 9L27 18.5Q32 17 37 18.5L45.5 9L51 25V49Q51 55 45 55H19Q13 55 13 49Z" fill="#ffcf94" stroke={INK} strokeWidth="2.8" strokeLinejoin="round" />
-      <path d="M16.5 21l2.6-7 4 5.2zM40.9 19.2l4-5.2 2.6 7z" fill="#f59bb0" />
-      <path d="M28.5 21.5v3.5M32 21v4M35.5 21.5v3.5" stroke="#e98d3c" strokeWidth="2" strokeLinecap="round" />
-      <rect x="15.5" y="28.5" width="14" height="11" rx="3.5" fill="rgba(255,255,255,.55)" />
-      <rect x="34.5" y="28.5" width="14" height="11" rx="3.5" fill="rgba(255,255,255,.55)" />
-      <path d="M19 33h7.5M37.5 33h7.5" stroke={INK} strokeWidth="2.2" strokeLinecap="round" />
-      <circle cx="23" cy="35" r="1.9" fill={INK} />
-      <circle cx="41" cy="35" r="1.9" fill={INK} />
-      <rect x="15.5" y="28.5" width="14" height="11" rx="3.5" fill="none" stroke={INK} strokeWidth="2.4" />
-      <rect x="34.5" y="28.5" width="14" height="11" rx="3.5" fill="none" stroke={INK} strokeWidth="2.4" />
-      <path d="M29.5 33q2.5-2 5 0" stroke={INK} strokeWidth="2.2" fill="none" strokeLinecap="round" />
-      <path d="M30 42h4l-2 2.4z" fill="#f59bb0" stroke={INK} strokeWidth="1.4" strokeLinejoin="round" />
-      <path d="M28.5 46.5q1.8 1.5 3.5-.4q2.5 1.8 5-1.2" stroke={INK} strokeWidth="2" fill="none" strokeLinecap="round" />
-      <path d="M13 43.5l-6-1M13 47l-5.5 1.2M51 43.5l6-1M51 47l5.5 1.2" stroke={INK} strokeWidth="1.8" strokeLinecap="round" />
+      <clipPath id={clip}>
+        <rect x="3" y="3" width="58" height="58" rx="18" />
+      </clipPath>
+      <rect x="3" y="3" width="58" height="58" rx="18" fill="#f7dd72" />
+      <g clipPath={`url(#${clip})`}>
+        <svg x="4" y="8" width="56" height="56" viewBox="18 6 84 84">
+          <CatDrawing />
+        </svg>
+      </g>
+      <rect x="3" y="3" width="58" height="58" rx="18" fill="none" stroke={INK} strokeWidth="3" />
     </>
   );
 }

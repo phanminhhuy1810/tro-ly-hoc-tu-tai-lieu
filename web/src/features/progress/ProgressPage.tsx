@@ -3,11 +3,11 @@ import { api, ensureSession } from '../../api/client';
 import type { Wallet } from '../../api/types';
 import { hrefFor } from '../../app/router';
 import { useApp, useLoad } from '../../app/store';
+import { Art, ArtBadge, type ArtName } from '../../components/Art';
 import { CountUp } from '../../components/CountUp';
 import { Flame } from '../../components/Flame';
-import { Icon, type IconName } from '../../components/Icon';
+import { Icon } from '../../components/Icon';
 import { PageHeader } from '../../components/PageHeader';
-import { Spot } from '../../components/Spot';
 import { LoadingRows, ProblemNotice } from '../../components/StateViews';
 import { describeError } from '../../lib/copy';
 import { activityLevel, describeDay, monthLabels, recentWeeks, studyMinutes, type Dashboard, type Missions } from './activity';
@@ -23,12 +23,12 @@ interface CheckIn {
   week: { date: string; checked: boolean }[];
 }
 
-const ACHIEVEMENTS: { code: string; title: string; how: string; icon: IconName; tone: string }[] = [
-  { code: 'first_session', title: 'Lượt luyện đầu tiên', how: 'Nộp một lượt luyện bất kỳ.', icon: 'star', tone: 'butter' },
-  { code: 'study_day_3', title: '3 ngày không nghỉ', how: 'Có ngày học trọn vẹn 3 ngày liền.', icon: 'fire', tone: 'peach' },
-  { code: 'study_day_7', title: 'Tuần lửa', how: 'Có ngày học trọn vẹn 7 ngày liền.', icon: 'fire', tone: 'pink' },
-  { code: 'five_units', title: 'Năm bài xong', how: 'Hoàn thành 5 bài học.', icon: 'bookOpen', tone: 'sky' },
-  { code: 'course_complete', title: 'Về đích một khóa', how: 'Học xong mọi bài của một khóa.', icon: 'trophy', tone: 'mint' },
+const ACHIEVEMENTS: { code: string; title: string; how: string; art: ArtName; tone: string }[] = [
+  { code: 'first_session', title: 'Lượt luyện đầu tiên', how: 'Nộp một lượt luyện bất kỳ.', art: 'glowing', tone: 'butter' },
+  { code: 'study_day_3', title: '3 ngày không nghỉ', how: 'Có ngày học trọn vẹn 3 ngày liền.', art: 'fire', tone: 'peach' },
+  { code: 'study_day_7', title: 'Tuần lửa', how: 'Có ngày học trọn vẹn 7 ngày liền.', art: 'medal', tone: 'pink' },
+  { code: 'five_units', title: 'Năm bài xong', how: 'Hoàn thành 5 bài học.', art: 'books', tone: 'sky' },
+  { code: 'course_complete', title: 'Về đích một khóa', how: 'Học xong mọi bài của một khóa.', art: 'trophy', tone: 'mint' },
 ];
 const WEEKDAYS = ['T2', '', 'T4', '', 'T6', '', 'CN'];
 const WEEK_SHORT = ['T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'CN'];
@@ -38,11 +38,11 @@ function day(iso: string) {
   return new Intl.DateTimeFormat('vi-VN', { day: 'numeric', month: 'numeric', year: 'numeric' }).format(new Date(iso));
 }
 
-function Tile({ icon, color, value, label, hint, href }: { icon: IconName; color: string; value: ReactNode; label: string; hint?: string; href?: string }) {
+function Tile({ art, color, value, label, hint, href }: { art: ArtName; color: string; value: ReactNode; label: string; hint?: string; href?: string }) {
   const body = (
     <>
       <span className="tile__icon">
-        <Icon name={icon} size={24} />
+        <Art name={art} size={34} />
       </span>
       <span className="tile__text">
         <span className="tile__value">{value}</span>
@@ -207,16 +207,16 @@ export function ProgressPage() {
         title="Tiến độ"
         tone="peach"
         note="Bạn đã đi được bao xa — mỗi ngày học một chút là lửa lại cháy thêm một ngày."
-        art={<Spot glyph="chart" tone="coral" size={92} badge />}
+        art={<ArtBadge name="calculus" size={92} />}
       />
 
       <div className="progress-hero">
         <StreakCard checkIn={checkIn} />
         <div className="tiles" aria-label="Con số chính">
-          <Tile icon="bookOpen" color="butter" value={<CountUp value={done} />} label="Bài đã học xong" />
-          <Tile icon="clock" color="pink" value={minutes >= 60 ? `${Math.floor(minutes / 60)}g ${minutes % 60}p` : `${minutes}p`} label="Thời gian học năm nay" />
-          <Tile icon="calendar" color="sky" value={<CountUp value={dashboard.weekly_streak.active_days} />} label="Ngày học trọn vẹn" />
-          <Tile icon="coin" color="mint" value={<CountUp value={(walletNow ?? wallet)?.available ?? 0} />} label="Coin đang có" hint="Xem lịch sử" href={hrefFor({ name: 'settings', section: 'coin' })} />
+          <Tile art="books" color="butter" value={<CountUp value={done} />} label="Bài đã học xong" />
+          <Tile art="hourglass" color="pink" value={minutes >= 60 ? `${Math.floor(minutes / 60)}g ${minutes % 60}p` : `${minutes}p`} label="Thời gian học năm nay" />
+          <Tile art="calendar" color="sky" value={<CountUp value={dashboard.weekly_streak.active_days} />} label="Ngày học trọn vẹn" />
+          <Tile art="coin" color="mint" value={<CountUp value={(walletNow ?? wallet)?.available ?? 0} />} label="Coin đang có" hint="Xem lịch sử" href={hrefFor({ name: 'settings', section: 'coin' })} />
         </div>
       </div>
 
@@ -287,7 +287,12 @@ export function ProgressPage() {
             return (
               <li key={a.code} className={`achievement achievement--${a.tone}${at ? ' is-earned' : ''}`} style={{ '--i': i } as CSSProperties}>
                 <span className="achievement__icon">
-                  <Icon name={at ? a.icon : 'lock'} size={26} />
+                  <Art name={a.art} size={36} />
+                  {!at && (
+                    <span className="achievement__lock" aria-label="Chưa đạt">
+                      <Icon name="lock" size={12} />
+                    </span>
+                  )}
                 </span>
                 <strong>{a.title}</strong>
                 <span className="achievement__how">{a.how}</span>

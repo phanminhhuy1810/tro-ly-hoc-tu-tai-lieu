@@ -57,8 +57,8 @@ Huy giao “tự quyết định hết, hoàn thiện đi”. Các lựa chọn 
 
 Huy chốt trực tiếp:
 
-- **Linh vật Kẹp là con mèo** theo phác thảo Huy gửi: mèo cam hơi “láo”, đeo kính kiểu mọt sách, có tô màu. Đủ 5 biểu cảm (chào, gợi ý, suy nghĩ, vui, lỗi). Logo và favicon đổi sang mặt mèo (giữ quy tắc logo là linh vật). Tên gọi vẫn là “Kẹp”.
-- **Ảnh bìa khóa là ô màu pastel + biểu tượng** (hướng A trong 3 hướng đưa ra; không dùng ảnh do AI vẽ). App tự chọn theo tên khóa: đúng môn trước, môn rộng sau. Các khóa cùng môn khác màu nhau. Người tạo đổi biểu tượng (≈60 cái) và 8 màu như Notion, hoặc tải ảnh lên. Ảnh bìa đã lưu theo kiểu cũ vẫn đọc được.
+- **Linh vật Kẹp là con mèo** theo phác thảo Huy gửi. Huy chốt qua vài vòng xem thử: mèo **cam dịu**, dáng tròn kiểu quả lê, mắt lim dim “láo láo”, **gọng kính đen dày, phẳng vuông ở trên, bo nhẹ ở dưới**, đuôi mọc từ sau lưng rồi cong lên (không vắt ngang thân như gắn đuôi giả). Huy không chọn bản đồ lại y nét phác thảo, bản có nơ, cũng không chọn màu xám/kem. Đủ 5 biểu cảm (chào, gợi ý, suy nghĩ, vui, lỗi); ảnh đại diện nhỏ trong chat chỉ lấy phần đầu. Logo và favicon là đầu mèo trên nền vàng (giữ quy tắc logo là linh vật). Tên gọi vẫn là “Kẹp”.
+- **Ảnh bìa khóa là ô màu pastel + biểu tượng** (hướng A trong 3 hướng đưa ra; không dùng ảnh do AI vẽ). Biểu tượng là bộ hình 3D **Fluent Emoji** của Microsoft (giấy phép MIT), Huy đồng ý tải: 67 hình, nén WebP 192 px (~380 KB) trong `web/public/art/` kèm file giấy phép. Bộ này dùng chung cho ảnh bìa, biểu tượng bài, thẻ “Cách học khác”, banner tiêu đề, trang trống, ô số liệu và thành tựu ở Tiến độ. App tự chọn theo tên khóa: đúng môn trước, môn rộng sau. Các khóa cùng môn khác màu nhau. Người tạo đổi biểu tượng (≈60 cái) và 8 màu như Notion, hoặc tải ảnh lên. Ảnh bìa đã lưu theo kiểu cũ vẫn đọc được.
 - **Mỗi bài trên lộ trình có biểu tượng riêng**, chọn theo tên bài và không trùng trong khóa. Trạng thái xong/khóa/chưa tạo hiện bằng huy hiệu nhỏ ở góc. Biểu tượng bài cũng có ở đầu trang học và trên thẻ flashcard.
 - **Sổ tay**: chọn màu cho từng ghi chú. Ô viết mới gọn một dòng, bấm vào mới mở; nút màu là chấm màu đậm có dấu tick; nút “Dán vào sổ” chỉ hiện khi đã viết.
 - **Điểm danh tự động** khi có học (nộp lượt luyện, ôn thẻ, hoặc thời gian học), không còn nút bấm. Lịch sử Coin chuyển vào Cài đặt, chỉ mở khi người dùng bấm.
@@ -73,10 +73,6 @@ Claude tự quyết, chờ Huy xem lại:
 - **Chuyển động**: danh sách hiện lần lượt, nút và chip nảy nhẹ, thanh tiến độ chạy đầy, số đếm tăng dần. “Tắt chuyển động” và chế độ giảm chuyển động của máy làm mọi hiệu ứng thành tức thì.
 - **“Kẹp dạy bạn theo kiểu nào?”** (Cài đặt): người học đặt một lần vai của Kẹp (“Bạn sẽ là…”) và điều cần “Luôn nhấn mạnh…”, có gợi ý bấm nhanh. Phần này đi vào mọi câu chat và trợ giúp ở mọi khóa, cùng ghi nhớ riêng của từng khóa. Kẹp vẫn chỉ trả lời theo nguồn. **Chưa áp vào lúc AI soạn bài**: đổi prompt tạo bài cần đo lại chất lượng trước.
 
-Còn chờ Huy:
-
-- **Bộ hình 3D Fluent** (Microsoft, giấy phép MIT, khoảng 70 ảnh, ~3 MB) để thay emoji của máy: đã có bản xem thử, chưa tải vì Huy chưa đồng ý tải.
-- Emoji hiện vẫn vẽ bằng font của máy, nên trên Windows/Android trông khác macOS.
 
 ## 1. Sản phẩm giải quyết việc gì?
 

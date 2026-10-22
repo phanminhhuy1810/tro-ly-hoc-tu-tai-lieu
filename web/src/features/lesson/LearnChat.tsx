@@ -32,7 +32,7 @@ function TutorMessage({ mood = 'hello', wide, children }: { mood?: Mood; wide?: 
   return (
     <div className={`msg msg--tutor${wide ? ' msg--wide' : ''}`}>
       <span className="msg__avatar" aria-hidden="true">
-        <Mascot mood={mood} size={42} />
+        <Mascot mood={mood} size={44} face />
       </span>
       <div className="msg__body">{children}</div>
     </div>

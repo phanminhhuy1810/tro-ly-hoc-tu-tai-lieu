@@ -2,7 +2,8 @@ import { useEffect, useMemo, useRef } from 'react';
 import { Icon, type IconName } from '../../components/Icon';
 import { Mascot } from '../../components/Mascot';
 import { chapterGroups, type PathNode } from '../../lib/path';
-import { emojiOf, lessonIcons } from '../../lib/topicIcons';
+import { Art } from '../../components/Art';
+import { lessonIcons } from '../../lib/topicIcons';
 
 // Duolingo-style path: chunky 3D lesson buttons on a gentle zigzag, a banner
 // per chapter, a speech bubble on the one lesson to do next, Kẹp standing
@@ -176,9 +177,7 @@ export function ProgressPath({
                         title={node.unit.title}
                         onClick={() => onSelect(open ? null : node.unit.id)}
                       >
-                        <span className="path-node__emoji" aria-hidden="true">
-                          {emojiOf(icons[node.index])}
-                        </span>
+                        <Art name={icons[node.index]} size={node.isCurrent ? 46 : 42} className="path-node__art" />
                         {badgeFor(node) && (
                           <span className={`path-node__badge path-node__badge--${node.state}`} aria-hidden="true">
                             <Icon name={badgeFor(node)!} size={14} />

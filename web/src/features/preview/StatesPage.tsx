@@ -3,7 +3,7 @@ import { BRAND_OPTIONS, BrandMark } from '../../components/Brand';
 import { CoinConfirm } from '../../components/CoinConfirm';
 import { Icon } from '../../components/Icon';
 import { Mascot, type Mood } from '../../components/Mascot';
-import { Spot } from '../../components/Spot';
+import { ArtBadge } from '../../components/Art';
 import { EmptyState, LoadingRows, ProblemNotice } from '../../components/StateViews';
 import { describeError, describeJobFailure } from '../../lib/copy';
 import { ApiError } from '../../api/client';
@@ -105,7 +105,7 @@ export function StatesPage() {
 
       <Frame title="Chưa có khóa nào">
         <EmptyState
-          art={<Spot glyph="papers" tone="butter" size={110} badge />}
+          art={<ArtBadge name="sparkles" size={110} />}
           title="Chưa có khóa nào"
           body="Chọn slide, giáo trình hoặc ghi chú của bạn — mình đọc rồi đề xuất lộ trình để bạn duyệt trước khi tạo bài."
           action={<button className="btn btn--primary btn--lg">Chọn tài liệu</button>}

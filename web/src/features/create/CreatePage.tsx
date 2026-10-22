@@ -8,7 +8,7 @@ import { CoinConfirm } from '../../components/CoinConfirm';
 import { Icon } from '../../components/Icon';
 import { PageHeader } from '../../components/PageHeader';
 import { Mascot } from '../../components/Mascot';
-import { Spot } from '../../components/Spot';
+import { ArtBadge } from '../../components/Art';
 import { LoadingRows, ProblemNotice } from '../../components/StateViews';
 import { describeError, describeJobFailure, locatorLabel, type Problem } from '../../lib/copy';
 import { makeTextFix } from '../../lib/text';
@@ -136,7 +136,7 @@ function SourceStep({ onSource }: { onSource: (source: SourceDoc) => void }) {
           void files(event.dataTransfer.files);
         }}
       >
-        <Spot glyph="papers" tone="sky" size={104} />
+        <ArtBadge name="papers" size={104} />
         <p className="title-m">Kéo thả slide, giáo trình hoặc ghi chú vào đây</p>
         <p className="meta">PDF, Word, PowerPoint, văn bản hoặc ảnh chụp · tối đa 50 MB mỗi file · nhiều file sẽ gộp thành một bộ</p>
         <input ref={input} type="file" multiple accept={ACCEPT} hidden onChange={(event) => event.target.files && void files(event.target.files)} />
@@ -489,7 +489,7 @@ export function CreatePage() {
         title="Tạo khóa mới"
         tone="butter"
         note="Đưa slide, giáo trình hay ghi chú vào đây — Kẹp đọc hết rồi gợi ý lộ trình để bạn sửa trước khi học."
-        art={<Spot glyph="papers" tone="butter" size={84} badge />}
+        art={<ArtBadge name="sparkles" size={84} />}
         actions={
           source && (
             <button type="button" className="btn btn--secondary" onClick={restart}>

@@ -6,7 +6,7 @@ import { useLoad } from '../../app/store';
 import { Icon } from '../../components/Icon';
 import { PageHeader } from '../../components/PageHeader';
 import { EmojiTile } from '../../components/EmojiTile';
-import { Spot } from '../../components/Spot';
+import { ArtBadge } from '../../components/Art';
 import { LoadingRows, ProblemNotice } from '../../components/StateViews';
 import { describeError } from '../../lib/copy';
 import { isTerminal, normalizeCode, PHASE_LABEL } from '../../lib/rooms';
@@ -260,7 +260,7 @@ export function RoomsPage({ code, courseId }: { code?: string; courseId?: string
         title="Cùng học"
         tone="mint"
         note="Học với bạn bè: vào khóa người khác chia sẻ, hoặc mở phòng đố vui thi xem ai nhớ bài hơn."
-        art={<Spot glyph="globe" tone="sage" size={88} badge />}
+        art={<ArtBadge name="people" size={88} />}
       >
         <TogetherTabs active="rooms" />
       </PageHeader>

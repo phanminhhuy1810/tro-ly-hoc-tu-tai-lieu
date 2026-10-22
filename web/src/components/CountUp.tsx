@@ -22,7 +22,15 @@ export function CountUp({ value, duration = 800 }: { value: number; duration?: n
       else from.current = value;
     };
     frame = requestAnimationFrame(step);
-    return () => cancelAnimationFrame(frame);
+    // Hidden tabs pause animation frames; the real number must still show.
+    const settle = window.setTimeout(() => {
+      from.current = value;
+      setShown(value);
+    }, duration + 80);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.clearTimeout(settle);
+    };
   }, [value, duration]);
   return <>{shown}</>;
 }

@@ -5,7 +5,7 @@ import { hrefFor, navigate } from '../../app/router';
 import { useApp, useLoad } from '../../app/store';
 import { Icon } from '../../components/Icon';
 import { PageHeader } from '../../components/PageHeader';
-import { Spot } from '../../components/Spot';
+import { ArtBadge } from '../../components/Art';
 import { EmptyState, LoadingRows, ProblemNotice } from '../../components/StateViews';
 import { creatorLabel, ratingText } from '../../lib/community';
 import { describeError } from '../../lib/copy';
@@ -83,7 +83,7 @@ export function CommunityPage({ code }: { code?: string }) {
         title="Cùng học"
         tone="mint"
         note="Học với bạn bè: vào khóa người khác chia sẻ, hoặc mở phòng đố vui thi xem ai nhớ bài hơn."
-        art={<Spot glyph="globe" tone="sage" size={88} badge />}
+        art={<ArtBadge name="people" size={88} />}
       >
         <TogetherTabs active="community" />
       </PageHeader>
@@ -108,7 +108,7 @@ export function CommunityPage({ code }: { code?: string }) {
           {state.data &&
             (items.length === 0 ? (
               <EmptyState
-                art={<Spot glyph="globe" tone="sky" size={110} badge />}
+                art={<ArtBadge name="network" size={110} />}
                 title={query ? 'Không có khóa trùng tên' : 'Chưa có khóa công khai'}
                 body="Khi bạn hoặc người khác đăng khóa công khai, khóa sẽ hiện ở đây để xem trước và tham gia."
                 action={

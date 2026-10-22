@@ -459,22 +459,16 @@
     box-shadow 200ms var(--ease-out),
     filter var(--dur-2);
 }
-.path-node__emoji {
-  font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif;
-  font-size: 32px;
-  line-height: 1;
-  filter: drop-shadow(0 2px 0 rgba(35, 38, 43, 0.22));
+.path-node__art {
+  filter: drop-shadow(0 2px 0 rgba(35, 38, 43, 0.18));
   transition: transform 300ms var(--ease-pop);
 }
-.path-node:hover .path-node__emoji {
+.path-node:hover .path-node__art {
   transform: rotate(-10deg) scale(1.12);
 }
-.path-node.is-current .path-node__emoji {
-  font-size: 36px;
-}
-.path-node--locked .path-node__emoji {
+.path-node--locked .path-node__art {
   filter: grayscale(1);
-  opacity: 0.5;
+  opacity: 0.45;
 }
 /* Done, locked or not made yet: a small sticker on the corner of the lesson. */
 .path-node__badge {
@@ -886,7 +880,7 @@
   flex-wrap: wrap;
 }
 
-/* Subject icon on a pastel tile (covers, lessons). The emoji font is pinned so it stays in colour. */
+/* Subject icon (a 3D picture) on a pastel tile: covers, lessons, the cover picker. */
 .emoji-tile {
   --tile: 56px;
   flex: none;
@@ -899,14 +893,13 @@
   box-shadow:
     inset 0 0 0 1.5px rgba(35, 38, 43, 0.07),
     inset 0 -3px 0 rgba(35, 38, 43, 0.05);
-  font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif;
-  font-size: calc(var(--tile) * 0.52);
-  line-height: 1;
   transition: transform 280ms var(--ease-pop);
 }
-.emoji-tile__glyph {
-  transform: translateY(1px);
-  filter: drop-shadow(0 3px 2px rgba(35, 38, 43, 0.18));
+.emoji-tile__art {
+  width: 66%;
+  height: 66%;
+  object-fit: contain;
+  filter: drop-shadow(0 3px 2px rgba(35, 38, 43, 0.16));
 }
 :is(a, button):hover > .emoji-tile,
 :is(a, button):hover > * > .emoji-tile {

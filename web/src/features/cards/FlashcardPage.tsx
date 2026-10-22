@@ -10,7 +10,8 @@ import { Mascot } from '../../components/Mascot';
 import { RichText } from '../../components/RichText';
 import { EmptyState, LoadingRows, ProblemNotice } from '../../components/StateViews';
 import { describeError } from '../../lib/copy';
-import { emojiOf, lessonIcons } from '../../lib/topicIcons';
+import { Art } from '../../components/Art';
+import { lessonIcons } from '../../lib/topicIcons';
 import { coverOf, useCovers } from '../course/covers';
 import { deckOrder, memoryOf, type CardMemory, type DeckFilter } from './deck';
 
@@ -313,7 +314,7 @@ export function FlashcardPage({ courseId }: { courseId: string }) {
                           <span className="flashcard__tag">
                             {(() => {
                               const index = course.content.units.findIndex((u) => u.id === current.unit_id);
-                              return index >= 0 ? `${emojiOf(icons[index])} ` : '';
+                              return index >= 0 ? <Art name={icons[index]} size={18} /> : null;
                             })()}
                             {current.kind === 'personal' ? 'Thẻ của bạn' : 'Thẻ của bài'}
                           </span>
