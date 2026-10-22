@@ -41,7 +41,7 @@
   box-shadow: 0 1px 0 var(--butter-700);
 }
 .btn--secondary {
-  background: var(--surface);
+  background: var(--control);
   border-color: var(--line-strong);
   color: var(--ink);
   box-shadow: 0 2px 0 var(--line-strong);
@@ -65,7 +65,7 @@
   color: var(--ink);
 }
 .btn--danger {
-  background: var(--surface);
+  background: var(--control);
   border-color: var(--coral-400);
   color: var(--coral-600);
   box-shadow: 0 2px 0 var(--coral-100);
@@ -102,7 +102,7 @@
   padding: 0 13px;
   border-radius: 999px;
   border: 1px solid var(--line);
-  background: var(--surface);
+  background: var(--control);
   color: var(--ink-2);
   font-size: 13.5px;
   font-weight: 700;
@@ -198,7 +198,7 @@
   padding: 10px 14px;
   border-radius: 12px;
   border: 1.5px solid var(--line-strong);
-  background: var(--surface);
+  background: var(--control);
   transition:
     border-color var(--dur-2),
     box-shadow var(--dur-2);

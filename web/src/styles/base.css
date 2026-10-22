@@ -120,7 +120,7 @@ svg {
 
 /* Squared paper on a white sheet (help panel, chat list). */
 .paper-grid {
-  background-color: var(--surface);
+  background-color: var(--paper);
   background-image: var(--grid);
   background-size: var(--grid-size) var(--grid-size);
 }

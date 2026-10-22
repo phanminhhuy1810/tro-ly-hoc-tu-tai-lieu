@@ -173,7 +173,7 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background: var(--surface);
+  background: var(--control);
   border: 1.5px solid var(--line-strong);
   box-shadow: var(--shadow-1);
   color: var(--ink-2);
@@ -814,7 +814,7 @@ a.mode-card:hover {
   height: 20px;
   border-radius: 50%;
   border: 2px solid var(--line-strong);
-  background: var(--surface);
+  background: var(--control);
   color: #fff;
 }
 .stage--done {

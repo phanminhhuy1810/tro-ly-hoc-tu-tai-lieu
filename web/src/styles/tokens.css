@@ -1,5 +1,6 @@
 /* One source of truth for colour, type, radius and motion.
-   Palette: warm paper, ink, sage for structure/selection, butter for the one
+   Palette: white squared page, cream section frames and choice boxes, white
+   inputs and buttons, ink, sage for structure/selection, butter for the one
    primary action per screen, coral only for mistakes. No purple. */
 
 @font-face {
@@ -22,15 +23,17 @@
 }
 
 :root {
-  --paper: #fbf9f4;
-  --surface: #ffffff;
-  --surface-2: #f4f2ec;
-  --surface-3: #ebe8df;
+  /* Page = white; sections, cards and answer options = cream; fields and buttons stay white. */
+  --paper: #ffffff;
+  --surface: #fff8eb;
+  --surface-2: #f8eedb;
+  --surface-3: #efe3c9;
+  --control: #ffffff;
   --ink: #23262b;
   --ink-2: #4a4f57;
   --ink-3: #767b83;
-  --line: #e6e2d7;
-  --line-strong: #d4cfc1;
+  --line: #eee2c9;
+  --line-strong: #dccdae;
 
   --sage-50: #f2f6eb;
   --sage-100: #e3edd4;
