@@ -183,6 +183,8 @@ export function LearnChat({
   const { toast, wallet } = useApp();
   const sections = unit.data?.sections ?? [];
   const ideas = unit.data?.mindmap ?? [];
+  // The key-ideas map can be opened from the greeting too, as a preview before reading.
+  const [preview, setPreview] = useState(false);
   const chat = useSectionChat(course, unit, revealed);
   const [target, setTarget] = useState(revealed - 1);
   const [draft, setDraft] = useState('');
@@ -294,6 +296,14 @@ export function LearnChat({
               );
             })}
           </ol>
+          {ideas.length > 0 && !recap && (
+            <div className="quick-replies quick-replies--inline">
+              <button type="button" className="chip" aria-expanded={preview} onClick={() => setPreview((open) => !open)}>
+                <Icon name={preview ? 'up' : 'layers'} size={16} /> {preview ? 'Ẩn sơ đồ ý chính' : 'Xem sơ đồ ý chính'}
+              </button>
+            </div>
+          )}
+          {preview && !recap && <Mindmap title={unit.title} ideas={ideas} fix={fix} />}
         </TutorMessage>
 
         {sections.slice(0, revealed).map((section, index) => {
