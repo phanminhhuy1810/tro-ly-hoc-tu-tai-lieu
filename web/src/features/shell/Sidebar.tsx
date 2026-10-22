@@ -15,6 +15,12 @@ export function Sidebar({ route }: { route: Route }) {
   const items: NavItem[] = [
     { label: 'Học tiếp', icon: 'home', href: '#/', active: route.name === 'home' || route.name === 'course' || route.name === 'practice' },
     { label: 'Thư viện', icon: 'library', href: hrefFor({ name: 'library' }), active: route.name === 'library' },
+    {
+      label: 'Cùng học',
+      icon: 'users',
+      href: hrefFor({ name: 'community' }),
+      active: route.name === 'community' || route.name === 'share' || route.name === 'rooms' || route.name === 'room',
+    },
     { label: 'Sổ tay', icon: 'notebook', href: hrefFor({ name: 'notebook' }), active: route.name === 'notebook' },
     { label: 'Tiến độ', icon: 'chart', href: hrefFor({ name: 'progress' }), active: route.name === 'progress' },
     { label: 'Cài đặt', icon: 'settings', href: hrefFor({ name: 'settings' }), active: route.name === 'settings' },

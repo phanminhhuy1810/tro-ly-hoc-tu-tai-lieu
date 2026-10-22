@@ -5,6 +5,9 @@ import { Icon } from './components/Icon';
 import { Mascot } from './components/Mascot';
 import { EmptyState } from './components/StateViews';
 import { FlashcardPage } from './features/cards/FlashcardPage';
+import { CommunityCoursePage } from './features/community/CommunityCoursePage';
+import { CommunityPage } from './features/community/CommunityPage';
+import { SharePage } from './features/community/SharePage';
 import { ChatDock } from './features/chat/ChatDock';
 import { CoursePage } from './features/course/CoursePage';
 import { CreatePage } from './features/create/CreatePage';
@@ -16,10 +19,12 @@ import { PracticePage } from './features/practice/PracticePage';
 import { PracticeRunner } from './features/practice/PracticeRunner';
 import { StatesPage } from './features/preview/StatesPage';
 import { ProgressPage } from './features/progress/ProgressPage';
+import { RoomPage } from './features/rooms/RoomPage';
+import { RoomsPage } from './features/rooms/RoomsPage';
 import { SettingsPage } from './features/settings/SettingsPage';
 import { Sidebar } from './features/shell/Sidebar';
 
-const NO_CONTEXT = new Set(['home', 'states', 'create', 'library', 'notebook', 'progress', 'settings']);
+const NO_CONTEXT = new Set(['home', 'states', 'create', 'library', 'notebook', 'progress', 'settings', 'community', 'share', 'rooms']);
 
 export function App() {
   const route = useRoute();
@@ -50,6 +55,11 @@ export function App() {
         {route.name === 'notebook' && <NotebookPage />}
         {route.name === 'progress' && <ProgressPage />}
         {route.name === 'settings' && <SettingsPage />}
+        {route.name === 'community' &&
+          (route.courseId ? <CommunityCoursePage key={route.courseId} courseId={route.courseId} /> : <CommunityPage key={route.code ?? ''} code={route.code} />)}
+        {route.name === 'share' && <SharePage key={route.courseId} courseId={route.courseId} />}
+        {route.name === 'rooms' && <RoomsPage key={`${route.code ?? ''}/${route.courseId ?? ''}`} code={route.code} courseId={route.courseId} />}
+        {route.name === 'room' && <RoomPage key={route.roomId} roomId={route.roomId} />}
         {route.name === 'states' && <StatesPage />}
         {route.name === 'missing' && (
           <EmptyState
@@ -64,7 +74,7 @@ export function App() {
           />
         )}
       </div>
-      {/* Lessons and practice rounds have their own chat beside the content; a deck keeps the general chat. */}
+      {/* Lessons and practice rounds have their own chat beside the content; a deck keeps the general chat; a quiz room has none until it ends. */}
       {(!focus || route.name === 'cards') && <ChatDock />}
       <div className="toasts" aria-live="polite">
         {toasts.map((t) => (

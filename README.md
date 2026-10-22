@@ -27,13 +27,13 @@ Terminal khác:
 ./run.sh
 ```
 
-Mở `http://127.0.0.1:8770/` để dùng giao diện mới (`web/`, React + TypeScript; lần đầu `./run.sh` tự `npm ci` và build nếu máy có Node). Mọi màn học đã làm lại trong `web/`; bản cũ ở `http://127.0.0.1:8770/legacy/` chỉ còn dùng cho phòng đố vui và chia sẻ cộng đồng. Khi sửa giao diện, chạy thêm `cd web && npm run dev` rồi mở `http://127.0.0.1:5173/` để thấy thay đổi ngay; sau đó `npm run build` để `./run.sh` phục vụ bản mới. Lựa chọn model theo profile và cách nạp cấu hình server riêng được giải thích trong bản backend. Không chạy hai backend cùng DB. `run-kaggle.sh` chỉ nạp cấu hình riêng đã có, không bật phiên Kaggle.
+Mở `http://127.0.0.1:8770/` để dùng giao diện mới (`web/`, React + TypeScript; lần đầu `./run.sh` tự `npm ci` và build nếu máy có Node). Mọi màn đã làm lại trong `web/`, gồm cả Cùng học (khóa cộng đồng, chia sẻ khóa, phòng đố vui); bản cũ ở `http://127.0.0.1:8770/legacy/` chỉ còn để đối chiếu. Khi sửa giao diện, chạy thêm `cd web && npm run dev` rồi mở `http://127.0.0.1:5173/` để thấy thay đổi ngay; sau đó `npm run build` để `./run.sh` phục vụ bản mới. Lựa chọn model theo profile và cách nạp cấu hình server riêng được giải thích trong bản backend. Không chạy hai backend cùng DB. `run-kaggle.sh` chỉ nạp cấu hình riêng đã có, không bật phiên Kaggle.
 
 ```sh
 ./check.sh
 ```
 
-Ngày 22/10/2026 (sau khi làm lại đủ các màn trong `web/`: Flashcard, Ôn luyện, Thư viện, Sổ tay, Tiến độ, Cài đặt): **428 kiểm thử backend, 75 kiểm thử frontend cũ và 58 kiểm thử `web/` đạt**. Mốc trước đó (sau khi dọn thư mục): 410 backend và 75 frontend; xem [kết quả](backend/evidence/project-cleanup-tests.txt). Đủ API để frontend tiếp nhận, **chưa nghiệm thu toàn backend**: F18 (lưu ý mâu thuẫn nguồn), chất lượng AI/OCR, QA mindmap trên runtime và thử người dùng còn mở. Nhóm chưa thử, 0 người độc lập. Số test không thể hiện độ chính xác AI.
+Ngày 22/10/2026 (sau khi thêm Cùng học: khóa cộng đồng, chia sẻ khóa, phòng đố vui): **430 kiểm thử backend, 75 kiểm thử frontend cũ và 69 kiểm thử `web/` đạt**. Mốc trước đó (sau khi dọn thư mục): 410 backend và 75 frontend; xem [kết quả](backend/evidence/project-cleanup-tests.txt). Đủ API để frontend tiếp nhận, **chưa nghiệm thu toàn backend**: F18 (lưu ý mâu thuẫn nguồn), chất lượng AI/OCR, QA mindmap trên runtime và thử người dùng còn mở. Nhóm chưa thử, 0 người độc lập. Số test không thể hiện độ chính xác AI.
 
 ## Thư mục nào để làm gì?
 
@@ -57,7 +57,7 @@ TDTT/
     │       ├── api/                         # gọi backend, kiểu dữ liệu
     │       ├── features/                    # từng màn: home, course, lesson, cards,
     │       │                                #   practice, library, notebook, progress,
-    │       │                                #   settings, create, chat
+    │       │                                #   settings, create, chat, community, rooms
     │       ├── components/, lib/            # thành phần dùng chung, hàm thuần có test
     │       └── styles/                      # CSS theo nhóm màn
     ├── frontend/                            # giao diện cũ, phục vụ ở /legacy/
@@ -72,9 +72,9 @@ TDTT/
     └── sources/                             # Word của thầy trong bộ nộp
 ```
 
-Backend chia module theo chức năng, bảng chỉ đường nằm trong bản backend. Giao diện mới nằm trong `web/src/`: bắt đầu ở `App.tsx` (chọn màn theo route) và `app/router.ts` (địa chỉ `#/khoa/…`, `#/hoc/…`, `#/the/…`, `#/on-luyen/…`, `#/thu-vien`, `#/so-tay`, `#/tien-do`, `#/cai-dat`); mỗi màn là một thư mục trong `features/`. Không mở `.venv/` hoặc `runtime/` để tìm code giao diện.
+Backend chia module theo chức năng, bảng chỉ đường nằm trong bản backend. Giao diện mới nằm trong `web/src/`: bắt đầu ở `App.tsx` (chọn màn theo route) và `app/router.ts` (địa chỉ `#/khoa/…`, `#/hoc/…`, `#/the/…`, `#/on-luyen/…`, `#/thu-vien`, `#/so-tay`, `#/tien-do`, `#/cai-dat`, `#/cong-dong`, `#/chia-se/…`, `#/phong/…`); mỗi màn là một thư mục trong `features/`. Không mở `.venv/` hoặc `runtime/` để tìm code giao diện.
 
-Giao diện cũ (`frontend/`) bắt đầu ở `scripts/app.js` (điều hướng), `scripts/live.js` (nối API); các file `*-views.js` dựng màn hình. Phòng đố vui và chia sẻ cộng đồng vẫn dùng bản này; không xóa theo tên khi chưa làm lại hai màn đó.
+Giao diện cũ (`frontend/`) bắt đầu ở `scripts/app.js` (điều hướng), `scripts/live.js` (nối API); các file `*-views.js` dựng màn hình. Mọi màn đã có trong `web/`; bản cũ chỉ còn để đối chiếu, chưa xóa khi Huy chưa đồng ý.
 
 Các phần giữ lại:
 

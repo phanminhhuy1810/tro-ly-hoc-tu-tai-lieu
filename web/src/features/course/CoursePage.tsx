@@ -228,6 +228,28 @@ export function CoursePage({ courseId }: { courseId: string }) {
               </div>
             )}
           </section>
+
+          <section className="modes" aria-label="Cùng học">
+            <h2 className="title-m">Cùng học</h2>
+            <a className="mode-card" href={hrefFor({ name: 'rooms', courseId: course.id })}>
+              <Spot glyph="pencil" tone="butter" size={52} />
+              <span>
+                <strong>Phòng đố vui</strong>
+                <span className="meta">Thi cùng bạn bè bằng bộ câu của khóa</span>
+              </span>
+              <Icon name="arrowRight" size={18} />
+            </a>
+            {creator && (
+              <a className="mode-card" href={hrefFor({ name: 'share', courseId: course.id })}>
+                <Spot glyph="globe" tone="sage" size={52} />
+                <span>
+                  <strong>Chia sẻ khóa</strong>
+                  <span className="meta">Giữ riêng, gửi mã mời hoặc đăng công khai</span>
+                </span>
+                <Icon name="arrowRight" size={18} />
+              </a>
+            )}
+          </section>
         </aside>
       </div>
 

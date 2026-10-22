@@ -280,7 +280,7 @@ Nhiệm vụ/thành tựu phát từ hành vi server; lặp cùng bank/toggle th
 
 Publication-preview cho creator duyệt quyền material và nguồn/file gốc trước apply. Member có progress/chat/notes riêng. Private thu hồi member/invite theo hợp đồng; không xóa old attempts/notes riêng.
 
-Report/tim/rating kiểm quyền và binding câu/bài; report không tự sửa bank. Frontend route mở được không chứng minh màn cộng đồng đã nối hết API thật.
+Report/tim/rating kiểm quyền và binding câu/bài; report không tự sửa bank. Frontend `web/` đã nối các API này (22/10/2026, thử trên bản sao với 2 người dùng); chưa có thử người dùng thật.
 
 Phòng dùng bank câu fixed hợp lệ từ bài được mở; không gọi AI để tạo phòng/chấm. Bank/revision pinned, guest chỉ biết phòng không được file gốc. Tự luận không đưa vào room fixed scoring.
 
@@ -611,6 +611,14 @@ Các thay đổi đi kèm frontend mới `web/` (React). Đã thử trên bản 
 - **Giữ phạm vi từng bài** (`question_generation.lesson_instruction`): mục tiêu/ưu tiên/quy tắc của cả khóa chỉ áp dụng cho phần có trong bài; không giảng trước chủ đề của bài khác. Frontend mới không gửi `chapter_priorities` khi tạo phác thảo từ lộ trình mà lưu phần trọng tâm vào ghi nhớ khóa. Prompt `lesson` đổi thành `20261022-unit-scoped-course-preferences-v27`. Thử lại trên bản sao (Gemma 4 12B, khóa IPv4, ~1,5 phút): Bài 2 “Cấp phát và Phân loại Classfull (phần 1)” chỉ trích các đoạn 9–13 và 15–18 (cấp phát tĩnh/động, lớp A–E, quy tắc Net Addr/Broadcast, công thức 2^m−2; đoạn 18 vốn thuộc phần 2 được chọn làm nguồn hỗ trợ), không nhắc Classless/subnet mask như Bài 1 trước khi sửa. Một lần chạy, chưa phải phép đo có hệ thống.
 - Gemma vẫn có lúc chèn nhãn nguồn kỹ thuật (“[R1]”) vào lời chat dù prompt cấm. Dữ liệu lưu giữ nguyên; giao diện `web/` bỏ nhãn này khi hiển thị lời AI.
 - Kiểm thử mới: `test_pdf_text`, `test_course_memory`, `test_blueprint`, `test_covers`; `test_source_library` cập nhật schema 19.
+
+### Cùng học trong `web/` — 22/10/2026
+
+- `GET /api/courses/{id}/publication` (chỉ người tạo): quyền hiện tại (`visibility`, mặc định `private`), tên file gốc đang chia sẻ, số người học đang hoạt động, số mã mời, số báo lỗi mở, tim và điểm trung bình. Màn chia sẻ dựa vào đây thay vì đoán từ bản xem trước.
+- `GET /api/community/{id}` thêm `me` {`role`: creator/learner/null, `liked`, `rating`}: chỉ quan hệ của người đang xem; phản hồi của người khác vẫn chỉ ở dạng tổng.
+- Snapshot phòng thêm `seconds_per_question` và `own_result` {`correct`, `points`}; `own_result` chỉ có khi câu đã đóng, cùng lúc với lời giải, nên câu đang mở vẫn không lộ đúng/sai.
+- Kiểm thử mới: `test_creator_reads_current_sharing_and_viewer_sees_only_own_relation`, `test_own_result_is_revealed_with_the_solution_not_while_the_question_is_open`. [Snapshot API](backend/frontend-openapi.json) được tạo lại từ app hiện tại (132 → 140 đường dẫn, gồm cả ghi nhớ khóa, lộ trình toàn tài liệu và ảnh bìa của đợt trước).
+- Đã thử trên bản sao dữ liệu với 2 người dùng (2 trình duyệt) và Gemma 4 12B cho phần hỏi sau phòng; chưa thử phòng 3–5 người thật.
 
 ## Phụ lục API: toàn bộ điểm nối trong snapshot hiện hành
 

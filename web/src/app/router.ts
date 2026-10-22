@@ -14,6 +14,10 @@ export type Route =
   | { name: 'notebook' }
   | { name: 'progress' }
   | { name: 'settings' }
+  | { name: 'community'; courseId?: string; code?: string }
+  | { name: 'share'; courseId: string }
+  | { name: 'rooms'; code?: string; courseId?: string }
+  | { name: 'room'; roomId: string }
   | { name: 'states' }
   | { name: 'missing' };
 
@@ -30,6 +34,13 @@ export function parseRoute(hash: string): Route {
   if (parts[0] === 'so-tay') return { name: 'notebook' };
   if (parts[0] === 'tien-do') return { name: 'progress' };
   if (parts[0] === 'cai-dat') return { name: 'settings' };
+  if (parts[0] === 'cong-dong' && parts[1] === 'ma') return { name: 'community', code: parts[2] };
+  if (parts[0] === 'cong-dong') return { name: 'community', courseId: parts[1] };
+  if (parts[0] === 'chia-se' && parts[1]) return { name: 'share', courseId: parts[1] };
+  if (parts[0] === 'phong' && parts[1] === 'vao') return { name: 'rooms', code: parts[2] };
+  if (parts[0] === 'phong' && parts[1] === 'tao') return { name: 'rooms', courseId: parts[2] };
+  if (parts[0] === 'phong' && parts[1]) return { name: 'room', roomId: parts[1] };
+  if (parts[0] === 'phong') return { name: 'rooms' };
   if (parts[0] === 'mau-trang-thai') return { name: 'states' };
   return { name: 'missing' };
 }
@@ -56,6 +67,16 @@ export function hrefFor(route: Route): string {
       return '#/tien-do';
     case 'settings':
       return '#/cai-dat';
+    case 'community':
+      if (route.code) return `#/cong-dong/ma/${encodeURIComponent(route.code)}`;
+      return `#/cong-dong${route.courseId ? `/${encodeURIComponent(route.courseId)}` : ''}`;
+    case 'share':
+      return `#/chia-se/${encodeURIComponent(route.courseId)}`;
+    case 'rooms':
+      if (route.code) return `#/phong/vao/${encodeURIComponent(route.code)}`;
+      return route.courseId ? `#/phong/tao/${encodeURIComponent(route.courseId)}` : '#/phong';
+    case 'room':
+      return `#/phong/${encodeURIComponent(route.roomId)}`;
     case 'states':
       return '#/mau-trang-thai';
     default:
@@ -63,9 +84,15 @@ export function hrefFor(route: Route): string {
   }
 }
 
-/** Screens that take the whole window (no sidebar): a lesson, a card deck, a running practice round. */
+/** Screens that take the whole window (no sidebar): a lesson, a card deck, a running practice round, a quiz room. */
 export function isFocus(route: Route): boolean {
-  return route.name === 'lesson' || route.name === 'cards' || (route.name === 'practice' && Boolean(route.sessionId));
+  return route.name === 'lesson' || route.name === 'cards' || route.name === 'room' || (route.name === 'practice' && Boolean(route.sessionId));
+}
+
+/** Room invites from the old screens look like /?room_code=ABCD2345#rooms; open them on the new join screen. */
+export function upgradeLegacyLink() {
+  const code = new URLSearchParams(window.location.search).get('room_code');
+  if (code) window.history.replaceState(null, '', `${window.location.pathname}${hrefFor({ name: 'rooms', code })}`);
 }
 
 export function navigate(route: Route) {

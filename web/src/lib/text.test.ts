@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { makeTextFix, respace, stripRefLabels, tidyBullets, vocabularyFrom } from './text';
+import { fold, makeTextFix, respace, stripRefLabels, tidyBullets, vocabularyFrom } from './text';
 
 // Real case: a cloze prompt quoted from a slide whose PDF text lost its spaces.
 const PROMPT = '“§Địachỉlogic •do ngườidùngấnđịnh •VD: ____”';
@@ -56,5 +56,12 @@ describe('stripRefLabels', () => {
 
   it('keeps other bracketed text', () => {
     expect(stripRefLabels('Tập [R] và đoạn [Ref 2]')).toBe('Tập [R] và đoạn [Ref 2]');
+  });
+});
+
+describe('fold', () => {
+  it('matches Vietnamese text typed without accents, including Đ', () => {
+    expect(fold('Địa chỉ IP và Chia Subnet')).toBe('dia chi ip va chia subnet');
+    expect(fold('Địa chỉ').includes(fold('dia'))).toBe(true);
   });
 });

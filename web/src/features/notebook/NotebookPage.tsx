@@ -7,15 +7,13 @@ import { RichText } from '../../components/RichText';
 import { Spot } from '../../components/Spot';
 import { EmptyState, LoadingRows, ProblemNotice } from '../../components/StateViews';
 import { describeError } from '../../lib/copy';
-import { makeTextFix, stripRefLabels } from '../../lib/text';
+import { fold, makeTextFix, stripRefLabels } from '../../lib/text';
 
 const LABEL: Record<string, string> = { ai: 'Kẹp giải thích', user: 'Của bạn', teacher: 'Giáo viên' };
 
 function when(iso: string) {
   return new Intl.DateTimeFormat('vi-VN', { day: 'numeric', month: 'numeric', year: 'numeric', hour: '2-digit', minute: '2-digit' }).format(new Date(iso));
 }
-
-const fold = (text: string) => text.normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/đ/g, 'd').toLowerCase();
 
 /**
  * Sổ tay: notes the learner writes and answers saved from Kẹp ("Lưu vào sổ

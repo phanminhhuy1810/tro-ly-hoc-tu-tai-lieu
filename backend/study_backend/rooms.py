@@ -183,22 +183,25 @@ class RoomStore:
 
     def snapshot(self, db, room, member):
         bank = json.loads(room['bank_json'])
+        settings = json.loads(room['settings_json'])
         current = bank[room['current_index']] if room['current_index'] >= 0 else None
-        value = {'id': room['id'], 'course_revision': room['course_revision'], 'title': json.loads(room['settings_json'])['title'],
+        value = {'id': room['id'], 'course_revision': room['course_revision'], 'title': settings['title'],
                  'phase': room['phase'], 'event_index': room['event_index'], 'question_index': room['current_index'],
-                 'question_event_index': room['question_event_index'],
+                 'question_event_index': room['question_event_index'], 'seconds_per_question': settings['seconds_per_question'],
                  'question_count': len(bank), 'closed_count': room['closed_count'], 'deadline': iso(room['deadline']),
                  'server_time': iso(self.now()), 'expires_at': iso(room['expires_at']), 'end_reason': room['end_reason'],
-                 'policy': json.loads(room['settings_json'])['policy'], 'scoreboard': self.scoreboard(db, room),
+                 'policy': settings['policy'], 'scoreboard': self.scoreboard(db, room),
                  'me': {'member_id': member['id'], 'state': member['state'], 'is_host': member['user_id'] == room['creator_id']},
-                 'question': None, 'own_answer': None, 'solution': None, 'reference_warning': self.warning(db, room, current) if current else None,
+                 'question': None, 'own_answer': None, 'own_result': None, 'solution': None, 'reference_warning': self.warning(db, room, current) if current else None,
                  'ai_help_available': room['phase'] in TERMINAL and room['closed_count'] > 0}
         if current and (member['state'] == 'joined' or room['current_index'] < room['closed_count']):
             value['question'] = public_question(current)
-            answer = db.execute('SELECT answer_json FROM quiz_answers WHERE room_id=? AND user_id=? AND question_index=?', (room['id'], member['user_id'], room['current_index'])).fetchone()
-            value['own_answer'] = json.loads(answer[0]) if answer else None
+            answer = db.execute('SELECT answer_json,correct,points FROM quiz_answers WHERE room_id=? AND user_id=? AND question_index=?', (room['id'], member['user_id'], room['current_index'])).fetchone()
+            value['own_answer'] = json.loads(answer['answer_json']) if answer else None
             if room['current_index'] < room['closed_count']:
                 value['solution'] = {k: current[k] for k in ['answer', 'explanation', 'source_refs']}
+                # Correctness only once the question is closed, like the solution itself.
+                if answer: value['own_result'] = {'correct': bool(answer['correct']), 'points': answer['points']}
         return value
 
     def intent(self, db, actor, request, operation, payload):

@@ -126,6 +126,25 @@ def register_community(app, store, database, course_snapshot, owned, user, econo
             db.execute("UPDATE publication_proposals SET status='applied' WHERE id=?",(publication_id,))
             return {'course_id':course['id'],'visibility':settings['visibility'],'original_source_ids':settings['source_ids'],'revoked_members':revoked,'coin_for_publishing':0}
 
+    @app.get('/api/courses/{course_id}/publication')
+    def publication(course_id: str, owner=Depends(user)):
+        """What the creator currently shares, so a share screen never guesses from a stale preview."""
+        with database.connection() as db:
+            owned(db,'courses',course_id,owner)
+            row=db.execute('SELECT visibility,source_ids_json,updated_at FROM course_publications WHERE course_id=?',(course_id,)).fetchone()
+            originals=[]
+            for source_id in json.loads(row['source_ids_json']) if row else []:
+                source=db.execute('SELECT metadata_json FROM sources WHERE id=?',(source_id,)).fetchone()
+                if source: originals.append(json.loads(source[0])['name'])
+            count=lambda sql:db.execute(sql,(course_id,)).fetchone()[0]
+            summary=db.execute('SELECT sum(liked),avg(rating),count(rating) FROM community_feedback WHERE course_id=?',(course_id,)).fetchone()
+            return {'course_id':course_id,'visibility':row['visibility'] if row else 'private','originals':originals,
+                    'updated_at':row['updated_at'] if row else None,
+                    'active_members':count("SELECT count(*) FROM course_members WHERE course_id=? AND status='active'"),
+                    'invite_codes':count('SELECT count(*) FROM course_invites WHERE course_id=?'),
+                    'open_reports':count("SELECT count(*) FROM community_reports WHERE course_id=? AND status='open'"),
+                    'likes':summary[0] or 0,'rating':round(summary[1],2) if summary[1] is not None else None,'rating_count':summary[2]}
+
     @app.post('/api/courses/{course_id}/invite')
     def invite(course_id: str, owner=Depends(user)):
         with database.connection(write=True) as db:
@@ -157,7 +176,14 @@ def register_community(app, store, database, course_snapshot, owned, user, econo
 
     @app.get('/api/community/{course_id}')
     def overview(course_id: str, owner=Depends(user)):
-        with database.connection() as db:return store.overview(db,course_id)
+        with database.connection() as db:
+            value=store.overview(db,course_id)
+            creator=db.execute('SELECT owner_id FROM courses WHERE id=?',(course_id,)).fetchone()[0]
+            member=db.execute("SELECT 1 FROM course_members WHERE course_id=? AND user_id=? AND status='active'",(course_id,owner)).fetchone()
+            mine=db.execute('SELECT liked,rating FROM community_feedback WHERE course_id=? AND user_id=?',(course_id,owner)).fetchone()
+            # Only the viewer's own relation to the course; other people's feedback stays aggregated.
+            return {**value,'me':{'role':'creator' if creator==owner else 'learner' if member else None,
+                                  'liked':bool(mine['liked']) if mine else False,'rating':mine['rating'] if mine else None}}
 
     @app.put('/api/community/{course_id}/feedback')
     def feedback(course_id: str, body: Feedback, owner=Depends(user)):

@@ -31,6 +31,7 @@ Huy chọn **dựng lại frontend** (hướng A) bằng Vite + React + TypeScri
 - **Cây tiến trình kiểu Duolingo**: nút tròn 3D lượn zigzag, băng tên chương, bong bóng “BẮT ĐẦU/HỌC TIẾP/TẠO BÀI” trên bài cần làm, Kẹp đứng cạnh, rương “Ôn câu sai” cuối đường; tên bài nằm trong khung bật lên và mục lục bên phải.
 - **Tạo khóa**: trước khi tạo, AI đọc hết tài liệu rồi đề xuất chương/bài, phần nên tập trung, cách ôn, quy tắc khi soạn bài, ngôn ngữ (Việt giữ thuật ngữ Anh/Anh/theo tài liệu) và thuật ngữ giữ nguyên. Người học sửa được tất cả (đổi tên, chuyển, gộp, tách, bỏ bài có báo phần bị bỏ) rồi mới tạo khóa. Từng bài vẫn tạo khi mở trên lộ trình, sau khi AI đọc toàn bộ phạm vi.
 - **AI nhớ ngữ cảnh của khóa**: mỗi khóa có “Kẹp nhớ gì về bạn” gồm ghi chú người học tự viết, mục tiêu/quy tắc của khóa, câu làm sai gần đây và tóm tắt AI viết sau khi đọc toàn bộ tài liệu; mọi câu hỏi trong khóa đều kèm phần nhớ này.
+- **Màu (đang thử)**: Huy không thích nền kem — nền trang chuyển sang trắng có lưới caro; khung section, thẻ và ô lựa chọn dùng màu kem; ô nhập và nút giữ trắng. Đổi trong `web/src/styles/tokens.css` (`--paper`, `--surface`, `--control`).
 - **Ảnh**: model văn bản trên máy không vẽ được ảnh. Ảnh bìa dùng bộ hình vẽ sẵn (tự chọn theo tên khóa, đổi được) hoặc ảnh người tạo tải lên; sơ đồ ý chính do app vẽ từ ý AI viết. Tạo ảnh bằng AI cần tải thêm model ảnh — chưa làm khi Huy chưa đồng ý tải.
 
 Trạng thái: các mục trên đã có trong `web/` và đã thử trên **bản sao dữ liệu** với AI cục bộ; chưa thử với người dùng khác. Lỗi chữ dính trong PDF (“Địachỉlogic”) đã sửa ở khâu đọc tài liệu mới; bài tạo từ bản đọc cũ chỉ được sửa phần hiển thị.
@@ -39,7 +40,7 @@ Trạng thái: các mục trên đã có trong `web/` và đã thử trên **b�
 
 Huy giao “tự quyết định hết, hoàn thiện đi”. Các lựa chọn dưới đây do Claude đưa ra, **chờ Huy xem lại**, không phải Huy đã chốt từng điểm:
 
-- Làm lại trong `web/` mọi màn còn ở bản cũ: **Flashcard** (`#/the/…`), **Ôn luyện** (`#/on-luyen/…`), **Thư viện** (`#/thu-vien`: khóa, tài liệu, thùng rác), **Sổ tay** (`#/so-tay`), **Tiến độ** (`#/tien-do`: dashboard, nhiệm vụ, thành tựu, Coin, điểm danh) và **Cài đặt** (`#/cai-dat`: chọn model, chuyển động, giá Coin). Sidebar chỉ còn mục của giao diện mới; `/legacy/` giữ phòng đố vui và chia sẻ cộng đồng, có lối vào từ Cài đặt.
+- Làm lại trong `web/` mọi màn còn ở bản cũ: **Flashcard** (`#/the/…`), **Ôn luyện** (`#/on-luyen/…`), **Thư viện** (`#/thu-vien`: khóa, tài liệu, thùng rác), **Sổ tay** (`#/so-tay`), **Tiến độ** (`#/tien-do`: dashboard, nhiệm vụ, thành tựu, Coin, điểm danh) và **Cài đặt** (`#/cai-dat`: chọn model, chuyển động, giá Coin). Sidebar chỉ còn mục của giao diện mới. Sau đó, theo yêu cầu của Huy, làm tiếp **Cùng học** (khóa cộng đồng, chia sẻ khóa, phòng đố vui); `/legacy/` chỉ còn để đối chiếu.
 - Flashcard chỉ có tự đánh giá Nhớ rồi/Chưa nhớ và vòng “Chưa nhớ trước”; **không** thêm lịch giãn cách (quy tắc 15).
 - Ôn luyện có hai kiểu như backend: **Luyện tập** (chấm từng câu, chat Kẹp bên phải như trong bài) và **Kiểm tra** (lưu đáp án, đổi được trước khi nộp, không trợ giúp, xem lại từng câu sau khi nộp).
 - Thùng rác không xóa vĩnh viễn; tài liệu còn khóa dùng thì báo đúng tên khóa thay vì cho bấm.
@@ -328,7 +329,9 @@ Người khác tìm, xem trước rồi vào học bằng tiến trình/ghi chú
 
 Coin cộng đồng chỉ từ phản hồi tích cực hợp lệ của người khác, không chỉ từ đăng bài, tự tim hoặc lặp cùng người/cùng bài. Policy giới hạn do backend quyết định.
 
-Thu hồi chia sẻ/gỡ công khai phải hiển thị quyền hiện tại; không giữ một editor đang mở như thể vẫn có quyền. Xóa/khôi phục có preview ảnh hưởng và phiên bản; khôi phục khóa không tự chia sẻ lại. API đã có nhưng frontend các màn này còn phải rà/nối.
+Thu hồi chia sẻ/gỡ công khai phải hiển thị quyền hiện tại; không giữ một editor đang mở như thể vẫn có quyền. Xóa/khôi phục có preview ảnh hưởng và phiên bản; khôi phục khóa không tự chia sẻ lại.
+
+**Trạng thái `web/` (22/10/2026, Claude tự quyết cách trình bày):** mục “Cùng học” trên sidebar gom Khóa cộng đồng và Phòng đố vui. `#/cong-dong` liệt kê khóa công khai (tìm theo tên) và có ô nhập mã mời; `#/cong-dong/<khóa>` xem trước bài trong khóa rồi “Tham gia”; người đã tham gia thả tim, chấm 1–5 sao và báo lỗi (người tạo không tự đánh giá khóa mình). Người tạo vào “Chia sẻ khóa” từ trang khóa (`#/chia-se/<khóa>`): thấy trạng thái hiện tại (số người học, tim, sao, file gốc), chọn Chỉ mình tôi / Mã mời / Công khai, xem trước phần người học thấy và phần vẫn riêng rồi mới áp dụng; tạo mã mời và chép đường dẫn `#/cong-dong/ma/<mã>`; đọc báo lỗi từ người học. Đã thử trên bản sao với 2 người dùng: công khai → tham gia → tim/sao/báo lỗi (người tạo +2 Coin) → thu hồi → mời lại bằng mã.
 
 ## 15. Phòng đố vui
 
@@ -340,6 +343,8 @@ Thu hồi chia sẻ/gỡ công khai phải hiển thị quyền hiện tại; kh
 - Các trạng thái host/người chơi/mất kết nối theo policy server. Không thêm luật chưa thống nhất vào client.
 - Không lộ key trước lúc cho phép; trợ giúp theo policy phòng, không mở đường vòng từ chat.
 - Backend đã có API/test; chưa nghiệm thu UI phòng và phiên3–5 người thật. Không gọi một sảnh fixture là phòng multiplayer hoạt động.
+
+**Trạng thái `web/` (22/10/2026, Claude tự quyết cách trình bày):** `#/phong` có thẻ Vào phòng (mã 8 ký tự + tên) và Tạo phòng (chọn khóa, bài, số câu, 15–90 giây/câu; xem trước số câu dùng được, tự luận bị bỏ qua); nút “Phòng đố vui” trên trang khóa mở sẵn khóa đó. Màn phòng `#/phong/<id>` nhận cập nhật qua luồng sự kiện của server và hỏi trạng thái mỗi 4 giây để giữ chỗ chủ phòng: sảnh có mã lớn, chép mã/đường dẫn, đổi mã, nút Bắt đầu chỉ bật khi đủ 2 người đang kết nối; câu mở có đồng hồ theo giờ server và gửi đáp án một lần; câu đóng hiện đúng/sai, đáp án, giải thích và đếm ngược sang câu sau; cuối phòng có bục 3 người, bảng điểm, xem lại từng câu kèm nguồn và “Hỏi Kẹp về câu này” (chỉ sau khi phòng kết thúc, 1 Coin/lượt). Đóng phòng (chủ phòng) phải bấm xác nhận vì phòng dừng với mọi người. Đã thử trên bản sao với 2 người dùng (2 trình duyệt): tạo → vào bằng mã → bắt đầu → trả lời, hết giờ, tự sang câu → kết quả → hỏi Kẹp bằng Gemma 4 12B. Chưa thử 3–5 người thật.
 
 ## 16. Ngôn ngữ và thuật ngữ
 

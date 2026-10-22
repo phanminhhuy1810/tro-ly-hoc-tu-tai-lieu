@@ -150,13 +150,6 @@ export function SettingsPage() {
             </section>
           </div>
 
-          <section className="panel-card">
-            <h2 className="title-m">Chưa làm lại ở giao diện mới</h2>
-            <p className="meta">Phòng đố vui nhiều người và chia sẻ khóa lên cộng đồng vẫn dùng ở bản cũ.</p>
-            <a className="btn btn--secondary btn--sm" href="/legacy/">
-              Mở bản cũ <Icon name="arrowRight" size={16} />
-            </a>
-          </section>
         </>
       )}
     </div>

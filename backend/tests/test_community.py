@@ -26,6 +26,23 @@ class CommunityTests(SliceFixture):
         result=client.post(f"/api/sessions/{session['id']}/complete");result.raise_for_status()
         return session,result.json()
 
+    def test_creator_reads_current_sharing_and_viewer_sees_only_own_relation(self):
+        course=self.course();path=f"/api/courses/{course['id']}";peer=self.peer();overview=f"/api/community/{course['id']}"
+        state=self.client.get(path+'/publication').json()
+        self.assertEqual((state['visibility'],state['active_members'],state['originals']),('private',0,[]))
+        self.assertEqual(peer.get(path+'/publication').status_code,404)
+        self.publish(course,'public',True)
+        peer.post(path+'/enroll').raise_for_status()
+        peer.put(overview+'/feedback',json={'liked':True,'rating':5}).raise_for_status()
+        state=self.client.get(path+'/publication').json()
+        self.assertEqual((state['visibility'],state['active_members'],state['likes'],state['rating_count'],len(state['originals'])),('public',1,1,1,1))
+        self.assertEqual(peer.get(overview).json()['me'],{'role':'learner','liked':True,'rating':5})
+        self.assertEqual(self.client.get(overview).json()['me']['role'],'creator')
+        self.assertEqual(self.peer().get(overview).json()['me'],{'role':None,'liked':False,'rating':None})
+        self.publish(course,'private')
+        state=self.client.get(path+'/publication').json()
+        self.assertEqual((state['visibility'],state['active_members'],state['originals']),('private',0,[]))
+
     def test_publication_requires_preview_and_enrollment_does_not_grant_original_or_editor(self):
         course=self.course();path=f"/api/courses/{course['id']}";peer=self.peer()
         self.assertEqual(peer.get(path).status_code,404)

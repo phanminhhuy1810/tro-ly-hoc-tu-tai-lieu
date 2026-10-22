@@ -8,6 +8,7 @@ import { Spot } from '../../components/Spot';
 import { EmptyState, LoadingRows, ProblemNotice } from '../../components/StateViews';
 import { describeError } from '../../lib/copy';
 import { courseSummary } from '../../lib/path';
+import { fold } from '../../lib/text';
 import { CourseCover } from '../course/covers';
 
 type Tab = 'courses' | 'sources' | 'trash';
@@ -23,8 +24,6 @@ function size(bytes: number) {
 function day(iso: string | null | undefined) {
   return iso ? new Intl.DateTimeFormat('vi-VN', { day: 'numeric', month: 'numeric', year: 'numeric' }).format(new Date(iso)) : '';
 }
-
-const fold = (text: string) => text.normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/đ/g, 'd').toLowerCase();
 
 /** Trash is recoverable: nothing is purged, history and personal notes stay. The dialog says what changes. */
 function TrashDialog({

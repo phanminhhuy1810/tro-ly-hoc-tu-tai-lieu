@@ -344,3 +344,159 @@ export interface RewardEvent {
   replayed?: boolean;
   event_key?: string;
 }
+
+// Cộng đồng và chia sẻ -------------------------------------------------------
+
+export type Visibility = 'private' | 'shared' | 'public';
+
+/** GET /community, /community/{id} (`me` only on the single-course view). */
+export interface CommunityCourse {
+  id: string;
+  title: string;
+  creator_name: string;
+  revision: number;
+  units: { id: string; title: string; generated: boolean }[];
+  likes: number;
+  rating: number | null;
+  rating_count: number;
+  updated_at: string;
+  me?: { role: 'creator' | 'learner' | null; liked: boolean; rating: number | null };
+}
+
+/** GET /courses/{id}/publication — what the creator shares right now. */
+export interface PublicationState {
+  course_id: string;
+  visibility: Visibility;
+  originals: string[];
+  updated_at: string | null;
+  active_members: number;
+  invite_codes: number;
+  open_reports: number;
+  likes: number;
+  rating: number | null;
+  rating_count: number;
+}
+
+export interface PublicationPreview {
+  publication_id: string;
+  preview: {
+    title: string;
+    visibility: Visibility;
+    course_revision: number;
+    shared_material: string[];
+    private_material_excluded: string[];
+    originals: string[];
+    warning: string;
+  };
+}
+
+export interface CourseReport {
+  id: string;
+  unit_id: string | null;
+  question_id: string | null;
+  reason: string;
+  status: string;
+  created_at: string;
+}
+
+// Phòng đố vui ----------------------------------------------------------------
+
+export type RoomPhase = 'lobby' | 'question_open' | 'question_closed' | 'finished' | 'cancelled';
+
+export interface RoomPolicy {
+  max_players: number;
+  max_questions: number;
+  reveal_seconds: number;
+  host_grace_seconds: number;
+  member_presence_seconds: number;
+  points_per_correct: number;
+  room_ttl_seconds: number;
+}
+
+export interface RoomPlayer {
+  member_id: string;
+  nickname: string;
+  state: 'joined' | 'left';
+  is_host: boolean;
+  score: number;
+  answered_closed_questions: number;
+  connected: boolean;
+  rank: number;
+}
+
+export interface RoomSolution {
+  answer: string | number[];
+  explanation: string;
+  source_refs: string[];
+}
+
+/** GET /rooms/{id}, POST /rooms/{id}/presence and the `snapshot` SSE event. */
+export interface RoomSnapshot {
+  id: string;
+  course_revision: number;
+  title: string;
+  phase: RoomPhase;
+  event_index: number;
+  question_index: number;
+  question_event_index: number | null;
+  seconds_per_question: number;
+  question_count: number;
+  closed_count: number;
+  deadline: string | null;
+  server_time: string;
+  expires_at: string;
+  end_reason: string | null;
+  policy: RoomPolicy;
+  scoreboard: RoomPlayer[];
+  me: { member_id: string; state: 'joined' | 'left'; is_host: boolean };
+  question: Question | null;
+  own_answer: AnswerValue | null;
+  own_result: { correct: boolean; points: number } | null;
+  solution: RoomSolution | null;
+  reference_warning: string | null;
+  ai_help_available: boolean;
+}
+
+export interface RoomBank {
+  course_id: string;
+  revision: number;
+  unit_ids: string[];
+  units: { id: string; title: string; unlocked: boolean; generated: boolean }[];
+  available: number;
+  max_selectable: number;
+  omitted: { question_id: string; reason: string }[];
+  policy: RoomPolicy;
+}
+
+export interface RoomCreated {
+  room_id: string;
+  phase: RoomPhase;
+  event_index: number;
+  question_count: number;
+  join_code?: string;
+}
+
+export interface RoomSummary {
+  id: string;
+  phase: RoomPhase;
+  event_index: number;
+  title: string;
+  created_at: string;
+}
+
+export interface RoomResultQuestion extends Question {
+  solution: RoomSolution;
+  sources: SourceFragment[];
+  reference_warning: string | null;
+  own_answer: AnswerValue | null;
+  correct: boolean;
+  points: number;
+}
+
+export interface RoomResults {
+  room_id: string;
+  phase: RoomPhase;
+  scoreboard: RoomPlayer[];
+  questions: RoomResultQuestion[];
+  end_reason: string | null;
+}

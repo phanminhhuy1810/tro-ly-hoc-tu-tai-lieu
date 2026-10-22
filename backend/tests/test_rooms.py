@@ -148,6 +148,16 @@ class RoomTests(SliceFixture):
         result = self.client.get(self.base + '/results').json()
         self.assertEqual(sorted(x['score'] for x in result['scoreboard']), [0,1]); self.assertEqual(self.provider.calls, before)
 
+    def test_own_result_is_revealed_with_the_solution_not_while_the_question_is_open(self):
+        self.create(count=1); peer = self.peer(); self.join(peer); self.action('start')
+        self.answer('option-0').raise_for_status()
+        self.assertIsNone(self.snapshot()['own_result'])
+        self.answer('option-1', peer).raise_for_status()
+        host, learner = self.snapshot(), self.snapshot(peer)
+        self.assertEqual((host['phase'], host['seconds_per_question']), ('question_closed', 5))
+        self.assertEqual(host['own_result'], {'correct': True, 'points': 1})
+        self.assertEqual(learner['own_result'], {'correct': False, 'points': 0})
+
     def test_server_deadline_rejects_late_answers_and_automatic_transitions_do_not_restart_the_room(self):
         self.create(count=2); peer = self.peer(); self.join(peer); self.action('start')
         state = self.snapshot(); self.clock.add(5)

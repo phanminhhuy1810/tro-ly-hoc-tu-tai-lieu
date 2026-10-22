@@ -85,3 +85,8 @@ export function makeTextFix(texts: Iterable<string>): (text: string) => string {
 export function stripRefLabels(text: string): string {
   return text.replace(/[ \t]?\[R\d+(?:\s*[,;]\s*R\d+)*\]/g, '');
 }
+
+/** Search key without accents or case: “Địa chỉ” and “dia chi” match. */
+export function fold(text: string): string {
+  return text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/đ/g, 'd');
+}
