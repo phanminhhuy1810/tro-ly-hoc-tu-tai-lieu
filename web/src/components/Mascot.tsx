@@ -4,13 +4,32 @@
 // from behind and curls up at the side. Ten expressions, ready-made scenes for
 // the course path, and a little life: it blinks, swishes its tail, breathes,
 // and reacts with a hop and a new face when tapped (where it is `pettable`).
+// Page pictures are Kẹp scenes too (books, notepad, chart…), drawn here by
+// hand rather than generated, so every page shares one look; MascotDuo adds a
+// grey classmate for the pages about learning with others.
 
 import { useId, useRef, useState, type CSSProperties } from 'react';
 
 export type Mood = 'hello' | 'hint' | 'think' | 'happy' | 'oops' | 'wink' | 'love' | 'surprised' | 'sad' | 'smug';
-/** Ready-made scenes for the cats that sit along the course path. */
-export type Pose = 'book' | 'mug' | 'laptop' | 'flag' | 'sleep';
+/** Ready-made scenes: the cats along the course path, then the page pictures. */
+export type Pose =
+  | 'book'
+  | 'mug'
+  | 'laptop'
+  | 'flag'
+  | 'sleep'
+  | 'books'
+  | 'pencil'
+  | 'chart'
+  | 'gear'
+  | 'target'
+  | 'search'
+  | 'wand'
+  | 'box'
+  | 'upload'
+  | 'plane';
 export const POSES: Pose[] = ['book', 'mug', 'laptop', 'flag', 'sleep'];
+export const PAGE_POSES: Pose[] = ['books', 'pencil', 'chart', 'gear', 'target', 'search', 'wand', 'box', 'upload', 'plane'];
 
 const INK = '#2b2f36';
 const FRAME = '#14161a';
@@ -18,6 +37,14 @@ const FUR = '#ffd8ad';
 const STRIPE = '#f3a660';
 const BELLY = '#fff3e4';
 const PINK = '#f6a7ba';
+const METAL = '#c4ccd9';
+
+/** Kẹp is ginger; the classmate in MascotDuo is grey. */
+const COATS = {
+  ginger: { fur: FUR, stripe: STRIPE, belly: BELLY },
+  grey: { fur: '#dfe3ea', stripe: '#a3abbb', belly: '#f6f7fa' },
+};
+type Coat = keyof typeof COATS;
 
 const BODY =
   'M60 105C46 105 32.5 105 28 99.5C24.4 94.6 24.2 87.5 24.6 80C25.4 64 27.2 50 29.6 37L31.4 15.6Q32 9.8 36.2 13.4L48 23.8Q60 19.2 72 23.8L83.8 13.4Q88 9.8 88.6 15.6L90.4 37C92.8 50 94.6 64 95.4 80C95.8 87.5 95.6 94.6 92 99.5C87.5 105 74 105 60 105Z';
@@ -28,13 +55,41 @@ const TAIL = 'M46 100C30 106 14 102 11 89C9.6 81 12.4 74.6 18.5 72';
 const line = { stroke: INK, fill: 'none', strokeLinecap: 'round' as const, strokeLinejoin: 'round' as const };
 
 /** A limb or the tail: an outlined tube in fur colour with a round end. */
-function Tube({ d, width = 8 }: { d: string; width?: number }) {
+function Tube({ d, width = 8, fur = FUR }: { d: string; width?: number; fur?: string }) {
   return (
     <g>
       <path d={d} stroke={INK} strokeWidth={width + 4.4} fill="none" strokeLinecap="round" strokeLinejoin="round" />
-      <path d={d} stroke={FUR} strokeWidth={width} fill="none" strokeLinecap="round" strokeLinejoin="round" />
+      <path d={d} stroke={fur} strokeWidth={width} fill="none" strokeLinecap="round" strokeLinejoin="round" />
     </g>
   );
+}
+
+/** A paw resting on something the cat holds. */
+function Paw({ x, y, fur }: { x: number; y: number; fur: string }) {
+  return <circle cx={x} cy={y} r="4.6" fill={fur} stroke={INK} strokeWidth="2.2" />;
+}
+
+/** Points of a star or a cog: alternating outer and inner radii around a centre. */
+function ring(cx: number, cy: number, outer: number, inner: number, points: number, spread = 0.5): string {
+  const out: string[] = [];
+  const step = (Math.PI * 2) / points;
+  for (let i = 0; i < points; i += 1) {
+    const a = i * step - Math.PI / 2;
+    const corners: [number, number][] =
+      spread === 0.5
+        ? [
+            [outer, a],
+            [inner, a + step / 2],
+          ]
+        : [
+            [inner, a - step / 2 + step * (0.5 - spread) * 0.5],
+            [outer, a - step * spread * 0.35],
+            [outer, a + step * spread * 0.35],
+            [inner, a + step / 2 - step * (0.5 - spread) * 0.5],
+          ];
+    for (const [r, angle] of corners) out.push(`${(cx + r * Math.cos(angle)).toFixed(2)},${(cy + r * Math.sin(angle)).toFixed(2)}`);
+  }
+  return out.join(' ');
 }
 
 function Eyes({ mood }: { mood: Mood }) {
@@ -139,36 +194,36 @@ function Mouth({ mood }: { mood: Mood }) {
   }
 }
 
-function Paws({ mood }: { mood: Mood }) {
+function Paws({ mood, fur }: { mood: Mood; fur: string }) {
   switch (mood) {
     case 'hello':
       return (
         <g className="mascot__wave">
-          <Tube d="M90 78C97 75 100.5 68 100 60" />
+          <Tube d="M90 78C97 75 100.5 68 100 60" fur={fur} />
         </g>
       );
     case 'hint':
-      return <Tube d="M90 76C96 70 97.5 62 97 53" />;
+      return <Tube d="M90 76C96 70 97.5 62 97 53" fur={fur} />;
     case 'happy':
       return (
         <g>
-          <Tube d="M30 78C23 75 19.5 68 20 60" />
-          <Tube d="M90 78C97 75 100.5 68 100 60" />
+          <Tube d="M30 78C23 75 19.5 68 20 60" fur={fur} />
+          <Tube d="M90 78C97 75 100.5 68 100 60" fur={fur} />
         </g>
       );
     case 'think':
-      return <Tube d="M84 92C80 82 76 75 69 71.5" />;
+      return <Tube d="M84 92C80 82 76 75 69 71.5" fur={fur} />;
     case 'surprised':
       return (
         <g>
-          <Tube d="M31 80C25 76 23 70 24 64" />
-          <Tube d="M89 80C95 76 97 70 96 64" />
+          <Tube d="M31 80C25 76 23 70 24 64" fur={fur} />
+          <Tube d="M89 80C95 76 97 70 96 64" fur={fur} />
         </g>
       );
     case 'wink':
       return (
         <g className="mascot__wave">
-          <Tube d="M90 78C97 75 100.5 68 100 60" />
+          <Tube d="M90 78C97 75 100.5 68 100 60" fur={fur} />
         </g>
       );
     default:
@@ -251,8 +306,11 @@ function Extras({ mood }: { mood: Mood }) {
   }
 }
 
+// The raised right arm that holds up a wand, a magnifier, a wrench or a plane.
+const RAISED = 'M90 76C96 70 97.5 62 97 53';
+
 /** What the paws hold in each scene; drawn in front of the body. */
-function PoseProps({ pose }: { pose: Pose }) {
+function PoseProps({ pose, fur = FUR }: { pose: Pose; fur?: string }) {
   switch (pose) {
     case 'book':
       return (
@@ -290,7 +348,138 @@ function PoseProps({ pose }: { pose: Pose }) {
         <g>
           <path d="M97 54V18" stroke={INK} strokeWidth="2.6" strokeLinecap="round" />
           <path d="M97.5 19L114 25L97.5 31Z" fill="#ff8f7a" stroke={INK} strokeWidth="2.2" strokeLinejoin="round" className="mascot__flag" />
-          <Tube d="M90 76C96 70 97.5 62 97 53" />
+          <Tube d={RAISED} fur={fur} />
+        </g>
+      );
+    case 'books':
+      return (
+        <g>
+          <g transform="rotate(2.5 60 76)">
+            <rect x="40" y="70.5" width="40" height="10" rx="2.5" fill="#92b06c" stroke={INK} strokeWidth="2.2" />
+            <path d="M46 70.5v10M74 70.5v10" stroke={INK} strokeWidth="1.6" />
+          </g>
+          <g transform="rotate(-3 60 86)">
+            <rect x="36" y="80.5" width="47" height="11" rx="2.5" fill="#ff8f7a" stroke={INK} strokeWidth="2.2" />
+            <path d="M42 86h15" stroke="#fff" strokeWidth="2.2" strokeLinecap="round" />
+          </g>
+          <rect x="33" y="91.5" width="54" height="11.5" rx="2.5" fill="#7fa7ff" stroke={INK} strokeWidth="2.2" />
+          <path d="M39.5 97.2h24M74 94v6.5" stroke="#fff" strokeWidth="2.2" strokeLinecap="round" />
+          <Paw x={34.5} y={87} fur={fur} />
+          <Paw x={85.5} y={87} fur={fur} />
+        </g>
+      );
+    case 'pencil':
+      return (
+        <g>
+          <g transform="rotate(-5 58 88)">
+            <rect x="39" y="73" width="38" height="31" rx="3.5" fill="#fffdf3" stroke={INK} strokeWidth="2.2" />
+            <rect x="39" y="73" width="38" height="7" rx="3" fill="#f7dd72" stroke={INK} strokeWidth="2.2" />
+            <path d="M45 87h20M45 92.5h24M45 98h14" stroke="#b9bfca" strokeWidth="1.8" strokeLinecap="round" />
+          </g>
+          <g transform="translate(90 60) rotate(118)">
+            <path d="M0 0h6v7H0z" fill={PINK} stroke={INK} strokeWidth="1.8" strokeLinejoin="round" />
+            <path d="M6 0h3.5v7H6z" fill={METAL} stroke={INK} strokeWidth="1.8" />
+            <path d="M9.5 0h17v7h-17z" fill="#f7cf3c" stroke={INK} strokeWidth="1.8" />
+            <path d="M26.5 0l7.5 3.5-7.5 3.5z" fill="#ffe2b8" stroke={INK} strokeWidth="1.8" strokeLinejoin="round" />
+            <path d="M31.4 2.3l2.6 1.2-2.6 1.2z" fill={INK} />
+          </g>
+          <Paw x={41} y={94} fur={fur} />
+          <Paw x={79} y={73.5} fur={fur} />
+        </g>
+      );
+    case 'chart':
+      return (
+        <g>
+          <rect x="37" y="71" width="46" height="32" rx="4.5" fill="#fff" stroke={INK} strokeWidth="2.4" />
+          <path d="M43.5 97h33" stroke={INK} strokeWidth="2" strokeLinecap="round" />
+          <rect x="45.5" y="87" width="7" height="10" rx="1.5" fill="#92b06c" stroke={INK} strokeWidth="1.8" />
+          <rect x="56.5" y="82" width="7" height="15" rx="1.5" fill="#f7dd72" stroke={INK} strokeWidth="1.8" />
+          <rect x="67.5" y="76" width="7" height="21" rx="1.5" fill="#ff8f7a" stroke={INK} strokeWidth="1.8" />
+          <Paw x={37.5} y={88} fur={fur} />
+          <Paw x={82.5} y={88} fur={fur} />
+        </g>
+      );
+    case 'gear':
+      return (
+        <g>
+          <g className="mascot__gear">
+            <polygon points={ring(17, 31, 13, 9.4, 8, 0.32)} fill={METAL} stroke={INK} strokeWidth="2.2" strokeLinejoin="round" />
+            <circle cx="17" cy="31" r="3.6" fill="#fff" stroke={INK} strokeWidth="2" />
+          </g>
+          <g transform="translate(97 61) rotate(14)">
+            <path d="M0 0V-21" stroke={INK} strokeWidth="7.4" strokeLinecap="round" />
+            <path d="M0 0V-21" stroke={METAL} strokeWidth="3.2" strokeLinecap="round" />
+            <path d="M-3.2-19.5L-7.5-23.5V-32L-3.2-36.5V-30.5H3.2V-36.5L7.5-32V-23.5L3.2-19.5Z" fill={METAL} stroke={INK} strokeWidth="2.2" strokeLinejoin="round" />
+          </g>
+          <Tube d={RAISED} fur={fur} />
+        </g>
+      );
+    case 'target':
+      return (
+        <g>
+          <circle cx="60" cy="87" r="16.5" fill="#fff" stroke={INK} strokeWidth="2.4" />
+          <circle cx="60" cy="87" r="11" fill="#ff8f7a" stroke={INK} strokeWidth="2" />
+          <circle cx="60" cy="87" r="5.6" fill="#fff" stroke={INK} strokeWidth="2" />
+          <circle cx="60" cy="87" r="2.1" fill="#ff8f7a" />
+          <path d="M61 86L77.5 71.5" stroke={INK} strokeWidth="2.4" strokeLinecap="round" />
+          <path d="M77.5 71.5l7.5-1.8-2 7.4zM76 70l2-6.8 4.2 4.8" fill="#7fa7ff" stroke={INK} strokeWidth="1.6" strokeLinejoin="round" />
+          <Paw x={43.5} y={92} fur={fur} />
+          <Paw x={76.5} y={93} fur={fur} />
+        </g>
+      );
+    case 'search':
+      return (
+        <g>
+          <path d="M96.5 48.5L94 58" stroke={INK} strokeWidth="5.4" strokeLinecap="round" />
+          <circle cx="99" cy="37" r="11" fill="#dff1ff" fillOpacity=".8" stroke={INK} strokeWidth="3.4" />
+          <path d="M92.6 34.5a7 7 0 0 1 5-5.4" stroke="#fff" strokeWidth="2.4" strokeLinecap="round" fill="none" />
+          <Tube d={RAISED} fur={fur} />
+        </g>
+      );
+    case 'wand':
+      return (
+        <g>
+          <path d="M96 57L102.5 33" stroke={INK} strokeWidth="3.8" strokeLinecap="round" />
+          <polygon points={ring(104, 25, 11, 4.8, 5)} fill="#f7cf3c" stroke={INK} strokeWidth="2.2" strokeLinejoin="round" />
+          <g className="mascot__twinkle" fill="#fff" stroke={INK} strokeWidth="1.5" strokeLinejoin="round">
+            <polygon points={ring(85, 17, 4.6, 1.6, 4)} />
+            <polygon points={ring(114, 44, 3.6, 1.3, 4)} />
+          </g>
+          <Tube d={RAISED} fur={fur} />
+        </g>
+      );
+    case 'box':
+      return (
+        <g>
+          <path d="M26 80L14.5 70.5L36 71.5L41 80Z" fill="#e9c08a" stroke={INK} strokeWidth="2.2" strokeLinejoin="round" />
+          <path d="M94 80L105.5 70.5L84 71.5L79 80Z" fill="#e9c08a" stroke={INK} strokeWidth="2.2" strokeLinejoin="round" />
+          <rect x="24.5" y="79" width="71" height="29" rx="2.5" fill="#d9a466" stroke={INK} strokeWidth="2.4" />
+          <path d="M53 79v11.5h14V79" fill="#f3d9a8" stroke={INK} strokeWidth="2" strokeLinejoin="round" />
+          <Paw x={43} y={80} fur={fur} />
+          <Paw x={77} y={80} fur={fur} />
+        </g>
+      );
+    case 'upload':
+      return (
+        <g>
+          <path d="M41 70h24l11 11v24H41Z" fill="#fff" stroke={INK} strokeWidth="2.4" strokeLinejoin="round" />
+          <path d="M65 70v11h11" fill="#e8ecf3" stroke={INK} strokeWidth="2.2" strokeLinejoin="round" />
+          <path d="M47 88h20M47 93.5h23M47 99h13" stroke="#b9bfca" strokeWidth="1.8" strokeLinecap="round" />
+          <circle cx="80" cy="69" r="8.5" fill="#92b06c" stroke={INK} strokeWidth="2.2" />
+          <path d="M80 73.5v-9M76.2 68l3.8-3.8 3.8 3.8" stroke="#fff" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+          <Paw x={42} y={91} fur={fur} />
+          <Paw x={76} y={97} fur={fur} />
+        </g>
+      );
+    case 'plane':
+      return (
+        <g>
+          <path d="M80 30h-7M82 37h-9" stroke="#b9bfca" strokeWidth="2.2" strokeLinecap="round" />
+          <g className="mascot__glide">
+            <path d="M85 35L117 21L98 45Z" fill="#fff" stroke={INK} strokeWidth="2.2" strokeLinejoin="round" />
+            <path d="M98 45L117 21L102 51Z" fill="#dfe5ef" stroke={INK} strokeWidth="2.2" strokeLinejoin="round" />
+          </g>
+          <Tube d={RAISED} fur={fur} />
         </g>
       );
     default:
@@ -299,23 +488,24 @@ function PoseProps({ pose }: { pose: Pose }) {
 }
 
 /** The cat itself (no shadow or signs), shared with the logo. */
-export function CatDrawing({ mood = 'hello', pose }: { mood?: Mood; pose?: Pose }) {
+export function CatDrawing({ mood = 'hello', pose, coat = 'ginger', glasses = true }: { mood?: Mood; pose?: Pose; coat?: Coat; glasses?: boolean }) {
+  const { fur, stripe, belly } = COATS[coat];
   return (
     <g className="mascot__breath">
       <g className="mascot__tail">
-        <Tube d={TAIL} width={10} />
-        <path d="M6.6 85.4l9.6-.2M8.8 94.6l8.6-3.4" stroke={STRIPE} strokeWidth="2.4" strokeLinecap="round" />
+        <Tube d={TAIL} width={10} fur={fur} />
+        <path d="M6.6 85.4l9.6-.2M8.8 94.6l8.6-3.4" stroke={stripe} strokeWidth="2.4" strokeLinecap="round" />
       </g>
-      <path d={BODY} fill={FUR} stroke={INK} strokeWidth="2.4" strokeLinejoin="round" />
+      <path d={BODY} fill={fur} stroke={INK} strokeWidth="2.4" strokeLinejoin="round" />
       <path d="M34.1 18.5L36.4 15.9L44.6 23.2L35 27.6ZM85.9 18.5L83.6 15.9L75.4 23.2L85 27.6Z" fill={PINK} opacity=".9" />
-      <path d="M54.5 26.5v4.5M60 25.5v5.5M65.5 26.5v4.5M26.5 70h5M26 77h4.5M93.5 70h-5M94 77h-4.5" stroke={STRIPE} strokeWidth="2.4" strokeLinecap="round" />
-      <ellipse cx="60" cy="88" rx="17" ry="14" fill={BELLY} />
+      <path d="M54.5 26.5v4.5M60 25.5v5.5M65.5 26.5v4.5M26.5 70h5M26 77h4.5M93.5 70h-5M94 77h-4.5" stroke={stripe} strokeWidth="2.4" strokeLinecap="round" />
+      <ellipse cx="60" cy="88" rx="17" ry="14" fill={belly} />
       <path d="M51.5 92v12.5M68.5 92v12.5" stroke={INK} strokeWidth="2.2" strokeLinecap="round" />
       <path d="M30 58.5l-12-1.6M30 62.5l-11 1.8M90 58.5l12-1.6M90 62.5l11 1.8" stroke={INK} strokeWidth="1.8" strokeLinecap="round" />
       <ellipse cx="36.5" cy="61.5" rx="4.2" ry="2.6" fill={PINK} opacity=".55" />
       <ellipse cx="83.5" cy="61.5" rx="4.2" ry="2.6" fill={PINK} opacity=".55" />
       {/* Thick black glasses: pale lenses behind the eyes, frames on top. */}
-      <path d={LENSES} fill="#fff" fillOpacity=".6" />
+      {glasses && <path d={LENSES} fill="#fff" fillOpacity=".6" />}
       {pose === 'sleep' ? (
         <path d="M38.5 47q6 4.5 12 0M69.5 47q6 4.5 12 0" {...line} strokeWidth={2.4} />
       ) : (
@@ -323,12 +513,16 @@ export function CatDrawing({ mood = 'hello', pose }: { mood?: Mood; pose?: Pose 
           <Eyes mood={mood} />
         </g>
       )}
-      <path d={LENSES} fill="none" stroke={FRAME} strokeWidth="3.6" strokeLinejoin="round" />
-      <path d="M56 39.5h8M33 39.5l-4.5-1.4M87 39.5l4.5-1.4" stroke={FRAME} strokeWidth="3.4" fill="none" strokeLinecap="round" />
-      <path d="M36.8 41.2l3.4-.1M67.8 41.2l3.4-.1" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" />
+      {glasses && (
+        <g>
+          <path d={LENSES} fill="none" stroke={FRAME} strokeWidth="3.6" strokeLinejoin="round" />
+          <path d="M56 39.5h8M33 39.5l-4.5-1.4M87 39.5l4.5-1.4" stroke={FRAME} strokeWidth="3.4" fill="none" strokeLinecap="round" />
+          <path d="M36.8 41.2l3.4-.1M67.8 41.2l3.4-.1" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" />
+        </g>
+      )}
       <path d="M57.6 57.4h4.8l-2.4 2.9z" fill={PINK} stroke={INK} strokeWidth="1.5" strokeLinejoin="round" />
       <Mouth mood={pose === 'sleep' ? 'think' : mood} />
-      {pose ? <PoseProps pose={pose} /> : <Paws mood={mood} />}
+      {pose ? <PoseProps pose={pose} fur={fur} /> : <Paws mood={mood} fur={fur} />}
     </g>
   );
 }
@@ -396,6 +590,33 @@ export function Mascot({
       ) : (
         (!pose || reaction) && <Extras mood={shown} />
       )}
+    </svg>
+  );
+}
+
+/**
+ * Kẹp and a grey classmate (no glasses) high-fiving: the picture for the pages
+ * about learning with others. Both blink and breathe, each on its own beat.
+ */
+export function MascotDuo({ size = 104, title }: { size?: number; title?: string }) {
+  return (
+    <svg
+      className="mascot mascot--duo"
+      width={Math.round((size * 196) / 120)}
+      height={size}
+      viewBox="0 0 196 120"
+      role={title ? 'img' : undefined}
+      aria-label={title}
+      aria-hidden={title ? undefined : true}
+    >
+      <ellipse cx="98" cy="111" rx="76" ry="3.6" fill="rgba(35,38,43,.1)" />
+      {/* Each cat in its own viewport, so its blink/tail/breath pivots stay its own. */}
+      <svg x="76" y="3" width="115" height="115" viewBox="0 0 120 120" overflow="visible" style={{ '--mascot-delay': '-1.7s' } as CSSProperties}>
+        <CatDrawing mood="happy" coat="grey" glasses={false} />
+      </svg>
+      <svg x="0" y="0" width="120" height="120" viewBox="0 0 120 120" overflow="visible">
+        <CatDrawing mood="hello" />
+      </svg>
     </svg>
   );
 }

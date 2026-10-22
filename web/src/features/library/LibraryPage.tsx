@@ -4,8 +4,8 @@ import type { Course, Lifecycle, SourceSummary } from '../../api/types';
 import { hrefFor, navigate } from '../../app/router';
 import { useApp, useLoad } from '../../app/store';
 import { Icon } from '../../components/Icon';
+import { Mascot } from '../../components/Mascot';
 import { PageHeader } from '../../components/PageHeader';
-import { ArtBadge } from '../../components/Art';
 import { EmptyState, LoadingRows, ProblemNotice } from '../../components/StateViews';
 import { describeError } from '../../lib/copy';
 import { courseSummary } from '../../lib/path';
@@ -174,7 +174,7 @@ export function LibraryPage() {
         title="Thư viện"
         tone="sky"
         note="Khóa đang học, tài liệu đã tải lên và cả những thứ lỡ xóa — đều ở đây, tìm lại được."
-        art={<ArtBadge name="books" size={88} />}
+        art={<Mascot pose="books" size={100} pettable />}
         actions={
           <a className="btn btn--primary" href={hrefFor({ name: 'create' })}>
             <Icon name="plus" size={18} /> Tạo khóa mới
@@ -206,7 +206,7 @@ export function LibraryPage() {
       {state.data && tab === 'courses' && (
         courses.length === 0 ? (
           <EmptyState
-            art={<ArtBadge name="books" size={110} />}
+            art={<Mascot pose="books" size={120} pettable />}
             title={query ? 'Không có khóa trùng tên' : 'Chưa có khóa nào'}
             body="Tải slide, giáo trình hoặc ghi chú — Kẹp đọc hết rồi đề xuất lộ trình để bạn sửa trước khi tạo."
             action={
@@ -254,7 +254,7 @@ export function LibraryPage() {
 
       {state.data && tab === 'sources' && (
         sources.length === 0 ? (
-          <EmptyState art={<ArtBadge name="papers" size={110} />} title={query ? 'Không có tài liệu trùng tên' : 'Chưa có tài liệu'} body="Tài liệu bạn tải lên khi tạo khóa sẽ nằm ở đây để dùng lại." />
+          <EmptyState art={query ? <Mascot pose="search" mood="think" size={120} pettable /> : <Mascot pose="upload" size={120} pettable />} title={query ? 'Không có tài liệu trùng tên' : 'Chưa có tài liệu'} body="Tài liệu bạn tải lên khi tạo khóa sẽ nằm ở đây để dùng lại." />
         ) : (
           <ul className="library-list">
             {sources.map((source) => (
@@ -291,7 +291,7 @@ export function LibraryPage() {
 
       {state.data && tab === 'trash' && (
         trash.length === 0 ? (
-          <EmptyState art={<ArtBadge name="cabinet" size={110} />} title="Thùng rác trống" body="Khóa hoặc tài liệu bạn xóa sẽ nằm ở đây và khôi phục được; không có gì bị xóa vĩnh viễn." />
+          <EmptyState art={<Mascot pose="box" mood="happy" size={120} pettable />} title="Thùng rác trống" body="Khóa hoặc tài liệu bạn xóa sẽ nằm ở đây và khôi phục được; không có gì bị xóa vĩnh viễn." />
         ) : (
           <ul className="library-list">
             {trash.map((item) => (

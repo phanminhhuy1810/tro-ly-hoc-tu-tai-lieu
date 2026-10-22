@@ -105,7 +105,7 @@ export function CommunityCoursePage({ courseId }: { courseId: string }) {
 
   const back = (
     <a className="back" href={hrefFor({ name: 'community' })}>
-      <Icon name="arrowLeft" size={18} /> Cùng học
+      <Icon name="arrowLeft" size={18} /> Cộng đồng
     </a>
   );
 

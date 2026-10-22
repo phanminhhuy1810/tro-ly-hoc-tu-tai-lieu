@@ -3,6 +3,7 @@ import copy
 import json
 import uuid
 from datetime import datetime, timezone
+from typing import Literal
 
 from fastapi import Depends, HTTPException
 from pydantic import Field, model_validator
@@ -62,6 +63,11 @@ class Revert(Model):
     target_revision: int = Field(ge=1)
     unit_id: str | None = None
     request: str = Field(default='Quay lại bản đã chọn, giữ lịch sử lượt cũ.', min_length=1, max_length=2000)
+
+
+class UnlockPolicyEdit(Model):
+    expected_revision: int = Field(ge=1)
+    unlock_policy: Literal['locked', 'open']
 
 
 def stamp(): return datetime.now(timezone.utc).isoformat()
@@ -148,6 +154,27 @@ def register_revisions(app, database, course_snapshot, source_snapshot, owned, a
                 content['units'][index] = copy.deepcopy(old)
                 content['units'][index]['source_plan_id'] = old.get('source_plan_id', prior['plan_id'])
             return save(db, owner, current, {'target':'revert','unit_id':body.unit_id,'target_revision':body.target_revision}, body.request, current['content'], content, plan_id)
+
+    @app.post('/api/courses/{course_id}/unlock-policy-preview')
+    def unlock_policy(course_id: str, body: UnlockPolicyEdit, owner=Depends(user)):
+        """The creator may switch between opening lessons one by one and opening all of them, any time after creating the course."""
+        with database.connection(write=True) as db:
+            creator(db, course_id, owner)
+            course = course_snapshot(db, course_id, owner)
+            if course['revision'] != body.expected_revision:
+                raise HTTPException(409, 'Khóa đã đổi; tải lại trước khi đổi cách mở bài.')
+            if course['content']['unlock_policy'] == body.unlock_policy:
+                raise HTTPException(409, 'Khóa đang dùng cách mở bài này rồi.')
+            content = copy.deepcopy(course['content'])
+            # Only the order rule changes; lessons, sources and results stay as they are.
+            content['unlock_policy'] = body.unlock_policy
+            if isinstance(content.get('preferences'), dict):
+                content['preferences']['unlock_policy'] = body.unlock_policy
+            for unit in content['units']:
+                unit.pop('completed', None)
+                unit.pop('unlocked', None)
+            request = 'Mở mọi bài để học tự do' if body.unlock_policy == 'open' else 'Mở dần từng bài sau lượt luyện'
+            return save(db, owner, course, {'target': 'unlock_policy', 'unlock_policy': body.unlock_policy}, request, course['content'], content, course['plan_id'])
 
     @app.post('/api/courses/{course_id}/future-plan-preview')
     def future(course_id: str, body: FutureEdit, owner=Depends(user)):

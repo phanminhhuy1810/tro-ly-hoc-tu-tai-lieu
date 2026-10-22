@@ -169,9 +169,12 @@
   box-shadow: var(--shadow-1), inset 0 0 0 1px var(--line);
 }
 
+/* Local data usually arrives within a blink: the placeholder only shows when
+   it does not, so a quick page open goes straight to its content. */
 .loading-rows {
   display: grid;
   gap: 12px;
+  animation: fade-in 200ms var(--ease-out) 260ms backwards;
 }
 .loading-row {
   display: flex;
@@ -245,6 +248,34 @@
 @keyframes mascot-breathe {
   50% {
     transform: scale(1.01, 1.025);
+  }
+}
+/* Page scenes: the cog turns, the wand's sparkles twinkle, the paper plane hovers. */
+.mascot .mascot__gear {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: mascot-spin 9s linear infinite;
+}
+.mascot .mascot__twinkle {
+  animation: mascot-twinkle 2.4s ease-in-out infinite;
+  animation-delay: var(--mascot-delay, 0s);
+}
+.mascot .mascot__glide {
+  animation: mascot-glide 3s ease-in-out infinite;
+}
+@keyframes mascot-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes mascot-twinkle {
+  50% {
+    opacity: 0.3;
+  }
+}
+@keyframes mascot-glide {
+  50% {
+    transform: translate(2px, -2.5px);
   }
 }
 .mascot__hearts {

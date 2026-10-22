@@ -78,12 +78,16 @@ function Popover({
   onGenerate,
   onReview,
   onClose,
+  onCurrent,
+  onOpenAll,
 }: {
   node: PathNode;
   onOpen: () => void;
   onGenerate: () => void;
   onReview: () => void;
   onClose: () => void;
+  onCurrent: () => void;
+  onOpenAll?: () => void;
 }) {
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -126,9 +130,16 @@ function Popover({
         </button>
       )}
       {node.state === 'locked' && (
-        <button type="button" className="btn btn--secondary btn--block" disabled>
-          <Icon name="lock" size={16} /> Chưa mở
-        </button>
+        <div className="path-pop__row path-pop__row--stack">
+          <button type="button" className="btn btn--secondary btn--block" onClick={onCurrent}>
+            Tới bài đang học
+          </button>
+          {onOpenAll && (
+            <button type="button" className="btn btn--ghost btn--block" onClick={onOpenAll}>
+              <Icon name="unlock" size={16} /> Mở mọi bài để học tự do
+            </button>
+          )}
+        </div>
       )}
     </div>
   );
@@ -212,6 +223,7 @@ export function ProgressPath({
   onReview,
   onCards,
   onPractice,
+  onOpenAll,
 }: {
   nodes: PathNode[];
   courseTitle: string;
@@ -228,6 +240,8 @@ export function ProgressPath({
   onReview: (node: PathNode | null) => void;
   onCards: () => void;
   onPractice: () => void;
+  /** Creator of a course that opens lessons one by one: switch to opening them all. */
+  onOpenAll?: () => void;
 }) {
   const groups = useMemo(() => chapterGroups(nodes), [nodes]);
   const [guide, setGuide] = useState<number | null>(null);
@@ -355,6 +369,18 @@ export function ProgressPath({
                         }}
                         onReview={() => onReview(node)}
                         onClose={() => onSelect(null)}
+                        onCurrent={() => {
+                          const target = nodes.find((n) => n.isCurrent);
+                          onSelect(target ? target.unit.id : null);
+                          current.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }}
+                        onOpenAll={
+                          onOpenAll &&
+                          (() => {
+                            onSelect(null);
+                            onOpenAll();
+                          })
+                        }
                       />
                     )}
                   </li>

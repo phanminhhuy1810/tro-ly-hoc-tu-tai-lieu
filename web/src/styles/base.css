@@ -208,30 +208,57 @@ svg {
 .enter {
   animation: rise-in var(--dur-3) var(--ease-out) both;
 }
+/* For things that are there when a page opens: the page fade is enough motion. */
+.enter-fade {
+  animation: fade-in var(--dur-3) var(--ease-out) both;
+}
 
-/* Page changes: a new lesson drops in from the top like a sheet pulled down;
-   other pages cross-fade. Browsers without view transitions get a CSS drop-in. */
-::view-transition-old(root) {
-  animation: vt-fade-out 200ms ease-in both;
+/* Page changes: the sidebar and the chat button stay still while the page
+   beside them cross-fades in place (nothing slides, so nothing jerks); a new
+   lesson drops in from the top like a sheet pulled down. Browsers without view
+   transitions get a CSS drop-in for lessons. */
+.sidebar {
+  view-transition-name: sidebar;
 }
-::view-transition-new(root) {
-  animation: vt-rise 340ms var(--ease-out) both;
+.main {
+  view-transition-name: page;
 }
-:root[data-nav='lesson']::view-transition-old(root) {
+.chat-launcher {
+  view-transition-name: chat-launcher;
+}
+::view-transition-group(*) {
+  animation-duration: 200ms;
+}
+/* plus-lighter: what is the same on both pages (the squared paper) stays fully
+   visible through the cross-fade instead of dimming halfway. */
+::view-transition-old(root),
+::view-transition-old(page) {
+  animation: vt-fade-out 200ms ease both;
+  mix-blend-mode: plus-lighter;
+}
+::view-transition-new(root),
+::view-transition-new(page) {
+  animation: vt-fade-in 200ms ease both;
+  mix-blend-mode: plus-lighter;
+}
+:root[data-nav='lesson']::view-transition-old(root),
+:root[data-nav='lesson']::view-transition-old(page),
+:root[data-nav='lesson']::view-transition-old(sidebar) {
   animation: vt-sink 420ms ease-in both;
+  mix-blend-mode: normal;
 }
 :root[data-nav='lesson']::view-transition-new(root) {
   animation: vt-drop 640ms cubic-bezier(0.22, 0.9, 0.26, 1.03) both;
+  mix-blend-mode: normal;
 }
 @keyframes vt-fade-out {
   to {
     opacity: 0;
   }
 }
-@keyframes vt-rise {
+@keyframes vt-fade-in {
   from {
     opacity: 0;
-    transform: translateY(10px);
   }
 }
 @keyframes vt-sink {

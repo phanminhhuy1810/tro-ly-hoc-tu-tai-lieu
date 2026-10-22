@@ -489,7 +489,7 @@ export function CreatePage() {
         title="Tạo khóa mới"
         tone="butter"
         note="Đưa slide, giáo trình hay ghi chú vào đây — Kẹp đọc hết rồi gợi ý lộ trình để bạn sửa trước khi học."
-        art={<ArtBadge name="sparkles" size={84} />}
+        art={<Mascot pose="wand" mood="wink" size={100} pettable />}
         actions={
           source && (
             <button type="button" className="btn btn--secondary" onClick={restart}>

@@ -2,8 +2,7 @@ import type { CoinQuote } from '../../api/types';
 import { BRAND_OPTIONS, BrandMark } from '../../components/Brand';
 import { CoinConfirm } from '../../components/CoinConfirm';
 import { Icon } from '../../components/Icon';
-import { Mascot, type Mood, type Pose } from '../../components/Mascot';
-import { ArtBadge } from '../../components/Art';
+import { Mascot, MascotDuo, type Mood, type Pose } from '../../components/Mascot';
 import { EmptyState, LoadingRows, ProblemNotice } from '../../components/StateViews';
 import { describeError, describeJobFailure } from '../../lib/copy';
 import { ApiError } from '../../api/client';
@@ -107,6 +106,34 @@ export function StatesPage() {
         </div>
       </Frame>
 
+      <Frame title="Hình của từng trang — tự vẽ, không dùng ảnh tạo bằng AI">
+        <div className="mood-row">
+          {(
+            [
+              ['books', 'Thư viện'],
+              ['pencil', 'Sổ tay'],
+              ['chart', 'Tiến độ'],
+              ['gear', 'Cài đặt'],
+              ['target', 'Ôn luyện'],
+              ['wand', 'Tạo khóa'],
+              ['upload', 'Chưa có tài liệu'],
+              ['search', 'Không tìm thấy'],
+              ['box', 'Thùng rác trống'],
+              ['plane', 'Chia sẻ khóa'],
+            ] as [Pose, string][]
+          ).map(([pose, label]) => (
+            <figure key={pose}>
+              <Mascot pose={pose} size={92} pettable />
+              <figcaption className="meta">{label}</figcaption>
+            </figure>
+          ))}
+          <figure>
+            <MascotDuo size={92} />
+            <figcaption className="meta">Cộng đồng, phòng đố vui</figcaption>
+          </figure>
+        </div>
+      </Frame>
+
       <Frame title="Nút">
         <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
           <button type="button" className="btn btn--primary btn--lg">
@@ -129,7 +156,7 @@ export function StatesPage() {
 
       <Frame title="Chưa có khóa nào">
         <EmptyState
-          art={<ArtBadge name="sparkles" size={110} />}
+          art={<Mascot pose="upload" size={120} pettable />}
           title="Chưa có khóa nào"
           body="Chọn slide, giáo trình hoặc ghi chú của bạn — mình đọc rồi đề xuất lộ trình để bạn duyệt trước khi tạo bài."
           action={<button className="btn btn--primary btn--lg">Chọn tài liệu</button>}

@@ -3957,6 +3957,54 @@
         }
       }
     },
+    "/api/courses/{course_id}/unlock-policy-preview": {
+      "post": {
+        "summary": "Unlock Policy",
+        "description": "The creator may switch between opening lessons one by one and opening all of them, any time after creating the course.",
+        "operationId": "unlock_policy_api_courses__course_id__unlock_policy_preview_post",
+        "parameters": [
+          {
+            "name": "course_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Course Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnlockPolicyEdit"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/courses/{course_id}/future-plan-preview": {
       "post": {
         "summary": "Future",
@@ -8974,6 +9022,30 @@
           "url"
         ],
         "title": "URLSource"
+      },
+      "UnlockPolicyEdit": {
+        "properties": {
+          "expected_revision": {
+            "type": "integer",
+            "minimum": 1.0,
+            "title": "Expected Revision"
+          },
+          "unlock_policy": {
+            "type": "string",
+            "enum": [
+              "locked",
+              "open"
+            ],
+            "title": "Unlock Policy"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "expected_revision",
+          "unlock_policy"
+        ],
+        "title": "UnlockPolicyEdit"
       },
       "ValidationError": {
         "properties": {

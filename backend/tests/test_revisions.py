@@ -25,6 +25,24 @@ class RevisionTests(SliceFixture):
         self.assertEqual(self.client.get('/api/sessions/'+session['id']).json()['revision'],2)
         self.assertEqual(self.client.get(path+'/editor').json()['content']['units'][0]['data'],original)
 
+    def test_creator_switches_lesson_order_after_preview_and_learning_stays(self):
+        course=self.course(); path='/api/courses/'+course['id']
+        session=self.client.post(path+'/sessions',json={'expected_revision':2,'unit_id':'unit-1'}).json()
+        self.assertFalse(self.client.get(path).json()['content']['units'][1]['unlocked'])
+        preview=self.client.post(path+'/unlock-policy-preview',json={'expected_revision':2,'unlock_policy':'open'}).json()
+        self.assertFalse(self.client.get(path).json()['content']['units'][1]['unlocked'])
+        self.client.post('/api/proposals/'+preview['proposal_id']+'/apply',json={'expected_revision':2}).raise_for_status()
+        opened=self.client.get(path).json()
+        self.assertEqual((opened['revision'],opened['content']['unlock_policy']),(3,'open'))
+        self.assertTrue(all(u['unlocked'] for u in opened['content']['units']))
+        self.assertEqual(opened['content']['units'][0]['data']['sections'],course['content']['units'][0]['data']['sections'])
+        self.assertEqual(self.client.get('/api/sessions/'+session['id']).json()['revision'],2)
+        self.assertEqual(self.client.post(path+'/unlock-policy-preview',json={'expected_revision':3,'unlock_policy':'open'}).status_code,409)
+        self.assertEqual(self.client.post(path+'/unlock-policy-preview',json={'expected_revision':2,'unlock_policy':'locked'}).status_code,409)
+        with TestClient(self.app,base_url='http://127.0.0.1') as stranger:
+            stranger.post('/api/session')
+            self.assertIn(stranger.post(path+'/unlock-policy-preview',json={'expected_revision':3,'unlock_policy':'locked'}).status_code,{403,404})
+
     def test_future_preferences_and_sources_do_not_change_generated_lesson_or_original_plan(self):
         course=self.course(); path='/api/courses/'+course['id']
         plan=self.client.get('/api/plans/'+course['plan_id']).json()

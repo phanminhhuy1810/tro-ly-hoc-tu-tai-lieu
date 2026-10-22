@@ -33,7 +33,7 @@ Mở `http://127.0.0.1:8770/` để dùng giao diện mới (`web/`, React + Typ
 ./check.sh
 ```
 
-Ngày 22/10/2026 (sau đợt góp ý giao diện chiều: điểm danh tự động, màu ghi chú, phong cách Kẹp): **433 kiểm thử backend, 75 kiểm thử frontend cũ và 78 kiểm thử `web/` đạt**. Mốc trước đó (sau khi dọn thư mục): 410 backend và 75 frontend; xem [kết quả](backend/evidence/project-cleanup-tests.txt). Đủ API để frontend tiếp nhận, **chưa nghiệm thu toàn backend**: F18 (lưu ý mâu thuẫn nguồn), chất lượng AI/OCR, QA mindmap trên runtime và thử người dùng còn mở. Nhóm chưa thử, 0 người độc lập. Số test không thể hiện độ chính xác AI.
+Ngày 22/10/2026 (sau đợt góp ý tối: lời dặn chat của Kẹp, đổi cách mở bài sau khi tạo khóa): **436 kiểm thử backend, 75 kiểm thử frontend cũ và 78 kiểm thử `web/` đạt**. Mốc trước đó (sau khi dọn thư mục): 410 backend và 75 frontend; xem [kết quả](backend/evidence/project-cleanup-tests.txt). Đủ API để frontend tiếp nhận, **chưa nghiệm thu toàn backend**: F18 (lưu ý mâu thuẫn nguồn), chất lượng AI/OCR, QA mindmap trên runtime và thử người dùng còn mở. Nhóm chưa thử, 0 người độc lập. Số test không thể hiện độ chính xác AI.
 
 ## Thư mục nào để làm gì?
 

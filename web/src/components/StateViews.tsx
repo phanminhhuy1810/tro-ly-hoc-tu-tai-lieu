@@ -47,7 +47,7 @@ export function ProblemNotice({ problem, onRetry, retryLabel = 'Thử lại', co
 
 export function EmptyState({ art, title, body, action }: { art: ReactNode; title: string; body: string; action?: ReactNode }) {
   return (
-    <div className="state enter">
+    <div className="state enter-fade">
       {art}
       <p className="state__title">{title}</p>
       <p className="state__body">{body}</p>

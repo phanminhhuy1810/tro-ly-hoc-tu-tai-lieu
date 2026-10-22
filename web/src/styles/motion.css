@@ -3,9 +3,10 @@
    “Tắt chuyển động” in Cài đặt, or the system's reduce-motion setting, turns
    every animation and transition into an instant change (bottom of this file). */
 
-/* Lists ease in one after another. */
+/* Lists fade in one after another, in place: the page itself already fades
+   in, so nothing on it slides (sliding on every page open read as a jerk). */
 :is(.course-list ul, .library-list, .community-list, .modes, .models, .toc ol, .card-list ul, .chat-pick, .ledger) > * {
-  animation: rise-in 460ms var(--ease-out) backwards;
+  animation: fade-in 320ms var(--ease-out) backwards;
 }
 :is(.course-list ul, .library-list, .community-list, .modes, .models, .toc ol, .card-list ul, .chat-pick, .ledger) > :nth-child(2) {
   animation-delay: 45ms;
@@ -82,11 +83,6 @@
   from {
     transform: scaleX(0);
   }
-}
-
-/* Panels on the main pages rise in softly. */
-.page > :is(.panel-card, .graph-card, .progress-pair, .achievements, .settings-pair, .course-grid, .together-grid) {
-  animation: rise-in 520ms var(--ease-out) 80ms backwards;
 }
 
 /* No motion: everything lands at once. */

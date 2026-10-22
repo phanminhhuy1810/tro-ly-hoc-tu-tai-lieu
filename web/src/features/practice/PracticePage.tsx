@@ -6,7 +6,6 @@ import { useLoad } from '../../app/store';
 import { Icon } from '../../components/Icon';
 import { PageHeader } from '../../components/PageHeader';
 import { Mascot } from '../../components/Mascot';
-import { ArtBadge } from '../../components/Art';
 import { EmptyState, LoadingRows, ProblemNotice } from '../../components/StateViews';
 import { describeError, type Problem } from '../../lib/copy';
 import { availableCount, defaultCount, kindsIn, practiceUnits } from '../../lib/practice';
@@ -107,7 +106,7 @@ export function PracticePage({ courseId }: { courseId: string }) {
         title="Ôn luyện"
         tone="sky"
         note={`${course.content.title} — chọn bài và dạng câu, luyện có Kẹp gợi ý hoặc tự kiểm tra.`}
-        art={<ArtBadge name="target" size={84} />}
+        art={<Mascot pose="target" mood="wink" size={100} pettable />}
         actions={
           <a className="btn btn--secondary" href={hrefFor({ name: 'lesson', courseId: course.id, unitId: 'tat-ca', mode: 'weak' })}>
             <Icon name="flag" size={18} /> Ôn câu sai
@@ -117,7 +116,7 @@ export function PracticePage({ courseId }: { courseId: string }) {
 
       {units.length === 0 ? (
         <EmptyState
-          art={<ArtBadge name="target" size={110} />}
+          art={<Mascot pose="target" mood="wink" size={120} pettable />}
           title="Chưa có bài nào để luyện"
           body="Tạo và học bài đầu tiên trên lộ trình; câu hỏi của bài sẽ có ở đây."
           action={

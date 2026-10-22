@@ -4,9 +4,9 @@ import type { Course, RoomBank, RoomCreated, RoomSnapshot, RoomSummary } from '.
 import { hrefFor, navigate } from '../../app/router';
 import { useLoad } from '../../app/store';
 import { Icon } from '../../components/Icon';
+import { MascotDuo } from '../../components/Mascot';
 import { PageHeader } from '../../components/PageHeader';
 import { EmojiTile } from '../../components/EmojiTile';
-import { ArtBadge } from '../../components/Art';
 import { LoadingRows, ProblemNotice } from '../../components/StateViews';
 import { describeError } from '../../lib/copy';
 import { isTerminal, normalizeCode, PHASE_LABEL } from '../../lib/rooms';
@@ -257,10 +257,10 @@ export function RoomsPage({ code, courseId }: { code?: string; courseId?: string
   return (
     <div className="page together">
       <PageHeader
-        title="Cùng học"
+        title="Cộng đồng"
         tone="mint"
-        note="Học với bạn bè: vào khóa người khác chia sẻ, hoặc mở phòng đố vui thi xem ai nhớ bài hơn."
-        art={<ArtBadge name="people" size={88} />}
+        note="Học khóa người khác chia sẻ, hoặc mở phòng đố vui để thi với bạn bè xem ai nhớ bài hơn."
+        art={<MascotDuo size={96} />}
       >
         <TogetherTabs active="rooms" />
       </PageHeader>

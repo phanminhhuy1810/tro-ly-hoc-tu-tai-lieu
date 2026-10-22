@@ -15,6 +15,7 @@ import { CoverPicker } from './CoverPicker';
 import { JobCard } from './JobCard';
 import { MemoryCard } from './MemoryCard';
 import { ProgressPath } from './ProgressPath';
+import { UnlockPolicyDialog } from './UnlockPolicyDialog';
 import { useGeneration } from './useGeneration';
 
 const STATE_ICON = { done: 'check', ready: 'bookOpen', not_generated: 'sparkle', locked: 'lock' } as const;
@@ -24,6 +25,7 @@ export function CoursePage({ courseId }: { courseId: string }) {
   const [fresh, setFresh] = useState<string | null>(null);
   const [selected, setSelected] = useState<string | null>(null);
   const [coverOpen, setCoverOpen] = useState(false);
+  const [orderOpen, setOrderOpen] = useState(false);
   const state = useLoad(async () => {
     await ensureSession();
     const [course, progress, cards] = await Promise.all([
@@ -95,6 +97,7 @@ export function CoursePage({ courseId }: { courseId: string }) {
   const g = generation.state;
   const unitNumber = (id: string) => course.content.units.findIndex((u) => u.id === id) + 1;
   const creator = course.access_role !== 'learner';
+  const locked = course.content.unlock_policy === 'locked';
   const groups = chapterGroups(nodes);
 
   const generate = (node: PathNode) => {
@@ -130,8 +133,17 @@ export function CoursePage({ courseId }: { courseId: string }) {
           <p className="meta">
             {summary.total} bài · {summary.done} bài đã xong
             {summary.notGenerated ? ` · ${summary.notGenerated} bài chưa tạo` : ''}
-            {course.content.unlock_policy === 'locked' ? ' · mở dần theo lượt luyện' : ' · học tự do'}
           </p>
+          {creator ? (
+            <button type="button" className="order-chip" onClick={() => setOrderOpen(true)} title="Đổi thứ tự học">
+              <Icon name={locked ? 'lock' : 'unlock'} size={15} /> {locked ? 'Mở dần theo lượt luyện' : 'Học tự do, bài nào trước cũng được'}
+              <span className="order-chip__action">Đổi</span>
+            </button>
+          ) : (
+            <span className="order-chip order-chip--static">
+              <Icon name={locked ? 'lock' : 'unlock'} size={15} /> {locked ? 'Mở dần theo lượt luyện' : 'Học tự do, bài nào trước cũng được'}
+            </span>
+          )}
           <span className="progress-bar course-head__bar" aria-hidden="true">
             <span style={{ width: `${summary.total ? Math.round((summary.done / summary.total) * 100) : 0}%` }} />
           </span>
@@ -165,6 +177,7 @@ export function CoursePage({ courseId }: { courseId: string }) {
             onOpen={(node) => navigate({ name: 'lesson', courseId: course.id, unitId: node.unit.id, mode: 'learn' })}
             onGenerate={generate}
             onReview={review}
+            onOpenAll={creator && locked ? () => setOrderOpen(true) : undefined}
           />
         </section>
 
@@ -232,8 +245,8 @@ export function CoursePage({ courseId }: { courseId: string }) {
             )}
           </section>
 
-          <section className="modes" aria-label="Cùng học">
-            <h2 className="title-m">Cùng học</h2>
+          <section className="modes" aria-label="Học cùng bạn bè">
+            <h2 className="title-m">Học cùng bạn bè</h2>
             <a className="mode-card" href={hrefFor({ name: 'rooms', courseId: course.id })}>
               <EmojiTile icon="trophy" tone="peach" size={50} />
               <span>
@@ -244,7 +257,7 @@ export function CoursePage({ courseId }: { courseId: string }) {
             </a>
             {creator && (
               <a className="mode-card" href={hrefFor({ name: 'share', courseId: course.id })}>
-                <EmojiTile icon="people" tone="mint" size={50} />
+                <EmojiTile icon="megaphone" tone="mint" size={50} />
                 <span>
                   <strong>Chia sẻ khóa</strong>
                   <span className="meta">Giữ riêng, gửi mã mời hoặc đăng công khai</span>
@@ -257,6 +270,19 @@ export function CoursePage({ courseId }: { courseId: string }) {
       </div>
 
       {creator && <CoverPicker courseId={course.id} title={course.content.title} open={coverOpen} onClose={() => setCoverOpen(false)} />}
+      {creator && (
+        <UnlockPolicyDialog
+          course={course}
+          open={orderOpen}
+          onClose={() => setOrderOpen(false)}
+          onChanged={() => {
+            setOrderOpen(false);
+            setSelected(null);
+            toast(locked ? 'Đã mở mọi bài. Học bài nào trước cũng được.' : 'Bài sẽ mở dần sau mỗi lượt luyện.');
+            reload();
+          }}
+        />
+      )}
 
       <dialog
         ref={dialog}

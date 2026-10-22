@@ -3,9 +3,9 @@ import { api, ApiError, ensureSession } from '../../api/client';
 import type { Note, NoteColor } from '../../api/types';
 import { useApp, useLoad } from '../../app/store';
 import { Icon } from '../../components/Icon';
+import { Mascot } from '../../components/Mascot';
 import { PageHeader } from '../../components/PageHeader';
 import { RichText } from '../../components/RichText';
-import { ArtBadge } from '../../components/Art';
 import { EmptyState, LoadingRows, ProblemNotice } from '../../components/StateViews';
 import { describeError } from '../../lib/copy';
 import { fold, makeTextFix, stripRefLabels } from '../../lib/text';
@@ -155,7 +155,7 @@ export function NotebookPage() {
         title="Sổ tay"
         tone="butter"
         note="Ghi nhanh mẹo nhớ, công thức — và những lời giải hay của Kẹp. Tô màu để tự xếp theo ý bạn."
-        art={<ArtBadge name="memo" size={92} />}
+        art={<Mascot pose="pencil" size={100} pettable />}
       />
 
       <section ref={composer} className={`note-new note--${draftColor}${writing ? ' is-open' : ''}`} aria-label="Viết ghi chú mới">
@@ -230,7 +230,7 @@ export function NotebookPage() {
       {state.error != null && <ProblemNotice problem={describeError(state.error)} onRetry={state.reload} />}
       {state.data && notes.length === 0 && (
         <EmptyState
-          art={<ArtBadge name="memo" size={110} />}
+          art={<Mascot pose="pencil" size={120} pettable />}
           title={state.data.length ? 'Không có ghi chú khớp bộ lọc' : 'Sổ tay đang trống'}
           body="Khi Kẹp giải thích hay, bấm “Lưu vào sổ tay” ngay dưới câu trả lời. Bạn cũng có thể tự ghi ở ô phía trên."
         />

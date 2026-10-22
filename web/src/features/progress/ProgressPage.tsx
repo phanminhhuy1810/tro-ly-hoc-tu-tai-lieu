@@ -3,7 +3,7 @@ import { api, ensureSession } from '../../api/client';
 import type { Wallet } from '../../api/types';
 import { hrefFor } from '../../app/router';
 import { useApp, useLoad } from '../../app/store';
-import { Art, ArtBadge, type ArtName } from '../../components/Art';
+import { Art, type ArtName } from '../../components/Art';
 import { CountUp } from '../../components/CountUp';
 import { Flame } from '../../components/Flame';
 import { Icon } from '../../components/Icon';
@@ -11,6 +11,7 @@ import { PageHeader } from '../../components/PageHeader';
 import { LoadingRows, ProblemNotice } from '../../components/StateViews';
 import { describeError } from '../../lib/copy';
 import { activityLevel, describeDay, monthLabels, recentWeeks, studyMinutes, type Dashboard, type Missions } from './activity';
+import { Mascot } from '../../components/Mascot';
 
 interface Achievements {
   earned: { code: string; earned_at: string }[];
@@ -207,7 +208,7 @@ export function ProgressPage() {
         title="Tiến độ"
         tone="peach"
         note="Bạn đã đi được bao xa — mỗi ngày học một chút là lửa lại cháy thêm một ngày."
-        art={<ArtBadge name="calculus" size={92} />}
+        art={<Mascot pose="chart" mood="happy" size={100} pettable />}
       />
 
       <div className="progress-hero">

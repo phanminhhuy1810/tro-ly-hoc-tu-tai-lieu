@@ -4,8 +4,8 @@ import type { CommunityCourse, Course } from '../../api/types';
 import { hrefFor, navigate } from '../../app/router';
 import { useApp, useLoad } from '../../app/store';
 import { Icon } from '../../components/Icon';
+import { Mascot, MascotDuo } from '../../components/Mascot';
 import { PageHeader } from '../../components/PageHeader';
-import { ArtBadge } from '../../components/Art';
 import { EmptyState, LoadingRows, ProblemNotice } from '../../components/StateViews';
 import { creatorLabel, ratingText } from '../../lib/community';
 import { describeError } from '../../lib/copy';
@@ -80,10 +80,10 @@ export function CommunityPage({ code }: { code?: string }) {
   return (
     <div className="page together">
       <PageHeader
-        title="Cùng học"
+        title="Cộng đồng"
         tone="mint"
-        note="Học với bạn bè: vào khóa người khác chia sẻ, hoặc mở phòng đố vui thi xem ai nhớ bài hơn."
-        art={<ArtBadge name="people" size={88} />}
+        note="Học khóa người khác chia sẻ, hoặc mở phòng đố vui để thi với bạn bè xem ai nhớ bài hơn."
+        art={<MascotDuo size={96} />}
       >
         <TogetherTabs active="community" />
       </PageHeader>
@@ -108,7 +108,7 @@ export function CommunityPage({ code }: { code?: string }) {
           {state.data &&
             (items.length === 0 ? (
               <EmptyState
-                art={<ArtBadge name="network" size={110} />}
+                art={<Mascot pose="search" mood="think" size={120} pettable />}
                 title={query ? 'Không có khóa trùng tên' : 'Chưa có khóa công khai'}
                 body="Khi bạn hoặc người khác đăng khóa công khai, khóa sẽ hiện ở đây để xem trước và tham gia."
                 action={

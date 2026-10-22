@@ -81,7 +81,8 @@ export const TONE_LABEL: Record<TileTone, string> = {
 
 export const nameOf = (icon: TopicIcon) => ICON_TABLE[icon];
 /** What the creator can pick from: every icon once (the old “brain” is the same picture as “psychology”). */
-export const PICKER_ICONS = (Object.keys(ICON_TABLE) as TopicIcon[]).filter((icon) => icon !== 'brain');
+// Covers saved with these keep working, but the picker no longer offers them (Huy found the faceless pair creepy).
+export const PICKER_ICONS = (Object.keys(ICON_TABLE) as TopicIcon[]).filter((icon) => icon !== 'brain' && icon !== 'people');
 
 const isIcon = (value: string): value is TopicIcon => Object.hasOwn(ICON_TABLE, value);
 const isTone = (value: string): value is TileTone => (TILE_TONES as readonly string[]).includes(value);

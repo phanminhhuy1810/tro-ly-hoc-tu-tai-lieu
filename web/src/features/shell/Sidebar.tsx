@@ -16,7 +16,7 @@ export function Sidebar({ route }: { route: Route }) {
     { label: 'Học tiếp', icon: 'home', href: '#/', active: route.name === 'home' || route.name === 'course' || route.name === 'practice' },
     { label: 'Thư viện', icon: 'library', href: hrefFor({ name: 'library' }), active: route.name === 'library' },
     {
-      label: 'Cùng học',
+      label: 'Cộng đồng',
       icon: 'users',
       href: hrefFor({ name: 'community' }),
       active: route.name === 'community' || route.name === 'share' || route.name === 'rooms' || route.name === 'room',

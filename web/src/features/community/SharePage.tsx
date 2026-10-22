@@ -4,8 +4,8 @@ import type { Course, CourseReport, PublicationPreview, PublicationState, Visibi
 import { hrefFor } from '../../app/router';
 import { useApp, useLoad } from '../../app/store';
 import { Icon, type IconName } from '../../components/Icon';
+import { Mascot } from '../../components/Mascot';
 import { PageHeader } from '../../components/PageHeader';
-import { ArtBadge } from '../../components/Art';
 import { LoadingRows, ProblemNotice } from '../../components/StateViews';
 import { appLink, copyText } from '../../lib/clipboard';
 import { materialLabel, ratingText, VISIBILITY } from '../../lib/community';
@@ -173,7 +173,7 @@ export function SharePage({ courseId }: { courseId: string }) {
         title="Chia sẻ khóa"
         tone="mint"
         note={`“${course.content.title}” — chọn ai được vào học, xem trước rồi mới áp dụng.`}
-        art={<ArtBadge name="network" size={84} />}
+        art={<Mascot pose="plane" mood="happy" size={100} pettable />}
       />
 
       <div className="together-grid">

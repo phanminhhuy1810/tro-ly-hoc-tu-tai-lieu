@@ -6,7 +6,6 @@ import { CountUp } from '../../components/CountUp';
 import { Icon } from '../../components/Icon';
 import { Mascot } from '../../components/Mascot';
 import { PageHeader } from '../../components/PageHeader';
-import { ArtBadge } from '../../components/Art';
 import { LoadingRows, ProblemNotice } from '../../components/StateViews';
 import { describeError } from '../../lib/copy';
 
@@ -224,7 +223,7 @@ export function SettingsPage({ section }: { section?: 'coin' }) {
 
   return (
     <div className="page settings-page">
-      <PageHeader title="Cài đặt" tone="lilac" note="Chọn AI cho Kẹp, chỉnh chuyển động và xem Coin của bạn." art={<ArtBadge name="gear" size={92} />} />
+      <PageHeader title="Cài đặt" tone="lilac" note="Chọn AI cho Kẹp, chỉnh chuyển động và xem Coin của bạn." art={<Mascot pose="gear" mood="smug" size={100} pettable />} />
 
       {state.loading && !state.data && <LoadingRows rows={3} label="Đang mở cài đặt…" />}
       {state.error != null && <ProblemNotice problem={describeError(state.error)} onRetry={state.reload} />}
