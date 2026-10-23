@@ -50,7 +50,7 @@ export function NotebookPage() {
     return api<Note[]>('/notebook');
   }, []);
   const [draft, setDraft] = useState('');
-  const [draftColor, setDraftColor] = useState<NoteColor>('butter');
+  const [draftColor, setDraftColor] = useState<NoteColor>('sky');
   const [composing, setComposing] = useState(false);
   const composer = useRef<HTMLElement>(null);
   const writing = composing || draft.length > 0;
@@ -153,46 +153,11 @@ export function NotebookPage() {
     <div className="page notebook">
       <PageHeader
         title="Sổ tay"
-        tone="lilac"
+        tone="butter"
         note="Ghi nhanh mẹo nhớ, công thức — và những lời giải hay của Byte. Tô màu để tự xếp theo ý bạn."
         art={<Mascot pose="pencil" size={100} pettable />}
       />
 
-      <section ref={composer} className={`note-new note--${draftColor}${writing ? ' is-open' : ''}`} aria-label="Viết ghi chú mới">
-        <span className="note__tape" aria-hidden="true" />
-        <textarea
-          className="note-new__field"
-          rows={writing ? 3 : 1}
-          maxLength={10000}
-          value={draft}
-          placeholder={writing ? 'Một ý, công thức hay mẹo nhớ…' : '+ Ghi nhanh một ý…'}
-          aria-label="Ghi chú mới"
-          onFocus={() => setComposing(true)}
-          onChange={(e) => setDraft(e.target.value)}
-          onKeyDown={(e) => {
-            if (e.key === 'Escape' && !draft.trim()) {
-              setComposing(false);
-              e.currentTarget.blur();
-            }
-          }}
-        />
-        {writing && (
-          <div className="note-new__bar">
-            <ColorDots value={draftColor} label="Màu cho ghi chú mới" onPick={setDraftColor} />
-            <div className="note-new__actions">
-              {draft.trim() ? (
-                <button type="button" className="btn btn--primary btn--sm note-new__save" disabled={busy} aria-busy={busy} onClick={() => void add()}>
-                  <Icon name="plus" size={16} /> Dán vào sổ
-                </button>
-              ) : (
-                <button type="button" className="btn btn--ghost btn--sm" onClick={() => setComposing(false)}>
-                  Đóng
-                </button>
-              )}
-            </div>
-          </div>
-        )}
-      </section>
 
       <div className="library__bar notebook__bar">
         <div className="segmented segmented--fit" role="radiogroup" aria-label="Loại ghi chú">
@@ -236,6 +201,41 @@ export function NotebookPage() {
         />
       )}
       <div className="notes">
+        <section ref={composer} className={`note-new note--${draftColor}${writing ? ' is-open' : ''}`} aria-label="Viết ghi chú mới">
+          <span className="note__tape" aria-hidden="true" />
+          <textarea
+            className="note-new__field"
+            rows={writing ? 3 : 1}
+            maxLength={10000}
+            value={draft}
+            placeholder={writing ? 'Một ý, công thức hay mẹo nhớ…' : '+ Ghi nhanh một ý…'}
+            aria-label="Ghi chú mới"
+            onFocus={() => setComposing(true)}
+            onChange={(e) => setDraft(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === 'Escape' && !draft.trim()) {
+                setComposing(false);
+                e.currentTarget.blur();
+              }
+            }}
+          />
+          {writing && (
+            <div className="note-new__bar">
+              <ColorDots value={draftColor} label="Màu cho ghi chú mới" onPick={setDraftColor} />
+              <div className="note-new__actions">
+                {draft.trim() ? (
+                  <button type="button" className="btn btn--primary btn--sm note-new__save" disabled={busy} aria-busy={busy} onClick={() => void add()}>
+                    <Icon name="plus" size={16} /> Dán vào sổ
+                  </button>
+                ) : (
+                  <button type="button" className="btn btn--ghost btn--sm" onClick={() => setComposing(false)}>
+                    Đóng
+                  </button>
+                )}
+              </div>
+            </div>
+          )}
+        </section>
         {notes.map((note, index) => (
           <article key={note.id} className={`note note--${noteColor(note)}`} style={{ '--i': Math.min(index, 12) } as CSSProperties}>
             <span className="note__tape" aria-hidden="true" />
