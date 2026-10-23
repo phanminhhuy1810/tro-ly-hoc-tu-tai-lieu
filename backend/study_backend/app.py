@@ -59,6 +59,7 @@ from . import subnet_reasoning
 from . import chapter_evidence
 from . import correction_context, correction_prompt
 from . import chat_prompt
+from .accounts import register_accounts
 from .gemini import ProviderError
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -1444,6 +1445,7 @@ def create_app(db_path=None, storage_path=None, provider=None, extractor=None, a
     register_inline_help(app, database, jobs, owned, user, course_snapshot, course_plan, unit_from, approved_fragments, active_test, generate_checked, ai_memory)
     register_course_memory(app, database, course_snapshot, user, course_overview)
     register_blueprint(app, database, jobs, source_snapshot, user, generate_checked, ai.source_budget)
+    register_accounts(app, database)
     register_covers(app, database, course_snapshot, owned, community.ids, user)
     register_providers(app, ai, database, user)
     register_rooms(app, rooms, database, user, course_snapshot, course_plan, approved_fragments, unit_from, owned, active_test, jobs, generate_checked)

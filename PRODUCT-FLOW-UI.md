@@ -101,6 +101,10 @@ Claude tự quyết, chờ Huy xem lại:
 - **Cài đặt nói rõ AI và Coin**: mỗi AI có một dòng nói hợp việc gì (Gemini mạnh, nhanh, gửi trích đoạn tới Google; 27B trên Kaggle chỉ chạy khi phiên Kaggle bật; 12B trên máy tạo bài được nhưng chậm; 9B nhanh, hợp hỏi đáp). Bảng mới “Việc nào dùng AI, tốn bao nhiêu Coin?” chia ba nhóm: không dùng AI (chấm bài, ôn thẻ, xem lại bài, gợi ý đã lưu, phòng đố vui, đọc chữ trong ảnh bằng máy) miễn phí; AI nhẹ (hỏi chung, hỏi trong bài, nhận xét tự luận, đoán môn) 1 Coin; AI nặng (đọc cả tài liệu 3 Coin, tạo bài 1 + số câu, sửa nội dung 2, đọc lại ảnh 2). Giá lấy từ máy chủ; lượt lỗi không trừ Coin. Mỗi người vẫn chọn một AI cho mọi việc; chưa tự chuyển việc nặng sang AI mạnh.
 
 
+### Tài khoản — 23/10/2026
+
+Huy yêu cầu đăng nhập/đăng ký để lưu dữ liệu người dùng, trang thật đẹp và hợp Gmail. Claude làm (chờ Huy xem lại): trang `#/tai-khoan` chia đôi, bên trái nền ô vuông xanh với khẩu hiệu “Học từ chính tài liệu của bạn”, ba lợi ích và hai chú mèo; bên phải thẻ có hai tab Đăng nhập / Tạo tài khoản, ô email (gợi ý ten@gmail.com), mật khẩu có nút hiện/ẩn. Đăng ký giữ nguyên mọi thứ đang học trên máy. Cuối thanh bên có ô “Đăng nhập / Đăng ký”, đăng nhập rồi thì hiện tên. Màn hẹp xếp hình lên trên, form bên dưới. Đăng nhập bằng Google để sau (cần Huy tạo khóa OAuth trên Google Cloud).
+
 ## 1. Sản phẩm giải quyết việc gì?
 
 Người học có slide, giáo trình, ghi chú hoặc ảnh tài liệu nhưng khó biến chúng thành một quá trình học rõ ràng. Ứng dụng giúp họ kiểm tra phần đã đọc, xác nhận mục tiêu, duyệt lộ trình rồi học và luyện trên cùng nguồn. Khi nội dung sai hoặc lệch nhu cầu, người học có cách đối chiếu và sửa có phạm vi.

@@ -648,6 +648,11 @@ Các thay đổi đi kèm frontend mới `web/` (React). Đã thử trên bản 
 - Lộ trình toàn tài liệu (`blueprint.py`) chia phần theo sức chứa của model đang chọn: model trên máy/Kaggle giữ 9.000 ký tự nguồn và 24 đoạn mỗi lượt, tối đa 12 lượt, 2 lượt mỗi job (khoảng 30–45 trang chữ dày). Gemini (`GeminiAI.max_source_json` = 120.000) đọc tới 160 đoạn mỗi lượt, tối đa 20 lượt, 4 lượt mỗi job, đủ cho tài liệu cỡ vài trăm trang. Cỡ phần nằm trong `scope_sha256`, nên đổi model giữa chừng thì đọc lại từ đầu thay vì trộn phần. Bài học vẫn nhỏ (tách theo 9.000 ký tự) để model nào cũng tạo được. Vượt giới hạn với model trên máy thì báo chọn phạm vi nhỏ hơn hoặc chuyển sang Gemini.
 - Prompt version `blueprint` thành `20261023-model-sized-parts-v2`. Kiểm thử mới: `test_a_long_context_model_reads_the_scope_in_fewer_parts`, `test_too_long_for_a_local_model_points_to_a_long_context_one`. Chưa chạy với Gemini thật trên một PDF dài.
 
+### Tài khoản — 23/10/2026
+
+- `accounts.py`: `GET /api/account`, `POST /api/account/register` {email, password ≥ 8 ký tự, name}, `POST /api/account/login`, `POST /api/account/logout`. Dùng lại bảng `users` (email duy nhất, không phân biệt hoa thường) nên không đổi schema. Mật khẩu lưu bằng scrypt có salt. Đăng ký nâng người học ẩn danh của trình duyệt thành tài khoản, nên khóa, thẻ, kết quả đã có giữ nguyên; đăng nhập ở máy khác mở đúng người học đó. Dữ liệu ẩn danh của trình duyệt đang đăng nhập không tự gộp vào tài khoản. Sai mật khẩu 8 lần trong 15 phút với cùng email thì báo 429. Chưa có đăng nhập Google (cần OAuth client của người vận hành), quên mật khẩu hay xác minh email.
+- [Snapshot API](backend/frontend-openapi.json) tạo lại: 143 → 147 đường dẫn. Kiểm thử mới: `test_registering_keeps_the_anonymous_learners_data_and_login_opens_it_elsewhere`, `test_repeated_wrong_passwords_are_slowed_down`.
+
 ## Phụ lục API: toàn bộ điểm nối trong snapshot hiện hành
 
 Danh mục sinh từ [backend/frontend-openapi.json](backend/frontend-openapi.json):132 paths/145 operations. Bảng giúp tìm route, không thay DTO/quy tắc phân quyền trong code. Nhiều response chưa có `response_model` tường minh; response schema trống không có nghĩa API không trả dữ liệu. Snapshot được tạo bằng app cô lập, không phải probe toàn bộ route trên runtime thật.

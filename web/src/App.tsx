@@ -27,6 +27,7 @@ const pages = {
   rooms: () => import('./features/rooms/RoomsPage').then((m) => ({ default: m.RoomsPage })),
   room: () => import('./features/rooms/RoomPage').then((m) => ({ default: m.RoomPage })),
   states: () => import('./features/preview/StatesPage').then((m) => ({ default: m.StatesPage })),
+  account: () => import('./features/account/AccountPage').then((m) => ({ default: m.AccountPage })),
 };
 const CreatePage = lazy(pages.create);
 const LibraryPage = lazy(pages.library);
@@ -39,12 +40,13 @@ const SharePage = lazy(pages.share);
 const RoomsPage = lazy(pages.rooms);
 const RoomPage = lazy(pages.room);
 const StatesPage = lazy(pages.states);
+const AccountPage = lazy(pages.account);
 
 function preloadPages() {
   for (const load of Object.values(pages)) void load().catch(() => undefined);
 }
 
-const NO_CONTEXT = new Set(['home', 'states', 'create', 'library', 'notebook', 'progress', 'settings', 'community', 'share', 'rooms']);
+const NO_CONTEXT = new Set(['home', 'states', 'account', 'create', 'library', 'notebook', 'progress', 'settings', 'community', 'share', 'rooms']);
 
 export function App() {
   const route = useRoute();
@@ -86,6 +88,7 @@ export function App() {
           {route.name === 'rooms' && <RoomsPage key={`${route.code ?? ''}/${route.courseId ?? ''}`} code={route.code} courseId={route.courseId} />}
           {route.name === 'room' && <RoomPage key={route.roomId} roomId={route.roomId} />}
           {route.name === 'states' && <StatesPage />}
+          {route.name === 'account' && <AccountPage />}
           {route.name === 'missing' && (
             <EmptyState
               art={<Mascot mood="surprised" size={110} pettable />}

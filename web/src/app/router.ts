@@ -19,6 +19,7 @@ export type Route =
   | { name: 'rooms'; code?: string; courseId?: string }
   | { name: 'room'; roomId: string }
   | { name: 'states' }
+  | { name: 'account' }
   | { name: 'missing' };
 
 export function parseRoute(hash: string): Route {
@@ -42,6 +43,7 @@ export function parseRoute(hash: string): Route {
   if (parts[0] === 'phong' && parts[1]) return { name: 'room', roomId: parts[1] };
   if (parts[0] === 'phong') return { name: 'rooms' };
   if (parts[0] === 'mau-trang-thai') return { name: 'states' };
+  if (parts[0] === 'tai-khoan') return { name: 'account' };
   return { name: 'missing' };
 }
 
@@ -79,14 +81,16 @@ export function hrefFor(route: Route): string {
       return `#/phong/${encodeURIComponent(route.roomId)}`;
     case 'states':
       return '#/mau-trang-thai';
+    case 'account':
+      return '#/tai-khoan';
     default:
       return '#/';
   }
 }
 
-/** Screens that take the whole window (no sidebar): a lesson, a card deck, a running practice round, a quiz room. */
+/** Screens that take the whole window (no sidebar): a lesson, a card deck, a running practice round, a quiz room, signing in. */
 export function isFocus(route: Route): boolean {
-  return route.name === 'lesson' || route.name === 'cards' || route.name === 'room' || (route.name === 'practice' && Boolean(route.sessionId));
+  return route.name === 'account' || route.name === 'lesson' || route.name === 'cards' || route.name === 'room' || (route.name === 'practice' && Boolean(route.sessionId));
 }
 
 /** Room invites from the old screens look like /?room_code=ABCD2345#rooms; open them on the new join screen. */

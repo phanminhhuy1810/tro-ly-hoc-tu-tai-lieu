@@ -15,6 +15,7 @@ import './styles/create.css';
 import './styles/screens.css';
 import './styles/motion.css';
 import './styles/together.css';
+import './styles/account.css';
 
 upgradeLegacyLink();
 
