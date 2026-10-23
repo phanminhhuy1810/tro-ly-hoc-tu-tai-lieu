@@ -149,6 +149,45 @@ export function NotebookPage() {
       (!q || fold(n.body).includes(q)),
   );
 
+  // The new note: first tile of the board, or the way in when nothing is there yet.
+  const newNote = (
+    <section ref={composer} className={`note-new note--${draftColor}${writing ? ' is-open' : ''}`} aria-label="Viết ghi chú mới">
+      <span className="note__tape" aria-hidden="true" />
+      <textarea
+        className="note-new__field"
+        rows={writing ? 3 : 1}
+        maxLength={10000}
+        value={draft}
+        placeholder={writing ? 'Một ý, công thức hay mẹo nhớ…' : state.data?.length === 0 ? '+ Ghi ý đầu tiên của bạn…' : '+ Ghi nhanh một ý…'}
+        aria-label="Ghi chú mới"
+        onFocus={() => setComposing(true)}
+        onChange={(e) => setDraft(e.target.value)}
+        onKeyDown={(e) => {
+          if (e.key === 'Escape' && !draft.trim()) {
+            setComposing(false);
+            e.currentTarget.blur();
+          }
+        }}
+      />
+      {writing && (
+        <div className="note-new__bar">
+          <ColorDots value={draftColor} label="Màu cho ghi chú mới" onPick={setDraftColor} />
+          <div className="note-new__actions">
+            {draft.trim() ? (
+              <button type="button" className="btn btn--primary btn--sm note-new__save" disabled={busy} aria-busy={busy} onClick={() => void add()}>
+                <Icon name="plus" size={16} /> Dán vào sổ
+              </button>
+            ) : (
+              <button type="button" className="btn btn--ghost btn--sm" onClick={() => setComposing(false)}>
+                Đóng
+              </button>
+            )}
+          </div>
+        </div>
+      )}
+    </section>
+  );
+
   return (
     <div className="page notebook">
       <PageHeader
@@ -157,8 +196,7 @@ export function NotebookPage() {
         note="Ghi nhanh mẹo nhớ, công thức — và những lời giải hay của Byte. Tô màu để tự xếp theo ý bạn."
         art={<Mascot pose="pencil" size={100} pettable />}
       />
-
-
+      {Boolean(state.data?.length) && (
       <div className="library__bar notebook__bar">
         <div className="segmented segmented--fit" role="radiogroup" aria-label="Loại ghi chú">
           <button type="button" role="radio" aria-checked={label === 'all'} onClick={() => setLabel('all')}>
@@ -180,6 +218,7 @@ export function NotebookPage() {
           <input className="field" value={query} placeholder="Tìm trong sổ tay…" aria-label="Tìm trong sổ tay" onChange={(e) => setQuery(e.target.value)} />
         </label>
       </div>
+      )}
 
       {deleted && (
         <div className="notice notice--butter undo-bar" role="status">
@@ -197,86 +236,55 @@ export function NotebookPage() {
         <EmptyState
           art={<Mascot pose="pencil" size={120} pettable />}
           title={state.data.length ? 'Không có ghi chú khớp bộ lọc' : 'Sổ tay đang trống'}
-          body="Khi Byte giải thích hay, bấm “Lưu vào sổ tay” ngay dưới câu trả lời. Bạn cũng có thể tự ghi ở ô phía trên."
+          body={state.data.length ? 'Thử bỏ lọc màu hoặc đổi từ khóa, hay ghi luôn một ý mới ngay dưới đây.' : 'Ghi ý đầu tiên vào tờ giấy bên dưới, hoặc bấm “Lưu vào sổ tay” dưới lời giải hay của Byte.'}
+          action={<div className="notebook__start">{newNote}</div>}
         />
       )}
-      <div className="notes">
-        <section ref={composer} className={`note-new note--${draftColor}${writing ? ' is-open' : ''}`} aria-label="Viết ghi chú mới">
-          <span className="note__tape" aria-hidden="true" />
-          <textarea
-            className="note-new__field"
-            rows={writing ? 3 : 1}
-            maxLength={10000}
-            value={draft}
-            placeholder={writing ? 'Một ý, công thức hay mẹo nhớ…' : '+ Ghi nhanh một ý…'}
-            aria-label="Ghi chú mới"
-            onFocus={() => setComposing(true)}
-            onChange={(e) => setDraft(e.target.value)}
-            onKeyDown={(e) => {
-              if (e.key === 'Escape' && !draft.trim()) {
-                setComposing(false);
-                e.currentTarget.blur();
-              }
-            }}
-          />
-          {writing && (
-            <div className="note-new__bar">
-              <ColorDots value={draftColor} label="Màu cho ghi chú mới" onPick={setDraftColor} />
-              <div className="note-new__actions">
-                {draft.trim() ? (
-                  <button type="button" className="btn btn--primary btn--sm note-new__save" disabled={busy} aria-busy={busy} onClick={() => void add()}>
-                    <Icon name="plus" size={16} /> Dán vào sổ
+      {notes.length > 0 && (
+        <div className="notes">
+          {newNote}
+          {notes.map((note, index) => (
+            <article key={note.id} className={`note note--${noteColor(note)}`} style={{ '--i': Math.min(index, 12) } as CSSProperties}>
+              <span className="note__tape" aria-hidden="true" />
+              <header className="note__head">
+                <span className="note__label">{LABEL[note.label] ?? note.label}</span>
+                <span className="meta">{when(note.updated_at)}</span>
+                <span className="note__tools">
+                  <button type="button" className="icon-btn" aria-label="Đổi màu ghi chú" aria-expanded={palette === note.id} onClick={() => setPalette((open) => (open === note.id ? null : note.id))}>
+                    <span className={`color-dot color-dot--${noteColor(note)} color-dot--sm`} aria-hidden="true" />
                   </button>
-                ) : (
-                  <button type="button" className="btn btn--ghost btn--sm" onClick={() => setComposing(false)}>
-                    Đóng
+                  <button type="button" className="icon-btn" aria-label="Sửa ghi chú" onClick={() => setEditing({ id: note.id, body: note.body })}>
+                    <Icon name="edit" size={17} />
                   </button>
-                )}
-              </div>
-            </div>
-          )}
-        </section>
-        {notes.map((note, index) => (
-          <article key={note.id} className={`note note--${noteColor(note)}`} style={{ '--i': Math.min(index, 12) } as CSSProperties}>
-            <span className="note__tape" aria-hidden="true" />
-            <header className="note__head">
-              <span className="note__label">{LABEL[note.label] ?? note.label}</span>
-              <span className="meta">{when(note.updated_at)}</span>
-              <span className="note__tools">
-                <button type="button" className="icon-btn" aria-label="Đổi màu ghi chú" aria-expanded={palette === note.id} onClick={() => setPalette((open) => (open === note.id ? null : note.id))}>
-                  <span className={`color-dot color-dot--${noteColor(note)} color-dot--sm`} aria-hidden="true" />
-                </button>
-                <button type="button" className="icon-btn" aria-label="Sửa ghi chú" onClick={() => setEditing({ id: note.id, body: note.body })}>
-                  <Icon name="edit" size={17} />
-                </button>
-                <button type="button" className="icon-btn" aria-label="Xóa ghi chú" onClick={() => void remove(note)}>
-                  <Icon name="trash" size={17} />
-                </button>
-              </span>
-            </header>
-            {palette === note.id && (
-              <div className="note__palette enter">
-                <ColorDots value={noteColor(note)} label="Màu ghi chú" onPick={(color) => void recolor(note, color)} />
-              </div>
-            )}
-            {editing?.id === note.id ? (
-              <div className="note__edit">
-                <textarea className="field" rows={6} maxLength={10000} value={editing.body} onChange={(e) => setEditing({ id: note.id, body: e.target.value })} />
-                <div className="dialog__actions">
-                  <button type="button" className="btn btn--ghost btn--sm" onClick={() => setEditing(null)}>
-                    Thôi
+                  <button type="button" className="icon-btn" aria-label="Xóa ghi chú" onClick={() => void remove(note)}>
+                    <Icon name="trash" size={17} />
                   </button>
-                  <button type="button" className="btn btn--primary btn--sm" disabled={!editing.body.trim()} onClick={() => void save(note)}>
-                    Lưu
-                  </button>
+                </span>
+              </header>
+              {palette === note.id && (
+                <div className="note__palette enter">
+                  <ColorDots value={noteColor(note)} label="Màu ghi chú" onPick={(color) => void recolor(note, color)} />
                 </div>
-              </div>
-            ) : (
-              <RichText className="note__body" text={fix(note.label === 'ai' ? stripRefLabels(note.body) : note.body)} />
-            )}
-          </article>
-        ))}
-      </div>
+              )}
+              {editing?.id === note.id ? (
+                <div className="note__edit">
+                  <textarea className="field" rows={6} maxLength={10000} value={editing.body} onChange={(e) => setEditing({ id: note.id, body: e.target.value })} />
+                  <div className="dialog__actions">
+                    <button type="button" className="btn btn--ghost btn--sm" onClick={() => setEditing(null)}>
+                      Thôi
+                    </button>
+                    <button type="button" className="btn btn--primary btn--sm" disabled={!editing.body.trim()} onClick={() => void save(note)}>
+                      Lưu
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <RichText className="note__body" text={fix(note.label === 'ai' ? stripRefLabels(note.body) : note.body)} />
+              )}
+            </article>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

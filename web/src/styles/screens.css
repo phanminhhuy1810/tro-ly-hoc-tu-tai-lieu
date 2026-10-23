@@ -577,6 +577,20 @@
   break-inside: avoid;
   margin: 0 0 18px;
 }
+/* An empty notebook: the new note sits centred under Byte, as the way in. */
+.notebook__start {
+  width: min(560px, 100%);
+  margin-top: 18px;
+  text-align: left;
+}
+.notebook__start > .note-new {
+  margin: 0;
+  min-height: 116px;
+  padding: 22px;
+}
+.notebook__start .note-new__field {
+  min-height: 62px;
+}
 .note-new.is-open {
   cursor: default;
   transform: translateY(-2px);

@@ -8,7 +8,7 @@ Backend đã có phần lớn API cần cho luồng tài liệu → duyệt ngu�
 
 Bằng chứng regression sau lượt dọn ngày 21/10/2026: **410 kiểm thử backend và 75 kiểm thử frontend đạt**. Xem [report chạy lại](backend/evidence/project-cleanup-tests.txt). Đây là kiểm tra kỹ thuật sau khi đổi `preview/` thành `frontend/`, không phải một lượt đo chất lượng AI mới.
 
-Snapshot request contract có **132 paths, 145 operations, 202 schema references giải được**, đối chiếu 30 điểm nối trọng yếu. [OpenAPI](backend/frontend-openapi.json) được tạo từ app cô lập và adapter test; không gọi model, không sửa dữ liệu người dùng. [Report](backend/evidence/frontend-contract-check.json) không phải nghiệm thu UI hoặc điểm chất lượng AI.
+Ở checkpoint 21/10, snapshot request contract có **132 paths, 145 operations, 202 schema references giải được**, đối chiếu 30 điểm nối trọng yếu. [Report](backend/evidence/frontend-contract-check.json) giữ nguyên bằng chứng mốc đó, không phải nghiệm thu UI hoặc điểm chất lượng AI. [OpenAPI hiện hành](backend/frontend-openapi.json) được cập nhật ngày 23/10 từ app cô lập: **150 paths, 167 operations**, gồm Google; không gọi model, không sửa dữ liệu người dùng.
 
 Ba nhóm còn mở rõ nhất:
 
@@ -58,11 +58,11 @@ Python/FastAPI/Pydantic điều phối API, SQLite lưu dữ liệu và revision
 
 ## 4. Dữ liệu bền vững và phiên bản
 
-Schema SQL hiện tại là **18**. `db.py` giữ migration theo version, bật foreign keys, WAL, busy timeout15 giây. Read transaction dùng `BEGIN`; write transaction dùng `BEGIN IMMEDIATE`.
+Schema SQL hiện tại là **22** (23/10/2026, thêm liên kết Google và nonce đăng nhập). `db.py` giữ migration theo version, bật foreign keys, WAL, busy timeout15 giây. Read transaction dùng `BEGIN`; write transaction dùng `BEGIN IMMEDIATE`.
 
 | Nhóm dữ liệu | Bảng tiêu biểu | Ý nghĩa bảo toàn |
 |---|---|---|
-| Danh tính | users, auth_sessions | Profile local và hash token phiên |
+| Danh tính | users, auth_sessions, google_identities, google_login_challenges | Profile, hash token phiên, liên kết Google và nonce một lần |
 | Nguồn | sources, fragments, extraction_revisions | Bản gốc khác bản trích; locator/revision độc lập model |
 | Duyệt nguồn | source_proposals, source_analyses, source_ocr_batches, source_library_entries | Preview, phân tích, OCR tiếp và phân trang |
 | Khóa học | plans, courses, course_revisions, revision_proposals | Plan duyệt, active revision và bản trước |
@@ -650,12 +650,21 @@ Các thay đổi đi kèm frontend mới `web/` (React). Đã thử trên bản 
 
 ### Tài khoản — 23/10/2026
 
-- `accounts.py`: `GET /api/account`, `POST /api/account/register` {email, password ≥ 8 ký tự, name}, `POST /api/account/login`, `POST /api/account/logout`. Dùng lại bảng `users` (email duy nhất, không phân biệt hoa thường) nên không đổi schema. Mật khẩu lưu bằng scrypt có salt. Đăng ký nâng người học ẩn danh của trình duyệt thành tài khoản, nên khóa, thẻ, kết quả đã có giữ nguyên; đăng nhập ở máy khác mở đúng người học đó. Dữ liệu ẩn danh của trình duyệt đang đăng nhập không tự gộp vào tài khoản. Sai mật khẩu 8 lần trong 15 phút với cùng email thì báo 429. Chưa có đăng nhập Google (cần OAuth client của người vận hành), quên mật khẩu hay xác minh email.
+- `accounts.py`: `GET /api/account`, `POST /api/account/register` {email, password ≥ 8 ký tự, name}, `POST /api/account/login`, `POST /api/account/logout`. Dùng lại bảng `users` (email duy nhất, không phân biệt hoa thường) nên bước tài khoản mật khẩu không đổi schema. Mật khẩu lưu bằng scrypt có salt. Đăng ký nâng người học ẩn danh của trình duyệt thành tài khoản, nên khóa, thẻ, kết quả đã có giữ nguyên; đăng nhập ở máy khác mở đúng người học đó. Dữ liệu ẩn danh của trình duyệt đang đăng nhập không tự gộp vào tài khoản. Sai mật khẩu 8 lần trong 15 phút với cùng email thì báo 429. Google được bổ sung bên dưới; quên mật khẩu và xác minh email mật khẩu vẫn chưa có.
 - [Snapshot API](backend/frontend-openapi.json) tạo lại: 143 → 147 đường dẫn. Kiểm thử mới: `test_registering_keeps_the_anonymous_learners_data_and_login_opens_it_elsewhere`, `test_repeated_wrong_passwords_are_slowed_down`.
+
+### Đăng nhập Google và hoàn thiện hai màn — 23/10/2026
+
+- `google_accounts.py` dùng Google Identity Services trên web và `google-auth[requests]==2.62.0` phía server. Cấu hình `STUDY_GOOGLE_CLIENT_ID` là Client ID loại Web application; không dùng Client Secret. Thêm `GET /api/account/google/config` (chỉ trả enabled/Client ID công khai), `POST /api/account/google/challenge` và `POST /api/account/google` {credential}. `GET /api/account` thêm `google_linked`.
+- Server kiểm chữ ký token, audience, issuer, expiry qua thư viện chính thức, yêu cầu email đã xác minh và `azp` khớp nếu có. Danh tính bền vững dùng `sub`, không dùng email do trình duyệt tự khai. Nonce ngẫu nhiên lưu hash, hết hạn sau 10 phút, gắn đúng cookie phiên; thành công thì tiêu thụ nonce, thu hồi phiên trước và cấp cookie HttpOnly/SameSite Strict mới (Secure khi HTTPS). Không lưu/log token Google.
+- Schema 22 thêm `google_identities` và `google_login_challenges`. Google mới nâng người dùng ẩn danh nên giữ dữ liệu; Google đã liên kết mở đúng tài khoản ở trình duyệt khác. Email trùng tài khoản mật khẩu không được tự gộp: cần đăng nhập mật khẩu rồi chủ động kết nối Google cùng email. Chưa có Client ID thì trả trạng thái tắt; lỗi mạng xác minh báo 503, token không hợp lệ báo 401. Không phụ thuộc AI/Coin.
+- **8 test mới đạt**: bảo toàn dữ liệu, xoay phiên, đăng nhập lại, liên kết có chủ đích, nonce khác trình duyệt/hết hạn/replay, claim sai, mạng lỗi, request khác origin và cấu hình tắt. Có test đi qua bộ kiểm chứng mật mã thật bằng token RSA và chứng thư cục bộ, gồm sai chữ ký/audience/issuer/thời hạn; không gọi Google thật.
+- **Regression**: 448 test backend, 78 test `web/`, typecheck và production build đạt. Đã kiểm tra Sổ tay/Cộng đồng ở desktop, thử lưu ghi chú xanh trên DB demo riêng; không đổi dữ liệu học của Huy, không gọi AI trả phí. Bản trước của Claude gồm HEAD và 4 file chưa commit được giữ trong nhánh `codex/claude-before-ui-google-20261023-103244` cùng `.git/codex-backups/claude-before-ui-google-20261023-103244/` (patch, bản sao file, hash).
+- **Giới hạn kiểm chứng**: Huy chưa tạo OAuth Client ID, nên chưa xác nhận popup/đăng nhập Google với tài khoản thật. Chưa triển khai web công khai, chưa kiểm cấu hình domain/HTTPS/proxy nhiều người. Không coi test giả lập là nghiệm thu Google thật. Huy đã đồng ý commit ngày 23/10/2026; chưa push.
 
 ## Phụ lục API: toàn bộ điểm nối trong snapshot hiện hành
 
-Danh mục sinh từ [backend/frontend-openapi.json](backend/frontend-openapi.json):132 paths/145 operations. Bảng giúp tìm route, không thay DTO/quy tắc phân quyền trong code. Nhiều response chưa có `response_model` tường minh; response schema trống không có nghĩa API không trả dữ liệu. Snapshot được tạo bằng app cô lập, không phải probe toàn bộ route trên runtime thật.
+Danh mục sinh từ [backend/frontend-openapi.json](backend/frontend-openapi.json):150 paths/167 operations (23/10/2026). Bảng giúp tìm route, không thay DTO/quy tắc phân quyền trong code. Nhiều response chưa có `response_model` tường minh; response schema trống không có nghĩa API không trả dữ liệu. Snapshot được tạo bằng app cô lập, không phải probe toàn bộ route trên runtime thật.
 
 Path trong bảng đã gồm `/api` nếu là API. Cookie phiên do server cấp; tham số path/query, request body và lỗi có thể xem đầy đủ trong JSON snapshot hoặc handler tương ứng.
 
@@ -718,6 +727,7 @@ Path trong bảng đã gồm `/api` nếu là API. Cookie phiên do server cấp
 | POST | `/api/notebook` | NoteBody (application/json) | — |
 | PUT | `/api/notebook/{note_id}` | NoteEdit (application/json) | — |
 | DELETE | `/api/notebook/{note_id}` | — | — |
+| PUT | `/api/notebook/{note_id}/color` | NoteColorBody (application/json) | — |
 | POST | `/api/notebook/{note_id}/restore` | — | — |
 | POST | `/api/notebook/from-chat` | FromChat (application/json) | — |
 | GET | `/api/courses/{course_id}/progress` | — | — |
@@ -752,6 +762,7 @@ Path trong bảng đã gồm `/api` nếu là API. Cookie phiên do server cấp
 | GET | `/api/courses/{course_id}/revisions` | — | — |
 | GET | `/api/courses/{course_id}/revisions/{revision}` | — | — |
 | POST | `/api/courses/{course_id}/revert-preview` | Revert (application/json) | — |
+| POST | `/api/courses/{course_id}/unlock-policy-preview` | UnlockPolicyEdit (application/json) | — |
 | POST | `/api/courses/{course_id}/future-plan-preview` | FutureEdit (application/json) | — |
 | GET | `/api/courses/{course_id}/question-completion` | — | unit_id |
 | POST | `/api/courses/{course_id}/question-completion` | CompletionRequest (application/json) | — |
@@ -770,6 +781,7 @@ Path trong bảng đã gồm `/api` nếu là API. Cookie phiên do server cấp
 | GET | `/api/achievements` | — | — |
 | POST | `/api/courses/{course_id}/publication-preview` | Publication (application/json) | — |
 | POST | `/api/publications/{publication_id}/apply` | ApplyPublication (application/json) | — |
+| GET | `/api/courses/{course_id}/publication` | — | — |
 | POST | `/api/courses/{course_id}/invite` | — | — |
 | POST | `/api/community/join` | Join (application/json) | — |
 | POST | `/api/courses/{course_id}/enroll` | — | — |
@@ -785,6 +797,25 @@ Path trong bảng đã gồm `/api` nếu là API. Cookie phiên do server cấp
 | PUT | `/api/help/threads/{thread_id}/draft` | HelpDraft (application/json) | — |
 | POST | `/api/help/threads/{thread_id}/notebook` | SaveHelpNote (application/json) | — |
 | POST | `/api/help/threads/{thread_id}/actions` | HelpAction (application/json) | — |
+| GET | `/api/courses/{course_id}/memory` | — | — |
+| PUT | `/api/courses/{course_id}/memory` | MemoryEdit (application/json) | — |
+| GET | `/api/tutor-style` | — | — |
+| PUT | `/api/tutor-style` | TutorStyleEdit (application/json) | — |
+| POST | `/api/sources/{source_id}/blueprint` | BlueprintRequest (application/json) | — |
+| GET | `/api/sources/{source_id}/blueprint` | — | — |
+| POST | `/api/plans/from-blueprint` | BlueprintPlan (application/json) | — |
+| GET | `/api/account` | — | — |
+| POST | `/api/account/register` | Register (application/json) | — |
+| POST | `/api/account/login` | Login (application/json) | — |
+| POST | `/api/account/logout` | — | — |
+| GET | `/api/account/google/config` | — | — |
+| POST | `/api/account/google/challenge` | — | — |
+| POST | `/api/account/google` | GoogleCredential (application/json) | — |
+| GET | `/api/covers` | — | — |
+| PUT | `/api/courses/{course_id}/cover` | PresetCover (application/json) | — |
+| DELETE | `/api/courses/{course_id}/cover` | — | — |
+| POST | `/api/courses/{course_id}/cover/upload` | Body_upload_api_courses__course_id__cover_upload_post (multipart/form-data) | — |
+| GET | `/api/courses/{course_id}/cover/image` | — | — |
 | GET | `/api/ai/models` | — | — |
 | PUT | `/api/ai/selection` | AISelection (application/json) | — |
 | GET | `/api/courses/{course_id}/room-bank` | — | expected_revision |

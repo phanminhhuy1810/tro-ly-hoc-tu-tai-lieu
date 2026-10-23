@@ -1,4 +1,51 @@
 /* Sign in / create an account: a warm illustrated panel beside a clean form card. */
+.auth-google {
+  display: grid;
+  gap: 10px;
+  margin: 20px 0;
+}
+.auth-google__button {
+  min-height: 44px;
+}
+.auth-google__fallback,
+.auth-google__connected {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 18px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: white;
+  color: var(--ink-2);
+  font: inherit;
+  font-weight: 650;
+}
+.auth-google__fallback:disabled {
+  cursor: default;
+}
+.auth-google__connected {
+  margin: 20px 0;
+  border-color: #cedfbc;
+  background: #f3f8ee;
+}
+.auth-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0;
+  color: var(--ink-3);
+  font-size: 13px;
+}
+.auth-divider::before,
+.auth-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
 .auth {
   min-height: 100vh;
   display: grid;

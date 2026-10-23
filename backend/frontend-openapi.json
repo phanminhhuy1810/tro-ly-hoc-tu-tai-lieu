@@ -5641,6 +5641,74 @@
         }
       }
     },
+    "/api/account/google/config": {
+      "get": {
+        "summary": "Config",
+        "operationId": "config_api_account_google_config_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/account/google/challenge": {
+      "post": {
+        "summary": "Challenge",
+        "operationId": "challenge_api_account_google_challenge_post",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/account/google": {
+      "post": {
+        "summary": "Google Login",
+        "operationId": "google_login_api_account_google_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GoogleCredential"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/covers": {
       "get": {
         "summary": "Covers",
@@ -7738,6 +7806,22 @@
         ],
         "title": "GenerateUnit"
       },
+      "GoogleCredential": {
+        "properties": {
+          "credential": {
+            "type": "string",
+            "maxLength": 16384,
+            "minLength": 20,
+            "title": "Credential"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "credential"
+        ],
+        "title": "GoogleCredential"
+      },
       "HTTPValidationError": {
         "properties": {
           "detail": {
@@ -8189,7 +8273,7 @@
               "type": "string"
             },
             "type": "array",
-            "maxItems": 12,
+            "maxItems": 24,
             "minItems": 1,
             "title": "Source Refs"
           },

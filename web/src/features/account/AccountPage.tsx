@@ -8,6 +8,7 @@ import { Mascot, MascotTrio } from '../../components/Mascot';
 import { LoadingRows, ProblemNotice } from '../../components/StateViews';
 import { describeError } from '../../lib/copy';
 import { useSlidingPill } from '../../lib/useSlidingPill';
+import { GoogleSignIn } from './GoogleSignIn';
 
 // Sign in / create an account. Creating an account keeps everything this
 // browser has learned so far (the anonymous learner becomes the account);
@@ -17,6 +18,7 @@ export interface Account {
   signed_in: boolean;
   email: string | null;
   name: string | null;
+  google_linked?: boolean;
 }
 
 type Mode = 'login' | 'register';
@@ -83,6 +85,8 @@ function AuthForm({ initial }: { initial: Mode }) {
       <p className="auth-card__lead">
         {register ? 'Khóa học, thẻ và tiến độ bạn đang có trên máy này sẽ chuyển vào tài khoản, không mất gì.' : 'Đăng nhập để học tiếp đúng chỗ đang dở, trên máy nào cũng được.'}
       </p>
+      <GoogleSignIn onSuccess={goHome} />
+      <div className="auth-divider"><span>hoặc dùng email</span></div>
       <form className="auth-form" onSubmit={(event) => void submit(event)} noValidate>
         {register && (
           <label className="auth-field">
@@ -147,6 +151,7 @@ function SignedIn({ account }: { account: Account }) {
       <h1 className="auth-card__title">{account.name}</h1>
       <p className="auth-me__email">{account.email}</p>
       <p className="auth-card__lead">Khóa học, thẻ, ghi chú và tiến độ của bạn đang được lưu trong tài khoản này. Đăng nhập máy khác bằng email trên để học tiếp.</p>
+      <GoogleSignIn connected={account.google_linked} connect onSuccess={goHome} />
       <div className="auth-me__actions">
         <a className="btn btn--primary btn--lg" href={hrefFor({ name: 'home' })}>
           Về trang học <Icon name="arrowRight" size={18} />

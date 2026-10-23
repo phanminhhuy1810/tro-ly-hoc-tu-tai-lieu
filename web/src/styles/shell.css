@@ -418,23 +418,24 @@
 }
 .peek__cat {
   position: absolute;
-  animation: peek-duck 4s ease-in-out infinite;
-  animation-delay: var(--peek-delay, 0s);
 }
 .peek__turn {
   display: block;
+  transition: translate var(--dur-3) var(--ease-pop);
+}
+/* Point at a cat and it ducks behind the banner until the pointer leaves. */
+.peek__cat:hover .peek__turn {
+  translate: var(--duck);
+}
+/* Quiet until tapped: sparkles, hearts and bubbles only come with a reaction. */
+.peek__cat .mascot:not(.is-petted-a):not(.is-petted-b) .mascot__extra {
+  display: none;
+}
+.peek__cat .mascot:not(.is-petted-a):not(.is-petted-b) * {
+  animation: none;
 }
 .peek > .page-banner {
   z-index: 1;
-}
-@keyframes peek-duck {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translate(var(--duck, 0px, 7px));
-  }
 }
 @media (max-width: 760px) {
   .peek__cat--side,

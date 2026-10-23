@@ -1,6 +1,6 @@
 # Trợ lý học từ tài liệu
 
-Đề tài đã chốt: web giúp sinh viên biến tài liệu thành khóa học với **Học – Flashcard – Ôn luyện**. Ưu tiên giao diện desktop (điện thoại dùng được với thanh điều hướng đáy); tên/logo hiện tại chưa chốt. Cập nhật 22/10/2026.
+Đề tài đã chốt: web giúp sinh viên biến tài liệu thành khóa học với **Học – Flashcard – Ôn luyện**. Ưu tiên giao diện desktop (điện thoại dùng được với thanh điều hướng đáy). Huy chốt tên web **Clawledge**, mèo/chatbot **Byte**. Cập nhật 23/10/2026.
 
 ## Chỉ cần đọc hai tài liệu
 
@@ -33,7 +33,23 @@ Mở `http://127.0.0.1:8770/` để dùng giao diện mới (`web/`, React + Typ
 ./check.sh
 ```
 
-Ngày 23/10/2026 (sau lời dặn chat của Kẹp, đổi cách mở bài, đọc tài liệu dài theo sức chứa model): **440 kiểm thử backend, 75 kiểm thử frontend cũ và 78 kiểm thử `web/` đạt**. Mốc trước đó (sau khi dọn thư mục): 410 backend và 75 frontend; xem [kết quả](backend/evidence/project-cleanup-tests.txt). Đủ API để frontend tiếp nhận, **chưa nghiệm thu toàn backend**: F18 (lưu ý mâu thuẫn nguồn), chất lượng AI/OCR, QA mindmap trên runtime và thử người dùng còn mở. Nhóm chưa thử, 0 người độc lập. Số test không thể hiện độ chính xác AI.
+Ngày 23/10/2026, sau khi thêm đăng nhập Google: **448 kiểm thử backend, 78 kiểm thử `web/`, typecheck và production build đạt**. 75 kiểm thử frontend cũ đạt ở mốc trước; lượt này không sửa hay chạy lại bản cũ. Mốc sau khi dọn thư mục: 410 backend và 75 frontend; xem [kết quả](backend/evidence/project-cleanup-tests.txt). Đủ API để frontend tiếp nhận, **chưa nghiệm thu toàn backend**: F18 (lưu ý mâu thuẫn nguồn), chất lượng AI/OCR, QA mindmap trên runtime và thử người dùng còn mở. Nhóm chưa thử, 0 người độc lập. Số test không thể hiện độ chính xác AI.
+
+## Bật đăng nhập Google
+
+Code đã có, nhưng **chưa thử đăng nhập bằng tài khoản Google thật** vì Huy chưa tạo OAuth Client ID. Chưa cấu hình thì nút Google giải thích rõ và đăng nhập email/mật khẩu vẫn dùng được.
+
+1. Trong [Google Cloud Console](https://console.cloud.google.com/), chọn/tạo project, mở **Google Auth Platform** và điền tên app, email hỗ trợ, Audience theo hướng dẫn. Nếu đang ở chế độ Testing và Console yêu cầu, thêm email của bạn bè vào Test users.
+2. Mở **Clients → Create client → Web application**. Trong **Authorized JavaScript origins**, thêm `http://127.0.0.1:8770`. Nếu dùng `http://localhost:8770` hoặc Vite `http://127.0.0.1:5173`, thêm đúng origin đó; không thêm đường dẫn `/#/...`. Bản xem riêng cổng 8772 cần origin `http://127.0.0.1:8772` nếu muốn thử Google tại đó.
+3. Sao chép **Client ID** kết thúc bằng `.apps.googleusercontent.com`. Cách đăng nhập popup này không cần Client Secret hay redirect URI riêng. [Hướng dẫn Google](https://developers.google.com/identity/gsi/web/guides/get-google-api-clientid).
+4. Dừng backend bằng Ctrl+C ở terminal đang chạy, cài thư viện mới rồi khởi động lại từ thư mục dự án:
+
+```sh
+.venv/bin/python -m pip install -r backend/requirements-lock.txt
+STUDY_GOOGLE_CLIENT_ID='CLIENT_ID.apps.googleusercontent.com' ./run.sh
+```
+
+`run.sh` đọc biến môi trường của terminal, chưa tự nạp file `.env`. Client ID là mã công khai; backend kiểm chứng chữ ký, audience, issuer, thời hạn và nonce dùng một lần trước khi tạo phiên. Không đưa Client Secret, mật khẩu hay token Google vào Git. Nếu email đã có tài khoản mật khẩu, đăng nhập tài khoản đó trước rồi bấm kết nối Google; hệ thống không tự gộp hai tài khoản chỉ vì email trùng.
 
 ## Thư mục nào để làm gì?
 

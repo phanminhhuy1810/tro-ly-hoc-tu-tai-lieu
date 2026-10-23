@@ -103,7 +103,7 @@ Claude tự quyết, chờ Huy xem lại:
 
 ### Tài khoản — 23/10/2026
 
-Huy yêu cầu đăng nhập/đăng ký để lưu dữ liệu người dùng, trang thật đẹp và hợp Gmail. Claude làm (chờ Huy xem lại): trang `#/tai-khoan` chia đôi, bên trái nền ô vuông xanh với khẩu hiệu “Học từ chính tài liệu của bạn”, ba lợi ích và hai chú mèo; bên phải thẻ có hai tab Đăng nhập / Tạo tài khoản, ô email (gợi ý ten@gmail.com), mật khẩu có nút hiện/ẩn. Đăng ký giữ nguyên mọi thứ đang học trên máy. Cuối thanh bên có ô “Đăng nhập / Đăng ký”, đăng nhập rồi thì hiện tên. Màn hẹp xếp hình lên trên, form bên dưới. Đăng nhập bằng Google để sau (cần Huy tạo khóa OAuth trên Google Cloud).
+Huy yêu cầu đăng nhập/đăng ký để lưu dữ liệu người dùng, trang thật đẹp và hợp Gmail. Claude làm (chờ Huy xem lại): trang `#/tai-khoan` chia đôi, bên trái nền ô vuông xanh với khẩu hiệu “Học từ chính tài liệu của bạn”, ba lợi ích và hai chú mèo; bên phải thẻ có hai tab Đăng nhập / Tạo tài khoản, ô email (gợi ý ten@gmail.com), mật khẩu có nút hiện/ẩn. Đăng ký giữ nguyên mọi thứ đang học trên máy. Cuối thanh bên có ô “Đăng nhập / Đăng ký”, đăng nhập rồi thì hiện tên. Màn hẹp xếp hình lên trên, form bên dưới. Google đã có phần nối trong lượt tiếp nối bên dưới, còn chờ Huy tạo Client ID.
 
 ### Tên và icon — 23/10/2026
 
@@ -118,6 +118,15 @@ Huy góp ý: khóa “Link Layer” ra 154 bài trong một chương (do chia th
 - Mèo núp ở mép trên và hai bên khung Cộng đồng (ẩn hai bên trên điện thoại).
 - Ô đen ở thanh bên, tab Cộng đồng và tab Đăng nhập/Tạo tài khoản trượt sang mục mới thay vì nhảy.
 - Ghi chú: sửa một ghi chú của Byte thì nhãn thành “Bạn viết” (đã qua tay người), trước đây màu cũng đổi theo nhãn thành vàng; giờ ghi chú giữ màu đang hiện.
+
+### Tiếp nối phần Claude còn dở — 23/10/2026
+
+Theo yêu cầu Huy, giữ phong cách hiện tại và chỉ hoàn thiện các mục này. **Huy đã đồng ý commit ngày 23/10/2026; chưa push**:
+
+- **Sổ tay trống**: giữ header vàng, hình và lời dẫn nằm giữa; ô ghi ý đầu tiên màu xanh dương đặt ngay bên dưới, rộng tối đa 560px. Chưa có ghi chú thì ẩn lọc/tìm kiếm; có ghi chú rồi mới hiện. Ô viết mở rộng khi nhập, chọn màu và “Dán vào sổ” vẫn hoạt động. Đã thử lưu trên dữ liệu demo riêng.
+- **Mèo Cộng đồng/Phòng đố vui**: 7 mèo mép trên cùng cỡ 88px, cách đều và đối xứng màu; mỗi bên thêm một mèo ở cùng độ cao. Mèo đứng yên khi không tương tác; chỉ trốn sau khung khi rê chuột và phản ứng khi bấm. Hai bên vẫn ẩn ở màn hẹp. Giữ nguyên bố cục và nội dung còn lại của Claude.
+- **Google**: đặt “Tiếp tục với Google” trên form email, có trạng thái chờ/lỗi/thử lại. Chưa cấu hình thì báo chưa kết nối, không giả vờ đăng nhập thành công. Tài khoản mật khẩu có thể kết nối Google cùng email từ trang tài khoản; tạo tài khoản Google mới giữ dữ liệu ẩn danh đang học. Code và kiểm thử server đã có; đăng nhập Google thật còn chờ Client ID do Huy tạo. Cách cấu hình nằm trong README.
+- Typecheck, build và 78 test `web/` đạt; ảnh hai màn được chụp ở bố cục desktop. Đây là kiểm tra của agent, chưa phải Huy duyệt giao diện hay nhóm nghiệm thu.
 
 ## 1. Sản phẩm giải quyết việc gì?
 

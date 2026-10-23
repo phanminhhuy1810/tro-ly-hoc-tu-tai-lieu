@@ -405,6 +405,17 @@ CREATE TABLE IF NOT EXISTS tutor_styles (
     version INTEGER NOT NULL, updated_at TEXT NOT NULL
 );
 INSERT OR IGNORE INTO schema_versions VALUES (21);
+CREATE TABLE IF NOT EXISTS google_identities (
+    subject TEXT PRIMARY KEY, user_id TEXT NOT NULL UNIQUE REFERENCES users(id),
+    created_at TEXT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS google_login_challenges (
+    nonce_hash TEXT PRIMARY KEY,
+    session_hash TEXT NOT NULL REFERENCES auth_sessions(token_hash) ON DELETE CASCADE,
+    expires_at INTEGER NOT NULL
+);
+CREATE INDEX IF NOT EXISTS google_challenge_session ON google_login_challenges(session_hash);
+INSERT OR IGNORE INTO schema_versions VALUES (22);
 """
 
 

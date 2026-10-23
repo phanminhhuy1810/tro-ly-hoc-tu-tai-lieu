@@ -64,10 +64,10 @@ def register_accounts(app, database):
                          (hashlib.sha256(token.encode()).hexdigest(), int(time.time()))).fetchone()
         return row['user_id'] if row else None
 
-    def start_session(db, owner, response):
+    def start_session(db, owner, response, secure=False):
         token = secrets.token_urlsafe(32)
         db.execute('INSERT INTO auth_sessions VALUES (?,?,?,?)', (hashlib.sha256(token.encode()).hexdigest(), owner, int(time.time()) + SESSION_SECONDS, stamp()))
-        response.set_cookie('study_session', token, httponly=True, samesite='strict', max_age=SESSION_SECONDS)
+        response.set_cookie('study_session', token, httponly=True, samesite='strict', secure=secure, max_age=SESSION_SECONDS)
 
     def email_of(value):
         email = value.strip().lower()
@@ -85,7 +85,8 @@ def register_accounts(app, database):
         with database.connection() as db:
             owner = session_owner(db, request)
             row = db.execute('SELECT * FROM users WHERE id=?', (owner,)).fetchone() if owner else None
-        return public(row)
+            linked = bool(owner and db.execute('SELECT 1 FROM google_identities WHERE user_id=?', (owner,)).fetchone())
+        return {**public(row), 'google_linked': linked}
 
     @app.post('/api/account/register')
     def register(body: Register, request: Request, response: Response):
@@ -104,11 +105,11 @@ def register_accounts(app, database):
             else:
                 owner = uuid.uuid4().hex
                 db.execute('INSERT INTO users VALUES (?,?,?,?,?)', (owner, email, name, hash_password(body.password), stamp()))
-            start_session(db, owner, response)
+            start_session(db, owner, response, secure=request.url.scheme == 'https')
             return public(db.execute('SELECT * FROM users WHERE id=?', (owner,)).fetchone())
 
     @app.post('/api/account/login')
-    def login(body: Login, response: Response):
+    def login(body: Login, request: Request, response: Response):
         email = body.email.strip().lower()
         now = time.monotonic()
         recent = [t for t in failures.get(email, []) if now - t < FAILURE_WINDOW]
@@ -120,7 +121,7 @@ def register_accounts(app, database):
                 failures[email] = recent + [now]
                 raise HTTPException(401, 'Email hoặc mật khẩu chưa đúng.')
             failures.pop(email, None)
-            start_session(db, row['id'], response)
+            start_session(db, row['id'], response, secure=request.url.scheme == 'https')
             return public(row)
 
     @app.post('/api/account/logout')
@@ -130,3 +131,6 @@ def register_accounts(app, database):
             db.execute('DELETE FROM auth_sessions WHERE token_hash=?', (hashlib.sha256(token.encode()).hexdigest(),))
         response.delete_cookie('study_session')
         return {'signed_in': False}
+
+    from .google_accounts import register_google_accounts
+    register_google_accounts(app, database, session_owner, start_session, public)
