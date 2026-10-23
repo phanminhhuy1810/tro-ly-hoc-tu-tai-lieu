@@ -4,7 +4,7 @@ import type { Course, RoomBank, RoomCreated, RoomSnapshot, RoomSummary } from '.
 import { hrefFor, navigate } from '../../app/router';
 import { useLoad } from '../../app/store';
 import { Icon } from '../../components/Icon';
-import { MascotDuo } from '../../components/Mascot';
+import { MascotTrio } from '../../components/Mascot';
 import { PageHeader } from '../../components/PageHeader';
 import { EmojiTile } from '../../components/EmojiTile';
 import { LoadingRows, ProblemNotice } from '../../components/StateViews';
@@ -260,7 +260,7 @@ export function RoomsPage({ code, courseId }: { code?: string; courseId?: string
         title="Cộng đồng"
         tone="mint"
         note="Học khóa người khác chia sẻ, hoặc mở phòng đố vui để thi với bạn bè xem ai nhớ bài hơn."
-        art={<MascotDuo size={96} />}
+        art={<MascotTrio size={96} />}
       >
         <TogetherTabs active="rooms" />
       </PageHeader>

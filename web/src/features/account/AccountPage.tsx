@@ -4,7 +4,7 @@ import { hrefFor } from '../../app/router';
 import { useLoad } from '../../app/store';
 import { BrandMark } from '../../components/Brand';
 import { Icon } from '../../components/Icon';
-import { Mascot, MascotDuo } from '../../components/Mascot';
+import { Mascot, MascotTrio } from '../../components/Mascot';
 import { LoadingRows, ProblemNotice } from '../../components/StateViews';
 import { describeError } from '../../lib/copy';
 
@@ -182,7 +182,7 @@ export function AccountPage() {
         <div className="auth__stage">
           <span className="auth__spark auth__spark--a" />
           <span className="auth__spark auth__spark--b" />
-          <MascotDuo size={150} />
+          <MascotTrio size={150} />
         </div>
       </aside>
       <main className="auth__panel">

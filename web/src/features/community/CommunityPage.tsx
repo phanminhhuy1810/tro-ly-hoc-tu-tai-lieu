@@ -4,7 +4,7 @@ import type { CommunityCourse, Course } from '../../api/types';
 import { hrefFor, navigate } from '../../app/router';
 import { useApp, useLoad } from '../../app/store';
 import { Icon } from '../../components/Icon';
-import { Mascot, MascotDuo } from '../../components/Mascot';
+import { Mascot, MascotTrio } from '../../components/Mascot';
 import { PageHeader } from '../../components/PageHeader';
 import { EmptyState, LoadingRows, ProblemNotice } from '../../components/StateViews';
 import { creatorLabel, ratingText } from '../../lib/community';
@@ -83,7 +83,7 @@ export function CommunityPage({ code }: { code?: string }) {
         title="Cộng đồng"
         tone="mint"
         note="Học khóa người khác chia sẻ, hoặc mở phòng đố vui để thi với bạn bè xem ai nhớ bài hơn."
-        art={<MascotDuo size={96} />}
+        art={<MascotTrio size={96} />}
       >
         <TogetherTabs active="community" />
       </PageHeader>

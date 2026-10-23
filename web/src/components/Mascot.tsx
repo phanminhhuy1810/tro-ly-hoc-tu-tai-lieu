@@ -5,8 +5,8 @@
 // the course path, and a little life: it blinks, swishes its tail, breathes,
 // and reacts with a hop and a new face when tapped (where it is `pettable`).
 // Page pictures are Kẹp scenes too (books, notepad, chart…), drawn here by
-// hand rather than generated, so every page shares one look; MascotDuo adds a
-// grey classmate for the pages about learning with others.
+// hand rather than generated, so every page shares one look; MascotTrio adds
+// two classmates for the pages about learning with others.
 
 import { useId, useRef, useState, type CSSProperties } from 'react';
 
@@ -39,10 +39,11 @@ const BELLY = '#fff3e4';
 const PINK = '#f6a7ba';
 const METAL = '#c4ccd9';
 
-/** Kẹp is ginger; the classmate in MascotDuo is grey. */
+/** Kẹp is ginger; the classmates in MascotTrio are grey and cocoa. */
 const COATS = {
   ginger: { fur: FUR, stripe: STRIPE, belly: BELLY },
   grey: { fur: '#dfe3ea', stripe: '#a3abbb', belly: '#f6f7fa' },
+  cocoa: { fur: '#d2a985', stripe: '#9a6c4a', belly: '#f6e9dc' },
 };
 type Coat = keyof typeof COATS;
 
@@ -595,22 +596,26 @@ export function Mascot({
 }
 
 /**
- * Kẹp and a grey classmate (no glasses) high-fiving: the picture for the pages
- * about learning with others. Both blink and breathe, each on its own beat.
+ * Kẹp with two classmates, a grey one and a cocoa one (no glasses), high-fiving:
+ * the picture for the pages about learning with others. Each cat sits in its
+ * own viewport so its blink, tail and breath pivot on itself, each on its own beat;
+ * the cat on the left is drawn last so it hides the tail of the one beside it.
  */
-export function MascotDuo({ size = 104, title }: { size?: number; title?: string }) {
+export function MascotTrio({ size = 104, title }: { size?: number; title?: string }) {
   return (
     <svg
-      className="mascot mascot--duo"
-      width={Math.round((size * 196) / 120)}
+      className="mascot mascot--trio"
+      width={Math.round((size * 270) / 120)}
       height={size}
-      viewBox="0 0 196 120"
+      viewBox="0 0 270 120"
       role={title ? 'img' : undefined}
       aria-label={title}
       aria-hidden={title ? undefined : true}
     >
-      <ellipse cx="98" cy="111" rx="76" ry="3.6" fill="rgba(35,38,43,.1)" />
-      {/* Each cat in its own viewport, so its blink/tail/breath pivots stay its own. */}
+      <ellipse cx="135" cy="111" rx="118" ry="3.6" fill="rgba(35,38,43,.1)" />
+      <svg x="150" y="6" width="112" height="112" viewBox="0 0 120 120" overflow="visible" style={{ '--mascot-delay': '-2.9s' } as CSSProperties}>
+        <CatDrawing mood="wink" coat="cocoa" glasses={false} />
+      </svg>
       <svg x="76" y="3" width="115" height="115" viewBox="0 0 120 120" overflow="visible" style={{ '--mascot-delay': '-1.7s' } as CSSProperties}>
         <CatDrawing mood="happy" coat="grey" glasses={false} />
       </svg>

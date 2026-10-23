@@ -2,7 +2,7 @@ import type { CoinQuote } from '../../api/types';
 import { BRAND_OPTIONS, BrandMark } from '../../components/Brand';
 import { CoinConfirm } from '../../components/CoinConfirm';
 import { Icon } from '../../components/Icon';
-import { Mascot, MascotDuo, type Mood, type Pose } from '../../components/Mascot';
+import { Mascot, MascotTrio, type Mood, type Pose } from '../../components/Mascot';
 import { EmptyState, LoadingRows, ProblemNotice } from '../../components/StateViews';
 import { describeError, describeJobFailure } from '../../lib/copy';
 import { ApiError } from '../../api/client';
@@ -128,7 +128,7 @@ export function StatesPage() {
             </figure>
           ))}
           <figure>
-            <MascotDuo size={92} />
+            <MascotTrio size={92} />
             <figcaption className="meta">Cộng đồng, phòng đố vui</figcaption>
           </figure>
         </div>
