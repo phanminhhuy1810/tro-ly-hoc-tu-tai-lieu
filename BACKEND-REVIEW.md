@@ -643,7 +643,10 @@ Các thay đổi đi kèm frontend mới `web/` (React). Đã thử trên bản 
 - `backend/kaggle-connect-cell.py` đổi theo ngrok agent mới: tùy chọn `basic_auth` của pyngrok bị agent từ chối (`field basic_auth not found in type config.Endpoint`), nên mật khẩu đặt bằng traffic policy `basic-auth`. Ô tự đặt token từ Kaggle Secret `ngrok-api-key` (chạy lại không lỗi khi token đã lưu) và tự cài `pyngrok`. Vẫn tạo file kết nối riêng để tải về rồi cài bằng `configure-kaggle.py`.
 - Đã chạy thật trên notebook của Huy (2×T4): ô bootstrap tải `qwen3.8:27b` (27,3B, Q4_K_M) trong 166 giây, sẵn sàng sau 216 giây. **Chưa mở được đường hầm có mật khẩu**: bước mở đường hầm ra internet do Huy tự bấm chạy, chưa thử lại bản ô mới; app chưa nối Kaggle.
 
-## Phụ lục API: toàn bộ điểm nối trong snapshot hiện hành
+### Tài liệu dài — 23/10/2026
+
+- Lộ trình toàn tài liệu (`blueprint.py`) chia phần theo sức chứa của model đang chọn: model trên máy/Kaggle giữ 9.000 ký tự nguồn và 24 đoạn mỗi lượt, tối đa 12 lượt, 2 lượt mỗi job (khoảng 30–45 trang chữ dày). Gemini (`GeminiAI.max_source_json` = 120.000) đọc tới 160 đoạn mỗi lượt, tối đa 20 lượt, 4 lượt mỗi job, đủ cho tài liệu cỡ vài trăm trang. Cỡ phần nằm trong `scope_sha256`, nên đổi model giữa chừng thì đọc lại từ đầu thay vì trộn phần. Bài học vẫn nhỏ (tách theo 9.000 ký tự) để model nào cũng tạo được. Vượt giới hạn với model trên máy thì báo chọn phạm vi nhỏ hơn hoặc chuyển sang Gemini.
+- Prompt version `blueprint` thành `20261023-model-sized-parts-v2`. Kiểm thử mới: `test_a_long_context_model_reads_the_scope_in_fewer_parts`, `test_too_long_for_a_local_model_points_to_a_long_context_one`. Chưa chạy với Gemini thật trên một PDF dài.
 
 ## Phụ lục API: toàn bộ điểm nối trong snapshot hiện hành
 
