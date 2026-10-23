@@ -13,6 +13,7 @@ from fastapi import Depends, HTTPException
 from pydantic import Field
 
 from .ai import KaggleAI, LocalAI, configured_ai
+from .free_apis import FreePoolAI, private_config as free_config
 from .gemini import GeminiAI, ProviderError, private_config
 from .models import Model
 from .job_progress import request_progress
@@ -213,6 +214,13 @@ def configured_registry(injected=None):
     for model in gemini_models:
         choices.append(Choice('gemini:' + model, model + ' · Gemini API', GeminiAI(model), True))
     default_id = ('kaggle:' if isinstance(primary, KaggleAI) else 'local:') + primary.model
+    # Free APIs join only once the operator saved keys; they become the default
+    # for learners without a saved choice only if the operator said so.
+    pool = free_config()
+    if pool:
+        choices.append(Choice('free:pool', 'AI miễn phí · nhiều nguồn', FreePoolAI(pool), True))
+        if pool.get('default') is True and pool.get('enabled', True) is True:
+            default_id = 'free:pool'
     return ProviderRegistry(choices, default_id)
 
 

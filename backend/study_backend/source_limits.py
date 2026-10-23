@@ -8,6 +8,9 @@ MAX_UNIT_FRAGMENTS = 8
 # An AI roadmap may make fuller lessons (Huy prefers fewer lessons that teach more);
 # the per-request character budget still keeps each one small enough for a local model.
 MAX_LESSON_FRAGMENTS = 16
+# With a long-context model a lesson may hold about a third of a chapter (Huy: about
+# three lessons a chapter), still inside one request of that model.
+MAX_LARGE_LESSON_FRAGMENTS = 24
 MAX_UNITS = 400
 
 
