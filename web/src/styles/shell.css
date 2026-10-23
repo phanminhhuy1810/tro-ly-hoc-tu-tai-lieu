@@ -409,7 +409,7 @@
 .peek {
   position: relative;
   isolation: isolate;
-  margin-top: 46px;
+  margin-top: 60px;
 }
 .peek__cats {
   position: absolute;
@@ -437,7 +437,8 @@
   }
 }
 @media (max-width: 760px) {
-  .peek__cat--side {
+  .peek__cat--side,
+  .peek__cat:nth-child(even) {
     display: none;
   }
 }

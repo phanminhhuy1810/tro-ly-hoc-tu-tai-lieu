@@ -153,7 +153,7 @@ export function NotebookPage() {
     <div className="page notebook">
       <PageHeader
         title="Sổ tay"
-        tone="butter"
+        tone="lilac"
         note="Ghi nhanh mẹo nhớ, công thức — và những lời giải hay của Byte. Tô màu để tự xếp theo ý bạn."
         art={<Mascot pose="pencil" size={100} pettable />}
       />
@@ -165,7 +165,7 @@ export function NotebookPage() {
           rows={writing ? 3 : 1}
           maxLength={10000}
           value={draft}
-          placeholder="Ghi nhanh một ý, công thức hay mẹo nhớ…"
+          placeholder={writing ? 'Một ý, công thức hay mẹo nhớ…' : '+ Ghi nhanh một ý…'}
           aria-label="Ghi chú mới"
           onFocus={() => setComposing(true)}
           onChange={(e) => setDraft(e.target.value)}
