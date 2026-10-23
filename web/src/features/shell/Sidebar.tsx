@@ -1,8 +1,10 @@
+import { useRef } from 'react';
 import { hrefFor, type Route } from '../../app/router';
 import { useApp } from '../../app/store';
 import { BrandMark } from '../../components/Brand';
 import { Icon } from '../../components/Icon';
 import { NavIcon, type NavName } from '../../components/NavIcon';
+import { useSlidingPill } from '../../lib/useSlidingPill';
 
 interface NavItem {
   label: string;
@@ -26,6 +28,8 @@ export function Sidebar({ route }: { route: Route }) {
     { label: 'Tiến độ', icon: 'chart', href: hrefFor({ name: 'progress' }), active: route.name === 'progress' },
     { label: 'Cài đặt', icon: 'settings', href: hrefFor({ name: 'settings' }), active: route.name === 'settings' },
   ];
+  const nav = useRef<HTMLElement>(null);
+  useSlidingPill(nav, 'sidebar', items.find((item) => item.active)?.label);
   return (
     <aside className="sidebar" aria-label="Điều hướng chính">
       <a className="brand" href="#/">
@@ -35,7 +39,7 @@ export function Sidebar({ route }: { route: Route }) {
           <small>học từ tài liệu của bạn</small>
         </span>
       </a>
-      <nav className="nav">
+      <nav className="nav has-pill" ref={nav}>
         {items.map((item) => (
           <a key={item.label} className="nav__item" href={item.href} aria-current={item.active ? 'page' : undefined}>
             <NavIcon name={item.icon} />

@@ -5,6 +5,9 @@ MAX_FRAGMENTS = 2000
 MAX_COLLECTION_SOURCES = 20
 MAX_AI_OUTLINE_FRAGMENTS = 16
 MAX_UNIT_FRAGMENTS = 8
+# An AI roadmap may make fuller lessons (Huy prefers fewer lessons that teach more);
+# the per-request character budget still keeps each one small enough for a local model.
+MAX_LESSON_FRAGMENTS = 16
 MAX_UNITS = 400
 
 

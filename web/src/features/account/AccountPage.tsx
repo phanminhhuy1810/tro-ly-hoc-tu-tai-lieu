@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from 'react';
+import { useRef, useState, type FormEvent } from 'react';
 import { api } from '../../api/client';
 import { hrefFor } from '../../app/router';
 import { useLoad } from '../../app/store';
@@ -7,6 +7,7 @@ import { Icon } from '../../components/Icon';
 import { Mascot, MascotTrio } from '../../components/Mascot';
 import { LoadingRows, ProblemNotice } from '../../components/StateViews';
 import { describeError } from '../../lib/copy';
+import { useSlidingPill } from '../../lib/useSlidingPill';
 
 // Sign in / create an account. Creating an account keeps everything this
 // browser has learned so far (the anonymous learner becomes the account);
@@ -37,6 +38,8 @@ function AuthForm({ initial }: { initial: Mode }) {
   const [busy, setBusy] = useState(false);
   const [problem, setProblem] = useState<string | unknown>(null);
   const register = mode === 'register';
+  const tabs = useRef<HTMLDivElement>(null);
+  useSlidingPill(tabs, 'auth', mode);
 
   const submit = async (event: FormEvent) => {
     event.preventDefault();
@@ -55,7 +58,7 @@ function AuthForm({ initial }: { initial: Mode }) {
 
   return (
     <div className="auth-card">
-      <div className="auth-tabs" role="tablist" aria-label="Tài khoản">
+      <div className="auth-tabs has-pill" ref={tabs} role="tablist" aria-label="Tài khoản">
         {(
           [
             ['login', 'Đăng nhập'],

@@ -1,10 +1,14 @@
+import { useRef } from 'react';
 import { hrefFor } from '../../app/router';
 import { Icon } from '../../components/Icon';
+import { useSlidingPill } from '../../lib/useSlidingPill';
 
 /** Khóa công khai and Phòng đố vui share one place in the sidebar (“Cộng đồng”). */
 export function TogetherTabs({ active }: { active: 'community' | 'rooms' }) {
+  const tabs = useRef<HTMLElement>(null);
+  useSlidingPill(tabs, 'together', active);
   return (
-    <nav className="together-tabs" aria-label="Cộng đồng">
+    <nav className="together-tabs has-pill" ref={tabs} aria-label="Cộng đồng">
       <a href={hrefFor({ name: 'community' })} aria-current={active === 'community' ? 'page' : undefined}>
         <Icon name="globe" size={17} /> Khóa công khai
       </a>

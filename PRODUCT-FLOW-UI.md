@@ -109,6 +109,16 @@ Huy yêu cầu đăng nhập/đăng ký để lưu dữ liệu người dùng, t
 
 Huy chốt tên: web là **Clawledge** (ghép “Claw”, vuốt mèo, và “Knowledge”, kiến thức), mèo/chatbot là **Byte** (“byte quạo khi làm không được”). Mọi chữ “Kẹp” và “Folio” người dùng thấy đã đổi theo; các mục ghi chép cũ phía trên giữ tên cũ như lịch sử. Lời dặn AI xưng là Byte của Clawledge. Icon thanh bên vẽ lại: nền pastel dưới nét bo tròn, mái nhà “Học tiếp” có tai mèo, “Cộng đồng” là hai mặt mèo. Trang Cộng đồng và Phòng đố vui có thêm một hàng 7 chú mèo (cam, xám, nâu; đọc sách, laptop, cốc, cờ, ngủ), bấm vào được.
 
+### Lộ trình dài, mèo trốn, hiệu ứng lướt — 23/10/2026
+
+Huy góp ý: khóa “Link Layer” ra 154 bài trong một chương (do chia theo trang, không AI), muốn ít bài mà mỗi bài học nhiều, có chương, có gì nối các chặng, icon đa dạng hơn; mèo trốn nhiều góc; chọn mục thì có hiệu ứng lướt; ghi chú xanh hay “mất”. Claude làm (chờ Huy xem lại):
+
+- Lộ trình AI: dặn ưu tiên ít bài (mỗi bài 30–45 phút, gộp 3–6 chủ đề), tài liệu dài chia 4–10 chương; một bài lộ trình AI chứa tới 16 đoạn (trước 8). Chia không cần AI vẫn 8 đoạn mỗi bài nhưng gom mỗi 6 bài thành một “Phần”. Khóa cũ có chương quá dài (trên 10 bài) được chia hiển thị thành từng phần 8 bài.
+- Dấu chân mèo nối các chặng của lộ trình (xám ở đoạn chưa tới); bài lần lượt mang dấu sao, sách, bóng đèn, bút chì; bài còn khóa hiện dấu của nó màu xám thay cho ổ khóa.
+- Mèo núp ở mép trên và hai bên khung Cộng đồng (ẩn hai bên trên điện thoại).
+- Ô đen ở thanh bên, tab Cộng đồng và tab Đăng nhập/Tạo tài khoản trượt sang mục mới thay vì nhảy.
+- Ghi chú: sửa một ghi chú của Byte thì nhãn thành “Bạn viết” (đã qua tay người), trước đây màu cũng đổi theo nhãn thành vàng; giờ ghi chú giữ màu đang hiện.
+
 ## 1. Sản phẩm giải quyết việc gì?
 
 Người học có slide, giáo trình, ghi chú hoặc ảnh tài liệu nhưng khó biến chúng thành một quá trình học rõ ràng. Ứng dụng giúp họ kiểm tra phần đã đọc, xác nhận mục tiêu, duyệt lộ trình rồi học và luyện trên cùng nguồn. Khi nội dung sai hoặc lệch nhu cầu, người học có cách đối chiếu và sửa có phạm vi.

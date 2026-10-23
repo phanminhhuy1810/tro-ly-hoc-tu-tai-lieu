@@ -71,7 +71,15 @@ def section_outline(source, selected, preferences):
         title = f"{heading or name} · {location}"[:200]
         objective = (f"Study {location} in {name}; check the source and practise this section."
                      if english else f"Học {location} trong {name}; đối chiếu nguồn và luyện nội dung của phần này.")
-        units.append({'title': title, 'objective': objective[:1000], 'source_refs': [f['id'] for f in group]})
+        units.append({'title': title, 'objective': objective[:1000], 'source_refs': [f['id'] for f in group], 'location': location})
+    # Without AI there is no chapter structure to read, so every six lessons form one part of the path.
+    for start in range(0, len(units), 6):
+        part = units[start:start + 6]
+        span = part[0]['location'] if len(part) == 1 else f"{part[0]['location']} → {part[-1]['location']}"
+        for unit in part:
+            unit['chapter'] = f"{'Part' if english else 'Phần'} {start // 6 + 1} · {span}"[:120]
+    for unit in units:
+        unit.pop('location')
     return Outline.model_validate({'title': preferences.subject, 'units': units}).model_dump()
 
 

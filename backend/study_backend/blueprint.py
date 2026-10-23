@@ -23,9 +23,9 @@ from . import job_progress
 from .models import Model
 from .setup import PlanPreferences
 from .source_context import MAX_MODEL_SOURCE_JSON, fits
-from .source_limits import MAX_UNIT_FRAGMENTS, MAX_UNITS
+from .source_limits import MAX_LESSON_FRAGMENTS, MAX_UNITS
 
-BLUEPRINT_VERSION = '20261023-model-sized-parts-v2'
+BLUEPRINT_VERSION = '20261023-fuller-lessons-v3'
 MAX_PARTS = 12
 PARTS_PER_JOB = 2  # each job stays well inside the 200 s job timeout on a laptop model
 MAX_PART_FRAGMENTS = 24
@@ -184,8 +184,9 @@ def reduce_instruction(topics, terms, hints):
     listed = [{'n': i, 'title': t['title'], 'summary': t['summary']} for i, t in enumerate(topics)]
     return ('Bạn thiết kế lộ trình học từ TOÀN BỘ tài liệu. Dưới đây là mọi chủ đề AI đã đọc từ tất cả các phần, theo đúng thứ tự tài liệu; n là số thứ tự chủ đề. '
             'Hãy: (1) subject: tên môn/chủ đề; goal: mục tiêu học hợp lý; summary: tài liệu nói gì. '
-            '(2) chapters: chia theo mạch kiến thức thành các chương, mỗi chương 1–6 bài. Mỗi bài có title rõ ràng, objective nói người học làm được gì sau bài, '
-            'topics là các số n thuộc bài, theo thứ tự tài liệu; mỗi chủ đề thuộc đúng một bài; một bài vừa một buổi học (thường 1–4 chủ đề); '
+            '(2) chapters: chia theo mạch kiến thức thành các chương (tài liệu dài thì 4–10 chương, theo đúng chương/mục của tài liệu nếu có), mỗi chương 2–6 bài. '
+            'Ưu tiên ÍT bài mà mỗi bài học được nhiều: một bài vừa một buổi học 30–45 phút, thường gộp 3–6 chủ đề liền nhau. Mỗi bài có title rõ ràng, objective nói người học làm được gì sau bài, '
+            'topics là các số n thuộc bài, theo thứ tự tài liệu; mỗi chủ đề thuộc đúng một bài; '
             'phần giới thiệu/mục lục ghép vào bài đầu. '
             '(3) focus: phần nên tập trung hoặc dễ ra đề; study_tips: cách ôn hiệu quả với tài liệu này; rules: điều nên dặn AI khi soạn bài và câu hỏi '
             '(ví dụ giữ thuật ngữ, thêm ví dụ tính toán); language: vi, en hoặc source kèm language_note (ví dụ tiếng Việt giữ thuật ngữ tiếng Anh); terms_to_keep. '
@@ -224,7 +225,7 @@ def assemble(plan, topics, selected):
         if not refs:
             continue
         # Split evenly (10 excerpts → 5 + 5, not 8 + 2) so no part is a one-excerpt lesson.
-        size = -(-len(refs) // -(-len(refs) // MAX_UNIT_FRAGMENTS))
+        size = -(-len(refs) // -(-len(refs) // MAX_LESSON_FRAGMENTS))
         groups = [[]]
         for ref in refs:
             if groups[-1] and (len(groups[-1]) >= size or not fits([project(by_id[r]) for r in groups[-1] + [ref]])):

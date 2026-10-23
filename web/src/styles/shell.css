@@ -418,9 +418,11 @@
 }
 .peek__cat {
   position: absolute;
-  top: -50px;
   animation: peek-duck 4s ease-in-out infinite;
   animation-delay: var(--peek-delay, 0s);
+}
+.peek__turn {
+  display: block;
 }
 .peek > .page-banner {
   z-index: 1;
@@ -431,11 +433,89 @@
     transform: translateY(0);
   }
   50% {
-    transform: translateY(7px);
+    transform: translate(var(--duck, 0px, 7px));
   }
 }
 @media (max-width: 760px) {
-  .peek__cat:nth-child(n + 4) {
+  .peek__cat--side {
     display: none;
   }
+}
+/* A highlight that slides to the selected item (useSlidingPill). */
+.has-pill {
+  position: relative;
+}
+.has-pill::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: var(--pill-w, 0px);
+  height: var(--pill-h, 0px);
+  transform: translate(var(--pill-x, 0px), var(--pill-y, 0px));
+  opacity: var(--pill-o, 0);
+  border-radius: var(--pill-r, 14px);
+  background: var(--pill-bg, var(--ink));
+  box-shadow: var(--pill-shadow, none);
+  transition:
+    transform 340ms var(--ease-out),
+    width 340ms var(--ease-out),
+    height 340ms var(--ease-out);
+  pointer-events: none;
+}
+.has-pill.no-pill-motion::before {
+  transition: none;
+}
+.has-pill > * {
+  position: relative;
+  z-index: 1;
+}
+.nav.has-pill .nav__item[aria-current='page'] {
+  background: transparent;
+}
+.together-tabs.has-pill,
+.auth-tabs.has-pill {
+  --pill-bg: var(--surface);
+  --pill-shadow: 0 2px 8px rgba(35, 38, 43, 0.1);
+}
+.together-tabs.has-pill {
+  --pill-r: 12px;
+}
+.auth-tabs.has-pill {
+  --pill-r: 999px;
+}
+.together-tabs.has-pill a[aria-current='page'],
+.auth-tabs.has-pill button[aria-selected='true'] {
+  background: transparent;
+  box-shadow: none;
+}
+/* The sidebar's own highlight slides between pages, so it skips the page cross-fade. */
+::view-transition-old(sidebar) {
+  display: none;
+}
+::view-transition-new(sidebar) {
+  animation: none;
+}
+/* Paw prints linking the stops of the course path. */
+.path-trail {
+  list-style: none;
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  margin: -10px 0;
+  color: var(--tone-side, #8fb46a);
+  opacity: 0.55;
+  pointer-events: none;
+}
+.path-trail svg:first-child {
+  transform: translateX(-8px) rotate(-14deg);
+}
+.path-trail svg:last-child {
+  transform: translateX(8px) rotate(14deg);
+}
+.path-trail.is-ahead {
+  color: #b9bfca;
+}
+.account-corner .account-chip {
+  max-width: 260px;
 }

@@ -106,7 +106,8 @@ class AssembleTests(unittest.TestCase):
         selected = [{'id': f'f{i}', 'text': 'x' * 100, 'locator': {'type': 'line', 'line': i}} for i in range(12)]
         topics = [{'source_refs': [f'f{i}' for i in range(10)]}, {'source_refs': ['f3', 'f10']}]
         plan = {'chapters': [{'title': 'A', 'lessons': [{'title': 'Một', 'objective': 'o', 'topics': [0]}, {'title': 'Hai', 'objective': 'o', 'topics': [1]}]}]}
-        chapters, coverage = assemble(plan, topics, selected)
+        with patch.object(blueprint, 'MAX_LESSON_FRAGMENTS', 8):
+            chapters, coverage = assemble(plan, topics, selected)
         lessons = chapters[0]['lessons']
         self.assertEqual([(l['title'], len(l['source_refs'])) for l in lessons], [('Một (phần 1)', 5), ('Một (phần 2)', 5), ('Hai', 2)])
         self.assertEqual(lessons[2]['source_refs'], ['f10', 'f11'])

@@ -141,7 +141,7 @@ QUESTION_DRAFTS = {
 class OutlineUnit(Model):
     title: str = Field(min_length=1, max_length=200)
     objective: str = Field(min_length=1, max_length=1000)
-    source_refs: list[str] = Field(min_length=1, max_length=12)
+    source_refs: list[str] = Field(min_length=1, max_length=24)
     # Optional grouping shown on the progress path; empty for older outlines.
     chapter: str = Field(default='', max_length=120)
 

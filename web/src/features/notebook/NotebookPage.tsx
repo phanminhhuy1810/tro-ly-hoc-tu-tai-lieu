@@ -91,7 +91,7 @@ export function NotebookPage() {
   const save = async (note: Note) => {
     if (!editing) return;
     try {
-      await api(`/notebook/${note.id}`, { method: 'PUT', body: { body: editing.body.trim(), label: note.label === 'teacher' ? 'teacher' : 'user', source_refs: note.source_refs, expected_version: note.version } });
+      await api(`/notebook/${note.id}`, { method: 'PUT', body: { body: editing.body.trim(), label: note.label === 'teacher' ? 'teacher' : 'user', source_refs: note.source_refs, expected_version: note.version, color: noteColor(note) } });
       setEditing(null);
       toast('Đã lưu ghi chú');
       state.reload();

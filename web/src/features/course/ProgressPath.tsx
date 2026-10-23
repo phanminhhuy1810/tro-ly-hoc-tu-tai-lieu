@@ -18,13 +18,29 @@ const THEMES = ['green', 'blue', 'orange', 'purple'] as const;
 const AWAKE: Pose[] = ['book', 'mug', 'laptop', 'flag', 'pencil', 'target'];
 const WAITING: Pose[] = ['sleep', 'box', 'sleep', 'book'];
 
-type Glyph = 'star' | 'check' | 'lock' | 'sparkle' | 'cards' | 'trophy';
+type Glyph = 'star' | 'book' | 'bulb' | 'pencil' | 'check' | 'lock' | 'sparkle' | 'cards' | 'trophy';
+// Lessons take turns with these signs, like Duolingo's path; locked ones show theirs in grey.
+const LESSON_GLYPHS: Glyph[] = ['star', 'book', 'bulb', 'pencil'];
 
 /** Plain white signs drawn for the pebbles (currentColor, so locked ones turn grey). */
 function NodeGlyph({ kind, size = 34 }: { kind: Glyph; size?: number }) {
   return (
     <svg className="path-glyph" width={size} height={size} viewBox="0 0 40 40" aria-hidden="true">
       {kind === 'star' && <path d="M20 4.5l4.6 9.6 10.5 1.4-7.7 7.3 1.9 10.4L20 28.2l-9.3 5 1.9-10.4-7.7-7.3 10.5-1.4z" fill="currentColor" stroke="currentColor" strokeWidth="2.5" strokeLinejoin="round" />}
+      {kind === 'book' && (
+        <g fill="currentColor">
+          <path d="M5.5 11q7.5-2.6 13.5.9v19.4q-6-3.4-13.5-.9z" />
+          <path d="M21 11.9q6-3.5 13.5-.9v19.4q-7.5-2.5-13.5.9z" />
+        </g>
+      )}
+      {kind === 'bulb' && (
+        <g fill="currentColor">
+          <path d="M20 4.5a10.5 10.5 0 0 0-6.3 18.9c1.3 1 2.1 2.4 2.1 4.1h8.4c0-1.7.8-3.1 2.1-4.1A10.5 10.5 0 0 0 20 4.5z" />
+          <rect x="15.8" y="29.5" width="8.4" height="2.8" rx="1.2" />
+          <rect x="17" y="33.6" width="6" height="2.6" rx="1.2" />
+        </g>
+      )}
+      {kind === 'pencil' && <path d="M26.5 5.5l8 8L16 32l-9.5 2.2L8.7 24.7z" fill="currentColor" strokeLinejoin="round" />}
       {kind === 'check' && <path d="M8.5 21l7.5 7.5L32 12.5" fill="none" stroke="currentColor" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" />}
       {kind === 'lock' && (
         <g fill="currentColor">
@@ -53,8 +69,7 @@ function NodeGlyph({ kind, size = 34 }: { kind: Glyph; size?: number }) {
 function glyphFor(node: PathNode, generating: boolean): Glyph {
   if (generating || node.state === 'not_generated') return 'sparkle';
   if (node.state === 'done') return 'check';
-  if (node.state === 'locked') return 'lock';
-  return 'star';
+  return LESSON_GLYPHS[node.index % LESSON_GLYPHS.length];
 }
 
 function meta(node: PathNode): string {
@@ -62,6 +77,18 @@ function meta(node: PathNode): string {
   if (node.state === 'locked') return 'Mở sau khi luyện xong bài trước — không cần điểm tối thiểu';
   if (node.state === 'not_generated') return 'Chưa tạo nội dung — AI đọc nguồn của bài rồi soạn giải thích và câu hỏi';
   return `${node.unit.data?.sections.length ?? 0} phần · ${node.unit.data?.questions.length ?? 0} câu luyện tập`;
+}
+
+function Paw() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 16 16">
+      <ellipse cx="8" cy="10.6" rx="3.6" ry="3" fill="currentColor" />
+      <circle cx="3.6" cy="6.6" r="1.6" fill="currentColor" />
+      <circle cx="6.5" cy="4.2" r="1.6" fill="currentColor" />
+      <circle cx="9.5" cy="4.2" r="1.6" fill="currentColor" />
+      <circle cx="12.4" cy="6.6" r="1.6" fill="currentColor" />
+    </svg>
+  );
 }
 
 function Ring({ fraction }: { fraction: number }) {
@@ -283,7 +310,7 @@ export function ProgressPath({
             <header className="path-banner">
               <div>
                 <p className="path-banner__eyebrow">
-                  {groups.length > 1 ? `Chương ${g + 1}` : 'Lộ trình'} · {done}/{group.nodes.length} bài
+                  {group.part ? `Phần ${group.part}` : groups.length > 1 ? `Chương ${g + 1}` : 'Lộ trình'} · {done}/{group.nodes.length} bài
                 </p>
                 <h3 className="path-banner__title">{group.title || courseTitle}</h3>
               </div>
@@ -308,11 +335,20 @@ export function ProgressPath({
                 const side = offset > 0 ? 'left' : 'right';
                 const stop = step;
                 step += 1;
+                // Paw prints walk from the previous stop to this one, chapter banners included.
+                const ahead = item.kind === 'lesson' ? item.node.state === 'locked' : item.kind === 'cards' ? cardCount === 0 : done === 0;
+                const trail = stop > 0 && (
+                  <li key={`trail-${stop}`} className={ahead ? 'path-trail is-ahead' : 'path-trail'} aria-hidden="true" style={{ transform: `translateX(${(OFFSETS[(stop - 1) % OFFSETS.length] + offset) / 2}px)` }}>
+                    <Paw />
+                    <Paw />
+                  </li>
+                );
                 if (item.kind !== 'lesson') {
                   const open = item.kind === 'cards' ? cardCount > 0 : done > 0;
                   const label = item.kind === 'cards' ? 'Ôn thẻ của chương' : 'Ôn tập chương';
                   const pose = catAt(stop, currentStop, !open, seed);
-                  return (
+                  return [
+                    trail,
                     <li key={`${item.kind}-${g}`} className="path-step path-step--special" style={{ transform: `translateX(${offset}px)` }}>
                       <button
                         type="button"
@@ -330,8 +366,8 @@ export function ProgressPath({
                           <Mascot pose={pose} size={112} pettable />
                         </span>
                       )}
-                    </li>
-                  );
+                    </li>,
+                  ];
                 }
                 const node = item.node;
                 const pose = catAt(stop, currentStop, node.state === 'locked', seed);
@@ -339,7 +375,8 @@ export function ProgressPath({
                 const read = node.isCurrent && node.state === 'ready' ? readFraction(node) : 0;
                 const bubble = generating ? 'ĐANG TẠO…' : node.isCurrent ? (node.state === 'not_generated' ? 'TẠO BÀI' : read > 0 ? 'HỌC TIẾP' : 'BẮT ĐẦU') : null;
                 const open = selected === node.unit.id;
-                return (
+                return [
+                  trail,
                   <li key={node.unit.id} id={`path-${node.unit.id}`} className={open ? 'path-step is-open' : 'path-step'} style={{ transform: `translateX(${offset}px)` }}>
                     {bubble && <span className={`path-bubble${generating ? ' is-busy' : ''}`}>{bubble}</span>}
                     <div className="path-node-wrap">
@@ -398,8 +435,8 @@ export function ProgressPath({
                         }
                       />
                     )}
-                  </li>
-                );
+                  </li>,
+                ];
               })}
             </ol>
           </section>

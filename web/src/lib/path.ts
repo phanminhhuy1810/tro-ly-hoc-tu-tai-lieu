@@ -41,7 +41,12 @@ export function courseSummary(course: Pick<Course, 'content'>) {
 export interface ChapterGroup {
   title: string;
   nodes: PathNode[];
+  /** Set when a very long chapter (or a course without chapters) was cut into parts of the path. */
+  part?: number;
 }
+
+const LONG_CHAPTER = 10;
+const PART_SIZE = 8;
 
 /** Consecutive lessons with the same chapter name form one section of the path. */
 export function chapterGroups(nodes: PathNode[]): ChapterGroup[] {
@@ -52,5 +57,16 @@ export function chapterGroups(nodes: PathNode[]): ChapterGroup[] {
     if (last && last.title === title) last.nodes.push(node);
     else groups.push({ title, nodes: [node] });
   }
-  return groups;
+  // One endless chapter (e.g. 154 lessons cut by page) reads better as parts of eight lessons.
+  return groups.flatMap((group) => {
+    if (group.nodes.length <= LONG_CHAPTER) return [group];
+    const parts: ChapterGroup[] = [];
+    for (let i = 0; i < group.nodes.length; i += PART_SIZE) {
+      const part = parts.length + 1;
+      const first = group.nodes[i].index + 1;
+      const last = group.nodes[Math.min(i + PART_SIZE, group.nodes.length) - 1].index + 1;
+      parts.push({ title: `${group.title ? `${group.title} · ` : ''}Bài ${first}–${last}`, nodes: group.nodes.slice(i, i + PART_SIZE), part });
+    }
+    return parts;
+  });
 }
