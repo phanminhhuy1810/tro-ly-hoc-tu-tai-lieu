@@ -16,6 +16,7 @@ from .ai import KaggleAI, LocalAI, configured_ai
 from .gemini import GeminiAI, ProviderError, private_config
 from .models import Model
 from .job_progress import request_progress
+from .source_context import MAX_MODEL_SOURCE_JSON
 
 
 @dataclass(frozen=True)
@@ -72,6 +73,11 @@ class ProviderRegistry:
         if choice.external and not pref['allow_external']:
             raise HTTPException(409, 'Xác nhận gửi trích đoạn sang nguồn AI ngoài máy trước khi sử dụng.')
         return choice, pref
+
+    def source_budget(self, owner):
+        """Source characters one request to this learner's model may carry."""
+        choice, _ = self.resolve(owner)
+        return getattr(choice.client, 'max_source_json', MAX_MODEL_SOURCE_JSON)
 
     def identity_metadata(self, owner):
         choice, pref = self.resolve(owner)

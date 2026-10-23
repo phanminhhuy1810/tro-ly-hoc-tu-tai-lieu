@@ -25,6 +25,7 @@ GENERATION_SYSTEM = "Bạn là trợ lý học. Chỉ dùng nguồn được cun
 
 class LocalAI:
     model = os.environ.get("STUDY_MODEL", "qwen3.5:9b")
+    max_source_json = MAX_MODEL_SOURCE_JSON  # sized for a 16k-token local context
     endpoint = "http://127.0.0.1:11434"
     provider_id = "ollama_local"
 
@@ -82,7 +83,7 @@ class LocalAI:
         if not (await self.status())["ready"]:
             raise RuntimeError(f"Model {self.model} chưa sẵn sàng. Kiểm tra phiên AI/kết nối; dữ liệu đã nhập được giữ lại.")
         source = source_json(source_fragments)
-        if len(source) > MAX_MODEL_SOURCE_JSON:
+        if len(source) > self.max_source_json:
             raise ValueError("Phạm vi quá dài cho một lượt tạo. Chọn ít trích đoạn hơn; không tự cắt mất nguồn.")
         wire=ReferenceWire(source_fragments)
         source=source_json(wire.fragments)

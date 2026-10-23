@@ -2,6 +2,8 @@
 import json
 
 MAX_MODEL_SOURCE_JSON = 9000
+# Long-context API models (Gemini) can read a whole chapter or more per request.
+LARGE_MODEL_SOURCE_JSON = 120_000
 LOCATION_KEYS = {'type','page','slide','paragraph','table','row','cell','line','frame','heading',
                  'component_name','component_revision','character_start','unreadable_math',
                  'extraction_method','layout_unverified','location_unverified'}
@@ -19,5 +21,5 @@ def source_json(fragments):
     return json.dumps(compact_sources(fragments), ensure_ascii=False)
 
 
-def fits(fragments):
-    return len(source_json(fragments)) <= MAX_MODEL_SOURCE_JSON
+def fits(fragments, budget=MAX_MODEL_SOURCE_JSON):
+    return len(source_json(fragments)) <= budget

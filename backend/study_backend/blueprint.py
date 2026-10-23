@@ -22,13 +22,17 @@ from pydantic import Field, model_validator
 from . import job_progress
 from .models import Model
 from .setup import PlanPreferences
-from .source_context import fits
+from .source_context import MAX_MODEL_SOURCE_JSON, fits
 from .source_limits import MAX_UNIT_FRAGMENTS, MAX_UNITS
 
-BLUEPRINT_VERSION = '20261022-whole-document-blueprint-v1'
+BLUEPRINT_VERSION = '20261023-model-sized-parts-v2'
 MAX_PARTS = 12
 PARTS_PER_JOB = 2  # each job stays well inside the 200 s job timeout on a laptop model
 MAX_PART_FRAGMENTS = 24
+# A long-context model (Gemini) reads far bigger parts, so a whole textbook fits.
+MAX_LARGE_PARTS = 20
+LARGE_PARTS_PER_JOB = 4
+MAX_LARGE_PART_FRAGMENTS = 160
 
 Short = Annotated[str, Field(min_length=1, max_length=300)]
 Term = Annotated[str, Field(min_length=1, max_length=80)]
@@ -55,7 +59,7 @@ def clipped(value, limits):
 class Topic(Model):
     title: str = Field(min_length=1, max_length=160)
     summary: str = Field(min_length=1, max_length=400)
-    source_refs: list[str] = Field(min_length=1, max_length=MAX_PART_FRAGMENTS)
+    source_refs: list[str] = Field(min_length=1, max_length=MAX_LARGE_PART_FRAGMENTS)
 
     @model_validator(mode='before')
     @classmethod
@@ -156,11 +160,12 @@ def project(fragment):
     return {'id': fragment['id'], 'text': fragment['text'], 'locator': fragment['locator']}
 
 
-def partition(fragments):
-    """Consecutive parts, each small enough for one model request."""
+def partition(fragments, budget=MAX_MODEL_SOURCE_JSON):
+    """Consecutive parts, each small enough for one request to the model that reads them."""
+    limit = MAX_PART_FRAGMENTS if budget <= MAX_MODEL_SOURCE_JSON else MAX_LARGE_PART_FRAGMENTS
     parts = []
     for fragment in fragments:
-        if parts and len(parts[-1]) < MAX_PART_FRAGMENTS and fits([project(f) for f in parts[-1] + [fragment]]):
+        if parts and len(parts[-1]) < limit and fits([project(f) for f in parts[-1] + [fragment]], budget):
             parts[-1].append(fragment)
         else:
             parts.append([fragment])
@@ -240,7 +245,7 @@ def assemble(plan, topics, selected):
                       'placed_by_server': moved, 'lessons_split_to_fit': split}
 
 
-def register_blueprint(app, database, jobs, source_snapshot, user, generate_checked):
+def register_blueprint(app, database, jobs, source_snapshot, user, generate_checked, source_budget=lambda owner: MAX_MODEL_SOURCE_JSON):
     def scope(db, source_id, owner, body):
         source = source_snapshot(db, source_id, owner)
         if source['revision'] != body.expected_revision or not source['reviewed']:
@@ -265,11 +270,17 @@ def register_blueprint(app, database, jobs, source_snapshot, user, generate_chec
         with database.connection() as db:
             source, selected = scope(db, source_id, owner, body)
         hints = {k: v.strip() for k, v in {'goal': body.goal, 'notes': body.notes}.items() if v.strip()}
-        digest = hashlib.sha256(dump({'ids': [f['id'] for f in selected], 'hints': hints, 'version': BLUEPRINT_VERSION}).encode()).hexdigest()
-        parts = partition(selected)
-        if len(parts) > MAX_PARTS:
-            raise HTTPException(422, f'Tài liệu cần {len(parts)} lượt đọc, vượt {MAX_PARTS} lượt cho một lộ trình AI. '
-                                     'Chọn phạm vi nhỏ hơn (một vài chương) hoặc dùng lộ trình chia theo trang không cần AI.')
+        budget = source_budget(owner)
+        large = budget > MAX_MODEL_SOURCE_JSON
+        # The part size is part of the identity: switching model mid-way starts a fresh reading instead of mixing parts.
+        digest = hashlib.sha256(dump({'ids': [f['id'] for f in selected], 'hints': hints, 'version': BLUEPRINT_VERSION, 'budget': budget}).encode()).hexdigest()
+        parts = partition(selected, budget)
+        max_parts = MAX_LARGE_PARTS if large else MAX_PARTS
+        if len(parts) > max_parts:
+            raise HTTPException(422, f'Tài liệu cần {len(parts)} lượt đọc, vượt {max_parts} lượt cho một lộ trình AI. '
+                                     + ('Chọn phạm vi nhỏ hơn (một vài chương).' if large else
+                                        'Chọn phạm vi nhỏ hơn (một vài chương), hoặc vào Cài đặt chọn AI đọc được tài liệu dài (Gemini).'))
+        per_job = LARGE_PARTS_PER_JOB if large else PARTS_PER_JOB
         payload = {'source_id': source_id, 'extraction_revision': source['revision'], 'scope_sha256': digest,
                    'resume_job_id': body.resume_job_id}
         identity = jobs.identity(request, 'blueprint', payload, owner=owner)
@@ -300,7 +311,7 @@ def register_blueprint(app, database, jobs, source_snapshot, user, generate_chec
             with database.connection(write=True) as db:
                 report(db, len(content['readings']))
             calls = 0
-            while len(content['readings']) < len(parts) and calls < PARTS_PER_JOB:
+            while len(content['readings']) < len(parts) and calls < per_job:
                 index = len(content['readings'])
                 reading = await generate_checked(PartReading, map_instruction(index, len(parts), hints), parts[index])
                 calls += 1

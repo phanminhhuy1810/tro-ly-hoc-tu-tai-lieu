@@ -5,6 +5,7 @@ import unittest
 
 from study_backend import blueprint
 from study_backend.blueprint import CourseBlueprint, PartReading, assemble
+from study_backend.source_context import LARGE_MODEL_SOURCE_JSON
 from test_slice import SliceFixture, TestProvider
 
 
@@ -65,6 +66,22 @@ class BlueprintTests(SliceFixture):
             second = self.job(self.start(resume_job_id='resume-1'))
         self.assertEqual(second['status'], 'ready')
         self.assertEqual(self.provider.calls - calls, 2)  # the third part + the roadmap, never parts 1–2 again
+
+    def test_a_long_context_model_reads_the_scope_in_fewer_parts(self):
+        # A local model needs one request per excerpt here; a Gemini-sized one reads them all at once.
+        self.provider.max_source_json = LARGE_MODEL_SOURCE_JSON
+        with patch.object(blueprint, 'MAX_PART_FRAGMENTS', 1):
+            self.assertEqual(len(blueprint.partition(self.src['fragments'])), len(self.ids))
+            result = self.job(self.start())
+        self.assertEqual(result['status'], 'ready')
+        self.assertEqual(self.provider.calls, 2)  # one part for the whole scope, then the roadmap
+
+    def test_too_long_for_a_local_model_points_to_a_long_context_one(self):
+        with patch.object(blueprint, 'MAX_PART_FRAGMENTS', 1), patch.object(blueprint, 'MAX_PARTS', 2):
+            response = self.start()
+        self.assertEqual(response.status_code, 422)
+        self.assertIn('Gemini', response.json()['detail'])
+        self.assertEqual(self.provider.calls, 0)
 
     def test_confirmed_roadmap_becomes_a_course_with_chapters(self):
         prefs = {'source_id': self.src['id'], 'subject': 'Mạng máy tính', 'goal': 'Tính block', 'fragment_ids': self.ids, 'language': 'vi',

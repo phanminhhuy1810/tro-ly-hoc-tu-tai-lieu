@@ -1,5 +1,5 @@
 """Gemini REST adapter. Generation is explicitly enabled by the operator only."""
-from .source_context import source_json, MAX_MODEL_SOURCE_JSON
+from .source_context import source_json, LARGE_MODEL_SOURCE_JSON
 import base64
 import json
 import os
@@ -59,6 +59,7 @@ def validated_output(schema, text, fragments, progress=None):
 
 class GeminiAI:
     provider_id = 'gemini_api'
+    max_source_json = LARGE_MODEL_SOURCE_JSON
     endpoint = 'https://generativelanguage.googleapis.com/v1beta'
 
     def __init__(self, model='gemini-2.5-flash', api_key=None, enabled=None):
@@ -104,7 +105,7 @@ class GeminiAI:
     async def request_json(self, schema, instruction, fragments, image=None, progress=None):
         self.require_enabled()
         source = source_json(fragments)
-        if len(source) > MAX_MODEL_SOURCE_JSON:
+        if len(source) > self.max_source_json:
             raise ValueError('Phạm vi quá dài cho một lượt tạo. Chọn ít trích đoạn hơn; không tự cắt mất nguồn.')
         wire=ReferenceWire(fragments)
         source=source_json(wire.fragments);instruction=wire.instruction(instruction)
