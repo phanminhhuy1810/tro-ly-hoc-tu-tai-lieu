@@ -7,13 +7,16 @@ import { chapterGroups, type PathNode } from '../../lib/path';
 // banner with a "Mục tiêu" guide (like Duolingo's Guidebook). Lessons are round
 // 3D pebbles with a plain white sign (star to learn, tick when done, lock
 // ahead); a speech bubble and Kẹp mark the lesson to do next. Each chapter also
-// has a flashcard stop halfway and a trophy for chapter review at the end, and
-// one ready-made cat keeps it company. A floating button brings you back to the
-// current lesson. Titles live in the popover, the guide and the table of contents.
+// has a flashcard stop halfway and a trophy for chapter review at the end. Cats
+// sit beside every third stop, locked stretches included (they nap or wait in a
+// box there), so even a fresh course has company. A floating button brings you
+// back to the current lesson. Titles live in the popover, the guide and the table
+// of contents.
 
 const OFFSETS = [0, -58, -88, -58, 0, 58, 88, 58];
 const THEMES = ['green', 'blue', 'orange', 'purple'] as const;
-const AWAKE: Pose[] = ['book', 'mug', 'laptop', 'flag'];
+const AWAKE: Pose[] = ['book', 'mug', 'laptop', 'flag', 'pencil', 'target'];
+const WAITING: Pose[] = ['sleep', 'box', 'sleep', 'book'];
 
 type Glyph = 'star' | 'check' | 'lock' | 'sparkle' | 'cards' | 'trophy';
 
@@ -197,15 +200,16 @@ function chapterSteps(nodes: PathNode[]): Step[] {
   return steps;
 }
 
-/** One cat per chapter, beside a lesson near the middle that is not the current one (Kẹp already stands there). */
-function chapterCat(steps: Step[], courseTitle: string, chapter: number): { at: number; pose: Pose } | null {
-  const lessons = steps.flatMap((step, i) => (step.kind === 'lesson' ? [{ node: step.node, i }] : []));
-  const spot = lessons.slice(1).find((l) => !l.node.isCurrent) ?? lessons.find((l) => !l.node.isCurrent);
-  if (!spot) return null;
-  if (spot.node.state === 'locked') return { at: spot.i, pose: 'sleep' };
-  let h = 0;
-  for (const ch of courseTitle) h = (h * 31 + ch.codePointAt(0)!) >>> 0;
-  return { at: spot.i, pose: AWAKE[(h + chapter) % AWAKE.length] };
+/**
+ * A cat beside every third stop of the whole path, but not at or next to the
+ * current lesson, where Kẹp already stands. Ahead of the learner (locked
+ * lessons, stops not open yet) they nap or wait; elsewhere they read, sip,
+ * type… Poses follow the course title, so reopening a course looks the same.
+ */
+function catAt(stop: number, current: number, ahead: boolean, seed: number): Pose | null {
+  if (stop % 3 !== 2 || Math.abs(stop - current) <= 1) return null;
+  const pool = ahead ? WAITING : AWAKE;
+  return pool[(seed + stop) % pool.length];
 }
 
 export function ProgressPath({
@@ -244,6 +248,10 @@ export function ProgressPath({
   onOpenAll?: () => void;
 }) {
   const groups = useMemo(() => chapterGroups(nodes), [nodes]);
+  const chapters = useMemo(() => groups.map((group) => chapterSteps(group.nodes)), [groups]);
+  const currentStop = chapters.flat().findIndex((item) => item.kind === 'lesson' && item.node.isCurrent);
+  let seed = 0;
+  for (const ch of courseTitle) seed = (seed * 31 + ch.codePointAt(0)!) >>> 0;
   const [guide, setGuide] = useState<number | null>(null);
   const [away, setAway] = useState<'up' | 'down' | null>(null);
   const current = useRef<HTMLButtonElement | null>(null);
@@ -269,8 +277,7 @@ export function ProgressPath({
       {groups.map((group, g) => {
         const theme = THEMES[g % THEMES.length];
         const done = group.nodes.filter((n) => n.state === 'done').length;
-        const steps = chapterSteps(group.nodes);
-        const cat = chapterCat(steps, courseTitle, g);
+        const steps = chapters[g];
         return (
           <section key={g} className={`path-chapter path-chapter--${theme}`} aria-label={group.title || courseTitle}>
             <header className="path-banner">
@@ -296,13 +303,15 @@ export function ProgressPath({
               )}
             </header>
             <ol className="path-track">
-              {steps.map((item, i) => {
+              {steps.map((item) => {
                 const offset = OFFSETS[step % OFFSETS.length];
                 const side = offset > 0 ? 'left' : 'right';
+                const stop = step;
                 step += 1;
                 if (item.kind !== 'lesson') {
                   const open = item.kind === 'cards' ? cardCount > 0 : done > 0;
                   const label = item.kind === 'cards' ? 'Ôn thẻ của chương' : 'Ôn tập chương';
+                  const pose = catAt(stop, currentStop, !open, seed);
                   return (
                     <li key={`${item.kind}-${g}`} className="path-step path-step--special" style={{ transform: `translateX(${offset}px)` }}>
                       <button
@@ -316,10 +325,16 @@ export function ProgressPath({
                         <NodeGlyph kind={open ? item.kind : 'lock'} />
                       </button>
                       <span className="path-special__label">{item.kind === 'cards' ? 'Ôn thẻ' : 'Ôn chương'}</span>
+                      {pose && (
+                        <span className={`path-cat path-cat--${side}`} aria-hidden="true">
+                          <Mascot pose={pose} size={112} pettable />
+                        </span>
+                      )}
                     </li>
                   );
                 }
                 const node = item.node;
+                const pose = catAt(stop, currentStop, node.state === 'locked', seed);
                 const generating = generatingUnitId === node.unit.id;
                 const read = node.isCurrent && node.state === 'ready' ? readFraction(node) : 0;
                 const bubble = generating ? 'ĐANG TẠO…' : node.isCurrent ? (node.state === 'not_generated' ? 'TẠO BÀI' : read > 0 ? 'HỌC TIẾP' : 'BẮT ĐẦU') : null;
@@ -349,9 +364,9 @@ export function ProgressPath({
                         <NodeGlyph kind={glyphFor(node, generating)} size={node.isCurrent ? 38 : 34} />
                       </button>
                     </div>
-                    {cat?.at === i && (
+                    {pose && (
                       <span className={`path-cat path-cat--${side}`} aria-hidden="true">
-                        <Mascot pose={cat.pose} size={112} pettable />
+                        <Mascot pose={pose} size={112} pettable />
                       </span>
                     )}
                     {node.isCurrent && (

@@ -638,6 +638,13 @@ Các thay đổi đi kèm frontend mới `web/` (React). Đã thử trên bản 
 - Kiểm thử mới: `test_chat_knows_who_answers_and_puts_the_new_message_last`, `test_chat_may_converse_while_generation_stays_source_only`, `test_creator_switches_lesson_order_after_preview_and_learning_stays`.
 - Đã thử trên bản sao dữ liệu (cổng QA riêng): đổi khóa IPv4 sang “Học tự do” từ trang khóa; 6/6 bài mở, nhãn đổi theo.
 
+### Kaggle — 23/10/2026
+
+- `backend/kaggle-connect-cell.py` đổi theo ngrok agent mới: tùy chọn `basic_auth` của pyngrok bị agent từ chối (`field basic_auth not found in type config.Endpoint`), nên mật khẩu đặt bằng traffic policy `basic-auth`. Ô tự đặt token từ Kaggle Secret `ngrok-api-key` (chạy lại không lỗi khi token đã lưu) và tự cài `pyngrok`. Vẫn tạo file kết nối riêng để tải về rồi cài bằng `configure-kaggle.py`.
+- Đã chạy thật trên notebook của Huy (2×T4): ô bootstrap tải `qwen3.8:27b` (27,3B, Q4_K_M) trong 166 giây, sẵn sàng sau 216 giây. **Chưa mở được đường hầm có mật khẩu**: bước mở đường hầm ra internet do Huy tự bấm chạy, chưa thử lại bản ô mới; app chưa nối Kaggle.
+
+## Phụ lục API: toàn bộ điểm nối trong snapshot hiện hành
+
 ## Phụ lục API: toàn bộ điểm nối trong snapshot hiện hành
 
 Danh mục sinh từ [backend/frontend-openapi.json](backend/frontend-openapi.json):132 paths/145 operations. Bảng giúp tìm route, không thay DTO/quy tắc phân quyền trong code. Nhiều response chưa có `response_model` tường minh; response schema trống không có nghĩa API không trả dữ liệu. Snapshot được tạo bằng app cô lập, không phải probe toàn bộ route trên runtime thật.

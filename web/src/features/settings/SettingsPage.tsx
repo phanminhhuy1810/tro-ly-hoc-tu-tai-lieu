@@ -18,7 +18,89 @@ const PRICE_LABEL: Record<string, string> = {
   source_vision: 'Nhờ Kẹp đọc lại một trang ảnh',
   subject_analysis: 'Đoán môn học',
   short_feedback: 'Nhận xét câu tự luận',
+  lesson: 'Tạo một bài học',
 };
+
+/**
+ * What each AI is good for, so a learner can pick (sizes come from the model
+ * name). Based on our own runs, not a benchmark: a bigger model is not
+ * automatically better, so this only says what each one copes with.
+ */
+function modelNote(model: AiModel): string {
+  const id = model.id.toLowerCase();
+  if (id.startsWith('gemini:')) return 'Mạnh và nhanh: hợp mọi việc, nhất là đọc cả tài liệu và tạo bài. Cần mạng; trích đoạn được gửi tới Google.';
+  const size = Number(/(\d+(?:\.\d+)?)b\b/.exec(id)?.[1] ?? 0);
+  const label = size ? `${size}B` : 'không rõ cỡ';
+  if (id.startsWith('kaggle:')) return `Model lớn (${label}) chạy trên GPU Kaggle: hợp tạo bài mà không gửi tài liệu cho Google. Chỉ dùng được khi phiên Kaggle đang bật (khoảng 30 giờ GPU mỗi tuần).`;
+  if (size >= 12) return `Model vừa (${label}) trên máy này: tạo bài được nhưng chậm (thường 1,5–4 phút một bài); hỏi đáp ổn.`;
+  return `Model nhỏ (${label}) trên máy này: nhanh, hợp hỏi đáp và gợi ý; tạo bài dễ thiếu ý hơn.`;
+}
+
+/** Which jobs use AI at all, and how heavy they are. Prices come from the server's Coin policy. */
+const LIGHT_TASKS = ['chat', 'inline_help', 'short_feedback', 'subject_analysis'];
+const HEAVY_TASKS = ['blueprint', 'lesson', 'correction', 'source_vision'];
+const FREE_JOBS = ['Chấm trắc nghiệm, điền, ghép, sắp xếp', 'Lật thẻ, ôn thẻ, ôn câu sai', 'Xem lại bài và sơ đồ ý chính', 'Gợi ý, đáp án đã lưu trong câu', 'Phòng đố vui (dùng câu đã có)', 'Đọc chữ trong ảnh, scan bằng máy'];
+
+function AiTasks({ policy }: { policy: CoinPolicy }) {
+  const price = (task: string) => (task === 'lesson' ? '1 + số câu' : `${policy.prices[task] ?? 2} Coin`);
+  const free = policy.initial_quota ?? {};
+  return (
+    <section className="panel-card ai-tasks" aria-labelledby="ai-tasks-title">
+      <h2 id="ai-tasks-title" className="title-m">
+        Việc nào dùng AI, tốn bao nhiêu Coin?
+      </h2>
+      <p className="meta">Chấm bài và ôn tập chạy bằng chương trình, không gọi AI. AI chỉ chạy khi cần đọc tài liệu hoặc viết câu trả lời mới.</p>
+      <div className="ai-tasks__grid">
+        <div className="ai-tier ai-tier--free">
+          <p className="ai-tier__head">
+            <strong>Không dùng AI</strong>
+            <span className="tag tag--sage">Miễn phí</span>
+          </p>
+          <ul>
+            {FREE_JOBS.map((job) => (
+              <li key={job}>{job}</li>
+            ))}
+          </ul>
+        </div>
+        <div className="ai-tier ai-tier--light">
+          <p className="ai-tier__head">
+            <strong>AI nhẹ</strong>
+            <span className="tag tag--butter">Việc ngắn</span>
+          </p>
+          <p className="meta">Model nhỏ trên máy là đủ.</p>
+          <ul className="prices">
+            {LIGHT_TASKS.map((task) => (
+              <li key={task}>
+                <span>{PRICE_LABEL[task] ?? task}</span>
+                <strong>{price(task)}</strong>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="ai-tier ai-tier--heavy">
+          <p className="ai-tier__head">
+            <strong>AI nặng</strong>
+            <span className="tag tag--coral">Đọc nhiều, viết dài</span>
+          </p>
+          <p className="meta">Nên dùng AI mạnh: Gemini, hoặc 27B trên Kaggle.</p>
+          <ul className="prices">
+            {HEAVY_TASKS.map((task) => (
+              <li key={task}>
+                <span>{PRICE_LABEL[task] ?? task}</span>
+                <strong>{price(task)}</strong>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      <p className="meta">
+        {free.blueprint || free.lesson ? `Lần đầu miễn phí: ${free.blueprint ?? 0} lộ trình, ${free.lesson ?? 0} bài, ${free.subject_analysis ?? 0} lần đoán môn. ` : ''}
+        Lượt AI lỗi hoặc bị hủy không trừ Coin; hết Coin vẫn xem được bài và lời giải đã có.{' '}
+        {policy.enforcement_enabled ? 'Mức Coin là đề xuất, còn chờ chốt.' : 'Máy chủ đang tắt tính Coin.'}
+      </p>
+    </section>
+  );
+}
 
 const CATEGORY: Record<string, string> = {
   onboarding: 'Coin chào mừng',
@@ -247,6 +329,7 @@ export function SettingsPage({ section }: { section?: 'coin' }) {
                         <Icon name={model.external ? 'send' : 'home'} size={14} /> {model.external ? 'Gửi trích đoạn ra nhà cung cấp ngoài' : 'Chạy trên máy này, không tốn phí'}
                         {model.id === state.data!.catalog.default_model_id ? ' · mặc định' : ''}
                       </span>
+                      <span className="model__note">{modelNote(model)}</span>
                       <span className={`tag tag--${s.tone}`}>{s.text}</span>
                     </div>
                     {selected ? (
@@ -266,6 +349,8 @@ export function SettingsPage({ section }: { section?: 'coin' }) {
               })}
             </ul>
           </section>
+
+          <AiTasks policy={state.data.policy} />
 
           <TutorStyleCard />
 
@@ -294,22 +379,9 @@ export function SettingsPage({ section }: { section?: 'coin' }) {
                   <p className="meta">Dùng cho lượt hỏi Kẹp và tạo bằng AI; bài và lời giải đã có luôn xem được.</p>
                 </div>
               </div>
-              <details className="coin-card__prices">
-                <summary>Mỗi việc tốn bao nhiêu Coin?</summary>
-                <p className="meta">{state.data.policy.enforcement_enabled ? 'Mức đề xuất, còn chờ chốt.' : 'Máy chủ đang tắt tính Coin.'}</p>
-                <ul className="prices">
-                  {Object.entries(state.data.policy.prices).map(([task, price]) => (
-                    <li key={task}>
-                      <span>{PRICE_LABEL[task] ?? task}</span>
-                      <strong>{price} Coin</strong>
-                    </li>
-                  ))}
-                  <li>
-                    <span>Tạo một bài học</span>
-                    <strong>1 + số câu</strong>
-                  </li>
-                </ul>
-              </details>
+              <button type="button" className="link" onClick={() => document.getElementById('ai-tasks-title')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}>
+                Việc nào tốn Coin?
+              </button>
               <CoinHistory open={historyOpen} onToggle={() => setHistoryOpen((open) => !open)} />
             </section>
           </div>

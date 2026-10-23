@@ -91,6 +91,16 @@ Claude tự quyết, chờ Huy xem lại:
 - **Kẹp trong chat**: chat chung và trợ giúp tại chỗ dùng lời dặn riêng, không dùng lời dặn “chỉ dùng nguồn” của lúc soạn bài. Kẹp xưng tên, biết mình đang chạy model nào, trả lời đúng tin nhắn mới nhất, không lặp câu trả lời cũ. Kẹp trả lời tự nhiên câu xã giao hay câu hỏi về app; câu ngoài tài liệu vẫn trả lời ngắn nhưng nói rõ là ngoài tài liệu. Kiến thức nói là của bài vẫn phải ghi nguồn. **Chưa thử lại với Gemini thật**: cần khởi động lại `./run.sh` rồi hỏi lại.
 
 
+### Góp ý sáng 23/10/2026
+
+Huy nêu: mèo chỉ hiện khi đã mở bài; chưa rõ AI nào mạnh/yếu, việc nào cần AI mạnh, việc nào tốn Coin, và người dùng chưa được nói rõ chỗ này; tài liệu dài nhiều chương chưa đọc được.
+
+Claude tự quyết, chờ Huy xem lại:
+
+- **Mèo dọc cả lộ trình**: cứ 3 chặng (bài, ôn thẻ, ôn chương) có một chú mèo, trừ chỗ cạnh bài đang học vì đã có Kẹp vẫy tay. Đoạn còn khóa thì mèo ngủ hoặc ngồi trong thùng chờ; đoạn đã mở thì mèo đọc sách, ôm cốc, ngồi laptop, cầm cờ, viết sổ, ném phi tiêu. Trước đây mỗi chương chỉ có một mèo, nên khóa 10 bài một chương chỉ có đúng một con.
+- **Cài đặt nói rõ AI và Coin**: mỗi AI có một dòng nói hợp việc gì (Gemini mạnh, nhanh, gửi trích đoạn tới Google; 27B trên Kaggle chỉ chạy khi phiên Kaggle bật; 12B trên máy tạo bài được nhưng chậm; 9B nhanh, hợp hỏi đáp). Bảng mới “Việc nào dùng AI, tốn bao nhiêu Coin?” chia ba nhóm: không dùng AI (chấm bài, ôn thẻ, xem lại bài, gợi ý đã lưu, phòng đố vui, đọc chữ trong ảnh bằng máy) miễn phí; AI nhẹ (hỏi chung, hỏi trong bài, nhận xét tự luận, đoán môn) 1 Coin; AI nặng (đọc cả tài liệu 3 Coin, tạo bài 1 + số câu, sửa nội dung 2, đọc lại ảnh 2). Giá lấy từ máy chủ; lượt lỗi không trừ Coin. Mỗi người vẫn chọn một AI cho mọi việc; chưa tự chuyển việc nặng sang AI mạnh.
+
+
 ## 1. Sản phẩm giải quyết việc gì?
 
 Người học có slide, giáo trình, ghi chú hoặc ảnh tài liệu nhưng khó biến chúng thành một quá trình học rõ ràng. Ứng dụng giúp họ kiểm tra phần đã đọc, xác nhận mục tiêu, duyệt lộ trình rồi học và luyện trên cùng nguồn. Khi nội dung sai hoặc lệch nhu cầu, người học có cách đối chiếu và sửa có phạm vi.

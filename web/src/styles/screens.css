@@ -1488,14 +1488,6 @@
   font-size: 30px;
   line-height: 1;
 }
-.coin-card__prices summary {
-  cursor: pointer;
-  font-weight: 800;
-  color: var(--ink-2);
-}
-.coin-card__prices[open] summary {
-  margin-bottom: 8px;
-}
 .coin-history {
   display: grid;
   gap: 12px;
@@ -1539,6 +1531,61 @@
 }
 .model__warn {
   grid-column: 1 / -1;
+}
+.model__note {
+  max-width: 62ch;
+  color: var(--ink-2);
+  font-size: 14px;
+  line-height: 1.45;
+}
+/* Which jobs use AI: free, light, heavy side by side (stacked on phones). */
+.ai-tasks {
+  display: grid;
+  gap: 12px;
+}
+.ai-tasks__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+.ai-tier {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: 1.5px solid var(--line);
+}
+.ai-tier--free {
+  background: #f1f6ea;
+}
+.ai-tier--light {
+  background: #fdf7dc;
+}
+.ai-tier--heavy {
+  background: #fcefe9;
+}
+.ai-tier__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.ai-tier .prices strong {
+  white-space: nowrap;
+}
+.ai-tier ul:not(.prices) {
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 4px;
+  font-size: 14.5px;
+}
+@media (max-width: 860px) {
+  .ai-tasks__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 .prices {
   list-style: none;
