@@ -405,12 +405,37 @@
 .nav-icon {
   flex: none;
 }
-/* A row of cats under the Cộng đồng banner. */
-.cat-parade {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-end;
-  gap: 2px 10px;
-  margin: -8px 0 18px;
+/* Cats hiding behind the Cộng đồng banner: drawn under it, heads peeking over its top edge. */
+.peek {
+  position: relative;
+  isolation: isolate;
+  margin-top: 46px;
+}
+.peek__cats {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.peek__cat {
+  position: absolute;
+  top: -50px;
+  animation: peek-duck 4s ease-in-out infinite;
+  animation-delay: var(--peek-delay, 0s);
+}
+.peek > .page-banner {
+  z-index: 1;
+}
+@keyframes peek-duck {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(7px);
+  }
+}
+@media (max-width: 760px) {
+  .peek__cat:nth-child(n + 4) {
+    display: none;
+  }
 }

@@ -28,8 +28,8 @@ function goHome() {
   window.location.reload();
 }
 
-function AuthForm() {
-  const [mode, setMode] = useState<Mode>('login');
+function AuthForm({ initial }: { initial: Mode }) {
+  const [mode, setMode] = useState<Mode>(initial);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -156,7 +156,7 @@ function SignedIn({ account }: { account: Account }) {
   );
 }
 
-export function AccountPage() {
+export function AccountPage({ initialMode = 'login' }: { initialMode?: Mode }) {
   const state = useLoad(() => api<Account>('/account'), []);
   return (
     <div className="auth">
@@ -189,7 +189,7 @@ export function AccountPage() {
         <a className="back auth__back" href={hrefFor({ name: 'home' })}>
           <Icon name="arrowLeft" size={18} /> Về trang học
         </a>
-        {state.loading && !state.data ? <LoadingRows rows={2} /> : state.data?.signed_in ? <SignedIn account={state.data} /> : <AuthForm />}
+        {state.loading && !state.data ? <LoadingRows rows={2} /> : state.data?.signed_in ? <SignedIn account={state.data} /> : <AuthForm initial={initialMode} />}
         <p className="auth__fine">Mật khẩu được mã hóa trước khi lưu. Clawledge không gửi email quảng cáo.</p>
       </main>
     </div>

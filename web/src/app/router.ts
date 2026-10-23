@@ -19,7 +19,7 @@ export type Route =
   | { name: 'rooms'; code?: string; courseId?: string }
   | { name: 'room'; roomId: string }
   | { name: 'states' }
-  | { name: 'account' }
+  | { name: 'account'; mode?: 'register' }
   | { name: 'missing' };
 
 export function parseRoute(hash: string): Route {
@@ -43,7 +43,7 @@ export function parseRoute(hash: string): Route {
   if (parts[0] === 'phong' && parts[1]) return { name: 'room', roomId: parts[1] };
   if (parts[0] === 'phong') return { name: 'rooms' };
   if (parts[0] === 'mau-trang-thai') return { name: 'states' };
-  if (parts[0] === 'tai-khoan') return { name: 'account' };
+  if (parts[0] === 'tai-khoan') return { name: 'account', mode: parts[1] === 'dang-ky' ? 'register' : undefined };
   return { name: 'missing' };
 }
 
@@ -82,7 +82,7 @@ export function hrefFor(route: Route): string {
     case 'states':
       return '#/mau-trang-thai';
     case 'account':
-      return '#/tai-khoan';
+      return route.mode === 'register' ? '#/tai-khoan/dang-ky' : '#/tai-khoan';
     default:
       return '#/';
   }

@@ -3,7 +3,7 @@ import { api, ApiError, ensureSession } from '../../api/client';
 import type { CommunityCourse, Course } from '../../api/types';
 import { hrefFor, navigate } from '../../app/router';
 import { useApp, useLoad } from '../../app/store';
-import { CatParade } from '../../components/CatParade';
+import { CatPeek } from '../../components/CatPeek';
 import { Icon } from '../../components/Icon';
 import { Mascot, MascotTrio } from '../../components/Mascot';
 import { PageHeader } from '../../components/PageHeader';
@@ -80,16 +80,16 @@ export function CommunityPage({ code }: { code?: string }) {
 
   return (
     <div className="page together">
-      <PageHeader
+      <CatPeek>
+        <PageHeader
         title="Cộng đồng"
         tone="mint"
         note="Học khóa người khác chia sẻ, hoặc mở phòng đố vui để thi với bạn bè xem ai nhớ bài hơn."
         art={<MascotTrio size={96} />}
       >
         <TogetherTabs active="community" />
-      </PageHeader>
-
-      <CatParade />
+        </PageHeader>
+      </CatPeek>
 
       <div className="together-grid">
         <section aria-labelledby="community-title">

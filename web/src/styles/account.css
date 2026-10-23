@@ -237,7 +237,15 @@
   gap: 10px;
   justify-content: center;
 }
-/* Account entry at the bottom of the sidebar. */
+/* Sign in / sign up, or the signed-in learner, at the top right of every page. */
+.account-corner {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  margin: -18px 0 14px;
+}
 .account-chip {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);

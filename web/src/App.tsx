@@ -11,6 +11,7 @@ import { HomePage } from './features/home/HomePage';
 import { LessonPlayer } from './features/lesson/LessonPlayer';
 import { PracticePage } from './features/practice/PracticePage';
 import { PracticeRunner } from './features/practice/PracticeRunner';
+import { AccountCorner } from './features/shell/AccountCorner';
 import { Sidebar } from './features/shell/Sidebar';
 
 // The learning loop (Học tiếp, khóa, bài, thẻ, ôn luyện) ships in the first bundle; the other
@@ -66,6 +67,7 @@ export function App() {
     <div className={focus ? 'app app--focus' : 'app'}>
       {!focus && <Sidebar route={route} />}
       <div className={focus ? undefined : 'main'}>
+        {!focus && <AccountCorner />}
         <Suspense fallback={<LoadingRows rows={3} label="Đang mở…" />}>
           {route.name === 'home' && <HomePage />}
           {route.name === 'course' && <CoursePage key={route.courseId} courseId={route.courseId} />}
@@ -88,7 +90,7 @@ export function App() {
           {route.name === 'rooms' && <RoomsPage key={`${route.code ?? ''}/${route.courseId ?? ''}`} code={route.code} courseId={route.courseId} />}
           {route.name === 'room' && <RoomPage key={route.roomId} roomId={route.roomId} />}
           {route.name === 'states' && <StatesPage />}
-          {route.name === 'account' && <AccountPage />}
+          {route.name === 'account' && <AccountPage key={route.mode ?? ''} initialMode={route.mode ?? 'login'} />}
           {route.name === 'missing' && (
             <EmptyState
               art={<Mascot mood="surprised" size={110} pettable />}

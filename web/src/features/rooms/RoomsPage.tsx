@@ -3,7 +3,7 @@ import { api, ensureSession, newKey } from '../../api/client';
 import type { Course, RoomBank, RoomCreated, RoomSnapshot, RoomSummary } from '../../api/types';
 import { hrefFor, navigate } from '../../app/router';
 import { useLoad } from '../../app/store';
-import { CatParade } from '../../components/CatParade';
+import { CatPeek } from '../../components/CatPeek';
 import { Icon } from '../../components/Icon';
 import { MascotTrio } from '../../components/Mascot';
 import { PageHeader } from '../../components/PageHeader';
@@ -257,16 +257,16 @@ export function RoomsPage({ code, courseId }: { code?: string; courseId?: string
 
   return (
     <div className="page together">
-      <PageHeader
+      <CatPeek>
+        <PageHeader
         title="Cộng đồng"
         tone="mint"
         note="Học khóa người khác chia sẻ, hoặc mở phòng đố vui để thi với bạn bè xem ai nhớ bài hơn."
         art={<MascotTrio size={96} />}
       >
         <TogetherTabs active="rooms" />
-      </PageHeader>
-
-      <CatParade />
+        </PageHeader>
+      </CatPeek>
 
       {/* Coming from a course's “Phòng đố vui” card means hosting: on narrow screens the create card goes first. */}
       <div className={courseId ? 'together-grid together-grid--rooms together-grid--create-first' : 'together-grid together-grid--rooms'}>
