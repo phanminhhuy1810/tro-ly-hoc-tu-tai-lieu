@@ -6,7 +6,7 @@ import { chapterGroups, type PathNode } from '../../lib/path';
 // Duolingo-style path. Each chapter has its own bright colour and a sticky
 // banner with a "Mục tiêu" guide (like Duolingo's Guidebook). Lessons are round
 // 3D pebbles with a plain white sign (star to learn, tick when done, lock
-// ahead); a speech bubble and Kẹp mark the lesson to do next. Each chapter also
+// ahead); a speech bubble and Byte mark the lesson to do next. Each chapter also
 // has a flashcard stop halfway and a trophy for chapter review at the end. Cats
 // sit beside every third stop, locked stretches included (they nap or wait in a
 // box there), so even a fresh course has company. A floating button brings you
@@ -202,7 +202,7 @@ function chapterSteps(nodes: PathNode[]): Step[] {
 
 /**
  * A cat beside every third stop of the whole path, but not at or next to the
- * current lesson, where Kẹp already stands. Ahead of the learner (locked
+ * current lesson, where Byte already stands. Ahead of the learner (locked
  * lessons, stops not open yet) they nap or wait; elsewhere they read, sip,
  * type… Poses follow the course title, so reopening a course looks the same.
  */

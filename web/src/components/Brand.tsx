@@ -10,7 +10,7 @@ const INK = '#23262b';
 export type BrandOption = 'kep' | 'bubble' | 'path';
 
 export const BRAND_OPTIONS: { id: BrandOption; name: string; note: string }[] = [
-  { id: 'kep', name: 'Kẹp', note: 'Đầu mèo Kẹp (vẽ theo phác thảo của Huy) trên nền vàng — logo cũng là linh vật.' },
+  { id: 'kep', name: 'Byte', note: 'Đầu mèo Byte (vẽ theo phác thảo của Huy) trên nền vàng — logo cũng là linh vật.' },
   { id: 'bubble', name: 'Bóng nói + sách', note: 'Gia sư AI trò chuyện về tài liệu của bạn; nói rõ công dụng nhưng ít cá tính hơn.' },
   { id: 'path', name: 'Lộ trình', note: 'Con đường có các chặng và ngôi sao đích — nhấn vào cảm giác đi tiếp từng bài.' },
 ];

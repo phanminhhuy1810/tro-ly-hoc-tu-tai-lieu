@@ -373,7 +373,7 @@ function ReadStep({
     return (
       <div className="create-read is-running" aria-live="polite">
         <Mascot mood="think" size={110} bob />
-        <p className="display-title">{running.synthesizing ? 'Đang sắp xếp thành chương và bài…' : 'Kẹp đang đọc toàn bộ tài liệu…'}</p>
+        <p className="display-title">{running.synthesizing ? 'Đang sắp xếp thành chương và bài…' : 'Byte đang đọc toàn bộ tài liệu…'}</p>
         <ol className="stages">
           <li className={`stage ${total && running.read >= total ? 'stage--done' : 'stage--active'}`}>
             <span className="stage__dot">{total && running.read >= total ? <Icon name="check" size={14} /> : null}</span>
@@ -394,7 +394,7 @@ function ReadStep({
       <div className="create-read__intro">
         <Mascot mood="hello" size={96} />
         <div>
-          <p className="title-l">Để Kẹp đọc hết tài liệu trước khi chia bài</p>
+          <p className="title-l">Để Byte đọc hết tài liệu trước khi chia bài</p>
           <p>
             Mình sẽ đọc toàn bộ {source.fragments.length} đoạn (~{Math.round(characters / 1000)} nghìn ký tự), rồi đề xuất chương và bài, phần nên tập trung,
             cách ôn, quy tắc khi soạn bài và ngôn ngữ phù hợp. Bạn sửa được tất cả trước khi tạo khóa.
@@ -425,7 +425,7 @@ function ReadStep({
           Không dùng AI? Chia bài theo trang ở bản cũ
         </a>
         <button type="button" className="btn btn--primary btn--lg" onClick={() => void run()}>
-          <Icon name="sparkle" size={18} /> Để Kẹp đọc toàn bộ {price > 0 && <span className="price">{price} Coin</span>}
+          <Icon name="sparkle" size={18} /> Để Byte đọc toàn bộ {price > 0 && <span className="price">{price} Coin</span>}
         </button>
       </footer>
     </div>
@@ -488,7 +488,7 @@ export function CreatePage() {
       <PageHeader
         title="Tạo khóa mới"
         tone="butter"
-        note="Đưa slide, giáo trình hay ghi chú vào đây — Kẹp đọc hết rồi gợi ý lộ trình để bạn sửa trước khi học."
+        note="Đưa slide, giáo trình hay ghi chú vào đây — Byte đọc hết rồi gợi ý lộ trình để bạn sửa trước khi học."
         art={<Mascot pose="wand" mood="wink" size={100} pettable />}
         actions={
           source && (

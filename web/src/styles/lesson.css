@@ -1086,7 +1086,7 @@
   border-radius: 999px;
 }
 
-/* Chat bubbles: Kẹp on the left beside its avatar, the learner on the right in blue. */
+/* Chat bubbles: Byte on the left beside its avatar, the learner on the right in blue. */
 .chat-row {
   display: flex;
   align-items: flex-end;

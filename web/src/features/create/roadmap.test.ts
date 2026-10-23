@@ -69,7 +69,7 @@ describe('planRequest', () => {
     expect(body.preferences.instructions).toBe('Giữ thuật ngữ\nThêm ví dụ tính');
     expect(body.preferences.question_count).toBe(3);
     expect(body.preferences).not.toHaveProperty('chapter_priorities');
-    expect(memoryNotes(choices, ['Làm lại ví dụ'])).toBe('Phần mình muốn tập trung: Subnet.\nCách ôn Kẹp gợi ý: Làm lại ví dụ.');
+    expect(memoryNotes(choices, ['Làm lại ví dụ'])).toBe('Phần mình muốn tập trung: Subnet.\nCách ôn Byte gợi ý: Làm lại ví dụ.');
     const r = roadmapFrom(blueprint);
     const trimmed = planRequest(removeLesson(r, r.chapters[0].lessons[1].key), choices);
     expect(trimmed.preferences.fragment_ids).toEqual(['f1', 'f2', 'f4', 'f5', 'f6']);

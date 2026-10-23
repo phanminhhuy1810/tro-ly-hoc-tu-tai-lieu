@@ -214,10 +214,10 @@ export function planRequest(roadmap: Roadmap, choices: PlanChoices) {
   };
 }
 
-/** Notes saved to "Kẹp nhớ gì về bạn" right after the course is created. */
+/** Notes saved to "Byte nhớ gì về bạn" right after the course is created. */
 export function memoryNotes(choices: Pick<PlanChoices, 'focus'>, tips: string[]): string {
   const lines = [];
   if (choices.focus.length) lines.push(`Phần mình muốn tập trung: ${choices.focus.join('; ')}.`);
-  if (tips.length) lines.push(`Cách ôn Kẹp gợi ý: ${tips.join('; ')}.`);
+  if (tips.length) lines.push(`Cách ôn Byte gợi ý: ${tips.join('; ')}.`);
   return lines.join('\n').slice(0, 1500);
 }

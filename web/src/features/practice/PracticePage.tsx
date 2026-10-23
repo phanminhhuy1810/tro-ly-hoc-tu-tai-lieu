@@ -105,7 +105,7 @@ export function PracticePage({ courseId }: { courseId: string }) {
       <PageHeader
         title="Ôn luyện"
         tone="sky"
-        note={`${course.content.title} — chọn bài và dạng câu, luyện có Kẹp gợi ý hoặc tự kiểm tra.`}
+        note={`${course.content.title} — chọn bài và dạng câu, luyện có Byte gợi ý hoặc tự kiểm tra.`}
         art={<Mascot pose="target" mood="wink" size={100} pettable />}
         actions={
           <a className="btn btn--secondary" href={hrefFor({ name: 'lesson', courseId: course.id, unitId: 'tat-ca', mode: 'weak' })}>
@@ -145,7 +145,7 @@ export function PracticePage({ courseId }: { courseId: string }) {
             <div className="segmented practice-mode" role="radiogroup" aria-label="Kiểu lượt">
               <button type="button" role="radio" aria-checked={!exam} onClick={() => setExam(false)}>
                 <strong>Luyện tập</strong>
-                <span>Chấm từng câu, có gợi ý và hỏi Kẹp</span>
+                <span>Chấm từng câu, có gợi ý và hỏi Byte</span>
               </button>
               <button type="button" role="radio" aria-checked={exam} onClick={() => setExam(true)}>
                 <strong>Kiểm tra</strong>

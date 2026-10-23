@@ -273,7 +273,7 @@ export function LearnChat({
     <div className="tutor">
       <div className="tutor__feed" ref={feed}>
         <TutorMessage mood="hello">
-          <p className="title-m">Chào bạn, mình là Kẹp!</p>
+          <p className="title-m">Chào bạn, mình là Byte!</p>
           <p>
             Bài “{fix(unit.title)}” có {sections.length} phần. Mình giảng từng phần một — chỗ nào chưa rõ cứ hỏi, hỏi bao nhiêu cũng được. Khi bạn thấy đã
             hiểu, mình mới sang {questionCount} câu luyện tập.
@@ -334,7 +334,7 @@ export function LearnChat({
                 )}
                 {quote && (
                   <div className="tutor__aside">
-                    <CoinConfirm quote={quote.quote} what="Hỏi Kẹp" onConfirm={() => void chat.confirmQuote(index)} onCancel={() => chat.dismissQuote(index)} />
+                    <CoinConfirm quote={quote.quote} what="Hỏi Byte" onConfirm={() => void chat.confirmQuote(index)} onCancel={() => chat.dismissQuote(index)} />
                   </div>
                 )}
                 {problem && (
@@ -407,8 +407,8 @@ export function LearnChat({
             ref={input}
             rows={1}
             value={draft}
-            placeholder="Hỏi Kẹp về phần này…"
-            aria-label="Câu hỏi cho Kẹp"
+            placeholder="Hỏi Byte về phần này…"
+            aria-label="Câu hỏi cho Byte"
             onChange={(event) => {
               keepDraft(event.target.value);
               event.target.style.height = 'auto';

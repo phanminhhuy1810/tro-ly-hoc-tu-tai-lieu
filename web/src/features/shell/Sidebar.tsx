@@ -2,12 +2,13 @@ import { api } from '../../api/client';
 import { hrefFor, type Route } from '../../app/router';
 import { useApp, useLoad } from '../../app/store';
 import { BrandMark } from '../../components/Brand';
-import { Icon, type IconName } from '../../components/Icon';
+import { Icon } from '../../components/Icon';
+import { NavIcon, type NavName } from '../../components/NavIcon';
 import type { Account } from '../account/AccountPage';
 
 interface NavItem {
   label: string;
-  icon: IconName;
+  icon: NavName;
   href: string;
   active: boolean;
 }
@@ -33,14 +34,14 @@ export function Sidebar({ route }: { route: Route }) {
       <a className="brand" href="#/">
         <BrandMark size={40} />
         <span>
-          <strong>Folio</strong>
+          <strong>Clawledge</strong>
           <small>học từ tài liệu của bạn</small>
         </span>
       </a>
       <nav className="nav">
         {items.map((item) => (
           <a key={item.label} className="nav__item" href={item.href} aria-current={item.active ? 'page' : undefined}>
-            <Icon name={item.icon} />
+            <NavIcon name={item.icon} />
             <span>{item.label}</span>
           </a>
         ))}

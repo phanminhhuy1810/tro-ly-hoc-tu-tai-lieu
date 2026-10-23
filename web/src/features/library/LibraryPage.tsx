@@ -208,7 +208,7 @@ export function LibraryPage() {
           <EmptyState
             art={<Mascot pose="books" size={120} pettable />}
             title={query ? 'Không có khóa trùng tên' : 'Chưa có khóa nào'}
-            body="Tải slide, giáo trình hoặc ghi chú — Kẹp đọc hết rồi đề xuất lộ trình để bạn sửa trước khi tạo."
+            body="Tải slide, giáo trình hoặc ghi chú — Byte đọc hết rồi đề xuất lộ trình để bạn sửa trước khi tạo."
             action={
               <a className="btn btn--primary btn--lg" href={hrefFor({ name: 'create' })}>
                 Tạo khóa mới

@@ -105,6 +105,10 @@ Claude tự quyết, chờ Huy xem lại:
 
 Huy yêu cầu đăng nhập/đăng ký để lưu dữ liệu người dùng, trang thật đẹp và hợp Gmail. Claude làm (chờ Huy xem lại): trang `#/tai-khoan` chia đôi, bên trái nền ô vuông xanh với khẩu hiệu “Học từ chính tài liệu của bạn”, ba lợi ích và hai chú mèo; bên phải thẻ có hai tab Đăng nhập / Tạo tài khoản, ô email (gợi ý ten@gmail.com), mật khẩu có nút hiện/ẩn. Đăng ký giữ nguyên mọi thứ đang học trên máy. Cuối thanh bên có ô “Đăng nhập / Đăng ký”, đăng nhập rồi thì hiện tên. Màn hẹp xếp hình lên trên, form bên dưới. Đăng nhập bằng Google để sau (cần Huy tạo khóa OAuth trên Google Cloud).
 
+### Tên và icon — 23/10/2026
+
+Huy chốt tên: web là **Clawledge** (ghép “Claw”, vuốt mèo, và “Knowledge”, kiến thức), mèo/chatbot là **Byte** (“byte quạo khi làm không được”). Mọi chữ “Kẹp” và “Folio” người dùng thấy đã đổi theo; các mục ghi chép cũ phía trên giữ tên cũ như lịch sử. Lời dặn AI xưng là Byte của Clawledge. Icon thanh bên vẽ lại: nền pastel dưới nét bo tròn, mái nhà “Học tiếp” có tai mèo, “Cộng đồng” là hai mặt mèo. Trang Cộng đồng và Phòng đố vui có thêm một hàng 7 chú mèo (cam, xám, nâu; đọc sách, laptop, cốc, cờ, ngủ), bấm vào được.
+
 ## 1. Sản phẩm giải quyết việc gì?
 
 Người học có slide, giáo trình, ghi chú hoặc ảnh tài liệu nhưng khó biến chúng thành một quá trình học rõ ràng. Ứng dụng giúp họ kiểm tra phần đã đọc, xác nhận mục tiêu, duyệt lộ trình rồi học và luyện trên cùng nguồn. Khi nội dung sai hoặc lệch nhu cầu, người học có cách đối chiếu và sửa có phạm vi.

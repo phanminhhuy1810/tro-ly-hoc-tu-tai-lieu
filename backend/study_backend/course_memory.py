@@ -112,7 +112,7 @@ def register_course_memory(app, database, course_snapshot, user, overview):
         with database.connection(write=True) as db:
             current = tutor_style(db, owner)
             if current['version'] != body.expected_version:
-                raise HTTPException(409, 'Phong cách của Kẹp vừa được sửa ở cửa sổ khác; tải lại trước khi lưu.')
+                raise HTTPException(409, 'Phong cách của Byte vừa được sửa ở cửa sổ khác; tải lại trước khi lưu.')
             db.execute('INSERT INTO tutor_styles VALUES (?,?,?,?,?) ON CONFLICT(owner_id) DO UPDATE SET '
                        'persona=excluded.persona,emphasis=excluded.emphasis,version=excluded.version,updated_at=excluded.updated_at',
                        (owner, body.persona.strip(), body.emphasis.strip(), current['version'] + 1, stamp()))

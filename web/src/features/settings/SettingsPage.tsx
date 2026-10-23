@@ -10,12 +10,12 @@ import { LoadingRows, ProblemNotice } from '../../components/StateViews';
 import { describeError } from '../../lib/copy';
 
 const PRICE_LABEL: Record<string, string> = {
-  inline_help: 'Hỏi Kẹp trong bài / trong câu',
+  inline_help: 'Hỏi Byte trong bài / trong câu',
   chat: 'Hỏi chung',
-  blueprint: 'Kẹp đọc cả tài liệu để gợi ý lộ trình',
+  blueprint: 'Byte đọc cả tài liệu để gợi ý lộ trình',
   outline: 'Phác thảo lộ trình (bản cũ)',
-  correction: 'Nhờ Kẹp sửa nội dung',
-  source_vision: 'Nhờ Kẹp đọc lại một trang ảnh',
+  correction: 'Nhờ Byte sửa nội dung',
+  source_vision: 'Nhờ Byte đọc lại một trang ảnh',
   subject_analysis: 'Đoán môn học',
   short_feedback: 'Nhận xét câu tự luận',
   lesson: 'Tạo một bài học',
@@ -121,7 +121,7 @@ interface TutorStyle {
 const PERSONAS = ['Gia sư kiên nhẫn, giải thích từng bước', 'Bạn cùng lớp vui tính, nói chuyện thoải mái', 'Thầy cô nghiêm khắc, đi thẳng vào ý chính', 'Mèo mọt sách hơi láo nhưng cực giỏi'];
 const EMPHASES = ['Ví dụ đời thường', 'Công thức và cách tính', 'Lỗi hay gặp', 'Thuật ngữ tiếng Anh', 'Tóm tắt thật ngắn'];
 
-/** “Bạn sẽ là…, nhớ nhấn mạnh…”: one style for Kẹp across every course; each course still keeps its own notes. */
+/** “Bạn sẽ là…, nhớ nhấn mạnh…”: one style for Byte across every course; each course still keeps its own notes. */
 function TutorStyleCard() {
   const { toast } = useApp();
   const [saved, setSaved] = useState<TutorStyle | null>(null);
@@ -157,7 +157,7 @@ function TutorStyleCard() {
     try {
       const value = await api<TutorStyle>('/tutor-style', { method: 'PUT', body: { persona, emphasis, expected_version: saved.version } });
       setSaved(value);
-      toast('Kẹp sẽ trả lời theo kiểu này ở mọi khóa');
+      toast('Byte sẽ trả lời theo kiểu này ở mọi khóa');
     } catch (error) {
       toast(error instanceof ApiError && error.status === 409 ? 'Vừa có thay đổi ở cửa sổ khác — đã tải lại' : describeError(error).title);
       if (error instanceof ApiError && error.status === 409) void load();
@@ -173,8 +173,8 @@ function TutorStyleCard() {
       <div className="tutor-style__head">
         <Mascot mood="hint" size={64} />
         <div>
-          <h2 className="title-m">Kẹp dạy bạn theo kiểu nào?</h2>
-          <p className="meta">Dặn một lần, Kẹp nhớ ở mọi khóa khi bạn chat hay hỏi trong câu. Mỗi khóa vẫn có ghi chú riêng trong thẻ “Kẹp nhớ gì về bạn”.</p>
+          <h2 className="title-m">Byte dạy bạn theo kiểu nào?</h2>
+          <p className="meta">Dặn một lần, Byte nhớ ở mọi khóa khi bạn chat hay hỏi trong câu. Mỗi khóa vẫn có ghi chú riêng trong thẻ “Byte nhớ gì về bạn”.</p>
         </div>
       </div>
       {problem != null && <ProblemNotice problem={describeError(problem)} compact />}
@@ -201,7 +201,7 @@ function TutorStyleCard() {
         ))}
       </div>
       <div className="tutor-style__foot">
-        <span className="meta">Kẹp vẫn chỉ trả lời theo tài liệu của bạn; phần này đổi giọng và điểm nhấn, không đổi kiến thức.</span>
+        <span className="meta">Byte vẫn chỉ trả lời theo tài liệu của bạn; phần này đổi giọng và điểm nhấn, không đổi kiến thức.</span>
         <button type="button" className="btn btn--primary" disabled={!changed || busy} aria-busy={busy} onClick={() => void save()}>
           Lưu cách dạy
         </button>
@@ -259,7 +259,7 @@ function CoinHistory({ open, onToggle }: { open: boolean; onToggle: () => void }
 }
 
 /**
- * Cài đặt: which AI Kẹp uses, what leaves the machine, motion, and Coin
+ * Cài đặt: which AI Byte uses, what leaves the machine, motion, and Coin
  * (balance, prices, and the history on demand). Keys stay on the server;
  * this screen never shows or asks for one.
  */
@@ -288,7 +288,7 @@ export function SettingsPage({ section }: { section?: 'coin' }) {
     setPending(model.id);
     try {
       await api('/ai/selection', { method: 'PUT', body: { model_id: model.id, expected_revision: state.data.catalog.selection_revision, allow_external: model.external } });
-      toast(`Kẹp sẽ dùng ${model.label}`);
+      toast(`Byte sẽ dùng ${model.label}`);
       setAllowExternal(null);
       state.reload();
     } catch (error) {
@@ -305,7 +305,7 @@ export function SettingsPage({ section }: { section?: 'coin' }) {
 
   return (
     <div className="page settings-page">
-      <PageHeader title="Cài đặt" tone="lilac" note="Chọn AI cho Kẹp, chỉnh chuyển động và xem Coin của bạn." art={<Mascot pose="gear" mood="smug" size={100} pettable />} />
+      <PageHeader title="Cài đặt" tone="lilac" note="Chọn AI cho Byte, chỉnh chuyển động và xem Coin của bạn." art={<Mascot pose="gear" mood="smug" size={100} pettable />} />
 
       {state.loading && !state.data && <LoadingRows rows={3} label="Đang mở cài đặt…" />}
       {state.error != null && <ProblemNotice problem={describeError(state.error)} onRetry={state.reload} />}
@@ -313,7 +313,7 @@ export function SettingsPage({ section }: { section?: 'coin' }) {
       {state.data && (
         <>
           <section className="panel-card">
-            <h2 className="title-m">Kẹp dùng AI nào?</h2>
+            <h2 className="title-m">Byte dùng AI nào?</h2>
             <p className="meta">
               AI “trên máy này” chạy bằng Ollama nên tài liệu không rời máy. AI ngoài máy sẽ nhận các trích đoạn của bài khi tạo bài hoặc khi bạn hỏi. Đổi ở đây chỉ áp dụng cho lượt sau; bài đã tạo giữ nguyên.
             </p>
@@ -376,7 +376,7 @@ export function SettingsPage({ section }: { section?: 'coin' }) {
                   <p className="coin-card__value">
                     <CountUp value={state.data.wallet.available} /> Coin
                   </p>
-                  <p className="meta">Dùng cho lượt hỏi Kẹp và tạo bằng AI; bài và lời giải đã có luôn xem được.</p>
+                  <p className="meta">Dùng cho lượt hỏi Byte và tạo bằng AI; bài và lời giải đã có luôn xem được.</p>
                 </div>
               </div>
               <button type="button" className="link" onClick={() => document.getElementById('ai-tasks-title')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}>

@@ -219,7 +219,7 @@ class LearningTests(SliceFixture):
         self.job(self.client.post(base, json={"unit_id": "unit-1", "message": "bạn là ai"}))
         self.job(self.client.post(base, json={"unit_id": "unit-1", "message": "model bạn đang dùng là gì"}))
         prompt = self.provider.instructions[-1]
-        self.assertIn('"name": "Kẹp"', prompt)
+        self.assertIn('"name": "Byte"', prompt)
         self.assertIn('"model": "unreported_test_adapter"', prompt)
         self.assertIn('"content": "bạn là ai"', prompt)
         self.assertTrue(prompt.endswith("model bạn đang dùng là gì"))

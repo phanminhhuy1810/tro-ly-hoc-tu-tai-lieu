@@ -53,7 +53,7 @@ function Bubble({ message, onSimpler, onDetail, onSave, busy }: { message: HelpM
   const ref = referenceText(message);
   const ai = message.content.ai_generated;
   return (
-    <BotBubble mood={ai ? 'hello' : 'hint'} who={ai ? 'Kẹp' : message.action === 'hint' ? 'Gợi ý có sẵn · không tốn Coin' : 'Lời giải đã lưu'}>
+    <BotBubble mood={ai ? 'hello' : 'hint'} who={ai ? 'Byte' : message.action === 'hint' ? 'Gợi ý có sẵn · không tốn Coin' : 'Lời giải đã lưu'}>
       {message.content.text && <RichText text={stripRefLabels(message.content.text)} fix={fix} />}
       {ref && message.action !== 'hint' && (
         <p className="bubble__ref">
@@ -210,11 +210,11 @@ export function HelpPanel({ target, answered = false, onClose }: { target: HelpT
   const quick = answered ? QUICK_AFTER : QUICK_BEFORE;
 
   return (
-    <aside className="help-panel" aria-label="Hỏi Kẹp về câu này">
+    <aside className="help-panel" aria-label="Hỏi Byte về câu này">
       <header className="help-panel__head">
         <Mascot mood="hint" size={44} />
         <div style={{ minWidth: 0, flex: 1 }}>
-          <p className="help-panel__title">Hỏi Kẹp về câu này</p>
+          <p className="help-panel__title">Hỏi Byte về câu này</p>
           <p className="help-panel__target">{fix(target.label)}</p>
         </div>
         {onClose && (
@@ -257,7 +257,7 @@ export function HelpPanel({ target, answered = false, onClose }: { target: HelpT
         {quote && (
           <CoinConfirm
             quote={quote.quote}
-            what="Hỏi Kẹp"
+            what="Hỏi Byte"
             onCancel={() => setQuote(null)}
             onConfirm={async () => {
               const current = quote;

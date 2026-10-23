@@ -112,7 +112,7 @@ export function SharePage({ courseId }: { courseId: string }) {
           <Icon name="lock" />
           <div>
             <p className="notice__title">Khóa này do người khác tạo</p>
-            <p className="notice__body">Chỉ người tạo đổi được quyền chia sẻ. Bạn vẫn học, ôn và hỏi Kẹp bằng tiến trình riêng của mình.</p>
+            <p className="notice__body">Chỉ người tạo đổi được quyền chia sẻ. Bạn vẫn học, ôn và hỏi Byte bằng tiến trình riêng của mình.</p>
           </div>
         </div>
       </div>

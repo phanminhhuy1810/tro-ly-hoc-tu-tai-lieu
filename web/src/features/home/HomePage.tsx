@@ -18,7 +18,7 @@ function today() {
   return new Intl.DateTimeFormat('vi-VN', { weekday: 'long', day: 'numeric', month: 'long' }).format(new Date());
 }
 
-/** Kẹp's face on Học tiếp follows the clock: bright in the morning, cheeky in the afternoon, asleep late at night. */
+/** Byte's face on Học tiếp follows the clock: bright in the morning, cheeky in the afternoon, asleep late at night. */
 function homeCat(): { mood?: Mood; pose?: 'sleep' } {
   const hour = new Date().getHours();
   if (hour >= 23 || hour < 5) return { pose: 'sleep' };

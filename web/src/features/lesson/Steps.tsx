@@ -299,7 +299,7 @@ export function CheckStep({
               </>
             )}
             <button type="button" className="chip" onClick={() => window.dispatchEvent(new Event(FOCUS_HELP))}>
-              <Icon name="message" size={16} /> Hỏi Kẹp
+              <Icon name="message" size={16} /> Hỏi Byte
             </button>
           </div>
           <div className="step__cta">

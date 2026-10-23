@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { Mascot, type Mood } from './Mascot';
 
-/** A message from Kẹp: the mascot beside a white bubble. */
+/** A message from Byte: the mascot beside a white bubble. */
 export function BotBubble({ who, mood = 'hello', children }: { who?: ReactNode; mood?: Mood; children: ReactNode }) {
   return (
     <div className="chat-row">
@@ -25,8 +25,8 @@ export function MyBubble({ children }: { children: ReactNode }) {
   );
 }
 
-/** Kẹp is writing: bouncing dots, with what it is doing for screen readers and as a small caption. */
-export function TypingBubble({ text = 'Kẹp đang soạn câu trả lời' }: { text?: string }) {
+/** Byte is writing: bouncing dots, with what it is doing for screen readers and as a small caption. */
+export function TypingBubble({ text = 'Byte đang soạn câu trả lời' }: { text?: string }) {
   return (
     <div className="chat-row" role="status">
       <span className="chat-avatar chat-avatar--busy" aria-hidden="true">

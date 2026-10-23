@@ -7,7 +7,7 @@ const MATERIAL: Record<string, string> = {
   selected_source_excerpts: 'Các trích đoạn nguồn mà bài dùng',
   learner_progress: 'Tiến trình học của từng người',
   notebook: 'Sổ tay',
-  chat: 'Các cuộc chat với Kẹp',
+  chat: 'Các cuộc chat với Byte',
   creator_preferences_and_notes: 'Ghi chú và tùy chọn khi bạn tạo khóa',
   answer_keys_before_submission: 'Đáp án trước khi người học nộp bài',
 };

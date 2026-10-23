@@ -145,7 +145,7 @@ export function RoadmapStep({
         <div className="roadmap__intro">
           <Mascot mood="happy" size={72} />
           <div>
-            <p className="eyebrow">Kẹp đã đọc hết {blueprint.scope_fragment_ids.length} đoạn</p>
+            <p className="eyebrow">Byte đã đọc hết {blueprint.scope_fragment_ids.length} đoạn</p>
             <p className="roadmap__summary">{blueprint.summary}</p>
           </div>
         </div>
@@ -263,14 +263,14 @@ export function RoadmapStep({
             <Icon name="refresh" size={15} /> Quay về đề xuất ban đầu
           </button>
           <button type="button" className="link link--quiet" onClick={onReread}>
-            Nhờ Kẹp đọc lại với mong muốn khác
+            Nhờ Byte đọc lại với mong muốn khác
           </button>
         </div>
       </section>
 
       <aside className="suggest" aria-label="Gợi ý cách học">
         <section className="suggest__card">
-          <p className="title-m">Kẹp gợi ý cách học</p>
+          <p className="title-m">Byte gợi ý cách học</p>
           <label>
             <span className="eyebrow">Môn học</span>
             <input className="field" value={choices.subject} maxLength={200} onChange={(e) => choose({ subject: e.target.value })} />
@@ -289,12 +289,12 @@ export function RoadmapStep({
                 </button>
               ))}
             </div>
-            {blueprint.language_note && <p className="meta">Kẹp: {blueprint.language_note}</p>}
+            {blueprint.language_note && <p className="meta">Byte: {blueprint.language_note}</p>}
           </div>
 
           {blueprint.focus.length > 0 && (
             <div>
-              <span className="eyebrow">Nên tập trung vào · Kẹp sẽ nhớ khi bạn hỏi</span>
+              <span className="eyebrow">Nên tập trung vào · Byte sẽ nhớ khi bạn hỏi</span>
               <div className="chips">
                 {blueprint.focus.map((item) => (
                   <button key={item} type="button" className="chip" aria-pressed={choices.focus.includes(item)} onClick={() => choose({ focus: toggle(choices.focus, item) })}>

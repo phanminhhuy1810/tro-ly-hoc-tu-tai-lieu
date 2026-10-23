@@ -3,6 +3,7 @@ import { api, ensureSession, newKey } from '../../api/client';
 import type { Course, RoomBank, RoomCreated, RoomSnapshot, RoomSummary } from '../../api/types';
 import { hrefFor, navigate } from '../../app/router';
 import { useLoad } from '../../app/store';
+import { CatParade } from '../../components/CatParade';
 import { Icon } from '../../components/Icon';
 import { MascotTrio } from '../../components/Mascot';
 import { PageHeader } from '../../components/PageHeader';
@@ -218,7 +219,7 @@ function CreateCard({ courses, initialCourse }: { courses: Course[]; initialCour
         <Icon name="play" size={18} /> Tạo phòng
       </button>
       <p className="meta room-rules">
-        Tối đa {bank?.policy.max_players ?? 8} người · đúng +1 điểm, không tính tốc độ · không đổi tiến trình học hay Coin của ai · Kẹp chỉ giải thích sau khi phòng kết thúc.
+        Tối đa {bank?.policy.max_players ?? 8} người · đúng +1 điểm, không tính tốc độ · không đổi tiến trình học hay Coin của ai · Byte chỉ giải thích sau khi phòng kết thúc.
       </p>
     </section>
   );
@@ -264,6 +265,8 @@ export function RoomsPage({ code, courseId }: { code?: string; courseId?: string
       >
         <TogetherTabs active="rooms" />
       </PageHeader>
+
+      <CatParade />
 
       {/* Coming from a course's “Phòng đố vui” card means hosting: on narrow screens the create card goes first. */}
       <div className={courseId ? 'together-grid together-grid--rooms together-grid--create-first' : 'together-grid together-grid--rooms'}>

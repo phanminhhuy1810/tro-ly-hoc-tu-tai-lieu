@@ -67,7 +67,7 @@
   background: #fff;
   border: 1.5px solid var(--sage-200);
 }
-/* Kẹp is here: a small green dot on the avatar. */
+/* Byte is here: a small green dot on the avatar. */
 .chat__avatar::after {
   content: '';
   position: absolute;

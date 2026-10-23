@@ -17,7 +17,7 @@ interface Memory {
 const EXAMPLES = ['Giải thích bằng ví dụ đời thường', 'Mình hay nhầm prefix và subnet mask', 'Ưu tiên bài tính toán, ít lý thuyết'];
 
 /**
- * What Kẹp keeps in mind in every chat and lesson of this course: the
+ * What Byte keeps in mind in every chat and lesson of this course: the
  * learner's own notes, the course rules, recent mistakes and the overview it
  * wrote after reading the whole document.
  */
@@ -44,7 +44,7 @@ export function MemoryCard({ courseId }: { courseId: string }) {
     try {
       const saved = await api<{ notes: string; version: number }>(`/courses/${courseId}/memory`, { method: 'PUT', body: { notes: draft, expected_version: memory.version } });
       setMemory({ ...memory, ...saved });
-      toast('Kẹp sẽ nhớ điều này trong mọi bài của khóa');
+      toast('Byte sẽ nhớ điều này trong mọi bài của khóa');
     } catch (error) {
       if (error instanceof ApiError && error.status === 409) {
         await load();
@@ -63,14 +63,14 @@ export function MemoryCard({ courseId }: { courseId: string }) {
         <Mascot mood="think" size={48} />
         <div>
           <h2 id="memory-title" className="title-m">
-            Kẹp nhớ gì về bạn
+            Byte nhớ gì về bạn
           </h2>
           <p className="meta">Dùng trong mọi câu hỏi của khóa này</p>
         </div>
       </header>
 
       <label className="memory-card__notes">
-        <span className="eyebrow">Bạn muốn Kẹp nhớ</span>
+        <span className="eyebrow">Bạn muốn Byte nhớ</span>
         <textarea
           className="field"
           rows={3}
@@ -96,7 +96,7 @@ export function MemoryCard({ courseId }: { courseId: string }) {
       )}
 
       <button type="button" className="link link--quiet" aria-expanded={open} onClick={() => setOpen((v) => !v)}>
-        <Icon name={open ? 'up' : 'down'} size={15} /> {open ? 'Ẩn phần Kẹp tự ghi nhớ' : 'Xem phần Kẹp tự ghi nhớ'}
+        <Icon name={open ? 'up' : 'down'} size={15} /> {open ? 'Ẩn phần Byte tự ghi nhớ' : 'Xem phần Byte tự ghi nhớ'}
       </button>
       {open && (
         <div className="memory-card__auto enter">
@@ -122,7 +122,7 @@ export function MemoryCard({ courseId }: { courseId: string }) {
                 ))}
               </ul>
             ) : (
-              <p className="meta">Chưa có — Kẹp sẽ tự nhớ khi bạn luyện tập.</p>
+              <p className="meta">Chưa có — Byte sẽ tự nhớ khi bạn luyện tập.</p>
             )}
           </div>
         </div>

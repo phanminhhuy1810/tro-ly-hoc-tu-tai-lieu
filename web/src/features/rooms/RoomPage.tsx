@@ -240,7 +240,7 @@ interface HelpMessage {
   needs_more_source?: boolean;
 }
 
-/** Kẹp explains a room question only after the room has ended; each person's thread is private. */
+/** Byte explains a room question only after the room has ended; each person's thread is private. */
 function RoomHelp({ roomId, questionId }: { roomId: string; questionId: string }) {
   const { priceOf, refreshWallet } = useApp();
   const price = priceOf('chat');
@@ -287,7 +287,7 @@ function RoomHelp({ roomId, questionId }: { roomId: string; questionId: string }
   if (!open) {
     return (
       <button type="button" className="chip" onClick={() => setOpen(true)}>
-        <Icon name="message" size={16} /> Hỏi Kẹp về câu này
+        <Icon name="message" size={16} /> Hỏi Byte về câu này
       </button>
     );
   }
@@ -304,11 +304,11 @@ function RoomHelp({ roomId, questionId }: { roomId: string; questionId: string }
           </BotBubble>
         ),
       )}
-      {pending && <TypingBubble text="Kẹp đang đọc câu và nguồn" />}
+      {pending && <TypingBubble text="Byte đang đọc câu và nguồn" />}
       {quote && (
         <CoinConfirm
           quote={quote.quote}
-          what="Hỏi Kẹp"
+          what="Hỏi Byte"
           onCancel={() => setQuote(null)}
           onConfirm={async () => {
             const current = quote;
@@ -342,7 +342,7 @@ function RoomHelp({ roomId, questionId }: { roomId: string; questionId: string }
           if (draft.trim()) void send(draft.trim());
         }}
       >
-        <input className="field" value={draft} maxLength={2000} placeholder="Hỏi thêm về câu này…" aria-label="Câu hỏi cho Kẹp" onChange={(event) => setDraft(event.target.value)} />
+        <input className="field" value={draft} maxLength={2000} placeholder="Hỏi thêm về câu này…" aria-label="Câu hỏi cho Byte" onChange={(event) => setDraft(event.target.value)} />
         <button type="submit" className="btn btn--primary btn--sm" disabled={pending || !draft.trim()} aria-label={price > 0 ? `Gửi, ${price} Coin` : 'Gửi'}>
           {price > 0 && <span className="price">{price} Coin</span>}
           <Icon name="send" size={16} />

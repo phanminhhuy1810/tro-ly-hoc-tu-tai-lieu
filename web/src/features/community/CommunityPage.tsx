@@ -3,6 +3,7 @@ import { api, ApiError, ensureSession } from '../../api/client';
 import type { CommunityCourse, Course } from '../../api/types';
 import { hrefFor, navigate } from '../../app/router';
 import { useApp, useLoad } from '../../app/store';
+import { CatParade } from '../../components/CatParade';
 import { Icon } from '../../components/Icon';
 import { Mascot, MascotTrio } from '../../components/Mascot';
 import { PageHeader } from '../../components/PageHeader';
@@ -87,6 +88,8 @@ export function CommunityPage({ code }: { code?: string }) {
       >
         <TogetherTabs active="community" />
       </PageHeader>
+
+      <CatParade />
 
       <div className="together-grid">
         <section aria-labelledby="community-title">

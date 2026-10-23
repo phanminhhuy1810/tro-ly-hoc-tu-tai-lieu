@@ -11,7 +11,7 @@ import { describeError } from '../../lib/copy';
 import { fold, makeTextFix, stripRefLabels } from '../../lib/text';
 import { NOTE_COLORS, noteColor } from './noteColors';
 
-const LABEL: Record<string, string> = { ai: 'Kẹp giải thích', user: 'Bạn viết', teacher: 'Giáo viên' };
+const LABEL: Record<string, string> = { ai: 'Byte giải thích', user: 'Bạn viết', teacher: 'Giáo viên' };
 
 function when(iso: string) {
   return new Intl.DateTimeFormat('vi-VN', { day: 'numeric', month: 'numeric', hour: '2-digit', minute: '2-digit' }).format(new Date(iso));
@@ -39,7 +39,7 @@ function ColorDots({ value, label, onPick }: { value: NoteColor | null; label: s
 }
 
 /**
- * Sổ tay: sticky notes the learner writes and answers saved from Kẹp
+ * Sổ tay: sticky notes the learner writes and answers saved from Byte
  * (“Lưu vào sổ tay”). Each note keeps the colour the learner gives it; edits
  * keep versions on the server and deleting can be undone.
  */
@@ -154,7 +154,7 @@ export function NotebookPage() {
       <PageHeader
         title="Sổ tay"
         tone="butter"
-        note="Ghi nhanh mẹo nhớ, công thức — và những lời giải hay của Kẹp. Tô màu để tự xếp theo ý bạn."
+        note="Ghi nhanh mẹo nhớ, công thức — và những lời giải hay của Byte. Tô màu để tự xếp theo ý bạn."
         art={<Mascot pose="pencil" size={100} pettable />}
       />
 
@@ -203,7 +203,7 @@ export function NotebookPage() {
             Bạn viết
           </button>
           <button type="button" role="radio" aria-checked={label === 'ai'} onClick={() => setLabel('ai')}>
-            Kẹp giải thích
+            Byte giải thích
           </button>
         </div>
         <div className="notebook__colors">
@@ -232,7 +232,7 @@ export function NotebookPage() {
         <EmptyState
           art={<Mascot pose="pencil" size={120} pettable />}
           title={state.data.length ? 'Không có ghi chú khớp bộ lọc' : 'Sổ tay đang trống'}
-          body="Khi Kẹp giải thích hay, bấm “Lưu vào sổ tay” ngay dưới câu trả lời. Bạn cũng có thể tự ghi ở ô phía trên."
+          body="Khi Byte giải thích hay, bấm “Lưu vào sổ tay” ngay dưới câu trả lời. Bạn cũng có thể tự ghi ở ô phía trên."
         />
       )}
       <div className="notes">

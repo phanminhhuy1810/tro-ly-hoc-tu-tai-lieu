@@ -10,7 +10,7 @@ export const NOTE_COLORS: { value: NoteColor; name: string }[] = [
   { value: 'white', name: 'Trắng' },
 ];
 
-/** A note without a chosen colour still reads at a glance: Kẹp's answers blue, a teacher's peach, yours butter. */
+/** A note without a chosen colour still reads at a glance: Byte's answers blue, a teacher's peach, yours butter. */
 export function noteColor(note: Pick<Note, 'color' | 'label'>): NoteColor {
   if (note.color) return note.color;
   if (note.label === 'ai') return 'sky';

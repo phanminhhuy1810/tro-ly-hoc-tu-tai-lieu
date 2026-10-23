@@ -163,7 +163,7 @@ export function AccountPage() {
       <aside className="auth__art" aria-hidden="true">
         <a className="auth__brand" href={hrefFor({ name: 'home' })} tabIndex={-1}>
           <BrandMark size={44} />
-          <strong>Folio</strong>
+          <strong>Clawledge</strong>
         </a>
         <div className="auth__pitch">
           <p className="auth__headline">Học từ chính tài liệu của bạn.</p>
@@ -175,7 +175,7 @@ export function AccountPage() {
               <Icon name="refresh" size={18} /> Học tiếp trên máy khác
             </li>
             <li>
-              <Icon name="heart" size={18} /> Kẹp nhớ cách bạn thích học
+              <Icon name="heart" size={18} /> Byte nhớ cách bạn thích học
             </li>
           </ul>
         </div>
@@ -190,7 +190,7 @@ export function AccountPage() {
           <Icon name="arrowLeft" size={18} /> Về trang học
         </a>
         {state.loading && !state.data ? <LoadingRows rows={2} /> : state.data?.signed_in ? <SignedIn account={state.data} /> : <AuthForm />}
-        <p className="auth__fine">Mật khẩu được mã hóa trước khi lưu. Folio không gửi email quảng cáo.</p>
+        <p className="auth__fine">Mật khẩu được mã hóa trước khi lưu. Clawledge không gửi email quảng cáo.</p>
       </main>
     </div>
   );

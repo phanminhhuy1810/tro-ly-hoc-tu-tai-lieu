@@ -1,10 +1,10 @@
-// "Kẹp" — a soft ginger cat in thick black nerd glasses (flat on top, gently
+// "Byte" — a soft ginger cat in thick black nerd glasses (flat on top, gently
 // rounded below), after the sketch Huy picked: a round pear-shaped body,
 // half-lidded "obviously" eyes, whiskers past the cheeks and a tail that grows
 // from behind and curls up at the side. Ten expressions, ready-made scenes for
 // the course path, and a little life: it blinks, swishes its tail, breathes,
 // and reacts with a hop and a new face when tapped (where it is `pettable`).
-// Page pictures are Kẹp scenes too (books, notepad, chart…), drawn here by
+// Page pictures are Byte scenes too (books, notepad, chart…), drawn here by
 // hand rather than generated, so every page shares one look; MascotTrio adds
 // two classmates for the pages about learning with others.
 
@@ -39,13 +39,13 @@ const BELLY = '#fff3e4';
 const PINK = '#f6a7ba';
 const METAL = '#c4ccd9';
 
-/** Kẹp is ginger; the classmates in MascotTrio are grey and cocoa. */
+/** Byte is ginger; the classmates in MascotTrio are grey and cocoa. */
 const COATS = {
   ginger: { fur: FUR, stripe: STRIPE, belly: BELLY },
   grey: { fur: '#dfe3ea', stripe: '#a3abbb', belly: '#f6f7fa' },
   cocoa: { fur: '#d2a985', stripe: '#9a6c4a', belly: '#f6e9dc' },
 };
-type Coat = keyof typeof COATS;
+export type Coat = keyof typeof COATS;
 
 const BODY =
   'M60 105C46 105 32.5 105 28 99.5C24.4 94.6 24.2 87.5 24.6 80C25.4 64 27.2 50 29.6 37L31.4 15.6Q32 9.8 36.2 13.4L48 23.8Q60 19.2 72 23.8L83.8 13.4Q88 9.8 88.6 15.6L90.4 37C92.8 50 94.6 64 95.4 80C95.8 87.5 95.6 94.6 92 99.5C87.5 105 74 105 60 105Z';
@@ -542,6 +542,8 @@ export function Mascot({
   pose,
   pettable = false,
   title,
+  coat = 'ginger',
+  glasses = true,
 }: {
   mood?: Mood;
   size?: number;
@@ -550,6 +552,8 @@ export function Mascot({
   pose?: Pose;
   pettable?: boolean;
   title?: string;
+  coat?: Coat;
+  glasses?: boolean;
 }) {
   const id = useId();
   const [reaction, setReaction] = useState<{ mood: Mood; n: number } | null>(null);
@@ -582,7 +586,7 @@ export function Mascot({
     >
       {!face && <ellipse cx="60" cy="111" rx="30" ry="3.6" fill="rgba(35,38,43,.1)" />}
       <g className="mascot__body">
-        <CatDrawing mood={shown} pose={reaction ? undefined : pose} />
+        <CatDrawing mood={shown} pose={reaction ? undefined : pose} coat={coat} glasses={glasses} />
       </g>
       {pose === 'sleep' && !reaction ? (
         <g className="mascot__extra mascot__zzz" fill="none" stroke={INK} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
@@ -596,7 +600,7 @@ export function Mascot({
 }
 
 /**
- * Kẹp with two classmates, a grey one and a cocoa one (no glasses), high-fiving:
+ * Byte with two classmates, a grey one and a cocoa one (no glasses), high-fiving:
  * the picture for the pages about learning with others. Each cat sits in its
  * own viewport so its blink, tail and breath pivot on itself, each on its own beat;
  * the cat on the left is drawn last so it hides the tail of the one beside it.

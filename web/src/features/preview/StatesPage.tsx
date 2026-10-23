@@ -56,7 +56,7 @@ export function StatesPage() {
         </a>
       </header>
 
-      <Frame title="Logo — 3 phương án (đang dùng: Kẹp)">
+      <Frame title="Logo — 3 phương án (đang dùng: Byte)">
         <div className="brand-compare">
           {BRAND_OPTIONS.map((option, i) => (
             <figure key={option.id} className={i === 0 ? 'brand-sample is-current' : 'brand-sample'}>
@@ -76,7 +76,7 @@ export function StatesPage() {
         </div>
       </Frame>
 
-      <Frame title="Nhân vật “Kẹp” — bấm vào mèo để nó nhảy và đổi mặt">
+      <Frame title="Nhân vật “Byte” — bấm vào mèo để nó nhảy và đổi mặt">
         <div className="mood-row">
           {moods.map(([mood, label]) => (
             <figure key={mood}>
